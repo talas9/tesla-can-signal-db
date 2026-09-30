@@ -83,6 +83,65 @@ BO_ 299 DAS_smartShift: 4 DAS
 
 BO_ 1879 DIF_debug: 8 DIF
  SG_ DIF_debugSelector M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_motorIA m32 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_motorIB m32 : 24|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_motorIC m32 : 40|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_statorIDref m33 : 8|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_statorIDfdb m33 : 24|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_torquePerAmp m33 : 40|16@1+ (0.0001,0) [0|6.5535] "Nm/A" Vector__XXX
+ SG_ DIF_rsScale m34 : 8|8@1+ (0.01,0) [0|2.55] "scale" Vector__XXX
+ SG_ DIF_statorIQref m34 : 16|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_statorIQfdb m34 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_motorV m34 : 48|16@1+ (2.0e-05,0) [0|1.3107] "mindex" Vector__XXX
+ SG_ DIF_tqScaleDifferential m35 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_statorFluxRef m35 : 16|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_statorFluxFdb m35 : 32|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_lmScale m36 : 8|8@1+ (0.004,0) [0|1.02] "scale" Vector__XXX
+ SG_ DIF_statorVQ m36 : 16|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_statorVD m36 : 32|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_peakFlux m36 : 48|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_gainScale m37 : 8|8@1+ (0.01,0) [0|2.55] "scale" Vector__XXX
+ SG_ DIF_usmState m38 : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_peakIQref m38 : 16|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_motorIAavg m38 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_motorIBavg m38 : 48|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_tqSatThermal m39 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_tqSatMotorVoltage m39 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_tqSatMotorCurrent m39 : 40|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_tcMaxRequest m40 : 16|8@1+ (5,0) [0|1275] "Nm" Vector__XXX
+ SG_ DIF_tcMinRequest m40 : 24|8@1+ (5,0) [0|1275] "Nm" Vector__XXX
+ SG_ DIF_tqScaleMaxMotorSpeed m40 : 48|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_wasteCurrentLimit m41 : 32|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_llsScale m42 : 24|8@1+ (0.004,0) [0|1.02] "scale" Vector__XXX
+ SG_ DIF_llrScale m42 : 32|8@1+ (0.015,0) [0|3.825] "scale" Vector__XXX
+ SG_ DIF_oilPumpMotorSpeed m46 : 8|8@1+ (40,0) [0|10200] "RPM" Vector__XXX
+ SG_ DIF_rotorFlux m47 : 16|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_dcCableHeat m47 : 32|16@1+ (0.001,0) [0|65.535] "kA2s" Vector__XXX
+ SG_ DIF_magnetTempEst m47 : 48|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_resolverReady m48 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_resolverNoCarrier m48 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_resolverNoPhaseLock m48 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_resolverClaMIA m48 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_soptMaxCurrentMagSqrd m49 : 40|16@1+ (100,0) [0|6553500] "A2" Vector__XXX
+ SG_ DIF_statorVDFiltered m63 : 16|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_statorVQFiltered m63 : 32|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_pwmState m63 : 48|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_dcCapTemp m64 : 8|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_busbarTemp m64 : 16|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_pcsTemp m64 : 24|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_statorTemp1 m64 : 32|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_statorTemp2 m64 : 40|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_cpu10HzMin m66 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu10HzAvg m66 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu100HzMin m66 : 24|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu100HzAvg m66 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu10msMin m66 : 40|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu1kHzMin m67 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu1kHzAvg m67 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu20kHzMin m67 : 24|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu20kHzAvg m67 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_hwFaultCount m69 : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIF_driveUnitOdometer m69 : 32|32@1+ (10,0) [0|42949672950] "rev" Vector__XXX
  SG_ DIF_phaseOutBusbarTemp m70 : 8|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIF_phaseOutBusbarWeldTemp m70 : 16|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIF_phaseOutLugTemp m70 : 24|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
@@ -96,6 +155,12 @@ BO_ 1879 DIF_debug: 8 DIF
  SG_ DIF_pyroSenseV m72 : 30|8@1+ (0.02,0) [0|3.3] "V" Vector__XXX
  SG_ DIF_statorSlotWindingTemp m72 : 46|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIF_intervalMaxHvBusV m72 : 54|10@1+ (1,0) [0|1023] "V" Vector__XXX
+ SG_ DIF_cpu1HzMin m128 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu1HzAvg m128 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpuIDWord0 m131 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_cpuIDWord1 m132 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_cpuIDWord2 m132 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_cpuIDWord3 m132 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
 
 BO_ 1622 DIF_info: 8 DIF
  SG_ DIF_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -119,6 +184,7 @@ BO_ 1622 DIF_info: 8 DIF
  SG_ DIF_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_infoBootLdUdsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
  SG_ DIF_oilPumpPcbaId m33 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_oilPumpAssemblyId m33 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_oilPumpUsageId m33 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
@@ -1044,6 +1110,65 @@ CM_ SG_ 299 DAS_autoshiftBrakeRequired "Reports whether brake press is required 
 CM_ SG_ 299 DAS_autoshiftSteerRequest "Reports the Driver Assistance System (DAS) steering angle direction requested for Autoshift Drive/Reverse (D/R).";
 CM_ BO_ 1879 "Front drive inverter message: debug; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1879 DIF_debugSelector "Front drive inverter: debug selector";
+CM_ SG_ 1879 DIF_motorIA "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIB "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIC "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIDref "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIDfdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_torquePerAmp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_rsScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIQref "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIQfdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorV "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqScaleDifferential "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorFluxRef "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorFluxFdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_lmScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVQ "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVD "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_peakFlux "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_gainScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_usmState "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_peakIQref "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIAavg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIBavg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqSatThermal "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqSatMotorVoltage "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqSatMotorCurrent "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tcMaxRequest "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tcMinRequest "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqScaleMaxMotorSpeed "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_wasteCurrentLimit "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_llsScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_llrScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_oilPumpMotorSpeed "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_rotorFlux "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_dcCableHeat "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_magnetTempEst "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverReady "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverNoCarrier "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverNoPhaseLock "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverClaMIA "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_soptMaxCurrentMagSqrd "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVDFiltered "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVQFiltered "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_pwmState "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_dcCapTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_busbarTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_pcsTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorTemp1 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorTemp2 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu10HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu10HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu100HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu100HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu10msMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu1kHzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu1kHzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu20kHzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu20kHzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_hwFaultCount "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_driveUnitOdometer "Position from firmware; message assignment inferred.";
 CM_ SG_ 1879 DIF_phaseOutBusbarTemp "Front drive inverter: phase out busbar temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_phaseOutBusbarWeldTemp "Front drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_phaseOutLugTemp "Front drive inverter: phase out lug temp; raw 0 = signal not available (SNA)";
@@ -1057,6 +1182,12 @@ CM_ SG_ 1879 DIF_lightSenseV "Front drive inverter: light sense v";
 CM_ SG_ 1879 DIF_pyroSenseV "Front drive inverter: pyro sense v";
 CM_ SG_ 1879 DIF_statorSlotWindingTemp "Front drive inverter: stator slot winding temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_intervalMaxHvBusV "Front drive inverter: interval max hv bus v";
+CM_ SG_ 1879 DIF_cpu1HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu1HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord0 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord1 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord2 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord3 "Position from firmware; message assignment inferred.";
 CM_ BO_ 1622 "Front drive inverter message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1622 DIF_infoIndex "Front drive inverter: info index";
 CM_ SG_ 1622 DIF_buildType "Front drive inverter: build type";
@@ -1079,6 +1210,7 @@ CM_ SG_ 1622 DIF_bootGitHash "Front drive inverter: boot git hash";
 CM_ SG_ 1622 DIF_platformTyp "Front drive inverter: platform typ";
 CM_ SG_ 1622 DIF_infoBootLdUdsProtocolVersion "Front drive inverter: info boot ld uds protocol version";
 CM_ SG_ 1622 DIF_bootloaderCrc "Front drive inverter: bootloader crc";
+CM_ SG_ 1622 DIF_subcomponentGitHash "Position from firmware; message assignment inferred.";
 CM_ SG_ 1622 DIF_oilPumpPcbaId "Front drive inverter: oil pump pcba id";
 CM_ SG_ 1622 DIF_oilPumpAssemblyId "Front drive inverter: oil pump assembly id";
 CM_ SG_ 1622 DIF_oilPumpUsageId "Front drive inverter: oil pump usage id";
@@ -2106,6 +2238,65 @@ BA_ "GenSigSNA" SG_ 299 DAS_autoshiftUpcomingDirection "3";
 BA_ "Confidence" SG_ 299 DAS_autoshiftBrakeRequired 0;
 BA_ "Confidence" SG_ 299 DAS_autoshiftSteerRequest 0;
 BA_ "Confidence" SG_ 1879 DIF_debugSelector 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIA 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIB 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIC 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIDref 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIDfdb 1;
+BA_ "Confidence" SG_ 1879 DIF_torquePerAmp 1;
+BA_ "Confidence" SG_ 1879 DIF_rsScale 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIQref 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIQfdb 1;
+BA_ "Confidence" SG_ 1879 DIF_motorV 1;
+BA_ "Confidence" SG_ 1879 DIF_tqScaleDifferential 1;
+BA_ "Confidence" SG_ 1879 DIF_statorFluxRef 1;
+BA_ "Confidence" SG_ 1879 DIF_statorFluxFdb 1;
+BA_ "Confidence" SG_ 1879 DIF_lmScale 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVQ 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVD 1;
+BA_ "Confidence" SG_ 1879 DIF_peakFlux 1;
+BA_ "Confidence" SG_ 1879 DIF_gainScale 1;
+BA_ "Confidence" SG_ 1879 DIF_usmState 1;
+BA_ "Confidence" SG_ 1879 DIF_peakIQref 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIAavg 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIBavg 1;
+BA_ "Confidence" SG_ 1879 DIF_tqSatThermal 1;
+BA_ "Confidence" SG_ 1879 DIF_tqSatMotorVoltage 1;
+BA_ "Confidence" SG_ 1879 DIF_tqSatMotorCurrent 1;
+BA_ "Confidence" SG_ 1879 DIF_tcMaxRequest 1;
+BA_ "Confidence" SG_ 1879 DIF_tcMinRequest 1;
+BA_ "Confidence" SG_ 1879 DIF_tqScaleMaxMotorSpeed 1;
+BA_ "Confidence" SG_ 1879 DIF_wasteCurrentLimit 1;
+BA_ "Confidence" SG_ 1879 DIF_llsScale 1;
+BA_ "Confidence" SG_ 1879 DIF_llrScale 1;
+BA_ "Confidence" SG_ 1879 DIF_oilPumpMotorSpeed 1;
+BA_ "Confidence" SG_ 1879 DIF_rotorFlux 1;
+BA_ "Confidence" SG_ 1879 DIF_dcCableHeat 1;
+BA_ "Confidence" SG_ 1879 DIF_magnetTempEst 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverReady 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverNoCarrier 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverNoPhaseLock 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverClaMIA 1;
+BA_ "Confidence" SG_ 1879 DIF_soptMaxCurrentMagSqrd 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVDFiltered 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVQFiltered 1;
+BA_ "Confidence" SG_ 1879 DIF_pwmState 1;
+BA_ "Confidence" SG_ 1879 DIF_dcCapTemp 1;
+BA_ "Confidence" SG_ 1879 DIF_busbarTemp 1;
+BA_ "Confidence" SG_ 1879 DIF_pcsTemp 1;
+BA_ "Confidence" SG_ 1879 DIF_statorTemp1 1;
+BA_ "Confidence" SG_ 1879 DIF_statorTemp2 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu10HzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu10HzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu100HzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu100HzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu10msMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu1kHzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu1kHzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu20kHzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu20kHzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_hwFaultCount 1;
+BA_ "Confidence" SG_ 1879 DIF_driveUnitOdometer 1;
 BA_ "Confidence" SG_ 1879 DIF_phaseOutBusbarTemp 0;
 BA_ "GenSigSNA" SG_ 1879 DIF_phaseOutBusbarTemp "0";
 BA_ "Confidence" SG_ 1879 DIF_phaseOutBusbarWeldTemp 0;
@@ -2129,6 +2320,12 @@ BA_ "Confidence" SG_ 1879 DIF_pyroSenseV 0;
 BA_ "Confidence" SG_ 1879 DIF_statorSlotWindingTemp 0;
 BA_ "GenSigSNA" SG_ 1879 DIF_statorSlotWindingTemp "0";
 BA_ "Confidence" SG_ 1879 DIF_intervalMaxHvBusV 0;
+BA_ "Confidence" SG_ 1879 DIF_cpu1HzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu1HzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord0 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord1 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord2 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord3 1;
 BA_ "Confidence" SG_ 1622 DIF_infoIndex 1;
 BA_ "Confidence" SG_ 1622 DIF_buildType 0;
 BA_ "Confidence" SG_ 1622 DIF_buildConfigurationId 0;
@@ -2153,6 +2350,7 @@ BA_ "Confidence" SG_ 1622 DIF_bootGitHash 0;
 BA_ "Confidence" SG_ 1622 DIF_platformTyp 0;
 BA_ "Confidence" SG_ 1622 DIF_infoBootLdUdsProtocolVersion 0;
 BA_ "Confidence" SG_ 1622 DIF_bootloaderCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_subcomponentGitHash 1;
 BA_ "Confidence" SG_ 1622 DIF_oilPumpPcbaId 0;
 BA_ "Confidence" SG_ 1622 DIF_oilPumpAssemblyId 0;
 BA_ "Confidence" SG_ 1622 DIF_oilPumpUsageId 0;
@@ -3018,6 +3216,8 @@ VAL_ 299 DAS_autoshiftTorqueDirectionDbg 4 "SUGGESTED_TORQUE_DIRECTION_NOT_READY
 VAL_ 299 DAS_autoshiftUpcomingDirection 3 "AUTOSHIFT_DIRECTION_SNA" 2 "AUTOSHIFT_DIRECTION_DRIVE" 1 "AUTOSHIFT_DIRECTION_REVERSE" 0 "AUTOSHIFT_DIRECTION_NONE" ;
 VAL_ 299 DAS_autoshiftSteerRequest 3 "AUTOSHIFT_STEERING_DIRECTION_LEFT" 2 "AUTOSHIFT_STEERING_DIRECTION_RIGHT" 1 "AUTOSHIFT_STEERING_DIRECTION_ANY" 0 "AUTOSHIFT_STEERING_DIRECTION_NONE" ;
 VAL_ 1879 DIF_debugSelector 132 "Mux132" 131 "Mux131" 128 "Mux128" 73 "Mux73" 72 "Mux72" 70 "Mux70" 69 "Mux69" 68 "Mux68" 67 "Mux67" 66 "Mux66" 64 "Mux64" 63 "Mux63" 52 "Mux52" 50 "Mux50" 49 "Mux49" 48 "Mux48" 47 "Mux47" 46 "Mux46" 44 "Mux44" 43 "Mux43" 42 "Mux42" 41 "Mux41" 40 "Mux40" 39 "Mux39" 38 "Mux38" 37 "Mux37" 36 "Mux36" 35 "Mux35" 34 "Mux34" 33 "Mux33" 32 "Mux32" ;
+VAL_ 1879 DIF_usmState 7 "USM_STATE_WAIT_FOR_RETRY" 6 "USM_STATE_UNAVAILABLE" 5 "USM_STATE_FAULT" 4 "USM_STATE_ENABLE" 3 "USM_STATE_ABORT" 2 "USM_STATE_RETRY" 1 "USM_STATE_STANDBY" 0 "USM_STATE_START" ;
+VAL_ 1879 DIF_pwmState 3 "PWMSTATE_OPWM2" 2 "PWMSTATE_OPWM1" 1 "PWMSTATE_DPWM2" 0 "PWMSTATE_SVPWM" ;
 VAL_ 1879 DIF_phaseOutBusbarTemp 0 "SNA" ;
 VAL_ 1879 DIF_phaseOutBusbarWeldTemp 0 "SNA" ;
 VAL_ 1879 DIF_phaseOutLugTemp 0 "SNA" ;

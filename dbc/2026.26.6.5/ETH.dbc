@@ -5165,6 +5165,12 @@ BO_ 1138 BMS_chargeInfo: 8 BMS
  SG_ BMS_useChargeTimeEstimate : 59|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 562 BMS_contactorRequest: 8 BMS
+ SG_ BMS_fcContactorRequest : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ BMS_packContactorRequest : 3|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ BMS_gpoHasCompleted : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_ensShouldBeActiveForDrive : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_pcsPwmDisable : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_fcLinkOkToEnergizeRequest : 9|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ BMS_internalHvilSenseV : 16|16@1+ (0.001,0) [0|65.534] "V" Vector__XXX
  SG_ BMS_hvilCoverVSense : 32|16@1+ (0.001,0) [0|65.534] "V" Vector__XXX
 
@@ -6364,8 +6370,7 @@ BO_ 541 CP_evseStatus: 8 CP
  SG_ CP_plcSupported : 23|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CP_cableCurrentLimit : 24|7@1+ (1,0) [0|127] "A" Vector__XXX
  SG_ CP_teslaSwcanState : 34|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ CP_evseChargeType_UI : 38|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ CP_gbState : 40|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ CP_digitalCommsAttempts : 38|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ CP_gbdcStopChargeReason : 44|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ CP_gbdcFailureReason : 48|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ CP_gbdcChargeAttempts : 50|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -6492,9 +6497,8 @@ BO_ 528 CP_status: 8 CP
 
 BO_ 893 CP_thermalStatus: 8 CP
  SG_ CP_thermalStatusSelect M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ CP_pinTemperature1 m1 : 8|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
- SG_ CP_pinTemperature2 m1 : 16|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
- SG_ CP_pinTemperature3 m1 : 24|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
+ SG_ CP_dcPinTemperature : 1|8@1+ (0.803922,-55) [-55|149.99] "C" Vector__XXX
+ SG_ CP_acPinTemperature : 17|8@1+ (0.803922,-55) [-55|149.99] "C" Vector__XXX
  SG_ CP_pinTemperature4 m1 : 32|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
  SG_ CP_pinTemp4Velocity m1 : 40|10@1- (0.15748,0) [-80.47228|80.3148] "C/min" Vector__XXX
 
@@ -7854,6 +7858,65 @@ BO_ 854 DIF_alertMatrix: 8 DIF
 
 BO_ 1879 DIF_debug: 8 DIF
  SG_ DIF_debugSelector M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_motorIA m32 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_motorIB m32 : 24|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_motorIC m32 : 40|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_statorIDref m33 : 8|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_statorIDfdb m33 : 24|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_torquePerAmp m33 : 40|16@1+ (0.0001,0) [0|6.5535] "Nm/A" Vector__XXX
+ SG_ DIF_rsScale m34 : 8|8@1+ (0.01,0) [0|2.55] "scale" Vector__XXX
+ SG_ DIF_statorIQref m34 : 16|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_statorIQfdb m34 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_motorV m34 : 48|16@1+ (2.0e-05,0) [0|1.3107] "mindex" Vector__XXX
+ SG_ DIF_tqScaleDifferential m35 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_statorFluxRef m35 : 16|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_statorFluxFdb m35 : 32|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_lmScale m36 : 8|8@1+ (0.004,0) [0|1.02] "scale" Vector__XXX
+ SG_ DIF_statorVQ m36 : 16|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_statorVD m36 : 32|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_peakFlux m36 : 48|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_gainScale m37 : 8|8@1+ (0.01,0) [0|2.55] "scale" Vector__XXX
+ SG_ DIF_usmState m38 : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_peakIQref m38 : 16|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_motorIAavg m38 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_motorIBavg m38 : 48|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIF_tqSatThermal m39 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_tqSatMotorVoltage m39 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_tqSatMotorCurrent m39 : 40|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_tcMaxRequest m40 : 16|8@1+ (5,0) [0|1275] "Nm" Vector__XXX
+ SG_ DIF_tcMinRequest m40 : 24|8@1+ (5,0) [0|1275] "Nm" Vector__XXX
+ SG_ DIF_tqScaleMaxMotorSpeed m40 : 48|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_wasteCurrentLimit m41 : 32|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIF_llsScale m42 : 24|8@1+ (0.004,0) [0|1.02] "scale" Vector__XXX
+ SG_ DIF_llrScale m42 : 32|8@1+ (0.015,0) [0|3.825] "scale" Vector__XXX
+ SG_ DIF_oilPumpMotorSpeed m46 : 8|8@1+ (40,0) [0|10200] "RPM" Vector__XXX
+ SG_ DIF_rotorFlux m47 : 16|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_dcCableHeat m47 : 32|16@1+ (0.001,0) [0|65.535] "kA2s" Vector__XXX
+ SG_ DIF_magnetTempEst m47 : 48|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_resolverReady m48 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_resolverNoCarrier m48 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_resolverNoPhaseLock m48 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_resolverClaMIA m48 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_soptMaxCurrentMagSqrd m49 : 40|16@1+ (100,0) [0|6553500] "A2" Vector__XXX
+ SG_ DIF_statorVDFiltered m63 : 16|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_statorVQFiltered m63 : 32|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIF_pwmState m63 : 48|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_dcCapTemp m64 : 8|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_busbarTemp m64 : 16|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_pcsTemp m64 : 24|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_statorTemp1 m64 : 32|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_statorTemp2 m64 : 40|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIF_cpu10HzMin m66 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu10HzAvg m66 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu100HzMin m66 : 24|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu100HzAvg m66 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu10msMin m66 : 40|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu1kHzMin m67 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu1kHzAvg m67 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu20kHzMin m67 : 24|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu20kHzAvg m67 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_hwFaultCount m69 : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIF_driveUnitOdometer m69 : 32|32@1+ (10,0) [0|42949672950] "rev" Vector__XXX
  SG_ DIF_phaseOutBusbarTemp m70 : 8|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIF_phaseOutBusbarWeldTemp m70 : 16|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIF_phaseOutLugTemp m70 : 24|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
@@ -7867,6 +7930,12 @@ BO_ 1879 DIF_debug: 8 DIF
  SG_ DIF_pyroSenseV m72 : 30|8@1+ (0.02,0) [0|3.3] "V" Vector__XXX
  SG_ DIF_statorSlotWindingTemp m72 : 46|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIF_intervalMaxHvBusV m72 : 54|10@1+ (1,0) [0|1023] "V" Vector__XXX
+ SG_ DIF_cpu1HzMin m128 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpu1HzAvg m128 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIF_cpuIDWord0 m131 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_cpuIDWord1 m132 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_cpuIDWord2 m132 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_cpuIDWord3 m132 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
 
 BO_ 634 DIF_hvStatus: 8 DIF
  SG_ DIF_hvStatusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -7907,6 +7976,7 @@ BO_ 1622 DIF_info: 8 DIF
  SG_ DIF_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_infoBootLdUdsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
  SG_ DIF_oilPumpPcbaId m33 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_oilPumpAssemblyId m33 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_oilPumpUsageId m33 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
@@ -8783,6 +8853,65 @@ BO_ 935 DIR_alertMatrix: 8 DIR
 
 BO_ 2005 DIR_debug: 8 DIR
  SG_ DIR_debugSelector M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIR_motorIA m32 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIR_motorIB m32 : 24|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIR_motorIC m32 : 40|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIR_statorIDref m33 : 8|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIR_statorIDfdb m33 : 24|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIR_torquePerAmp m33 : 40|16@1+ (0.0001,0) [0|6.5535] "Nm/A" Vector__XXX
+ SG_ DIR_rsScale m34 : 8|8@1+ (0.01,0) [0|2.55] "scale" Vector__XXX
+ SG_ DIR_statorIQref m34 : 16|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIR_statorIQfdb m34 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIR_motorV m34 : 48|16@1+ (2.0e-05,0) [0|1.3107] "mindex" Vector__XXX
+ SG_ DIR_tqScaleDifferential m35 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_statorFluxRef m35 : 16|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIR_statorFluxFdb m35 : 32|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIR_lmScale m36 : 8|8@1+ (0.004,0) [0|1.02] "scale" Vector__XXX
+ SG_ DIR_statorVQ m36 : 16|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIR_statorVD m36 : 32|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIR_peakFlux m36 : 48|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIR_gainScale m37 : 8|8@1+ (0.01,0) [0|2.55] "scale" Vector__XXX
+ SG_ DIR_usmState m38 : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIR_peakIQref m38 : 16|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIR_motorIAavg m38 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIR_motorIBavg m38 : 48|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+ SG_ DIR_tqSatThermal m39 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_tqSatMotorVoltage m39 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_tqSatMotorCurrent m39 : 40|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_tcMaxRequest m40 : 16|8@1+ (5,0) [0|1275] "Nm" Vector__XXX
+ SG_ DIR_tcMinRequest m40 : 24|8@1+ (5,0) [0|1275] "Nm" Vector__XXX
+ SG_ DIR_tqScaleMaxMotorSpeed m40 : 48|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_wasteCurrentLimit m41 : 32|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ DIR_llsScale m42 : 24|8@1+ (0.004,0) [0|1.02] "scale" Vector__XXX
+ SG_ DIR_llrScale m42 : 32|8@1+ (0.015,0) [0|3.825] "scale" Vector__XXX
+ SG_ DIR_oilPumpMotorSpeed m46 : 8|8@1+ (40,0) [0|10200] "RPM" Vector__XXX
+ SG_ DIR_rotorFlux m47 : 16|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIR_dcCableHeat m47 : 32|16@1+ (0.001,0) [0|65.535] "kA2s" Vector__XXX
+ SG_ DIR_magnetTempEst m47 : 48|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIR_resolverReady m48 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_resolverNoCarrier m48 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_resolverNoPhaseLock m48 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_resolverClaMIA m48 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_soptMaxCurrentMagSqrd m49 : 40|16@1+ (100,0) [0|6553500] "A2" Vector__XXX
+ SG_ DIR_statorVDFiltered m63 : 16|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIR_statorVQFiltered m63 : 32|16@1- (4.0e-05,0) [-1.31072|1.31068] "mindex" Vector__XXX
+ SG_ DIR_pwmState m63 : 48|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_dcCapTemp m64 : 8|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIR_busbarTemp m64 : 16|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIR_pcsTemp m64 : 24|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIR_statorTemp1 m64 : 32|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIR_statorTemp2 m64 : 40|8@1+ (1,-40) [-40|215] "DegC" Vector__XXX
+ SG_ DIR_cpu10HzMin m66 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu10HzAvg m66 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu100HzMin m66 : 24|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu100HzAvg m66 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu10msMin m66 : 40|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu1kHzMin m67 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu1kHzAvg m67 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu20kHzMin m67 : 24|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu20kHzAvg m67 : 32|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_hwFaultCount m69 : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIR_driveUnitOdometer m69 : 32|32@1+ (10,0) [0|42949672950] "rev" Vector__XXX
  SG_ DIR_phaseOutBusbarTemp m70 : 8|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIR_phaseOutBusbarWeldTemp m70 : 16|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIR_phaseOutLugTemp m70 : 24|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
@@ -8796,6 +8925,12 @@ BO_ 2005 DIR_debug: 8 DIR
  SG_ DIR_pyroSenseV m72 : 30|8@1+ (0.02,0) [0|3.3] "V" Vector__XXX
  SG_ DIR_statorSlotWindingTemp m72 : 46|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
  SG_ DIR_intervalMaxHvBusV m72 : 54|10@1+ (1,0) [0|1023] "V" Vector__XXX
+ SG_ DIR_cpu1HzMin m128 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpu1HzAvg m128 : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
+ SG_ DIR_cpuIDWord0 m131 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIR_cpuIDWord1 m132 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIR_cpuIDWord2 m132 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIR_cpuIDWord3 m132 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
 
 BO_ 633 DIR_hvStatus: 8 DIR
  SG_ DIR_hvStatusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -8833,8 +8968,10 @@ BO_ 821 DIR_info: 8 DIR
  SG_ DIR_FPGA_version m16 : 48|8@1+ (1,0) [0|254] "" Vector__XXX
  SG_ DIR_appGitHash m17 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
  SG_ DIR_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
+ SG_ DIR_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIR_infoBootLdUdsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIR_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIR_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
  SG_ DIR_oilPumpPcbaId m33 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIR_oilPumpAssemblyId m33 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIR_oilPumpUsageId m33 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
@@ -14198,6 +14335,9 @@ BO_ 1310 FC_info: 8 FC
  SG_ FC_infoUsageID m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ FC_infoSubUsageID m11 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ FC_infoApplicationCRC m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ FC_infoBootSvnRev m14 : 8|24@1+ (1,0) [0|16777215] "" Vector__XXX
+ SG_ FC_infoCPLDVersionMajor m16 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ FC_infoCPLDVersionMinor m16 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ FC_infoAppGitHashBytes m17 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
  SG_ FC_infoBootGitHashBytes m18 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
  SG_ FC_infoPlatformType m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -14205,6 +14345,7 @@ BO_ 1310 FC_info: 8 FC
  SG_ FC_infoBranchOrigin m19 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ FC_infoMaturity m19 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ FC_infoHardwareRevision m19 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ FC_infoBootUdsProtoVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ FC_partNumChar01 m25 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ FC_partNumChar02 m25 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ FC_partNumChar03 m25 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -14291,6 +14432,7 @@ BO_ 535 FC_status3: 8 FC
  SG_ FC_uiStopType m0 : 24|4@1+ (1,0) [1|15] "" Vector__XXX
  SG_ FC_emergencyShutdownSupported m0 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ FC_generation m0 : 32|8@1+ (1,0) [1|255] "" Vector__XXX
+ SG_ FC_billingEnergy m1 : 8|16@1+ (0.015259,0) [0|999.998565] "kWh" Vector__XXX
 
 BO_ 888 GTW_ECall: 1 GTW
  SG_ GTW_GTW_SOS_ECALL_RQST : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -34594,6 +34736,11 @@ BO_ 577 VCFRONT_coolant: 7 VCFRONT
 
 BO_ 753 VCFRONT_eFuseDebugStatus: 8 VCFRONT
  SG_ VCFRONT_eFuseDebugStatusIndex M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCFRONT_rightControllerState m0 : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_rightControllerFault m0 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_vcrightSelfTestResult m0 : 11|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCFRONT_rightControllerVoltage m0 : 31|14@1+ (0.1,0) [0|1638.3] "V" Vector__XXX
+ SG_ VCFRONT_rightControllerCurrent m0 : 47|14@1+ (0.1,0) [0|1638.3] "A" Vector__XXX
  SG_ VCFRONT_leftControllerState m1 : 8|2@1+ (1,0) [0|2] "" Vector__XXX
  SG_ VCFRONT_leftControllerFault m1 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_vcleftSelfTestResult m1 : 11|4@1+ (1,0) [0|15] "" Vector__XXX
@@ -34672,6 +34819,9 @@ BO_ 753 VCFRONT_eFuseDebugStatus: 8 VCFRONT
  SG_ VCFRONT_ESPValveTemp m7 : 12|11@1+ (0.125,-40) [-40|150] "degC" Vector__XXX
  SG_ VCFRONT_ESPValveVoltage m7 : 28|16@1+ (0.1,0) [0|6553.5] "V" Vector__XXX
  SG_ VCFRONT_ESPValveCurrent m7 : 44|16@1+ (0.01,0) [0|655.35] "A" Vector__XXX
+ SG_ VCFRONT_autopilot1State m8 : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_autopilot1Fault m8 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_autopilot1Voltage m8 : 27|16@1+ (0.1,0) [0|6553.5] "V" Vector__XXX
  SG_ VCFRONT_autopilot2State m9 : 8|2@1+ (1,0) [0|2] "" Vector__XXX
  SG_ VCFRONT_autopilot2Fault m9 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_autopilot2Temp m9 : 11|11@1+ (0.125,-40) [-40|150] "degC" Vector__XXX
@@ -34681,12 +34831,28 @@ BO_ 753 VCFRONT_eFuseDebugStatus: 8 VCFRONT
  SG_ VCFRONT_sleepBypassFault m10 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_sleepBypassVoltage m10 : 10|16@1+ (0.1,0) [0|6553.5] "V" Vector__XXX
  SG_ VCFRONT_sleepBypassCurrent m10 : 26|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ VCFRONT_headlampLeftState m12 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_headlampLeftFault m12 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_headlampLeftVoltage m12 : 20|8@1+ (0.1,0) [0|25.4] "V" Vector__XXX
+ SG_ VCFRONT_headlampRightState m12 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_headlampRightFault m12 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_headlampRightVoltage m12 : 40|8@1+ (0.1,0) [0|25.4] "V" Vector__XXX
  SG_ VCFRONT_vbatFusedHighState m13 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_vbatFusedHighFault m13 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_vbatFusedSelfTestResult m13 : 10|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCFRONT_vbatFusedHighTemp m13 : 14|11@1+ (0.125,-40) [-40|150] "degC" Vector__XXX
  SG_ VCFRONT_vbatFusedHighVoltage m13 : 30|16@1+ (0.1,0) [0|6553.5] "V" Vector__XXX
  SG_ VCFRONT_vbatFusedHighCurrent m13 : 46|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ VCFRONT_pump1AndFanState m14 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_pump1AndFanVoltage m14 : 22|12@1+ (0.1,0) [0|409.5] "V" Vector__XXX
+ SG_ VCFRONT_pump2AndAirCompState m14 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_pump2AndAirCompVoltage m14 : 51|12@1+ (0.1,0) [0|409.5] "V" Vector__XXX
+ SG_ VCFRONT_railA_12v m15 : 8|12@1+ (0.00544368,0) [0|22.2918536213] "V" Vector__XXX
+ SG_ VCFRONT_railB_12v m15 : 20|12@1+ (0.00544368,0) [0|22.2864099452] "V" Vector__XXX
+ SG_ VCFRONT_railA_5v m15 : 32|12@1+ (0.00544368,0) [0|22.2864099452] "V" Vector__XXX
+ SG_ VCFRONT_railB_5v m15 : 44|12@1+ (0.00544368,0) [0|22.2864099452] "V" Vector__XXX
+ SG_ VCFRONT_eFuseLockoutVoltage m16 : 8|12@1+ (0.00544368,0) [0|22.2918536213] "V" Vector__XXX
+ SG_ VCFRONT_ChargePumpVoltage m16 : 24|16@1+ (0.00544368,0) [0|356.751313082] "V" Vector__XXX
  SG_ VCFRONT_chargedIBSAmpHours m17 : 8|16@1+ (1,0) [0|65535] "Ah" Vector__XXX
  SG_ VCFRONT_dischargedIBSAmpHours m17 : 24|16@1+ (1,0) [0|65535] "Ah" Vector__XXX
  SG_ VCFRONT_IBSUnfilteredTemperature m17 : 40|16@1- (0.01,0) [-327.67|327.67] "degC" Vector__XXX
@@ -34717,6 +34883,7 @@ BO_ 769 VCFRONT_info: 8 VCFRONT
  SG_ VCFRONT_infoBootUdsProtoVersion m20 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ VCFRONT_infoBootCrc m20 : 24|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ VC_infoHCMRAppCRC m23 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ VCFRONT_infoSubcomponent3 m24 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ VC_infoWiperAppCRC m31 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 1014 VCFRONT_lightStatus: 8 VCFRONT
@@ -34863,8 +35030,17 @@ BO_ 897 VCFRONT_logging1Hz: 8 VCFRONT
  SG_ VCFRONT_usingModeledTs m2 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_usingModeledTd m2 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_usingModeledTl m2 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_hpChargeCableType m5 : 5|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_subcoolActual m5 : 8|7@1- (0.4,15.2) [-10|40] "degC" Vector__XXX
+ SG_ VCFRONT_HCML_lowBeamSpotTemp m3 : 8|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCML_highBeamTemp m3 : 16|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCML_turnTemp m3 : 24|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCML_bladeTemp m3 : 32|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCML_diffuseTemp m3 : 40|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCMR_lowBeamSpotTemp m4 : 8|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCMR_highBeamTemp m4 : 16|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCMR_turnTemp m4 : 24|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCMR_bladeTemp m4 : 32|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_HCMR_diffuseTemp m4 : 40|8@1- (1,67) [-60|194] "degC" Vector__XXX
+ SG_ VCFRONT_homelinkRegionCode m5 : 5|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCFRONT_hpSubcoolTarget m5 : 16|5@1+ (1,0) [0|31] "degC" Vector__XXX
  SG_ VCFRONT_CMPDischargeSuperheat m5 : 21|5@1- (1,6) [-10|21] "degC" Vector__XXX
  SG_ VCFRONT_hpCOP m5 : 26|6@1+ (0.1,0) [0|6] "-" Vector__XXX
@@ -34944,7 +35120,7 @@ BO_ 897 VCFRONT_logging1Hz: 8 VCFRONT
  SG_ VCFRONT_hpCabinHeatCOP1 m14 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpCabinHeatBatteryHeatRe m14 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpCabinHeatBatteryCoolRe m14 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_hpCabinCoolEvaporator m14 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_evapDisabledLowPsCutout m14 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpCabinCoolEvaporatorReh m14 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpBatteryHeatAmbientSour m14 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpBatteryHeatCOP1 m14 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -34959,21 +35135,27 @@ BO_ 897 VCFRONT_logging1Hz: 8 VCFRONT
  SG_ VCFRONT_hpDiagLouverCalib m14 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpDiagHighSideNotNominal m14 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_hpForceModeRadClear m14 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_estPressureDischargeSat m14 : 38|7@1+ (0.25,0) [0|31.75] "bar" Vector__XXX
+ SG_ VCFRONT_ambientSourcingDisabled m14 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_chillerLiftDisabledLowPs m14 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_tempRefrigLiquid m14 : 45|11@1+ (0.125,-40) [-40|150] "degC" Vector__XXX
- SG_ VCFRONT_totalBattHeatingPower m14 : 56|7@1+ (150,0) [0|19050] "W" Vector__XXX
+ SG_ VCFRONT_maxCompressorRPMAllowed m14 : 56|7@1+ (90,0) [0|11430] "rpm" Vector__XXX
  SG_ VCFRONT_hpPotentialFrozenRadiato m14 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_passiveSeriesRegOn m16 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_passiveDemandRadBypass m16 : 8|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ VCFRONT_targetLccActiveCoolCap m16 : 16|7@1+ (1,0) [0|100] "degC" Vector__XXX
- SG_ VCFRONT_targetLccActiveCoolEff m16 : 23|7@1+ (1,0) [0|100] "degC" Vector__XXX
+ SG_ VCFRONT_hpForceScavenge m16 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_battOverStagUpperLimit m16 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_battUnderStagUpperLimit m16 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_ambientColderThanBatt m16 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_ambientSourcingAvailable m16 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_hpMode m16 : 10|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCFRONT_battLoopWorthCooling m16 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_ptLoopWorthCooling m16 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_estCompRefrigMassflow m16 : 17|6@1+ (4,0) [0|251] "g/s" Vector__XXX
+ SG_ VCFRONT_pressureRefrigDischEst m16 : 23|5@1+ (1,0) [0|31] "bar" Vector__XXX
  SG_ VCFRONT_coolantValveDailyAngleTr m16 : 30|7@1+ (60,0) [0|7500] "degrees" Vector__XXX
  SG_ VCFRONT_dischargePressureLimit m16 : 37|7@1+ (0.25,0) [0|26] "bar" Vector__XXX
  SG_ VCFRONT_radMovementBlockActive m16 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_radBypassMoveReason m16 : 45|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCFRONT_hpBattHeatingPower m16 : 49|7@1+ (100,0) [0|10000] "W" Vector__XXX
- SG_ VCFRONT_tempCoolantRadOutletEstS m16 : 56|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_targetBatActiveCoolSourc m16 : 58|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCFRONT_hpAtSteadyState m16 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_suctionSuperheatEstPsSNA m16 : 57|4@1+ (2,0) [0|30] "degC" Vector__XXX
  SG_ VCFRONT_targetPTActiveCoolSource m16 : 61|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCFRONT_hpColdStagnationLimit m17 : 8|7@1+ (1,-40) [-40|80] "degC" Vector__XXX
  SG_ VCFRONT_hpHotStagnationLimit m17 : 16|7@1+ (1,-40) [-40|80] "degC" Vector__XXX
@@ -35215,8 +35397,8 @@ BO_ 737 VCFRONT_status: 8 VCFRONT
  SG_ VCFRONT_AS8510Voltage m3 : 28|12@1+ (0.005443676,0) [0|22.286409544] "V" Vector__XXX
  SG_ VCFRONT_vbatProt m3 : 40|12@1+ (0.005443676,0) [0|22.29185322] "V" Vector__XXX
  SG_ VCFRONT_logVerbosity m3 : 52|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_cabinCoolingCapacityLimi m4 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_cabinHeatingCapacityLimi m4 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_IBSFault m4 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_12VOverchargeCounter m4 : 4|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCFRONT_compPowerSupportingHvac m4 : 8|11@1+ (10,0) [0|20470] "W" Vector__XXX
  SG_ VCFRONT_compPowerSupportingPT m4 : 19|11@1+ (10,0) [0|20470] "W" Vector__XXX
  SG_ VCFRONT_maxHeatingPowerLeftCC m4 : 30|7@1+ (100,0) [0|12000] "W" Vector__XXX
@@ -37243,10 +37425,16 @@ BO_ 258 VCLEFT_doorStatus: 8 VCLEFT
 
 BO_ 2012 VCLEFT_doorStatus2: 8 VCLEFT
  SG_ VCLEFT_doorStatus2Index M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_frontLatchRelDuty m1 : 8|8@1+ (1,0) [0|255] "%" Vector__XXX
- SG_ VCLEFT_BPillarCameraHeaterState m1 : 16|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCLEFT_doorLatchAjarSwitchVoltag m1 : 24|8@1+ (0.02,0) [0|5] "V" Vector__XXX
- SG_ VCLEFT_doorLatchAjarSwitchV_0001 m1 : 32|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCLEFT_rearLatchRelDuty : 8|8@1+ (1,0) [0|255] "%" Vector__XXX
+ SG_ VCLEFT_vehicleInMotion : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontDoorState : 17|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_rearDoorState : 20|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_frontHandleRawStatus : 24|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_rearHandleRawStatus : 27|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_frontHandleDebounceStatus : 32|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_rearHandleDebounceStatus : 35|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_frontHandle5vEnable : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearHandle5vEnable : 39|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCLEFT_BPillarCameraHeaterCurren m1 : 40|6@1+ (0.02,0) [0|1.24] "A" Vector__XXX
  SG_ VCLEFT_mirrorTiltXOffset m1 : 48|8@1- (0.02,0) [-2.5|2.5] "V" Vector__XXX
  SG_ VCLEFT_mirrorTiltYOffset m1 : 56|8@1- (0.02,0) [-2.5|2.5] "V" Vector__XXX
@@ -40338,6 +40526,28 @@ BO_ 835 VCRIGHT_status: 8 VCRIGHT
 
 BO_ 963 VCRIGHT_switchStatus: 8 VCRIGHT
  SG_ VCRIGHT_switchStatusIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowUpRF : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowAutoUpRF : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowDownRF : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowAutoDownRF : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowUpRR : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowAutoUpRR : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowDownRR : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowAutoDownRR : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackUpLF : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackAutoUpLF : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackDownLF : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackAutoDwnLF : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackUpLR : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackAutoUpLR : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackDownLR : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackAutoDwnLR : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontOccupancySwitch : 42|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_trunkExtReleasePressed : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackUpRR : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackAutoUpRR : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackDownRR : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_btnWindowSwPackAutoDwnRR : 52|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCRIGHT_frontBuckleSwitch m0 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCRIGHT_rearCenterBuckleSwitch m0 : 44|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCRIGHT_rearRightBuckleSwitch m0 : 46|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -40353,15 +40563,6 @@ BO_ 963 VCRIGHT_switchStatus: 8 VCRIGHT
  SG_ VCRIGHT_frontSeatLumbarDown m1 : 18|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_frontSeatLumbarUp m1 : 20|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_frontSeatLumbarIn m1 : 22|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCRIGHT_frontSeatLumbarOut m1 : 24|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineSwitch m1 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatBackrestFoldSwit m1 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_frontSeatThighSupportExt m1 : 30|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCRIGHT_frontHandlePWM m1 : 32|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_hvacHeatingAllowedLeft m1 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearHandlePWM m1 : 40|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_gloveboxLightCurrent m1 : 47|5@1+ (2,0) [0|62] "mA" Vector__XXX
- SG_ VCRIGHT_frontSeatALR m1 : 52|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_frontSeatResistiveOccupa m1 : 54|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_2RowSeatReclineSwitchpac m1 : 56|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCRIGHT_hvacHeatingAllowedRight m1 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -49320,6 +49521,12 @@ CM_ SG_ 1138 BMS_timeToFinishHeatForCharge "High-voltage battery management syst
 CM_ SG_ 1138 BMS_timeToTripPlanChargingTarget "High-voltage battery management system: time to trip plan charging target; raw 2047 = signal not available (SNA)";
 CM_ SG_ 1138 BMS_useChargeTimeEstimate "High-voltage battery management system: use charge time estimate";
 CM_ BO_ 562 "High-voltage battery management system message: contactor request";
+CM_ SG_ 562 BMS_fcContactorRequest "Request indicating which state the BMS would like the fast charge contactors to enter. Position from firmware; message assignment inferred.";
+CM_ SG_ 562 BMS_packContactorRequest "Request indicating which state the BMS would like the pack contactors to enter. Position from firmware; message assignment inferred.";
+CM_ SG_ 562 BMS_gpoHasCompleted "Position from firmware; message assignment inferred.";
+CM_ SG_ 562 BMS_ensShouldBeActiveForDrive "Position from firmware; message assignment inferred.";
+CM_ SG_ 562 BMS_pcsPwmDisable "Position from firmware; message assignment inferred.";
+CM_ SG_ 562 BMS_fcLinkOkToEnergizeRequest "Position from firmware; message assignment inferred.";
 CM_ SG_ 562 BMS_internalHvilSenseV "High-voltage battery management system: internal hvil sense v";
 CM_ SG_ 562 BMS_hvilCoverVSense "High-voltage battery management system: hvil cover v sense";
 CM_ BO_ 722 "High-voltage battery management system message: drive limits";
@@ -50481,8 +50688,7 @@ CM_ SG_ 541 CP_iecPilotState "State of the control pilot as defined in IEC-61851
 CM_ SG_ 541 CP_plcSupported "Indicates whether PLC hardware is populated for CCS charging support";
 CM_ SG_ 541 CP_cableCurrentLimit "Charge port controller: cable current limit";
 CM_ SG_ 541 CP_teslaSwcanState "Charge port controller: tesla swcan state";
-CM_ SG_ 541 CP_evseChargeType_UI "Reports the type of Electric Vehicle Supply Equipment (EVSE) connected.";
-CM_ SG_ 541 CP_gbState "State of GB DC charging";
+CM_ SG_ 541 CP_digitalCommsAttempts "Position from firmware; message assignment inferred.";
 CM_ SG_ 541 CP_gbdcStopChargeReason "Reason for stopping GB DC charging";
 CM_ SG_ 541 CP_gbdcFailureReason "Reason for failure of GB DC charging";
 CM_ SG_ 541 CP_gbdcChargeAttempts "Number of GB DC charging retries used";
@@ -50603,9 +50809,8 @@ CM_ SG_ 528 CP_faultLineSetByCP "Reports that the Charge Port (CP) triggered the
 CM_ SG_ 528 CP_AuthManagerState "Charge port controller: auth manager state";
 CM_ BO_ 893 "Charge port controller message: thermal status";
 CM_ SG_ 893 CP_thermalStatusSelect "Charge port controller: thermal status select";
-CM_ SG_ 893 CP_pinTemperature1 "Sensed temperature of the charge port inlet pins";
-CM_ SG_ 893 CP_pinTemperature2 "Sensed temperature of the charge port inlet pins";
-CM_ SG_ 893 CP_pinTemperature3 "Sensed temperature of the charge port inlet pins";
+CM_ SG_ 893 CP_dcPinTemperature "Sensed temperature of the charge port DC pins. Position from firmware; message assignment inferred.";
+CM_ SG_ 893 CP_acPinTemperature "Position from firmware; message assignment inferred.";
 CM_ SG_ 893 CP_pinTemperature4 "Sensed temperature of the charge port inlet pins";
 CM_ SG_ 893 CP_pinTemp4Velocity "Instantaneous temperature velocity (over 1 minute) of Charge Port's temperature 4; raw 511 = signal not available (SNA)";
 CM_ BO_ 1566 "Charge port controller message: uds response";
@@ -51938,6 +52143,65 @@ CM_ SG_ 854 DIF_a254_activeDischargeRail "Front drive inverter: a254 active disc
 CM_ SG_ 854 DIF_a255_currentGainFallback "Front drive inverter: a255 current gain fallback";
 CM_ BO_ 1879 "Front drive inverter message: debug";
 CM_ SG_ 1879 DIF_debugSelector "Front drive inverter: debug selector";
+CM_ SG_ 1879 DIF_motorIA "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIB "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIC "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIDref "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIDfdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_torquePerAmp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_rsScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIQref "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorIQfdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorV "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqScaleDifferential "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorFluxRef "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorFluxFdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_lmScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVQ "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVD "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_peakFlux "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_gainScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_usmState "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_peakIQref "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIAavg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_motorIBavg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqSatThermal "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqSatMotorVoltage "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqSatMotorCurrent "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tcMaxRequest "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tcMinRequest "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_tqScaleMaxMotorSpeed "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_wasteCurrentLimit "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_llsScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_llrScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_oilPumpMotorSpeed "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_rotorFlux "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_dcCableHeat "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_magnetTempEst "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverReady "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverNoCarrier "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverNoPhaseLock "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_resolverClaMIA "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_soptMaxCurrentMagSqrd "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVDFiltered "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorVQFiltered "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_pwmState "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_dcCapTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_busbarTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_pcsTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorTemp1 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_statorTemp2 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu10HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu10HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu100HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu100HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu10msMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu1kHzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu1kHzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu20kHzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu20kHzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_hwFaultCount "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_driveUnitOdometer "Position from firmware; message assignment inferred.";
 CM_ SG_ 1879 DIF_phaseOutBusbarTemp "Front drive inverter: phase out busbar temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_phaseOutBusbarWeldTemp "Front drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_phaseOutLugTemp "Front drive inverter: phase out lug temp; raw 0 = signal not available (SNA)";
@@ -51951,6 +52215,12 @@ CM_ SG_ 1879 DIF_lightSenseV "Front drive inverter: light sense v";
 CM_ SG_ 1879 DIF_pyroSenseV "Front drive inverter: pyro sense v";
 CM_ SG_ 1879 DIF_statorSlotWindingTemp "Front drive inverter: stator slot winding temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_intervalMaxHvBusV "Front drive inverter: interval max hv bus v";
+CM_ SG_ 1879 DIF_cpu1HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpu1HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord0 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord1 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord2 "Position from firmware; message assignment inferred.";
+CM_ SG_ 1879 DIF_cpuIDWord3 "Position from firmware; message assignment inferred.";
 CM_ BO_ 634 "Front drive inverter message: hv status";
 CM_ SG_ 634 DIF_hvStatusChecksum "Front drive inverter: hv status checksum";
 CM_ SG_ 634 DIF_hvStatusCounter "Front drive inverter: hv status counter";
@@ -51989,6 +52259,7 @@ CM_ SG_ 1622 DIF_bootGitHash "Front drive inverter: boot git hash";
 CM_ SG_ 1622 DIF_platformTyp "Front drive inverter: platform typ";
 CM_ SG_ 1622 DIF_infoBootLdUdsProtocolVersion "Front drive inverter: info boot ld uds protocol version";
 CM_ SG_ 1622 DIF_bootloaderCrc "Front drive inverter: bootloader crc";
+CM_ SG_ 1622 DIF_subcomponentGitHash "Position from firmware; message assignment inferred.";
 CM_ SG_ 1622 DIF_oilPumpPcbaId "Front drive inverter: oil pump pcba id";
 CM_ SG_ 1622 DIF_oilPumpAssemblyId "Front drive inverter: oil pump assembly id";
 CM_ SG_ 1622 DIF_oilPumpUsageId "Front drive inverter: oil pump usage id";
@@ -52854,6 +53125,65 @@ CM_ SG_ 935 DIR_a254_activeDischargeRail "Rear drive inverter: a254 active disch
 CM_ SG_ 935 DIR_a255_currentGainFallback "Rear drive inverter: a255 current gain fallback";
 CM_ BO_ 2005 "Rear drive inverter message: debug";
 CM_ SG_ 2005 DIR_debugSelector "Rear drive inverter: debug selector";
+CM_ SG_ 2005 DIR_motorIA "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_motorIB "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_motorIC "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorIDref "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorIDfdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_torquePerAmp "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_rsScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorIQref "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorIQfdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_motorV "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tqScaleDifferential "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorFluxRef "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorFluxFdb "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_lmScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorVQ "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorVD "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_peakFlux "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_gainScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_usmState "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_peakIQref "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_motorIAavg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_motorIBavg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tqSatThermal "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tqSatMotorVoltage "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tqSatMotorCurrent "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tcMaxRequest "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tcMinRequest "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_tqScaleMaxMotorSpeed "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_wasteCurrentLimit "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_llsScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_llrScale "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_oilPumpMotorSpeed "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_rotorFlux "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_dcCableHeat "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_magnetTempEst "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_resolverReady "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_resolverNoCarrier "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_resolverNoPhaseLock "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_resolverClaMIA "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_soptMaxCurrentMagSqrd "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorVDFiltered "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorVQFiltered "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_pwmState "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_dcCapTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_busbarTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_pcsTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorTemp1 "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_statorTemp2 "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu10HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu10HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu100HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu100HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu10msMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu1kHzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu1kHzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu20kHzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu20kHzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_hwFaultCount "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_driveUnitOdometer "Position from firmware; message assignment inferred.";
 CM_ SG_ 2005 DIR_phaseOutBusbarTemp "Rear drive inverter: phase out busbar temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 2005 DIR_phaseOutBusbarWeldTemp "Rear drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 2005 DIR_phaseOutLugTemp "Rear drive inverter: phase out lug temp; raw 0 = signal not available (SNA)";
@@ -52867,6 +53197,12 @@ CM_ SG_ 2005 DIR_lightSenseV "Rear drive inverter: light sense v";
 CM_ SG_ 2005 DIR_pyroSenseV "Rear drive inverter: pyro sense v";
 CM_ SG_ 2005 DIR_statorSlotWindingTemp "Rear drive inverter: stator slot winding temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 2005 DIR_intervalMaxHvBusV "Rear drive inverter: interval max hv bus v";
+CM_ SG_ 2005 DIR_cpu1HzMin "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpu1HzAvg "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpuIDWord0 "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpuIDWord1 "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpuIDWord2 "Position from firmware; message assignment inferred.";
+CM_ SG_ 2005 DIR_cpuIDWord3 "Position from firmware; message assignment inferred.";
 CM_ BO_ 633 "Rear drive inverter message: hv status";
 CM_ SG_ 633 DIR_hvStatusChecksum "Rear drive inverter: hv status checksum";
 CM_ SG_ 633 DIR_hvStatusCounter "Rear drive inverter: hv status counter";
@@ -52902,8 +53238,10 @@ CM_ SG_ 821 DIR_oilPumpAppCrc "Rear drive inverter: oil pump app crc";
 CM_ SG_ 821 DIR_FPGA_version "Rear drive inverter: FPGA version; raw 255 = signal not available (SNA)";
 CM_ SG_ 821 DIR_appGitHash "Rear drive inverter: app git hash";
 CM_ SG_ 821 DIR_bootGitHash "Rear drive inverter: boot git hash";
+CM_ SG_ 821 DIR_platformTyp "Position from firmware; message assignment inferred.";
 CM_ SG_ 821 DIR_infoBootLdUdsProtocolVersion "Rear drive inverter: info boot ld uds protocol version";
 CM_ SG_ 821 DIR_bootloaderCrc "Rear drive inverter: bootloader crc";
+CM_ SG_ 821 DIR_subcomponentGitHash "Position from firmware; message assignment inferred.";
 CM_ SG_ 821 DIR_oilPumpPcbaId "Rear drive inverter: oil pump pcba id";
 CM_ SG_ 821 DIR_oilPumpAssemblyId "Rear drive inverter: oil pump assembly id";
 CM_ SG_ 821 DIR_oilPumpUsageId "Rear drive inverter: oil pump usage id";
@@ -58189,6 +58527,9 @@ CM_ SG_ 1310 FC_infoAssemblyID "FC ECU: info assembly ID";
 CM_ SG_ 1310 FC_infoUsageID "FC ECU: info usage ID";
 CM_ SG_ 1310 FC_infoSubUsageID "FC ECU: info sub usage ID";
 CM_ SG_ 1310 FC_infoApplicationCRC "FC ECU: info application CRC";
+CM_ SG_ 1310 FC_infoBootSvnRev "Position from firmware; message assignment inferred.";
+CM_ SG_ 1310 FC_infoCPLDVersionMajor "Position from firmware; message assignment inferred.";
+CM_ SG_ 1310 FC_infoCPLDVersionMinor "Position from firmware; message assignment inferred.";
 CM_ SG_ 1310 FC_infoAppGitHashBytes "FC ECU: info app git hash bytes";
 CM_ SG_ 1310 FC_infoBootGitHashBytes "FC ECU: info boot git hash bytes";
 CM_ SG_ 1310 FC_infoPlatformType "FC ECU: info platform type";
@@ -58196,6 +58537,7 @@ CM_ SG_ 1310 FC_infoMajorVersion "Fast charger firmware major version number";
 CM_ SG_ 1310 FC_infoBranchOrigin "Fast charger branch origin";
 CM_ SG_ 1310 FC_infoMaturity "Fast charger firmware info";
 CM_ SG_ 1310 FC_infoHardwareRevision "FC ECU: info hardware revision";
+CM_ SG_ 1310 FC_infoBootUdsProtoVersion "Position from firmware; message assignment inferred.";
 CM_ SG_ 1310 FC_partNumChar01 "FC ECU: part num char01";
 CM_ SG_ 1310 FC_partNumChar02 "FC ECU: part num char02";
 CM_ SG_ 1310 FC_partNumChar03 "FC ECU: part num char03";
@@ -58275,6 +58617,7 @@ CM_ SG_ 535 FC_coolingType "Type of cooling used for the supercharger; raw 0 = s
 CM_ SG_ 535 FC_uiStopType "Type of stop type supported from the UI; raw 0 = signal not available (SNA)";
 CM_ SG_ 535 FC_emergencyShutdownSupported "Indicates if the supercharger supports fast emergency shutdown requests from vehicle";
 CM_ SG_ 535 FC_generation "Hardware generation of the Tesla EVSE; raw 0 = signal not available (SNA)";
+CM_ SG_ 535 FC_billingEnergy "Total billable charge energy (integrated by EVSE). Position from firmware; message assignment inferred.";
 CM_ BO_ 888 "Gateway message: e call";
 CM_ SG_ 888 GTW_GTW_SOS_ECALL_RQST "State of the GTW-SOS-ECALL-RQST pin";
 CM_ SG_ 888 GTW_LTE_ECALL_LOCK "State of the LTE-ECALL-LOCK pin";
@@ -78248,6 +78591,11 @@ CM_ SG_ 577 VCFRONT_coolantFlowTableConfig "Front body controller: coolant flow 
 CM_ SG_ 577 VCFRONT_coolantLevelContinuously "Front body controller: coolant level continuously low";
 CM_ BO_ 753 "Front body controller message: e fuse debug status";
 CM_ SG_ 753 VCFRONT_eFuseDebugStatusIndex "Front body controller: e fuse debug status index";
+CM_ SG_ 753 VCFRONT_rightControllerState "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_rightControllerFault "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_vcrightSelfTestResult "Reports the result of the most recent self-test of the Vehicle Controller Right (VCRIGHT) eFuse. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_rightControllerVoltage "Voltage of the right vehicle controller circuit. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_rightControllerCurrent "Position from firmware; message assignment inferred.";
 CM_ SG_ 753 VCFRONT_leftControllerState "Front body controller: left controller state; raw 3 = signal not available (SNA)";
 CM_ SG_ 753 VCFRONT_leftControllerFault "Front body controller: left controller fault";
 CM_ SG_ 753 VCFRONT_vcleftSelfTestResult "Reports the result of the most recent self-test of the Vehicle Controller Left (VCLEFT) eFuse; raw 12 = signal not available (SNA)";
@@ -78326,6 +78674,9 @@ CM_ SG_ 753 VCFRONT_ESPValveFault "Front body controller: ESP valve fault";
 CM_ SG_ 753 VCFRONT_ESPValveTemp "Front body controller: ESP valve temp";
 CM_ SG_ 753 VCFRONT_ESPValveVoltage "Front body controller: ESP valve voltage";
 CM_ SG_ 753 VCFRONT_ESPValveCurrent "Electrical current of the stability controller motor circuit";
+CM_ SG_ 753 VCFRONT_autopilot1State "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_autopilot1Fault "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_autopilot1Voltage "Position from firmware; message assignment inferred.";
 CM_ SG_ 753 VCFRONT_autopilot2State "Front body controller: autopilot2 state; raw 3 = signal not available (SNA)";
 CM_ SG_ 753 VCFRONT_autopilot2Fault "Front body controller: autopilot2 fault";
 CM_ SG_ 753 VCFRONT_autopilot2Temp "Front body controller: autopilot2 temp";
@@ -78335,12 +78686,28 @@ CM_ SG_ 753 VCFRONT_sleepBypassState "State of the sleep bypass circuit";
 CM_ SG_ 753 VCFRONT_sleepBypassFault "Front body controller: sleep bypass fault";
 CM_ SG_ 753 VCFRONT_sleepBypassVoltage "Front body controller: sleep bypass voltage";
 CM_ SG_ 753 VCFRONT_sleepBypassCurrent "Front body controller: sleep bypass current";
+CM_ SG_ 753 VCFRONT_headlampLeftState "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_headlampLeftFault "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_headlampLeftVoltage "Voltage of the left headlamp circuit. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_headlampRightState "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_headlampRightFault "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_headlampRightVoltage "Voltage of the right headlamp circuit. Position from firmware; message assignment inferred.";
 CM_ SG_ 753 VCFRONT_vbatFusedHighState "Front body controller: vbat fused high state";
 CM_ SG_ 753 VCFRONT_vbatFusedHighFault "Front body controller: vbat fused high fault";
 CM_ SG_ 753 VCFRONT_vbatFusedSelfTestResult "Front body controller: vbat fused self test result; raw 12 = signal not available (SNA)";
 CM_ SG_ 753 VCFRONT_vbatFusedHighTemp "Front body controller: vbat fused high temp";
 CM_ SG_ 753 VCFRONT_vbatFusedHighVoltage "Front body controller: vbat fused high voltage";
 CM_ SG_ 753 VCFRONT_vbatFusedHighCurrent "Front body controller: vbat fused high current";
+CM_ SG_ 753 VCFRONT_pump1AndFanState "State of the coolant pump and cooling fan circuit. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_pump1AndFanVoltage "Voltage of the coolant pump and cooling fan circuit. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_pump2AndAirCompState "State of the coolant pump and air compressor circuit. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_pump2AndAirCompVoltage "Voltage of the coolant pump and air compressor circuit. Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_railA_12v "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_railB_12v "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_railA_5v "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_railB_5v "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_eFuseLockoutVoltage "Position from firmware; message assignment inferred.";
+CM_ SG_ 753 VCFRONT_ChargePumpVoltage "Position from firmware; message assignment inferred.";
 CM_ SG_ 753 VCFRONT_chargedIBSAmpHours "Front body controller: charged IBS amp hours";
 CM_ SG_ 753 VCFRONT_dischargedIBSAmpHours "Front body controller: discharged IBS amp hours";
 CM_ SG_ 753 VCFRONT_IBSUnfilteredTemperature "Front body controller: IBS unfiltered temperature; raw 32768 = signal not available (SNA)";
@@ -78369,6 +78736,7 @@ CM_ SG_ 769 VCFRONT_infoPlatformType "Front body controller: info platform type"
 CM_ SG_ 769 VCFRONT_infoBootUdsProtoVersion "Front body controller: info boot uds proto version";
 CM_ SG_ 769 VCFRONT_infoBootCrc "Front body controller: info boot crc";
 CM_ SG_ 769 VC_infoHCMRAppCRC "Front body controller: info HCMR app CRC";
+CM_ SG_ 769 VCFRONT_infoSubcomponent3 "Position from firmware; message assignment inferred.";
 CM_ SG_ 769 VC_infoWiperAppCRC "Front body controller: info wiper app CRC";
 CM_ BO_ 1014 "Front body controller message: light status";
 CM_ SG_ 1014 VCFRONT_lowBeamLeftStatus "State of the left headlamp low beam light source; raw 3 = signal not available (SNA)";
@@ -78510,8 +78878,17 @@ CM_ SG_ 897 VCFRONT_usingModeledPl "Front body controller: using modeled pl";
 CM_ SG_ 897 VCFRONT_usingModeledTs "Front body controller: using modeled ts";
 CM_ SG_ 897 VCFRONT_usingModeledTd "Front body controller: using modeled td";
 CM_ SG_ 897 VCFRONT_usingModeledTl "Front body controller: using modeled tl";
-CM_ SG_ 897 VCFRONT_hpChargeCableType "Front body controller: hp charge cable type";
-CM_ SG_ 897 VCFRONT_subcoolActual "Front body controller: subcool actual";
+CM_ SG_ 897 VCFRONT_HCML_lowBeamSpotTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCML_highBeamTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCML_turnTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCML_bladeTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCML_diffuseTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCMR_lowBeamSpotTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCMR_highBeamTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCMR_turnTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCMR_bladeTemp "Temperature of the left low beam LED board. Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_HCMR_diffuseTemp "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_homelinkRegionCode "Homelink Region Code. Position from firmware; message assignment inferred.";
 CM_ SG_ 897 VCFRONT_hpSubcoolTarget "Front body controller: hp subcool target";
 CM_ SG_ 897 VCFRONT_CMPDischargeSuperheat "Front body controller: CMP discharge superheat";
 CM_ SG_ 897 VCFRONT_hpCOP "Front body controller: hp COP";
@@ -78591,7 +78968,7 @@ CM_ SG_ 897 VCFRONT_hpCabinHeatBlend "Front body controller: hp cabin heat blend
 CM_ SG_ 897 VCFRONT_hpCabinHeatCOP1 "Front body controller: hp cabin heat COP1";
 CM_ SG_ 897 VCFRONT_hpCabinHeatBatteryHeatRe "Front body controller: hp cabin heat battery heat reheat amb src";
 CM_ SG_ 897 VCFRONT_hpCabinHeatBatteryCoolRe "Front body controller: hp cabin heat battery cool reheat";
-CM_ SG_ 897 VCFRONT_hpCabinCoolEvaporator "Front body controller: hp cabin cool evaporator";
+CM_ SG_ 897 VCFRONT_evapDisabledLowPsCutout "Position from firmware; message assignment inferred.";
 CM_ SG_ 897 VCFRONT_hpCabinCoolEvaporatorReh "Front body controller: hp cabin cool evaporator reheat";
 CM_ SG_ 897 VCFRONT_hpBatteryHeatAmbientSour "Front body controller: hp battery heat ambient source";
 CM_ SG_ 897 VCFRONT_hpBatteryHeatCOP1 "Front body controller: hp battery heat COP1";
@@ -78606,21 +78983,27 @@ CM_ SG_ 897 VCFRONT_hpBattOverTempHvacDisabl "Front body controller: hp batt ove
 CM_ SG_ 897 VCFRONT_hpDiagLouverCalib "Diagnostics requested a louver calibration.";
 CM_ SG_ 897 VCFRONT_hpDiagHighSideNotNominal "Front body controller: hp diag high side not nominal";
 CM_ SG_ 897 VCFRONT_hpForceModeRadClear "Front body controller: hp force mode rad clear";
-CM_ SG_ 897 VCFRONT_estPressureDischargeSat "Front body controller: est pressure discharge sat";
+CM_ SG_ 897 VCFRONT_ambientSourcingDisabled "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_chillerLiftDisabledLowPs "Position from firmware; message assignment inferred.";
 CM_ SG_ 897 VCFRONT_tempRefrigLiquid "Refrigerant system liquid line temperature; raw 2047 = signal not available (SNA)";
-CM_ SG_ 897 VCFRONT_totalBattHeatingPower "Total battery heating power requested";
+CM_ SG_ 897 VCFRONT_maxCompressorRPMAllowed "Position from firmware; message assignment inferred.";
 CM_ SG_ 897 VCFRONT_hpPotentialFrozenRadiato "Front body controller: hp potential frozen radiator";
-CM_ SG_ 897 VCFRONT_passiveSeriesRegOn "Front body controller: passive series reg on";
-CM_ SG_ 897 VCFRONT_passiveDemandRadBypass "Front body controller: passive demand rad bypass";
-CM_ SG_ 897 VCFRONT_targetLccActiveCoolCap "Front body controller: target lcc active cool cap";
-CM_ SG_ 897 VCFRONT_targetLccActiveCoolEff "Front body controller: target lcc active cool eff";
+CM_ SG_ 897 VCFRONT_hpForceScavenge "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_battOverStagUpperLimit "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_battUnderStagUpperLimit "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_ambientColderThanBatt "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_ambientSourcingAvailable "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_hpMode "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_battLoopWorthCooling "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_ptLoopWorthCooling "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_estCompRefrigMassflow "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_pressureRefrigDischEst "Position from firmware; message assignment inferred.";
 CM_ SG_ 897 VCFRONT_coolantValveDailyAngleTr "Running 10-day average of daily angular travel";
 CM_ SG_ 897 VCFRONT_dischargePressureLimit "Front body controller: discharge pressure limit";
 CM_ SG_ 897 VCFRONT_radMovementBlockActive "Front body controller: rad movement block active";
 CM_ SG_ 897 VCFRONT_radBypassMoveReason "Front body controller: rad bypass move reason";
-CM_ SG_ 897 VCFRONT_hpBattHeatingPower "Front body controller: hp batt heating power";
-CM_ SG_ 897 VCFRONT_tempCoolantRadOutletEstS "Front body controller: temp coolant rad outlet est status";
-CM_ SG_ 897 VCFRONT_targetBatActiveCoolSourc "Front body controller: target bat active cool source";
+CM_ SG_ 897 VCFRONT_hpAtSteadyState "Position from firmware; message assignment inferred.";
+CM_ SG_ 897 VCFRONT_suctionSuperheatEstPsSNA "Position from firmware; message assignment inferred.";
 CM_ SG_ 897 VCFRONT_targetPTActiveCoolSource "Front body controller: target PT active cool source";
 CM_ SG_ 897 VCFRONT_hpColdStagnationLimit "Front body controller: hp cold stagnation limit";
 CM_ SG_ 897 VCFRONT_hpHotStagnationLimit "Front body controller: hp hot stagnation limit";
@@ -78856,8 +79239,8 @@ CM_ SG_ 737 VCFRONT_vbatMonitorVoltage "Front body controller: vbat monitor volt
 CM_ SG_ 737 VCFRONT_AS8510Voltage "Front body controller: AS8510 voltage; raw 4095 = signal not available (SNA)";
 CM_ SG_ 737 VCFRONT_vbatProt "Front body controller: vbat prot";
 CM_ SG_ 737 VCFRONT_logVerbosity "Front body controller: log verbosity";
-CM_ SG_ 737 VCFRONT_cabinCoolingCapacityLimi "Front body controller: cabin cooling capacity limited";
-CM_ SG_ 737 VCFRONT_cabinHeatingCapacityLimi "Front body controller: cabin heating capacity limited";
+CM_ SG_ 737 VCFRONT_IBSFault "Indicates that a fault has been diagnosed with the Low Voltage (LV) battery sensor. Position from firmware; message assignment inferred.";
+CM_ SG_ 737 VCFRONT_12VOverchargeCounter "Position from firmware; message assignment inferred.";
 CM_ SG_ 737 VCFRONT_compPowerSupportingHvac "Front body controller: comp power supporting hvac";
 CM_ SG_ 737 VCFRONT_compPowerSupportingPT "Front body controller: comp power supporting PT";
 CM_ SG_ 737 VCFRONT_maxHeatingPowerLeftCC "Front body controller: max heating power left CC";
@@ -80876,10 +81259,16 @@ CM_ SG_ 258 VCLEFT_frontHandlePulledPersist "Left body controller: front handle 
 CM_ SG_ 258 VCLEFT_mirrorDipped "Reports if the side view mirrors in are in the dipped position.";
 CM_ BO_ 2012 "Left body controller message: door status2";
 CM_ SG_ 2012 VCLEFT_doorStatus2Index "Left body controller: door status2 index";
-CM_ SG_ 2012 VCLEFT_frontLatchRelDuty "Front left door latch motor duty cycle.";
-CM_ SG_ 2012 VCLEFT_BPillarCameraHeaterState "Indicates the state of the left b-pillar camera heater; raw 0 = signal not available (SNA)";
-CM_ SG_ 2012 VCLEFT_doorLatchAjarSwitchVoltag "Door latch switch voltage feeding switch logic";
-CM_ SG_ 2012 VCLEFT_doorLatchAjarSwitchV_0001 "Door latch switch voltage feeding switch logic";
+CM_ SG_ 2012 VCLEFT_rearLatchRelDuty "Rear left door latch motor duty cycle. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_vehicleInMotion "Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_frontDoorState "Status of front left door. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_rearDoorState "Status of rear left door. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_frontHandleRawStatus "State machine state that represents physical state of the front left door handle for debugging. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_rearHandleRawStatus "State machine state that represents physical state of the rear left door handle for debugging. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_frontHandleDebounceStatus "State machine state that represents physical state of the front left door handle for debugging. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_rearHandleDebounceStatus "State machine state that represents physical state of the front left door handle for debugging. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_frontHandle5vEnable "Status of power going to the front left exterior door handle sensor. Position from firmware; message assignment inferred.";
+CM_ SG_ 2012 VCLEFT_rearHandle5vEnable "Status of power going to the rear left exterior door handle sensor. Position from firmware; message assignment inferred.";
 CM_ SG_ 2012 VCLEFT_BPillarCameraHeaterCurren "Current drawn by the left b-pillar camera heater; raw 63 = signal not available (SNA)";
 CM_ SG_ 2012 VCLEFT_mirrorTiltXOffset "Communicates post calibration position offset of left side view mirror tilt horizontal position";
 CM_ SG_ 2012 VCLEFT_mirrorTiltYOffset "Communicates post calibration position offset of left side view mirror tilt vertical position";
@@ -83922,6 +84311,28 @@ CM_ SG_ 835 VCRIGHT_isSteeringWheelHeaterReq "Right body controller: is steering
 CM_ SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "Right body controller: steering wheel heater DC tgt; raw 127 = signal not available (SNA)";
 CM_ BO_ 963 "Right body controller message: switch status";
 CM_ SG_ 963 VCRIGHT_switchStatusIndex "Right body controller: switch status index";
+CM_ SG_ 963 VCRIGHT_btnWindowUpRF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowAutoUpRF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowDownRF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowAutoDownRF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowUpRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowAutoUpRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowDownRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowAutoDownRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackUpLF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackAutoUpLF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackDownLF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackAutoDwnLF "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackUpLR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackAutoUpLR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackDownLR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackAutoDwnLR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_frontOccupancySwitch "Front right seat occupancy status. Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_trunkExtReleasePressed "State of exterior trunk release switch. Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackUpRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackAutoUpRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackDownRR "Position from firmware; message assignment inferred.";
+CM_ SG_ 963 VCRIGHT_btnWindowSwPackAutoDwnRR "Position from firmware; message assignment inferred.";
 CM_ SG_ 963 VCRIGHT_frontBuckleSwitch "Right body controller: front buckle switch";
 CM_ SG_ 963 VCRIGHT_rearCenterBuckleSwitch "Right body controller: rear center buckle switch";
 CM_ SG_ 963 VCRIGHT_rearRightBuckleSwitch "Right body controller: rear right buckle switch";
@@ -83937,15 +84348,6 @@ CM_ SG_ 963 VCRIGHT_frontSeatBackrestForward "Right body controller: front seat 
 CM_ SG_ 963 VCRIGHT_frontSeatLumbarDown "Right body controller: front seat lumbar down; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_frontSeatLumbarUp "Right body controller: front seat lumbar up; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_frontSeatLumbarIn "Right body controller: front seat lumbar in; raw 0 = signal not available (SNA)";
-CM_ SG_ 963 VCRIGHT_frontSeatLumbarOut "Right body controller: front seat lumbar out; raw 0 = signal not available (SNA)";
-CM_ SG_ 963 VCRIGHT_2RowSeatReclineSwitch "Second row seat recline switch";
-CM_ SG_ 963 VCRIGHT_2RowSeatBackrestFoldSwit "Second row seat backrest fold switch";
-CM_ SG_ 963 VCRIGHT_frontSeatThighSupportExt "Status of the switch used to extend front seat thigh support; raw 0 = signal not available (SNA)";
-CM_ SG_ 963 VCRIGHT_frontHandlePWM "Right body controller: front handle PWM";
-CM_ SG_ 963 VCRIGHT_hvacHeatingAllowedLeft "Right body controller: hvac heating allowed left";
-CM_ SG_ 963 VCRIGHT_rearHandlePWM "Right body controller: rear handle PWM";
-CM_ SG_ 963 VCRIGHT_gloveboxLightCurrent "Current through the glovebox LED";
-CM_ SG_ 963 VCRIGHT_frontSeatALR "Front right seat automatic locking retractor switch; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_frontSeatResistiveOccupa "Front right seat occupancy status; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_2RowSeatReclineSwitchpac "State of the right second row powered recline adjustment switchpack";
 CM_ SG_ 963 VCRIGHT_hvacHeatingAllowedRight "Right body controller: hvac heating allowed right";
@@ -94853,6 +95255,12 @@ BA_ "GenSigSNA" SG_ 1138 BMS_timeToFinishHeatForCharge "127";
 BA_ "Confidence" SG_ 1138 BMS_timeToTripPlanChargingTarget 0;
 BA_ "GenSigSNA" SG_ 1138 BMS_timeToTripPlanChargingTarget "2047";
 BA_ "Confidence" SG_ 1138 BMS_useChargeTimeEstimate 0;
+BA_ "Confidence" SG_ 562 BMS_fcContactorRequest 1;
+BA_ "Confidence" SG_ 562 BMS_packContactorRequest 1;
+BA_ "Confidence" SG_ 562 BMS_gpoHasCompleted 1;
+BA_ "Confidence" SG_ 562 BMS_ensShouldBeActiveForDrive 1;
+BA_ "Confidence" SG_ 562 BMS_pcsPwmDisable 1;
+BA_ "Confidence" SG_ 562 BMS_fcLinkOkToEnergizeRequest 1;
 BA_ "Confidence" SG_ 562 BMS_internalHvilSenseV 1;
 BA_ "Confidence" SG_ 562 BMS_hvilCoverVSense 1;
 BA_ "Confidence" SG_ 722 BMS_minBusVoltage 0;
@@ -96199,8 +96607,7 @@ BA_ "GenSigSNA" SG_ 541 CP_iecPilotState "9";
 BA_ "Confidence" SG_ 541 CP_plcSupported 0;
 BA_ "Confidence" SG_ 541 CP_cableCurrentLimit 0;
 BA_ "Confidence" SG_ 541 CP_teslaSwcanState 0;
-BA_ "Confidence" SG_ 541 CP_evseChargeType_UI 0;
-BA_ "Confidence" SG_ 541 CP_gbState 0;
+BA_ "Confidence" SG_ 541 CP_digitalCommsAttempts 1;
 BA_ "Confidence" SG_ 541 CP_gbdcStopChargeReason 0;
 BA_ "Confidence" SG_ 541 CP_gbdcFailureReason 0;
 BA_ "Confidence" SG_ 541 CP_gbdcChargeAttempts 0;
@@ -96326,9 +96733,8 @@ BA_ "Confidence" SG_ 528 CP_faultLineV 0;
 BA_ "Confidence" SG_ 528 CP_faultLineSetByCP 0;
 BA_ "Confidence" SG_ 528 CP_AuthManagerState 0;
 BA_ "Confidence" SG_ 893 CP_thermalStatusSelect 1;
-BA_ "Confidence" SG_ 893 CP_pinTemperature1 0;
-BA_ "Confidence" SG_ 893 CP_pinTemperature2 0;
-BA_ "Confidence" SG_ 893 CP_pinTemperature3 0;
+BA_ "Confidence" SG_ 893 CP_dcPinTemperature 1;
+BA_ "Confidence" SG_ 893 CP_acPinTemperature 1;
 BA_ "Confidence" SG_ 893 CP_pinTemperature4 0;
 BA_ "Confidence" SG_ 893 CP_pinTemp4Velocity 0;
 BA_ "GenSigSNA" SG_ 893 CP_pinTemp4Velocity "511";
@@ -97730,6 +98136,65 @@ BA_ "Confidence" SG_ 854 DIF_a253_lvBoostedRail 2;
 BA_ "Confidence" SG_ 854 DIF_a254_activeDischargeRail 2;
 BA_ "Confidence" SG_ 854 DIF_a255_currentGainFallback 2;
 BA_ "Confidence" SG_ 1879 DIF_debugSelector 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIA 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIB 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIC 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIDref 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIDfdb 1;
+BA_ "Confidence" SG_ 1879 DIF_torquePerAmp 1;
+BA_ "Confidence" SG_ 1879 DIF_rsScale 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIQref 1;
+BA_ "Confidence" SG_ 1879 DIF_statorIQfdb 1;
+BA_ "Confidence" SG_ 1879 DIF_motorV 1;
+BA_ "Confidence" SG_ 1879 DIF_tqScaleDifferential 1;
+BA_ "Confidence" SG_ 1879 DIF_statorFluxRef 1;
+BA_ "Confidence" SG_ 1879 DIF_statorFluxFdb 1;
+BA_ "Confidence" SG_ 1879 DIF_lmScale 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVQ 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVD 1;
+BA_ "Confidence" SG_ 1879 DIF_peakFlux 1;
+BA_ "Confidence" SG_ 1879 DIF_gainScale 1;
+BA_ "Confidence" SG_ 1879 DIF_usmState 1;
+BA_ "Confidence" SG_ 1879 DIF_peakIQref 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIAavg 1;
+BA_ "Confidence" SG_ 1879 DIF_motorIBavg 1;
+BA_ "Confidence" SG_ 1879 DIF_tqSatThermal 1;
+BA_ "Confidence" SG_ 1879 DIF_tqSatMotorVoltage 1;
+BA_ "Confidence" SG_ 1879 DIF_tqSatMotorCurrent 1;
+BA_ "Confidence" SG_ 1879 DIF_tcMaxRequest 1;
+BA_ "Confidence" SG_ 1879 DIF_tcMinRequest 1;
+BA_ "Confidence" SG_ 1879 DIF_tqScaleMaxMotorSpeed 1;
+BA_ "Confidence" SG_ 1879 DIF_wasteCurrentLimit 1;
+BA_ "Confidence" SG_ 1879 DIF_llsScale 1;
+BA_ "Confidence" SG_ 1879 DIF_llrScale 1;
+BA_ "Confidence" SG_ 1879 DIF_oilPumpMotorSpeed 1;
+BA_ "Confidence" SG_ 1879 DIF_rotorFlux 1;
+BA_ "Confidence" SG_ 1879 DIF_dcCableHeat 1;
+BA_ "Confidence" SG_ 1879 DIF_magnetTempEst 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverReady 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverNoCarrier 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverNoPhaseLock 1;
+BA_ "Confidence" SG_ 1879 DIF_resolverClaMIA 1;
+BA_ "Confidence" SG_ 1879 DIF_soptMaxCurrentMagSqrd 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVDFiltered 1;
+BA_ "Confidence" SG_ 1879 DIF_statorVQFiltered 1;
+BA_ "Confidence" SG_ 1879 DIF_pwmState 1;
+BA_ "Confidence" SG_ 1879 DIF_dcCapTemp 1;
+BA_ "Confidence" SG_ 1879 DIF_busbarTemp 1;
+BA_ "Confidence" SG_ 1879 DIF_pcsTemp 1;
+BA_ "Confidence" SG_ 1879 DIF_statorTemp1 1;
+BA_ "Confidence" SG_ 1879 DIF_statorTemp2 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu10HzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu10HzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu100HzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu100HzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu10msMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu1kHzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu1kHzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu20kHzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu20kHzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_hwFaultCount 1;
+BA_ "Confidence" SG_ 1879 DIF_driveUnitOdometer 1;
 BA_ "Confidence" SG_ 1879 DIF_phaseOutBusbarTemp 0;
 BA_ "GenSigSNA" SG_ 1879 DIF_phaseOutBusbarTemp "0";
 BA_ "Confidence" SG_ 1879 DIF_phaseOutBusbarWeldTemp 0;
@@ -97753,6 +98218,12 @@ BA_ "Confidence" SG_ 1879 DIF_pyroSenseV 0;
 BA_ "Confidence" SG_ 1879 DIF_statorSlotWindingTemp 0;
 BA_ "GenSigSNA" SG_ 1879 DIF_statorSlotWindingTemp "0";
 BA_ "Confidence" SG_ 1879 DIF_intervalMaxHvBusV 0;
+BA_ "Confidence" SG_ 1879 DIF_cpu1HzMin 1;
+BA_ "Confidence" SG_ 1879 DIF_cpu1HzAvg 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord0 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord1 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord2 1;
+BA_ "Confidence" SG_ 1879 DIF_cpuIDWord3 1;
 BA_ "Confidence" SG_ 634 DIF_hvStatusChecksum 0;
 BA_ "Confidence" SG_ 634 DIF_hvStatusCounter 0;
 BA_ "Confidence" SG_ 634 DIF_hvilCurrent 0;
@@ -97793,6 +98264,7 @@ BA_ "Confidence" SG_ 1622 DIF_bootGitHash 0;
 BA_ "Confidence" SG_ 1622 DIF_platformTyp 0;
 BA_ "Confidence" SG_ 1622 DIF_infoBootLdUdsProtocolVersion 0;
 BA_ "Confidence" SG_ 1622 DIF_bootloaderCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_subcomponentGitHash 1;
 BA_ "Confidence" SG_ 1622 DIF_oilPumpPcbaId 0;
 BA_ "Confidence" SG_ 1622 DIF_oilPumpAssemblyId 0;
 BA_ "Confidence" SG_ 1622 DIF_oilPumpUsageId 0;
@@ -98702,6 +99174,65 @@ BA_ "Confidence" SG_ 935 DIR_a253_lvBoostedRail 2;
 BA_ "Confidence" SG_ 935 DIR_a254_activeDischargeRail 2;
 BA_ "Confidence" SG_ 935 DIR_a255_currentGainFallback 2;
 BA_ "Confidence" SG_ 2005 DIR_debugSelector 1;
+BA_ "Confidence" SG_ 2005 DIR_motorIA 1;
+BA_ "Confidence" SG_ 2005 DIR_motorIB 1;
+BA_ "Confidence" SG_ 2005 DIR_motorIC 1;
+BA_ "Confidence" SG_ 2005 DIR_statorIDref 1;
+BA_ "Confidence" SG_ 2005 DIR_statorIDfdb 1;
+BA_ "Confidence" SG_ 2005 DIR_torquePerAmp 1;
+BA_ "Confidence" SG_ 2005 DIR_rsScale 1;
+BA_ "Confidence" SG_ 2005 DIR_statorIQref 1;
+BA_ "Confidence" SG_ 2005 DIR_statorIQfdb 1;
+BA_ "Confidence" SG_ 2005 DIR_motorV 1;
+BA_ "Confidence" SG_ 2005 DIR_tqScaleDifferential 1;
+BA_ "Confidence" SG_ 2005 DIR_statorFluxRef 1;
+BA_ "Confidence" SG_ 2005 DIR_statorFluxFdb 1;
+BA_ "Confidence" SG_ 2005 DIR_lmScale 1;
+BA_ "Confidence" SG_ 2005 DIR_statorVQ 1;
+BA_ "Confidence" SG_ 2005 DIR_statorVD 1;
+BA_ "Confidence" SG_ 2005 DIR_peakFlux 1;
+BA_ "Confidence" SG_ 2005 DIR_gainScale 1;
+BA_ "Confidence" SG_ 2005 DIR_usmState 1;
+BA_ "Confidence" SG_ 2005 DIR_peakIQref 1;
+BA_ "Confidence" SG_ 2005 DIR_motorIAavg 1;
+BA_ "Confidence" SG_ 2005 DIR_motorIBavg 1;
+BA_ "Confidence" SG_ 2005 DIR_tqSatThermal 1;
+BA_ "Confidence" SG_ 2005 DIR_tqSatMotorVoltage 1;
+BA_ "Confidence" SG_ 2005 DIR_tqSatMotorCurrent 1;
+BA_ "Confidence" SG_ 2005 DIR_tcMaxRequest 1;
+BA_ "Confidence" SG_ 2005 DIR_tcMinRequest 1;
+BA_ "Confidence" SG_ 2005 DIR_tqScaleMaxMotorSpeed 1;
+BA_ "Confidence" SG_ 2005 DIR_wasteCurrentLimit 1;
+BA_ "Confidence" SG_ 2005 DIR_llsScale 1;
+BA_ "Confidence" SG_ 2005 DIR_llrScale 1;
+BA_ "Confidence" SG_ 2005 DIR_oilPumpMotorSpeed 1;
+BA_ "Confidence" SG_ 2005 DIR_rotorFlux 1;
+BA_ "Confidence" SG_ 2005 DIR_dcCableHeat 1;
+BA_ "Confidence" SG_ 2005 DIR_magnetTempEst 1;
+BA_ "Confidence" SG_ 2005 DIR_resolverReady 1;
+BA_ "Confidence" SG_ 2005 DIR_resolverNoCarrier 1;
+BA_ "Confidence" SG_ 2005 DIR_resolverNoPhaseLock 1;
+BA_ "Confidence" SG_ 2005 DIR_resolverClaMIA 1;
+BA_ "Confidence" SG_ 2005 DIR_soptMaxCurrentMagSqrd 1;
+BA_ "Confidence" SG_ 2005 DIR_statorVDFiltered 1;
+BA_ "Confidence" SG_ 2005 DIR_statorVQFiltered 1;
+BA_ "Confidence" SG_ 2005 DIR_pwmState 1;
+BA_ "Confidence" SG_ 2005 DIR_dcCapTemp 1;
+BA_ "Confidence" SG_ 2005 DIR_busbarTemp 1;
+BA_ "Confidence" SG_ 2005 DIR_pcsTemp 1;
+BA_ "Confidence" SG_ 2005 DIR_statorTemp1 1;
+BA_ "Confidence" SG_ 2005 DIR_statorTemp2 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu10HzMin 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu10HzAvg 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu100HzMin 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu100HzAvg 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu10msMin 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu1kHzMin 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu1kHzAvg 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu20kHzMin 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu20kHzAvg 1;
+BA_ "Confidence" SG_ 2005 DIR_hwFaultCount 1;
+BA_ "Confidence" SG_ 2005 DIR_driveUnitOdometer 1;
 BA_ "Confidence" SG_ 2005 DIR_phaseOutBusbarTemp 0;
 BA_ "GenSigSNA" SG_ 2005 DIR_phaseOutBusbarTemp "0";
 BA_ "Confidence" SG_ 2005 DIR_phaseOutBusbarWeldTemp 0;
@@ -98725,6 +99256,12 @@ BA_ "Confidence" SG_ 2005 DIR_pyroSenseV 0;
 BA_ "Confidence" SG_ 2005 DIR_statorSlotWindingTemp 0;
 BA_ "GenSigSNA" SG_ 2005 DIR_statorSlotWindingTemp "0";
 BA_ "Confidence" SG_ 2005 DIR_intervalMaxHvBusV 0;
+BA_ "Confidence" SG_ 2005 DIR_cpu1HzMin 1;
+BA_ "Confidence" SG_ 2005 DIR_cpu1HzAvg 1;
+BA_ "Confidence" SG_ 2005 DIR_cpuIDWord0 1;
+BA_ "Confidence" SG_ 2005 DIR_cpuIDWord1 1;
+BA_ "Confidence" SG_ 2005 DIR_cpuIDWord2 1;
+BA_ "Confidence" SG_ 2005 DIR_cpuIDWord3 1;
 BA_ "Confidence" SG_ 633 DIR_hvStatusChecksum 0;
 BA_ "Confidence" SG_ 633 DIR_hvStatusCounter 0;
 BA_ "Confidence" SG_ 633 DIR_hvilCurrent 0;
@@ -98762,8 +99299,10 @@ BA_ "Confidence" SG_ 821 DIR_FPGA_version 0;
 BA_ "GenSigSNA" SG_ 821 DIR_FPGA_version "255";
 BA_ "Confidence" SG_ 821 DIR_appGitHash 0;
 BA_ "Confidence" SG_ 821 DIR_bootGitHash 0;
+BA_ "Confidence" SG_ 821 DIR_platformTyp 1;
 BA_ "Confidence" SG_ 821 DIR_infoBootLdUdsProtocolVersion 0;
 BA_ "Confidence" SG_ 821 DIR_bootloaderCrc 0;
+BA_ "Confidence" SG_ 821 DIR_subcomponentGitHash 1;
 BA_ "Confidence" SG_ 821 DIR_oilPumpPcbaId 0;
 BA_ "Confidence" SG_ 821 DIR_oilPumpAssemblyId 0;
 BA_ "Confidence" SG_ 821 DIR_oilPumpUsageId 0;
@@ -104552,6 +105091,9 @@ BA_ "Confidence" SG_ 1310 FC_infoAssemblyID 0;
 BA_ "Confidence" SG_ 1310 FC_infoUsageID 0;
 BA_ "Confidence" SG_ 1310 FC_infoSubUsageID 0;
 BA_ "Confidence" SG_ 1310 FC_infoApplicationCRC 0;
+BA_ "Confidence" SG_ 1310 FC_infoBootSvnRev 1;
+BA_ "Confidence" SG_ 1310 FC_infoCPLDVersionMajor 1;
+BA_ "Confidence" SG_ 1310 FC_infoCPLDVersionMinor 1;
 BA_ "Confidence" SG_ 1310 FC_infoAppGitHashBytes 0;
 BA_ "Confidence" SG_ 1310 FC_infoBootGitHashBytes 0;
 BA_ "Confidence" SG_ 1310 FC_infoPlatformType 0;
@@ -104559,6 +105101,7 @@ BA_ "Confidence" SG_ 1310 FC_infoMajorVersion 0;
 BA_ "Confidence" SG_ 1310 FC_infoBranchOrigin 0;
 BA_ "Confidence" SG_ 1310 FC_infoMaturity 0;
 BA_ "Confidence" SG_ 1310 FC_infoHardwareRevision 0;
+BA_ "Confidence" SG_ 1310 FC_infoBootUdsProtoVersion 1;
 BA_ "Confidence" SG_ 1310 FC_partNumChar01 0;
 BA_ "Confidence" SG_ 1310 FC_partNumChar02 0;
 BA_ "Confidence" SG_ 1310 FC_partNumChar03 0;
@@ -104649,6 +105192,7 @@ BA_ "GenSigSNA" SG_ 535 FC_uiStopType "0";
 BA_ "Confidence" SG_ 535 FC_emergencyShutdownSupported 0;
 BA_ "Confidence" SG_ 535 FC_generation 0;
 BA_ "GenSigSNA" SG_ 535 FC_generation "0";
+BA_ "Confidence" SG_ 535 FC_billingEnergy 1;
 BA_ "Confidence" SG_ 888 GTW_GTW_SOS_ECALL_RQST 0;
 BA_ "Confidence" SG_ 888 GTW_LTE_ECALL_LOCK 0;
 BA_ "Confidence" SG_ 282 GTW_BKP_BATT_MON 1;
@@ -105122,7 +105666,7 @@ BA_ "Confidence" SG_ 904 GTW_BDY_canBusActivity 0;
 BA_ "Confidence" SG_ 904 GTW_BDY_txWarning 0;
 BA_ "Confidence" SG_ 904 GTW_BDY_rxWarning 0;
 BA_ "Confidence" SG_ 904 GTW_BDY_faultConfinement 0;
-BA_ "Confidence" SG_ 2047 GTW_carConfigMultiplexer 2;
+BA_ "Confidence" SG_ 2047 GTW_carConfigMultiplexer 0;
 BA_ "Confidence" SG_ 2047 GTW_deliveryStatus 0;
 BA_ "Confidence" SG_ 2047 GTW_cabinPTCHeaterType 0;
 BA_ "Confidence" SG_ 2047 GTW_rightHandDrive 0;
@@ -128250,6 +128794,11 @@ BA_ "Confidence" SG_ 577 VCFRONT_coolantFlowTableConfig 0;
 BA_ "Confidence" SG_ 577 VCFRONT_coolantLevelContinuously 0;
 BA_ "SystemSignalLongSymbol" SG_ 577 VCFRONT_coolantLevelContinuously "VCFRONT_coolantLevelContinuouslyLow";
 BA_ "Confidence" SG_ 753 VCFRONT_eFuseDebugStatusIndex 1;
+BA_ "Confidence" SG_ 753 VCFRONT_rightControllerState 1;
+BA_ "Confidence" SG_ 753 VCFRONT_rightControllerFault 1;
+BA_ "Confidence" SG_ 753 VCFRONT_vcrightSelfTestResult 1;
+BA_ "Confidence" SG_ 753 VCFRONT_rightControllerVoltage 1;
+BA_ "Confidence" SG_ 753 VCFRONT_rightControllerCurrent 1;
 BA_ "Confidence" SG_ 753 VCFRONT_leftControllerState 0;
 BA_ "GenSigSNA" SG_ 753 VCFRONT_leftControllerState "3";
 BA_ "Confidence" SG_ 753 VCFRONT_leftControllerFault 0;
@@ -128358,6 +128907,9 @@ BA_ "Confidence" SG_ 753 VCFRONT_ESPValveFault 0;
 BA_ "Confidence" SG_ 753 VCFRONT_ESPValveTemp 0;
 BA_ "Confidence" SG_ 753 VCFRONT_ESPValveVoltage 0;
 BA_ "Confidence" SG_ 753 VCFRONT_ESPValveCurrent 0;
+BA_ "Confidence" SG_ 753 VCFRONT_autopilot1State 1;
+BA_ "Confidence" SG_ 753 VCFRONT_autopilot1Fault 1;
+BA_ "Confidence" SG_ 753 VCFRONT_autopilot1Voltage 1;
 BA_ "Confidence" SG_ 753 VCFRONT_autopilot2State 0;
 BA_ "GenSigSNA" SG_ 753 VCFRONT_autopilot2State "3";
 BA_ "Confidence" SG_ 753 VCFRONT_autopilot2Fault 0;
@@ -128368,6 +128920,12 @@ BA_ "Confidence" SG_ 753 VCFRONT_sleepBypassState 0;
 BA_ "Confidence" SG_ 753 VCFRONT_sleepBypassFault 0;
 BA_ "Confidence" SG_ 753 VCFRONT_sleepBypassVoltage 0;
 BA_ "Confidence" SG_ 753 VCFRONT_sleepBypassCurrent 0;
+BA_ "Confidence" SG_ 753 VCFRONT_headlampLeftState 1;
+BA_ "Confidence" SG_ 753 VCFRONT_headlampLeftFault 1;
+BA_ "Confidence" SG_ 753 VCFRONT_headlampLeftVoltage 1;
+BA_ "Confidence" SG_ 753 VCFRONT_headlampRightState 1;
+BA_ "Confidence" SG_ 753 VCFRONT_headlampRightFault 1;
+BA_ "Confidence" SG_ 753 VCFRONT_headlampRightVoltage 1;
 BA_ "Confidence" SG_ 753 VCFRONT_vbatFusedHighState 0;
 BA_ "Confidence" SG_ 753 VCFRONT_vbatFusedHighFault 0;
 BA_ "Confidence" SG_ 753 VCFRONT_vbatFusedSelfTestResult 0;
@@ -128375,6 +128933,16 @@ BA_ "GenSigSNA" SG_ 753 VCFRONT_vbatFusedSelfTestResult "12";
 BA_ "Confidence" SG_ 753 VCFRONT_vbatFusedHighTemp 0;
 BA_ "Confidence" SG_ 753 VCFRONT_vbatFusedHighVoltage 0;
 BA_ "Confidence" SG_ 753 VCFRONT_vbatFusedHighCurrent 0;
+BA_ "Confidence" SG_ 753 VCFRONT_pump1AndFanState 1;
+BA_ "Confidence" SG_ 753 VCFRONT_pump1AndFanVoltage 1;
+BA_ "Confidence" SG_ 753 VCFRONT_pump2AndAirCompState 1;
+BA_ "Confidence" SG_ 753 VCFRONT_pump2AndAirCompVoltage 1;
+BA_ "Confidence" SG_ 753 VCFRONT_railA_12v 1;
+BA_ "Confidence" SG_ 753 VCFRONT_railB_12v 1;
+BA_ "Confidence" SG_ 753 VCFRONT_railA_5v 1;
+BA_ "Confidence" SG_ 753 VCFRONT_railB_5v 1;
+BA_ "Confidence" SG_ 753 VCFRONT_eFuseLockoutVoltage 1;
+BA_ "Confidence" SG_ 753 VCFRONT_ChargePumpVoltage 1;
 BA_ "Confidence" SG_ 753 VCFRONT_chargedIBSAmpHours 0;
 BA_ "Confidence" SG_ 753 VCFRONT_dischargedIBSAmpHours 0;
 BA_ "Confidence" SG_ 753 VCFRONT_IBSUnfilteredTemperature 0;
@@ -128404,6 +128972,7 @@ BA_ "Confidence" SG_ 769 VCFRONT_infoPlatformType 0;
 BA_ "Confidence" SG_ 769 VCFRONT_infoBootUdsProtoVersion 0;
 BA_ "Confidence" SG_ 769 VCFRONT_infoBootCrc 0;
 BA_ "Confidence" SG_ 769 VC_infoHCMRAppCRC 0;
+BA_ "Confidence" SG_ 769 VCFRONT_infoSubcomponent3 1;
 BA_ "Confidence" SG_ 769 VC_infoWiperAppCRC 0;
 BA_ "Confidence" SG_ 1014 VCFRONT_lowBeamLeftStatus 0;
 BA_ "GenSigSNA" SG_ 1014 VCFRONT_lowBeamLeftStatus "3";
@@ -128600,8 +129169,17 @@ BA_ "Confidence" SG_ 897 VCFRONT_usingModeledPl 0;
 BA_ "Confidence" SG_ 897 VCFRONT_usingModeledTs 0;
 BA_ "Confidence" SG_ 897 VCFRONT_usingModeledTd 0;
 BA_ "Confidence" SG_ 897 VCFRONT_usingModeledTl 0;
-BA_ "Confidence" SG_ 897 VCFRONT_hpChargeCableType 0;
-BA_ "Confidence" SG_ 897 VCFRONT_subcoolActual 0;
+BA_ "Confidence" SG_ 897 VCFRONT_HCML_lowBeamSpotTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCML_highBeamTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCML_turnTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCML_bladeTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCML_diffuseTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCMR_lowBeamSpotTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCMR_highBeamTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCMR_turnTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCMR_bladeTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_HCMR_diffuseTemp 1;
+BA_ "Confidence" SG_ 897 VCFRONT_homelinkRegionCode 1;
 BA_ "Confidence" SG_ 897 VCFRONT_hpSubcoolTarget 0;
 BA_ "Confidence" SG_ 897 VCFRONT_CMPDischargeSuperheat 0;
 BA_ "Confidence" SG_ 897 VCFRONT_hpCOP 0;
@@ -128696,7 +129274,7 @@ BA_ "Confidence" SG_ 897 VCFRONT_hpCabinHeatBatteryHeatRe 0;
 BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_hpCabinHeatBatteryHeatRe "VCFRONT_hpCabinHeatBatteryHeatReheatAmbSrc";
 BA_ "Confidence" SG_ 897 VCFRONT_hpCabinHeatBatteryCoolRe 0;
 BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_hpCabinHeatBatteryCoolRe "VCFRONT_hpCabinHeatBatteryCoolReheat";
-BA_ "Confidence" SG_ 897 VCFRONT_hpCabinCoolEvaporator 0;
+BA_ "Confidence" SG_ 897 VCFRONT_evapDisabledLowPsCutout 1;
 BA_ "Confidence" SG_ 897 VCFRONT_hpCabinCoolEvaporatorReh 0;
 BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_hpCabinCoolEvaporatorReh "VCFRONT_hpCabinCoolEvaporatorReheat";
 BA_ "Confidence" SG_ 897 VCFRONT_hpBatteryHeatAmbientSour 0;
@@ -128716,26 +129294,30 @@ BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_hpBattOverTempHvacDisabl "VCFRONT_h
 BA_ "Confidence" SG_ 897 VCFRONT_hpDiagLouverCalib 0;
 BA_ "Confidence" SG_ 897 VCFRONT_hpDiagHighSideNotNominal 0;
 BA_ "Confidence" SG_ 897 VCFRONT_hpForceModeRadClear 0;
-BA_ "Confidence" SG_ 897 VCFRONT_estPressureDischargeSat 0;
+BA_ "Confidence" SG_ 897 VCFRONT_ambientSourcingDisabled 1;
+BA_ "Confidence" SG_ 897 VCFRONT_chillerLiftDisabledLowPs 1;
 BA_ "Confidence" SG_ 897 VCFRONT_tempRefrigLiquid 0;
 BA_ "GenSigSNA" SG_ 897 VCFRONT_tempRefrigLiquid "2047";
-BA_ "Confidence" SG_ 897 VCFRONT_totalBattHeatingPower 0;
+BA_ "Confidence" SG_ 897 VCFRONT_maxCompressorRPMAllowed 1;
 BA_ "Confidence" SG_ 897 VCFRONT_hpPotentialFrozenRadiato 0;
 BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_hpPotentialFrozenRadiato "VCFRONT_hpPotentialFrozenRadiator";
-BA_ "Confidence" SG_ 897 VCFRONT_passiveSeriesRegOn 0;
-BA_ "Confidence" SG_ 897 VCFRONT_passiveDemandRadBypass 0;
-BA_ "Confidence" SG_ 897 VCFRONT_targetLccActiveCoolCap 0;
-BA_ "Confidence" SG_ 897 VCFRONT_targetLccActiveCoolEff 0;
+BA_ "Confidence" SG_ 897 VCFRONT_hpForceScavenge 1;
+BA_ "Confidence" SG_ 897 VCFRONT_battOverStagUpperLimit 1;
+BA_ "Confidence" SG_ 897 VCFRONT_battUnderStagUpperLimit 1;
+BA_ "Confidence" SG_ 897 VCFRONT_ambientColderThanBatt 1;
+BA_ "Confidence" SG_ 897 VCFRONT_ambientSourcingAvailable 1;
+BA_ "Confidence" SG_ 897 VCFRONT_hpMode 1;
+BA_ "Confidence" SG_ 897 VCFRONT_battLoopWorthCooling 1;
+BA_ "Confidence" SG_ 897 VCFRONT_ptLoopWorthCooling 1;
+BA_ "Confidence" SG_ 897 VCFRONT_estCompRefrigMassflow 1;
+BA_ "Confidence" SG_ 897 VCFRONT_pressureRefrigDischEst 1;
 BA_ "Confidence" SG_ 897 VCFRONT_coolantValveDailyAngleTr 0;
 BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_coolantValveDailyAngleTr "VCFRONT_coolantValveDailyAngleTravel";
 BA_ "Confidence" SG_ 897 VCFRONT_dischargePressureLimit 0;
 BA_ "Confidence" SG_ 897 VCFRONT_radMovementBlockActive 0;
 BA_ "Confidence" SG_ 897 VCFRONT_radBypassMoveReason 0;
-BA_ "Confidence" SG_ 897 VCFRONT_hpBattHeatingPower 0;
-BA_ "Confidence" SG_ 897 VCFRONT_tempCoolantRadOutletEstS 0;
-BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_tempCoolantRadOutletEstS "VCFRONT_tempCoolantRadOutletEstStatus";
-BA_ "Confidence" SG_ 897 VCFRONT_targetBatActiveCoolSourc 0;
-BA_ "SystemSignalLongSymbol" SG_ 897 VCFRONT_targetBatActiveCoolSourc "VCFRONT_targetBatActiveCoolSource";
+BA_ "Confidence" SG_ 897 VCFRONT_hpAtSteadyState 1;
+BA_ "Confidence" SG_ 897 VCFRONT_suctionSuperheatEstPsSNA 1;
 BA_ "Confidence" SG_ 897 VCFRONT_targetPTActiveCoolSource 0;
 BA_ "Confidence" SG_ 897 VCFRONT_hpColdStagnationLimit 0;
 BA_ "Confidence" SG_ 897 VCFRONT_hpHotStagnationLimit 0;
@@ -129023,10 +129605,8 @@ BA_ "Confidence" SG_ 737 VCFRONT_AS8510Voltage 0;
 BA_ "GenSigSNA" SG_ 737 VCFRONT_AS8510Voltage "4095";
 BA_ "Confidence" SG_ 737 VCFRONT_vbatProt 0;
 BA_ "Confidence" SG_ 737 VCFRONT_logVerbosity 0;
-BA_ "Confidence" SG_ 737 VCFRONT_cabinCoolingCapacityLimi 0;
-BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_cabinCoolingCapacityLimi "VCFRONT_cabinCoolingCapacityLimited";
-BA_ "Confidence" SG_ 737 VCFRONT_cabinHeatingCapacityLimi 0;
-BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_cabinHeatingCapacityLimi "VCFRONT_cabinHeatingCapacityLimited";
+BA_ "Confidence" SG_ 737 VCFRONT_IBSFault 1;
+BA_ "Confidence" SG_ 737 VCFRONT_12VOverchargeCounter 1;
 BA_ "Confidence" SG_ 737 VCFRONT_compPowerSupportingHvac 0;
 BA_ "Confidence" SG_ 737 VCFRONT_compPowerSupportingPT 0;
 BA_ "Confidence" SG_ 737 VCFRONT_maxHeatingPowerLeftCC 0;
@@ -131466,13 +132046,16 @@ BA_ "Confidence" SG_ 258 VCLEFT_rearHandlePulledPersist 0;
 BA_ "Confidence" SG_ 258 VCLEFT_frontHandlePulledPersist 0;
 BA_ "Confidence" SG_ 258 VCLEFT_mirrorDipped 0;
 BA_ "Confidence" SG_ 2012 VCLEFT_doorStatus2Index 1;
-BA_ "Confidence" SG_ 2012 VCLEFT_frontLatchRelDuty 0;
-BA_ "Confidence" SG_ 2012 VCLEFT_BPillarCameraHeaterState 0;
-BA_ "GenSigSNA" SG_ 2012 VCLEFT_BPillarCameraHeaterState "0";
-BA_ "Confidence" SG_ 2012 VCLEFT_doorLatchAjarSwitchVoltag 0;
-BA_ "SystemSignalLongSymbol" SG_ 2012 VCLEFT_doorLatchAjarSwitchVoltag "VCLEFT_doorLatchAjarSwitchVoltageF";
-BA_ "Confidence" SG_ 2012 VCLEFT_doorLatchAjarSwitchV_0001 0;
-BA_ "SystemSignalLongSymbol" SG_ 2012 VCLEFT_doorLatchAjarSwitchV_0001 "VCLEFT_doorLatchAjarSwitchVoltageR";
+BA_ "Confidence" SG_ 2012 VCLEFT_rearLatchRelDuty 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_vehicleInMotion 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_frontDoorState 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_rearDoorState 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_frontHandleRawStatus 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_rearHandleRawStatus 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_frontHandleDebounceStatus 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_rearHandleDebounceStatus 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_frontHandle5vEnable 1;
+BA_ "Confidence" SG_ 2012 VCLEFT_rearHandle5vEnable 1;
 BA_ "Confidence" SG_ 2012 VCLEFT_BPillarCameraHeaterCurren 0;
 BA_ "GenSigSNA" SG_ 2012 VCLEFT_BPillarCameraHeaterCurren "63";
 BA_ "SystemSignalLongSymbol" SG_ 2012 VCLEFT_BPillarCameraHeaterCurren "VCLEFT_BPillarCameraHeaterCurrent";
@@ -135358,6 +135941,28 @@ BA_ "Confidence" SG_ 835 VCRIGHT_isSteeringWheelHeaterReq 0;
 BA_ "Confidence" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt 0;
 BA_ "GenSigSNA" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "127";
 BA_ "Confidence" SG_ 963 VCRIGHT_switchStatusIndex 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowUpRF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowAutoUpRF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowDownRF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowAutoDownRF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowUpRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowAutoUpRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowDownRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowAutoDownRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackUpLF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackAutoUpLF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackDownLF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackAutoDwnLF 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackUpLR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackAutoUpLR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackDownLR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackAutoDwnLR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_frontOccupancySwitch 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_trunkExtReleasePressed 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackUpRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackAutoUpRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackDownRR 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_btnWindowSwPackAutoDwnRR 1;
 BA_ "Confidence" SG_ 963 VCRIGHT_frontBuckleSwitch 1;
 BA_ "Confidence" SG_ 963 VCRIGHT_rearCenterBuckleSwitch 1;
 BA_ "Confidence" SG_ 963 VCRIGHT_rearRightBuckleSwitch 1;
@@ -135385,20 +135990,6 @@ BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatLumbarUp 0;
 BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatLumbarUp "0";
 BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatLumbarIn 0;
 BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatLumbarIn "0";
-BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatLumbarOut 0;
-BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatLumbarOut "0";
-BA_ "Confidence" SG_ 963 VCRIGHT_2RowSeatReclineSwitch 0;
-BA_ "Confidence" SG_ 963 VCRIGHT_2RowSeatBackrestFoldSwit 0;
-BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_2RowSeatBackrestFoldSwit "VCRIGHT_2RowSeatBackrestFoldSwitch";
-BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatThighSupportExt 0;
-BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatThighSupportExt "0";
-BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_frontSeatThighSupportExt "VCRIGHT_frontSeatThighSupportExtendSwitch";
-BA_ "Confidence" SG_ 963 VCRIGHT_frontHandlePWM 0;
-BA_ "Confidence" SG_ 963 VCRIGHT_hvacHeatingAllowedLeft 0;
-BA_ "Confidence" SG_ 963 VCRIGHT_rearHandlePWM 0;
-BA_ "Confidence" SG_ 963 VCRIGHT_gloveboxLightCurrent 0;
-BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatALR 0;
-BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatALR "0";
 BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatResistiveOccupa 0;
 BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatResistiveOccupa "0";
 BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_frontSeatResistiveOccupa "VCRIGHT_frontSeatResistiveOccupancy";
@@ -139988,6 +140579,9 @@ VAL_ 1138 BMS_userChargeCurrentLimitMode 4 "USR_CHG_LIMIT_EVSE_RELOCATION_RECOMM
 VAL_ 1138 BMS_chargeCurrentLimitMode 20 "CHG_LIMIT_RIPPLE_HEAT_ACTIVE" 19 "CHG_LIMIT_NEAR_HWOT_LIMIT" 18 "CHG_LIMIT_LIMP_MODE" 17 "CHG_LIMIT_MISSING_CELL" 16 "CHG_LIMIT_CAC_IMBALANCE" 15 "CHG_LIMIT_PCS_IMPLICIT" 14 "CHG_LIMIT_EVSE_IMPLICIT" 13 "CHG_LIMIT_RAMP_UP_PHASE" 12 "CHG_LIMIT_HVAC_COOLING" 11 "CHG_LIMIT_HV_CHAIN" 10 "CHG_LIMIT_CONFIG" 9 "CHG_LIMIT_TETHERING" 8 "CHG_LIMIT_LEAKY_BUCKET" 7 "CHG_LIMIT_BRICK_VOLTAGE_REG" 6 "CHG_LIMIT_BRICK_TEMP_TOO_COLD" 5 "CHG_LIMIT_BRICK_TEMP_TOO_HOT" 4 "CHG_LIMIT_BRICK_TEMP_OPTIMAL_CELL_PROFILE" 3 "CHG_LIMIT_CP" 2 "CHG_LIMIT_PCS" 1 "CHG_LIMIT_EVSE" 0 "CHG_LIMIT_NONE" ;
 VAL_ 1138 BMS_timeToFinishHeatForCharge 127 "SNA" 126 "CALCULATING" ;
 VAL_ 1138 BMS_timeToTripPlanChargingTarget 2047 "SNA" ;
+VAL_ 562 BMS_fcContactorRequest 5 "SET_REQUEST_CLOSE_POSITIVE_ONLY" 4 "SET_REQUEST_CLOSE_NEGATIVE_ONLY" 3 "SET_REQUEST_OPEN_IMMEDIATELY" 2 "SET_REQUEST_OPEN" 1 "SET_REQUEST_CLOSE" 0 "SET_REQUEST_SNA" ;
+VAL_ 562 BMS_packContactorRequest 5 "SET_REQUEST_CLOSE_POSITIVE_ONLY" 4 "SET_REQUEST_CLOSE_NEGATIVE_ONLY" 3 "SET_REQUEST_OPEN_IMMEDIATELY" 2 "SET_REQUEST_OPEN" 1 "SET_REQUEST_CLOSE" 0 "SET_REQUEST_SNA" ;
+VAL_ 562 BMS_fcLinkOkToEnergizeRequest 2 "FC_LINK_ENERGY_DC" 1 "FC_LINK_ENERGY_AC" 0 "FC_LINK_ENERGY_NONE" ;
 VAL_ 562 BMS_internalHvilSenseV 65535 "SNA" ;
 VAL_ 562 BMS_hvilCoverVSense 65535 "SNA" ;
 VAL_ 690 BMS_energyStatusMultiplexer 2 "Mux2" 1 "Mux1" 0 "Mux0" ;
@@ -140276,8 +140870,6 @@ VAL_ 541 CP_pilot 7 "CHG_PILOT_SNA" 6 "CHG_PILOT_UNUSED_6" 5 "CHG_PILOT_INVALID"
 VAL_ 541 CP_cableType 5 "CHG_CABLE_TYPE_SNA" 4 "CHG_CABLE_TYPE_MCS" 3 "CHG_CABLE_TYPE_GB_DC" 2 "CHG_CABLE_TYPE_GB_AC" 1 "CHG_CABLE_TYPE_SAE" 0 "CHG_CABLE_TYPE_IEC" ;
 VAL_ 541 CP_iecPilotState 9 "IEC_PILOT_SNA" 8 "IEC_PILOT_NUM" 7 "IEC_PILOT_F" 6 "IEC_PILOT_E" 5 "IEC_PILOT_C3" 4 "IEC_PILOT_C2" 3 "IEC_PILOT_C1" 2 "IEC_PILOT_B3" 1 "IEC_PILOT_B2" 0 "IEC_PILOT_B1" ;
 VAL_ 541 CP_teslaSwcanState 8 "TESLA_SWCAN_V2L_ESTABLISHED" 7 "TESLA_SWCAN_V2L_RECEIVE" 6 "TESLA_SWCAN_OFFBOARD_UPDATE_IN_PROGRESS" 5 "TESLA_SWCAN_GO_TO_SLEEP" 4 "TESLA_SWCAN_FAULT" 3 "TESLA_SWCAN_ESTABLISHED" 2 "TESLA_SWCAN_RECEIVE" 1 "TESLA_SWCAN_ACCEPT" 0 "TESLA_SWCAN_INACTIVE" ;
-VAL_ 541 CP_evseChargeType_UI 2 "AC_CHARGER_PRESENT" 1 "DC_CHARGER_PRESENT" 0 "NO_CHARGER_PRESENT" ;
-VAL_ 541 CP_gbState 15 "GBDC_TESTER_PRESENT" 14 "GBDC_FAULTED" 13 "GBDC_RETRY_CHARGE" 12 "GBDC_ERROR_HANDLING" 11 "GBDC_END_OF_CHARGE" 10 "GBDC_CHARGE_DISABLING" 9 "GBDC_STOP_CHARGE_REQUESTED" 8 "GBDC_CHARGING" 7 "GBDC_READY_TO_CHARGE" 6 "GBDC_VEH_PACK_PRECHARGE" 5 "GBDC_CHARGE_PARAM_CONFIG" 4 "GBDC_RECOGNITION" 3 "GBDC_HANDSHAKING_EXT_ISO" 2 "GBDC_COMMS_RECEIVED" 1 "GBDC_WAIT_FOR_COMMS" 0 "GBDC_INACTIVE" ;
 VAL_ 541 CP_gbdcStopChargeReason 8 "GBDC_PARAM_MISMATCH" 7 "GBDC_SUPERCHARGER_COMMS_TIMEOUT" 6 "GBDC_LIVE_DISCONNECT" 5 "GBDC_EVSE_CRITICAL_FAULT" 4 "GBDC_EVSE_FAULT" 3 "GBDC_COMMS_TIMEOUT" 2 "GBDC_EVSE_REQUESTED" 1 "GBDC_VEH_REQUESTED" 0 "GBDC_STOP_REASON_NONE" ;
 VAL_ 541 CP_gbdcFailureReason 3 "GBDC_CRITICAL_FAILURE" 2 "GBDC_SHUTDOWN_FAILURE" 1 "GBDC_ATTEMPTS_EXPIRED" 0 "GBDC_FAILURE_NONE" ;
 VAL_ 541 CP_acChargeState 6 "AC_CHARGE_FAULT" 5 "AC_CHARGE_VEH_SHUTDOWN" 4 "AC_CHARGE_ONBOARD_CHARGER_SHUTDOWN" 3 "AC_CHARGE_ENABLED" 2 "AC_CHARGE_STANDBY" 1 "AC_CHARGE_CONNECTED_CHARGE_BLOCKED" 0 "AC_CHARGE_INACTIVE" ;
@@ -140566,6 +141158,8 @@ VAL_ 1318 DIF_a251_reason 4 "INSUFFICIENT_FLOW" 3 "CURRENT_SENSOR" 2 "PRESSURE_H
 VAL_ 1318 DIF_a253_reason 2 "OVERVOLTAGE" 1 "UNDERVOLTAGE" 0 "NONE" ;
 VAL_ 854 DIF_matrixIndex 4 "AlertMatrix4" 3 "AlertMatrix3" 2 "AlertMatrix2" 1 "AlertMatrix1" 0 "AlertMatrix0" ;
 VAL_ 1879 DIF_debugSelector 132 "Mux132" 131 "Mux131" 128 "Mux128" 73 "Mux73" 72 "Mux72" 70 "Mux70" 69 "Mux69" 68 "Mux68" 67 "Mux67" 66 "Mux66" 64 "Mux64" 63 "Mux63" 52 "Mux52" 50 "Mux50" 49 "Mux49" 48 "Mux48" 47 "Mux47" 46 "Mux46" 44 "Mux44" 43 "Mux43" 42 "Mux42" 41 "Mux41" 40 "Mux40" 39 "Mux39" 38 "Mux38" 37 "Mux37" 36 "Mux36" 35 "Mux35" 34 "Mux34" 33 "Mux33" 32 "Mux32" ;
+VAL_ 1879 DIF_usmState 7 "USM_STATE_WAIT_FOR_RETRY" 6 "USM_STATE_UNAVAILABLE" 5 "USM_STATE_FAULT" 4 "USM_STATE_ENABLE" 3 "USM_STATE_ABORT" 2 "USM_STATE_RETRY" 1 "USM_STATE_STANDBY" 0 "USM_STATE_START" ;
+VAL_ 1879 DIF_pwmState 3 "PWMSTATE_OPWM2" 2 "PWMSTATE_OPWM1" 1 "PWMSTATE_DPWM2" 0 "PWMSTATE_SVPWM" ;
 VAL_ 1879 DIF_phaseOutBusbarTemp 0 "SNA" ;
 VAL_ 1879 DIF_phaseOutBusbarWeldTemp 0 "SNA" ;
 VAL_ 1879 DIF_phaseOutLugTemp 0 "SNA" ;
@@ -140683,6 +141277,8 @@ VAL_ 1445 DIR_a251_reason 4 "INSUFFICIENT_FLOW" 3 "CURRENT_SENSOR" 2 "PRESSURE_H
 VAL_ 1445 DIR_a253_reason 2 "OVERVOLTAGE" 1 "UNDERVOLTAGE" 0 "NONE" ;
 VAL_ 935 DIR_matrixIndex 4 "AlertMatrix4" 3 "AlertMatrix3" 2 "AlertMatrix2" 1 "AlertMatrix1" 0 "AlertMatrix0" ;
 VAL_ 2005 DIR_debugSelector 132 "Mux132" 131 "Mux131" 128 "Mux128" 73 "Mux73" 72 "Mux72" 70 "Mux70" 69 "Mux69" 68 "Mux68" 67 "Mux67" 66 "Mux66" 64 "Mux64" 63 "Mux63" 52 "Mux52" 50 "Mux50" 49 "Mux49" 48 "Mux48" 47 "Mux47" 46 "Mux46" 44 "Mux44" 43 "Mux43" 42 "Mux42" 41 "Mux41" 40 "Mux40" 39 "Mux39" 38 "Mux38" 37 "Mux37" 36 "Mux36" 35 "Mux35" 34 "Mux34" 33 "Mux33" 32 "Mux32" ;
+VAL_ 2005 DIR_usmState 7 "USM_STATE_WAIT_FOR_RETRY" 6 "USM_STATE_UNAVAILABLE" 5 "USM_STATE_FAULT" 4 "USM_STATE_ENABLE" 3 "USM_STATE_ABORT" 2 "USM_STATE_RETRY" 1 "USM_STATE_STANDBY" 0 "USM_STATE_START" ;
+VAL_ 2005 DIR_pwmState 3 "PWMSTATE_OPWM2" 2 "PWMSTATE_OPWM1" 1 "PWMSTATE_DPWM2" 0 "PWMSTATE_SVPWM" ;
 VAL_ 2005 DIR_phaseOutBusbarTemp 0 "SNA" ;
 VAL_ 2005 DIR_phaseOutBusbarWeldTemp 0 "SNA" ;
 VAL_ 2005 DIR_phaseOutLugTemp 0 "SNA" ;
@@ -145134,6 +145730,8 @@ VAL_ 577 VCFRONT_wasteHeatRequestType 3 "WASTE_TYPE_BURN_IN" 2 "WASTE_TYPE_FULL"
 VAL_ 577 VCFRONT_coolantAirPurgeBatState 4 "AIR_PURGE_STATE_PENDING" 3 "AIR_PURGE_STATE_INTERRUPTED" 2 "AIR_PURGE_STATE_COMPLETE" 1 "AIR_PURGE_STATE_ACTIVE" 0 "AIR_PURGE_STATE_INACTIVE" ;
 VAL_ 577 VCFRONT_coolantFlowTableConfig 1 "FLOW_TABLE_CONFIG_BMS_TYPE_5" 0 "FLOW_TABLE_CONFIG_DEFAULT" ;
 VAL_ 753 VCFRONT_eFuseDebugStatusIndex 19 "INVALID" 18 "MCU_MISC" 17 "LV_BATTERY_DEBUG" 16 "MISC_RAILS" 15 "RAILS_A_B" 14 "PUMPS" 13 "VBAT_FUSED_HIGH_CURRENT" 12 "HEADLAMPS" 11 "MCU_LOGIC" 10 "SLEEP_BYPASS" 9 "AUTOPILOT_2" 8 "AUTOPILOT_1" 7 "ESP_VALVE" 6 "ESP_MOTOR" 5 "EPAS3S" 4 "EPAS3P" 3 "IBOOSTER" 2 "PCS" 1 "VCLEFT" 0 "VCRIGHT" ;
+VAL_ 753 VCFRONT_rightControllerState 3 "EFUSE_STATE_SNA" 2 "EFUSE_STATE_LOCKED_OUT" 1 "EFUSE_STATE_ON" 0 "EFUSE_STATE_OFF" ;
+VAL_ 753 VCFRONT_vcrightSelfTestResult 12 "EFUSE_SELF_TEST_EFUSE_RESULT_SNA" 11 "EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED" 10 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED" 9 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW" 8 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION" 7 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN" 6 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION" 5 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON" 4 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT" 3 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE" 2 "EFUSE_SELF_TEST_EFUSE_RESULT_PASSED" 1 "EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING" 0 "EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN" ;
 VAL_ 753 VCFRONT_leftControllerState 3 "EFUSE_STATE_SNA" 2 "EFUSE_STATE_LOCKED_OUT" 1 "EFUSE_STATE_ON" 0 "EFUSE_STATE_OFF" ;
 VAL_ 753 VCFRONT_vcleftSelfTestResult 12 "EFUSE_SELF_TEST_EFUSE_RESULT_SNA" 11 "EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED" 10 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED" 9 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW" 8 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION" 7 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN" 6 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION" 5 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON" 4 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT" 3 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE" 2 "EFUSE_SELF_TEST_EFUSE_RESULT_PASSED" 1 "EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING" 0 "EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN" ;
 VAL_ 753 VCFRONT_leftControllerEFuseVNFSt 7 "EFUSE_ASIC_STATE_SELF_TEST" 6 "EFUSE_ASIC_STATE_SELF_TEST_PREP" 5 "EFUSE_ASIC_STATE_LOCKED" 4 "EFUSE_ASIC_STATE_UNLOCKED" 3 "EFUSE_ASIC_STATE_CONFIGURATION" 2 "EFUSE_ASIC_STATE_WAKEUP" 1 "EFUSE_ASIC_STATE_STANDBY" 0 "EFUSE_ASIC_STATE_UNKNOWN" ;
@@ -145161,6 +145759,7 @@ VAL_ 753 VCFRONT_ESPMotorSelfTestResult 12 "EFUSE_SELF_TEST_EFUSE_RESULT_SNA" 11
 VAL_ 753 VCFRONT_ESPMotorEFuseVNFState 7 "EFUSE_ASIC_STATE_SELF_TEST" 6 "EFUSE_ASIC_STATE_SELF_TEST_PREP" 5 "EFUSE_ASIC_STATE_LOCKED" 4 "EFUSE_ASIC_STATE_UNLOCKED" 3 "EFUSE_ASIC_STATE_CONFIGURATION" 2 "EFUSE_ASIC_STATE_WAKEUP" 1 "EFUSE_ASIC_STATE_STANDBY" 0 "EFUSE_ASIC_STATE_UNKNOWN" ;
 VAL_ 753 VCFRONT_ESPMotorEFuseVNFSelfTest 3 "EFUSE_SELF_TEST_SKIPPED" 2 "EFUSE_SELF_TEST_COMPLETE" 1 "EFUSE_SELF_TEST_ACTIVE" 0 "EFUSE_SELF_TEST_NOT_COMPLETE" ;
 VAL_ 753 VCFRONT_ESPValveState 3 "EFUSE_STATE_SNA" 2 "EFUSE_STATE_LOCKED_OUT" 1 "EFUSE_STATE_ON" 0 "EFUSE_STATE_OFF" ;
+VAL_ 753 VCFRONT_autopilot1State 3 "EFUSE_STATE_SNA" 2 "EFUSE_STATE_LOCKED_OUT" 1 "EFUSE_STATE_ON" 0 "EFUSE_STATE_OFF" ;
 VAL_ 753 VCFRONT_autopilot2State 3 "EFUSE_STATE_SNA" 2 "EFUSE_STATE_LOCKED_OUT" 1 "EFUSE_STATE_ON" 0 "EFUSE_STATE_OFF" ;
 VAL_ 753 VCFRONT_vbatFusedSelfTestResult 12 "EFUSE_SELF_TEST_EFUSE_RESULT_SNA" 11 "EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED" 10 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED" 9 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW" 8 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION" 7 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN" 6 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION" 5 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON" 4 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT" 3 "EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE" 2 "EFUSE_SELF_TEST_EFUSE_RESULT_PASSED" 1 "EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING" 0 "EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN" ;
 VAL_ 753 VCFRONT_IBSUnfilteredTemperature -32768 "SNA" ;
@@ -145245,7 +145844,7 @@ VAL_ 897 VCFRONT_coolantTempBasedMode 3 "AMBIENT_SOURCE" 2 "BLEND" 1 "PARALLEL" 
 VAL_ 897 VCFRONT_coolantValveRecalReason 6 "NVRAM_LOSS" 5 "MOTOR_FEEDBACK_INTERRUPTED" 4 "SELF_TEST" 3 "CALIBRATION_FAULT_NO_TRAVEL" 2 "GENERAL_FAULT" 1 "MAX_TRAVEL" 0 "UNDEFINED" ;
 VAL_ 897 VCFRONT_coolantValveCountRange 1023 "SNA" ;
 VAL_ 897 VCFRONT_coolantValveRadBypass 127 "SNA" ;
-VAL_ 897 VCFRONT_hpChargeCableType 2 "AC_CHARGER_PRESENT" 1 "DC_CHARGER_PRESENT" 0 "NO_CHARGER_PRESENT" ;
+VAL_ 897 VCFRONT_homelinkRegionCode 9 "HOMELINK_REGION_CODE_CHINA" 8 "HOMELINK_REGION_CODE_REST_OF_WORLD" 5 "HOMELINK_REGION_CODE_AMERICAS" 1 "HOMELINK_REGION_CODE_EUROPE" 0 "HOMELINK_REGION_CODE_UNKNOWN" ;
 VAL_ 897 VCFRONT_tempSuperheatActual 1023 "SNA" ;
 VAL_ 897 VCFRONT_refCommissionStatus 2 "REFRIGERANT_COMMISSIONED" 1 "REFRIGERANT_UNCOMMISSIONED" 0 "REFRIGERANT_UNKNOWN" ;
 VAL_ 897 VCFRONT_passiveCoolingState 3 "CannotCoolBattery" 2 "ChillerAndRadCoolSeriesLoop" 1 "ChillerCoolsParallelBattLoop" 0 "ChillerCoolsSeriesLoop" ;
@@ -145257,9 +145856,8 @@ VAL_ 897 VCFRONT_lccEXVControlState 5 "PARKED" 4 "CALIBRATING_TIMEOUT" 3 "CALIBR
 VAL_ 897 VCFRONT_cclEXVControlState 5 "PARKED" 4 "CALIBRATING_TIMEOUT" 3 "CALIBRATING" 2 "DISCHARGE" 1 "ACTIVE" 0 "INIT" ;
 VAL_ 897 VCFRONT_ccrEXVControlState 5 "PARKED" 4 "CALIBRATING_TIMEOUT" 3 "CALIBRATING" 2 "DISCHARGE" 1 "ACTIVE" 0 "INIT" ;
 VAL_ 897 VCFRONT_tempRefrigLiquid 2047 "SNA" ;
+VAL_ 897 VCFRONT_hpMode 23 "BATTERY_HEAT_CABIN_HEAT_COP1_CHILLER" 22 "CABIN_COOL_EVAPORATOR_BATTERY_HEAT_AMBIENT_SOURCE" 21 "BATTERY_HEAT_CABIN_HEAT_COP1" 20 "BATTERY_HEAT_CABIN_HEAT_AMBIENT_SOURCE" 19 "BATTERY_COOL_EVAPORATOR" 18 "BATTERY_COOL_CABIN_REHEAT" 17 "BATTERY_COOL_CC_COOLING_DOMINANT" 16 "BATTERY_COOL_CC_HEATING_DOMINANT" 15 "BATTERY_COOL" 14 "BATTERY_HEAT_COP1" 13 "BATTERY_HEAT_AMBIENT_SOURCE" 12 "CABIN_COOL_EVAPORATOR_REHEAT" 11 "CABIN_COOL_EVAPORATOR" 10 "CABIN_HEAT_BATTERY_COOL_REHEAT" 9 "CABIN_HEAT_BATTERY_HEAT_REHEAT_AMBIENT_SOURCE" 8 "CABIN_HEAT_COP1" 7 "CABIN_HEAT_BLEND" 6 "CABIN_HEAT_REHEAT_AMBIENT_SOURCE" 5 "CABIN_HEAT_REHEAT_SCAVENGE" 4 "CABIN_HEAT_AMBIENT_SOURCE" 3 "CABIN_HEAT_SCAVENGE_ONLY" 2 "AMBIENT_SOURCE" 1 "GENERAL" 0 "NONE" ;
 VAL_ 897 VCFRONT_radBypassMoveReason 11 "DRIVERLESS_SELF_TEST" 10 "HEATPUMP" 9 "UDS" 8 "EXIT_SERIES" 7 "ACTIVE_BATT_UNBYPASS" 6 "ACTIVE_PT_UNBYPASS" 5 "RAD_HEAT_UNBYPASS" 4 "RAD_HEAT_BYPASS" 3 "PASSIVE_BYPASS" 2 "PASSIVE_UNBYPASS" 1 "INIT_BYPASS" 0 "INIT_UNBYPASS" ;
-VAL_ 897 VCFRONT_tempCoolantRadOutletEstS 3 "TEMP_ESTIMATE_HIGH_CONFIDENCE" 2 "TEMP_ESTIMATE_HIGH_CONFIDENCE_OVERPREDICT" 1 "TEMP_ESTIMATE_LOW_CONFIDENCE" 0 "TEMP_ESTIMATE_INVALID" ;
-VAL_ 897 VCFRONT_targetBatActiveCoolSourc 7 "OVERRIDE" 6 "DIR" 5 "DIF" 4 "LCC" 3 "PCS" 2 "DAS" 1 "UI" 0 "BMS" ;
 VAL_ 897 VCFRONT_targetPTActiveCoolSource 7 "OVERRIDE" 6 "DIR" 5 "DIF" 4 "LCC" 3 "PCS" 2 "DAS" 1 "UI" 0 "BMS" ;
 VAL_ 897 VCFRONT_louverPosReason 11 "DRIVERLESS_SELF_TEST" 10 "BATTERY_DISCHARGE" 9 "HIGH_SPEED" 8 "UDS" 7 "COAST_MODE" 6 "FAN_FAULT" 5 "FAN_RUN" 4 "BOUNDS_CHECK" 3 "SNIFFING" 2 "PASSIVE_MANAGER" 1 "CONDENSOR_MANAGER" 0 "NONE" ;
 VAL_ 897 VCFRONT_chargeShuttleType 3 "CHARGE_SHUTTLE_COP1" 2 "CHARGE_SHUTTLE_LCCR" 1 "CHARGE_SHUTTLE_STANDARD" 0 "CHARGE_SHUTTLE_NONE" ;
@@ -145585,7 +146183,12 @@ VAL_ 258 VCLEFT_mirrorFoldState 4 "MIRROR_FOLD_STATE_UNFOLDING" 3 "MIRROR_FOLD_S
 VAL_ 258 VCLEFT_mirrorRecallState 5 "MIRROR_RECALL_STATE_RECALLING_STOPPED" 4 "MIRROR_RECALL_STATE_RECALLING_FAILED" 3 "MIRROR_RECALL_STATE_RECALLING_COMPLETE" 2 "MIRROR_RECALL_STATE_RECALLING_AXIS_2" 1 "MIRROR_RECALL_STATE_RECALLING_AXIS_1" 0 "MIRROR_RECALL_STATE_INIT" ;
 VAL_ 258 VCLEFT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
 VAL_ 2012 VCLEFT_doorStatus2Index 1 "MUX1" 0 "MUX0" ;
-VAL_ 2012 VCLEFT_BPillarCameraHeaterState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
+VAL_ 2012 VCLEFT_frontDoorState 6 "DOOR_STATE_INIT" 5 "DOOR_STATE_AJAR" 4 "DOOR_STATE_OPEN" 3 "DOOR_STATE_RELEASING_LATCH" 2 "DOOR_STATE_WAIT_FOR_SHORT_DROP" 1 "DOOR_STATE_CLOSED" 0 "DOOR_STATE_UNKNOWN" ;
+VAL_ 2012 VCLEFT_rearDoorState 6 "DOOR_STATE_INIT" 5 "DOOR_STATE_AJAR" 4 "DOOR_STATE_OPEN" 3 "DOOR_STATE_RELEASING_LATCH" 2 "DOOR_STATE_WAIT_FOR_SHORT_DROP" 1 "DOOR_STATE_CLOSED" 0 "DOOR_STATE_UNKNOWN" ;
+VAL_ 2012 VCLEFT_frontHandleRawStatus 5 "EXTERIOR_HANDLE_STATUS_FAULT" 4 "EXTERIOR_HANDLE_STATUS_DISCONNECTED" 3 "EXTERIOR_HANDLE_STATUS_ACTIVE" 2 "EXTERIOR_HANDLE_STATUS_NOT_ACTIVE" 1 "EXTERIOR_HANDLE_STATUS_INDETERMINATE" 0 "EXTERIOR_HANDLE_STATUS_SNA" ;
+VAL_ 2012 VCLEFT_rearHandleRawStatus 5 "EXTERIOR_HANDLE_STATUS_FAULT" 4 "EXTERIOR_HANDLE_STATUS_DISCONNECTED" 3 "EXTERIOR_HANDLE_STATUS_ACTIVE" 2 "EXTERIOR_HANDLE_STATUS_NOT_ACTIVE" 1 "EXTERIOR_HANDLE_STATUS_INDETERMINATE" 0 "EXTERIOR_HANDLE_STATUS_SNA" ;
+VAL_ 2012 VCLEFT_frontHandleDebounceStatus 5 "EXTERIOR_HANDLE_STATUS_FAULT" 4 "EXTERIOR_HANDLE_STATUS_DISCONNECTED" 3 "EXTERIOR_HANDLE_STATUS_ACTIVE" 2 "EXTERIOR_HANDLE_STATUS_NOT_ACTIVE" 1 "EXTERIOR_HANDLE_STATUS_INDETERMINATE" 0 "EXTERIOR_HANDLE_STATUS_SNA" ;
+VAL_ 2012 VCLEFT_rearHandleDebounceStatus 5 "EXTERIOR_HANDLE_STATUS_FAULT" 4 "EXTERIOR_HANDLE_STATUS_DISCONNECTED" 3 "EXTERIOR_HANDLE_STATUS_ACTIVE" 2 "EXTERIOR_HANDLE_STATUS_NOT_ACTIVE" 1 "EXTERIOR_HANDLE_STATUS_INDETERMINATE" 0 "EXTERIOR_HANDLE_STATUS_SNA" ;
 VAL_ 2012 VCLEFT_BPillarCameraHeaterCurren 63 "SNA" ;
 VAL_ 626 VCLEFT_epbmDebugIndex 1 "TRANSITIONS" 0 "STATES" ;
 VAL_ 626 VCLEFT_epbmCaliperState 6 "EPB_SAVED_CALIPERSTATE_WINCHMODE" 5 "EPB_SAVED_CALIPERSTATE_SERVICE" 4 "EPB_SAVED_CALIPERSTATE_OPEN" 3 "EPB_SAVED_CALIPERSTATE_PARK" 2 "EPB_SAVED_CALIPERSTATE_REAPPLY" 1 "EPB_SAVED_CALIPERSTATE_UNKNOWN" 0 "EPB_SAVED_CALIPERSTATE_UNSAVED" ;
@@ -146297,6 +146900,7 @@ VAL_ 835 VCRIGHT_rearDefrostState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNA
 VAL_ 835 VCRIGHT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
 VAL_ 835 VCRIGHT_steeringWheelHeaterDCTgt 127 "SNA" ;
 VAL_ 963 VCRIGHT_switchStatusIndex 1 "1" 0 "0" ;
+VAL_ 963 VCRIGHT_frontOccupancySwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_rearCenterBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_rearRightBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
@@ -146311,9 +146915,6 @@ VAL_ 963 VCRIGHT_frontSeatBackrestForward 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWIT
 VAL_ 963 VCRIGHT_frontSeatLumbarDown 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatLumbarUp 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatLumbarIn 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 963 VCRIGHT_frontSeatLumbarOut 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 963 VCRIGHT_frontSeatThighSupportExt 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 963 VCRIGHT_frontSeatALR 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatResistiveOccupa 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_2RowSeatReclineSwitchpac 6 "FAULT" 5 "REARWARD_FAST" 4 "REARWARD_SLOW" 3 "FORWARD_FAST" 2 "FORWARD_SLOW" 1 "INACTIVE" 0 "DISCONNECTED" ;
 VAL_ 963 VCRIGHT_frontSeatThighSupportRet 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;

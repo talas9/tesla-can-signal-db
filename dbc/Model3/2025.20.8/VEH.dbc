@@ -802,6 +802,16 @@ BO_ 1980 HCMR_info: 8 HCMR
  SG_ VC_infoHCMRPcbaId m1 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ VC_infoHCMRUsageId m1 : 40|16@1+ (1,0) [0|65535] "" Vector__XXX
 
+BO_ 785 HVBMS_0x311: 2 Vector__XXX
+ SG_ HVBMS_0x311_b0_10 : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
+ SG_ HVBMS_0x311_b10_1 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVBMS_0x311_b11_1 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVBMS_0x311_b12_1 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVBMS_0x311_b13_1 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1106 HVBMS_0x452: 3 Vector__XXX
+ SG_ HVBMS_0x452_b0_10 : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
+
 BO_ 554 HVP_hvsControl: 4 HVP
  SG_ HVP_dcLinkVoltageRequest : 0|16@1- (0.1,0) [-550|550] "V" Vector__XXX
  SG_ HVP_pcsControlRequest : 16|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -3904,6 +3914,14 @@ CM_ SG_ 1980 VC_rightHeadlampLMMVariant "Reports the detected right headlamp LED
 CM_ SG_ 1980 VC_infoHCMRAssemblyId "HCM Diagnostic Field.";
 CM_ SG_ 1980 VC_infoHCMRPcbaId "HCM Diagnostic Field.";
 CM_ SG_ 1980 VC_infoHCMRUsageId "HCM Diagnostic Field.";
+CM_ BO_ 785 "Vector__XXX ECU message: 0x311; frame length observed on a vehicle bus";
+CM_ SG_ 785 HVBMS_0x311_b0_10 "Battery computer field at bits 0-9; position from firmware, meaning not yet known";
+CM_ SG_ 785 HVBMS_0x311_b10_1 "Battery computer field at bits 10-10; position from firmware, meaning not yet known";
+CM_ SG_ 785 HVBMS_0x311_b11_1 "Battery computer field at bits 11-11; position from firmware, meaning not yet known";
+CM_ SG_ 785 HVBMS_0x311_b12_1 "Battery computer field at bits 12-12; position from firmware, meaning not yet known";
+CM_ SG_ 785 HVBMS_0x311_b13_1 "Battery computer field at bits 13-13; position from firmware, meaning not yet known";
+CM_ BO_ 1106 "Vector__XXX ECU message: 0x452; frame length observed on a vehicle bus";
+CM_ SG_ 1106 HVBMS_0x452_b0_10 "Battery computer field at bits 0-9; position from firmware, meaning not yet known";
 CM_ BO_ 554 "High-voltage processor (pack contactor and isolation controller) message: hvs control; frame length observed on a vehicle bus";
 CM_ SG_ 554 HVP_dcLinkVoltageRequest "High-voltage processor (pack contactor and isolation controller): dc link voltage request";
 CM_ SG_ 554 HVP_pcsControlRequest "The operating state that the HVP would like the PCS to be in";
@@ -6227,6 +6245,12 @@ BA_ "VFrameFormat" BO_ 1650 0;
 BA_ "GenMsgCycleTime" BO_ 1980 10000;
 BA_ "GenMsgSendType" BO_ 1980 0;
 BA_ "VFrameFormat" BO_ 1980 0;
+BA_ "GenMsgCycleTime" BO_ 785 0;
+BA_ "GenMsgSendType" BO_ 785 8;
+BA_ "VFrameFormat" BO_ 785 0;
+BA_ "GenMsgCycleTime" BO_ 1106 0;
+BA_ "GenMsgSendType" BO_ 1106 8;
+BA_ "VFrameFormat" BO_ 1106 0;
 BA_ "GenMsgCycleTime" BO_ 554 100;
 BA_ "GenMsgSendType" BO_ 554 0;
 BA_ "VFrameFormat" BO_ 554 0;
@@ -7288,6 +7312,12 @@ BA_ "GenSigSNA" SG_ 1980 VC_rightHeadlampLMMVariant "0";
 BA_ "Confidence" SG_ 1980 VC_infoHCMRAssemblyId 0;
 BA_ "Confidence" SG_ 1980 VC_infoHCMRPcbaId 0;
 BA_ "Confidence" SG_ 1980 VC_infoHCMRUsageId 0;
+BA_ "Confidence" SG_ 785 HVBMS_0x311_b0_10 2;
+BA_ "Confidence" SG_ 785 HVBMS_0x311_b10_1 2;
+BA_ "Confidence" SG_ 785 HVBMS_0x311_b11_1 2;
+BA_ "Confidence" SG_ 785 HVBMS_0x311_b12_1 2;
+BA_ "Confidence" SG_ 785 HVBMS_0x311_b13_1 2;
+BA_ "Confidence" SG_ 1106 HVBMS_0x452_b0_10 2;
 BA_ "Confidence" SG_ 554 HVP_dcLinkVoltageRequest 0;
 BA_ "Confidence" SG_ 554 HVP_pcsControlRequest 0;
 BA_ "Confidence" SG_ 554 HVP_pcsChargeHwEnabled 0;

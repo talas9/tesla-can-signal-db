@@ -7,7 +7,9 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,130,VEH,839,gateway,UI_tripPlanning
 2026.26.6.5,Model3,257,CH,257,native,RCM_inertial1
 2026.26.6.5,Model3,258,PARTY,258,native,VCLEFT_doorStatus
+2026.26.6.5,Model3,258,VEH,258,native,VCLEFT_doorStatus
 2026.26.6.5,Model3,259,PARTY,259,native,VCRIGHT_doorStatus
+2026.26.6.5,Model3,259,VEH,259,native,VCRIGHT_doorStatus
 2026.26.6.5,Model3,260,PARTY,260,native,VCFRONT_partyDebug
 2026.26.6.5,Model3,261,PARTY,261,native,
 2026.26.6.5,Model3,264,PARTY,264,native,DIR_torque
@@ -174,6 +176,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,790,VEH,790,native,PMF_info
 2026.26.6.5,Model3,793,VEH,793,native,VCSEC_info
 2026.26.6.5,Model3,794,PARTY,794,native,VCRIGHT_restraintStatus
+2026.26.6.5,Model3,794,VEH,794,native,VCRIGHT_restraintStatus
 2026.26.6.5,Model3,796,VEH,796,native,CC_chgStatus
 2026.26.6.5,Model3,797,VEH,797,native,CC_chgStatus2
 2026.26.6.5,Model3,798,VEH,798,native,CP_alertMatrix
@@ -520,6 +523,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,1634,VEH,1634,gateway,
 2026.26.6.5,Model3,1635,VEH,1635,native,
 2026.26.6.5,Model3,1636,VEH,1633,gateway,
+2026.26.6.5,Model3,1638,VEH,1638,native,GTW_diagSession
 2026.26.6.5,Model3,1641,VEH,1641,gateway,
 2026.26.6.5,Model3,1649,CH,1649,gateway,
 2026.26.6.5,Model3,1650,VEH,1650,native,HCML_info
@@ -613,8 +617,10 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,2042,VEH,1834,native,
 2026.26.6.5,Model3,2043,VEH,2043,gateway,UI_debugTas
 2026.26.6.5,Model3,2044,CH,1056,native,APS_state
+2026.26.6.5,Model3,2044,VEH,1056,native,APS_state
 2026.26.6.5,Model3,2045,CH,1279,native,APP_defogInfoMessage
 2026.26.6.5,Model3,2046,CH,1012,native,APP_camCalibrationStatus
+2026.26.6.5,Model3,2047,VEH,2047,native,GTW_carConfig
 2026.26.6.5,ModelY,2,VEH,281,native,VCSEC_requests2
 2026.26.6.5,ModelY,17,PARTY,17,native,RCM_collision
 2026.26.6.5,ModelY,49,PARTY,49,native,
@@ -623,7 +629,9 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,ModelY,130,VEH,839,gateway,UI_tripPlanning
 2026.26.6.5,ModelY,257,CH,257,native,RCM_inertial1
 2026.26.6.5,ModelY,258,PARTY,258,native,VCLEFT_doorStatus
+2026.26.6.5,ModelY,258,VEH,258,native,VCLEFT_doorStatus
 2026.26.6.5,ModelY,259,PARTY,259,native,VCRIGHT_doorStatus
+2026.26.6.5,ModelY,259,VEH,259,native,VCRIGHT_doorStatus
 2026.26.6.5,ModelY,260,PARTY,260,native,VCFRONT_partyDebug
 2026.26.6.5,ModelY,261,PARTY,261,native,
 2026.26.6.5,ModelY,264,PARTY,264,native,DIR_torque
@@ -795,6 +803,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,ModelY,790,VEH,790,native,PMF_info
 2026.26.6.5,ModelY,793,VEH,793,native,VCSEC_info
 2026.26.6.5,ModelY,794,PARTY,794,native,VCRIGHT_restraintStatus
+2026.26.6.5,ModelY,794,VEH,794,native,VCRIGHT_restraintStatus
 2026.26.6.5,ModelY,796,VEH,796,native,CC_chgStatus
 2026.26.6.5,ModelY,797,VEH,797,native,CC_chgStatus2
 2026.26.6.5,ModelY,798,VEH,798,native,CP_alertMatrix
@@ -1163,6 +1172,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,ModelY,1634,VEH,1634,gateway,
 2026.26.6.5,ModelY,1635,VEH,1635,native,
 2026.26.6.5,ModelY,1636,VEH,1633,gateway,
+2026.26.6.5,ModelY,1638,VEH,1638,native,GTW_diagSession
 2026.26.6.5,ModelY,1641,VEH,1641,gateway,
 2026.26.6.5,ModelY,1649,CH,1649,gateway,
 2026.26.6.5,ModelY,1650,VEH,1650,native,HCML_info
@@ -1259,5 +1269,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,ModelY,2042,VEH,1834,native,
 2026.26.6.5,ModelY,2043,VEH,2043,gateway,UI_debugTas
 2026.26.6.5,ModelY,2044,CH,1056,native,APS_state
+2026.26.6.5,ModelY,2044,VEH,1056,native,APS_state
 2026.26.6.5,ModelY,2045,CH,1279,native,APP_defogInfoMessage
 2026.26.6.5,ModelY,2046,CH,1012,native,APP_camCalibrationStatus
+2026.26.6.5,ModelY,2047,VEH,2047,native,GTW_carConfig

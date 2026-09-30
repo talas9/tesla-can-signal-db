@@ -24,3 +24,9 @@ Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char14,VIN_muxID,18,32,8,1,0,1,0,
 Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char15,VIN_muxID,18,40,8,1,0,1,0,,"Vehicle identification number, character 15 (ASCII)",,,,validated
 Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char16,VIN_muxID,18,48,8,1,0,1,0,,"Vehicle identification number, character 16 (ASCII)",,,,validated
 Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char17,VIN_muxID,18,56,8,1,0,1,0,,"Vehicle identification number, character 17 (ASCII)",,,,validated
+Model3,VEH,785,2,0,HVBMS_0x311,HVBMS_0x311_b0_10,,,0,10,1,0,1,0,,"Battery computer field at bits 0-9; position from firmware, meaning not yet known",,,,layout-only
+Model3,VEH,785,2,0,HVBMS_0x311,HVBMS_0x311_b10_1,,,10,1,1,0,1,0,,"Battery computer field at bits 10-10; position from firmware, meaning not yet known",,,,layout-only
+Model3,VEH,785,2,0,HVBMS_0x311,HVBMS_0x311_b11_1,,,11,1,1,0,1,0,,"Battery computer field at bits 11-11; position from firmware, meaning not yet known",,,,layout-only
+Model3,VEH,785,2,0,HVBMS_0x311,HVBMS_0x311_b12_1,,,12,1,1,0,1,0,,"Battery computer field at bits 12-12; position from firmware, meaning not yet known",,,,layout-only
+Model3,VEH,785,2,0,HVBMS_0x311,HVBMS_0x311_b13_1,,,13,1,1,0,1,0,,"Battery computer field at bits 13-13; position from firmware, meaning not yet known",,,,layout-only
+Model3,VEH,1106,3,0,HVBMS_0x452,HVBMS_0x452_b0_10,,,0,10,1,0,1,0,,"Battery computer field at bits 0-9; position from firmware, meaning not yet known",,,,layout-only

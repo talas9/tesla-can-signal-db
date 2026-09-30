@@ -186,7 +186,7 @@ def run_gates(repo):
         base = repo / sub
         if base.exists():
             targets += sorted(p for p in base.rglob('*') if p.is_file())
-    targets += [repo / n for n in ('README.md', 'INDEX.md') if (repo / n).exists()]
+    targets += [repo / n for n in ('README.md', 'INDEX.md', 'coverage-vs-previous.md') if (repo / n).exists()]
     for p in targets:
         rel = p.relative_to(repo)
         raw = p.read_bytes()
@@ -199,8 +199,15 @@ def run_gates(repo):
             # lazy import: export_dbc imports this module
             from export_dbc import dbc_free_text, json_free_text
             text = raw.decode('utf-8', errors='replace')
-            text = dbc_free_text(text) if p.suffix == '.dbc' else (
-                json_free_text(text) if p.suffix == '.json' else text)
+            if p.suffix == '.dbc':
+                text = dbc_free_text(text)
+            elif p.suffix == '.json':
+                text = json_free_text(text)
+            elif p.suffix == '.csv':
+                # tables of vehicle identifiers: only the prose columns are gated
+                with open(p, newline='', encoding='utf-8') as f:
+                    text = '\n'.join(r.get(c, '') for r in csv.DictReader(f)
+                                      for c in ('reason', 'description', 'comment', 'note'))
             labels = scan_source_disclosure(text)
         else:
             # docs name files legitimately (e.g. ALL.dbc, signals.csv)

@@ -5093,15 +5093,19 @@ BMS_energyWalkMaxVehiclePower,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,
 BMS_energyWalkMinSoc,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,13,35,10,1,0,0.1,0,%,,0,102.3,
 BMS_energyWalkTimeoutCounter,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,83,16,8,1,0,1,0,,,0,255,
 BMS_enoughEnergyForConvenienceFeatures,BMS Battery computer,BMS_socStatus,0x292,,,40,1,1,0,1,0,,Flag to indicate if there is enough energy for user facing features that are function of the UI discharge limit,,,
+BMS_ensShouldBeActiveForDrive,BMS Battery computer,BMS_contactorRequest,0x232,,,7,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 BMS_epochTimeEstimate,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,29,8,32,1,0,1,0,s,,0,4294967295,
 BMS_estimatedCapacitySohEnergy,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,79,41,11,1,0,0.1,0,KWh,Energy estimate using filtered brick capacities at maximum SOC using SOH retention test conditions,0,204.7,
 BMS_expectedEnergyRemaining,BMS Battery computer,BMS_energyStatus,0x2B2,BMS_energyStatusMultiplexer,1,32,16,1,0,0.02,0,kWh,,0,1310.68,
 BMS_extDcPrechargeVoltageLimit,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,4,20,12,1,0,0.146502256393,0,V,,0,599.92675781,
+BMS_fcContactorRequest,BMS Battery computer,BMS_contactorRequest,0x232,,,0,3,1,0,1,0,,Request indicating which state the BMS would like the fast charge contactors to enter. Position from firmware; message assignment inferred.,,,"{""0"":""SET_REQUEST_SNA"",""1"":""SET_REQUEST_CLOSE"",""2"":""SET_REQUEST_OPEN"",""3"":""SET_REQUEST_OPEN_IMMEDIATELY"",""4"":""SET_REQUEST_CLOSE_NEGATIVE_ONLY"",""5"":""SET_REQUEST_CLOSE_POSITIVE_ONLY""}"
+BMS_fcLinkOkToEnergizeRequest,BMS Battery computer,BMS_contactorRequest,0x232,,,9,2,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""FC_LINK_ENERGY_NONE"",""1"":""FC_LINK_ENERGY_AC"",""2"":""FC_LINK_ENERGY_DC""}"
 BMS_fcLinkTestDecayTime,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,20,8,10,1,0,2,0,mS,,0,2044,
 BMS_fcLinkTestTimeSinceLastRun,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,20,18,12,1,0,0.0175824183971,0,Hours,,0,71.99,
 BMS_flowRequest,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,0,56,8,1,0,0.25,0,LPM,Requested coolant flow rate in liters per minute (LPM) from the Battery Management System (BMS) to the thermal module,0,60,
 BMS_fullCapacitySohEnergy,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,79,19,11,1,0,0.1,0,KWh,Energy estimate using nominal brick capacity at maximum SOC using SOH retention test conditions,0,204.7,
 BMS_fullChargeComplete,BMS Battery computer,BMS_energyStatus,0x2B2,BMS_energyStatusMultiplexer,1,15,1,1,0,1,0,,Indicates BMS is fully charged,,,
+BMS_gpoHasCompleted,BMS Battery computer,BMS_contactorRequest,0x232,,,6,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 BMS_gridFollowDesired,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,14,63,1,1,0,1,0,,,,,
 BMS_gridFormDesired,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,14,62,1,1,0,1,0,,,,,
 BMS_hardwareId,BMS Battery computer,BMS_info,0x300,BMS_infoIndex,10,32,16,1,0,1,0,,,0,65535,
@@ -5218,6 +5222,7 @@ BMS_okToShipByAir,BMS Battery computer,BMS_status,0x212,,,37,1,1,0,1,0,,,,,
 BMS_okToShipByLand,BMS Battery computer,BMS_status,0x212,,,38,1,1,0,1,0,,,,,
 BMS_packCalibrationBirthDateBinned,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,67,26,32,1,0,1,0,,,0,4294967295,
 BMS_packConfigMultiplexer,BMS Battery computer,BMS_packConfig,0x392,,,0,8,1,0,1,0,,,,,
+BMS_packContactorRequest,BMS Battery computer,BMS_contactorRequest,0x232,,,3,3,1,0,1,0,,Request indicating which state the BMS would like the pack contactors to enter. Position from firmware; message assignment inferred.,,,"{""0"":""SET_REQUEST_SNA"",""1"":""SET_REQUEST_CLOSE"",""2"":""SET_REQUEST_OPEN"",""3"":""SET_REQUEST_OPEN_IMMEDIATELY"",""4"":""SET_REQUEST_CLOSE_NEGATIVE_ONLY"",""5"":""SET_REQUEST_CLOSE_POSITIVE_ONLY""}"
 BMS_packCurrent,BMS Battery computer,BMS_hvBusStatus,0x132,,,16,16,1,1,0.1,0,A,Current measured at the HV contactors of the HV battery.,-3276.7,3276.7,
 BMS_packMass,BMS Battery computer,BMS_packConfig,0x392,BMS_packConfigMultiplexer,1,16,8,1,0,1,300,kg,,342,540,
 BMS_packRestTime,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,21,9,12,1,0,0.0175824183971,0,Hours,Minimum resting time of all bricks,0,71.99,
@@ -5280,6 +5285,7 @@ BMS_pcbaId,BMS Battery computer,BMS_info,0x300,BMS_infoIndex,11,16,8,1,0,1,0,,BM
 BMS_pcsNoFlowRequest,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,0,31,1,1,0,1,0,,,,,
 BMS_pcsPrechargeRequest,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,20,30,2,1,0,1,0,,Enum indicating the active precharge request type from BMS to PCS,,,"{""0"":""PRECHARGE_INACTIVE"",""1"":""FC_LINK_TEST"",""2"":""LV_DISCHARGE""}"
 BMS_pcsPrechargeTargetVoltage,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,20,32,16,1,1,0.1,0,V,Target voltage for precharging HV bus,-3276.8,3276.7,
+BMS_pcsPwmDisable,BMS Battery computer,BMS_contactorRequest,0x232,,,8,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 BMS_pcsPwmEnabled,BMS Battery computer,BMS_status,0x212,,,6,1,1,0,1,0,,"Reports the state of the PCS_PWM_ENABLE input on the HVBMS, which is derived from the P1-12-DCDC-ENABLE input, which comes from VCFRONT",,,
 BMS_percentCacUpdatesInTimeWindow,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,64,54,10,1,0,0.1,0,%,,0,100,
 BMS_platformMaxBusVoltage,BMS Battery computer,BMS_packConfig,0x392,BMS_packConfigMultiplexer,1,24,10,1,0,1,300,V,,300,1300,
@@ -6093,6 +6099,8 @@ CP_a221_evseStartupTimeout,CP,CP_alertMatrix,0x31E,CP_matrixIndex,3,44,1,1,0,1,0
 CP_acChargeState,CP,CP_evseStatus,0x21D,,,52,3,1,0,1,0,,,,,"{""0"":""AC_CHARGE_INACTIVE"",""1"":""AC_CHARGE_CONNECTED_CHARGE_BLOCKED"",""2"":""AC_CHARGE_STANDBY"",""3"":""AC_CHARGE_ENABLED"",""4"":""AC_CHARGE_ONBOARD_CHARGER_SHUTDOWN"",""5"":""AC_CHARGE_VEH_SHUTDOWN"",""6"":""AC_CHARGE_FAULT""}"
 CP_acChargeType,CP,CP_evseStatus,0x21D,,,56,2,1,0,1,0,,,,,"{""0"":""AC_CHARGE_LEGACY"",""1"":""AC_CHARGE_SWCAN"",""2"":""AC_CHARGE_CCS"",""3"":""AC_CHARGE_TYPE_COUNT""}"
 CP_acHvInletExposed,CP,CP_chargeStatus,0x13D,,,46,1,1,0,1,0,,Indicates whether the alternating current (AC) charge port inlet pins are exposed to human touch.,,,
+CP_acNumRetries,CP,CP_evseStatus,0x21D,,,53,8,1,0,1,0,,Position from firmware; message assignment inferred.,0,255,
+CP_acPinTemperature,CP,CP_thermalStatus,0x37D,,,17,8,1,0,0.803922,-55,C,Position from firmware; message assignment inferred.,-55,149.99,
 CP_alertID,CP,CP_alertLog,0x50E,,,0,15,1,0,1,0,,,,,
 CP_alertType,CP,CP_alertLog,0x50E,,,15,1,1,0,1,0,,,,,
 CP_appCrc,CP,CP_info,0x53E,CP_infoIndex,13,32,32,1,0,1,0,,,,,
@@ -6127,6 +6135,8 @@ CP_d198_couplerTempSensorCircuitErratic,CP,CP_alertMatrix,0x31E,CP_matrixIndex,3
 CP_d199_hardwareConfigMismatch,CP,CP_alertMatrix,0x31E,CP_matrixIndex,3,22,1,1,0,1,0,,,,,
 CP_d200_pilotCircuitIssue,CP,CP_alertMatrix,0x31E,CP_matrixIndex,3,23,1,1,0,1,0,,,,,
 CP_dcHvInletExposed,CP,CP_chargeStatus,0x13D,,,45,1,1,0,1,0,,Indicates whether the direct current (DC) charge port inlet pins are exposed to human touch.,,,
+CP_dcPinTemperature,CP,CP_thermalStatus,0x37D,,,1,8,1,0,0.803922,-55,C,Sensed temperature of the charge port DC pins. Position from firmware; message assignment inferred.,-55,149.99,
+CP_digitalCommsAttempts,CP,CP_evseStatus,0x21D,,,38,3,1,0,1,0,,Position from firmware; message assignment inferred.,0,7,
 CP_digitalCommsEstablished,CP,CP_evseStatus,0x21D,,,7,1,1,0,1,0,,Indicates whether digital communications have been established with an EVSE,,,
 CP_doorButtonPressed,CP,CP_status,0x210,,,11,1,1,0,1,0,,Indicates whether the charge door button has been pressed,,,
 CP_doorCloseActuationTime,CP,CP_loggingFast,0x75D,CP_loggingFastSelect,0,46,14,1,0,1,0,ms,,0,16383,
@@ -7544,8 +7554,24 @@ DIF_buildConfigurationId,DIF,DIF_info,0x656,DIF_infoIndex,10,16,16,1,0,1,0,,,0,6
 DIF_buildType,DIF,DIF_info,0x656,DIF_infoIndex,10,8,3,1,0,1,0,,,,,"{""0"":""INFO_UNKNOWN_BUILD"",""1"":""INFO_PLATFORM_BUILD"",""2"":""INFO_LOCAL_BUILD"",""3"":""INFO_TRACEABLE_CI_BUILD"",""4"":""INFO_MFG_BUILD""}"
 DIF_burnInDamageRatio,DIF,DIF_temperature,0x376,DIF_tempIndex,3,35,9,1,0,0.01,0,1,,0,5,
 DIF_burnInStatus,DIF,DIF_thermalControl,0x557,,,33,3,1,0,1,0,,,,,"{""0"":""INIT"",""1"":""NOT_REQUIRED"",""2"":""UNAVAILABLE"",""3"":""INCOMPLETE"",""4"":""ACTIVE"",""5"":""COMPLETE""}"
+DIF_busbarTemp,DIF,DIF_debug,0x757,DIF_debugSelector,64,16,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIF_componentId,DIF,DIF_info,0x656,DIF_infoIndex,10,48,16,1,0,1,0,,,0,65535,
 DIF_coolantFlowReq,DIF,DIF_thermalControl,0x557,,,16,8,1,0,0.2,0,LPM,Coolant flow requested,0,50,
+DIF_cpu100HzAvg,DIF,DIF_debug,0x757,DIF_debugSelector,66,32,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu100HzMin,DIF,DIF_debug,0x757,DIF_debugSelector,66,24,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu10HzAvg,DIF,DIF_debug,0x757,DIF_debugSelector,66,16,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu10HzMin,DIF,DIF_debug,0x757,DIF_debugSelector,66,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu10msMin,DIF,DIF_debug,0x757,DIF_debugSelector,66,40,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu1HzAvg,DIF,DIF_debug,0x757,DIF_debugSelector,128,16,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu1HzMin,DIF,DIF_debug,0x757,DIF_debugSelector,128,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu1kHzAvg,DIF,DIF_debug,0x757,DIF_debugSelector,67,16,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu1kHzMin,DIF,DIF_debug,0x757,DIF_debugSelector,67,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu20kHzAvg,DIF,DIF_debug,0x757,DIF_debugSelector,67,32,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpu20kHzMin,DIF,DIF_debug,0x757,DIF_debugSelector,67,24,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_cpuIDWord0,DIF,DIF_debug,0x757,DIF_debugSelector,131,16,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
+DIF_cpuIDWord1,DIF,DIF_debug,0x757,DIF_debugSelector,132,16,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
+DIF_cpuIDWord2,DIF,DIF_debug,0x757,DIF_debugSelector,132,32,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
+DIF_cpuIDWord3,DIF,DIF_debug,0x757,DIF_debugSelector,132,48,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
 DIF_criticalFlowReq,DIF,DIF_thermalControl,0x557,,,32,1,1,0,1,0,,,,,"{""0"":""NOT_ACTIVE"",""1"":""ACTIVE""}"
 DIF_currentWeibullMiles,DIF,DIF_temperature,0x376,DIF_tempIndex,3,3,16,1,0,8,0,miles,,0,500000,
 DIF_d085_driveInverterBoardFailure,DIF,DIF_alertMatrix,0x356,DIF_matrixIndex,1,28,1,1,0,1,0,,,,,
@@ -7572,16 +7598,20 @@ DIF_d167_tempSensorIssue,DIF,DIF_alertMatrix,0x356,DIF_matrixIndex,2,50,1,1,0,1,
 DIF_d168_clutchPerformance,DIF,DIF_alertMatrix,0x356,DIF_matrixIndex,2,51,1,1,0,1,0,,,,,
 DIF_d169_clutchPosition,DIF,DIF_alertMatrix,0x356,DIF_matrixIndex,2,52,1,1,0,1,0,,,,,
 DIF_d170_clutchFailure,DIF,DIF_alertMatrix,0x356,DIF_matrixIndex,2,53,1,1,0,1,0,,,,,
+DIF_dcCableHeat,DIF,DIF_debug,0x757,DIF_debugSelector,47,32,16,1,0,0.001,0,kA2s,Position from firmware; message assignment inferred.,0,65.535,
 DIF_dcCapT,DIF,DIF_temperature,0x376,DIF_tempIndex,0,32,8,1,0,1,-40,DegC,,-40,215,
+DIF_dcCapTemp,DIF,DIF_debug,0x757,DIF_debugSelector,64,8,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIF_dcLinkCapTemp,DIF,DIF_debug,0x757,DIF_debugSelector,70,32,8,1,0,1,-40,DegC,,-40,215,
 DIF_debugSelector,DIF,DIF_debug,0x757,,,0,8,1,0,1,0,,,,,
 DIF_driveModeState,DIF,DIF_status,0x2D5,,,32,1,1,0,1,0,,Reports the system drive mode state.,,,"{""0"":""DM_STATE_NONDRIVE"",""1"":""DM_STATE_DRIVE""}"
 DIF_drivePowerMax,DIF,DIF_power,0x2E5,,,48,9,1,0,1,0,kW,,0,400,
+DIF_driveUnitOdometer,DIF,DIF_debug,0x757,DIF_debugSelector,69,32,32,1,0,10,0,rev,Position from firmware; message assignment inferred.,0,42949672950,
 DIF_elecPower,DIF,DIF_power,0x2E5,,,0,11,1,1,0.5,0,kW,,-500,500,
 DIF_endOfServiceWeibullMiles,DIF,DIF_temperature,0x376,DIF_tempIndex,3,19,16,1,0,8,0,miles,,0,500000,
 DIF_excessHeatCommand,DIF,DIF_power,0x2E5,,,40,8,1,0,0.08,0,kW,Drive Inverter excess heat command,0,20,
 DIF_fluidInTemp,DIF,DIF_temperature,0x376,DIF_tempIndex,2,8,8,1,0,1,-40,DegC,Inlet fluid temperature,-40,215,
 DIF_fluxState,DIF,DIF_hvStatus,0x27A,,,48,4,1,0,1,0,,,,,"{""0"":""DI_FLUXSTATE_START"",""1"":""DI_FLUXSTATE_TEST"",""2"":""DI_FLUXSTATE_STANDBY"",""3"":""DI_FLUXSTATE_FLUX_UP"",""4"":""DI_FLUXSTATE_FLUX_DOWN"",""5"":""DI_FLUXSTATE_ENABLED"",""6"":""DI_FLUXSTATE_ICONTROL"",""7"":""DI_FLUXSTATE_VCONTROL"",""9"":""DI_FLUXSTATE_FAULT"",""10"":""DI_FLUXSTATE_STATIONARY_WASTE"",""11"":""DI_FLUXSTATE_MAGNET_FLUX_DETECT"",""12"":""DI_FLUXSTATE_DISABLED""}"
+DIF_gainScale,DIF,DIF_debug,0x757,DIF_debugSelector,37,8,8,1,0,0.01,0,scale,Position from firmware; message assignment inferred.,0,2.55,
 DIF_gateDriveState,DIF,DIF_hvStatus,0x27A,,,53,3,1,0,1,0,,,,,"{""0"":""PSTG_GD_STATE_INIT"",""1"":""PSTG_GD_STATE_SELFTEST"",""2"":""PSTG_GD_STATE_CONFIGURING"",""3"":""PSTG_GD_STATE_CONFIGURED"",""4"":""PSTG_GD_STATE_NOT_CONFIGURED""}"
 DIF_gateDriveSupplyState,DIF,DIF_hvStatus,0x27A,,,56,2,1,0,1,0,,,,,"{""0"":""PSTG_GD_SUPPLY_DOWN"",""1"":""PSTG_GD_SUPPLY_RISING"",""2"":""PSTG_GD_SUPPLY_UP"",""3"":""PSTG_GD_SUPPLY_FALLING""}"
 DIF_gear,DIF,DIF_torque,0x186,,,59,3,1,0,1,0,,,,,"{""0"":""DI_GEAR_INVALID"",""1"":""DI_GEAR_P"",""2"":""DI_GEAR_R"",""3"":""DI_GEAR_N"",""4"":""DI_GEAR_D"",""7"":""DI_GEAR_SNA""}"
@@ -7598,6 +7628,7 @@ DIF_hvilCmVoltage,DIF,DIF_hvStatus,0x27A,,,20,8,1,0,0.08,0,V,HVIL Common Mode Vo
 DIF_hvilCurrent,DIF,DIF_hvStatus,0x27A,,,12,8,1,0,0.1,0,mA,HVIL Current,0,25.5,
 DIF_hvilStatus,DIF,DIF_hvStatus,0x27A,,,28,2,1,0,1,0,,Aggregated hardware and measured HVIL unit status,,,"{""0"":""DISABLED"",""1"":""OPEN"",""2"":""CLOSED""}"
 DIF_hvilSupplyState,DIF,DIF_hvStatus,0x27A,,,30,2,1,0,1,0,,,,,"{""0"":""NOT_AVAILABLE"",""1"":""INACTIVE"",""2"":""ACTIVE""}"
+DIF_hwFaultCount,DIF,DIF_debug,0x757,DIF_debugSelector,69,8,4,1,0,1,0,,Position from firmware; message assignment inferred.,0,15,
 DIF_infoBootLdUdsProtocolVersion,DIF,DIF_info,0x656,DIF_infoIndex,20,8,8,1,0,1,0,,,0,255,
 DIF_infoIndex,DIF,DIF_info,0x656,,,0,8,1,0,1,0,,,,,
 DIF_initialBurnInVehicleOdometer,DIF,DIF_temperature,0x376,DIF_tempIndex,4,8,32,1,0,0.001,0,km,,0,4294967.294,
@@ -7611,13 +7642,23 @@ DIF_inverterTQF,DIF,DIF_temperature,0x376,DIF_tempIndex,0,3,2,1,0,1,0,,Detects t
 DIF_inverterTpct,DIF,DIF_temperature,0x376,DIF_tempIndex,0,48,8,1,0,0.4,0,%,,0,100,
 DIF_keepAliveRequest,DIF,DIF_motorStatus,0x1A5,,,26,1,1,0,1,0,,Used to detect that the Drive Inverter (DI) expects 12V and High Voltage (HV) to be kept up in order to protect hardware.,,,"{""0"":""NO_REQUEST"",""1"":""KEEP_ALIVE""}"
 DIF_lightSenseV,DIF,DIF_debug,0x757,DIF_debugSelector,72,24,6,1,0,0.1,0,V,,0,3.3,
+DIF_llrScale,DIF,DIF_debug,0x757,DIF_debugSelector,42,32,8,1,0,0.015,0,scale,Position from firmware; message assignment inferred.,0,3.825,
+DIF_llsScale,DIF,DIF_debug,0x757,DIF_debugSelector,42,24,8,1,0,0.004,0,scale,Position from firmware; message assignment inferred.,0,1.02,
+DIF_lmScale,DIF,DIF_debug,0x757,DIF_debugSelector,36,8,8,1,0,0.004,0,scale,Position from firmware; message assignment inferred.,0,1.02,
 DIF_lvSupplyV,DIF,DIF_status,0x2D5,,,24,8,1,0,0.1,0,V,,0,25.5,
+DIF_magnetTempEst,DIF,DIF_debug,0x757,DIF_debugSelector,47,48,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIF_matrixIndex,DIF,DIF_alertMatrix,0x356,,,0,4,1,0,1,0,,,,,
 DIF_mechSafeStateType,DIF,DIF_info,0x656,DIF_infoIndex,12,24,2,1,0,1,0,,,,,"{""0"":""DI_MECH_SAFE_STATE_TYPE_SNA"",""1"":""DI_MECH_SAFE_STATE_TYPE_NONE"",""2"":""DI_MECH_SAFE_STATE_TYPE_PRESENT""}"
 DIF_motorCurrent,DIF,DIF_motorStatus,0x1A5,,,0,11,1,0,1,0,A,Drive Inverer measured motor RMS phase current.,0,2047,
+DIF_motorIA,DIF,DIF_debug,0x757,DIF_debugSelector,32,8,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
+DIF_motorIAavg,DIF,DIF_debug,0x757,DIF_debugSelector,38,32,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIF_motorIB,DIF,DIF_debug,0x757,DIF_debugSelector,32,24,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
+DIF_motorIBavg,DIF,DIF_debug,0x757,DIF_debugSelector,38,48,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIF_motorIC,DIF,DIF_debug,0x757,DIF_debugSelector,32,40,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
 DIF_motorStatusChecksum,DIF,DIF_motorStatus,0x1A5,,,32,8,1,0,1,0,,,0,255,
 DIF_motorStatusCounter,DIF,DIF_motorStatus,0x1A5,,,27,4,1,0,1,0,,,0,15,
 DIF_motorType,DIF,DIF_info,0x656,DIF_infoIndex,12,8,6,1,0,1,0,,,,,"{""0"":""DI_MOTOR_SNA"",""1"":""DI_MOTOR_PM216D"",""2"":""DI_MOTOR_IM130D"",""3"":""DI_MOTOR_IM130D_AL"",""4"":""DI_MOTOR_PM275B"",""5"":""DI_MOTOR_PM350B"",""6"":""DI_MOTOR_PM228C"",""7"":""DI_MOTOR_PM291C"",""8"":""DI_MOTOR_PM291D"",""9"":""DI_MOTOR_PM275C"",""10"":""DI_MOTOR_PM228HEA"",""11"":""DI_MOTOR_IM228HEA"",""12"":""DI_MOTOR_IM260A_1KV"",""13"":""DI_MOTOR_PM215A_1KV"",""14"":""DI_MOTOR_IM260C_1KV"",""15"":""DI_MOTOR_PM215C_1KV"",""16"":""DI_MOTOR_PM261C"",""17"":""DI_MOTOR_IM260D_1KV"",""18"":""DI_MOTOR_IM260E_1KV"",""20"":""DI_MOTOR_PM215D_1KV"",""31"":""DI_MOTOR_PM216E"",""32"":""DI_MOTOR_PM261D"",""34"":""DI_MOTOR_IM130E_AL"",""35"":""DI_MOTOR_IM188A"",""36"":""DI_MOTOR_PM240C""}"
+DIF_motorV,DIF,DIF_debug,0x757,DIF_debugSelector,34,48,16,1,0,2e-05,0,mindex,Position from firmware; message assignment inferred.,0,1.3107,
 DIF_negDcBusbarTemp,DIF,DIF_debug,0x757,DIF_debugSelector,70,48,8,1,0,1,-40,DegC,,-40,215,
 DIF_normalFetBurnIn,DIF,DIF_temperature,0x376,DIF_tempIndex,2,16,16,1,0,0.00763,0,Hours,,0,500,
 DIF_oilFlowReq,DIF,DIF_thermalControl,0x557,,,24,8,1,0,0.1,0,LPM,,0,25.4,
@@ -7629,6 +7670,7 @@ DIF_oilPumpFlowTarget,DIF,DIF_oilPump,0x396,,,8,8,1,0,0.1,0,LPM,Detects oil pump
 DIF_oilPumpFluidT,DIF,DIF_oilPump,0x396,,,24,8,1,0,1,-40,DegC,Detects oil pump fluid tester.,-40,214,
 DIF_oilPumpFluidTQF,DIF,DIF_oilPump,0x396,,,3,1,1,0,1,0,,,,,"{""0"":""OIL_PUMP_FLUIDT_LOW_CONFIDENCE"",""1"":""OIL_PUMP_FLUIDT_HIGH_CONFIDENCE""}"
 DIF_oilPumpLeadAngle,DIF,DIF_oilPump,0x396,,,4,4,1,0,1.875,0,degrees,,0,28.125,
+DIF_oilPumpMotorSpeed,DIF,DIF_debug,0x757,DIF_debugSelector,46,8,8,1,0,40,0,RPM,Position from firmware; message assignment inferred.,0,10200,
 DIF_oilPumpPcbaId,DIF,DIF_info,0x656,DIF_infoIndex,33,8,8,1,0,1,0,,,0,255,
 DIF_oilPumpPhaseCurrent,DIF,DIF_oilPump,0x396,,,32,8,1,0,0.1,0,A,,0,25.4,
 DIF_oilPumpPressureEstimate,DIF,DIF_oilPump,0x396,,,40,8,1,0,2,0,kPa,Oil pump pressure estimate.,0,500,
@@ -7639,46 +7681,80 @@ DIF_oilPumpUsageId,DIF,DIF_info,0x656,DIF_infoIndex,33,24,16,1,0,1,0,,,0,65535,
 DIF_passiveInletTempReq,DIF,DIF_thermalControl,0x557,,,0,8,1,0,1,-40,DegC,,-40,215,
 DIF_pcbT,DIF,DIF_temperature,0x376,DIF_tempIndex,0,8,8,1,0,1,-40,DegC,,-40,215,
 DIF_pcbaId,DIF,DIF_info,0x656,DIF_infoIndex,11,16,8,1,0,1,0,,,0,255,
+DIF_pcsTemp,DIF,DIF_debug,0x757,DIF_debugSelector,64,24,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
+DIF_peakFlux,DIF,DIF_debug,0x757,DIF_debugSelector,36,48,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
+DIF_peakIQref,DIF,DIF_debug,0x757,DIF_debugSelector,38,16,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
 DIF_phaseOutBusbarTemp,DIF,DIF_debug,0x757,DIF_debugSelector,70,8,8,1,0,1,-40,DegC,,-40,215,
 DIF_phaseOutBusbarWeldTemp,DIF,DIF_debug,0x757,DIF_debugSelector,70,16,8,1,0,1,-40,DegC,,-40,215,
 DIF_phaseOutLugTemp,DIF,DIF_debug,0x757,DIF_debugSelector,70,24,8,1,0,1,-40,DegC,,-40,215,
 DIF_platformTyp,DIF,DIF_info,0x656,DIF_infoIndex,19,8,8,1,0,1,0,,,0,255,
 DIF_posDcBusbarTemp,DIF,DIF_debug,0x757,DIF_debugSelector,70,56,8,1,0,1,-40,DegC,,-40,215,
 DIF_powerStageSafeState,DIF,DIF_hvStatus,0x27A,,,45,2,1,0,1,0,,,,,"{""0"":""PSTG_SAFESTATE_NONE"",""1"":""PSTG_SAFESTATE_ALL_OFF"",""2"":""PSTG_SAFESTATE_3PS_HIGH"",""3"":""PSTG_SAFESTATE_3PS_LOW""}"
+DIF_pwmState,DIF,DIF_debug,0x757,DIF_debugSelector,63,48,2,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""PWMSTATE_SVPWM"",""1"":""PWMSTATE_DPWM2"",""2"":""PWMSTATE_OPWM1"",""3"":""PWMSTATE_OPWM2""}"
 DIF_pyroSenseV,DIF,DIF_debug,0x757,DIF_debugSelector,72,30,8,1,0,0.02,0,V,,0,3.3,
 DIF_refRotorFlux,DIF,DIF_info,0x656,DIF_infoIndex,35,8,16,1,0,0.0001,0,Wb,,0,6.5535,
 DIF_refRotorOffset,DIF,DIF_info,0x656,DIF_infoIndex,35,24,12,1,1,0.1,0,deg,,-180,180,
+DIF_resolverClaMIA,DIF,DIF_debug,0x757,DIF_debugSelector,48,43,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIF_resolverNoCarrier,DIF,DIF_debug,0x757,DIF_debugSelector,48,41,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIF_resolverNoPhaseLock,DIF,DIF_debug,0x757,DIF_debugSelector,48,42,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIF_resolverReady,DIF,DIF_debug,0x757,DIF_debugSelector,48,40,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIF_rotorFlux,DIF,DIF_debug,0x757,DIF_debugSelector,47,16,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
 DIF_rotorMaxMagnetTemp,DIF,DIF_debug,0x757,DIF_debugSelector,72,16,8,1,0,1,-40,DegC,Reports the maximum temperature of the rotor magnet.,-40,215,
+DIF_rsScale,DIF,DIF_debug,0x757,DIF_debugSelector,34,8,8,1,0,0.01,0,scale,Position from firmware; message assignment inferred.,0,2.55,
 DIF_siliconType,DIF,DIF_info,0x656,DIF_infoIndex,12,16,1,1,0,1,0,,,,,"{""0"":""MOSFET"",""1"":""IGBT""}"
 DIF_softSysLimpRequest,DIF,DIF_status,0x2D5,,,21,1,1,0,1,0,,,,,
+DIF_soptMaxCurrentMagSqrd,DIF,DIF_debug,0x757,DIF_debugSelector,49,40,16,1,0,100,0,A2,Position from firmware; message assignment inferred.,0,6553500,
 DIF_soptState,DIF,DIF_status,0x2D5,,,16,4,1,0,1,0,,Detects the state of the the Switch Off Path Test (SOPT).,,,"{""0"":""SOPT_INIT"",""1"":""SOPT_PSTG_BRING_UP"",""2"":""SOPT_PSTG_BRING_UP_AT_SPEED"",""3"":""SOPT_ASC_TEST"",""4"":""SOPT_CURRENT_TEST"",""5"":""SOPT_TEST_PASSED"",""6"":""SOPT_TEST_SKIPPED"",""7"":""SOPT_TEST_FAILED"",""8"":""SOPT_SNA"",""9"":""SOPT_DISABLED""}"
 DIF_speedWearTotal,DIF,DIF_info,0x656,DIF_infoIndex,36,8,8,1,0,0.4,0,%,,0,100,
 DIF_spinDownLearningMode,DIF,DIF_status,0x2D5,,,60,1,1,0,1,0,,,,,"{""0"":""SPINDOWN_MODE_ON_LIFT"",""1"":""SPINDOWN_MODE_ON_GROUND""}"
 DIF_spinDownLearningState,DIF,DIF_status,0x2D5,,,56,4,1,0,1,0,,,,,"{""0"":""SPINDOWN_STATE_INIT"",""1"":""SPINDOWN_STATE_PRECHECK"",""2"":""SPINDOWN_STATE_WAIT"",""3"":""SPINDOWN_STATE_ACCELERATE"",""4"":""SPINDOWN_STATE_COAST"",""5"":""SPINDOWN_STATE_MEASURE"",""6"":""SPINDOWN_STATE_CORRECT"",""7"":""SPINDOWN_STATE_VERIFY"",""8"":""SPINDOWN_STATE_WRITE"",""9"":""SPINDOWN_STATE_DONE""}"
 DIF_state,DIF,DIF_status,0x2D5,,,12,3,1,0,1,0,,DI unit state machine state.,,,"{""0"":""DI_STATE_UNAVAILABLE"",""1"":""DI_STATE_STANDBY"",""2"":""DI_STATE_FAULT"",""3"":""DI_STATE_ABORT"",""4"":""DI_STATE_ENABLE""}"
 DIF_statorEndWindingTemp,DIF,DIF_debug,0x757,DIF_debugSelector,72,8,8,1,0,1,-40,DegC,,-40,215,
+DIF_statorFluxFdb,DIF,DIF_debug,0x757,DIF_debugSelector,35,32,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
+DIF_statorFluxRef,DIF,DIF_debug,0x757,DIF_debugSelector,35,16,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
 DIF_statorHousingTemp,DIF,DIF_temperature,0x376,DIF_tempIndex,4,56,8,1,0,1,-40,DegC,,-40,215,
+DIF_statorIDfdb,DIF,DIF_debug,0x757,DIF_debugSelector,33,24,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIF_statorIDref,DIF,DIF_debug,0x757,DIF_debugSelector,33,8,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIF_statorIQfdb,DIF,DIF_debug,0x757,DIF_debugSelector,34,32,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIF_statorIQref,DIF,DIF_debug,0x757,DIF_debugSelector,34,16,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
 DIF_statorSlotWindingTemp,DIF,DIF_debug,0x757,DIF_debugSelector,72,46,8,1,0,1,-40,DegC,,-40,215,
 DIF_statorT,DIF,DIF_temperature,0x376,DIF_tempIndex,0,24,8,1,0,1,-40,DegC,Drive Inverter measured stator temperature.,-40,215,
+DIF_statorTemp1,DIF,DIF_debug,0x757,DIF_debugSelector,64,32,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
+DIF_statorTemp2,DIF,DIF_debug,0x757,DIF_debugSelector,64,40,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIF_statorTpct,DIF,DIF_temperature,0x376,DIF_tempIndex,0,56,8,1,0,0.4,0,%,,0,100,
+DIF_statorVD,DIF,DIF_debug,0x757,DIF_debugSelector,36,32,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
+DIF_statorVDFiltered,DIF,DIF_debug,0x757,DIF_debugSelector,63,16,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
+DIF_statorVQ,DIF,DIF_debug,0x757,DIF_debugSelector,36,16,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
+DIF_statorVQFiltered,DIF,DIF_debug,0x757,DIF_debugSelector,63,32,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
 DIF_statusChecksum,DIF,DIF_status,0x2D5,,,0,8,1,0,1,0,,,0,255,
 DIF_statusCounter,DIF,DIF_status,0x2D5,,,8,4,1,0,1,0,,,0,15,
 DIF_subUsageId,DIF,DIF_info,0x656,DIF_infoIndex,11,48,16,1,0,1,0,,,0,65535,
+DIF_subcomponentGitHash,DIF,DIF_info,0x656,DIF_infoIndex,31,8,56,1,0,1,0,,Position from firmware; message assignment inferred.,0,72057594037927936,
 DIF_switchShortTestRetryCount,DIF,DIF_motorStatus,0x1A5,,,24,2,1,0,1,0,,,0,3,
 DIF_switchingFrequency,DIF,DIF_motorStatus,0x1A5,,,11,11,1,0,0.01,0,kHz,,0,20,
 DIF_sysLimpRequest,DIF,DIF_status,0x2D5,,,20,1,1,0,1,0,,,,,
 DIF_targetFluxMode,DIF,DIF_motorStatus,0x1A5,,,22,2,1,0,1,0,,,,,"{""0"":""DI_FLUXMODE_OPTIMUM"",""1"":""DI_FLUXMODE_FS"",""2"":""DI_FLUXMODE_FW""}"
+DIF_tcMaxRequest,DIF,DIF_debug,0x757,DIF_debugSelector,40,16,8,1,0,5,0,Nm,Position from firmware; message assignment inferred.,0,1275,
+DIF_tcMinRequest,DIF,DIF_debug,0x757,DIF_debugSelector,40,24,8,1,0,5,0,Nm,Position from firmware; message assignment inferred.,0,1275,
 DIF_tempIndex,DIF,DIF_temperature,0x376,,,0,3,1,0,1,0,,,,,
 DIF_torqueActual,DIF,DIF_torque,0x186,,,27,13,1,1,2,0,Nm,Actual torque the drive unit is controlling to referred to the axle/wheel,-7500,7500,
 DIF_torqueChecksum,DIF,DIF_torque,0x186,,,0,8,1,0,1,0,,,0,255,
 DIF_torqueCommand,DIF,DIF_torque,0x186,,,12,13,1,1,2,0,Nm,"Torque commanded to the drive unit, referred to the axle/wheel",-7500,7500,
 DIF_torqueCounter,DIF,DIF_torque,0x186,,,8,4,1,0,1,0,,,0,15,
+DIF_torquePerAmp,DIF,DIF_debug,0x757,DIF_debugSelector,33,40,16,1,0,0.0001,0,Nm/A,Position from firmware; message assignment inferred.,0,6.5535,
 DIF_torqueWearTotal,DIF,DIF_info,0x656,DIF_infoIndex,36,24,8,1,0,0.02,0,1,,0,5.08,
+DIF_tqSatMotorCurrent,DIF,DIF_debug,0x757,DIF_debugSelector,39,40,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_tqSatMotorVoltage,DIF,DIF_debug,0x757,DIF_debugSelector,39,32,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_tqSatThermal,DIF,DIF_debug,0x757,DIF_debugSelector,39,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_tqScaleDifferential,DIF,DIF_debug,0x757,DIF_debugSelector,35,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIF_tqScaleMaxMotorSpeed,DIF,DIF_debug,0x757,DIF_debugSelector,40,48,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
 DIF_udsResponseData,DIF,DIF_udsResponse,0x615,,,7,64,0,0,1,0,,,0,18446744073709551616,
 DIF_usageId,DIF,DIF_info,0x656,DIF_infoIndex,11,32,16,1,0,1,0,,,0,65535,
+DIF_usmState,DIF,DIF_debug,0x757,DIF_debugSelector,38,12,3,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""USM_STATE_START"",""1"":""USM_STATE_STANDBY"",""2"":""USM_STATE_RETRY"",""3"":""USM_STATE_ABORT"",""4"":""USM_STATE_ENABLE"",""5"":""USM_STATE_FAULT"",""6"":""USM_STATE_UNAVAILABLE"",""7"":""USM_STATE_WAIT_FOR_RETRY""}"
 DIF_vBat,DIF,DIF_hvStatus,0x27A,,,34,10,1,0,1,0,V,Reports the battery voltage measured by the Drive Inverter's local Analog to Digital Converter (ADC).,0,1023,
 DIF_vBatQF,DIF,DIF_hvStatus,0x27A,,,44,1,1,0,1,0,,,,,"{""0"":""NOT_QUALIFIED"",""1"":""QUALIFIED""}"
 DIF_vBusDiag,DIF,DIF_hvStatus,0x27A,,,52,1,1,0,1,0,,,,,
+DIF_wasteCurrentLimit,DIF,DIF_debug,0x757,DIF_debugSelector,41,32,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
 DIF_wasteState,DIF,DIF_status,0x2D5,,,33,2,1,0,1,0,,Reports the Drive Inverter (DI) waste heat state.,,,"{""0"":""DI_WASTE_UNAVAILABLE"",""1"":""DI_WASTE_AVAILABLE"",""2"":""DI_WASTE_ON"",""3"":""DI_WASTE_STATIONARY""}"
 DIR_FPGA_version,DIR,DIR_info,0x335,DIR_infoIndex,16,48,8,1,0,1,0,,,0,255,
 DIR_a001_asynchStop_H,DIR,DIR_alertLog,0x5A5,DIR_alertID,1,25,1,1,0,1,0,,,,,
@@ -8448,8 +8524,24 @@ DIR_buildConfigurationId,DIR,DIR_info,0x335,DIR_infoIndex,10,16,16,1,0,1,0,,,0,6
 DIR_buildType,DIR,DIR_info,0x335,DIR_infoIndex,10,8,3,1,0,1,0,,,,,"{""0"":""INFO_UNKNOWN_BUILD"",""1"":""INFO_PLATFORM_BUILD"",""2"":""INFO_LOCAL_BUILD"",""3"":""INFO_TRACEABLE_CI_BUILD"",""4"":""INFO_MFG_BUILD""}"
 DIR_burnInDamageRatio,DIR,DIR_temperature,0x315,DIR_tempIndex,3,35,9,1,0,0.01,0,1,,0,5,
 DIR_burnInStatus,DIR,DIR_thermalControl,0x5D7,,,33,3,1,0,1,0,,,,,"{""0"":""INIT"",""1"":""NOT_REQUIRED"",""2"":""UNAVAILABLE"",""3"":""INCOMPLETE"",""4"":""ACTIVE"",""5"":""COMPLETE""}"
+DIR_busbarTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,64,16,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIR_componentId,DIR,DIR_info,0x335,DIR_infoIndex,10,48,16,1,0,1,0,,,0,65535,
 DIR_coolantFlowReq,DIR,DIR_thermalControl,0x5D7,,,16,8,1,0,0.2,0,LPM,Coolant flow requested,0,50,
+DIR_cpu100HzAvg,DIR,DIR_debug,0x7D5,DIR_debugSelector,66,32,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu100HzMin,DIR,DIR_debug,0x7D5,DIR_debugSelector,66,24,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu10HzAvg,DIR,DIR_debug,0x7D5,DIR_debugSelector,66,16,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu10HzMin,DIR,DIR_debug,0x7D5,DIR_debugSelector,66,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu10msMin,DIR,DIR_debug,0x7D5,DIR_debugSelector,66,40,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu1HzAvg,DIR,DIR_debug,0x7D5,DIR_debugSelector,128,16,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu1HzMin,DIR,DIR_debug,0x7D5,DIR_debugSelector,128,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu1kHzAvg,DIR,DIR_debug,0x7D5,DIR_debugSelector,67,16,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu1kHzMin,DIR,DIR_debug,0x7D5,DIR_debugSelector,67,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu20kHzAvg,DIR,DIR_debug,0x7D5,DIR_debugSelector,67,32,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpu20kHzMin,DIR,DIR_debug,0x7D5,DIR_debugSelector,67,24,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_cpuIDWord0,DIR,DIR_debug,0x7D5,DIR_debugSelector,131,16,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
+DIR_cpuIDWord1,DIR,DIR_debug,0x7D5,DIR_debugSelector,132,16,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
+DIR_cpuIDWord2,DIR,DIR_debug,0x7D5,DIR_debugSelector,132,32,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
+DIR_cpuIDWord3,DIR,DIR_debug,0x7D5,DIR_debugSelector,132,48,16,1,0,1,0,,Position from firmware; message assignment inferred.,0,65535,
 DIR_criticalFlowReq,DIR,DIR_thermalControl,0x5D7,,,32,1,1,0,1,0,,,,,"{""0"":""NOT_ACTIVE"",""1"":""ACTIVE""}"
 DIR_currentWeibullMiles,DIR,DIR_temperature,0x315,DIR_tempIndex,3,3,16,1,0,8,0,miles,,0,500000,
 DIR_d085_driveInverterBoardFailure,DIR,DIR_alertMatrix,0x3A7,DIR_matrixIndex,1,28,1,1,0,1,0,,,,,
@@ -8475,16 +8567,20 @@ DIR_d166_rotorOverTemperature,DIR,DIR_alertMatrix,0x3A7,DIR_matrixIndex,2,49,1,1
 DIR_d167_tempSensorIssue,DIR,DIR_alertMatrix,0x3A7,DIR_matrixIndex,2,50,1,1,0,1,0,,,,,
 DIR_d175_oilPumpBCommsLost,DIR,DIR_alertMatrix,0x3A7,DIR_matrixIndex,2,58,1,1,0,1,0,,,,,
 DIR_d179_oilPumpBIssue,DIR,DIR_alertMatrix,0x3A7,DIR_matrixIndex,2,62,1,1,0,1,0,,,,,
+DIR_dcCableHeat,DIR,DIR_debug,0x7D5,DIR_debugSelector,47,32,16,1,0,0.001,0,kA2s,Position from firmware; message assignment inferred.,0,65.535,
 DIR_dcCapT,DIR,DIR_temperature,0x315,DIR_tempIndex,0,32,8,1,0,1,-40,DegC,,-40,215,
+DIR_dcCapTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,64,8,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIR_dcLinkCapTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,70,32,8,1,0,1,-40,DegC,,-40,215,
 DIR_debugSelector,DIR,DIR_debug,0x7D5,,,0,8,1,0,1,0,,,,,
 DIR_driveModeState,DIR,DIR_status,0x256,,,32,1,1,0,1,0,,,,,"{""0"":""DM_STATE_NONDRIVE"",""1"":""DM_STATE_DRIVE""}"
 DIR_drivePowerMax,DIR,DIR_power,0x266,,,48,9,1,0,1,0,kW,,0,400,
+DIR_driveUnitOdometer,DIR,DIR_debug,0x7D5,DIR_debugSelector,69,32,32,1,0,10,0,rev,Position from firmware; message assignment inferred.,0,42949672950,
 DIR_elecPower,DIR,DIR_power,0x266,,,0,11,1,1,0.5,0,kW,,-500,500,
 DIR_endOfServiceWeibullMiles,DIR,DIR_temperature,0x315,DIR_tempIndex,3,19,16,1,0,8,0,miles,,0,500000,
 DIR_excessHeatCommand,DIR,DIR_power,0x266,,,40,8,1,0,0.08,0,kW,Drive Inverter excess heat command,0,20,
 DIR_fluidInTemp,DIR,DIR_temperature,0x315,DIR_tempIndex,2,8,8,1,0,1,-40,DegC,Inlet fluid temperature,-40,215,
 DIR_fluxState,DIR,DIR_hvStatus,0x279,,,48,4,1,0,1,0,,,,,"{""0"":""DI_FLUXSTATE_START"",""1"":""DI_FLUXSTATE_TEST"",""2"":""DI_FLUXSTATE_STANDBY"",""3"":""DI_FLUXSTATE_FLUX_UP"",""4"":""DI_FLUXSTATE_FLUX_DOWN"",""5"":""DI_FLUXSTATE_ENABLED"",""6"":""DI_FLUXSTATE_ICONTROL"",""7"":""DI_FLUXSTATE_VCONTROL"",""9"":""DI_FLUXSTATE_FAULT"",""10"":""DI_FLUXSTATE_STATIONARY_WASTE"",""11"":""DI_FLUXSTATE_MAGNET_FLUX_DETECT"",""12"":""DI_FLUXSTATE_DISABLED""}"
+DIR_gainScale,DIR,DIR_debug,0x7D5,DIR_debugSelector,37,8,8,1,0,0.01,0,scale,Position from firmware; message assignment inferred.,0,2.55,
 DIR_gateDriveState,DIR,DIR_hvStatus,0x279,,,53,3,1,0,1,0,,,,,"{""0"":""PSTG_GD_STATE_INIT"",""1"":""PSTG_GD_STATE_SELFTEST"",""2"":""PSTG_GD_STATE_CONFIGURING"",""3"":""PSTG_GD_STATE_CONFIGURED"",""4"":""PSTG_GD_STATE_NOT_CONFIGURED""}"
 DIR_gateDriveSupplyState,DIR,DIR_hvStatus,0x279,,,56,2,1,0,1,0,,,,,"{""0"":""PSTG_GD_SUPPLY_DOWN"",""1"":""PSTG_GD_SUPPLY_RISING"",""2"":""PSTG_GD_SUPPLY_UP"",""3"":""PSTG_GD_SUPPLY_FALLING""}"
 DIR_gear,DIR,DIR_torque,0x108,,,59,3,1,0,1,0,,,,,"{""0"":""DI_GEAR_INVALID"",""1"":""DI_GEAR_P"",""2"":""DI_GEAR_R"",""3"":""DI_GEAR_N"",""4"":""DI_GEAR_D"",""7"":""DI_GEAR_SNA""}"
@@ -8501,6 +8597,7 @@ DIR_hvilCmVoltage,DIR,DIR_hvStatus,0x279,,,20,8,1,0,0.08,0,V,HVIL Common Mode Vo
 DIR_hvilCurrent,DIR,DIR_hvStatus,0x279,,,12,8,1,0,0.1,0,mA,HVIL Current,0,25.5,
 DIR_hvilStatus,DIR,DIR_hvStatus,0x279,,,28,2,1,0,1,0,,Aggregated hardware and measured HVIL unit status,,,"{""0"":""DISABLED"",""1"":""OPEN"",""2"":""CLOSED""}"
 DIR_hvilSupplyState,DIR,DIR_hvStatus,0x279,,,30,2,1,0,1,0,,,,,"{""0"":""NOT_AVAILABLE"",""1"":""INACTIVE"",""2"":""ACTIVE""}"
+DIR_hwFaultCount,DIR,DIR_debug,0x7D5,DIR_debugSelector,69,8,4,1,0,1,0,,Position from firmware; message assignment inferred.,0,15,
 DIR_infoBootLdUdsProtocolVersion,DIR,DIR_info,0x335,DIR_infoIndex,20,8,8,1,0,1,0,,,0,255,
 DIR_infoIndex,DIR,DIR_info,0x335,,,0,8,1,0,1,0,,,,,
 DIR_initialBurnInVehicleOdometer,DIR,DIR_temperature,0x315,DIR_tempIndex,4,8,32,1,0,0.001,0,km,,0,4294967.294,
@@ -8514,13 +8611,23 @@ DIR_inverterTQF,DIR,DIR_temperature,0x315,DIR_tempIndex,0,3,2,1,0,1,0,,Detects t
 DIR_inverterTpct,DIR,DIR_temperature,0x315,DIR_tempIndex,0,48,8,1,0,0.4,0,%,,0,100,
 DIR_keepAliveRequest,DIR,DIR_motorStatus,0x7F5,,,26,1,1,0,1,0,,Used to detect that the Drive Inverter (DI) expects 12V and High Voltage (HV) to be kept up in order to protect hardware.,,,"{""0"":""NO_REQUEST"",""1"":""KEEP_ALIVE""}"
 DIR_lightSenseV,DIR,DIR_debug,0x7D5,DIR_debugSelector,72,24,6,1,0,0.1,0,V,,0,3.3,
+DIR_llrScale,DIR,DIR_debug,0x7D5,DIR_debugSelector,42,32,8,1,0,0.015,0,scale,Position from firmware; message assignment inferred.,0,3.825,
+DIR_llsScale,DIR,DIR_debug,0x7D5,DIR_debugSelector,42,24,8,1,0,0.004,0,scale,Position from firmware; message assignment inferred.,0,1.02,
+DIR_lmScale,DIR,DIR_debug,0x7D5,DIR_debugSelector,36,8,8,1,0,0.004,0,scale,Position from firmware; message assignment inferred.,0,1.02,
 DIR_lvSupplyV,DIR,DIR_status,0x256,,,24,8,1,0,0.1,0,V,,0,25.5,
+DIR_magnetTempEst,DIR,DIR_debug,0x7D5,DIR_debugSelector,47,48,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIR_matrixIndex,DIR,DIR_alertMatrix,0x3A7,,,0,4,1,0,1,0,,,,,
 DIR_mechSafeStateType,DIR,DIR_info,0x335,DIR_infoIndex,12,24,2,1,0,1,0,,,,,"{""0"":""DI_MECH_SAFE_STATE_TYPE_SNA"",""1"":""DI_MECH_SAFE_STATE_TYPE_NONE"",""2"":""DI_MECH_SAFE_STATE_TYPE_PRESENT""}"
 DIR_motorCurrent,DIR,DIR_motorStatus,0x7F5,,,0,11,1,0,1,0,A,Drive Inverer measured motor RMS phase current.,0,2047,
+DIR_motorIA,DIR,DIR_debug,0x7D5,DIR_debugSelector,32,8,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
+DIR_motorIAavg,DIR,DIR_debug,0x7D5,DIR_debugSelector,38,32,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIR_motorIB,DIR,DIR_debug,0x7D5,DIR_debugSelector,32,24,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
+DIR_motorIBavg,DIR,DIR_debug,0x7D5,DIR_debugSelector,38,48,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIR_motorIC,DIR,DIR_debug,0x7D5,DIR_debugSelector,32,40,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
 DIR_motorStatusChecksum,DIR,DIR_motorStatus,0x7F5,,,32,8,1,0,1,0,,,0,255,
 DIR_motorStatusCounter,DIR,DIR_motorStatus,0x7F5,,,27,4,1,0,1,0,,,0,15,
 DIR_motorType,DIR,DIR_info,0x335,DIR_infoIndex,12,8,6,1,0,1,0,,,,,"{""0"":""DI_MOTOR_SNA"",""1"":""DI_MOTOR_PM216D"",""2"":""DI_MOTOR_IM130D"",""3"":""DI_MOTOR_IM130D_AL"",""4"":""DI_MOTOR_PM275B"",""5"":""DI_MOTOR_PM350B"",""6"":""DI_MOTOR_PM228C"",""7"":""DI_MOTOR_PM291C"",""8"":""DI_MOTOR_PM291D"",""9"":""DI_MOTOR_PM275C"",""10"":""DI_MOTOR_PM228HEA"",""11"":""DI_MOTOR_IM228HEA"",""12"":""DI_MOTOR_IM260A_1KV"",""13"":""DI_MOTOR_PM215A_1KV"",""14"":""DI_MOTOR_IM260C_1KV"",""15"":""DI_MOTOR_PM215C_1KV"",""16"":""DI_MOTOR_PM261C"",""17"":""DI_MOTOR_IM260D_1KV"",""18"":""DI_MOTOR_IM260E_1KV"",""20"":""DI_MOTOR_PM215D_1KV"",""31"":""DI_MOTOR_PM216E"",""32"":""DI_MOTOR_PM261D"",""34"":""DI_MOTOR_IM130E_AL"",""35"":""DI_MOTOR_IM188A"",""36"":""DI_MOTOR_PM240C""}"
+DIR_motorV,DIR,DIR_debug,0x7D5,DIR_debugSelector,34,48,16,1,0,2e-05,0,mindex,Position from firmware; message assignment inferred.,0,1.3107,
 DIR_negDcBusbarTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,70,48,8,1,0,1,-40,DegC,,-40,215,
 DIR_normalFetBurnIn,DIR,DIR_temperature,0x315,DIR_tempIndex,2,16,16,1,0,0.00763,0,Hours,,0,500,
 DIR_oilFlowReq,DIR,DIR_thermalControl,0x5D7,,,24,8,1,0,0.1,0,LPM,,0,25.4,
@@ -8532,6 +8639,7 @@ DIR_oilPumpFlowTarget,DIR,DIR_oilPump,0x395,,,8,8,1,0,0.1,0,LPM,Detects oil pump
 DIR_oilPumpFluidT,DIR,DIR_oilPump,0x395,,,24,8,1,0,1,-40,DegC,Detects oil pump fluid tester.,-40,214,
 DIR_oilPumpFluidTQF,DIR,DIR_oilPump,0x395,,,3,1,1,0,1,0,,,,,"{""0"":""OIL_PUMP_FLUIDT_LOW_CONFIDENCE"",""1"":""OIL_PUMP_FLUIDT_HIGH_CONFIDENCE""}"
 DIR_oilPumpLeadAngle,DIR,DIR_oilPump,0x395,,,4,4,1,0,1.875,0,degrees,,0,28.125,
+DIR_oilPumpMotorSpeed,DIR,DIR_debug,0x7D5,DIR_debugSelector,46,8,8,1,0,40,0,RPM,Position from firmware; message assignment inferred.,0,10200,
 DIR_oilPumpPcbaId,DIR,DIR_info,0x335,DIR_infoIndex,33,8,8,1,0,1,0,,,0,255,
 DIR_oilPumpPhaseCurrent,DIR,DIR_oilPump,0x395,,,32,8,1,0,0.1,0,A,,0,25.4,
 DIR_oilPumpPressureEstimate,DIR,DIR_oilPump,0x395,,,40,8,1,0,2,0,kPa,Oil pump pressure estimate.,0,500,
@@ -8542,45 +8650,80 @@ DIR_oilPumpUsageId,DIR,DIR_info,0x335,DIR_infoIndex,33,24,16,1,0,1,0,,,0,65535,
 DIR_passiveInletTempReq,DIR,DIR_thermalControl,0x5D7,,,0,8,1,0,1,-40,DegC,,-40,215,
 DIR_pcbT,DIR,DIR_temperature,0x315,DIR_tempIndex,0,8,8,1,0,1,-40,DegC,,-40,215,
 DIR_pcbaId,DIR,DIR_info,0x335,DIR_infoIndex,11,16,8,1,0,1,0,,,0,255,
+DIR_pcsTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,64,24,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
+DIR_peakFlux,DIR,DIR_debug,0x7D5,DIR_debugSelector,36,48,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
+DIR_peakIQref,DIR,DIR_debug,0x7D5,DIR_debugSelector,38,16,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
 DIR_phaseOutBusbarTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,70,8,8,1,0,1,-40,DegC,,-40,215,
 DIR_phaseOutBusbarWeldTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,70,16,8,1,0,1,-40,DegC,,-40,215,
 DIR_phaseOutLugTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,70,24,8,1,0,1,-40,DegC,,-40,215,
+DIR_platformTyp,DIR,DIR_info,0x335,DIR_infoIndex,19,8,8,1,0,1,0,,Position from firmware; message assignment inferred.,0,255,
 DIR_posDcBusbarTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,70,56,8,1,0,1,-40,DegC,,-40,215,
 DIR_powerStageSafeState,DIR,DIR_hvStatus,0x279,,,45,2,1,0,1,0,,,,,"{""0"":""PSTG_SAFESTATE_NONE"",""1"":""PSTG_SAFESTATE_ALL_OFF"",""2"":""PSTG_SAFESTATE_3PS_HIGH"",""3"":""PSTG_SAFESTATE_3PS_LOW""}"
+DIR_pwmState,DIR,DIR_debug,0x7D5,DIR_debugSelector,63,48,2,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""PWMSTATE_SVPWM"",""1"":""PWMSTATE_DPWM2"",""2"":""PWMSTATE_OPWM1"",""3"":""PWMSTATE_OPWM2""}"
 DIR_pyroSenseV,DIR,DIR_debug,0x7D5,DIR_debugSelector,72,30,8,1,0,0.02,0,V,,0,3.3,
 DIR_refRotorFlux,DIR,DIR_info,0x335,DIR_infoIndex,35,8,16,1,0,0.0001,0,Wb,,0,6.5535,
 DIR_refRotorOffset,DIR,DIR_info,0x335,DIR_infoIndex,35,24,12,1,1,0.1,0,deg,,-180,180,
+DIR_resolverClaMIA,DIR,DIR_debug,0x7D5,DIR_debugSelector,48,43,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIR_resolverNoCarrier,DIR,DIR_debug,0x7D5,DIR_debugSelector,48,41,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIR_resolverNoPhaseLock,DIR,DIR_debug,0x7D5,DIR_debugSelector,48,42,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIR_resolverReady,DIR,DIR_debug,0x7D5,DIR_debugSelector,48,40,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+DIR_rotorFlux,DIR,DIR_debug,0x7D5,DIR_debugSelector,47,16,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
 DIR_rotorMaxMagnetTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,72,16,8,1,0,1,-40,DegC,Reports the maximum temperature of the rotor magnet.,-40,215,
+DIR_rsScale,DIR,DIR_debug,0x7D5,DIR_debugSelector,34,8,8,1,0,0.01,0,scale,Position from firmware; message assignment inferred.,0,2.55,
 DIR_siliconType,DIR,DIR_info,0x335,DIR_infoIndex,12,16,1,1,0,1,0,,,,,"{""0"":""MOSFET"",""1"":""IGBT""}"
 DIR_softSysLimpRequest,DIR,DIR_status,0x256,,,21,1,1,0,1,0,,,,,
+DIR_soptMaxCurrentMagSqrd,DIR,DIR_debug,0x7D5,DIR_debugSelector,49,40,16,1,0,100,0,A2,Position from firmware; message assignment inferred.,0,6553500,
 DIR_soptState,DIR,DIR_status,0x256,,,16,4,1,0,1,0,,Detects the state of the the Switch Off Path Test (SOPT).,,,"{""0"":""SOPT_INIT"",""1"":""SOPT_PSTG_BRING_UP"",""2"":""SOPT_PSTG_BRING_UP_AT_SPEED"",""3"":""SOPT_ASC_TEST"",""4"":""SOPT_CURRENT_TEST"",""5"":""SOPT_TEST_PASSED"",""6"":""SOPT_TEST_SKIPPED"",""7"":""SOPT_TEST_FAILED"",""8"":""SOPT_SNA"",""9"":""SOPT_DISABLED""}"
 DIR_speedWearTotal,DIR,DIR_info,0x335,DIR_infoIndex,36,8,8,1,0,0.4,0,%,,0,100,
 DIR_spinDownLearningMode,DIR,DIR_status,0x256,,,60,1,1,0,1,0,,,,,"{""0"":""SPINDOWN_MODE_ON_LIFT"",""1"":""SPINDOWN_MODE_ON_GROUND""}"
 DIR_spinDownLearningState,DIR,DIR_status,0x256,,,56,4,1,0,1,0,,,,,"{""0"":""SPINDOWN_STATE_INIT"",""1"":""SPINDOWN_STATE_PRECHECK"",""2"":""SPINDOWN_STATE_WAIT"",""3"":""SPINDOWN_STATE_ACCELERATE"",""4"":""SPINDOWN_STATE_COAST"",""5"":""SPINDOWN_STATE_MEASURE"",""6"":""SPINDOWN_STATE_CORRECT"",""7"":""SPINDOWN_STATE_VERIFY"",""8"":""SPINDOWN_STATE_WRITE"",""9"":""SPINDOWN_STATE_DONE""}"
 DIR_state,DIR,DIR_status,0x256,,,12,3,1,0,1,0,,DI unit state machine state.,,,"{""0"":""DI_STATE_UNAVAILABLE"",""1"":""DI_STATE_STANDBY"",""2"":""DI_STATE_FAULT"",""3"":""DI_STATE_ABORT"",""4"":""DI_STATE_ENABLE""}"
 DIR_statorEndWindingTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,72,8,8,1,0,1,-40,DegC,,-40,215,
+DIR_statorFluxFdb,DIR,DIR_debug,0x7D5,DIR_debugSelector,35,32,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
+DIR_statorFluxRef,DIR,DIR_debug,0x7D5,DIR_debugSelector,35,16,16,1,0,0.0001,0,Wb,Position from firmware; message assignment inferred.,0,6.5535,
 DIR_statorHousingTemp,DIR,DIR_temperature,0x315,DIR_tempIndex,4,56,8,1,0,1,-40,DegC,,-40,215,
+DIR_statorIDfdb,DIR,DIR_debug,0x7D5,DIR_debugSelector,33,24,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIR_statorIDref,DIR,DIR_debug,0x7D5,DIR_debugSelector,33,8,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIR_statorIQfdb,DIR,DIR_debug,0x7D5,DIR_debugSelector,34,32,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
+DIR_statorIQref,DIR,DIR_debug,0x7D5,DIR_debugSelector,34,16,16,1,1,0.1,0,A,Position from firmware; message assignment inferred.,-3276.8,3276.7,
 DIR_statorSlotWindingTemp,DIR,DIR_debug,0x7D5,DIR_debugSelector,72,46,8,1,0,1,-40,DegC,,-40,215,
 DIR_statorT,DIR,DIR_temperature,0x315,DIR_tempIndex,0,24,8,1,0,1,-40,DegC,Drive Inverter measured stator temperature.,-40,215,
+DIR_statorTemp1,DIR,DIR_debug,0x7D5,DIR_debugSelector,64,32,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
+DIR_statorTemp2,DIR,DIR_debug,0x7D5,DIR_debugSelector,64,40,8,1,0,1,-40,DegC,Position from firmware; message assignment inferred.,-40,215,
 DIR_statorTpct,DIR,DIR_temperature,0x315,DIR_tempIndex,0,56,8,1,0,0.4,0,%,,0,100,
+DIR_statorVD,DIR,DIR_debug,0x7D5,DIR_debugSelector,36,32,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
+DIR_statorVDFiltered,DIR,DIR_debug,0x7D5,DIR_debugSelector,63,16,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
+DIR_statorVQ,DIR,DIR_debug,0x7D5,DIR_debugSelector,36,16,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
+DIR_statorVQFiltered,DIR,DIR_debug,0x7D5,DIR_debugSelector,63,32,16,1,1,4e-05,0,mindex,Position from firmware; message assignment inferred.,-1.31072,1.31068,
 DIR_statusChecksum,DIR,DIR_status,0x256,,,0,8,1,0,1,0,,,0,255,
 DIR_statusCounter,DIR,DIR_status,0x256,,,8,4,1,0,1,0,,,0,15,
 DIR_subUsageId,DIR,DIR_info,0x335,DIR_infoIndex,11,48,16,1,0,1,0,,,0,65535,
+DIR_subcomponentGitHash,DIR,DIR_info,0x335,DIR_infoIndex,31,8,56,1,0,1,0,,Position from firmware; message assignment inferred.,0,72057594037927936,
 DIR_switchShortTestRetryCount,DIR,DIR_motorStatus,0x7F5,,,24,2,1,0,1,0,,,0,3,
 DIR_switchingFrequency,DIR,DIR_motorStatus,0x7F5,,,11,11,1,0,0.01,0,kHz,,0,20,
 DIR_sysLimpRequest,DIR,DIR_status,0x256,,,20,1,1,0,1,0,,,,,
 DIR_targetFluxMode,DIR,DIR_motorStatus,0x7F5,,,22,2,1,0,1,0,,,,,"{""0"":""DI_FLUXMODE_OPTIMUM"",""1"":""DI_FLUXMODE_FS"",""2"":""DI_FLUXMODE_FW""}"
+DIR_tcMaxRequest,DIR,DIR_debug,0x7D5,DIR_debugSelector,40,16,8,1,0,5,0,Nm,Position from firmware; message assignment inferred.,0,1275,
+DIR_tcMinRequest,DIR,DIR_debug,0x7D5,DIR_debugSelector,40,24,8,1,0,5,0,Nm,Position from firmware; message assignment inferred.,0,1275,
 DIR_tempIndex,DIR,DIR_temperature,0x315,,,0,3,1,0,1,0,,,,,
 DIR_torqueActual,DIR,DIR_torque,0x108,,,27,13,1,1,2,0,Nm,Actual torque the drive unit is controlling to referred to the axle/wheel,-7500,7500,
 DIR_torqueChecksum,DIR,DIR_torque,0x108,,,0,8,1,0,1,0,,,0,255,
 DIR_torqueCommand,DIR,DIR_torque,0x108,,,12,13,1,1,2,0,Nm,"Torque commanded to the drive unit, referred to the axle/wheel",-7500,7500,
 DIR_torqueCounter,DIR,DIR_torque,0x108,,,8,4,1,0,1,0,,,0,15,
+DIR_torquePerAmp,DIR,DIR_debug,0x7D5,DIR_debugSelector,33,40,16,1,0,0.0001,0,Nm/A,Position from firmware; message assignment inferred.,0,6.5535,
 DIR_torqueWearTotal,DIR,DIR_info,0x335,DIR_infoIndex,36,24,8,1,0,0.02,0,1,,0,5.08,
+DIR_tqSatMotorCurrent,DIR,DIR_debug,0x7D5,DIR_debugSelector,39,40,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_tqSatMotorVoltage,DIR,DIR_debug,0x7D5,DIR_debugSelector,39,32,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_tqSatThermal,DIR,DIR_debug,0x7D5,DIR_debugSelector,39,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_tqScaleDifferential,DIR,DIR_debug,0x7D5,DIR_debugSelector,35,8,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
+DIR_tqScaleMaxMotorSpeed,DIR,DIR_debug,0x7D5,DIR_debugSelector,40,48,8,1,0,0.4,0,%,Position from firmware; message assignment inferred.,0,102,
 DIR_udsResponseData,DIR,DIR_udsResponse,0x616,,,7,64,0,0,1,0,,,0,18446744073709551616,
 DIR_usageId,DIR,DIR_info,0x335,DIR_infoIndex,11,32,16,1,0,1,0,,,0,65535,
+DIR_usmState,DIR,DIR_debug,0x7D5,DIR_debugSelector,38,12,3,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""USM_STATE_START"",""1"":""USM_STATE_STANDBY"",""2"":""USM_STATE_RETRY"",""3"":""USM_STATE_ABORT"",""4"":""USM_STATE_ENABLE"",""5"":""USM_STATE_FAULT"",""6"":""USM_STATE_UNAVAILABLE"",""7"":""USM_STATE_WAIT_FOR_RETRY""}"
 DIR_vBat,DIR,DIR_hvStatus,0x279,,,34,10,1,0,1,0,V,Reports the battery voltage measured by the Drive Inverter's local Analog to Digital Converter (ADC).,0,1023,
 DIR_vBatQF,DIR,DIR_hvStatus,0x279,,,44,1,1,0,1,0,,,,,"{""0"":""NOT_QUALIFIED"",""1"":""QUALIFIED""}"
 DIR_vBusDiag,DIR,DIR_hvStatus,0x279,,,52,1,1,0,1,0,,,,,
+DIR_wasteCurrentLimit,DIR,DIR_debug,0x7D5,DIR_debugSelector,41,32,16,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,6553.5,
 DIR_wasteState,DIR,DIR_status,0x256,,,33,2,1,0,1,0,,Reports the Drive Inverter (DI) waste heat state.,,,"{""0"":""DI_WASTE_UNAVAILABLE"",""1"":""DI_WASTE_AVAILABLE"",""2"":""DI_WASTE_ON"",""3"":""DI_WASTE_STATIONARY""}"
 DI_VehicleMu,DI Drive inverter,DI_chassisControl,0x148,,,49,6,1,0,0.024,0,-,Learn-up estimate of surface mu for development use only,0,1.512,
 DI_VehicleMuConfidence,DI Drive inverter,DI_chassisControl,0x148,,,43,6,1,0,0.02,0,-,Confidence in surface mu estimate for development use only,0,1.26,
@@ -13696,6 +13839,7 @@ FC_a321_FCAlertPlaceholder,FC,FC_alertMatrix6,0x3DE,,,0,1,1,0,1,0,,,,,
 FC_adapterLocked,FC,FC_status,0x214,,,15,1,1,0,1,0,,Indicates if the DC adapter is secure or not,,,
 FC_alertID,FC,FC_alertLog,0x52A,,,0,15,1,0,1,0,,,,,
 FC_alertType,FC,FC_alertLog,0x52A,,,15,1,1,0,1,0,,,,,
+FC_billingEnergy,FC,FC_status3,0x217,FC_status3DataSelect,1,8,16,1,0,0.015259,0,kWh,Total billable charge energy (integrated by EVSE). Position from firmware; message assignment inferred.,0,1000,
 FC_brand,FC,FC_status3,0x217,FC_status3DataSelect,0,16,4,1,0,1,0,,Fast charger brand,0,1,
 FC_class,FC,FC_status3,0x217,FC_status3DataSelect,0,8,8,1,0,1,0,,,,,"{""0"":""FC_CLASS_SNA"",""1"":""FC_CLASS_SUPERCHARGER"",""2"":""FC_CLASS_URBANCHARGER""}"
 FC_coolingType,FC,FC_status3,0x217,FC_status3DataSelect,0,20,4,1,0,1,0,,Type of cooling used for the supercharger,,,"{""0"":""FC_COOLING_TYPE_SNA"",""1"":""FC_COOLING_TYPE_LIQUID"",""2"":""FC_COOLING_TYPE_CONVECTION"",""3"":""FC_COOLING_TYPE_IMMERSION""}"
@@ -13725,9 +13869,13 @@ FC_infoAppGitHashBytes,FC,FC_info,0x51E,FC_infoIndex,17,8,56,1,0,1,0,,,0,7205759
 FC_infoApplicationCRC,FC,FC_info,0x51E,FC_infoIndex,13,32,32,1,0,1,0,,,,,
 FC_infoAssemblyID,FC,FC_info,0x51E,FC_infoIndex,11,24,8,1,0,1,0,,,0,255,
 FC_infoBootGitHashBytes,FC,FC_info,0x51E,FC_infoIndex,18,8,56,1,0,1,0,,,0,72057594037927936,
+FC_infoBootSvnRev,FC,FC_info,0x51E,FC_infoIndex,14,8,24,1,0,1,0,,Position from firmware; message assignment inferred.,0,16777215,
+FC_infoBootUdsProtoVersion,FC,FC_info,0x51E,FC_infoIndex,20,8,8,1,0,1,0,,Position from firmware; message assignment inferred.,0,255,
 FC_infoBranchOrigin,FC,FC_info,0x51E,FC_infoIndex,19,24,8,1,0,1,0,,Fast charger branch origin,0,255,
 FC_infoBuildConfigID,FC,FC_info,0x51E,FC_infoIndex,10,16,16,1,0,1,0,,,0,65535,
 FC_infoBuildType,FC,FC_info,0x51E,FC_infoIndex,10,8,8,1,0,1,0,,,,,"{""0"":""INFO_UNKNOWN_BUILD_FC"",""1"":""INFO_PLATFORM_BUILD_FC"",""2"":""INFO_LOCAL_BUILD_FC"",""3"":""INFO_TRACEABLE_CI_BUILD_FC"",""4"":""INFO_MFG_BUILD_FC""}"
+FC_infoCPLDVersionMajor,FC,FC_info,0x51E,FC_infoIndex,16,16,8,1,0,1,0,,Position from firmware; message assignment inferred.,0,255,
+FC_infoCPLDVersionMinor,FC,FC_info,0x51E,FC_infoIndex,16,24,8,1,0,1,0,,Position from firmware; message assignment inferred.,0,255,
 FC_infoComponentID,FC,FC_info,0x51E,FC_infoIndex,10,48,16,1,0,1,0,,,0,65535,
 FC_infoHardwareID,FC,FC_info,0x51E,FC_infoIndex,10,32,16,1,0,1,0,,,0,65535,
 FC_infoHardwareRevision,FC,FC_info,0x51E,FC_infoIndex,19,40,8,1,0,1,0,,,0,255,
@@ -30472,6 +30620,7 @@ VCFRONT_12VBatteryStatusChecksum,VCFRONT Front body controller,VCFRONT_12VBatter
 VCFRONT_12VBatteryStatusCounter,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,,,52,4,1,0,1,0,,,0,15,
 VCFRONT_12VBatteryStatusIndex,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,,,0,3,1,0,1,0,,,,,
 VCFRONT_12VBatteryTargetVoltage,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,2,3,13,1,0,0.01,0,V,Reports the target Low Voltage (LV) battery voltage.,0,65.535,
+VCFRONT_12VOverchargeCounter,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,4,4,1,0,1,0,,Position from firmware; message assignment inferred.,0,15,
 VCFRONT_12vStatusForDrive,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,0,14,2,1,0,1,0,,,,,"{""0"":""NOT_READY_FOR_DRIVE_12V"",""1"":""READY_FOR_DRIVE_12V"",""2"":""EXIT_DRIVE_REQUESTED_12V""}"
 VCFRONT_2RowCenterUnbuckled,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,0,38,2,1,0,1,0,,,,,"{""0"":""CHIME_NONE"",""1"":""CHIME_OCCUPIED_AND_UNBUCKLED"",""2"":""CHIME_SNA""}"
 VCFRONT_2RowLeftUnbuckled,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,0,36,2,1,0,1,0,,,,,"{""0"":""CHIME_NONE"",""1"":""CHIME_OCCUPIED_AND_UNBUCKLED"",""2"":""CHIME_SNA""}"
@@ -30490,6 +30639,7 @@ VCFRONT_CCQdotFdbk,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRON
 VCFRONT_CMPDLVState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,1,18,2,1,0,1,0,,,,,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
 VCFRONT_CMPDischargeSuperheat,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,5,21,5,1,1,1,6,degC,,-10,21,
 VCFRONT_COP1OilWarmingNeeded,VCFRONT Front body controller,VCFRONT_logging10Hz,0x2C1,VCFRONT_logging10HzIndex,0,62,1,1,0,1,0,,Reports if refrigerant compressor oil warming is needed.,,,
+VCFRONT_ChargePumpVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,16,24,16,1,0,0.00544368,0,V,Position from firmware; message assignment inferred.,0,356.75131308243,
 VCFRONT_ChargePumpVoltageStable,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,9,1,1,0,1,0,,,,,
 VCFRONT_DCDCSaturationLoadShedStage,VCFRONT Front body controller,VCFRONT_systemStatus,0x545,VCFRONT_systemStatusMuxIndex,1,28,5,1,0,1,0,,,0,31,
 VCFRONT_DIQdotA,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,6,42,7,1,0,80,0,W,,0,10000,
@@ -30538,6 +30688,16 @@ VCFRONT_ESPValveFault,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2
 VCFRONT_ESPValveState,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,7,8,2,1,0,1,0,,State of the stability controller motor circuit,,,"{""0"":""EFUSE_STATE_OFF"",""1"":""EFUSE_STATE_ON"",""2"":""EFUSE_STATE_LOCKED_OUT"",""3"":""EFUSE_STATE_SNA""}"
 VCFRONT_ESPValveTemp,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,7,12,11,1,0,0.125,-40,degC,,-40,150,
 VCFRONT_ESPValveVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,7,28,16,1,0,0.1,0,V,,0,6553.5,
+VCFRONT_HCML_bladeTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,3,32,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCML_diffuseTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,3,40,8,1,1,1,67,degC,Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCML_highBeamTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,3,16,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCML_lowBeamSpotTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,3,8,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCML_turnTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,3,24,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCMR_bladeTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,4,32,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCMR_diffuseTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,4,40,8,1,1,1,67,degC,Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCMR_highBeamTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,4,16,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCMR_lowBeamSpotTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,4,8,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
+VCFRONT_HCMR_turnTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,4,24,8,1,1,1,67,degC,Temperature of the left low beam LED board. Position from firmware; message assignment inferred.,-60,194,
 VCFRONT_HSDInitCompleteU13,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,11,1,1,0,1,0,,,,,
 VCFRONT_HSDInitCompleteU16,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,12,1,1,0,1,0,,,,,
 VCFRONT_HVFaultLoadShedStateDBG,VCFRONT Front body controller,VCFRONT_systemStatus,0x545,VCFRONT_systemStatusMuxIndex,1,44,2,1,0,1,0,,,,,"{""0"":""HV_FAULT_LOADSHED_SM_STATE_INIT"",""1"":""HV_FAULT_LOADSHED_SM_STATE_IDLE"",""2"":""HV_FAULT_LOADSHED_SM_STATE_BLOCKED"",""3"":""HV_FAULT_LOADSHED_SM_STATE_ACTIVE""}"
@@ -30546,6 +30706,7 @@ VCFRONT_HVFaultVehicleLoadShedRequest,VCFRONT Front body controller,VCFRONT_syst
 VCFRONT_IBSAmpHours,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,4,5,14,1,1,0.005,0,Ah,Measures the energy state of the Low Voltage (LV) battery in amp hours.,-40.96,40.955,
 VCFRONT_IBSCurrent,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,1,16,16,1,1,0.005,0,A,Electrical current into the 12V battery,-163.84,163.835,
 VCFRONT_IBSCurrentRMS_loadShed,VCFRONT Front body controller,VCFRONT_systemStatus,0x545,VCFRONT_systemStatusMuxIndex,2,16,7,1,0,0.05,0,A,,0,6.35,
+VCFRONT_IBSFault,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,3,1,1,0,1,0,,Indicates that a fault has been diagnosed with the Low Voltage (LV) battery sensor. Position from firmware; message assignment inferred.,,,
 VCFRONT_IBSTemperature,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,2,16,11,1,0,0.1,-24,degC,,-24,124,
 VCFRONT_IBSUnfilteredTemperature,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,17,40,16,1,1,0.01,0,degC,,-327.67,327.67,
 VCFRONT_IBSVoltage,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,1,32,14,1,0,0.005443676,0,V,Voltage of the 12V battery,0,65.535,
@@ -33441,7 +33602,10 @@ VCFRONT_advancedDrivingBeamStatus,VCFRONT Front body controller,VCFRONT_lightSta
 VCFRONT_alertID,VCFRONT Front body controller,VCFRONT_alertLog,0x534,,,0,10,1,0,1,0,,,,,
 VCFRONT_alertState,VCFRONT Front body controller,VCFRONT_alertLog,0x534,,,15,1,1,0,1,0,,,,,
 VCFRONT_allowEvapInLowAmbient,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,52,1,1,0,1,0,,,,,
+VCFRONT_ambientColderThanBatt,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,8,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_ambientLightingBrightnes,VCFRONT Front body controller,VCFRONT_lighting,0x3F5,,,8,8,1,0,0.5,0,%,,0,127,
+VCFRONT_ambientSourcingAvailable,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,9,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_ambientSourcingDisabled,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,38,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_ambientTempPassiveSniffing,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,60,1,1,0,1,0,,,,,
 VCFRONT_ambientTempRadSampling,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,61,1,1,0,1,0,,,,,
 VCFRONT_ambientTempSniffActive,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,59,1,1,0,1,0,,,,,
@@ -33453,6 +33617,9 @@ VCFRONT_anyDoorOpen,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_s
 VCFRONT_anySWEFuseActive,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,1,40,1,1,0,1,0,,,,,
 VCFRONT_anyVehLoadShedActiveDBG,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,22,1,1,0,1,0,,,,,
 VCFRONT_anyVehicleLoadShedActive,VCFRONT Front body controller,VCFRONT_systemStatus,0x545,VCFRONT_systemStatusMuxIndex,1,42,1,1,0,1,0,,,,,
+VCFRONT_autopilot1Fault,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,8,10,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_autopilot1State,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,8,8,2,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""EFUSE_STATE_OFF"",""1"":""EFUSE_STATE_ON"",""2"":""EFUSE_STATE_LOCKED_OUT"",""3"":""EFUSE_STATE_SNA""}"
+VCFRONT_autopilot1Voltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,8,27,16,1,0,0.1,0,V,Position from firmware; message assignment inferred.,0,6553.5,
 VCFRONT_autopilot2Current,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,9,43,10,1,0,0.044,0,A,,0,45.012,
 VCFRONT_autopilot2Fault,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,9,10,1,1,0,1,0,,,,,
 VCFRONT_autopilot2State,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,9,8,2,1,0,1,0,,,,,"{""0"":""EFUSE_STATE_OFF"",""1"":""EFUSE_STATE_ON"",""2"":""EFUSE_STATE_LOCKED_OUT"",""3"":""EFUSE_STATE_SNA""}"
@@ -33463,8 +33630,11 @@ VCFRONT_backgroundEnergyLossSinceCharge,VCFRONT Front body controller,VCFRONT_pa
 VCFRONT_backgroundEnergyLossSinceDrive,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,2,36,14,1,0,0.01,0,kWh,Energy loss due to background vehicle op since last drive,0,163.83,
 VCFRONT_battCoolEvapEnableDelay,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,25,31,1,1,0,1,0,,,,,
 VCFRONT_battCurrent,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,40,16,1,1,0.005,0,A,,-163.84,163.835,
+VCFRONT_battLoopWorthCooling,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,15,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_battOverStagUpperLimit,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,6,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_battSM,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,16,4,1,0,1,0,,,,,"{""0"":""BATTERY_SM_STATE_INIT"",""1"":""BATTERY_SM_STATE_CHARGE"",""2"":""BATTERY_SM_STATE_DISCHARGE"",""3"":""BATTERY_SM_STATE_STANDBY"",""4"":""BATTERY_SM_STATE_RESISTANCE_ESTIMATION"",""5"":""BATTERY_SM_STATE_OTA_STANDBY"",""6"":""BATTERY_SM_STATE_DISCONNECTED_BATTERY_TEST"",""7"":""BATTERY_SM_STATE_SHORTED_CELL_TEST"",""8"":""BATTERY_SM_STATE_FAULT"",""9"":""BATTERY_SM_STATE_RECOVERY"",""10"":""BATTERY_SM_STATE_EXTERNAL_LV_BUS_CONTROL""}"
 VCFRONT_battSensorIrrational,VCFRONT Front body controller,VCFRONT_sensors,0x321,,,48,1,1,0,1,0,,,,,
+VCFRONT_battUnderStagUpperLimit,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,7,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_battVoltage,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,24,12,1,0,0.005443676,0,V,,0,22.29185362131,
 VCFRONT_batteryDischArbState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,57,3,1,0,1,0,,,,,"{""0"":""NOT_READY"",""1"":""READY"",""2"":""BATTERY_HEATING"",""3"":""BATTERY_DISCHARGE"",""4"":""INHIBIT_FOR_REST"",""5"":""FAULTED""}"
 VCFRONT_batteryLINScheduleDBG,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,1,11,3,1,0,1,0,,,,,"{""0"":""VC_LVBMS_LIN_SCHEDULE_OFF"",""1"":""VC_LVBMS_LIN_SCHEDULE_RESET"",""2"":""VC_LVBMS_LIN_SCHEDULE_DIAGNOSTIC"",""3"":""VC_LVBMS_LIN_SCHEDULE_DEFAULT_1"",""4"":""VC_LVBMS_LIN_SCHEDULE_DEFAULT_2"",""6"":""VC_LVBMS_LIN_SCHEDULE_OTHER"",""7"":""VC_LVBMS_LIN_SCHEDULE_SNA""}"
@@ -33505,6 +33675,7 @@ VCFRONT_chillerExvCalibOffset,VCFRONT Front body controller,VCFRONT_logging1Hz,0
 VCFRONT_chillerExvFlow,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,2,3,8,1,0,0.5,0,%,Percent of full range that the Chiller EXV has opened,0,100,
 VCFRONT_chillerExvFlowTarget,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,3,3,8,1,0,0.5,0,%,Target percentage of full range that the chiler electronic expansion valve is commanded to open,0,100,
 VCFRONT_chillerExvState,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,2,51,4,1,0,1,0,,State of the chiller electronic expansion valve,,,"{""0"":""UNINIT"",""1"":""INIT_OPEN"",""2"":""INIT_CLOSE"",""3"":""READY"",""4"":""FAULTED"",""5"":""WAIT"",""6"":""OVERDRIVING_SHUT"",""7"":""READY_SHUT"",""8"":""CALIB_CLOSE"",""9"":""CALIB_CLOSE_OVERDRIVE"",""10"":""INIT_CLOSE_OVERDRIVE""}"
+VCFRONT_chillerLiftDisabledLowPs,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,39,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_closeValvesRoutineStatus,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,2,57,2,1,0,1,0,,,,,"{""0"":""NOT_READY"",""1"":""MOVING_TO_FILL_POSITION"",""2"":""READY_TO_FILL"",""3"":""FAULTED""}"
 VCFRONT_closureEasterEggState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,48,3,1,0,1,0,,,,,"{""0"":""CLOSURE_EASTEREGG_STATE_IDLE"",""1"":""CLOSURE_EASTEREGG_STATE_WAITING_FOR_START_CONDITIONS"",""2"":""CLOSURE_EASTEREGG_STATE_WAITING_FOR_PLAY"",""3"":""CLOSURE_EASTEREGG_STATE_WAITING_FOR_SYNC_PULSE"",""4"":""CLOSURE_EASTEREGG_STATE_PLAY"",""5"":""CLOSURE_EASTEREGG_STATE_SHOW_CLEANUP""}"
 VCFRONT_cmpIsentropicCheckPassed,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,63,1,1,0,1,0,,,,,
@@ -33596,12 +33767,14 @@ VCFRONT_ductLeftAtSS,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFR
 VCFRONT_ductRightAtSS,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,18,26,1,1,0,1,0,,,,,
 VCFRONT_dynamicBrakeLightState,VCFRONT Front body controller,VCFRONT_lighting,0x3F5,,,30,2,1,0,1,0,,,,,"{""0"":""DYNAMIC_BRAKE_LIGHT_OFF"",""1"":""DYNAMIC_BRAKE_LIGHT_ACTIVE_LOW"",""2"":""DYNAMIC_BRAKE_LIGHT_ACTIVE_HIGH""}"
 VCFRONT_eFuseDebugStatusIndex,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,,,0,5,1,0,1,0,,,,,
+VCFRONT_eFuseLockoutVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,16,8,12,1,0,0.00544368,0,V,Position from firmware; message assignment inferred.,0,22.29185362131,
 VCFRONT_eFuseRecoveryStateDBG,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,1,8,3,1,0,1,0,,Reports the state of the Low Voltage (LV) battery eFuse recovery state machine.,,,"{""0"":""VC_LVBMB_EFUSE_RECOVERY_STATE_INACTIVE"",""1"":""VC_LVBMB_EFUSE_RECOVERY_STATE_SETUP"",""2"":""VC_LVBMB_EFUSE_RECOVERY_STATE_CONNECT"",""3"":""VC_LVBMB_EFUSE_RECOVERY_STATE_FINISH"",""4"":""VC_LVBMB_EFUSE_RECOVERY_STATE_BLOCKED""}"
 VCFRONT_energyLossIndex,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,,,0,3,1,0,1,0,,,,,
 VCFRONT_epasLVState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,1,10,2,1,0,1,0,,,,,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
 VCFRONT_epasWakeLine,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,4,1,1,0,1,0,,,,,
 VCFRONT_espValveLVState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,1,26,2,1,0,1,0,,,,,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
 VCFRONT_espWakeLine,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,51,1,1,0,1,0,,,,,
+VCFRONT_estCompRefrigMassflow,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,17,6,1,0,4,0,g/s,Position from firmware; message assignment inferred.,0,251,
 VCFRONT_estCompressorRpm,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,7,46,9,1,0,30,0,rpm,,0,15000,
 VCFRONT_estPressureDisch,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,7,18,7,1,0,0.25,0,bar,,0,31.75,
 VCFRONT_estPressureDischargeSat,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,38,7,1,0,0.25,0,bar,,0,31.75,
@@ -33611,6 +33784,7 @@ VCFRONT_estQLift,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_
 VCFRONT_estTempDisch,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,7,39,7,1,1,1.5,75,degC,,-20,169,
 VCFRONT_estTempLiq,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,7,25,8,1,1,0.8,68.8,degC,,-33,170,
 VCFRONT_estTempSuct,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,7,33,6,1,1,1,2,degC,,-30,33,
+VCFRONT_evapDisabledLowPsCutout,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,15,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_evapDryingEnergyLossSinceCharge,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,4,50,14,1,0,0.01,0,kWh,Energy loss due to evap drying since last charge,0,163.83,
 VCFRONT_evapDryingEnergyLossSinceDrive,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,2,50,14,1,0,0.01,0,kWh,Energy loss due to evap drying since last drive,0,163.83,
 VCFRONT_evapEXVControlState,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,38,3,1,0,1,0,,Control State of the evaporator electronic expansion valve,,,"{""0"":""INIT"",""1"":""ACTIVE"",""2"":""DISCHARGE"",""3"":""CALIBRATING"",""4"":""CALIBRATING_TIMEOUT"",""5"":""PARKED""}"
@@ -33664,7 +33838,13 @@ VCFRONT_hcmlLVState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCF
 VCFRONT_hcmrLVState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,1,22,2,1,0,1,0,,,,,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
 VCFRONT_headlampBendAngle,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,VCFRONT_lightStatusMuxIndex,1,47,8,1,1,0.1,0,deg,Measures the adaptive headlight bend angle.,-12.7,12.7,
 VCFRONT_headlampLeftFanStatus,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,60,1,1,0,1,0,,,,,
+VCFRONT_headlampLeftFault,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,12,9,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_headlampLeftState,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,12,8,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_headlampLeftVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,12,20,8,1,0,0.1,0,V,Voltage of the left headlamp circuit. Position from firmware; message assignment inferred.,0,25.4,
 VCFRONT_headlampRightFanStatus,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,61,1,1,0,1,0,,,,,
+VCFRONT_headlampRightFault,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,12,29,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_headlampRightState,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,12,28,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_headlampRightVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,12,40,8,1,0,0.1,0,V,Voltage of the right headlamp circuit. Position from firmware; message assignment inferred.,0,25.4,
 VCFRONT_headlampRoadClass,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,VCFRONT_lightStatusMuxIndex,1,55,2,1,0,1,0,,Reports the road class informing the use of dynamic low beams.,,,"{""0"":""NOMINAL"",""1"":""TOWNLIGHT"",""2"":""MOTORWAY"",""3"":""WET""}"
 VCFRONT_headlightsReadyOrTimedOut,VCFRONT Front body controller,VCFRONT_lighting,0x3F5,,,39,1,1,0,1,0,,,,,
 VCFRONT_hibernationState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,36,3,1,0,1,0,,,,,"{""0"":""VC_HIBERNATION_STATE_INIT"",""1"":""VC_HIBERNATION_STATE_NOT_ACTIVE"",""2"":""VC_HIBERNATION_STATE_ACTIVE"",""3"":""VC_HIBERNATION_STATE_RECOVERY"",""4"":""VC_HIBERNATION_STATE_EXIT"",""5"":""VC_HIBERNATION_STATE_PREP""}"
@@ -33674,6 +33854,7 @@ VCFRONT_highBeamLeftStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3
 VCFRONT_highBeamRightStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,,,6,2,1,0,1,0,,State of the right headlamp high beam light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
 VCFRONT_highSideDpResidual,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,18,40,7,1,1,0.1,0,bar,,-6,6,
 VCFRONT_homelinkCommStatus,VCFRONT Front body controller,VCFRONT_homelink,0x7E0,,,40,2,1,0,1,0,,Homelink communication status,,,"{""0"":""HOMELINK_COMM_STATUS_SNA"",""1"":""HOMELINK_COMM_STATUS_OFF"",""2"":""HOMELINK_COMM_STATUS_ON"",""3"":""HOMELINK_COMM_STATUS_FAULT""}"
+VCFRONT_homelinkRegionCode,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,5,5,4,1,0,1,0,,Homelink Region Code. Position from firmware; message assignment inferred.,,,"{""0"":""HOMELINK_REGION_CODE_UNKNOWN"",""1"":""HOMELINK_REGION_CODE_EUROPE"",""5"":""HOMELINK_REGION_CODE_AMERICAS"",""8"":""HOMELINK_REGION_CODE_REST_OF_WORLD"",""9"":""HOMELINK_REGION_CODE_CHINA""}"
 VCFRONT_homelinkV2Response0,VCFRONT Front body controller,VCFRONT_homelink,0x7E0,,,0,8,1,0,1,0,,,0,255,
 VCFRONT_homelinkV2Response1,VCFRONT Front body controller,VCFRONT_homelink,0x7E0,,,8,8,1,0,1,0,,,0,255,
 VCFRONT_homelinkV2Response2,VCFRONT Front body controller,VCFRONT_homelink,0x7E0,,,16,8,1,0,1,0,,,0,255,
@@ -33681,6 +33862,7 @@ VCFRONT_homelinkV2Response3,VCFRONT Front body controller,VCFRONT_homelink,0x7E0
 VCFRONT_homelinkV2Response4,VCFRONT Front body controller,VCFRONT_homelink,0x7E0,,,32,8,1,0,1,0,,,0,255,
 VCFRONT_hornOn,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,51,1,1,0,1,0,,Indication that the horn is on,,,
 VCFRONT_hpASBatteryHeatingAllowed,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,5,1,1,0,1,0,,,,,
+VCFRONT_hpAtSteadyState,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,50,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_hpBattHeatingPower,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,49,7,1,0,100,0,W,,0,10000,
 VCFRONT_hpBattHeatingPowerTrgt,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,1,41,7,1,0,100,0,W,Reports the heat pump battery heating power target.,0,10000,
 VCFRONT_hpBattOverTempHvacDisable,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,34,1,1,0,1,0,,,,,
@@ -33712,6 +33894,8 @@ VCFRONT_hpChargeCableType,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381
 VCFRONT_hpColdStagnationLimit,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,8,7,1,0,1,-40,degC,,-40,80,
 VCFRONT_hpCompFlowIndex,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,23,8,1,0,1,30,-,,30,255,
 VCFRONT_hpCompFlowIndexFiltered,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,31,8,1,0,1,30,-,,30,255,
+VCFRONT_hpCompPowerIndex,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,43,7,1,0,1,0,-,Position from firmware; message assignment inferred.,0,127,
+VCFRONT_hpCompPowerIndexFiltered,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,12,56,7,1,0,1,0,-,Position from firmware; message assignment inferred.,0,127,
 VCFRONT_hpDiagHighSideNotNominal,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,36,1,1,0,1,0,,,,,
 VCFRONT_hpDiagLouverCalib,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,35,1,1,0,1,0,,Diagnostics requested a louver calibration.,,,
 VCFRONT_hpDominantLoad,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,1,41,3,1,0,1,0,,Dominant load type for the refrigerant system,,,"{""0"":""hpDominantLoad_NONE"",""1"":""hpDominantLoad_EVAP"",""2"":""hpDominantLoad_CHILLER"",""3"":""hpDominantLoad_LOW_BOTH"",""4"":""hpDominantLoad_LCC"",""5"":""hpDominantLoad_CC"",""6"":""hpDominantLoad_HIGH_BOTH""}"
@@ -33720,9 +33904,11 @@ VCFRONT_hpDuctTargetRight,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381
 VCFRONT_hpEnergyFlowIndex,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,18,9,8,1,0,4,0,-,,0,1020,
 VCFRONT_hpEnergyFlowIndexFiltered,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,18,17,8,1,0,4,0,-,Refrigerant system modeled energy flow index filtered,0,1020,
 VCFRONT_hpForceModeRadClear,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,37,1,1,0,1,0,,,,,
+VCFRONT_hpForceScavenge,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,5,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_hpHighSideHX,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,1,37,2,1,0,1,0,,,,,"{""0"":""hpHighSideHX_NONE"",""1"":""hpHighSideHX_LCC"",""2"":""hpHighSideHX_CC"",""3"":""hpHighSideHX_BOTH""}"
 VCFRONT_hpHotStagnationLimit,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,16,7,1,0,1,-40,degC,,-40,80,
 VCFRONT_hpLowSideHX,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,1,39,2,1,0,1,0,,,,,"{""0"":""hpLowSideHX_NONE"",""1"":""hpLowSideHX_CHILLER"",""2"":""hpLowSideHX_EVAP"",""3"":""hpLowSideHX_BOTH""}"
+VCFRONT_hpMode,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,10,5,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""NONE"",""1"":""GENERAL"",""2"":""AMBIENT_SOURCE"",""3"":""CABIN_HEAT_SCAVENGE_ONLY"",""4"":""CABIN_HEAT_AMBIENT_SOURCE"",""5"":""CABIN_HEAT_REHEAT_SCAVENGE"",""6"":""CABIN_HEAT_REHEAT_AMBIENT_SOURCE"",""7"":""CABIN_HEAT_BLEND"",""8"":""CABIN_HEAT_COP1"",""9"":""CABIN_HEAT_BATTERY_HEAT_REHEAT_AMBIENT_SOURCE"",""10"":""CABIN_HEAT_BATTERY_COOL_REHEAT"",""11"":""CABIN_COOL_EVAPORATOR"",""12"":""CABIN_COOL_EVAPORATOR_REHEAT"",""13"":""BATTERY_HEAT_AMBIENT_SOURCE"",""14"":""BATTERY_HEAT_COP1"",""15"":""BATTERY_COOL"",""16"":""BATTERY_COOL_CC_HEATING_DOMINANT"",""17"":""BATTERY_COOL_CC_COOLING_DOMINANT"",""18"":""BATTERY_COOL_CABIN_REHEAT"",""19"":""BATTERY_COOL_EVAPORATOR"",""20"":""BATTERY_HEAT_CABIN_HEAT_AMBIENT_SOURCE"",""21"":""BATTERY_HEAT_CABIN_HEAT_COP1"",""22"":""CABIN_COOL_EVAPORATOR_BATTERY_HEAT_AMBIENT_SOURCE"",""23"":""BATTERY_HEAT_CABIN_HEAT_COP1_CHILLER""}"
 VCFRONT_hpPotentialFrozenRadiator,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,63,1,1,0,1,0,,,,,
 VCFRONT_hpPotentialLowRefrig,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,6,61,1,1,0,1,0,,,,,
 VCFRONT_hpQuietModeEnabled,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,1,46,1,1,0,1,0,,,,,
@@ -33771,6 +33957,7 @@ VCFRONT_infoIndex,VCFRONT Front body controller,VCFRONT_info,0x301,,,0,8,1,0,1,0
 VCFRONT_infoPcbaId,VCFRONT Front body controller,VCFRONT_info,0x301,VCFRONT_infoIndex,11,8,8,1,0,1,0,,,0,255,
 VCFRONT_infoPlatformType,VCFRONT Front body controller,VCFRONT_info,0x301,VCFRONT_infoIndex,19,8,8,1,0,1,0,,,0,255,
 VCFRONT_infoSubUsageId,VCFRONT Front body controller,VCFRONT_info,0x301,VCFRONT_infoIndex,11,40,16,1,0,1,0,,,0,65535,
+VCFRONT_infoSubcomponent3,VCFRONT Front body controller,VCFRONT_info,0x301,VCFRONT_infoIndex,24,32,32,1,0,1,0,,Position from firmware; message assignment inferred.,0,4294967295,
 VCFRONT_infoUsageId,VCFRONT Front body controller,VCFRONT_info,0x301,VCFRONT_infoIndex,11,24,16,1,0,1,0,,,0,65535,
 VCFRONT_intHighBeamsFunctionState,VCFRONT Front body controller,VCFRONT_lighting,0x3F5,,,36,1,1,0,1,0,,State of the intermittent high beams lighting function,,,
 VCFRONT_isActiveHeatingBattery,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,63,1,1,0,1,0,,,,,
@@ -33840,6 +34027,7 @@ VCFRONT_matrixIndex,VCFRONT Front body controller,VCFRONT_alertMatrix,0x340,,,0,
 VCFRONT_maxBatInletCoolantTempAllowed,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,26,32,5,1,0,1,40,degC,,40,65,
 VCFRONT_maxBattHeatRejection,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,1,6,10,1,0,30,0,W,Radiator max heat rejection estimated at zero vehicle speed.,0,30690,
 VCFRONT_maxChillerCoolingPower,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,12,39,8,1,0,100,0,W,,0,20000,
+VCFRONT_maxCompressorRPMAllowed,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,56,7,1,0,90,0,rpm,Position from firmware; message assignment inferred.,0,11430,
 VCFRONT_maxEvapHeatRejection,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,2,8,8,1,0,65,0,W,,0,16575,
 VCFRONT_maxHeatingPowerLeftCC,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,30,7,1,0,100,0,W,,0,12000,
 VCFRONT_maxHeatingPowerRightCC,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,37,7,1,0,100,0,W,,0,12000,
@@ -33873,12 +34061,18 @@ VCFRONT_preconditionRequest,VCFRONT Front body controller,VCFRONT_vehicleStatus,
 VCFRONT_preconditioningEnergyLossSinceCharge,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,3,22,14,1,0,0.01,0,kWh,Energy loss due to preconditioning since last charge,0,163.83,
 VCFRONT_preconditioningEnergyLossSinceDrive,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,1,22,14,1,0,0.01,0,kWh,Energy loss due to preconditioning since last drive,0,163.83,
 VCFRONT_premAudioOkToUseHiPower,VCFRONT Front body controller,VCFRONT_okToUseHighPower,0x2D1,,,7,1,1,0,1,0,,,,,
+VCFRONT_pressureRefrigDischEst,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,23,5,1,0,1,0,bar,Position from firmware; message assignment inferred.,0,31,
 VCFRONT_pressureRefrigDischarge,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,2,40,9,1,0,0.08,0,bar,Refrigerant system discharge pressure,0,37.25,
 VCFRONT_pressureRefrigLiquid,VCFRONT Front body controller,VCFRONT_loggingAndVitals10Hz,0x201,VCFRONT_loggingAndVitals10HzIndex,0,42,9,1,0,0.08,0,bar,Refrigerant system Liquid line pressure,0,37.25,
 VCFRONT_pressureRefrigLiquidEst,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,57,6,1,0,0.5,0,bar,,0,31,
 VCFRONT_pressureRefrigSuction,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,2,32,7,1,0,0.125,0,bar,Refrigerant system suction pressure,0,11.5,
 VCFRONT_preventReEntryTillNexthpResetCOP1,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,21,59,1,1,0,1,0,,,,,
+VCFRONT_ptLoopWorthCooling,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,16,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCFRONT_ptSensorIrrational,VCFRONT Front body controller,VCFRONT_sensors,0x321,,,49,1,1,0,1,0,,,,,
+VCFRONT_pump1AndFanState,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,14,5,1,1,0,1,0,,State of the coolant pump and cooling fan circuit. Position from firmware; message assignment inferred.,,,
+VCFRONT_pump1AndFanVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,14,22,12,1,0,0.1,0,V,Voltage of the coolant pump and cooling fan circuit. Position from firmware; message assignment inferred.,0,409.5,
+VCFRONT_pump2AndAirCompState,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,14,34,1,1,0,1,0,,State of the coolant pump and air compressor circuit. Position from firmware; message assignment inferred.,,,
+VCFRONT_pump2AndAirCompVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,14,51,12,1,0,0.1,0,V,Voltage of the coolant pump and air compressor circuit. Position from firmware; message assignment inferred.,0,409.5,
 VCFRONT_pumpBatSpiError,VCFRONT Front body controller,VCFRONT_logging10Hz,0x2C1,VCFRONT_logging10HzIndex,0,24,1,1,0,1,0,,,,,
 VCFRONT_pumpBatteryEnabled,VCFRONT Front body controller,VCFRONT_logging10Hz,0x2C1,VCFRONT_logging10HzIndex,0,19,1,1,0,1,0,,,,,
 VCFRONT_pumpBatteryFETTemp,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,1,33,8,1,0,1,-40,degC,,-40,150,
@@ -33922,8 +34116,12 @@ VCFRONT_radiatorIneffective,VCFRONT Front body controller,VCFRONT_coolant,0x241,
 VCFRONT_radiatorUAIndex,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,26,24,8,1,0,1,0,%,Reports the radiator UA index in percentage defined as actual calculated UA divided by the expected nominal UA.,0,255,
 VCFRONT_railA,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,7,1,1,0,1,0,,,,,
 VCFRONT_railAState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,7,1,1,0,1,0,,,,,
+VCFRONT_railA_12v,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,15,8,12,1,0,0.00544368,0,V,Position from firmware; message assignment inferred.,0,22.29185362131,
+VCFRONT_railA_5v,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,15,32,12,1,0,0.00544368,0,V,Position from firmware; message assignment inferred.,0,22.286409945212,
 VCFRONT_railB,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,8,1,1,0,1,0,,,,,
 VCFRONT_railBState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,8,1,1,0,1,0,,,,,
+VCFRONT_railB_12v,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,15,20,12,1,0,0.00544368,0,V,Position from firmware; message assignment inferred.,0,22.286409945212,
+VCFRONT_railB_5v,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,15,44,12,1,0,0.00544368,0,V,Position from firmware; message assignment inferred.,0,22.286409945212,
 VCFRONT_recircEXVControlState,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,41,3,1,0,1,0,,Control State of the recirc electronic expansion valve,,,"{""0"":""INIT"",""1"":""ACTIVE"",""2"":""DISCHARGE"",""3"":""CALIBRATING"",""4"":""CALIBRATING_TIMEOUT"",""5"":""PARKED""}"
 VCFRONT_recircExvCalibFailed,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,55,1,1,0,1,0,,State of the last calibration for the Recirc EXV,,,
 VCFRONT_recircExvCalibOffset,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,8,15,5,1,1,8,0,ticks,Last calibration offset calculated for the Recirc EXV,-127,120,
@@ -33941,10 +34139,15 @@ VCFRONT_resistanceEstimationTestValid,VCFRONT Front body controller,VCFRONT_12VB
 VCFRONT_resistanceEstimationTestsExpended,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,3,49,1,1,0,1,0,,,,,
 VCFRONT_revBattFault,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,15,1,1,0,1,0,,,,,
 VCFRONT_reverseBatteryFault,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,1,48,1,1,0,1,0,,Indicates a fault on the reverse battery eFuse.,,,
+VCFRONT_rightControllerCurrent,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,0,47,14,1,0,0.1,0,A,Position from firmware; message assignment inferred.,0,1638.3,
+VCFRONT_rightControllerFault,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,0,10,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCFRONT_rightControllerState,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,0,8,2,1,0,1,0,,Position from firmware; message assignment inferred.,,,"{""0"":""EFUSE_STATE_OFF"",""1"":""EFUSE_STATE_ON"",""2"":""EFUSE_STATE_LOCKED_OUT"",""3"":""EFUSE_STATE_SNA""}"
+VCFRONT_rightControllerVoltage,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,0,31,14,1,0,0.1,0,V,Voltage of the right vehicle controller circuit. Position from firmware; message assignment inferred.,0,1638.3,
 VCFRONT_sensorsChecksum,VCFRONT Front body controller,VCFRONT_sensors,0x321,,,56,8,1,0,1,0,,,0,255,
 VCFRONT_sensorsCounter,VCFRONT Front body controller,VCFRONT_sensors,0x321,,,52,4,1,0,1,0,,,0,15,
 VCFRONT_sentryModeEnergyLossSinceCharge,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,4,22,14,1,0,0.01,0,kWh,Energy loss due to sentry mode since last charge,0,163.83,
 VCFRONT_sentryModeEnergyLossSinceDrive,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,2,22,14,1,0,0.01,0,kWh,Energy loss due to sentry mode since last drive,0,163.83,
+VCFRONT_shortedCellFaultCounter,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,13,3,1,0,1,0,,Position from firmware; message assignment inferred.,0,7,
 VCFRONT_sideMarkersStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,,,16,2,1,0,1,0,,State of the side marker / auxiliary park light sources (left and right are on a shared HSD),,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
 VCFRONT_sideRepeaterLeftStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,,,18,2,1,0,1,0,,State of the left side repeater light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
 VCFRONT_sideRepeaterRightStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,,,20,2,1,0,1,0,,State of the right side repeater light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
@@ -33960,6 +34163,7 @@ VCFRONT_statusIndex,VCFRONT Front body controller,VCFRONT_status,0x2E1,,,0,3,1,0
 VCFRONT_subcoolActual,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,5,8,7,1,1,0.4,15.2,degC,,-10,40,
 VCFRONT_subcoolEstPlSNA,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,45,6,1,1,2,0,degC,,-10,53,
 VCFRONT_subcoolEstTlSNA,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,17,39,6,1,1,2,0,degC,,-10,53,
+VCFRONT_suctionSuperheatEstPsSNA,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,57,4,1,0,2,0,degC,Position from firmware; message assignment inferred.,0,30,
 VCFRONT_suctionSuperheatEstTsSNA,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,14,24,4,1,0,2,0,degC,,0,30,
 VCFRONT_summonStandbyEnergyLossSinceCharge,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,4,8,14,1,0,0.01,0,kWh,Energy loss due to summon standby since last charge,0,163.83,
 VCFRONT_summonStandbyEnergyLossSinceDrive,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,2,8,14,1,0,0.01,0,kWh,Energy loss due to summon standby since last drive,0,163.83,
@@ -34031,6 +34235,7 @@ VCFRONT_vcleftOkToUseHighPower,VCFRONT Front body controller,VCFRONT_okToUseHigh
 VCFRONT_vcleftSelfTestResult,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,1,11,4,1,0,1,0,,Reports the result of the most recent self-test of the Vehicle Controller Left (VCLEFT) eFuse.,,,"{""0"":""EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN"",""1"":""EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING"",""2"":""EFUSE_SELF_TEST_EFUSE_RESULT_PASSED"",""3"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE"",""4"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT"",""5"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON"",""6"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION"",""7"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN"",""8"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION"",""9"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW"",""10"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED"",""11"":""EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED"",""12"":""EFUSE_SELF_TEST_EFUSE_RESULT_SNA""}"
 VCFRONT_vcrightHighPower,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,1,1,1,0,1,0,,,,,
 VCFRONT_vcrightOkToUseHighPower,VCFRONT Front body controller,VCFRONT_okToUseHighPower,0x2D1,,,1,1,1,0,1,0,,,,,
+VCFRONT_vcrightSelfTestResult,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,0,11,4,1,0,1,0,,Reports the result of the most recent self-test of the Vehicle Controller Right (VCRIGHT) eFuse. Position from firmware; message assignment inferred.,,,"{""0"":""EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN"",""1"":""EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING"",""2"":""EFUSE_SELF_TEST_EFUSE_RESULT_PASSED"",""3"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE"",""4"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT"",""5"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON"",""6"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION"",""7"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN"",""8"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION"",""9"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW"",""10"":""EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED"",""11"":""EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED"",""12"":""EFUSE_SELF_TEST_EFUSE_RESULT_SNA""}"
 VCFRONT_vehicleLoadShedStage,VCFRONT Front body controller,VCFRONT_systemStatus,0x545,VCFRONT_systemStatusMuxIndex,1,36,2,1,0,1,0,,,,,"{""0"":""VEHICLE_LOADSHEDDING_STAGE_IDLE_OR_UNDEFINED"",""1"":""VEHICLE_LOADSHEDDING_STAGE_1"",""2"":""VEHICLE_LOADSHEDDING_STAGE_2"",""3"":""VEHICLE_LOADSHEDDING_STAGE_3""}"
 VCFRONT_vehiclePowerState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,,,5,2,1,0,1,0,,,,,"{""0"":""VEHICLE_POWER_STATE_OFF"",""1"":""VEHICLE_POWER_STATE_CONDITIONING"",""2"":""VEHICLE_POWER_STATE_ACCESSORY"",""3"":""VEHICLE_POWER_STATE_DRIVE""}"
 VCFRONT_vehicleSM,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,10,5,1,0,1,0,,Vehicle state machine state,,,"{""0"":""VEHICLE_STATUS_INIT"",""1"":""VEHICLE_STATUS_LOW_POWER_STANDBY"",""2"":""VEHICLE_STATUS_SILENT_WAKE"",""3"":""VEHICLE_STATUS_BATTERY_POST_WAKE"",""4"":""VEHICLE_STATUS_SYSTEM_CHECKS"",""5"":""VEHICLE_STATUS_SLEEP_SHUTDOWN"",""6"":""VEHICLE_STATUS_SLEEP_STANDBY"",""7"":""VEHICLE_STATUS_LV_SHUTDOWN"",""8"":""VEHICLE_STATUS_LV_AWAKE"",""9"":""VEHICLE_STATUS_HV_UP_STANDBY"",""10"":""VEHICLE_STATUS_ACCESSORY"",""11"":""VEHICLE_STATUS_ACCESSORY_PLUS"",""12"":""VEHICLE_STATUS_CONDITIONING"",""13"":""VEHICLE_STATUS_DRIVE"",""14"":""VEHICLE_STATUS_CRASH"",""15"":""VEHICLE_STATUS_OTA"",""16"":""VEHICLE_STATUS_TURN_ON_RAILS"",""17"":""VEHICLE_STATUS_RESET"",""18"":""VEHICLE_STATUS_SNA""}"
@@ -34039,6 +34244,7 @@ VCFRONT_vehicleStatusCounter,VCFRONT Front body controller,VCFRONT_vehicleStatus
 VCFRONT_vehicleStatusDBG,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,8,5,1,0,1,0,,Vehicle state machine state debug,,,"{""0"":""VEHICLE_STATUS_INIT"",""1"":""VEHICLE_STATUS_LOW_POWER_STANDBY"",""2"":""VEHICLE_STATUS_SILENT_WAKE"",""3"":""VEHICLE_STATUS_BATTERY_POST_WAKE"",""4"":""VEHICLE_STATUS_SYSTEM_CHECKS"",""5"":""VEHICLE_STATUS_SLEEP_SHUTDOWN"",""6"":""VEHICLE_STATUS_SLEEP_STANDBY"",""7"":""VEHICLE_STATUS_LV_SHUTDOWN"",""8"":""VEHICLE_STATUS_LV_AWAKE"",""9"":""VEHICLE_STATUS_HV_UP_STANDBY"",""10"":""VEHICLE_STATUS_ACCESSORY"",""11"":""VEHICLE_STATUS_ACCESSORY_PLUS"",""12"":""VEHICLE_STATUS_CONDITIONING"",""13"":""VEHICLE_STATUS_DRIVE"",""14"":""VEHICLE_STATUS_CRASH"",""15"":""VEHICLE_STATUS_OTA"",""16"":""VEHICLE_STATUS_TURN_ON_RAILS"",""17"":""VEHICLE_STATUS_RESET"",""18"":""VEHICLE_STATUS_SNA""}"
 VCFRONT_vehicleStatusMuxIndex,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,,,0,1,1,0,1,0,,,,,
 VCFRONT_voltageControlLoopIntegrationVal,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,5,16,14,1,0,0.006,0,V,,0,65.535,
+VCFRONT_voltageDropCounter,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,8,4,1,0,1,0,,Position from firmware; message assignment inferred.,0,15,
 VCFRONT_voltageProfile,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,4,3,2,1,0,1,0,,Indicates which voltage profile is used to support the 12V battery,,,"{""0"":""VOLTAGE_PROFILE_CHARGE"",""1"":""VOLTAGE_PROFILE_FLOAT"",""2"":""VOLTAGE_PROFILE_REDUCED_FLOAT"",""3"":""VOLTAGE_PROFILE_ALWAYS_CLOSED_CONTACTORS""}"
 VCFRONT_voltageSensorMismatchLeakyBktPctDBG,VCFRONT Front body controller,VCFRONT_12VBatteryStatus,0x261,VCFRONT_12VBatteryStatusIndex,4,34,7,1,0,2,0,PCT,,0,254,
 VCFRONT_washPumpState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,25,2,1,0,1,0,,,,,"{""0"":""WASH_PUMP_BIDIRECTIONAL_STATE_OFF"",""1"":""WASH_PUMP_BIDIRECTIONAL_STATE_DRIVING_PRIMARY"",""2"":""WASH_PUMP_BIDIRECTIONAL_STATE_DRIVING_SECONDARY"",""3"":""WASH_PUMP_BIDIRECTIONAL_STATE_SNA""}"
@@ -34046,6 +34252,7 @@ VCFRONT_washerFluidLevel,VCFRONT Front body controller,VCFRONT_sensors,0x321,,,3
 VCFRONT_wasteHeatRequestType,VCFRONT Front body controller,VCFRONT_coolant,0x241,,,44,2,1,0,1,0,,,,,"{""0"":""WASTE_TYPE_NONE"",""1"":""WASTE_TYPE_PARTIAL"",""2"":""WASTE_TYPE_FULL"",""3"":""WASTE_TYPE_BURN_IN""}"
 VCFRONT_windshieldCameraHeaterPower,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,4,56,6,1,0,2.5,0,W,,0,155,
 VCFRONT_wiperBlocked,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,15,1,1,0,1,0,,Wiper ECU is reporting a block,,,
+VCFRONT_wiperCycles,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,18,48,16,1,0,100,0,Cycles,Position from firmware; message assignment inferred.,0,6553500,
 VCFRONT_wiperECUType,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,40,2,1,0,1,0,,Wiper ECU type detected,,,"{""0"":""WIPER_ECU_TYPE_UNKNOWN"",""1"":""WIPER_ECU_TYPE_BOSCH"",""2"":""WIPER_ECU_TYPE_SHB"",""3"":""WIPER_ECU_TYPE_VALEO""}"
 VCFRONT_wiperHealth,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,0,32,3,1,0,1,0,,Health metric to track the power and communication state of the wiper module,,,"{""0"":""WIPER_HEALTH_OFF"",""1"":""WIPER_HEALTH_WAIT"",""2"":""WIPER_HEALTH_OK"",""3"":""WIPER_HEALTH_TIMEOUT"",""4"":""WIPER_HEALTH_UPDATING"",""5"":""WIPER_HEALTH_FAULT"",""7"":""WIPER_HEALTH_RESERVED""}"
 VCFRONT_wiperHeaterState,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,1,42,3,1,0,1,0,,Indicates the state of the wiper heater,,,"{""0"":""HEATER_STATE_SNA"",""1"":""HEATER_STATE_ON"",""2"":""HEATER_STATE_OFF"",""3"":""HEATER_STATE_OFF_UNAVAILABLE"",""4"":""HEATER_STATE_FAULT""}"
@@ -36087,8 +36294,12 @@ VCLEFT_fogTrailerLightStatus,VCLEFT Left body controller,VCLEFT_lightStatus,0x3E
 VCLEFT_footwellLightCurrent,VCLEFT Left body controller,VCLEFT_status,0x3A2,VCLEFT_statusIndex,0,35,12,1,1,0.1,0,mA,,-204.8,204.7,
 VCLEFT_frontBuckleStatus,VCLEFT Left body controller,VCLEFT_restraintStatus,0x747,,,3,2,1,0,1,0,,Status of front left seatbelt buckle,,,"{""0"":""SEAT_BELT_BUCKLE_STATUS_UNLATCHED"",""1"":""SEAT_BELT_BUCKLE_STATUS_LATCHED"",""2"":""SEAT_BELT_BUCKLE_STATUS_FAULTED"",""3"":""SEAT_BELT_BUCKLE_NOT_CONFIGURED""}"
 VCLEFT_frontBuckleSwitch,VCLEFT Left body controller,VCLEFT_switchStatus,0x3C2,VCLEFT_switchStatusIndex,0,48,2,1,0,1,0,,,,,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
+VCLEFT_frontDoorState,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,17,3,1,0,1,0,,Status of front left door. Position from firmware; message assignment inferred.,,,"{""0"":""DOOR_STATE_UNKNOWN"",""1"":""DOOR_STATE_CLOSED"",""2"":""DOOR_STATE_WAIT_FOR_SHORT_DROP"",""3"":""DOOR_STATE_RELEASING_LATCH"",""4"":""DOOR_STATE_OPEN"",""5"":""DOOR_STATE_AJAR"",""6"":""DOOR_STATE_INIT""}"
+VCLEFT_frontHandle5vEnable,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,38,1,1,0,1,0,,Status of power going to the front left exterior door handle sensor. Position from firmware; message assignment inferred.,,,
+VCLEFT_frontHandleDebounceStatus,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,32,3,1,0,1,0,,State machine state that represents physical state of the front left door handle for debugging. Position from firmware; message assignment inferred.,,,"{""0"":""EXTERIOR_HANDLE_STATUS_SNA"",""1"":""EXTERIOR_HANDLE_STATUS_INDETERMINATE"",""2"":""EXTERIOR_HANDLE_STATUS_NOT_ACTIVE"",""3"":""EXTERIOR_HANDLE_STATUS_ACTIVE"",""4"":""EXTERIOR_HANDLE_STATUS_DISCONNECTED"",""5"":""EXTERIOR_HANDLE_STATUS_FAULT""}"
 VCLEFT_frontHandlePulled,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,10,1,1,0,1,0,,,,,
 VCLEFT_frontHandlePulledPersist,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,62,1,1,0,1,0,,,,,
+VCLEFT_frontHandleRawStatus,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,24,3,1,0,1,0,,State machine state that represents physical state of the front left door handle for debugging. Position from firmware; message assignment inferred.,,,"{""0"":""EXTERIOR_HANDLE_STATUS_SNA"",""1"":""EXTERIOR_HANDLE_STATUS_INDETERMINATE"",""2"":""EXTERIOR_HANDLE_STATUS_NOT_ACTIVE"",""3"":""EXTERIOR_HANDLE_STATUS_ACTIVE"",""4"":""EXTERIOR_HANDLE_STATUS_DISCONNECTED"",""5"":""EXTERIOR_HANDLE_STATUS_FAULT""}"
 VCLEFT_frontIntSwitchFaulted,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,28,1,1,0,1,0,,Indicates if the front door interior button is faulted,,,
 VCLEFT_frontIntSwitchPressed,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,31,1,1,0,1,0,,,,,
 VCLEFT_frontLatchRelDuty,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,VCLEFT_doorStatus2Index,1,8,8,1,0,1,0,%,Front left door latch motor duty cycle.,0,255,
@@ -36342,11 +36553,16 @@ VCLEFT_rearCenterBuckleStatus,VCLEFT Left body controller,VCLEFT_restraintStatus
 VCLEFT_rearCenterBuckleSwitch,VCLEFT Left body controller,VCLEFT_switchStatus,0x3C2,VCLEFT_switchStatusIndex,0,62,2,1,0,1,0,,,,,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
 VCLEFT_rearCenterOccupancyStatus,VCLEFT Left body controller,VCLEFT_restraintStatus,0x747,,,8,2,1,0,1,0,,Status of rear center seat occupancy sensor,,,"{""0"":""SEAT_UNOCCUPIED"",""1"":""SEAT_OCCUPIED"",""2"":""SEAT_OCCUPANCY_FAULTED"",""3"":""SEAT_NOT_CONFIGURED""}"
 VCLEFT_rearCenterOccupancySwitch,VCLEFT Left body controller,VCLEFT_switchStatus,0x3C2,VCLEFT_switchStatusIndex,0,54,2,1,0,1,0,,,,,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
+VCLEFT_rearDoorState,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,20,3,1,0,1,0,,Status of rear left door. Position from firmware; message assignment inferred.,,,"{""0"":""DOOR_STATE_UNKNOWN"",""1"":""DOOR_STATE_CLOSED"",""2"":""DOOR_STATE_WAIT_FOR_SHORT_DROP"",""3"":""DOOR_STATE_RELEASING_LATCH"",""4"":""DOOR_STATE_OPEN"",""5"":""DOOR_STATE_AJAR"",""6"":""DOOR_STATE_INIT""}"
 VCLEFT_rearHVACButtonPressed,VCLEFT Left body controller,VCLEFT_switchStatus,0x3C2,VCLEFT_switchStatusIndex,0,61,1,1,0,1,0,,,,,
+VCLEFT_rearHandle5vEnable,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,39,1,1,0,1,0,,Status of power going to the rear left exterior door handle sensor. Position from firmware; message assignment inferred.,,,
+VCLEFT_rearHandleDebounceStatus,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,35,3,1,0,1,0,,State machine state that represents physical state of the front left door handle for debugging. Position from firmware; message assignment inferred.,,,"{""0"":""EXTERIOR_HANDLE_STATUS_SNA"",""1"":""EXTERIOR_HANDLE_STATUS_INDETERMINATE"",""2"":""EXTERIOR_HANDLE_STATUS_NOT_ACTIVE"",""3"":""EXTERIOR_HANDLE_STATUS_ACTIVE"",""4"":""EXTERIOR_HANDLE_STATUS_DISCONNECTED"",""5"":""EXTERIOR_HANDLE_STATUS_FAULT""}"
 VCLEFT_rearHandlePulled,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,11,1,1,0,1,0,,,,,
 VCLEFT_rearHandlePulledPersist,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,61,1,1,0,1,0,,,,,
+VCLEFT_rearHandleRawStatus,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,27,3,1,0,1,0,,State machine state that represents physical state of the rear left door handle for debugging. Position from firmware; message assignment inferred.,,,"{""0"":""EXTERIOR_HANDLE_STATUS_SNA"",""1"":""EXTERIOR_HANDLE_STATUS_INDETERMINATE"",""2"":""EXTERIOR_HANDLE_STATUS_NOT_ACTIVE"",""3"":""EXTERIOR_HANDLE_STATUS_ACTIVE"",""4"":""EXTERIOR_HANDLE_STATUS_DISCONNECTED"",""5"":""EXTERIOR_HANDLE_STATUS_FAULT""}"
 VCLEFT_rearIntSwitchFaulted,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,29,1,1,0,1,0,,Indicates if the rear door interior button is faulted,,,
 VCLEFT_rearIntSwitchPressed,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,32,1,1,0,1,0,,,,,
+VCLEFT_rearLatchRelDuty,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,8,8,1,0,1,0,%,Rear left door latch motor duty cycle. Position from firmware; message assignment inferred.,0,255,
 VCLEFT_rearLatchStatus,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,18,4,1,0,1,0,,Status of rear left door latch,,,"{""0"":""LATCH_SNA"",""1"":""LATCH_OPENED"",""2"":""LATCH_CLOSED"",""3"":""LATCH_CLOSING"",""4"":""LATCH_OPENING"",""5"":""LATCH_AJAR"",""6"":""LATCH_TIMEOUT"",""7"":""LATCH_DEFAULT"",""8"":""LATCH_FAULT""}"
 VCLEFT_rearLatchSwitch,VCLEFT Left body controller,VCLEFT_doorStatus,0x102,,,9,1,1,0,1,0,,State of rear left door latch switch representing door open/closed. 0 is open and 1 is closed,,,
 VCLEFT_rearLeftBuckleStatus,VCLEFT Left body controller,VCLEFT_restraintStatus,0x747,,,12,2,1,0,1,0,,Status of rear left seatbelt buckle,,,"{""0"":""SEAT_BELT_BUCKLE_STATUS_UNLATCHED"",""1"":""SEAT_BELT_BUCKLE_STATUS_LATCHED"",""2"":""SEAT_BELT_BUCKLE_STATUS_FAULTED"",""3"":""SEAT_BELT_BUCKLE_NOT_CONFIGURED""}"
@@ -36439,6 +36655,7 @@ VCLEFT_udsResponseData_H,VCLEFT Left body controller,VCLEFT_udsResponse,0x623,,,
 VCLEFT_udsResponseData_L,VCLEFT Left body controller,VCLEFT_udsResponse,0x623,,,39,32,0,0,1,0,,,0,4294967295,
 VCLEFT_vbatProt,VCLEFT Left body controller,VCLEFT_status,0x3A2,VCLEFT_statusIndex,0,23,12,1,0,0.005443676,0,V,,0,22.29185362131,
 VCLEFT_vcusbLinSchedule,VCLEFT Left body controller,VCLEFT_thermalLogging10Hz,0x290,VCLEFT_thermalLogging10HzIndex,3,55,2,1,0,1,0,,,,,"{""0"":""VCUSB_LIN_SCHEDULE_OFF"",""1"":""VCUSB_LIN_SCHEDULE_COMMAND_AND_RESPONSE"",""2"":""VCUSB_LIN_SCHEDULE_DIAGNOSTIC"",""3"":""VCUSB_LIN_SCHEDULE_COUNT""}"
+VCLEFT_vehicleInMotion,VCLEFT Left body controller,VCLEFT_doorStatus2,0x7DC,,,16,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCLEFT_windowCalibratedLF,VCLEFT Left body controller,VCLEFT_windowStatus,0x2C2,VCLEFT_windowStatusIndex,0,32,1,1,0,1,0,,Calibration status of left front window motor,,,
 VCLEFT_windowCalibratedLR,VCLEFT Left body controller,VCLEFT_windowStatus,0x2C2,VCLEFT_windowStatusIndex,0,63,1,1,0,1,0,,Calibraiton status of left rear window motor,,,
 VCLEFT_windowControlStateLF,VCLEFT Left body controller,VCLEFT_windowStatus,0x2C2,VCLEFT_windowStatusIndex,1,35,2,1,0,1,0,,Window control state,,,"{""0"":""WINDOW_CONTROL_STATE_IDLE"",""1"":""WINDOW_CONTROL_STATE_CLOSING"",""2"":""WINDOW_CONTROL_STATE_GOING_TO_POSITION""}"
@@ -38414,6 +38631,26 @@ VCRIGHT_averageDuctTempFCooling,VCRIGHT Right body controller,VCRIGHT_logging0po
 VCRIGHT_averageDuctTempFHeating,VCRIGHT Right body controller,VCRIGHT_logging0point1Hz,0x70B,VCRIGHT_logging0point1HzIndex,9,48,8,1,0,0.5,-40,degC,Estimated average duct temp temp 15 min into the drive,-40,80,
 VCRIGHT_blowerTorqueIndex,VCRIGHT Right body controller,VCRIGHT_hvacStatus,0x243,VCRIGHT_hvacStatusIndex,5,32,7,1,0,1,0,%,,0,127,
 VCRIGHT_brakeLightStatus,VCRIGHT Right body controller,VCRIGHT_lightStatus,0x3E3,,,0,2,1,0,1,0,,Status of rear right brake light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
+VCRIGHT_btnWindowAutoDownRF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,27,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowAutoDownRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,31,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowAutoUpRF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,25,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowAutoUpRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,29,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowDownRF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,26,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowDownRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,30,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackAutoDwnLF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,35,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackAutoDwnLR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,39,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackAutoDwnRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,52,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackAutoUpLF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,33,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackAutoUpLR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,37,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackAutoUpRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,50,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackDownLF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,34,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackDownLR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,38,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackDownRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,51,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackUpLF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,32,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackUpLR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,36,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowSwPackUpRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,49,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowUpRF,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,24,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
+VCRIGHT_btnWindowUpRR,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,28,1,1,0,1,0,,Position from firmware; message assignment inferred.,,,
 VCRIGHT_cabinAirFilterLifeRemaining,VCRIGHT Right body controller,VCRIGHT_logging0point1Hz,0x70B,VCRIGHT_logging0point1HzIndex,2,10,7,1,0,1,0,%,Life remaining on the cabin air filter,0,127,
 VCRIGHT_cabinFilterHealthScore,VCRIGHT Right body controller,VCRIGHT_logging0point1Hz,0x70B,VCRIGHT_logging0point1HzIndex,2,40,7,1,0,1,0,%,,0,127,
 VCRIGHT_cabinOverheatProtectNotRunningReasonRaw,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,15,5,14,1,0,1,0,,Reports all reasons cabin overheat protection is not running.,0,16383,
@@ -38531,6 +38768,7 @@ VCRIGHT_frontLatchStatus,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,
 VCRIGHT_frontLatchSwitch,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,,,8,1,1,0,1,0,,State of front left door latch switch representing door open/closed. 0 is open and 1 is closed,,,
 VCRIGHT_frontLeftSeatTempTargetQuasiSS,VCRIGHT Right body controller,VCRIGHT_logging10Hz,0x263,VCRIGHT_logging10HzIndex,4,36,6,1,0,0.75,20,degC,Reports the front left seat heating target temperature.,20,60,
 VCRIGHT_frontOccupancyStatus,VCRIGHT Right body controller,VCRIGHT_restraintStatus,0x31A,,,0,3,1,0,1,0,,,,,"{""0"":""SEAT_UNOCCUPIED"",""1"":""SEAT_OCCUPIED"",""2"":""SEAT_OCCUPANCY_FAULTED"",""3"":""SEAT_NOT_CONFIGURED"",""7"":""SEAT_OCCUPANCY_SNA""}"
+VCRIGHT_frontOccupancySwitch,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,42,2,1,0,1,0,,Front right seat occupancy status. Position from firmware; message assignment inferred.,,,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
 VCRIGHT_frontPuddleLEDCurrent,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,11,28,3,1,0,0.05,0,A,Electrical current of the front puddle LED,0,0.3,
 VCRIGHT_frontRelActuatorSwitch,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,,,12,1,1,0,1,0,,State of front left door latch switch representing latch arm/unarmed. Disarms while door handle is pulled.,,,
 VCRIGHT_frontRightSeatTempTargetQuasiSS,VCRIGHT Right body controller,VCRIGHT_logging10Hz,0x263,VCRIGHT_logging10HzIndex,4,42,6,1,0,1,20,degC,Reports the front right seat heating target temperature.,20,60,
@@ -39003,6 +39241,7 @@ VCRIGHT_thsTemperature,VCRIGHT Right body controller,VCRIGHT_thsStatus,0x383,,,1
 VCRIGHT_timeLeftToCabinModelInit,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,9,17,7,1,0,1,0,,,0,127,
 VCRIGHT_timeToComfortCooling,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,14,32,6,1,0,15,-15,s,,-15,930,
 VCRIGHT_timeToComfortHeating,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,14,26,6,1,0,15,-15,s,,-15,930,
+VCRIGHT_trunkExtReleasePressed,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,,,48,1,1,0,1,0,,State of exterior trunk release switch. Position from firmware; message assignment inferred.,,,
 VCRIGHT_trunkExtReleasePressedPersist,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,VCRIGHT_switchStatusIndex,1,1,1,1,0,1,0,,,,,
 VCRIGHT_trunkInteriorLEDCurrent,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,11,8,4,1,0,5,0,mA,Electrical current of the trunk interior light,0,70,
 VCRIGHT_trunkLatchStatus,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,,,56,4,1,0,1,0,,State of the trunk latch,,,"{""0"":""LATCH_SNA"",""1"":""LATCH_OPENED"",""2"":""LATCH_CLOSED"",""3"":""LATCH_CLOSING"",""4"":""LATCH_OPENING"",""5"":""LATCH_AJAR"",""6"":""LATCH_TIMEOUT"",""7"":""LATCH_DEFAULT"",""8"":""LATCH_FAULT""}"
