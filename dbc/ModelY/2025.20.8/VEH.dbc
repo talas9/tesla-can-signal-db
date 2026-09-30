@@ -33,42 +33,8 @@ NS_ :
 
 BS_:
 
-BU_: BMS CP DAS DIF GTW HVP ICR PCS SCCM VCFRONT VCLEFT VCRIGHT VCSEC
+BU_: DAS GTW HVP ICR PCS SCCM VCFRONT VCLEFT VCRIGHT VCSEC
 
-
-BO_ 1138 BMS_chargeInfo: 8 BMS
- SG_ BMS_voltageRegCurrentTarget : 12|12@1+ (0.5,0) [0|2047.5] "A" Vector__XXX
- SG_ BMS_vehicleChargeDcCurrentLimit : 24|12@1+ (0.5,0) [0|2047.5] "A" Vector__XXX
- SG_ BMS_chargeCurrentLimitMode : 40|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ BMS_timeToFinishHeatForCharge : 45|7@1+ (5,0) [0|600] "min" Vector__XXX
-
-BO_ 658 BMS_socStatus: 8 BMS
- SG_ BMS_userChargeCurrentLimitMode : 58|3@1+ (1,0) [0|7] "" Vector__XXX
-
-BO_ 669 CP_dcChargeStatus: 4 CP
- SG_ CP_evseOutputDcCurrent : 0|15@1- (0.125,0) [-2048|2047.875] "A" Vector__XXX
- SG_ CP_evseOutputDcVoltage : 16|13@1+ (0.07324219,0) [0|599.92675822] "V" Vector__XXX
- SG_ CP_evseOutputDcCurrentStale : 29|1@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 541 CP_evseStatus: 8 CP
- SG_ CP_evseAccept : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ CP_evseRequest : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ CP_proximity : 2|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ CP_pilot : 4|3@1+ (1,0) [0|6] "" Vector__XXX
- SG_ CP_digitalCommsEstablished : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ CP_pilotCurrent : 8|8@1+ (0.5,0) [0|127.5] "A" Vector__XXX
- SG_ CP_cableType : 16|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ CP_iecPilotState : 19|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ CP_plcSupported : 23|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ CP_cableCurrentLimit : 24|7@1+ (1,0) [0|127] "A" Vector__XXX
- SG_ CP_teslaSwcanState : 34|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ CP_evseChargeType_UI : 38|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ CP_gbState : 40|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ CP_gbdcStopChargeReason : 44|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ CP_gbdcFailureReason : 48|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ CP_gbdcChargeAttempts : 50|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ CP_acChargeState : 52|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ CP_teslaDcState : 56|4@1+ (1,0) [0|15] "" Vector__XXX
 
 BO_ 1001 DAS_bodyControls: 8 DAS
  SG_ DAS_headlightRequest : 0|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -98,22 +64,6 @@ BO_ 1001 DAS_bodyControls: 8 DAS
  SG_ DAS_restrictDoorReleaseRight : 51|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DAS_bodyControlsCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ DAS_bodyControlsChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
-
-BO_ 634 DIF_hvStatus: 7 DIF
- SG_ DIF_hvStatusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ DIF_hvStatusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ DIF_hvilCurrent : 12|8@1+ (0.1,0) [0|25.5] "mA" Vector__XXX
- SG_ DIF_hvilCmVoltage : 20|8@1+ (0.08,0) [0|20.4] "V" Vector__XXX
- SG_ DIF_hvilStatus : 28|2@1+ (1,0) [0|2] "" Vector__XXX
- SG_ DIF_hvilSupplyState : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ DIF_activeDischargeCtrl : 32|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ DIF_activeDischargeStatus : 33|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ DIF_vBat : 34|10@1+ (1,0) [0|1023] "V" Vector__XXX
- SG_ DIF_vBatQF : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ DIF_powerStageSafeState : 45|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ DIF_fluxState : 48|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ DIF_vBusDiag : 52|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ DIF_gateDriveState : 53|3@1+ (1,0) [0|7] "" Vector__XXX
 
 BO_ 784 HVP_info: 8 HVP
  SG_ HVP_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -181,141 +131,9 @@ BO_ 816 SCCM_info: 8 SCCM
  SG_ SCCM_infoUdsProtoVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ SCCM_infoBootCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 1657 UI_ambientLightingCtrls: 7 GTW
- SG_ UI_rgbEnableState : 1|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ UI_rgbEffectType : 3|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ UI_rgbBrightnessLevel : 32|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ UI_rgbTargetDOORFL : 43|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_rgbTargetDOORFR : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_rgbTargetDOORRL : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_rgbTargetDOORRR : 46|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_rgbTargetIPFL : 47|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_rgbTargetIPFR : 48|1@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 819 UI_chargeRequest: 5 GTW
- SG_ UI_openChargePortDoorRequest : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_closeChargePortDoorRequest : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_chargeEnableRequest : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_acChargeCurrentLimit : 8|7@1+ (1,0) [0|126] "A" Vector__XXX
- SG_ UI_chargeTerminationPct : 16|10@1+ (0.1,0) [5|100] "%" Vector__XXX
- SG_ UI_scheduledDepartureEnabled : 29|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_chargePortLatchRequest : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ UI_cpInletHeaterRequest : 36|2@1+ (1,0) [0|3] "" Vector__XXX
-
-BO_ 991 UI_status2: 8 GTW
- SG_ UI_userActivity : 23|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_activeTouchPoints : 24|8@1+ (1,0) [0|255] "1" Vector__XXX
- SG_ UI_linkState : 32|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ UI_autopilotSentryRequest : 37|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_mobileAppConnected : 38|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_autoshiftDRState : 40|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ UI_wifiBtModuleType : 43|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ UI_selfParkState : 48|8@1+ (1,0) [0|254] "" Vector__XXX
- SG_ UI_summonDeviceIndex : 56|2@1+ (1,0) [0|3] "" Vector__XXX
-
 BO_ 663 UI_suspensionControl: 8 GTW
  SG_ UI_adaptiveRideRequest : 3|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ UI_geofenceLevelingRequest : 7|3@1+ (1,0) [0|7] "" Vector__XXX
-
-BO_ 947 UI_vehicleControl2: 8 GTW
- SG_ UI_gloveboxRequest : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_trunkRequest : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_PINToDriveEnabled : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_PINToDrivePassed : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_disableMirrorAutoDim : 8|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_lightSwitch : 9|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ UI_readyToAddKey : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_alarmTriggerRequest : 13|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_displayOnForUser : 18|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_BLEPushNotificationRequest : 20|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_keepAutopilotAwake : 22|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_batteryPreconditioningRequest : 23|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_autopilotPowerStateRequest : 25|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ UI_autoRollWindowsOnLockEnable : 29|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_steeringWheelHeatReq : 33|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_disableHorn : 34|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_frontLeftSeatFanReq : 37|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ UI_frontRightSeatAutoClimateReq : 39|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_frontRightSeatFanReq : 40|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ UI_frontLeftSeatAutoClimateReq : 56|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_wiperHeaterReq : 57|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ UI_silentAlarm : 61|1@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 609 VCFRONT_12VBatteryStatus: 8 VCFRONT
- SG_ VCFRONT_12VBatteryStatusIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_good12VforUpdate : 46|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_LVLoadRequest : 47|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_12VBatteryStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCFRONT_12VBatteryStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCFRONT_batterySupportRequest m1 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_batterySMState m1 : 4|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCFRONT_eFuseRecoveryStateDBG m1 : 8|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_batteryLINScheduleDBG m1 : 11|3@1+ (1,0) [0|6] "" Vector__XXX
- SG_ VCFRONT_resistanceEstimationTest m1 : 14|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_IBSCurrent m1 : 16|16@1- (0.005,0) [-163.84|163.835] "A" Vector__XXX
- SG_ VCFRONT_IBSVoltage m1 : 32|14@1+ (0.005443676,0) [0|65.535] "V" Vector__XXX
- SG_ VCFRONT_reverseBatteryFault m1 : 48|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_LVBatterySupported m1 : 49|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_LVBatteryCannotSupportVe m1 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_goodTemp12VforUpdate m1 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_12VBatteryTargetVoltage m2 : 3|13@1+ (0.01,0) [0|65.535] "V" Vector__XXX
- SG_ VCFRONT_IBSTemperature m2 : 16|11@1+ (0.1,-24) [-24|124] "degC" Vector__XXX
- SG_ VCFRONT_currentSensorMismatchLea m2 : 27|7@1+ (2,0) [0|254] "PCT" Vector__XXX
- SG_ VCFRONT_LVBatteryEnergyRemaining m2 : 37|7@1+ (1,0) [0|127] "%" Vector__XXX
- SG_ VCFRONT_LVBatteryStatusForDrive m2 : 44|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_LVBatteryType m2 : 48|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_resistanceEstimationNeed m2 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_IBSVoltageFiltered m3 : 3|14@1+ (0.005443676,0) [0|65.535] "V" Vector__XXX
- SG_ VCFRONT_LVBMS_LVBusVoltageSource m3 : 17|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_LVBMS_LVPackCurrentSourc m3 : 19|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_LVBatterySupportRqrdTrig m3 : 24|14@1+ (1,0) [0|16383] "" Vector__XXX
- SG_ VCFRONT_goodForPCSPowerCycleLeak m3 : 40|5@1+ (0.0005,0) [0|0.0155] "Ah" Vector__XXX
- SG_ VCFRONT_LVBusControlsFutile m3 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_resistanceEstimatio_0001 m3 : 48|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_resistanceEstimatio_0002 m3 : 49|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_goodLVChargeForUpdate m3 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_opportunisticDCRTestNeed m3 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_voltageProfile m4 : 3|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_IBSAmpHours m4 : 5|14@1- (0.005,0) [-40.96|40.955] "Ah" Vector__XXX
- SG_ VCFRONT_IBSVoltageRawDBG m4 : 19|14@1+ (0.005443676,0) [0|65.535] "V" Vector__XXX
- SG_ VCFRONT_LVBatteryLINCommsDetecte m4 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_voltageSensorMismatchLea m4 : 34|7@1+ (2,0) [0|254] "PCT" Vector__XXX
- SG_ VCFRONT_LVBatteryFctryLimOverrid m4 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_LVBatterySPICommsDetecte m4 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_targetCurrent m5 : 3|11@1+ (0.125,-127) [0|120] "A" Vector__XXX
- SG_ VCFRONT_PCSMia m5 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_chargeNeeded m5 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_voltageControlLoopIntegr m5 : 16|14@1+ (0.006,0) [0|65.535] "V" Vector__XXX
- SG_ VCFRONT_currentControlLoopIntegr m5 : 30|14@1+ (0.006,0) [0|65.535] "V" Vector__XXX
-
-BO_ 1801 VCFRONT_logging0point1Hz: 8 VCFRONT
- SG_ VCFRONT_logging0point1HzIndex M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ VC_hcmlFactoryOfOrigin m26 : 5|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VC_hcmlHellaPartNumberStatus m26 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VC_hcmlHellaPartNumber m26 : 8|32@1+ (1,0) [0|4294967295] "-" Vector__XXX
- SG_ VC_hcmlCurrentBinMappingType m26 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VC_hcmlCurrentBin0Value m26 : 42|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmlCurrentBin1Value m26 : 45|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmlCurrentBin2Value m26 : 48|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmlCurrentBin3Value m26 : 51|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmlCurrentBin4Value m26 : 54|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmlCurrentBin5Value m26 : 57|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmlRegionAndSide m26 : 60|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrFactoryOfOrigin m27 : 5|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VC_hcmrHellaPartNumberStatus m27 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VC_hcmrHellaPartNumber m27 : 8|32@1+ (1,0) [0|4294967295] "-" Vector__XXX
- SG_ VC_hcmrCurrentBinMappingType m27 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VC_hcmrCurrentBin0Value m27 : 42|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrCurrentBin1Value m27 : 45|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrCurrentBin2Value m27 : 48|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrCurrentBin3Value m27 : 51|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrCurrentBin4Value m27 : 54|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrCurrentBin5Value m27 : 57|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VC_hcmrRegionAndSide m27 : 60|3@1+ (1,0) [1|7] "" Vector__XXX
-
-BO_ 897 VCFRONT_logging1Hz: 8 VCFRONT
- SG_ VCFRONT_logging1HzIndex M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ VCFRONT_batteryDischArbState m21 : 56|3@1+ (1,0) [0|7] "" Vector__XXX
 
 BO_ 957 VCFRONT_parkedEnergyLoss: 8 VCFRONT
  SG_ VCFRONT_energyLossIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -336,96 +154,6 @@ BO_ 957 VCFRONT_parkedEnergyLoss: 8 VCFRONT
  SG_ VCFRONT_backgroundEnergyLossSinc m4 : 36|14@1+ (0.01,0) [0|163.83] "kWh" Vector__XXX
  SG_ VCFRONT_evapDryingEnergyLossSinc m4 : 50|14@1+ (0.01,0) [0|163.83] "kWh" Vector__XXX
 
-BO_ 737 VCFRONT_status: 8 VCFRONT
- SG_ VCFRONT_statusIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_frunkLatchStatus m0 : 3|4@1+ (1,0) [1|15] "" Vector__XXX
- SG_ VCFRONT_wiperSpeed m0 : 8|4@1+ (1,0) [1|15] "" Vector__XXX
- SG_ VCFRONT_wiperPosition m0 : 12|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCFRONT_wiperBlocked m0 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_wiperState m0 : 16|4@1+ (1,0) [1|15] "" Vector__XXX
- SG_ VCFRONT_crashDetectedType m0 : 20|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_crashState m0 : 22|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_crashUnlockOverrideSet m0 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_washPumpState m0 : 25|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_turnIndicatorControlType m0 : 27|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_wiperHealth m0 : 32|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_frunkLatchCurrent m0 : 40|8@1- (0.157480314374,0) [-10|10] "A" Vector__XXX
- SG_ VCFRONT_frunkInteriorRelSwitch m0 : 48|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_anyClosureOpen m0 : 49|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_anyDoorOpen m0 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_hornOn m0 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_radarHeaterState m0 : 52|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCFRONT_trunkExteriorWakeSwitch m0 : 55|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_passengerBuckleStatus m0 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_frunkLatchType m0 : 58|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_headlampLeftFanStatus m0 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_headlampRightFanStatus m0 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_frunkAccessPost m0 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_isActiveHeatingBattery m0 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_iBoosterWakeLine m1 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_epasWakeLine m1 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_iBoosterStateDBG m1 : 5|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_vehicleStatusDBG m1 : 8|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ VCFRONT_timeSpentSleeping m1 : 13|10@1+ (1,0) [0|1023] "s" Vector__XXX
- SG_ VCFRONT_sleepCurrent m1 : 24|12@1+ (0.125,-511.875) [-511.875|-0.125] "mA" Vector__XXX
- SG_ VCFRONT_hibernationState m1 : 36|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_wiperECUType m1 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_wiperHeaterState m1 : 42|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCFRONT_occupantCount m1 : 45|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_closureEasterEggState m1 : 48|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_espWakeLine m1 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_allowEvapInLowAmbient m1 : 52|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_potentialRadiatorSteam m1 : 53|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_potentialRadiatorSteamUI m1 : 54|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_hvacReqOffForFasterCharg m1 : 55|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_homelinkV2Response0 m2 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCFRONT_homelinkV2Response1 m2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCFRONT_homelinkV2Response2 m2 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCFRONT_homelinkV2Response3 m2 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCFRONT_homelinkV2Response4 m2 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCFRONT_homelinkCommStatus m2 : 48|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCFRONT_maxEvapHeatRejection m3 : 8|8@1+ (65,0) [0|16575] "W" Vector__XXX
- SG_ VCFRONT_minEvapHeatRejection m3 : 16|8@1+ (15,0) [0|3800] "W" Vector__XXX
- SG_ VCFRONT_freezeEvapITerm m3 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_isEvapOperationAllowed m3 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_chillerDemandActive m3 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_compPerfRecoveryLimited m3 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_hvacModeNotAttainable m3 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_hasLowRefrigerant m3 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_isColdStartRunning m3 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_isHeatPumpOilPurgeActive m3 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_pressureRefrigSuction m3 : 32|7@1+ (0.125,0) [0|11.5] "bar" Vector__XXX
- SG_ VCFRONT_pressureRefrigDischarge m3 : 40|9@1+ (0.08,0) [0|37.25] "bar" Vector__XXX
- SG_ VCFRONT_hvacPerfTestCommand m3 : 49|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_coolantFillRoutineStatus m3 : 52|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_refrigFillRoutineStatus m3 : 54|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_isCOP1Running m3 : 56|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_closeValvesRoutineStatus m3 : 57|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCFRONT_thermalPerfTestRunning m3 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_5VARailStable m4 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_5VBRailStable m4 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_12VARailStable m4 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_12VBRailStable m4 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_railAState m4 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_railBState m4 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_ChargePumpVoltageStable m4 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_PEResetLineState m4 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_HSDInitCompleteU13 m4 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_HSDInitCompleteU16 m4 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_vbatMonitorVoltage m4 : 16|12@1+ (0.005443676,0) [0|22.286409544] "V" Vector__XXX
- SG_ VCFRONT_AS8510Voltage m4 : 28|12@1+ (0.005443676,0) [0|22.286409544] "V" Vector__XXX
- SG_ VCFRONT_vbatProt m4 : 40|12@1+ (0.005443676,0) [0|22.29185322] "V" Vector__XXX
- SG_ VCFRONT_logVerbosity m4 : 52|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCFRONT_cabinCoolingCapacityLimi m5 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_cabinHeatingCapacityLimi m5 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCFRONT_compPowerSupportingHvac m5 : 8|11@1+ (10,0) [0|20470] "W" Vector__XXX
- SG_ VCFRONT_compPowerSupportingPT m5 : 19|11@1+ (10,0) [0|20470] "W" Vector__XXX
- SG_ VCFRONT_maxHeatingPowerLeftCC m5 : 30|7@1+ (100,0) [0|12000] "W" Vector__XXX
- SG_ VCFRONT_maxHeatingPowerRightCC m5 : 37|7@1+ (100,0) [0|12000] "W" Vector__XXX
- SG_ VCFRONT_activeLouverOpenPos m5 : 44|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ VCFRONT_activeLouverState m5 : 51|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ VCFRONT_windshieldCameraHeaterPo m5 : 56|6@1+ (2.5,0) [0|155] "W" Vector__XXX
-
 BO_ 507 VCLEFT_TLCStatus: 8 VCLEFT
  SG_ VCLEFT_TLCStatusIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCLEFT_TLCTemperature m1 : 2|8@1- (1,68) [-59|195] "degC" Vector__XXX
@@ -438,168 +166,6 @@ BO_ 507 VCLEFT_TLCStatus: 8 VCLEFT
  SG_ VCLEFT_TLCState_Fog m1 : 38|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCLEFT_TLCState_Reverse m1 : 41|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 1802 VCLEFT_logging0point1Hz: 6 VCLEFT
- SG_ VCLEFT_logging0point1HzIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_leftBrakeTailLightCurrent m0 : 2|9@1+ (0.005,0) [0|2.55] "A" Vector__XXX
- SG_ VCLEFT_leftBrakeTailLightCu_0001 m0 : 11|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCLEFT_leftRearTurnLightCurrent m0 : 14|9@1+ (0.002,0) [0|1.02] "A" Vector__XXX
- SG_ VCLEFT_leftRearTurnLightCurrentS m0 : 24|3@1+ (1,0) [1|7] "" Vector__XXX
-
-BO_ 930 VCLEFT_status: 8 VCLEFT
- SG_ VCLEFT_statusIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCLEFT_securityControllerEnable m0 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_securityControllerVoltage m0 : 6|5@1+ (0.625,0) [0|19.375] "V" Vector__XXX
- SG_ VCLEFT_consoleDoorAssist m0 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_OTAState m0 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_5AVoltage m0 : 13|10@1+ (0.005443676,0) [0|5.568880548] "V" Vector__XXX
- SG_ VCLEFT_vbatProt m0 : 23|12@1+ (0.005443676,0) [0|22.29185322] "V" Vector__XXX
- SG_ VCLEFT_footwellLightCurrent m0 : 35|12@1- (0.1,0) [-204.8|204.7] "mA" Vector__XXX
- SG_ VCLEFT_swcInputVoltage m0 : 47|8@1+ (0.1,0) [0|25.4] "V" Vector__XXX
- SG_ VCLEFT_swcPCBATemperature m0 : 55|8@1- (1,68) [-59|195] "degC" Vector__XXX
- SG_ VCLEFT_obdEthernetActive m0 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_rationalityAggregateCurre m1 : 12|8@1+ (0.5,0) [0|127.5] "A" Vector__XXX
- SG_ VCLEFT_LVBatteryTypeDBG m1 : 20|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCLEFT_DIeFuseFault m1 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_eFuseMgmtVoltageMonitor m1 : 25|7@1+ (0.125,0) [0|15.875] "V" Vector__XXX
- SG_ VCLEFT_trailerAuxCurrent m1 : 32|12@1+ (0.025,0) [0|102.35] "A" Vector__XXX
- SG_ VCLEFT_swcHeatTmp m1 : 44|10@1+ (0.1,-35) [-35|65] "degC" Vector__XXX
- SG_ VCLEFT_swcHeatStatus m1 : 54|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCLEFT_swcHeatInhibited m1 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_pcbaTemperature m2 : 4|11@1+ (0.125,-40) [-40|150] "degC" Vector__XXX
- SG_ VCLEFT_swcHeatPwr m2 : 15|9@1+ (0.5,0) [0|254] "W" Vector__XXX
- SG_ VCLEFT_swcHeatDutyCycle m2 : 24|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ VCLEFT_DIeFuseCurrent m2 : 31|6@1+ (0.1,0) [0|6.3] "A" Vector__XXX
- SG_ VCLEFT_SWCpresent m2 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_trailerBrakeControllerCur m2 : 38|8@1+ (0.1,0) [0|25.5] "A" Vector__XXX
-
-BO_ 962 VCLEFT_switchStatus: 8 VCLEFT
- SG_ VCLEFT_switchStatusIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_hornSwitchPressed m0 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_hazardButtonPressed m0 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_brakeSwitchPressed m0 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_rightMirrorTilt m0 : 5|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCLEFT_frontSeatTrackBack m0 : 8|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatTrackForward m0 : 10|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatTiltDown m0 : 12|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatTiltUp m0 : 14|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatLiftDown m0 : 16|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatLiftUp m0 : 18|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatBackrestBack m0 : 20|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatBackrestForward m0 : 22|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatLumbarDown m0 : 24|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatLumbarUp m0 : 26|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatLumbarIn m0 : 28|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontSeatLumbarOut m0 : 30|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackUpLF m0 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoUpLF m0 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackDownLF m0 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoDownLF m0 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackUpLR m0 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoUpLR m0 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackDownLR m0 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoDownLR m0 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackUpRF m0 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoUpRF m0 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackDownRF m0 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoDownRF m0 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackUpRR m0 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoUpRR m0 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackDownRR m0 : 46|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowSwPackAutoDownRR m0 : 47|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_frontBuckleSwitch m0 : 48|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_frontOccupancySwitch m0 : 50|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_rearLeftBuckleSwitch m0 : 52|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_rearCenterOccupancySwitch m0 : 54|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_rearLeftOccupancySwitch m0 : 56|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_rearRightOccupancySwitch m0 : 58|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_brakePressed m0 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_rearHVACButtonPressed m0 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_rearCenterBuckleSwitch m0 : 62|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_isAlcoholInterlockSet m1 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_swcLeftTiltRight m1 : 3|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcLeftPressed m1 : 5|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcRightTiltLeft m1 : 8|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcRightTiltRight m1 : 10|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcRightPressed m1 : 12|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcLeftTiltLeft m1 : 14|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcLeftScrollTicks m1 : 16|6@1- (1,0) [-32|31] "" Vector__XXX
- SG_ VCLEFT_swcWiperButtonState m1 : 22|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCLEFT_swcRightScrollTicks m1 : 24|6@1- (1,0) [-32|31] "" Vector__XXX
- SG_ VCLEFT_swcTurnSignalLeftButtonSt m1 : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCLEFT_btnWindowUpLR m1 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowAutoUpLR m1 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowDownLR m1 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_btnWindowAutoDownLR m1 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_2RowSeatLeftFoldFlatSwitc m1 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_2RowSeatRightFoldFlatSwit m1 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_2RowSeatBothFoldFlatSwitc m1 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_swcLeftDoublePress m1 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_swcRightDoublePress m1 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_swcTurnSignalRightButtonS m1 : 44|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCLEFT_swcHighBeamButtonState m1 : 46|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCLEFT_swcVoiceControlPress m1 : 48|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCLEFT_swcCameraButtonState m1 : 50|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCLEFT_swcRightPressedQF m1 : 52|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_2RowSeatReclineSwitchpack m1 : 53|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCLEFT_frontSeatResistiveOccupan m1 : 62|2@1+ (1,0) [1|3] "" Vector__XXX
-
-BO_ 1114 VCRIGHT_AP_hvacState10Hz: 8 VCRIGHT
- SG_ VCRIGHT_AP_hvacState10HzIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCRIGHT_AP_autoDefogAvailable m0 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_AP_hvacFlashFoggingDetec m0 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_AP_hvacModelInitStatus m0 : 4|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCRIGHT_AP_cabinTempWindshield m0 : 7|8@1+ (0.5,-40) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_AP_cabinTempSideGlassRig m0 : 15|8@1+ (0.5,-40) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_AP_cabinTempSideGlassLef m0 : 23|8@1+ (0.5,-40) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_AP_hvacRecircDoorPercent m0 : 31|6@1+ (1.6,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_AP_hvacAirDistributionMo m0 : 37|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCRIGHT_AP_hvacEstimateWindshiel m0 : 40|8@1+ (1,0) [0|150] "%" Vector__XXX
- SG_ VCRIGHT_AP_hvacMassflowTarget m0 : 48|8@1+ (1,0) [0|200] "g/s" Vector__XXX
- SG_ VCRIGHT_AP_tempDuctDefrost m0 : 56|8@1+ (0.5,-22) [-22|105] "degC" Vector__XXX
- SG_ VCRIGHT_AP_cameraFanDutyRequest m1 : 30|7@1+ (1,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_AP_turnCameraFanOffReaso m1 : 37|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCRIGHT_AP_cameraTurnOnTime m1 : 40|8@1+ (10,0) [0|2540] "min" Vector__XXX
- SG_ VCRIGHT_AP_solarFluxOnRightWindo m1 : 48|8@1+ (5,0) [0|1150] "W/m2" Vector__XXX
- SG_ VCRIGHT_AP_solarFluxOnLeftWindow m1 : 56|8@1+ (5,0) [0|1150] "W/m2" Vector__XXX
-
-BO_ 1795 VCRIGHT_debugThermal10Hz: 8 VCRIGHT
- SG_ VCRIGHT_debugThermal10HzIndex M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCRIGHT_hvacPanelFloorSplitRow1 m2 : 8|8@1+ (0.4,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_hvacDefrostPercent m2 : 16|8@1+ (0.4,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_hvacRow2Percent m2 : 24|8@1+ (0.4,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_hvacPanelFloorSplitRow2 m2 : 32|8@1+ (0.4,0) [0|100] "%" Vector__XXX
- SG_ VCRIGHT_hvacFreshMassCounter m2 : 40|12@1+ (10,0) [0|40000] "kg" Vector__XXX
- SG_ VCRIGHT_hvacRecircMassCounter m2 : 52|12@1+ (10,0) [0|40000] "kg" Vector__XXX
- SG_ VCRIGHT_setTempAdjustmentLeft m3 : 8|7@1+ (0.1,0) [0|12] "degC" Vector__XXX
- SG_ VCRIGHT_setTempAdjustmentRight m3 : 16|7@1+ (0.1,0) [0|12] "degC" Vector__XXX
- SG_ VCRIGHT_hvacLHVaneVelocity m3 : 24|8@1- (0.8,0) [-100|100] "deg/s" Vector__XXX
- SG_ VCRIGHT_hvacRHVaneVelocity m3 : 32|8@1- (0.8,0) [-100|100] "deg/s" Vector__XXX
- SG_ VCRIGHT_hvacMassflowCompensated m3 : 47|8@1+ (1.5,0) [0|250] "g/s" Vector__XXX
- SG_ VCRIGHT_PTCcenterPowerLeft m5 : 8|6@1+ (30,0) [0|1800] "W" Vector__XXX
- SG_ VCRIGHT_PTCouterPowerLeft m5 : 16|6@1+ (30,0) [0|1800] "W" Vector__XXX
- SG_ VCRIGHT_PTCinnerPowerLeft m5 : 24|6@1+ (30,0) [0|1800] "W" Vector__XXX
- SG_ VCRIGHT_PTCcenterPowerRight m5 : 32|6@1+ (30,0) [0|1800] "W" Vector__XXX
- SG_ VCRIGHT_PTCouterPowerRight m5 : 40|6@1+ (30,0) [0|1800] "W" Vector__XXX
- SG_ VCRIGHT_PTCinnerPowerRight m5 : 48|6@1+ (30,0) [0|1800] "W" Vector__XXX
- SG_ VCRIGHT_PTCcenterStoneTempLeft m6 : 8|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCcenterStoneTempRight m6 : 16|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCinnerStoneTempLeft m6 : 24|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCinnerStoneTempRight m6 : 32|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCouterStoneTempLeft m7 : 8|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCouterRodTempLeft m7 : 16|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCouterAirTempLeft m7 : 24|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCcenterRodTempLeft m7 : 32|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCinnerRodTempLeft m7 : 40|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCcenterAirTempLeft m7 : 48|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCinnerAirTempLeft m7 : 56|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCouterStoneTempRight m8 : 8|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCouterRodTempRight m8 : 16|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCouterAirTempRight m8 : 24|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCcenterRodTempRight m8 : 32|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCinnerRodTempRight m8 : 40|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCcenterAirTempRight m8 : 48|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
- SG_ VCRIGHT_PTCinnerAirTempRight m8 : 56|8@1+ (2,-70) [-70|438] "degC" Vector__XXX
-
 BO_ 291 VCRIGHT_doorStatus2: 8 VCRIGHT
  SG_ VCRIGHT_doorStatus2Index M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCRIGHT_frontLatchRelDuty m1 : 8|8@1+ (1,0) [0|255] "%" Vector__XXX
@@ -609,61 +175,6 @@ BO_ 291 VCRIGHT_doorStatus2: 8 VCRIGHT
  SG_ VCRIGHT_BPillarCameraHeaterCurre m1 : 40|6@1+ (0.02,0) [0|1.24] "A" Vector__XXX
  SG_ VCRIGHT_mirrorTiltXOffset m1 : 48|8@1- (0.02,0) [-2.5|2.5] "V" Vector__XXX
  SG_ VCRIGHT_mirrorTiltYOffset m1 : 56|8@1- (0.02,0) [-2.5|2.5] "V" Vector__XXX
-
-BO_ 739 VCRIGHT_seatStatus2: 7 VCRIGHT
- SG_ VCRIGHT_seatStatus2Index M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCRIGHT_frontSeatHeatCurrent m0 : 4|12@1+ (0.01,0) [0|40.95] "A" Vector__XXX
- SG_ VCRIGHT_frontSeatHeatDuty m0 : 16|8@1+ (1,0) [0|255] "%" Vector__XXX
- SG_ VCRIGHT_frontSeatHeatTmp m0 : 24|12@1- (0.05,0) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_frontSeatHeatTmpTarget m0 : 36|8@1- (0.5,0) [0|60] "degC" Vector__XXX
- SG_ VCRIGHT_frontSeatHeatInhibited m0 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_frontSeatHeatPowered m0 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearLSeatHeatCurrent m1 : 4|12@1+ (0.01,0) [0|40.95] "A" Vector__XXX
- SG_ VCRIGHT_rearLSeatHeatDuty m1 : 16|8@1+ (1,0) [0|255] "%" Vector__XXX
- SG_ VCRIGHT_rearLSeatHeatTmp m1 : 24|12@1- (0.05,0) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_rearLSeatHeatTmpTarget m1 : 36|8@1- (0.5,0) [0|60] "degC" Vector__XXX
- SG_ VCRIGHT_rearLSeatHeatInhibited m1 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearLSeatHeatPowered m1 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearCSeatHeatCurrent m2 : 4|12@1+ (0.01,0) [0|40.95] "A" Vector__XXX
- SG_ VCRIGHT_rearCSeatHeatDuty m2 : 16|8@1+ (1,0) [0|255] "%" Vector__XXX
- SG_ VCRIGHT_rearCSeatHeatTmp m2 : 24|12@1- (0.05,0) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_rearCSeatHeatTmpTarget m2 : 36|8@1- (0.5,0) [0|60] "degC" Vector__XXX
- SG_ VCRIGHT_rearCSeatHeatInhibited m2 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearCSeatHeatPowered m2 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearRSeatHeatCurrent m3 : 4|12@1+ (0.01,0) [0|40.95] "A" Vector__XXX
- SG_ VCRIGHT_rearRSeatHeatDuty m3 : 16|8@1+ (1,0) [0|255] "%" Vector__XXX
- SG_ VCRIGHT_rearRSeatHeatTmp m3 : 24|12@1- (0.05,0) [-40|80] "degC" Vector__XXX
- SG_ VCRIGHT_rearRSeatHeatTmpTarget m3 : 36|8@1- (0.5,0) [0|60] "degC" Vector__XXX
- SG_ VCRIGHT_rearRSeatHeatInhibited m3 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_rearRSeatHeatPowered m3 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineState m11 : 4|4@1+ (1,0) [0|14] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineDuty m11 : 8|8@1- (1,0) [-100|100] "%" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineCurrent m11 : 16|12@1- (0.05,0) [-100|100] "A" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineCalibrate m11 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclinePositionR m11 : 29|12@1- (1,0) [-2048|2047] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineAngle m11 : 41|12@1- (0.1,0) [-204.8|204.7] "deg" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineAbsPosSwi m11 : 53|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclinePositionS m12 : 4|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineAdjustmen m12 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineFoldAllow m12 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineUnfoldAll m12 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineNextToggl m12 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineChoreoBlo m12 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_2RowSeat1RClashAvoidance m12 : 13|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCRIGHT_2RowSeat1RClashAvoi_0001 m12 : 16|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ VCRIGHT_2RowSeatReclineAbsP_0001 m12 : 18|12@1- (0.1,0) [-204.8|204.7] "deg" Vector__XXX
-
-BO_ 835 VCRIGHT_status: 8 VCRIGHT
- SG_ VCRIGHT_LVBatteryTypeDBG : 8|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCRIGHT_rearDefrostState : 11|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCRIGHT_mirrorHeatState : 14|3@1+ (1,0) [1|7] "" Vector__XXX
- SG_ VCRIGHT_OTAState : 17|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_5AVoltage : 18|10@1+ (0.005443676,0) [0|5.568880548] "V" Vector__XXX
- SG_ VCRIGHT_vbatProt : 28|12@1+ (0.005443676,0) [0|22.29185322] "V" Vector__XXX
- SG_ VCRIGHT_rationalityAggregateCurr : 40|8@1+ (0.5,0) [0|127.5] "A" Vector__XXX
- SG_ VCRIGHT_eFuseMgmtVoltageMonitor : 48|7@1+ (0.125,0) [0|15.875] "V" Vector__XXX
- SG_ VCRIGHT_isSteeringWheelHeaterReq : 55|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCRIGHT_steeringWheelHeaterDCTgt : 56|7@1+ (0.01,0) [0|1] "-" Vector__XXX
 
 BO_ 899 VCRIGHT_thsStatus: 8 VCRIGHT
  SG_ VCRIGHT_thsActive : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -705,45 +216,22 @@ BO_ 1824 VCSEC_ecuConfig: 5 VCSEC
  SG_ VCSEC_autoWriteConfig : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCSEC_requestForConfig : 33|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_TX_BU_ 1138 : BMS;
-BO_TX_BU_ 658 : BMS;
-BO_TX_BU_ 669 : CP;
-BO_TX_BU_ 541 : CP;
 BO_TX_BU_ 1001 : DAS;
-BO_TX_BU_ 634 : DIF;
 BO_TX_BU_ 784 : HVP;
 BO_TX_BU_ 941 : ICR;
 BO_TX_BU_ 964 : PCS;
 BO_TX_BU_ 816 : SCCM;
-BO_TX_BU_ 1657 : GTW;
-BO_TX_BU_ 819 : GTW;
-BO_TX_BU_ 991 : GTW;
 BO_TX_BU_ 663 : GTW;
-BO_TX_BU_ 947 : GTW;
-BO_TX_BU_ 609 : VCFRONT;
-BO_TX_BU_ 1801 : VCFRONT;
-BO_TX_BU_ 897 : VCFRONT;
 BO_TX_BU_ 957 : VCFRONT;
-BO_TX_BU_ 737 : VCFRONT;
 BO_TX_BU_ 507 : VCLEFT;
-BO_TX_BU_ 1802 : VCLEFT;
-BO_TX_BU_ 930 : VCLEFT;
-BO_TX_BU_ 962 : VCLEFT;
-BO_TX_BU_ 1114 : VCRIGHT;
-BO_TX_BU_ 1795 : VCRIGHT;
 BO_TX_BU_ 291 : VCRIGHT;
-BO_TX_BU_ 739 : VCRIGHT;
-BO_TX_BU_ 835 : VCRIGHT;
 BO_TX_BU_ 899 : VCRIGHT;
 BO_TX_BU_ 1066 : VCSEC;
 BO_TX_BU_ 1824 : VCSEC;
 
 
-CM_ "Tesla Model Y CAN bus database; bus VEH; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
-CM_ BU_ BMS "High-voltage battery management system";
-CM_ BU_ CP "Charge port controller";
+CM_ "Tesla Model Y CAN bus database; bus VEH (vehicle CAN); firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
 CM_ BU_ DAS "Driver assistance computer";
-CM_ BU_ DIF "Front drive inverter";
 CM_ BU_ GTW "Gateway";
 CM_ BU_ HVP "High-voltage processor (pack contactor and isolation controller)";
 CM_ BU_ ICR "ICR ECU";
@@ -753,49 +241,19 @@ CM_ BU_ VCFRONT "Front body controller";
 CM_ BU_ VCLEFT "Left body controller";
 CM_ BU_ VCRIGHT "Right body controller";
 CM_ BU_ VCSEC "Vehicle security controller";
-CM_ BO_ 1138 "High-voltage battery management system message: charge info";
-CM_ SG_ 1138 BMS_voltageRegCurrentTarget "DC current target based on voltage regulator";
-CM_ SG_ 1138 BMS_vehicleChargeDcCurrentLimit "Charge current target after all aggregating all vehicle-side limits, exclude EVSE limits";
-CM_ SG_ 1138 BMS_chargeCurrentLimitMode "BMS charging current limiting factor";
-CM_ SG_ 1138 BMS_timeToFinishHeatForCharge "High-voltage battery management system: time to finish heat for charge; raw 127 = signal not available (SNA)";
-CM_ BO_ 658 "High-voltage battery management system message: soc status";
-CM_ SG_ 658 BMS_userChargeCurrentLimitMode "BMS' user-facing reason for charge being either limited or not limited";
-CM_ BO_ 669 "Charge port controller message: dc charge status";
-CM_ SG_ 669 CP_evseOutputDcCurrent "The DC EVSE's measured output current";
-CM_ SG_ 669 CP_evseOutputDcVoltage "The DC EVSE's measured output voltage";
-CM_ SG_ 669 CP_evseOutputDcCurrentStale "Indicates whether the data in CP_evseOutputDcCurrent has not been updated with new info from the DC EVSE recently";
-CM_ BO_ 541 "Charge port controller message: evse status";
-CM_ SG_ 541 CP_evseAccept "State of pilot EVSE accept state";
-CM_ SG_ 541 CP_evseRequest "Request to close AC EVSE relays, used when digital communications have been established";
-CM_ SG_ 541 CP_proximity "Sensed state of proximity for all inlets; raw 0 = signal not available (SNA)";
-CM_ SG_ 541 CP_pilot "State of EVSE pilot signal sensed by the charge port; raw 7 = signal not available (SNA)";
-CM_ SG_ 541 CP_digitalCommsEstablished "Indicates whether digital communications have been established with an EVSE";
-CM_ SG_ 541 CP_pilotCurrent "Line current limit detected from pilot signal";
-CM_ SG_ 541 CP_cableType "Type of charge cable detected; raw 4 = signal not available (SNA)";
-CM_ SG_ 541 CP_iecPilotState "State of the control pilot as defined in IEC-61851-1; raw 9 = signal not available (SNA)";
-CM_ SG_ 541 CP_plcSupported "Indicates whether PLC hardware is populated for CCS charging support";
-CM_ SG_ 541 CP_cableCurrentLimit "Charge port controller: cable current limit";
-CM_ SG_ 541 CP_teslaSwcanState "Charge port controller: tesla swcan state";
-CM_ SG_ 541 CP_evseChargeType_UI "Reports the type of Electric Vehicle Supply Equipment (EVSE) connected.";
-CM_ SG_ 541 CP_gbState "State of GB DC charging";
-CM_ SG_ 541 CP_gbdcStopChargeReason "Reason for stopping GB DC charging";
-CM_ SG_ 541 CP_gbdcFailureReason "Reason for failure of GB DC charging";
-CM_ SG_ 541 CP_gbdcChargeAttempts "Number of GB DC charging retries used";
-CM_ SG_ 541 CP_acChargeState "Charge port controller: ac charge state";
-CM_ SG_ 541 CP_teslaDcState "Reports the state of the Tesla direct current (DC) state machine.";
 CM_ BO_ 1001 "Driver assistance computer message: body controls";
 CM_ SG_ 1001 DAS_headlightRequest "The DAS request to the body controls ecu to turn on headlights.";
-CM_ SG_ 1001 DAS_hazardLightRequest "The command from DAS to body controls to turn on the hazard lights.; raw 3 = signal not available (SNA)";
+CM_ SG_ 1001 DAS_hazardLightRequest "The command from DAS to body controls to turn on the hazard lights; raw 3 = signal not available (SNA)";
 CM_ SG_ 1001 DAS_wiperSpeed "The auto wiper algorithm speed request to the body controller.";
 CM_ SG_ 1001 DAS_turnIndicatorRequest "Reports Driver Assistance System (DAS) request to body controls to turn on/off the left or right turn indicator.";
-CM_ SG_ 1001 DAS_highLowBeamDecision "The output of the automatic high beam algorithm, to turn the highbeams on or off.; raw 3 = signal not available (SNA)";
-CM_ SG_ 1001 DAS_heaterRequest "The DAS request to the body controller to turn on the front glass heater in front of the triple camera.; raw 0 = signal not available (SNA)";
-CM_ SG_ 1001 DAS_highLowBeamOffReason "The reason why automatic high beams are surpressed.; raw 5 = signal not available (SNA)";
+CM_ SG_ 1001 DAS_highLowBeamDecision "The output of the automatic high beam algorithm, to turn the highbeams on or off; raw 3 = signal not available (SNA)";
+CM_ SG_ 1001 DAS_heaterRequest "The DAS request to the body controller to turn on the front glass heater in front of the triple camera; raw 0 = signal not available (SNA)";
+CM_ SG_ 1001 DAS_highLowBeamOffReason "The reason why automatic high beams are surpressed; raw 5 = signal not available (SNA)";
 CM_ SG_ 1001 DAS_forwardCamHeaterDutyCycle "Supplies the requested duty cycle of the front windshield camera heater";
 CM_ SG_ 1001 DAS_dynamicBrakeLightRequest "Indicates if the dynamic brake light alogirthm is requesting pulsing brake lights.";
 CM_ SG_ 1001 DAS_radarHeaterRequest "Reports the request from Driver Assistance System (DAS) to body controls to turn on heater to clear out fascia in front of the radar.";
 CM_ SG_ 1001 DAS_ahlbOverride "Indicates if body controller should override UI switch and stalk state to allow auto high beam functionality";
-CM_ SG_ 1001 DAS_mirrorFoldRequest "DAS request to fold or present mirrors.; raw 3 = signal not available (SNA)";
+CM_ SG_ 1001 DAS_mirrorFoldRequest "DAS request to fold or present mirrors; raw 3 = signal not available (SNA)";
 CM_ SG_ 1001 DAS_wiperWashRequest "Autowiper requests that the windshield be washed";
 CM_ SG_ 1001 DAS_ulcConfirmationRequestActive "Driver assistance computer: ulc confirmation request active";
 CM_ SG_ 1001 DAS_overrideWiperSetting "Autopilot wants to override the user's wiper setting to enable auto-wiper";
@@ -811,21 +269,6 @@ CM_ SG_ 1001 DAS_restrictDoorReleaseLeft "Reports requests to inhibit left doors
 CM_ SG_ 1001 DAS_restrictDoorReleaseRight "Reports requests to inhibit right doors from being released.";
 CM_ SG_ 1001 DAS_bodyControlsCounter "Driver assistance computer: body controls counter";
 CM_ SG_ 1001 DAS_bodyControlsChecksum "Driver assistance computer: body controls checksum";
-CM_ BO_ 634 "Front drive inverter message: hv status";
-CM_ SG_ 634 DIF_hvStatusChecksum "Front drive inverter: hv status checksum";
-CM_ SG_ 634 DIF_hvStatusCounter "Front drive inverter: hv status counter";
-CM_ SG_ 634 DIF_hvilCurrent "HVIL Current";
-CM_ SG_ 634 DIF_hvilCmVoltage "HVIL Common Mode Voltage";
-CM_ SG_ 634 DIF_hvilStatus "Aggregated hardware and measured HVIL unit status; raw 3 = signal not available (SNA)";
-CM_ SG_ 634 DIF_hvilSupplyState "Front drive inverter: hvil supply state";
-CM_ SG_ 634 DIF_activeDischargeCtrl "Front drive inverter: active discharge ctrl";
-CM_ SG_ 634 DIF_activeDischargeStatus "Active discharge status from HVIL_FAULT signal.";
-CM_ SG_ 634 DIF_vBat "Reports the battery voltage measured by the Drive Inverter's local Analog to Digital Converter (ADC).";
-CM_ SG_ 634 DIF_vBatQF "Front drive inverter: v bat QF";
-CM_ SG_ 634 DIF_powerStageSafeState "Front drive inverter: power stage safe state";
-CM_ SG_ 634 DIF_fluxState "Front drive inverter: flux state";
-CM_ SG_ 634 DIF_vBusDiag "Front drive inverter: v bus diag";
-CM_ SG_ 634 DIF_gateDriveState "Front drive inverter: gate drive state";
 CM_ BO_ 784 "High-voltage processor (pack contactor and isolation controller) message: info";
 CM_ SG_ 784 HVP_infoIndex "High-voltage processor (pack contactor and isolation controller): info index";
 CM_ SG_ 784 HVP_buildType "High-voltage processor (pack contactor and isolation controller): build type";
@@ -888,134 +331,9 @@ CM_ SG_ 816 SCCM_infoAppSvnHash "Steering column control module: info app svn ha
 CM_ SG_ 816 SCCM_infoBootSvnHash "Steering column control module: info boot svn hash";
 CM_ SG_ 816 SCCM_infoUdsProtoVersion "Steering column control module: info uds proto version";
 CM_ SG_ 816 SCCM_infoBootCrc "Steering column control module: info boot crc";
-CM_ BO_ 1657 "Touchscreen user interface computer message: ambient lighting ctrls; forwarded onto this bus by the gateway";
-CM_ SG_ 1657 UI_rgbEnableState "Request to enable RGB lights";
-CM_ SG_ 1657 UI_rgbEffectType "Reports the RGB light effect type.";
-CM_ SG_ 1657 UI_rgbBrightnessLevel "Reports the requested RGB brightness level.; raw 127 = signal not available (SNA)";
-CM_ SG_ 1657 UI_rgbTargetDOORFL "Target RGB control for front left door";
-CM_ SG_ 1657 UI_rgbTargetDOORFR "Target RGB control for the front right door";
-CM_ SG_ 1657 UI_rgbTargetDOORRL "Target RGB control for rear left door";
-CM_ SG_ 1657 UI_rgbTargetDOORRR "Target RGB control for the rear right door";
-CM_ SG_ 1657 UI_rgbTargetIPFL "Reports control for RGB lighting for the front left instrument panel.";
-CM_ SG_ 1657 UI_rgbTargetIPFR "Reports control for RGB lighting for the front right instrument panel.";
-CM_ BO_ 819 "Touchscreen user interface computer message: charge request; forwarded onto this bus by the gateway";
-CM_ SG_ 819 UI_openChargePortDoorRequest "Request to open charge port.";
-CM_ SG_ 819 UI_closeChargePortDoorRequest "Request to close charge port.";
-CM_ SG_ 819 UI_chargeEnableRequest "Charging request initiated";
-CM_ SG_ 819 UI_acChargeCurrentLimit "UI charging line current request; raw 127 = signal not available (SNA)";
-CM_ SG_ 819 UI_chargeTerminationPct "Charge Termination Limit Percent";
-CM_ SG_ 819 UI_scheduledDepartureEnabled "Reports scheduled departure feature enablement.";
-CM_ SG_ 819 UI_chargePortLatchRequest "Request to engage or disengage the latch.";
-CM_ SG_ 819 UI_cpInletHeaterRequest "Enable charge port inlet heater";
-CM_ BO_ 991 "Touchscreen user interface computer message: status2; forwarded onto this bus by the gateway";
-CM_ SG_ 991 UI_userActivity "Indicates user interaction with the center display";
-CM_ SG_ 991 UI_activeTouchPoints "Quantity of active touch points on the Center Display";
-CM_ SG_ 991 UI_linkState "Connectivity link state";
-CM_ SG_ 991 UI_autopilotSentryRequest "whether AP sentry mode should be enabled";
-CM_ SG_ 991 UI_mobileAppConnected "Reports if Web Real-Time Communication (WebRTC) connection is connected while summon screen is open on the mobile app.";
-CM_ SG_ 991 UI_autoshiftDRState "Reports the User Interface (UI) autoshift Drive/Reverse state.";
-CM_ SG_ 991 UI_wifiBtModuleType "Reports the type of Wi-Fi and Bluetooth (BT) module.";
-CM_ SG_ 991 UI_selfParkState "Reports the auto park state changes.; raw 255 = signal not available (SNA)";
-CM_ SG_ 991 UI_summonDeviceIndex "Reports which device is being used to control summon.";
 CM_ BO_ 663 "Touchscreen user interface computer message: suspension control; forwarded onto this bus by the gateway";
 CM_ SG_ 663 UI_adaptiveRideRequest "UI customer adaptive ride request for air suspension.";
 CM_ SG_ 663 UI_geofenceLevelingRequest "Geofence level request from customer; raw 5 = signal not available (SNA)";
-CM_ BO_ 947 "Touchscreen user interface computer message: vehicle control2; forwarded onto this bus by the gateway";
-CM_ SG_ 947 UI_gloveboxRequest "UI request to open the glovebox";
-CM_ SG_ 947 UI_trunkRequest "Rear trunk request";
-CM_ SG_ 947 UI_PINToDriveEnabled "UI customer level request to pin to drive enabled.";
-CM_ SG_ 947 UI_PINToDrivePassed "UI customer level request to enable drive with pin passed.";
-CM_ SG_ 947 UI_disableMirrorAutoDim "Request to disable side and rear-view mirror auto dim";
-CM_ SG_ 947 UI_lightSwitch "Headlight mode; raw 4 = signal not available (SNA)";
-CM_ SG_ 947 UI_readyToAddKey "Ready to add key";
-CM_ SG_ 947 UI_alarmTriggerRequest "Alarm activation request from UI";
-CM_ SG_ 947 UI_displayOnForUser "User is present";
-CM_ SG_ 947 UI_BLEPushNotificationRequest "Reports that the User Interface (UI) wants to talk to a phone and Vehicle Controller Security (VCSEC) should let all connected phones know.";
-CM_ SG_ 947 UI_keepAutopilotAwake "Reports the request for Vehicle Controller (VC) to keep autopilot awake.";
-CM_ SG_ 947 UI_batteryPreconditioningRequest "Requests battery preconditioning.";
-CM_ SG_ 947 UI_autopilotPowerStateRequest "Requests different power states from autopilot ECU depending on feature usage.";
-CM_ SG_ 947 UI_autoRollWindowsOnLockEnable "UI customer level request to enable auto-roll windows on lock";
-CM_ SG_ 947 UI_steeringWheelHeatReq "Request to enable steering wheel heater";
-CM_ SG_ 947 UI_disableHorn "Request to disable horn";
-CM_ SG_ 947 UI_frontLeftSeatFanReq "Request for front left seat ventilation";
-CM_ SG_ 947 UI_frontRightSeatAutoClimateReq "UI setting to enable auto seat heating and cooling for front right seat";
-CM_ SG_ 947 UI_frontRightSeatFanReq "Request for front left seat ventilation";
-CM_ SG_ 947 UI_frontLeftSeatAutoClimateReq "UI setting to enable auto seat heating and cooling for front left seat";
-CM_ SG_ 947 UI_wiperHeaterReq "UI request to enable the wiper heater";
-CM_ SG_ 947 UI_silentAlarm "Signal indicating alarms should be silenced";
-CM_ BO_ 609 "Front body controller message: 12 v battery status";
-CM_ SG_ 609 VCFRONT_12VBatteryStatusIndex "Front body controller: 12 v battery status index";
-CM_ SG_ 609 VCFRONT_good12VforUpdate "Indicates the Low Voltage (LV) battery health as it pertains to permitting an Over-The-Air (OTA) update.";
-CM_ SG_ 609 VCFRONT_LVLoadRequest "Controls the loading of the Low Voltage (LV) battery for diagnostic purposes.";
-CM_ SG_ 609 VCFRONT_12VBatteryStatusCounter "Front body controller: 12 v battery status counter";
-CM_ SG_ 609 VCFRONT_12VBatteryStatusChecksum "Front body controller: 12 v battery status checksum";
-CM_ SG_ 609 VCFRONT_batterySupportRequest "Reports the request to the Power Conversion System (PCS) to supply power to the Low Voltage (LV) battery.";
-CM_ SG_ 609 VCFRONT_batterySMState "Reports the Low Voltage (LV) battery maintenance state machine state.";
-CM_ SG_ 609 VCFRONT_eFuseRecoveryStateDBG "Reports the state of the Low Voltage (LV) battery eFuse recovery state machine.";
-CM_ SG_ 609 VCFRONT_batteryLINScheduleDBG "Front body controller: battery LIN schedule DBG; raw 7 = signal not available (SNA)";
-CM_ SG_ 609 VCFRONT_resistanceEstimationTest "Front body controller: resistance estimation test counter";
-CM_ SG_ 609 VCFRONT_IBSCurrent "Electrical current into the 12V battery";
-CM_ SG_ 609 VCFRONT_IBSVoltage "Voltage of the 12V battery; raw 4095 = signal not available (SNA)";
-CM_ SG_ 609 VCFRONT_reverseBatteryFault "Indicates a fault on the reverse battery eFuse.";
-CM_ SG_ 609 VCFRONT_LVBatterySupported "Indicates whether the Low Voltage (LV) battery is being supported.";
-CM_ SG_ 609 VCFRONT_LVBatteryCannotSupportVe "Front body controller: LV battery cannot support vehicle";
-CM_ SG_ 609 VCFRONT_goodTemp12VforUpdate "Front body controller: good temp12 vfor update";
-CM_ SG_ 609 VCFRONT_12VBatteryTargetVoltage "Reports the target Low Voltage (LV) battery voltage.";
-CM_ SG_ 609 VCFRONT_IBSTemperature "Front body controller: IBS temperature; raw 2047 = signal not available (SNA)";
-CM_ SG_ 609 VCFRONT_currentSensorMismatchLea "Front body controller: current sensor mismatch leaky bkt pct DBG";
-CM_ SG_ 609 VCFRONT_LVBatteryEnergyRemaining "Reports the percentage of energy remaining in the Low Voltage (LV) battery.";
-CM_ SG_ 609 VCFRONT_LVBatteryStatusForDrive "Indicates the Low Voltage (LV) battery health status as it pertains to drive readiness. May trigger a Graceful Power Off (GPO) and block drive.";
-CM_ SG_ 609 VCFRONT_LVBatteryType "Reports the type of Low Voltage (LV) battery that the firmware is configured for.";
-CM_ SG_ 609 VCFRONT_resistanceEstimationNeed "Indication that the conditions which require a resistance estimation test to be performed have been met";
-CM_ SG_ 609 VCFRONT_IBSVoltageFiltered "Measures the filtered voltage of the Low Voltage (LV) bus.; raw 16383 = signal not available (SNA)";
-CM_ SG_ 609 VCFRONT_LVBMS_LVBusVoltageSource "Reports the source of the Low Voltage (LV) bus voltage used for the Low Voltage Battery Management System (LVBMS).";
-CM_ SG_ 609 VCFRONT_LVBMS_LVPackCurrentSourc "Reports the source of the Low Voltage (LV) pack current used for LV battery charge regulation.";
-CM_ SG_ 609 VCFRONT_LVBatterySupportRqrdTrig "Reports what caused the Low Voltage (LV) battery support required trigger when the vehicle wakes to charge.";
-CM_ SG_ 609 VCFRONT_goodForPCSPowerCycleLeak "Front body controller: good for PCS power cycle leaky bkt DBG";
-CM_ SG_ 609 VCFRONT_LVBusControlsFutile "Indicates that a required condition is not met for the Low Voltage (LV) bus controllers to operate properly.";
-CM_ SG_ 609 VCFRONT_resistanceEstimatio_0001 "Front body controller: resistance estimation test valid";
-CM_ SG_ 609 VCFRONT_resistanceEstimatio_0002 "Front body controller: resistance estimation tests expended";
-CM_ SG_ 609 VCFRONT_goodLVChargeForUpdate "Indicates that the Low Voltage (LV) battery charge is sufficient to permit an Over-The-Air (OTA) update.";
-CM_ SG_ 609 VCFRONT_opportunisticDCRTestNeed "Front body controller: opportunistic DCR test needed";
-CM_ SG_ 609 VCFRONT_voltageProfile "Indicates which voltage profile is used to support the 12V battery";
-CM_ SG_ 609 VCFRONT_IBSAmpHours "Measures the energy state of the Low Voltage (LV) battery in amp hours.";
-CM_ SG_ 609 VCFRONT_IBSVoltageRawDBG "Front body controller: IBS voltage raw DBG; raw 16383 = signal not available (SNA)";
-CM_ SG_ 609 VCFRONT_LVBatteryLINCommsDetecte "Front body controller: LV battery LIN comms detected DBG";
-CM_ SG_ 609 VCFRONT_voltageSensorMismatchLea "Front body controller: voltage sensor mismatch leaky bkt pct DBG";
-CM_ SG_ 609 VCFRONT_LVBatteryFctryLimOverrid "Front body controller: LV battery fctry lim override ok";
-CM_ SG_ 609 VCFRONT_LVBatterySPICommsDetecte "Front body controller: LV battery SPI comms detected DBG";
-CM_ SG_ 609 VCFRONT_targetCurrent "Reports the target current set by the Low Voltage Battery Management System (LVBMS).";
-CM_ SG_ 609 VCFRONT_PCSMia "Indicates that the Power Conversion System (PCS) is not communicating on CAN.";
-CM_ SG_ 609 VCFRONT_chargeNeeded "Indicates that the Low Voltage (LV) battery needs to be charged.";
-CM_ SG_ 609 VCFRONT_voltageControlLoopIntegr "Front body controller: voltage control loop integration val";
-CM_ SG_ 609 VCFRONT_currentControlLoopIntegr "Front body controller: current control loop integration val";
-CM_ BO_ 1801 "Front body controller message: logging0point1 hz";
-CM_ SG_ 1801 VCFRONT_logging0point1HzIndex "Front body controller: logging0point1 hz index";
-CM_ SG_ 1801 VC_hcmlFactoryOfOrigin "Tier 1 supplier (Hella) factory of origin of the left headlamp";
-CM_ SG_ 1801 VC_hcmlHellaPartNumberStatus "Front body controller: hcml hella part number status";
-CM_ SG_ 1801 VC_hcmlHellaPartNumber "Value of the Hella Part Number written into EEPROM in the left headlamp";
-CM_ SG_ 1801 VC_hcmlCurrentBinMappingType "Front body controller: hcml current bin mapping type";
-CM_ SG_ 1801 VC_hcmlCurrentBin0Value "Front body controller: hcml current bin0 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmlCurrentBin1Value "Front body controller: hcml current bin1 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmlCurrentBin2Value "Front body controller: hcml current bin2 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmlCurrentBin3Value "Front body controller: hcml current bin3 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmlCurrentBin4Value "Front body controller: hcml current bin4 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmlCurrentBin5Value "Front body controller: hcml current bin5 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmlRegionAndSide "Left headlamp EEPROM region and side; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrFactoryOfOrigin "Tier 1 supplier (Hella) factory of origin of the right headlamp";
-CM_ SG_ 1801 VC_hcmrHellaPartNumberStatus "Front body controller: hcmr hella part number status";
-CM_ SG_ 1801 VC_hcmrHellaPartNumber "Value of the Hella Part Number written into EEPROM in the right headlamp";
-CM_ SG_ 1801 VC_hcmrCurrentBinMappingType "Front body controller: hcmr current bin mapping type";
-CM_ SG_ 1801 VC_hcmrCurrentBin0Value "Front body controller: hcmr current bin0 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrCurrentBin1Value "Front body controller: hcmr current bin1 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrCurrentBin2Value "Front body controller: hcmr current bin2 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrCurrentBin3Value "Front body controller: hcmr current bin3 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrCurrentBin4Value "Front body controller: hcmr current bin4 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrCurrentBin5Value "Front body controller: hcmr current bin5 value; raw 0 = signal not available (SNA)";
-CM_ SG_ 1801 VC_hcmrRegionAndSide "Right headlamp EEPROM region and side; raw 0 = signal not available (SNA)";
-CM_ BO_ 897 "Front body controller message: logging1 hz";
-CM_ SG_ 897 VCFRONT_logging1HzIndex "Front body controller: logging1 hz index";
-CM_ SG_ 897 VCFRONT_batteryDischArbState "Front body controller: battery disch arb state";
 CM_ BO_ 957 "Front body controller message: parked energy loss";
 CM_ SG_ 957 VCFRONT_energyLossIndex "Front body controller: energy loss index";
 CM_ SG_ 957 VCFRONT_userEnergyLossSinceDrive "Energy loss due to user interaction since last drive";
@@ -1034,263 +352,17 @@ CM_ SG_ 957 VCFRONT_summonStandbyEnergyLossS "Energy loss due to summon standby 
 CM_ SG_ 957 VCFRONT_sentryModeEnergyLossSinc "Energy loss due to sentry mode since last charge";
 CM_ SG_ 957 VCFRONT_backgroundEnergyLossSinc "Energy loss due to background vehicle op since last charge";
 CM_ SG_ 957 VCFRONT_evapDryingEnergyLossSinc "Energy loss due to evap drying since last charge";
-CM_ BO_ 737 "Front body controller message: status";
-CM_ SG_ 737 VCFRONT_statusIndex "Front body controller: status index";
-CM_ SG_ 737 VCFRONT_frunkLatchStatus "Front body controller: frunk latch status; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_wiperSpeed "Front body controller: wiper speed; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_wiperPosition "Wiper position; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_wiperBlocked "Wiper ECU is reporting a block";
-CM_ SG_ 737 VCFRONT_wiperState "Front body controller: wiper state; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_crashDetectedType "Front body controller: crash detected type; raw 2 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_crashState "Front body controller: crash state";
-CM_ SG_ 737 VCFRONT_crashUnlockOverrideSet "Indication that vehicle lock state has been overridden due to a collision.";
-CM_ SG_ 737 VCFRONT_washPumpState "Front body controller: wash pump state; raw 1 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_turnIndicatorControlType "Turn indicator control hardware variant";
-CM_ SG_ 737 VCFRONT_wiperHealth "Health metric to track the power and communication state of the wiper module";
-CM_ SG_ 737 VCFRONT_frunkLatchCurrent "Reports the current used by the frunk latch.";
-CM_ SG_ 737 VCFRONT_frunkInteriorRelSwitch "State of the frunk interior release switch";
-CM_ SG_ 737 VCFRONT_anyClosureOpen "Front body controller: any closure open";
-CM_ SG_ 737 VCFRONT_anyDoorOpen "Front body controller: any door open";
-CM_ SG_ 737 VCFRONT_hornOn "Indication that the horn is on";
-CM_ SG_ 737 VCFRONT_radarHeaterState "Front body controller: radar heater state; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_trunkExteriorWakeSwitch "State of the trunk exterior switch, used for wake only";
-CM_ SG_ 737 VCFRONT_passengerBuckleStatus "State of the passenger's seat belt buckle";
-CM_ SG_ 737 VCFRONT_frunkLatchType "Front body controller: frunk latch type";
-CM_ SG_ 737 VCFRONT_headlampLeftFanStatus "Front body controller: headlamp left fan status";
-CM_ SG_ 737 VCFRONT_headlampRightFanStatus "Front body controller: headlamp right fan status";
-CM_ SG_ 737 VCFRONT_frunkAccessPost "Front body controller: frunk access post";
-CM_ SG_ 737 VCFRONT_isActiveHeatingBattery "Front body controller: is active heating battery";
-CM_ SG_ 737 VCFRONT_iBoosterWakeLine "Front body controller: i booster wake line";
-CM_ SG_ 737 VCFRONT_epasWakeLine "Front body controller: epas wake line";
-CM_ SG_ 737 VCFRONT_iBoosterStateDBG "Front body controller: i booster state DBG";
-CM_ SG_ 737 VCFRONT_vehicleStatusDBG "Vehicle state machine state debug; raw 18 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_timeSpentSleeping "Measures time elapsed while the vehicle has been sleeping.";
-CM_ SG_ 737 VCFRONT_sleepCurrent "Calculated electrical current into the 12V battery during VCFRONT sleep; raw 4095 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_hibernationState "Front body controller: hibernation state";
-CM_ SG_ 737 VCFRONT_wiperECUType "Wiper ECU type detected";
-CM_ SG_ 737 VCFRONT_wiperHeaterState "Indicates the state of the wiper heater; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_occupantCount "Front body controller: occupant count";
-CM_ SG_ 737 VCFRONT_closureEasterEggState "Front body controller: closure easter egg state";
-CM_ SG_ 737 VCFRONT_espWakeLine "Front body controller: esp wake line";
-CM_ SG_ 737 VCFRONT_allowEvapInLowAmbient "Front body controller: allow evap in low ambient";
-CM_ SG_ 737 VCFRONT_potentialRadiatorSteam "Front body controller: potential radiator steam";
-CM_ SG_ 737 VCFRONT_potentialRadiatorSteamUI "Front body controller: potential radiator steam UI";
-CM_ SG_ 737 VCFRONT_hvacReqOffForFasterCharg "Reports if turning Heating, Ventilation, and Air Conditioning (HVAC) off may improve supercharging power.";
-CM_ SG_ 737 VCFRONT_homelinkV2Response0 "Front body controller: homelink V2 response0";
-CM_ SG_ 737 VCFRONT_homelinkV2Response1 "Front body controller: homelink V2 response1";
-CM_ SG_ 737 VCFRONT_homelinkV2Response2 "Front body controller: homelink V2 response2";
-CM_ SG_ 737 VCFRONT_homelinkV2Response3 "Front body controller: homelink V2 response3";
-CM_ SG_ 737 VCFRONT_homelinkV2Response4 "Front body controller: homelink V2 response4";
-CM_ SG_ 737 VCFRONT_homelinkCommStatus "Homelink communication status; raw 0 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_maxEvapHeatRejection "Front body controller: max evap heat rejection";
-CM_ SG_ 737 VCFRONT_minEvapHeatRejection "Front body controller: min evap heat rejection";
-CM_ SG_ 737 VCFRONT_freezeEvapITerm "Front body controller: freeze evap i term";
-CM_ SG_ 737 VCFRONT_isEvapOperationAllowed "Front body controller: is evap operation allowed";
-CM_ SG_ 737 VCFRONT_chillerDemandActive "Front body controller: chiller demand active";
-CM_ SG_ 737 VCFRONT_compPerfRecoveryLimited "Front body controller: comp perf recovery limited";
-CM_ SG_ 737 VCFRONT_hvacModeNotAttainable "Front body controller: hvac mode not attainable";
-CM_ SG_ 737 VCFRONT_hasLowRefrigerant "Front body controller: has low refrigerant";
-CM_ SG_ 737 VCFRONT_isColdStartRunning "Front body controller: is cold start running";
-CM_ SG_ 737 VCFRONT_isHeatPumpOilPurgeActive "Front body controller: is heat pump oil purge active";
-CM_ SG_ 737 VCFRONT_pressureRefrigSuction "Refrigerant system suction pressure; raw 127 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_pressureRefrigDischarge "Refrigerant system discharge pressure; raw 511 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_hvacPerfTestCommand "Front body controller: hvac perf test command";
-CM_ SG_ 737 VCFRONT_coolantFillRoutineStatus "Front body controller: coolant fill routine status";
-CM_ SG_ 737 VCFRONT_refrigFillRoutineStatus "Front body controller: refrig fill routine status";
-CM_ SG_ 737 VCFRONT_isCOP1Running "Front body controller: is COP1 running";
-CM_ SG_ 737 VCFRONT_closeValvesRoutineStatus "Front body controller: close valves routine status";
-CM_ SG_ 737 VCFRONT_thermalPerfTestRunning "Front body controller: thermal perf test running";
-CM_ SG_ 737 VCFRONT_5VARailStable "Front body controller: 5 VA rail stable";
-CM_ SG_ 737 VCFRONT_5VBRailStable "Front body controller: 5 VB rail stable";
-CM_ SG_ 737 VCFRONT_12VARailStable "Front body controller: 12 VA rail stable";
-CM_ SG_ 737 VCFRONT_12VBRailStable "Front body controller: 12 VB rail stable";
-CM_ SG_ 737 VCFRONT_railAState "Front body controller: rail a state";
-CM_ SG_ 737 VCFRONT_railBState "Front body controller: rail b state";
-CM_ SG_ 737 VCFRONT_ChargePumpVoltageStable "Front body controller: charge pump voltage stable";
-CM_ SG_ 737 VCFRONT_PEResetLineState "Front body controller: PE reset line state";
-CM_ SG_ 737 VCFRONT_HSDInitCompleteU13 "Front body controller: HSD init complete U13";
-CM_ SG_ 737 VCFRONT_HSDInitCompleteU16 "Front body controller: HSD init complete U16";
-CM_ SG_ 737 VCFRONT_vbatMonitorVoltage "Front body controller: vbat monitor voltage; raw 4095 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_AS8510Voltage "Front body controller: AS8510 voltage; raw 4095 = signal not available (SNA)";
-CM_ SG_ 737 VCFRONT_vbatProt "Front body controller: vbat prot";
-CM_ SG_ 737 VCFRONT_logVerbosity "Front body controller: log verbosity";
-CM_ SG_ 737 VCFRONT_cabinCoolingCapacityLimi "Front body controller: cabin cooling capacity limited";
-CM_ SG_ 737 VCFRONT_cabinHeatingCapacityLimi "Front body controller: cabin heating capacity limited";
-CM_ SG_ 737 VCFRONT_compPowerSupportingHvac "Front body controller: comp power supporting hvac";
-CM_ SG_ 737 VCFRONT_compPowerSupportingPT "Front body controller: comp power supporting PT";
-CM_ SG_ 737 VCFRONT_maxHeatingPowerLeftCC "Front body controller: max heating power left CC";
-CM_ SG_ 737 VCFRONT_maxHeatingPowerRightCC "Front body controller: max heating power right CC";
-CM_ SG_ 737 VCFRONT_activeLouverOpenPos "The actual position for the active louver";
-CM_ SG_ 737 VCFRONT_activeLouverState "State of the active louver circuit";
-CM_ SG_ 737 VCFRONT_windshieldCameraHeaterPo "Front body controller: windshield camera heater power; raw 63 = signal not available (SNA)";
 CM_ BO_ 507 "Left body controller message: TLC status";
 CM_ SG_ 507 VCLEFT_TLCStatusIndex "Left body controller: TLC status index";
-CM_ SG_ 507 VCLEFT_TLCTemperature "Monitors board temperatures for electrical validation.; raw 128 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCLeftTurnVoltage "Reports voltage for analysis of in field issues.; raw 255 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCRightTurnVoltage "Reports voltage for analysis of in field issues.; raw 255 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCState_LeftTurn "Reports trailer light status.; raw 5 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCState_RightTurn "Reports trailer light status.; raw 5 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCState_Tail "Reports trailer light status.; raw 5 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCState_Stop "Reports trailer light status.; raw 5 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCState_Fog "Reports trailer light status.; raw 5 = signal not available (SNA)";
-CM_ SG_ 507 VCLEFT_TLCState_Reverse "Reports trailer light status.; raw 5 = signal not available (SNA)";
-CM_ BO_ 1802 "Left body controller message: logging0point1 hz";
-CM_ SG_ 1802 VCLEFT_logging0point1HzIndex "Left body controller: logging0point1 hz index";
-CM_ SG_ 1802 VCLEFT_leftBrakeTailLightCurrent "Current sensed by the left brake tail light HSD (high side driver).; raw 511 = signal not available (SNA)";
-CM_ SG_ 1802 VCLEFT_leftBrakeTailLightCu_0001 "State representing validity of the left brake tail light HSD (high side driver) current sense.; raw 0 = signal not available (SNA)";
-CM_ SG_ 1802 VCLEFT_leftRearTurnLightCurrent "Current sensed by the left rear turn signal HSD (high side driver).; raw 511 = signal not available (SNA)";
-CM_ SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "State representing validity of the left rear turn signal HSD (high side driver) current sense.; raw 0 = signal not available (SNA)";
-CM_ BO_ 930 "Left body controller message: status";
-CM_ SG_ 930 VCLEFT_statusIndex "Left body controller: status index";
-CM_ SG_ 930 VCLEFT_securityControllerEnable "Left body controller: security controller enable";
-CM_ SG_ 930 VCLEFT_securityControllerVoltage "Voltage of the VCSEC power feed";
-CM_ SG_ 930 VCLEFT_consoleDoorAssist "Left body controller: console door assist";
-CM_ SG_ 930 VCLEFT_OTAState "Left body controller: OTA state";
-CM_ SG_ 930 VCLEFT_5AVoltage "Left body controller: 5 a voltage";
-CM_ SG_ 930 VCLEFT_vbatProt "Left body controller: vbat prot";
-CM_ SG_ 930 VCLEFT_footwellLightCurrent "Left body controller: footwell light current";
-CM_ SG_ 930 VCLEFT_swcInputVoltage "Input voltage reported by steering wheel controller module; raw 255 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_swcPCBATemperature "Left body controller: swc PCBA temperature; raw 128 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_obdEthernetActive "Left body controller: obd ethernet active";
-CM_ SG_ 930 VCLEFT_rationalityAggregateCurre "Left body controller: rationality aggregate current";
-CM_ SG_ 930 VCLEFT_LVBatteryTypeDBG "Left body controller: LV battery type DBG";
-CM_ SG_ 930 VCLEFT_DIeFuseFault "Left body controller: d ie fuse fault";
-CM_ SG_ 930 VCLEFT_eFuseMgmtVoltageMonitor "Left body controller: e fuse mgmt voltage monitor";
-CM_ SG_ 930 VCLEFT_trailerAuxCurrent "Current Draw of the trailer aux output; raw 4095 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_swcHeatTmp "Temperature of steering wheel heater as reported by NTC; raw 1023 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_swcHeatStatus "Status of steering wheel heater; raw 0 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_swcHeatInhibited "Status describing whether steering wheel heat is inhibited";
-CM_ SG_ 930 VCLEFT_pcbaTemperature "Left body controller: pcba temperature";
-CM_ SG_ 930 VCLEFT_swcHeatPwr "Power of steering wheel heater; raw 511 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_swcHeatDutyCycle "Steering wheel heater duty cycle; raw 127 = signal not available (SNA)";
-CM_ SG_ 930 VCLEFT_DIeFuseCurrent "Left body controller: d ie fuse current";
-CM_ SG_ 930 VCLEFT_SWCpresent "Left body controller: SW cpresent";
-CM_ SG_ 930 VCLEFT_trailerBrakeControllerCur "Value of the trailer brake controller HSD (high side driver) current sense.";
-CM_ BO_ 962 "Left body controller message: switch status";
-CM_ SG_ 962 VCLEFT_switchStatusIndex "Left body controller: switch status index";
-CM_ SG_ 962 VCLEFT_hornSwitchPressed "Left body controller: horn switch pressed";
-CM_ SG_ 962 VCLEFT_hazardButtonPressed "Left body controller: hazard button pressed";
-CM_ SG_ 962 VCLEFT_brakeSwitchPressed "Status of the brake pedal switch";
-CM_ SG_ 962 VCLEFT_rightMirrorTilt "Left body controller: right mirror tilt";
-CM_ SG_ 962 VCLEFT_frontSeatTrackBack "Left body controller: front seat track back; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatTrackForward "Left body controller: front seat track forward; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatTiltDown "Left body controller: front seat tilt down; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatTiltUp "Left body controller: front seat tilt up; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatLiftDown "Left body controller: front seat lift down; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatLiftUp "Left body controller: front seat lift up; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatBackrestBack "Left body controller: front seat backrest back; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatBackrestForward "Left body controller: front seat backrest forward; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatLumbarDown "Left body controller: front seat lumbar down; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatLumbarUp "Left body controller: front seat lumbar up; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatLumbarIn "Left body controller: front seat lumbar in; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontSeatLumbarOut "Left body controller: front seat lumbar out; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackUpLF "Left body controller: btn window sw pack up LF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoUpLF "Left body controller: btn window sw pack auto up LF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackDownLF "Left body controller: btn window sw pack down LF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoDownLF "Left body controller: btn window sw pack auto down LF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackUpLR "Left body controller: btn window sw pack up LR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoUpLR "Left body controller: btn window sw pack auto up LR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackDownLR "Left body controller: btn window sw pack down LR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoDownLR "Left body controller: btn window sw pack auto down LR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackUpRF "Left body controller: btn window sw pack up RF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoUpRF "Left body controller: btn window sw pack auto up RF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackDownRF "Left body controller: btn window sw pack down RF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoDownRF "Left body controller: btn window sw pack auto down RF";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackUpRR "Left body controller: btn window sw pack up RR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoUpRR "Left body controller: btn window sw pack auto up RR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackDownRR "Left body controller: btn window sw pack down RR";
-CM_ SG_ 962 VCLEFT_btnWindowSwPackAutoDownRR "Left body controller: btn window sw pack auto down RR";
-CM_ SG_ 962 VCLEFT_frontBuckleSwitch "Left body controller: front buckle switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_frontOccupancySwitch "Front left seat occupancy status; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_rearLeftBuckleSwitch "Left body controller: rear left buckle switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_rearCenterOccupancySwitch "Left body controller: rear center occupancy switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_rearLeftOccupancySwitch "Left body controller: rear left occupancy switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_rearRightOccupancySwitch "Left body controller: rear right occupancy switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_brakePressed "Status of the brake pedal";
-CM_ SG_ 962 VCLEFT_rearHVACButtonPressed "Left body controller: rear HVAC button pressed";
-CM_ SG_ 962 VCLEFT_rearCenterBuckleSwitch "Left body controller: rear center buckle switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_isAlcoholInterlockSet "Reports if the alcohol interlock is set.";
-CM_ SG_ 962 VCLEFT_swcLeftTiltRight "Left body controller: swc left tilt right; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcLeftPressed "Left body controller: swc left pressed; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcRightTiltLeft "Left body controller: swc right tilt left; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcRightTiltRight "Left body controller: swc right tilt right; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcRightPressed "Left body controller: swc right pressed; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcLeftTiltLeft "Left body controller: swc left tilt left; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcLeftScrollTicks "Left body controller: swc left scroll ticks";
-CM_ SG_ 962 VCLEFT_swcWiperButtonState "Left body controller: swc wiper button state";
-CM_ SG_ 962 VCLEFT_swcRightScrollTicks "Encoder value for right steering wheel switch scroll";
-CM_ SG_ 962 VCLEFT_swcTurnSignalLeftButtonSt "Left body controller: swc turn signal left button state";
-CM_ SG_ 962 VCLEFT_btnWindowUpLR "Left body controller: btn window up LR";
-CM_ SG_ 962 VCLEFT_btnWindowAutoUpLR "Left body controller: btn window auto up LR";
-CM_ SG_ 962 VCLEFT_btnWindowDownLR "Left body controller: btn window down LR";
-CM_ SG_ 962 VCLEFT_btnWindowAutoDownLR "Left body controller: btn window auto down LR";
-CM_ SG_ 962 VCLEFT_2RowSeatLeftFoldFlatSwitc "Second row seat left fold flat switch";
-CM_ SG_ 962 VCLEFT_2RowSeatRightFoldFlatSwit "Second row seat right fold flat switch";
-CM_ SG_ 962 VCLEFT_2RowSeatBothFoldFlatSwitc "Second row seat both fold flat switch";
-CM_ SG_ 962 VCLEFT_swcLeftDoublePress "Left body controller: swc left double press";
-CM_ SG_ 962 VCLEFT_swcRightDoublePress "Left body controller: swc right double press";
-CM_ SG_ 962 VCLEFT_swcTurnSignalRightButtonS "Left body controller: swc turn signal right button state";
-CM_ SG_ 962 VCLEFT_swcHighBeamButtonState "Left body controller: swc high beam button state";
-CM_ SG_ 962 VCLEFT_swcVoiceControlPress "Left body controller: swc voice control press; raw 0 = signal not available (SNA)";
-CM_ SG_ 962 VCLEFT_swcCameraButtonState "Left body controller: swc camera button state";
-CM_ SG_ 962 VCLEFT_swcRightPressedQF "Quality of steering wheel right scroll wheel button signal";
-CM_ SG_ 962 VCLEFT_2RowSeatReclineSwitchpack "State of the left second row powered recline adjustment switchpack";
-CM_ SG_ 962 VCLEFT_frontSeatResistiveOccupan "Front left seat occupancy status; raw 0 = signal not available (SNA)";
-CM_ BO_ 1114 "Right body controller message: AP hvac state10 hz";
-CM_ SG_ 1114 VCRIGHT_AP_hvacState10HzIndex "Right body controller: AP hvac state10 hz index";
-CM_ SG_ 1114 VCRIGHT_AP_autoDefogAvailable "Right body controller: AP auto defog available";
-CM_ SG_ 1114 VCRIGHT_AP_hvacFlashFoggingDetec "Right body controller: AP hvac flash fogging detected";
-CM_ SG_ 1114 VCRIGHT_AP_hvacModelInitStatus "Right body controller: AP hvac model init status";
-CM_ SG_ 1114 VCRIGHT_AP_cabinTempWindshield "Right body controller: AP cabin temp windshield; raw 255 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_cabinTempSideGlassRig "Right body controller: AP cabin temp side glass right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_cabinTempSideGlassLef "Right body controller: AP cabin temp side glass left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_hvacRecircDoorPercent "Right body controller: AP hvac recirc door percent";
-CM_ SG_ 1114 VCRIGHT_AP_hvacAirDistributionMo "Right body controller: AP hvac air distribution mode";
-CM_ SG_ 1114 VCRIGHT_AP_hvacEstimateWindshiel "Right body controller: AP hvac estimate windshield RH";
-CM_ SG_ 1114 VCRIGHT_AP_hvacMassflowTarget "Right body controller: AP hvac massflow target";
-CM_ SG_ 1114 VCRIGHT_AP_tempDuctDefrost "Right body controller: AP temp duct defrost; raw 255 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_cameraFanDutyRequest "Right body controller: AP camera fan duty request; raw 127 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_turnCameraFanOffReaso "Reports the reason for requesting the triple camera fan to turn off.";
-CM_ SG_ 1114 VCRIGHT_AP_cameraTurnOnTime "Reports the time duration requested to run the Autopilot (AP) cameras for defogging purposes.; raw 255 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_solarFluxOnRightWindo "Right body controller: AP solar flux on right window; raw 255 = signal not available (SNA)";
-CM_ SG_ 1114 VCRIGHT_AP_solarFluxOnLeftWindow "Right body controller: AP solar flux on left window; raw 255 = signal not available (SNA)";
-CM_ BO_ 1795 "Right body controller message: debug thermal10 hz";
-CM_ SG_ 1795 VCRIGHT_debugThermal10HzIndex "Right body controller: debug thermal10 hz index";
-CM_ SG_ 1795 VCRIGHT_hvacPanelFloorSplitRow1 "Right body controller: hvac panel floor split row1";
-CM_ SG_ 1795 VCRIGHT_hvacDefrostPercent "Right body controller: hvac defrost percent";
-CM_ SG_ 1795 VCRIGHT_hvacRow2Percent "Right body controller: hvac row2 percent";
-CM_ SG_ 1795 VCRIGHT_hvacPanelFloorSplitRow2 "Right body controller: hvac panel floor split row2";
-CM_ SG_ 1795 VCRIGHT_hvacFreshMassCounter "Right body controller: hvac fresh mass counter";
-CM_ SG_ 1795 VCRIGHT_hvacRecircMassCounter "Right body controller: hvac recirc mass counter";
-CM_ SG_ 1795 VCRIGHT_setTempAdjustmentLeft "Right body controller: set temp adjustment left; raw 127 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_setTempAdjustmentRight "Right body controller: set temp adjustment right; raw 127 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_hvacLHVaneVelocity "Right body controller: hvac LH vane velocity";
-CM_ SG_ 1795 VCRIGHT_hvacRHVaneVelocity "Right body controller: hvac RH vane velocity";
-CM_ SG_ 1795 VCRIGHT_hvacMassflowCompensated "Right body controller: hvac massflow compensated";
-CM_ SG_ 1795 VCRIGHT_PTCcenterPowerLeft "Right body controller: PT ccenter power left; raw 63 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterPowerLeft "Right body controller: PT couter power left; raw 63 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerPowerLeft "Right body controller: PT cinner power left; raw 63 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterPowerRight "Right body controller: PT ccenter power right; raw 63 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterPowerRight "Right body controller: PT couter power right; raw 63 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerPowerRight "Right body controller: PT cinner power right; raw 63 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterStoneTempLeft "Right body controller: PT ccenter stone temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterStoneTempRight "Right body controller: PT ccenter stone temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerStoneTempLeft "Right body controller: PT cinner stone temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerStoneTempRight "Right body controller: PT cinner stone temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterStoneTempLeft "Right body controller: PT couter stone temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterRodTempLeft "Right body controller: PT couter rod temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterAirTempLeft "Right body controller: PT couter air temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterRodTempLeft "Right body controller: PT ccenter rod temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerRodTempLeft "Right body controller: PT cinner rod temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterAirTempLeft "Right body controller: PT ccenter air temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerAirTempLeft "Right body controller: PT cinner air temp left; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterStoneTempRight "Right body controller: PT couter stone temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterRodTempRight "Right body controller: PT couter rod temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCouterAirTempRight "Right body controller: PT couter air temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterRodTempRight "Right body controller: PT ccenter rod temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerRodTempRight "Right body controller: PT cinner rod temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCcenterAirTempRight "Right body controller: PT ccenter air temp right; raw 255 = signal not available (SNA)";
-CM_ SG_ 1795 VCRIGHT_PTCinnerAirTempRight "Right body controller: PT cinner air temp right; raw 255 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCTemperature "Monitors board temperatures for electrical validation; raw 128 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCLeftTurnVoltage "Reports voltage for analysis of in field issues; raw 255 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCRightTurnVoltage "Reports voltage for analysis of in field issues; raw 255 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCState_LeftTurn "Reports trailer light status; raw 5 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCState_RightTurn "Reports trailer light status; raw 5 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCState_Tail "Reports trailer light status; raw 5 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCState_Stop "Reports trailer light status; raw 5 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCState_Fog "Reports trailer light status; raw 5 = signal not available (SNA)";
+CM_ SG_ 507 VCLEFT_TLCState_Reverse "Reports trailer light status; raw 5 = signal not available (SNA)";
 CM_ BO_ 291 "Right body controller message: door status2";
 CM_ SG_ 291 VCRIGHT_doorStatus2Index "Right body controller: door status2 index";
 CM_ SG_ 291 VCRIGHT_frontLatchRelDuty "Front left door latch motor duty cycle.";
@@ -1300,59 +372,6 @@ CM_ SG_ 291 VCRIGHT_doorLatchAjarSwitch_0001 "Door latch switch voltage feeding 
 CM_ SG_ 291 VCRIGHT_BPillarCameraHeaterCurre "Current drawn by the right b-pillar camera heater; raw 63 = signal not available (SNA)";
 CM_ SG_ 291 VCRIGHT_mirrorTiltXOffset "Communicates post calibration position offset of right side view mirror tilt horizontal position";
 CM_ SG_ 291 VCRIGHT_mirrorTiltYOffset "Communicates post calibration position offset of right side view mirror tilt vertical position";
-CM_ BO_ 739 "Right body controller message: seat status2";
-CM_ SG_ 739 VCRIGHT_seatStatus2Index "Right body controller: seat status2 index";
-CM_ SG_ 739 VCRIGHT_frontSeatHeatCurrent "Right body controller: front seat heat current; raw 12 = signal not available (SNA)";
-CM_ SG_ 739 VCRIGHT_frontSeatHeatDuty "Right body controller: front seat heat duty";
-CM_ SG_ 739 VCRIGHT_frontSeatHeatTmp "Right body controller: front seat heat tmp";
-CM_ SG_ 739 VCRIGHT_frontSeatHeatTmpTarget "Target temperature for front right seat heater";
-CM_ SG_ 739 VCRIGHT_frontSeatHeatInhibited "Front right seat heater duty cycle";
-CM_ SG_ 739 VCRIGHT_frontSeatHeatPowered "Right body controller: front seat heat powered";
-CM_ SG_ 739 VCRIGHT_rearLSeatHeatCurrent "Current drawn by rear center seat heater";
-CM_ SG_ 739 VCRIGHT_rearLSeatHeatDuty "Right body controller: rear l seat heat duty";
-CM_ SG_ 739 VCRIGHT_rearLSeatHeatTmp "Right body controller: rear l seat heat tmp";
-CM_ SG_ 739 VCRIGHT_rearLSeatHeatTmpTarget "Right body controller: rear l seat heat tmp target";
-CM_ SG_ 739 VCRIGHT_rearLSeatHeatInhibited "Right body controller: rear l seat heat inhibited";
-CM_ SG_ 739 VCRIGHT_rearLSeatHeatPowered "Right body controller: rear l seat heat powered";
-CM_ SG_ 739 VCRIGHT_rearCSeatHeatCurrent "Right body controller: rear c seat heat current";
-CM_ SG_ 739 VCRIGHT_rearCSeatHeatDuty "Right body controller: rear c seat heat duty";
-CM_ SG_ 739 VCRIGHT_rearCSeatHeatTmp "Right body controller: rear c seat heat tmp";
-CM_ SG_ 739 VCRIGHT_rearCSeatHeatTmpTarget "Right body controller: rear c seat heat tmp target";
-CM_ SG_ 739 VCRIGHT_rearCSeatHeatInhibited "Right body controller: rear c seat heat inhibited";
-CM_ SG_ 739 VCRIGHT_rearCSeatHeatPowered "Right body controller: rear c seat heat powered";
-CM_ SG_ 739 VCRIGHT_rearRSeatHeatCurrent "Right body controller: rear r seat heat current";
-CM_ SG_ 739 VCRIGHT_rearRSeatHeatDuty "Right body controller: rear r seat heat duty";
-CM_ SG_ 739 VCRIGHT_rearRSeatHeatTmp "Right body controller: rear r seat heat tmp";
-CM_ SG_ 739 VCRIGHT_rearRSeatHeatTmpTarget "Right body controller: rear r seat heat tmp target";
-CM_ SG_ 739 VCRIGHT_rearRSeatHeatInhibited "Right body controller: rear r seat heat inhibited";
-CM_ SG_ 739 VCRIGHT_rearRSeatHeatPowered "Right body controller: rear r seat heat powered";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineState "Reports the active state of the 2nd row seat recliner; raw 15 = signal not available (SNA)";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineDuty "Reports the 2nd row seat recliner motor duty cycle";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineCurrent "Reports the 2nd row seat recliner motor current";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineCalibrate "Reports calibration status of the 2nd row seat recliner";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclinePositionR "Reports the 2nd row seat recliner raw encoder count";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineAngle "Reports the position of the 2nd row seat recliner in degrees";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineAbsPosSwi "Reports the status of 2nd row seat recline absolute position (comfort zone) switch; raw 0 = signal not available (SNA)";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclinePositionS "Reports the active position state of the 2nd row seat recliner; raw 4 = signal not available (SNA)";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineAdjustmen "Indicates whether adjustment requests are currently permitted for the rear seat recliner";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineFoldAllow "Indicates whether auto-fold requests are currently permitted for the rear seat recliner";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineUnfoldAll "Indicates whether auto-unfold requests are currently permitted for the rear seat recliner";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineNextToggl "Right body controller: 2 row seat recline next toggle direction; raw 2 = signal not available (SNA)";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineChoreoBlo "Right body controller: 2 row seat recline choreo blocked by occupancy";
-CM_ SG_ 739 VCRIGHT_2RowSeat1RClashAvoidance "Right body controller: 2 row seat1 r clash avoidance blocked reason";
-CM_ SG_ 739 VCRIGHT_2RowSeat1RClashAvoi_0001 "Right body controller: 2 row seat1 r clash avoidance state";
-CM_ SG_ 739 VCRIGHT_2RowSeatReclineAbsP_0001 "Right body controller: 2 row seat recline abs pos switch trans point";
-CM_ BO_ 835 "Right body controller message: status";
-CM_ SG_ 835 VCRIGHT_LVBatteryTypeDBG "Right body controller: LV battery type DBG";
-CM_ SG_ 835 VCRIGHT_rearDefrostState "Right body controller: rear defrost state; raw 0 = signal not available (SNA)";
-CM_ SG_ 835 VCRIGHT_mirrorHeatState "Right body controller: mirror heat state; raw 0 = signal not available (SNA)";
-CM_ SG_ 835 VCRIGHT_OTAState "Right body controller: OTA state";
-CM_ SG_ 835 VCRIGHT_5AVoltage "Right body controller: 5 a voltage";
-CM_ SG_ 835 VCRIGHT_vbatProt "Input voltage monitor to controller";
-CM_ SG_ 835 VCRIGHT_rationalityAggregateCurr "Right body controller: rationality aggregate current";
-CM_ SG_ 835 VCRIGHT_eFuseMgmtVoltageMonitor "Right body controller: e fuse mgmt voltage monitor";
-CM_ SG_ 835 VCRIGHT_isSteeringWheelHeaterReq "Right body controller: is steering wheel heater req";
-CM_ SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "Right body controller: steering wheel heater DC tgt; raw 127 = signal not available (SNA)";
 CM_ BO_ 899 "Right body controller message: ths status";
 CM_ SG_ 899 VCRIGHT_thsActive "Right body controller: ths active";
 CM_ SG_ 899 VCRIGHT_thsTemperature "Tesla HVAC sensor temperature; raw 255 = signal not available (SNA)";
@@ -1361,8 +380,8 @@ CM_ SG_ 899 VCRIGHT_thsLINCurrentSchedule "Right body controller: ths LIN curren
 CM_ SG_ 899 VCRIGHT_thsDetected "Tesla HVAC sensor connection is detected";
 CM_ SG_ 899 VCRIGHT_thsHumidity "Tesla HVAC sensor humidity; raw 127 = signal not available (SNA)";
 CM_ SG_ 899 VCRIGHT_estimatedVehicleSituatio "Right body controller: estimated vehicle situation";
-CM_ SG_ 899 VCRIGHT_thsSolarLoadInfrared "Solar power hitting the vehicle in the infrared spectrum.; raw 1023 = signal not available (SNA)";
-CM_ SG_ 899 VCRIGHT_thsSolarLoadVisible "Solar power hitting the vehicle in the visible spectrum.; raw 1023 = signal not available (SNA)";
+CM_ SG_ 899 VCRIGHT_thsSolarLoadInfrared "Solar power hitting the vehicle in the infrared spectrum; raw 1023 = signal not available (SNA)";
+CM_ SG_ 899 VCRIGHT_thsSolarLoadVisible "Solar power hitting the vehicle in the visible spectrum; raw 1023 = signal not available (SNA)";
 CM_ SG_ 899 VCRIGHT_estimatedThsSolarLoad "Right body controller: estimated ths solar load; raw 1023 = signal not available (SNA)";
 CM_ SG_ 899 VCRIGHT_hvacFastLoggingEnabled "Right body controller: hvac fast logging enabled";
 CM_ BO_ 1066 "Vehicle security controller message: TPMS connection data";
@@ -1430,10 +449,7 @@ BA_ "Baudrate" 500000;
 BA_ "Manufacturer" "Tesla";
 BA_ "FirmwareVersion" "2025.20.8";
 BA_ "VehicleModel" "Model Y";
-BA_ "ECU" BU_ BMS "BMS";
-BA_ "ECU" BU_ CP "CP";
 BA_ "ECU" BU_ DAS "DAS";
-BA_ "ECU" BU_ DIF "DIF";
 BA_ "ECU" BU_ GTW "GTW";
 BA_ "ECU" BU_ HVP "HVP";
 BA_ "ECU" BU_ ICR "ICR";
@@ -1443,24 +459,9 @@ BA_ "ECU" BU_ VCFRONT "VCFRONT";
 BA_ "ECU" BU_ VCLEFT "VCLEFT";
 BA_ "ECU" BU_ VCRIGHT "VCRIGHT";
 BA_ "ECU" BU_ VCSEC "VCSEC";
-BA_ "GenMsgCycleTime" BO_ 1138 1000;
-BA_ "GenMsgSendType" BO_ 1138 0;
-BA_ "VFrameFormat" BO_ 1138 0;
-BA_ "GenMsgCycleTime" BO_ 658 100;
-BA_ "GenMsgSendType" BO_ 658 0;
-BA_ "VFrameFormat" BO_ 658 0;
-BA_ "GenMsgCycleTime" BO_ 669 100;
-BA_ "GenMsgSendType" BO_ 669 0;
-BA_ "VFrameFormat" BO_ 669 0;
-BA_ "GenMsgCycleTime" BO_ 541 100;
-BA_ "GenMsgSendType" BO_ 541 0;
-BA_ "VFrameFormat" BO_ 541 0;
 BA_ "GenMsgCycleTime" BO_ 1001 500;
 BA_ "GenMsgSendType" BO_ 1001 0;
 BA_ "VFrameFormat" BO_ 1001 0;
-BA_ "GenMsgCycleTime" BO_ 634 100;
-BA_ "GenMsgSendType" BO_ 634 0;
-BA_ "VFrameFormat" BO_ 634 0;
 BA_ "GenMsgCycleTime" BO_ 784 10000;
 BA_ "GenMsgSendType" BO_ 784 0;
 BA_ "VFrameFormat" BO_ 784 0;
@@ -1473,63 +474,18 @@ BA_ "VFrameFormat" BO_ 964 0;
 BA_ "GenMsgCycleTime" BO_ 816 1000;
 BA_ "GenMsgSendType" BO_ 816 0;
 BA_ "VFrameFormat" BO_ 816 0;
-BA_ "GenMsgCycleTime" BO_ 1657 500;
-BA_ "GenMsgSendType" BO_ 1657 0;
-BA_ "VFrameFormat" BO_ 1657 0;
-BA_ "GenMsgCycleTime" BO_ 819 500;
-BA_ "GenMsgSendType" BO_ 819 0;
-BA_ "VFrameFormat" BO_ 819 0;
-BA_ "GenMsgCycleTime" BO_ 991 500;
-BA_ "GenMsgSendType" BO_ 991 0;
-BA_ "VFrameFormat" BO_ 991 0;
 BA_ "GenMsgCycleTime" BO_ 663 500;
 BA_ "GenMsgSendType" BO_ 663 0;
 BA_ "VFrameFormat" BO_ 663 0;
-BA_ "GenMsgCycleTime" BO_ 947 500;
-BA_ "GenMsgSendType" BO_ 947 0;
-BA_ "VFrameFormat" BO_ 947 0;
-BA_ "GenMsgCycleTime" BO_ 609 16;
-BA_ "GenMsgSendType" BO_ 609 0;
-BA_ "VFrameFormat" BO_ 609 0;
-BA_ "GenMsgCycleTime" BO_ 1801 322;
-BA_ "GenMsgSendType" BO_ 1801 0;
-BA_ "VFrameFormat" BO_ 1801 0;
-BA_ "GenMsgCycleTime" BO_ 897 38;
-BA_ "GenMsgSendType" BO_ 897 0;
-BA_ "VFrameFormat" BO_ 897 0;
 BA_ "GenMsgCycleTime" BO_ 957 1000;
 BA_ "GenMsgSendType" BO_ 957 0;
 BA_ "VFrameFormat" BO_ 957 0;
-BA_ "GenMsgCycleTime" BO_ 737 14;
-BA_ "GenMsgSendType" BO_ 737 0;
-BA_ "VFrameFormat" BO_ 737 0;
 BA_ "GenMsgCycleTime" BO_ 507 50;
 BA_ "GenMsgSendType" BO_ 507 0;
 BA_ "VFrameFormat" BO_ 507 0;
-BA_ "GenMsgCycleTime" BO_ 1802 10000;
-BA_ "GenMsgSendType" BO_ 1802 0;
-BA_ "VFrameFormat" BO_ 1802 0;
-BA_ "GenMsgCycleTime" BO_ 930 33;
-BA_ "GenMsgSendType" BO_ 930 0;
-BA_ "VFrameFormat" BO_ 930 0;
-BA_ "GenMsgCycleTime" BO_ 962 50;
-BA_ "GenMsgSendType" BO_ 962 0;
-BA_ "VFrameFormat" BO_ 962 0;
-BA_ "GenMsgCycleTime" BO_ 1114 50;
-BA_ "GenMsgSendType" BO_ 1114 0;
-BA_ "VFrameFormat" BO_ 1114 0;
-BA_ "GenMsgCycleTime" BO_ 1795 10;
-BA_ "GenMsgSendType" BO_ 1795 0;
-BA_ "VFrameFormat" BO_ 1795 0;
 BA_ "GenMsgCycleTime" BO_ 291 100;
 BA_ "GenMsgSendType" BO_ 291 0;
 BA_ "VFrameFormat" BO_ 291 0;
-BA_ "GenMsgCycleTime" BO_ 739 200;
-BA_ "GenMsgSendType" BO_ 739 0;
-BA_ "VFrameFormat" BO_ 739 0;
-BA_ "GenMsgCycleTime" BO_ 835 100;
-BA_ "GenMsgSendType" BO_ 835 0;
-BA_ "VFrameFormat" BO_ 835 0;
 BA_ "GenMsgCycleTime" BO_ 899 100;
 BA_ "GenMsgSendType" BO_ 899 0;
 BA_ "VFrameFormat" BO_ 899 0;
@@ -1539,37 +495,6 @@ BA_ "VFrameFormat" BO_ 1066 0;
 BA_ "GenMsgCycleTime" BO_ 1824 10000;
 BA_ "GenMsgSendType" BO_ 1824 0;
 BA_ "VFrameFormat" BO_ 1824 0;
-BA_ "Confidence" SG_ 1138 BMS_voltageRegCurrentTarget 1;
-BA_ "Confidence" SG_ 1138 BMS_vehicleChargeDcCurrentLimit 1;
-BA_ "Confidence" SG_ 1138 BMS_chargeCurrentLimitMode 1;
-BA_ "Confidence" SG_ 1138 BMS_timeToFinishHeatForCharge 1;
-BA_ "GenSigSNA" SG_ 1138 BMS_timeToFinishHeatForCharge "127";
-BA_ "Confidence" SG_ 658 BMS_userChargeCurrentLimitMode 1;
-BA_ "Confidence" SG_ 669 CP_evseOutputDcCurrent 0;
-BA_ "Confidence" SG_ 669 CP_evseOutputDcVoltage 0;
-BA_ "Confidence" SG_ 669 CP_evseOutputDcCurrentStale 0;
-BA_ "Confidence" SG_ 541 CP_evseAccept 0;
-BA_ "Confidence" SG_ 541 CP_evseRequest 0;
-BA_ "Confidence" SG_ 541 CP_proximity 0;
-BA_ "GenSigSNA" SG_ 541 CP_proximity "0";
-BA_ "Confidence" SG_ 541 CP_pilot 0;
-BA_ "GenSigSNA" SG_ 541 CP_pilot "7";
-BA_ "Confidence" SG_ 541 CP_digitalCommsEstablished 0;
-BA_ "Confidence" SG_ 541 CP_pilotCurrent 0;
-BA_ "Confidence" SG_ 541 CP_cableType 0;
-BA_ "GenSigSNA" SG_ 541 CP_cableType "4";
-BA_ "Confidence" SG_ 541 CP_iecPilotState 0;
-BA_ "GenSigSNA" SG_ 541 CP_iecPilotState "9";
-BA_ "Confidence" SG_ 541 CP_plcSupported 0;
-BA_ "Confidence" SG_ 541 CP_cableCurrentLimit 0;
-BA_ "Confidence" SG_ 541 CP_teslaSwcanState 0;
-BA_ "Confidence" SG_ 541 CP_evseChargeType_UI 0;
-BA_ "Confidence" SG_ 541 CP_gbState 0;
-BA_ "Confidence" SG_ 541 CP_gbdcStopChargeReason 0;
-BA_ "Confidence" SG_ 541 CP_gbdcFailureReason 0;
-BA_ "Confidence" SG_ 541 CP_gbdcChargeAttempts 0;
-BA_ "Confidence" SG_ 541 CP_acChargeState 0;
-BA_ "Confidence" SG_ 541 CP_teslaDcState 1;
 BA_ "Confidence" SG_ 1001 DAS_headlightRequest 0;
 BA_ "Confidence" SG_ 1001 DAS_hazardLightRequest 0;
 BA_ "GenSigSNA" SG_ 1001 DAS_hazardLightRequest "3";
@@ -1603,21 +528,6 @@ BA_ "Confidence" SG_ 1001 DAS_restrictDoorReleaseLeft 0;
 BA_ "Confidence" SG_ 1001 DAS_restrictDoorReleaseRight 0;
 BA_ "Confidence" SG_ 1001 DAS_bodyControlsCounter 0;
 BA_ "Confidence" SG_ 1001 DAS_bodyControlsChecksum 0;
-BA_ "Confidence" SG_ 634 DIF_hvStatusChecksum 0;
-BA_ "Confidence" SG_ 634 DIF_hvStatusCounter 0;
-BA_ "Confidence" SG_ 634 DIF_hvilCurrent 0;
-BA_ "Confidence" SG_ 634 DIF_hvilCmVoltage 0;
-BA_ "Confidence" SG_ 634 DIF_hvilStatus 0;
-BA_ "GenSigSNA" SG_ 634 DIF_hvilStatus "3";
-BA_ "Confidence" SG_ 634 DIF_hvilSupplyState 0;
-BA_ "Confidence" SG_ 634 DIF_activeDischargeCtrl 0;
-BA_ "Confidence" SG_ 634 DIF_activeDischargeStatus 0;
-BA_ "Confidence" SG_ 634 DIF_vBat 0;
-BA_ "Confidence" SG_ 634 DIF_vBatQF 0;
-BA_ "Confidence" SG_ 634 DIF_powerStageSafeState 0;
-BA_ "Confidence" SG_ 634 DIF_fluxState 0;
-BA_ "Confidence" SG_ 634 DIF_vBusDiag 0;
-BA_ "Confidence" SG_ 634 DIF_gateDriveState 0;
 BA_ "Confidence" SG_ 784 HVP_infoIndex 1;
 BA_ "Confidence" SG_ 784 HVP_buildType 0;
 BA_ "Confidence" SG_ 784 HVP_buildConfigId 0;
@@ -1676,168 +586,9 @@ BA_ "Confidence" SG_ 816 SCCM_infoAppSvnHash 0;
 BA_ "Confidence" SG_ 816 SCCM_infoBootSvnHash 0;
 BA_ "Confidence" SG_ 816 SCCM_infoUdsProtoVersion 0;
 BA_ "Confidence" SG_ 816 SCCM_infoBootCrc 0;
-BA_ "Confidence" SG_ 1657 UI_rgbEnableState 0;
-BA_ "Confidence" SG_ 1657 UI_rgbEffectType 0;
-BA_ "Confidence" SG_ 1657 UI_rgbBrightnessLevel 0;
-BA_ "GenSigSNA" SG_ 1657 UI_rgbBrightnessLevel "127";
-BA_ "Confidence" SG_ 1657 UI_rgbTargetDOORFL 0;
-BA_ "Confidence" SG_ 1657 UI_rgbTargetDOORFR 0;
-BA_ "Confidence" SG_ 1657 UI_rgbTargetDOORRL 0;
-BA_ "Confidence" SG_ 1657 UI_rgbTargetDOORRR 0;
-BA_ "Confidence" SG_ 1657 UI_rgbTargetIPFL 0;
-BA_ "Confidence" SG_ 1657 UI_rgbTargetIPFR 0;
-BA_ "Confidence" SG_ 819 UI_openChargePortDoorRequest 0;
-BA_ "Confidence" SG_ 819 UI_closeChargePortDoorRequest 0;
-BA_ "Confidence" SG_ 819 UI_chargeEnableRequest 0;
-BA_ "Confidence" SG_ 819 UI_acChargeCurrentLimit 0;
-BA_ "GenSigSNA" SG_ 819 UI_acChargeCurrentLimit "127";
-BA_ "Confidence" SG_ 819 UI_chargeTerminationPct 0;
-BA_ "Confidence" SG_ 819 UI_scheduledDepartureEnabled 0;
-BA_ "Confidence" SG_ 819 UI_chargePortLatchRequest 0;
-BA_ "Confidence" SG_ 819 UI_cpInletHeaterRequest 0;
-BA_ "Confidence" SG_ 991 UI_userActivity 0;
-BA_ "Confidence" SG_ 991 UI_activeTouchPoints 0;
-BA_ "Confidence" SG_ 991 UI_linkState 0;
-BA_ "Confidence" SG_ 991 UI_autopilotSentryRequest 0;
-BA_ "Confidence" SG_ 991 UI_mobileAppConnected 0;
-BA_ "Confidence" SG_ 991 UI_autoshiftDRState 0;
-BA_ "Confidence" SG_ 991 UI_wifiBtModuleType 0;
-BA_ "Confidence" SG_ 991 UI_selfParkState 0;
-BA_ "GenSigSNA" SG_ 991 UI_selfParkState "255";
-BA_ "Confidence" SG_ 991 UI_summonDeviceIndex 0;
 BA_ "Confidence" SG_ 663 UI_adaptiveRideRequest 0;
 BA_ "Confidence" SG_ 663 UI_geofenceLevelingRequest 0;
 BA_ "GenSigSNA" SG_ 663 UI_geofenceLevelingRequest "5";
-BA_ "Confidence" SG_ 947 UI_gloveboxRequest 0;
-BA_ "Confidence" SG_ 947 UI_trunkRequest 0;
-BA_ "Confidence" SG_ 947 UI_PINToDriveEnabled 0;
-BA_ "Confidence" SG_ 947 UI_PINToDrivePassed 0;
-BA_ "Confidence" SG_ 947 UI_disableMirrorAutoDim 0;
-BA_ "Confidence" SG_ 947 UI_lightSwitch 0;
-BA_ "GenSigSNA" SG_ 947 UI_lightSwitch "4";
-BA_ "Confidence" SG_ 947 UI_readyToAddKey 0;
-BA_ "Confidence" SG_ 947 UI_alarmTriggerRequest 0;
-BA_ "Confidence" SG_ 947 UI_displayOnForUser 0;
-BA_ "Confidence" SG_ 947 UI_BLEPushNotificationRequest 0;
-BA_ "Confidence" SG_ 947 UI_keepAutopilotAwake 0;
-BA_ "Confidence" SG_ 947 UI_batteryPreconditioningRequest 0;
-BA_ "Confidence" SG_ 947 UI_autopilotPowerStateRequest 0;
-BA_ "Confidence" SG_ 947 UI_autoRollWindowsOnLockEnable 0;
-BA_ "Confidence" SG_ 947 UI_steeringWheelHeatReq 0;
-BA_ "Confidence" SG_ 947 UI_disableHorn 0;
-BA_ "Confidence" SG_ 947 UI_frontLeftSeatFanReq 0;
-BA_ "Confidence" SG_ 947 UI_frontRightSeatAutoClimateReq 0;
-BA_ "Confidence" SG_ 947 UI_frontRightSeatFanReq 0;
-BA_ "Confidence" SG_ 947 UI_frontLeftSeatAutoClimateReq 0;
-BA_ "Confidence" SG_ 947 UI_wiperHeaterReq 0;
-BA_ "Confidence" SG_ 947 UI_silentAlarm 0;
-BA_ "Confidence" SG_ 609 VCFRONT_12VBatteryStatusIndex 1;
-BA_ "Confidence" SG_ 609 VCFRONT_good12VforUpdate 0;
-BA_ "Confidence" SG_ 609 VCFRONT_LVLoadRequest 0;
-BA_ "Confidence" SG_ 609 VCFRONT_12VBatteryStatusCounter 0;
-BA_ "Confidence" SG_ 609 VCFRONT_12VBatteryStatusChecksum 0;
-BA_ "Confidence" SG_ 609 VCFRONT_batterySupportRequest 0;
-BA_ "Confidence" SG_ 609 VCFRONT_batterySMState 0;
-BA_ "Confidence" SG_ 609 VCFRONT_eFuseRecoveryStateDBG 0;
-BA_ "Confidence" SG_ 609 VCFRONT_batteryLINScheduleDBG 0;
-BA_ "GenSigSNA" SG_ 609 VCFRONT_batteryLINScheduleDBG "7";
-BA_ "Confidence" SG_ 609 VCFRONT_resistanceEstimationTest 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_resistanceEstimationTest "VCFRONT_resistanceEstimationTestCounter";
-BA_ "Confidence" SG_ 609 VCFRONT_IBSCurrent 0;
-BA_ "Confidence" SG_ 609 VCFRONT_IBSVoltage 0;
-BA_ "GenSigSNA" SG_ 609 VCFRONT_IBSVoltage "4095";
-BA_ "Confidence" SG_ 609 VCFRONT_reverseBatteryFault 0;
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatterySupported 0;
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatteryCannotSupportVe 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBatteryCannotSupportVe "VCFRONT_LVBatteryCannotSupportVehicle";
-BA_ "Confidence" SG_ 609 VCFRONT_goodTemp12VforUpdate 0;
-BA_ "Confidence" SG_ 609 VCFRONT_12VBatteryTargetVoltage 0;
-BA_ "Confidence" SG_ 609 VCFRONT_IBSTemperature 0;
-BA_ "GenSigSNA" SG_ 609 VCFRONT_IBSTemperature "2047";
-BA_ "Confidence" SG_ 609 VCFRONT_currentSensorMismatchLea 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_currentSensorMismatchLea "VCFRONT_currentSensorMismatchLeakyBktPctDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatteryEnergyRemaining 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBatteryEnergyRemaining "VCFRONT_LVBatteryEnergyRemainingPCT";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatteryStatusForDrive 0;
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatteryType 0;
-BA_ "Confidence" SG_ 609 VCFRONT_resistanceEstimationNeed 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_resistanceEstimationNeed "VCFRONT_resistanceEstimationNeeded";
-BA_ "Confidence" SG_ 609 VCFRONT_IBSVoltageFiltered 0;
-BA_ "GenSigSNA" SG_ 609 VCFRONT_IBSVoltageFiltered "16383";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBMS_LVBusVoltageSource 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBMS_LVBusVoltageSource "VCFRONT_LVBMS_LVBusVoltageSourceDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBMS_LVPackCurrentSourc 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBMS_LVPackCurrentSourc "VCFRONT_LVBMS_LVPackCurrentSourceDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatterySupportRqrdTrig 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBatterySupportRqrdTrig "VCFRONT_LVBatterySupportRqrdTrigger";
-BA_ "Confidence" SG_ 609 VCFRONT_goodForPCSPowerCycleLeak 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_goodForPCSPowerCycleLeak "VCFRONT_goodForPCSPowerCycleLeakyBktDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBusControlsFutile 0;
-BA_ "Confidence" SG_ 609 VCFRONT_resistanceEstimatio_0001 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_resistanceEstimatio_0001 "VCFRONT_resistanceEstimationTestValid";
-BA_ "Confidence" SG_ 609 VCFRONT_resistanceEstimatio_0002 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_resistanceEstimatio_0002 "VCFRONT_resistanceEstimationTestsExpended";
-BA_ "Confidence" SG_ 609 VCFRONT_goodLVChargeForUpdate 0;
-BA_ "Confidence" SG_ 609 VCFRONT_opportunisticDCRTestNeed 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_opportunisticDCRTestNeed "VCFRONT_opportunisticDCRTestNeeded";
-BA_ "Confidence" SG_ 609 VCFRONT_voltageProfile 0;
-BA_ "Confidence" SG_ 609 VCFRONT_IBSAmpHours 0;
-BA_ "Confidence" SG_ 609 VCFRONT_IBSVoltageRawDBG 0;
-BA_ "GenSigSNA" SG_ 609 VCFRONT_IBSVoltageRawDBG "16383";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatteryLINCommsDetecte 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBatteryLINCommsDetecte "VCFRONT_LVBatteryLINCommsDetectedDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_voltageSensorMismatchLea 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_voltageSensorMismatchLea "VCFRONT_voltageSensorMismatchLeakyBktPctDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatteryFctryLimOverrid 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBatteryFctryLimOverrid "VCFRONT_LVBatteryFctryLimOverrideOk";
-BA_ "Confidence" SG_ 609 VCFRONT_LVBatterySPICommsDetecte 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_LVBatterySPICommsDetecte "VCFRONT_LVBatterySPICommsDetectedDBG";
-BA_ "Confidence" SG_ 609 VCFRONT_targetCurrent 0;
-BA_ "Confidence" SG_ 609 VCFRONT_PCSMia 0;
-BA_ "Confidence" SG_ 609 VCFRONT_chargeNeeded 0;
-BA_ "Confidence" SG_ 609 VCFRONT_voltageControlLoopIntegr 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_voltageControlLoopIntegr "VCFRONT_voltageControlLoopIntegrationVal";
-BA_ "Confidence" SG_ 609 VCFRONT_currentControlLoopIntegr 0;
-BA_ "SystemSignalLongSymbol" SG_ 609 VCFRONT_currentControlLoopIntegr "VCFRONT_currentControlLoopIntegrationVal";
-BA_ "Confidence" SG_ 1801 VCFRONT_logging0point1HzIndex 1;
-BA_ "Confidence" SG_ 1801 VC_hcmlFactoryOfOrigin 1;
-BA_ "Confidence" SG_ 1801 VC_hcmlHellaPartNumberStatus 1;
-BA_ "Confidence" SG_ 1801 VC_hcmlHellaPartNumber 1;
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBinMappingType 1;
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBin0Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlCurrentBin0Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBin1Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlCurrentBin1Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBin2Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlCurrentBin2Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBin3Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlCurrentBin3Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBin4Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlCurrentBin4Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmlCurrentBin5Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlCurrentBin5Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmlRegionAndSide 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmlRegionAndSide "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrFactoryOfOrigin 1;
-BA_ "Confidence" SG_ 1801 VC_hcmrHellaPartNumberStatus 1;
-BA_ "Confidence" SG_ 1801 VC_hcmrHellaPartNumber 1;
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBinMappingType 1;
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBin0Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrCurrentBin0Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBin1Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrCurrentBin1Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBin2Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrCurrentBin2Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBin3Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrCurrentBin3Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBin4Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrCurrentBin4Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrCurrentBin5Value 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrCurrentBin5Value "0";
-BA_ "Confidence" SG_ 1801 VC_hcmrRegionAndSide 1;
-BA_ "GenSigSNA" SG_ 1801 VC_hcmrRegionAndSide "0";
-BA_ "Confidence" SG_ 897 VCFRONT_logging1HzIndex 1;
-BA_ "Confidence" SG_ 897 VCFRONT_batteryDischArbState 1;
 BA_ "Confidence" SG_ 957 VCFRONT_energyLossIndex 1;
 BA_ "Confidence" SG_ 957 VCFRONT_userEnergyLossSinceDrive 0;
 BA_ "Confidence" SG_ 957 VCFRONT_preconditioningEner_0001 0;
@@ -1870,114 +621,6 @@ BA_ "Confidence" SG_ 957 VCFRONT_backgroundEnergyLossSinc 0;
 BA_ "SystemSignalLongSymbol" SG_ 957 VCFRONT_backgroundEnergyLossSinc "VCFRONT_backgroundEnergyLossSinceCharge";
 BA_ "Confidence" SG_ 957 VCFRONT_evapDryingEnergyLossSinc 0;
 BA_ "SystemSignalLongSymbol" SG_ 957 VCFRONT_evapDryingEnergyLossSinc "VCFRONT_evapDryingEnergyLossSinceCharge";
-BA_ "Confidence" SG_ 737 VCFRONT_statusIndex 1;
-BA_ "Confidence" SG_ 737 VCFRONT_frunkLatchStatus 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_frunkLatchStatus "0";
-BA_ "Confidence" SG_ 737 VCFRONT_wiperSpeed 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_wiperSpeed "0";
-BA_ "Confidence" SG_ 737 VCFRONT_wiperPosition 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_wiperPosition "0";
-BA_ "Confidence" SG_ 737 VCFRONT_wiperBlocked 0;
-BA_ "Confidence" SG_ 737 VCFRONT_wiperState 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_wiperState "0";
-BA_ "Confidence" SG_ 737 VCFRONT_crashDetectedType 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_crashDetectedType "2";
-BA_ "Confidence" SG_ 737 VCFRONT_crashState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_crashUnlockOverrideSet 0;
-BA_ "Confidence" SG_ 737 VCFRONT_washPumpState 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_washPumpState "1";
-BA_ "Confidence" SG_ 737 VCFRONT_turnIndicatorControlType 0;
-BA_ "Confidence" SG_ 737 VCFRONT_wiperHealth 0;
-BA_ "Confidence" SG_ 737 VCFRONT_frunkLatchCurrent 0;
-BA_ "Confidence" SG_ 737 VCFRONT_frunkInteriorRelSwitch 0;
-BA_ "Confidence" SG_ 737 VCFRONT_anyClosureOpen 0;
-BA_ "Confidence" SG_ 737 VCFRONT_anyDoorOpen 0;
-BA_ "Confidence" SG_ 737 VCFRONT_hornOn 0;
-BA_ "Confidence" SG_ 737 VCFRONT_radarHeaterState 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_radarHeaterState "0";
-BA_ "Confidence" SG_ 737 VCFRONT_trunkExteriorWakeSwitch 0;
-BA_ "Confidence" SG_ 737 VCFRONT_passengerBuckleStatus 0;
-BA_ "Confidence" SG_ 737 VCFRONT_frunkLatchType 0;
-BA_ "Confidence" SG_ 737 VCFRONT_headlampLeftFanStatus 0;
-BA_ "Confidence" SG_ 737 VCFRONT_headlampRightFanStatus 0;
-BA_ "Confidence" SG_ 737 VCFRONT_frunkAccessPost 0;
-BA_ "Confidence" SG_ 737 VCFRONT_isActiveHeatingBattery 0;
-BA_ "Confidence" SG_ 737 VCFRONT_iBoosterWakeLine 0;
-BA_ "Confidence" SG_ 737 VCFRONT_epasWakeLine 0;
-BA_ "Confidence" SG_ 737 VCFRONT_iBoosterStateDBG 0;
-BA_ "Confidence" SG_ 737 VCFRONT_vehicleStatusDBG 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_vehicleStatusDBG "18";
-BA_ "Confidence" SG_ 737 VCFRONT_timeSpentSleeping 0;
-BA_ "Confidence" SG_ 737 VCFRONT_sleepCurrent 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_sleepCurrent "4095";
-BA_ "Confidence" SG_ 737 VCFRONT_hibernationState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_wiperECUType 0;
-BA_ "Confidence" SG_ 737 VCFRONT_wiperHeaterState 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_wiperHeaterState "0";
-BA_ "Confidence" SG_ 737 VCFRONT_occupantCount 0;
-BA_ "Confidence" SG_ 737 VCFRONT_closureEasterEggState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_espWakeLine 0;
-BA_ "Confidence" SG_ 737 VCFRONT_allowEvapInLowAmbient 0;
-BA_ "Confidence" SG_ 737 VCFRONT_potentialRadiatorSteam 0;
-BA_ "Confidence" SG_ 737 VCFRONT_potentialRadiatorSteamUI 0;
-BA_ "Confidence" SG_ 737 VCFRONT_hvacReqOffForFasterCharg 0;
-BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_hvacReqOffForFasterCharg "VCFRONT_hvacReqOffForFasterCharge";
-BA_ "Confidence" SG_ 737 VCFRONT_homelinkV2Response0 2;
-BA_ "Confidence" SG_ 737 VCFRONT_homelinkV2Response1 2;
-BA_ "Confidence" SG_ 737 VCFRONT_homelinkV2Response2 2;
-BA_ "Confidence" SG_ 737 VCFRONT_homelinkV2Response3 2;
-BA_ "Confidence" SG_ 737 VCFRONT_homelinkV2Response4 2;
-BA_ "Confidence" SG_ 737 VCFRONT_homelinkCommStatus 1;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_homelinkCommStatus "0";
-BA_ "Confidence" SG_ 737 VCFRONT_maxEvapHeatRejection 0;
-BA_ "Confidence" SG_ 737 VCFRONT_minEvapHeatRejection 0;
-BA_ "Confidence" SG_ 737 VCFRONT_freezeEvapITerm 0;
-BA_ "Confidence" SG_ 737 VCFRONT_isEvapOperationAllowed 0;
-BA_ "Confidence" SG_ 737 VCFRONT_chillerDemandActive 0;
-BA_ "Confidence" SG_ 737 VCFRONT_compPerfRecoveryLimited 0;
-BA_ "Confidence" SG_ 737 VCFRONT_hvacModeNotAttainable 0;
-BA_ "Confidence" SG_ 737 VCFRONT_hasLowRefrigerant 0;
-BA_ "Confidence" SG_ 737 VCFRONT_isColdStartRunning 0;
-BA_ "Confidence" SG_ 737 VCFRONT_isHeatPumpOilPurgeActive 0;
-BA_ "Confidence" SG_ 737 VCFRONT_pressureRefrigSuction 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_pressureRefrigSuction "127";
-BA_ "Confidence" SG_ 737 VCFRONT_pressureRefrigDischarge 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_pressureRefrigDischarge "511";
-BA_ "Confidence" SG_ 737 VCFRONT_hvacPerfTestCommand 0;
-BA_ "Confidence" SG_ 737 VCFRONT_coolantFillRoutineStatus 0;
-BA_ "Confidence" SG_ 737 VCFRONT_refrigFillRoutineStatus 0;
-BA_ "Confidence" SG_ 737 VCFRONT_isCOP1Running 0;
-BA_ "Confidence" SG_ 737 VCFRONT_closeValvesRoutineStatus 0;
-BA_ "Confidence" SG_ 737 VCFRONT_thermalPerfTestRunning 0;
-BA_ "Confidence" SG_ 737 VCFRONT_5VARailStable 0;
-BA_ "Confidence" SG_ 737 VCFRONT_5VBRailStable 0;
-BA_ "Confidence" SG_ 737 VCFRONT_12VARailStable 0;
-BA_ "Confidence" SG_ 737 VCFRONT_12VBRailStable 0;
-BA_ "Confidence" SG_ 737 VCFRONT_railAState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_railBState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_ChargePumpVoltageStable 0;
-BA_ "Confidence" SG_ 737 VCFRONT_PEResetLineState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_HSDInitCompleteU13 0;
-BA_ "Confidence" SG_ 737 VCFRONT_HSDInitCompleteU16 0;
-BA_ "Confidence" SG_ 737 VCFRONT_vbatMonitorVoltage 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_vbatMonitorVoltage "4095";
-BA_ "Confidence" SG_ 737 VCFRONT_AS8510Voltage 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_AS8510Voltage "4095";
-BA_ "Confidence" SG_ 737 VCFRONT_vbatProt 0;
-BA_ "Confidence" SG_ 737 VCFRONT_logVerbosity 0;
-BA_ "Confidence" SG_ 737 VCFRONT_cabinCoolingCapacityLimi 0;
-BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_cabinCoolingCapacityLimi "VCFRONT_cabinCoolingCapacityLimited";
-BA_ "Confidence" SG_ 737 VCFRONT_cabinHeatingCapacityLimi 0;
-BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_cabinHeatingCapacityLimi "VCFRONT_cabinHeatingCapacityLimited";
-BA_ "Confidence" SG_ 737 VCFRONT_compPowerSupportingHvac 0;
-BA_ "Confidence" SG_ 737 VCFRONT_compPowerSupportingPT 0;
-BA_ "Confidence" SG_ 737 VCFRONT_maxHeatingPowerLeftCC 0;
-BA_ "Confidence" SG_ 737 VCFRONT_maxHeatingPowerRightCC 0;
-BA_ "Confidence" SG_ 737 VCFRONT_activeLouverOpenPos 0;
-BA_ "Confidence" SG_ 737 VCFRONT_activeLouverState 0;
-BA_ "Confidence" SG_ 737 VCFRONT_windshieldCameraHeaterPo 0;
-BA_ "GenSigSNA" SG_ 737 VCFRONT_windshieldCameraHeaterPo "63";
-BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_windshieldCameraHeaterPo "VCFRONT_windshieldCameraHeaterPower";
 BA_ "Confidence" SG_ 507 VCLEFT_TLCStatusIndex 1;
 BA_ "Confidence" SG_ 507 VCLEFT_TLCTemperature 0;
 BA_ "GenSigSNA" SG_ 507 VCLEFT_TLCTemperature "128";
@@ -1997,248 +640,6 @@ BA_ "Confidence" SG_ 507 VCLEFT_TLCState_Fog 0;
 BA_ "GenSigSNA" SG_ 507 VCLEFT_TLCState_Fog "5";
 BA_ "Confidence" SG_ 507 VCLEFT_TLCState_Reverse 0;
 BA_ "GenSigSNA" SG_ 507 VCLEFT_TLCState_Reverse "5";
-BA_ "Confidence" SG_ 1802 VCLEFT_logging0point1HzIndex 1;
-BA_ "Confidence" SG_ 1802 VCLEFT_leftBrakeTailLightCurrent 0;
-BA_ "GenSigSNA" SG_ 1802 VCLEFT_leftBrakeTailLightCurrent "511";
-BA_ "Confidence" SG_ 1802 VCLEFT_leftBrakeTailLightCu_0001 0;
-BA_ "GenSigSNA" SG_ 1802 VCLEFT_leftBrakeTailLightCu_0001 "0";
-BA_ "SystemSignalLongSymbol" SG_ 1802 VCLEFT_leftBrakeTailLightCu_0001 "VCLEFT_leftBrakeTailLightCurrentSenseState";
-BA_ "Confidence" SG_ 1802 VCLEFT_leftRearTurnLightCurrent 0;
-BA_ "GenSigSNA" SG_ 1802 VCLEFT_leftRearTurnLightCurrent "511";
-BA_ "Confidence" SG_ 1802 VCLEFT_leftRearTurnLightCurrentS 0;
-BA_ "GenSigSNA" SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "0";
-BA_ "SystemSignalLongSymbol" SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "VCLEFT_leftRearTurnLightCurrentSenseState";
-BA_ "Confidence" SG_ 930 VCLEFT_statusIndex 1;
-BA_ "Confidence" SG_ 930 VCLEFT_securityControllerEnable 0;
-BA_ "Confidence" SG_ 930 VCLEFT_securityControllerVoltage 0;
-BA_ "Confidence" SG_ 930 VCLEFT_consoleDoorAssist 0;
-BA_ "Confidence" SG_ 930 VCLEFT_OTAState 0;
-BA_ "Confidence" SG_ 930 VCLEFT_5AVoltage 0;
-BA_ "Confidence" SG_ 930 VCLEFT_vbatProt 0;
-BA_ "Confidence" SG_ 930 VCLEFT_footwellLightCurrent 0;
-BA_ "Confidence" SG_ 930 VCLEFT_swcInputVoltage 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_swcInputVoltage "255";
-BA_ "Confidence" SG_ 930 VCLEFT_swcPCBATemperature 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_swcPCBATemperature "128";
-BA_ "Confidence" SG_ 930 VCLEFT_obdEthernetActive 0;
-BA_ "Confidence" SG_ 930 VCLEFT_rationalityAggregateCurre 0;
-BA_ "SystemSignalLongSymbol" SG_ 930 VCLEFT_rationalityAggregateCurre "VCLEFT_rationalityAggregateCurrent";
-BA_ "Confidence" SG_ 930 VCLEFT_LVBatteryTypeDBG 0;
-BA_ "Confidence" SG_ 930 VCLEFT_DIeFuseFault 0;
-BA_ "Confidence" SG_ 930 VCLEFT_eFuseMgmtVoltageMonitor 0;
-BA_ "Confidence" SG_ 930 VCLEFT_trailerAuxCurrent 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_trailerAuxCurrent "4095";
-BA_ "Confidence" SG_ 930 VCLEFT_swcHeatTmp 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_swcHeatTmp "1023";
-BA_ "Confidence" SG_ 930 VCLEFT_swcHeatStatus 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_swcHeatStatus "0";
-BA_ "Confidence" SG_ 930 VCLEFT_swcHeatInhibited 0;
-BA_ "Confidence" SG_ 930 VCLEFT_pcbaTemperature 0;
-BA_ "Confidence" SG_ 930 VCLEFT_swcHeatPwr 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_swcHeatPwr "511";
-BA_ "Confidence" SG_ 930 VCLEFT_swcHeatDutyCycle 0;
-BA_ "GenSigSNA" SG_ 930 VCLEFT_swcHeatDutyCycle "127";
-BA_ "Confidence" SG_ 930 VCLEFT_DIeFuseCurrent 0;
-BA_ "Confidence" SG_ 930 VCLEFT_SWCpresent 0;
-BA_ "Confidence" SG_ 930 VCLEFT_trailerBrakeControllerCur 0;
-BA_ "SystemSignalLongSymbol" SG_ 930 VCLEFT_trailerBrakeControllerCur "VCLEFT_trailerBrakeControllerCurrent";
-BA_ "Confidence" SG_ 962 VCLEFT_switchStatusIndex 1;
-BA_ "Confidence" SG_ 962 VCLEFT_hornSwitchPressed 0;
-BA_ "Confidence" SG_ 962 VCLEFT_hazardButtonPressed 0;
-BA_ "Confidence" SG_ 962 VCLEFT_brakeSwitchPressed 0;
-BA_ "Confidence" SG_ 962 VCLEFT_rightMirrorTilt 0;
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatTrackBack 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatTrackBack "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatTrackForward 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatTrackForward "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatTiltDown 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatTiltDown "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatTiltUp 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatTiltUp "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatLiftDown 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatLiftDown "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatLiftUp 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatLiftUp "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatBackrestBack 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatBackrestBack "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatBackrestForward 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatBackrestForward "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatLumbarDown 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatLumbarDown "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatLumbarUp 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatLumbarUp "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatLumbarIn 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatLumbarIn "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatLumbarOut 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatLumbarOut "0";
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackUpLF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoUpLF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackDownLF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoDownLF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackUpLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoUpLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackDownLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoDownLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackUpRF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoUpRF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackDownRF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoDownRF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackUpRR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoUpRR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackDownRR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowSwPackAutoDownRR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_frontBuckleSwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontBuckleSwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_frontOccupancySwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontOccupancySwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_rearLeftBuckleSwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_rearLeftBuckleSwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_rearCenterOccupancySwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_rearCenterOccupancySwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_rearLeftOccupancySwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_rearLeftOccupancySwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_rearRightOccupancySwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_rearRightOccupancySwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_brakePressed 0;
-BA_ "Confidence" SG_ 962 VCLEFT_rearHVACButtonPressed 0;
-BA_ "Confidence" SG_ 962 VCLEFT_rearCenterBuckleSwitch 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_rearCenterBuckleSwitch "0";
-BA_ "Confidence" SG_ 962 VCLEFT_isAlcoholInterlockSet 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcLeftTiltRight 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcLeftTiltRight "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcLeftPressed 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcLeftPressed "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcRightTiltLeft 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcRightTiltLeft "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcRightTiltRight 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcRightTiltRight "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcRightPressed 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcRightPressed "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcLeftTiltLeft 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcLeftTiltLeft "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcLeftScrollTicks 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcWiperButtonState 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcRightScrollTicks 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcTurnSignalLeftButtonSt 0;
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_swcTurnSignalLeftButtonSt "VCLEFT_swcTurnSignalLeftButtonState";
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowUpLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowAutoUpLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowDownLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_btnWindowAutoDownLR 0;
-BA_ "Confidence" SG_ 962 VCLEFT_2RowSeatLeftFoldFlatSwitc 0;
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_2RowSeatLeftFoldFlatSwitc "VCLEFT_2RowSeatLeftFoldFlatSwitch";
-BA_ "Confidence" SG_ 962 VCLEFT_2RowSeatRightFoldFlatSwit 0;
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_2RowSeatRightFoldFlatSwit "VCLEFT_2RowSeatRightFoldFlatSwitch";
-BA_ "Confidence" SG_ 962 VCLEFT_2RowSeatBothFoldFlatSwitc 0;
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_2RowSeatBothFoldFlatSwitc "VCLEFT_2RowSeatBothFoldFlatSwitch";
-BA_ "Confidence" SG_ 962 VCLEFT_swcLeftDoublePress 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcRightDoublePress 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcTurnSignalRightButtonS 0;
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_swcTurnSignalRightButtonS "VCLEFT_swcTurnSignalRightButtonState";
-BA_ "Confidence" SG_ 962 VCLEFT_swcHighBeamButtonState 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcVoiceControlPress 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_swcVoiceControlPress "0";
-BA_ "Confidence" SG_ 962 VCLEFT_swcCameraButtonState 0;
-BA_ "Confidence" SG_ 962 VCLEFT_swcRightPressedQF 0;
-BA_ "Confidence" SG_ 962 VCLEFT_2RowSeatReclineSwitchpack 0;
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_2RowSeatReclineSwitchpack "VCLEFT_2RowSeatReclineSwitchpackState";
-BA_ "Confidence" SG_ 962 VCLEFT_frontSeatResistiveOccupan 0;
-BA_ "GenSigSNA" SG_ 962 VCLEFT_frontSeatResistiveOccupan "0";
-BA_ "SystemSignalLongSymbol" SG_ 962 VCLEFT_frontSeatResistiveOccupan "VCLEFT_frontSeatResistiveOccupancy";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacState10HzIndex 1;
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_autoDefogAvailable 0;
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacFlashFoggingDetec 0;
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_hvacFlashFoggingDetec "VCRIGHT_AP_hvacFlashFoggingDetected";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacModelInitStatus 0;
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_cabinTempWindshield 0;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_cabinTempWindshield "255";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_cabinTempSideGlassRig 0;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_cabinTempSideGlassRig "255";
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_cabinTempSideGlassRig "VCRIGHT_AP_cabinTempSideGlassRight";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_cabinTempSideGlassLef 0;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_cabinTempSideGlassLef "255";
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_cabinTempSideGlassLef "VCRIGHT_AP_cabinTempSideGlassLeft";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacRecircDoorPercent 0;
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacAirDistributionMo 0;
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_hvacAirDistributionMo "VCRIGHT_AP_hvacAirDistributionMode";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacEstimateWindshiel 0;
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_hvacEstimateWindshiel "VCRIGHT_AP_hvacEstimateWindshieldRH";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacMassflowTarget 0;
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_tempDuctDefrost 0;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_tempDuctDefrost "255";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_cameraFanDutyRequest 1;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_cameraFanDutyRequest "127";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_turnCameraFanOffReaso 1;
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_turnCameraFanOffReaso "VCRIGHT_AP_turnCameraFanOffReason";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_cameraTurnOnTime 1;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_cameraTurnOnTime "255";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_solarFluxOnRightWindo 0;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_solarFluxOnRightWindo "255";
-BA_ "SystemSignalLongSymbol" SG_ 1114 VCRIGHT_AP_solarFluxOnRightWindo "VCRIGHT_AP_solarFluxOnRightWindow";
-BA_ "Confidence" SG_ 1114 VCRIGHT_AP_solarFluxOnLeftWindow 0;
-BA_ "GenSigSNA" SG_ 1114 VCRIGHT_AP_solarFluxOnLeftWindow "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_debugThermal10HzIndex 1;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacPanelFloorSplitRow1 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacDefrostPercent 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacRow2Percent 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacPanelFloorSplitRow2 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacFreshMassCounter 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacRecircMassCounter 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_setTempAdjustmentLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_setTempAdjustmentLeft "127";
-BA_ "Confidence" SG_ 1795 VCRIGHT_setTempAdjustmentRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_setTempAdjustmentRight "127";
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacLHVaneVelocity 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacRHVaneVelocity 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_hvacMassflowCompensated 0;
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterPowerLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterPowerLeft "63";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterPowerLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterPowerLeft "63";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerPowerLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerPowerLeft "63";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterPowerRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterPowerRight "63";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterPowerRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterPowerRight "63";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerPowerRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerPowerRight "63";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterStoneTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterStoneTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterStoneTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterStoneTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerStoneTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerStoneTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerStoneTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerStoneTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterStoneTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterStoneTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterRodTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterRodTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterAirTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterAirTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterRodTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterRodTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerRodTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerRodTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterAirTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterAirTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerAirTempLeft 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerAirTempLeft "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterStoneTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterStoneTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterRodTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterRodTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCouterAirTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCouterAirTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterRodTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterRodTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerRodTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerRodTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCcenterAirTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCcenterAirTempRight "255";
-BA_ "Confidence" SG_ 1795 VCRIGHT_PTCinnerAirTempRight 0;
-BA_ "GenSigSNA" SG_ 1795 VCRIGHT_PTCinnerAirTempRight "255";
 BA_ "Confidence" SG_ 291 VCRIGHT_doorStatus2Index 1;
 BA_ "Confidence" SG_ 291 VCRIGHT_frontLatchRelDuty 0;
 BA_ "Confidence" SG_ 291 VCRIGHT_BPillarCameraHeaterState 0;
@@ -2252,78 +653,6 @@ BA_ "GenSigSNA" SG_ 291 VCRIGHT_BPillarCameraHeaterCurre "63";
 BA_ "SystemSignalLongSymbol" SG_ 291 VCRIGHT_BPillarCameraHeaterCurre "VCRIGHT_BPillarCameraHeaterCurrent";
 BA_ "Confidence" SG_ 291 VCRIGHT_mirrorTiltXOffset 0;
 BA_ "Confidence" SG_ 291 VCRIGHT_mirrorTiltYOffset 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_seatStatus2Index 1;
-BA_ "Confidence" SG_ 739 VCRIGHT_frontSeatHeatCurrent 0;
-BA_ "GenSigSNA" SG_ 739 VCRIGHT_frontSeatHeatCurrent "12";
-BA_ "Confidence" SG_ 739 VCRIGHT_frontSeatHeatDuty 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_frontSeatHeatTmp 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_frontSeatHeatTmpTarget 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_frontSeatHeatInhibited 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_frontSeatHeatPowered 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearLSeatHeatCurrent 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearLSeatHeatDuty 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearLSeatHeatTmp 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearLSeatHeatTmpTarget 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearLSeatHeatInhibited 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearLSeatHeatPowered 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearCSeatHeatCurrent 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearCSeatHeatDuty 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearCSeatHeatTmp 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearCSeatHeatTmpTarget 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearCSeatHeatInhibited 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearCSeatHeatPowered 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearRSeatHeatCurrent 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearRSeatHeatDuty 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearRSeatHeatTmp 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearRSeatHeatTmpTarget 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearRSeatHeatInhibited 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_rearRSeatHeatPowered 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineState 0;
-BA_ "GenSigSNA" SG_ 739 VCRIGHT_2RowSeatReclineState "15";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineDuty 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineCurrent 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineCalibrate 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineCalibrate "VCRIGHT_2RowSeatReclineCalibrated";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclinePositionR 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclinePositionR "VCRIGHT_2RowSeatReclinePositionRaw";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineAngle 0;
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineAbsPosSwi 0;
-BA_ "GenSigSNA" SG_ 739 VCRIGHT_2RowSeatReclineAbsPosSwi "0";
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineAbsPosSwi "VCRIGHT_2RowSeatReclineAbsPosSwitchState";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclinePositionS 0;
-BA_ "GenSigSNA" SG_ 739 VCRIGHT_2RowSeatReclinePositionS "4";
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclinePositionS "VCRIGHT_2RowSeatReclinePositionState";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineAdjustmen 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineAdjustmen "VCRIGHT_2RowSeatReclineAdjustmentAllowed";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineFoldAllow 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineFoldAllow "VCRIGHT_2RowSeatReclineFoldAllowed";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineUnfoldAll 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineUnfoldAll "VCRIGHT_2RowSeatReclineUnfoldAllowed";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineNextToggl 0;
-BA_ "GenSigSNA" SG_ 739 VCRIGHT_2RowSeatReclineNextToggl "2";
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineNextToggl "VCRIGHT_2RowSeatReclineNextToggleDirection";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineChoreoBlo 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineChoreoBlo "VCRIGHT_2RowSeatReclineChoreoBlockedByOccupancy";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeat1RClashAvoidance 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeat1RClashAvoidance "VCRIGHT_2RowSeat1RClashAvoidanceBlockedReason";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeat1RClashAvoi_0001 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeat1RClashAvoi_0001 "VCRIGHT_2RowSeat1RClashAvoidanceState";
-BA_ "Confidence" SG_ 739 VCRIGHT_2RowSeatReclineAbsP_0001 0;
-BA_ "SystemSignalLongSymbol" SG_ 739 VCRIGHT_2RowSeatReclineAbsP_0001 "VCRIGHT_2RowSeatReclineAbsPosSwitchTransPoint";
-BA_ "Confidence" SG_ 835 VCRIGHT_LVBatteryTypeDBG 0;
-BA_ "Confidence" SG_ 835 VCRIGHT_rearDefrostState 0;
-BA_ "GenSigSNA" SG_ 835 VCRIGHT_rearDefrostState "0";
-BA_ "Confidence" SG_ 835 VCRIGHT_mirrorHeatState 0;
-BA_ "GenSigSNA" SG_ 835 VCRIGHT_mirrorHeatState "0";
-BA_ "Confidence" SG_ 835 VCRIGHT_OTAState 0;
-BA_ "Confidence" SG_ 835 VCRIGHT_5AVoltage 0;
-BA_ "Confidence" SG_ 835 VCRIGHT_vbatProt 0;
-BA_ "Confidence" SG_ 835 VCRIGHT_rationalityAggregateCurr 0;
-BA_ "SystemSignalLongSymbol" SG_ 835 VCRIGHT_rationalityAggregateCurr "VCRIGHT_rationalityAggregateCurrent";
-BA_ "Confidence" SG_ 835 VCRIGHT_eFuseMgmtVoltageMonitor 0;
-BA_ "Confidence" SG_ 835 VCRIGHT_isSteeringWheelHeaterReq 0;
-BA_ "Confidence" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt 0;
-BA_ "GenSigSNA" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "127";
 BA_ "Confidence" SG_ 899 VCRIGHT_thsActive 0;
 BA_ "Confidence" SG_ 899 VCRIGHT_thsTemperature 0;
 BA_ "GenSigSNA" SG_ 899 VCRIGHT_thsTemperature "255";
@@ -2364,20 +693,6 @@ BA_ "Confidence" SG_ 1066 VCSEC_TPMSSensorPresence3 0;
 BA_ "Confidence" SG_ 1824 VCSEC_ECUConfigCRC32 0;
 BA_ "Confidence" SG_ 1824 VCSEC_autoWriteConfig 0;
 BA_ "Confidence" SG_ 1824 VCSEC_requestForConfig 0;
-VAL_ 1138 BMS_chargeCurrentLimitMode 20 "CHG_LIMIT_RIPPLE_HEAT_ACTIVE" 19 "CHG_LIMIT_NEAR_HWOT_LIMIT" 18 "CHG_LIMIT_LIMP_MODE" 17 "CHG_LIMIT_MISSING_CELL" 16 "CHG_LIMIT_CAC_IMBALANCE" 15 "CHG_LIMIT_PCS_IMPLICIT" 14 "CHG_LIMIT_EVSE_IMPLICIT" 13 "CHG_LIMIT_RAMP_UP_PHASE" 12 "CHG_LIMIT_HVAC_COOLING" 11 "CHG_LIMIT_HV_CHAIN" 10 "CHG_LIMIT_CONFIG" 9 "CHG_LIMIT_TETHERING" 8 "CHG_LIMIT_LEAKY_BUCKET" 7 "CHG_LIMIT_BRICK_VOLTAGE_REG" 6 "CHG_LIMIT_BRICK_TEMP_TOO_COLD" 5 "CHG_LIMIT_BRICK_TEMP_TOO_HOT" 4 "CHG_LIMIT_BRICK_TEMP_OPTIMAL_CELL_PROFILE" 3 "CHG_LIMIT_CP" 2 "CHG_LIMIT_PCS" 1 "CHG_LIMIT_EVSE" 0 "CHG_LIMIT_NONE" ;
-VAL_ 1138 BMS_timeToFinishHeatForCharge 127 "SNA" 126 "CALCULATING" ;
-VAL_ 658 BMS_userChargeCurrentLimitMode 4 "USR_CHG_LIMIT_EVSE_RELOCATION_RECOMMENDED" 3 "USR_CHG_LIMIT_HIGH_SOC" 2 "USR_CHG_LIMIT_BATT_TEMP_LOW" 1 "USR_CHG_LIMIT_EVSE" 0 "USR_CHG_LIMIT_NONE" ;
-VAL_ 541 CP_proximity 3 "CHG_PROXIMITY_LATCHED" 2 "CHG_PROXIMITY_UNLATCHED" 1 "CHG_PROXIMITY_DISCONNECTED" 0 "CHG_PROXIMITY_SNA" ;
-VAL_ 541 CP_pilot 7 "CHG_PILOT_SNA" 6 "CHG_PILOT_UNUSED_6" 5 "CHG_PILOT_INVALID" 4 "CHG_PILOT_IDLE" 3 "CHG_PILOT_FAST_CHARGE" 2 "CHG_PILOT_LINE_CHARGE" 1 "CHG_PILOT_FAULTED" 0 "CHG_PILOT_NONE" ;
-VAL_ 541 CP_cableType 5 "CHG_CABLE_TYPE_SNA" 4 "CHG_CABLE_TYPE_MCS" 3 "CHG_CABLE_TYPE_GB_DC" 2 "CHG_CABLE_TYPE_GB_AC" 1 "CHG_CABLE_TYPE_SAE" 0 "CHG_CABLE_TYPE_IEC" ;
-VAL_ 541 CP_iecPilotState 9 "IEC_PILOT_SNA" 8 "IEC_PILOT_NUM" 7 "IEC_PILOT_F" 6 "IEC_PILOT_E" 5 "IEC_PILOT_C3" 4 "IEC_PILOT_C2" 3 "IEC_PILOT_C1" 2 "IEC_PILOT_B3" 1 "IEC_PILOT_B2" 0 "IEC_PILOT_B1" ;
-VAL_ 541 CP_teslaSwcanState 8 "TESLA_SWCAN_V2L_ESTABLISHED" 7 "TESLA_SWCAN_V2L_RECEIVE" 6 "TESLA_SWCAN_OFFBOARD_UPDATE_IN_PROGRESS" 5 "TESLA_SWCAN_GO_TO_SLEEP" 4 "TESLA_SWCAN_FAULT" 3 "TESLA_SWCAN_ESTABLISHED" 2 "TESLA_SWCAN_RECEIVE" 1 "TESLA_SWCAN_ACCEPT" 0 "TESLA_SWCAN_INACTIVE" ;
-VAL_ 541 CP_evseChargeType_UI 2 "AC_CHARGER_PRESENT" 1 "DC_CHARGER_PRESENT" 0 "NO_CHARGER_PRESENT" ;
-VAL_ 541 CP_gbState 15 "GBDC_TESTER_PRESENT" 14 "GBDC_FAULTED" 13 "GBDC_RETRY_CHARGE" 12 "GBDC_ERROR_HANDLING" 11 "GBDC_END_OF_CHARGE" 10 "GBDC_CHARGE_DISABLING" 9 "GBDC_STOP_CHARGE_REQUESTED" 8 "GBDC_CHARGING" 7 "GBDC_READY_TO_CHARGE" 6 "GBDC_VEH_PACK_PRECHARGE" 5 "GBDC_CHARGE_PARAM_CONFIG" 4 "GBDC_RECOGNITION" 3 "GBDC_HANDSHAKING_EXT_ISO" 2 "GBDC_COMMS_RECEIVED" 1 "GBDC_WAIT_FOR_COMMS" 0 "GBDC_INACTIVE" ;
-VAL_ 541 CP_gbdcStopChargeReason 8 "GBDC_PARAM_MISMATCH" 7 "GBDC_SUPERCHARGER_COMMS_TIMEOUT" 6 "GBDC_LIVE_DISCONNECT" 5 "GBDC_EVSE_CRITICAL_FAULT" 4 "GBDC_EVSE_FAULT" 3 "GBDC_COMMS_TIMEOUT" 2 "GBDC_EVSE_REQUESTED" 1 "GBDC_VEH_REQUESTED" 0 "GBDC_STOP_REASON_NONE" ;
-VAL_ 541 CP_gbdcFailureReason 3 "GBDC_CRITICAL_FAILURE" 2 "GBDC_SHUTDOWN_FAILURE" 1 "GBDC_ATTEMPTS_EXPIRED" 0 "GBDC_FAILURE_NONE" ;
-VAL_ 541 CP_acChargeState 6 "AC_CHARGE_FAULT" 5 "AC_CHARGE_VEH_SHUTDOWN" 4 "AC_CHARGE_ONBOARD_CHARGER_SHUTDOWN" 3 "AC_CHARGE_ENABLED" 2 "AC_CHARGE_STANDBY" 1 "AC_CHARGE_CONNECTED_CHARGE_BLOCKED" 0 "AC_CHARGE_INACTIVE" ;
-VAL_ 541 CP_teslaDcState 10 "TESLA_DC_FAULT" 9 "TESLA_DC_EMERGENCY_SHUTDOWN" 8 "TESLA_DC_VEH_SHUTDOWN" 7 "TESLA_DC_EVSE_SHUTDOWN" 6 "TESLA_DC_ENABLED" 5 "TESLA_DC_EXT_PRECHARGE_ACTIVE" 4 "TESLA_DC_EXT_TEST_ACTIVE" 3 "TESLA_DC_EXT_TESTS_ENABLED" 2 "TESLA_DC_STANDBY" 1 "TESLA_DC_CONNECTED_CHARGE_BLOCKED" 0 "TESLA_DC_INACTIVE" ;
 VAL_ 1001 DAS_headlightRequest 3 "DAS_HEADLIGHT_REQUEST_INVALID" 2 "DAS_HEADLIGHT_REQUEST_TAIL_LIGHTS_ONLY" 1 "DAS_HEADLIGHT_REQUEST_ON" 0 "DAS_HEADLIGHT_REQUEST_OFF" ;
 VAL_ 1001 DAS_hazardLightRequest 3 "DAS_REQUEST_HAZARDS_SNA" 2 "DAS_REQUEST_HAZARDS_ON_FAST" 1 "DAS_REQUEST_HAZARDS_ON" 0 "DAS_REQUEST_HAZARDS_OFF" ;
 VAL_ 1001 DAS_wiperSpeed 15 "DAS_WIPER_SPEED_INVALID" 14 "DAS_WIPER_SPEED_14" 13 "DAS_WIPER_SPEED_13" 12 "DAS_WIPER_SPEED_12" 11 "DAS_WIPER_SPEED_11" 10 "DAS_WIPER_SPEED_10" 9 "DAS_WIPER_SPEED_9" 8 "DAS_WIPER_SPEED_8" 7 "DAS_WIPER_SPEED_7" 6 "DAS_WIPER_SPEED_6" 5 "DAS_WIPER_SPEED_5" 4 "DAS_WIPER_SPEED_4" 3 "DAS_WIPER_SPEED_3" 2 "DAS_WIPER_SPEED_2" 1 "DAS_WIPER_SPEED_1" 0 "DAS_WIPER_SPEED_OFF" ;
@@ -2390,12 +705,6 @@ VAL_ 1001 DAS_autoWiperState 5 "DAS_AUTO_WIPER_STATE_SNA" 4 "DAS_AUTO_WIPER_STAT
 VAL_ 1001 DAS_turnIndicatorRequestReason 24 "DAS_ACTIVE_SIMULTANEOUS_LANE_CHANGE_AVOIDANCE" 23 "DAS_ACTIVE_INFEASIBLE_KINEMATICS_LANE_CHANGE" 22 "DAS_ACTIVE_STAY_OUT_OF_RIGHTMOST_LANE_LANE_CHANGE" 21 "DAS_ACTIVE_AWAY_FROM_MERGE_LANE_CHANGE" 20 "DAS_ACTIVE_EXIT_RIGHT_LANE_LANE_CHANGE" 19 "DAS_ACTIVE_EXIT_PASSING_LANE_LANE_CHANGE" 18 "DAS_ACTIVE_INCORRECT_ROAD_SIDE_LANE_CHANGE" 17 "DAS_ACTIVE_STATIC_OBJECT_LANE_CHANGE" 15 "DAS_CANCEL_MANUAL_BLINKER" 14 "DAS_CANCEL_AUTO_PARK" 13 "DAS_ACTIVE_AUTO_PARK" 12 "DAS_CANCEL_SUMMMON" 11 "DAS_ACTIVE_SUMMMON" 10 "DAS_CANCEL_INTERSECTION" 9 "DAS_ACTIVE_INTERSECTION" 8 "DAS_ACTIVE_COMMANDED_LANE_CHANGE" 7 "DAS_CANCEL_MERGE" 6 "DAS_ACTIVE_MERGE" 5 "DAS_CANCEL_FORK" 4 "DAS_CANCEL_LANE_CHANGE" 3 "DAS_ACTIVE_FORK" 2 "DAS_ACTIVE_SPEED_LANE_CHANGE" 1 "DAS_ACTIVE_NAV_LANE_CHANGE" 0 "DAS_NONE" ;
 VAL_ 1001 DAS_restrictDoorReleaseLeft 1 "RESTRICT_DOOR_RELEASE_ACTIVE" 0 "RESTRICT_DOOR_RELEASE_INACTIVE" ;
 VAL_ 1001 DAS_restrictDoorReleaseRight 1 "RESTRICT_DOOR_RELEASE_ACTIVE" 0 "RESTRICT_DOOR_RELEASE_INACTIVE" ;
-VAL_ 634 DIF_hvilStatus 3 "SNA" 2 "CLOSED" 1 "OPEN" 0 "DISABLED" ;
-VAL_ 634 DIF_hvilSupplyState 2 "ACTIVE" 1 "INACTIVE" 0 "NOT_AVAILABLE" ;
-VAL_ 634 DIF_vBatQF 1 "QUALIFIED" 0 "NOT_QUALIFIED" ;
-VAL_ 634 DIF_powerStageSafeState 3 "PSTG_SAFESTATE_3PS_LOW" 2 "PSTG_SAFESTATE_3PS_HIGH" 1 "PSTG_SAFESTATE_ALL_OFF" 0 "PSTG_SAFESTATE_NONE" ;
-VAL_ 634 DIF_fluxState 12 "DI_FLUXSTATE_DISABLED" 11 "DI_FLUXSTATE_MAGNET_FLUX_DETECT" 10 "DI_FLUXSTATE_STATIONARY_WASTE" 9 "DI_FLUXSTATE_FAULT" 7 "DI_FLUXSTATE_VCONTROL" 6 "DI_FLUXSTATE_ICONTROL" 5 "DI_FLUXSTATE_ENABLED" 4 "DI_FLUXSTATE_FLUX_DOWN" 3 "DI_FLUXSTATE_FLUX_UP" 2 "DI_FLUXSTATE_STANDBY" 1 "DI_FLUXSTATE_TEST" 0 "DI_FLUXSTATE_START" ;
-VAL_ 634 DIF_gateDriveState 4 "PSTG_GD_STATE_NOT_CONFIGURED" 3 "PSTG_GD_STATE_CONFIGURED" 2 "PSTG_GD_STATE_CONFIGURING" 1 "PSTG_GD_STATE_SELFTEST" 0 "PSTG_GD_STATE_INIT" ;
 VAL_ 784 HVP_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;
 VAL_ 784 HVP_buildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
 VAL_ 941 ICR_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;
@@ -2404,94 +713,9 @@ VAL_ 964 PCS_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 
 VAL_ 964 PCS_buildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
 VAL_ 816 SCCM_infoIndex 255 "END" 20 "UDS_PROTOCOL_BOOTCRC" 18 "BOOTLOADER_SVNHASH" 17 "APP_SVNHASH" 16 "SUBCOMPONENT1" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" ;
 VAL_ 816 SCCM_infoBuildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
-VAL_ 1657 UI_rgbEnableState 2 "AUTO" 1 "ON" 0 "OFF" ;
-VAL_ 1657 UI_rgbEffectType 20 "RAMP_5000MS" 19 "RAMP_4750MS" 18 "RAMP_4500MS" 17 "RAMP_4250MS" 16 "RAMP_4000MS" 15 "RAMP_3750MS" 14 "RAMP_3500MS" 13 "RAMP_3250MS" 12 "RAMP_3000MS" 11 "RAMP_2750MS" 10 "RAMP_2500MS" 9 "RAMP_2250MS" 8 "RAMP_2000MS" 7 "RAMP_1750MS" 6 "RAMP_1500MS" 5 "RAMP_1250MS" 4 "RAMP_1000MS" 3 "RAMP_750MS" 2 "RAMP_500MS" 1 "RAMP_250MS" 0 "RAMP_INSTANT" ;
-VAL_ 1657 UI_rgbBrightnessLevel 127 "SNA" ;
-VAL_ 819 UI_acChargeCurrentLimit 127 "SNA" ;
-VAL_ 819 UI_chargePortLatchRequest 2 "UI_LATCH_REQUEST_DISENGAGE" 1 "UI_LATCH_REQUEST_ENGAGE" 0 "UI_LATCH_REQUEST_NONE" ;
-VAL_ 819 UI_cpInletHeaterRequest 2 "HEATER_MANUAL_OVERRIDE" 1 "HEATER_AUTO" 0 "HEATER_OFF" ;
-VAL_ 991 UI_userActivity 1 "USER_ACTIVE" 0 "USER_IDLE" ;
-VAL_ 991 UI_linkState 2 "LINK_STATE_WIFI" 1 "LINK_STATE_CELL" 0 "LINK_STATE_NONE" ;
-VAL_ 991 UI_mobileAppConnected 1 "CONNECTED" 0 "NOT_CONNECTED" ;
-VAL_ 991 UI_autoshiftDRState 6 "AUTOSHIFT_DR_STATE_BRAKE_GEAR_SHIFT_CONFIRMED_D" 5 "AUTOSHIFT_DR_STATE_BRAKE_GEAR_SHIFT_CONFIRMED_R" 4 "AUTOSHIFT_DR_STATE_BRAKE_STEERING_AND_BRAKE_CONFIRMED" 3 "AUTOSHIFT_DR_STATE_ONLY_STEERING_CONFIRMED" 2 "AUTOSHIFT_DR_STATE_ONLY_BRAKE_CONFIRMED" 1 "AUTOSHIFT_DR_STATE_PROMPT_SHOWING_UNCONFIRMED" 0 "AUTOSHIFT_DR_STATE_INACTIVE" ;
-VAL_ 991 UI_wifiBtModuleType 4 "ELEKTRA" 3 "TCU4G" 2 "BCM4359" 1 "QCA6595" 0 "UNKNOWN" ;
-VAL_ 991 UI_selfParkState 255 "SNA" 52 "SELF_PARK_USER_PAUSED" 51 "SELF_PARK_REMOTE_PRE_ABORT" 50 "SELF_PARK_RESUME" 49 "SELF_PARK_PAUSE" 48 "SELF_PARK_DV_MISMATCH" 47 "SELF_PARK_DI_PANIC" 46 "SELF_PARK_POST_ACTIVE_FAILURE" 45 "SELF_PARK_POST_ACTIVE_SUCCESS" 44 "SELF_PARK_CANCEL_AUTO_SUMMON" 43 "SELF_PARK_REMOTE_ABORT" 42 "SELF_PARK_OBSTACLE_NOT_CLEARED" 41 "SELF_PARK_OBSTACLE_CLEARED" 40 "SELF_PARK_OPEN_GATE" 39 "SELF_PARK_ACTIVE" 38 "SELF_PARK_STARTED_REVERSE" 37 "SELF_PARK_STARTED_FORWARD" 36 "SELF_PARK_NOT_STARTED_TIMEOUT" 35 "SELF_PARK_PRIMED" 34 "SELF_PARK_PREPRIMED" 33 "SELF_PARK_TURN_ON_DRIVE_RAIL" 32 "SELF_PARK_DETECT_KEY_FOB" 31 "SELF_PARK_WAKE_UP_BUSES" 30 "SELF_PARK_CONNECTING_BLUETOOTH" 29 "SELF_PARK_UNAVAILABLE_CAR_WASH_MODE" 28 "SELF_PARK_UNAVAILABLE_CAR_ALARM" 27 "SELF_PARK_UNAVAILABLE_CRASH_STATE" 26 "SELF_PARK_UNAVAILABLE_DRAG_STRIP_MODE" 25 "SELF_PARK_UNAVAILABLE_TRACK_MODE" 24 "SELF_PARK_UNAVAILABLE_SERVICE_MODE" 23 "SELF_PARK_UNAVAILABLE_DOG_MODE" 22 "SELF_PARK_UNAVAILABLE_GAME_MODE" 21 "SELF_PARK_UNAVAILABLE_BLUETOOTH_CONNECT_TIMEOUT" 20 "SELF_PARK_UNAVAILABLE_WAKEUP_TIMEOUT" 19 "SELF_PARK_UNAVAILABLE_NO_BLUETOOTH_DEVICES_PAIRED" 18 "SELF_PARK_UNAVAILABLE_BRAKE_PRESSED" 17 "SELF_PARK_UNAVAILABLE_ROAD_GRADE" 16 "SELF_PARK_UNAVAILABLE_TRAILER_MODE" 15 "SELF_PARK_UNAVAILABLE_KEY_FOB_BATTERY_LOW" 14 "SELF_PARK_UNAVAILABLE_KEY_FOB_NOT_DETECTED" 13 "SELF_PARK_UNAVAILABLE_PARK_SENSOR_ISSUE" 12 "SELF_PARK_UNAVAILABLE_AUTOSTEER_NOT_ENABLED" 11 "SELF_PARK_UNAVAILABLE_LV_BUS_SUPPORT_ISSUE" 10 "SELF_PARK_UNAVAILABLE_ON_PUBLIC_ROAD" 9 "SELF_PARK_UNAVAILABLE_PARKED_TOO_LONG" 8 "SELF_PARK_UNAVAILABLE_DOOR_OPEN" 7 "SELF_PARK_UNAVAILABLE_TRUNK_OPEN" 6 "SELF_PARK_UNAVAILABLE_FRUNK_OPEN" 5 "SELF_PARK_UNAVAILABLE_PLUGGED_IN" 4 "SELF_PARK_UNAVAILABLE_NOT_PARKED" 3 "SELF_PARK_UNAVAILABLE" 2 "SELF_PARK_IDLE" 1 "SELF_PARK_DRIVING" 0 "SELF_PARK_DISABLED" ;
-VAL_ 991 UI_summonDeviceIndex 3 "UNKNOWN" 2 "DEVICE_2" 1 "DEVICE_1" 0 "DEVICE_0" ;
 VAL_ 663 UI_adaptiveRideRequest 3 "ADAPTIVE_RIDE_REQUEST_ADVANCED" 2 "ADAPTIVE_RIDE_REQUEST_SPORT" 1 "ADAPTIVE_RIDE_REQUEST_AUTO" 0 "ADAPTIVE_RIDE_REQUEST_COMFORT" ;
 VAL_ 663 UI_geofenceLevelingRequest 5 "GEOFENCE_LEVELING_REQUEST_SNA" 4 "GEOFENCE_LEVELING_REQUEST_VERY_HIGH_PERSIST" 3 "GEOFENCE_LEVELING_REQUEST_HIGH_PERSIST" 2 "GEOFENCE_LEVELING_REQUEST_VERY_HIGH_TEMPORARY" 1 "GEOFENCE_LEVELING_REQUEST_HIGH_TEMPORARY" 0 "GEOFENCE_LEVELING_REQUEST_NONE" ;
-VAL_ 947 UI_lightSwitch 4 "LIGHT_SWITCH_SNA" 3 "LIGHT_SWITCH_OFF" 2 "LIGHT_SWITCH_PARKING" 1 "LIGHT_SWITCH_ON" 0 "LIGHT_SWITCH_AUTO" ;
-VAL_ 947 UI_autopilotPowerStateRequest 2 "AUTOPILOT_SUSPEND" 1 "AUTOPILOT_SENTRY" 0 "AUTOPILOT_NOMINAL" ;
-VAL_ 947 UI_frontLeftSeatFanReq 3 "FAN_REQUEST_LEVEL3" 2 "FAN_REQUEST_LEVEL2" 1 "FAN_REQUEST_LEVEL1" 0 "FAN_REQUEST_OFF" ;
-VAL_ 947 UI_frontRightSeatFanReq 3 "FAN_REQUEST_LEVEL3" 2 "FAN_REQUEST_LEVEL2" 1 "FAN_REQUEST_LEVEL1" 0 "FAN_REQUEST_OFF" ;
-VAL_ 609 VCFRONT_12VBatteryStatusIndex 5 "Mux5" 4 "Mux4" 3 "Mux3" 2 "Mux2" 1 "Mux1" 0 "Mux0" ;
-VAL_ 609 VCFRONT_batterySMState 10 "BATTERY_SM_STATE_EXTERNAL_LV_BUS_CONTROL" 9 "BATTERY_SM_STATE_RECOVERY" 8 "BATTERY_SM_STATE_FAULT" 7 "BATTERY_SM_STATE_SHORTED_CELL_TEST" 6 "BATTERY_SM_STATE_DISCONNECTED_BATTERY_TEST" 5 "BATTERY_SM_STATE_OTA_STANDBY" 4 "BATTERY_SM_STATE_RESISTANCE_ESTIMATION" 3 "BATTERY_SM_STATE_STANDBY" 2 "BATTERY_SM_STATE_DISCHARGE" 1 "BATTERY_SM_STATE_CHARGE" 0 "BATTERY_SM_STATE_INIT" ;
-VAL_ 609 VCFRONT_eFuseRecoveryStateDBG 4 "VC_LVBMB_EFUSE_RECOVERY_STATE_BLOCKED" 3 "VC_LVBMB_EFUSE_RECOVERY_STATE_FINISH" 2 "VC_LVBMB_EFUSE_RECOVERY_STATE_CONNECT" 1 "VC_LVBMB_EFUSE_RECOVERY_STATE_SETUP" 0 "VC_LVBMB_EFUSE_RECOVERY_STATE_INACTIVE" ;
-VAL_ 609 VCFRONT_batteryLINScheduleDBG 7 "VC_LVBMS_LIN_SCHEDULE_SNA" 6 "VC_LVBMS_LIN_SCHEDULE_OTHER" 4 "VC_LVBMS_LIN_SCHEDULE_DEFAULT_2" 3 "VC_LVBMS_LIN_SCHEDULE_DEFAULT_1" 2 "VC_LVBMS_LIN_SCHEDULE_DIAGNOSTIC" 1 "VC_LVBMS_LIN_SCHEDULE_RESET" 0 "VC_LVBMS_LIN_SCHEDULE_OFF" ;
-VAL_ 609 VCFRONT_IBSVoltage 4095 "SNA" ;
-VAL_ 609 VCFRONT_IBSTemperature 2047 "IBS_TEMPERATURE_SNA" ;
-VAL_ 609 VCFRONT_LVBatteryStatusForDrive 2 "LV_BATTERY_EXIT_DRIVE_REQUESTED" 1 "LV_BATTERY_READY_FOR_DRIVE" 0 "LV_BATTERY_NOT_READY_FOR_DRIVE" ;
-VAL_ 609 VCFRONT_LVBatteryType 5 "LV_BATTERY_TYPE_TESLA_48V_LI_ION" 4 "LV_BATTERY_TYPE_TESLA_16V_LI_ION" 3 "LV_BATTERY_TYPE_CATL_LI_ION" 2 "LV_BATTERY_TYPE_CLARIOS_B24_FLOODED" 1 "LV_BATTERY_TYPE_ATLASBX_B24_FLOODED" 0 "LV_BATTERY_TYPE_UNKNOWN" ;
-VAL_ 609 VCFRONT_IBSVoltageFiltered 16383 "SNA" 16382 "MAX" 16381 "MIN" ;
-VAL_ 609 VCFRONT_LVBMS_LVBusVoltageSource 3 "VC_LVBMS_VOLTAGE_SOURCE_LVBMS" 2 "VC_LVBMS_VOLTAGE_SOURCE_VBAT_MONITOR" 1 "VC_LVBMS_VOLTAGE_SOURCE_IBS" 0 "VC_LVBMS_VOLTAGE_SOURCE_NONE" ;
-VAL_ 609 VCFRONT_LVBMS_LVPackCurrentSourc 2 "VC_LV_PACK_CURRENT_SOURCE_LVBMS" 1 "VC_LV_PACK_CURRENT_SOURCE_IBS" 0 "VC_LV_PACK_CURRENT_SOURCE_NONE" ;
-VAL_ 609 VCFRONT_LVBatterySupportRqrdTrig 14336 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_SOC_IMBALANCE_AND_CORRECTION" 12288 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_IMBALANCE_AND_CORRECTION" 10240 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_SOC_AND_CORRECTION" 8192 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_CORRECTION" 6144 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_SOC_AND_IMBALANCE" 4096 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_IMBALANCE" 2048 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_SOC" 1024 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_POST_OTA" 512 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_EXIT_TRANSPORT_MODE" 256 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_POWER_ON_RESET" 128 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_PERIODIC_CHARGE" 64 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_AH_COUNT" 32 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_UNKNOWN_VOLTAGE" 20 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_RAW_VC_VOLTAGES" 16 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_VBAT_RAW_VOLTAGE" 12 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_RAW_BATTERY_VOLTAGES" 10 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_PACK_VOLTAGES" 8 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_PACK_RAW_VOLTAGE" 5 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_IBS_VOLTAGES" 4 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_IBS_RAW_VOLTAGE" 3 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_FILTERED_VOLTAGES" 2 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_PACK_FILTERED_VOLTAGE" 1 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_IBS_FILTERED_VOLTAGE" 0 "LV_BATTERY_SUPPORT_REQUIRED_TRIGGER_NONE" ;
-VAL_ 609 VCFRONT_voltageProfile 3 "VOLTAGE_PROFILE_ALWAYS_CLOSED_CONTACTORS" 2 "VOLTAGE_PROFILE_REDUCED_FLOAT" 1 "VOLTAGE_PROFILE_FLOAT" 0 "VOLTAGE_PROFILE_CHARGE" ;
-VAL_ 609 VCFRONT_IBSVoltageRawDBG 16383 "SNA" 16382 "MAX" 16381 "MIN" ;
-VAL_ 1801 VCFRONT_logging0point1HzIndex 31 "END" 30 "HEADLAMP_LEFT_ECULESS_IO_DIAGNOSTIC" 29 "HEADLAMP_RIGHT_ECULESS_IO_DIAGNOSTIC" 28 "COMPRESSOR_WEAR_COUNTERS" 27 "HEADLAMP_RIGHT_EEPROM_INFO" 26 "HEADLAMP_LEFT_EEPROM_INFO" 25 "EXV_VALVE_TYPES" 24 "PART_FAILURE_CONFIDENCE_CONTINUED" 23 "PART_FAILURE_CONFIDENCE" 22 "LIGHT_DEBUG" 21 "HEADLAMP_COMM_FAULT_COUNTERS" 20 "HEADLAMP_MIGRATION" 19 "EXV_TOTAL_DISTANCE_COUNTERS_3" 18 "EXV_TOTAL_DISTANCE_COUNTERS_2" 17 "EXV_TOTAL_DISTANCE_COUNTERS_1" 16 "EXV_CCR_COUNTERS_2" 15 "EXV_CCR_COUNTERS_1" 14 "EXV_CCL_COUNTERS_2" 13 "EXV_CCL_COUNTERS_1" 12 "EXV_LCC_COUNTERS_2" 11 "EXV_LCC_COUNTERS_1" 10 "EXV_RECIRC_COUNTERS_2" 9 "EXV_RECIRC_COUNTERS_1" 8 "EXV_EVAPORATOR_COUNTERS_2" 7 "EXV_EVAPORATOR_COUNTERS_1" 6 "EXV_CHILLER_COUNTERS_2" 5 "EXV_CHILLER_COUNTERS_1" 4 "HEADLAMP_AIMED_POSITION" 3 "HEADLAMP_CURRENT_POSITION" 2 "HCMR_LED_TEMPS" 1 "HCML_LED_TEMPS" 0 "LIGHT_CURRENTS" ;
-VAL_ 1801 VC_hcmlFactoryOfOrigin 3 "HELLA_MEXICO" 2 "HELLA_SLOVAKIA" 1 "HELLA_CHINA" 0 "UNKNOWN" ;
-VAL_ 1801 VC_hcmlHellaPartNumberStatus 1 "FAULT" 0 "OK" ;
-VAL_ 1801 VC_hcmlCurrentBinMappingType 2 "BIN_MAP_TYPE_2" 1 "BIN_MAP_TYPE_1" 0 "BIN_MAP_TYPE_UNKNOWN" ;
-VAL_ 1801 VC_hcmlCurrentBin0Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmlCurrentBin1Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmlCurrentBin2Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmlCurrentBin3Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmlCurrentBin4Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmlCurrentBin5Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmlRegionAndSide 6 "HEADLAMP_REGION_AND_SIDE_ECE_RHD_RIGHT" 5 "HEADLAMP_REGION_AND_SIDE_ECE_RHD_LEFT" 4 "HEADLAMP_REGION_AND_SIDE_ECE_LHD_RIGHT" 3 "HEADLAMP_REGION_AND_SIDE_ECE_LHD_LEFT" 2 "HEADLAMP_REGION_AND_SIDE_SAE_RIGHT" 1 "HEADLAMP_REGION_AND_SIDE_SAE_LEFT" 0 "HEADLAMP_REGION_AND_SIDE_SNA" ;
-VAL_ 1801 VC_hcmrFactoryOfOrigin 3 "HELLA_MEXICO" 2 "HELLA_SLOVAKIA" 1 "HELLA_CHINA" 0 "UNKNOWN" ;
-VAL_ 1801 VC_hcmrHellaPartNumberStatus 1 "FAULT" 0 "OK" ;
-VAL_ 1801 VC_hcmrCurrentBinMappingType 2 "BIN_MAP_TYPE_2" 1 "BIN_MAP_TYPE_1" 0 "BIN_MAP_TYPE_UNKNOWN" ;
-VAL_ 1801 VC_hcmrCurrentBin0Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmrCurrentBin1Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmrCurrentBin2Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmrCurrentBin3Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmrCurrentBin4Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmrCurrentBin5Value 7 "INVALID_LIGHTCLASS" 4 "LIGHTCLASS_4" 3 "LIGHTCLASS_3" 2 "LIGHTCLASS_2" 1 "LIGHTCLASS_1" 0 "LIGHTCLASS_SNA" ;
-VAL_ 1801 VC_hcmrRegionAndSide 6 "HEADLAMP_REGION_AND_SIDE_ECE_RHD_RIGHT" 5 "HEADLAMP_REGION_AND_SIDE_ECE_RHD_LEFT" 4 "HEADLAMP_REGION_AND_SIDE_ECE_LHD_RIGHT" 3 "HEADLAMP_REGION_AND_SIDE_ECE_LHD_LEFT" 2 "HEADLAMP_REGION_AND_SIDE_SAE_RIGHT" 1 "HEADLAMP_REGION_AND_SIDE_SAE_LEFT" 0 "HEADLAMP_REGION_AND_SIDE_SNA" ;
-VAL_ 897 VCFRONT_logging1HzIndex 26 "END" 25 "MISC_FOUR" 24 "POWER_RATIONALITY_VCRIGHT" 23 "POWER_RATIONALITY_VCLEFT" 22 "SLEEP_WAKE" 21 "MISC_THREE" 20 "HSD_CURRENTS_2" 19 "HSD_CURRENTS_1" 18 "MISC_TWO" 17 "HP_PT_TARGETS" 16 "COOLANT_2" 15 "BODY_CONTROL" 14 "HP_MODE_OPTIONS_AND_ESTIMATES" 13 "HP_MODE_SELECT_AND_ESTIMATES" 12 "HP_ARBITRATION" 11 "HP_PRESSURE_CONTROL" 10 "HP_TEMPS_AND_DEMANDS" 9 "HP_DISSIPATION_AND_POWER" 8 "HP_EXV_CALIBRATION" 7 "HP_CYCLE_MODEL" 6 "HP_CONTROL_LOOP_AND_STATE" 5 "HP_DATA_AND_ACCUMULATORS" 4 "HP_EXV_RANGE" 3 "MISC_ONE" 2 "COOLANT_VALVE" 1 "FAN_DEMAND_CONDENSER_AND_FET_TEMPS" 0 "COOLANT" ;
-VAL_ 897 VCFRONT_batteryDischArbState 5 "FAULTED" 4 "INHIBIT_FOR_REST" 3 "BATTERY_DISCHARGE" 2 "BATTERY_HEATING" 1 "READY" 0 "NOT_READY" ;
 VAL_ 957 VCFRONT_energyLossIndex 4 "SINCE_LAST_CHARGE2" 3 "SINCE_LAST_CHARGE" 2 "SINCE_LAST_DRIVE2" 1 "SINCE_LAST_DRIVE" 0 "STATUS" ;
-VAL_ 737 VCFRONT_statusIndex 7 "INVALID" 6 "USER_PRESENCE" 5 "THERMAL" 4 "SYSTEM_HEALTH" 3 "REFRIGERANT_SYSTEM" 2 "HOMELINK" 1 "VEHICLE_STATE" 0 "BODY_CONTROLS" ;
-VAL_ 737 VCFRONT_frunkLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
-VAL_ 737 VCFRONT_wiperSpeed 9 "WIPER_SPEED_NARROW" 8 "WIPER_SPEED_HIGH" 7 "WIPER_SPEED_LOW" 6 "WIPER_SPEED_5" 5 "WIPER_SPEED_4" 4 "WIPER_SPEED_3" 3 "WIPER_SPEED_2" 2 "WIPER_SPEED_1" 1 "WIPER_SPEED_OFF" 0 "WIPER_SPEED_SNA" ;
-VAL_ 737 VCFRONT_wiperPosition 4 "WIPER_POSITION_WIPING" 3 "WIPER_POSITION_DELAYED_REST" 2 "WIPER_POSITION_DEPRESSED_PARK" 1 "WIPER_POSITION_SERVICE" 0 "WIPER_POSITION_SNA" ;
-VAL_ 737 VCFRONT_wiperState 14 "WIPER_STATE_NARROW_WASH" 13 "WIPER_STATE_NARROW_WIPE" 12 "WIPER_STATE_INT_AUTO_HIGH" 11 "WIPER_STATE_INT_AUTO_LOW" 10 "WIPER_STATE_CONT_SLOW" 9 "WIPER_STATE_CONT_FAST" 8 "WIPER_STATE_INTERMITTENT_LOW" 7 "WIPER_STATE_INTERMITTENT_HIGH" 6 "WIPER_STATE_MOMENTARY_WIPE" 5 "WIPER_STATE_WASH" 4 "WIPER_STATE_PARK" 3 "WIPER_STATE_DELAYED_REST" 2 "WIPER_STATE_FAULT" 1 "WIPER_STATE_SERVICE" 0 "WIPER_STATE_SNA" ;
-VAL_ 737 VCFRONT_crashDetectedType 3 "CRASH_DETECTED_TYPE_SEVERE" 2 "CRASH_DETECTED_TYPE_MINOR_2" 1 "CRASH_DETECTED_TYPE_MINOR_1" 0 "CRASH_DETECTED_TYPE_NONE" ;
-VAL_ 737 VCFRONT_crashState 3 "CRASH_STATE_SEVERE" 2 "CRASH_STATE_MINOR_2" 1 "CRASH_STATE_MINOR_1" 0 "CRASH_STATE_IDLE" ;
-VAL_ 737 VCFRONT_washPumpState 3 "WASH_PUMP_BIDIRECTIONAL_STATE_SNA" 2 "WASH_PUMP_BIDIRECTIONAL_STATE_DRIVING_SECONDARY" 1 "WASH_PUMP_BIDIRECTIONAL_STATE_DRIVING_PRIMARY" 0 "WASH_PUMP_BIDIRECTIONAL_STATE_OFF" ;
-VAL_ 737 VCFRONT_turnIndicatorControlType 2 "TURN_INDICATOR_CONTROL_TYPE_SWS_BUTTON" 1 "TURN_INDICATOR_CONTROL_TYPE_SINGLE_DETENT_STALK" 0 "TURN_INDICATOR_CONTROL_TYPE_UNKNOWN" ;
-VAL_ 737 VCFRONT_wiperHealth 7 "WIPER_HEALTH_RESERVED" 5 "WIPER_HEALTH_FAULT" 4 "WIPER_HEALTH_UPDATING" 3 "WIPER_HEALTH_TIMEOUT" 2 "WIPER_HEALTH_OK" 1 "WIPER_HEALTH_WAIT" 0 "WIPER_HEALTH_OFF" ;
-VAL_ 737 VCFRONT_radarHeaterState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
-VAL_ 737 VCFRONT_passengerBuckleStatus 1 "BUCKLED" 0 "UNBUCKLED" ;
-VAL_ 737 VCFRONT_frunkLatchType 2 "FRUNK_LATCH_TYPE_DOUBLE_PULL" 1 "FRUNK_LATCH_TYPE_DOUBLE_ACTUATOR" 0 "FRUNK_LATCH_TYPE_UNKNOWN" ;
-VAL_ 737 VCFRONT_iBoosterStateDBG 4 "IBOOSTER_FORCE_OFF" 3 "IBOOSTER_WRITING_DATA_SHUTDOWN" 2 "IBOOSTER_GOING_DOWN" 1 "IBOOSTER_ON" 0 "IBOOSTER_OFF" ;
-VAL_ 737 VCFRONT_vehicleStatusDBG 18 "VEHICLE_STATUS_SNA" 17 "VEHICLE_STATUS_RESET" 16 "VEHICLE_STATUS_TURN_ON_RAILS" 15 "VEHICLE_STATUS_OTA" 14 "VEHICLE_STATUS_CRASH" 13 "VEHICLE_STATUS_DRIVE" 12 "VEHICLE_STATUS_CONDITIONING" 11 "VEHICLE_STATUS_ACCESSORY_PLUS" 10 "VEHICLE_STATUS_ACCESSORY" 9 "VEHICLE_STATUS_HV_UP_STANDBY" 8 "VEHICLE_STATUS_LV_AWAKE" 7 "VEHICLE_STATUS_LV_SHUTDOWN" 6 "VEHICLE_STATUS_SLEEP_STANDBY" 5 "VEHICLE_STATUS_SLEEP_SHUTDOWN" 4 "VEHICLE_STATUS_SYSTEM_CHECKS" 3 "VEHICLE_STATUS_BATTERY_POST_WAKE" 2 "VEHICLE_STATUS_SILENT_WAKE" 1 "VEHICLE_STATUS_LOW_POWER_STANDBY" 0 "VEHICLE_STATUS_INIT" ;
-VAL_ 737 VCFRONT_sleepCurrent 4095 "SNA" ;
-VAL_ 737 VCFRONT_hibernationState 5 "VC_HIBERNATION_STATE_PREP" 4 "VC_HIBERNATION_STATE_EXIT" 3 "VC_HIBERNATION_STATE_RECOVERY" 2 "VC_HIBERNATION_STATE_ACTIVE" 1 "VC_HIBERNATION_STATE_NOT_ACTIVE" 0 "VC_HIBERNATION_STATE_INIT" ;
-VAL_ 737 VCFRONT_wiperECUType 3 "WIPER_ECU_TYPE_VALEO" 2 "WIPER_ECU_TYPE_SHB" 1 "WIPER_ECU_TYPE_BOSCH" 0 "WIPER_ECU_TYPE_UNKNOWN" ;
-VAL_ 737 VCFRONT_wiperHeaterState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
-VAL_ 737 VCFRONT_closureEasterEggState 5 "CLOSURE_EASTEREGG_STATE_SHOW_CLEANUP" 4 "CLOSURE_EASTEREGG_STATE_PLAY" 3 "CLOSURE_EASTEREGG_STATE_WAITING_FOR_SYNC_PULSE" 2 "CLOSURE_EASTEREGG_STATE_WAITING_FOR_PLAY" 1 "CLOSURE_EASTEREGG_STATE_WAITING_FOR_START_CONDITIONS" 0 "CLOSURE_EASTEREGG_STATE_IDLE" ;
-VAL_ 737 VCFRONT_homelinkCommStatus 3 "HOMELINK_COMM_STATUS_FAULT" 2 "HOMELINK_COMM_STATUS_ON" 1 "HOMELINK_COMM_STATUS_OFF" 0 "HOMELINK_COMM_STATUS_SNA" ;
-VAL_ 737 VCFRONT_pressureRefrigSuction 127 "SNA" ;
-VAL_ 737 VCFRONT_pressureRefrigDischarge 511 "SNA" ;
-VAL_ 737 VCFRONT_hvacPerfTestCommand 5 "PRECONDITION" 4 "STOP" 3 "BLOW_BILEVEL" 2 "BLOW" 1 "INIT" 0 "NOT_STARTED" ;
-VAL_ 737 VCFRONT_coolantFillRoutineStatus 3 "FAULTED" 2 "READY_TO_FILL" 1 "MOVING_TO_FILL_POSITION" 0 "NOT_READY" ;
-VAL_ 737 VCFRONT_refrigFillRoutineStatus 3 "FAULTED" 2 "READY_TO_FILL" 1 "MOVING_TO_FILL_POSITION" 0 "NOT_READY" ;
-VAL_ 737 VCFRONT_closeValvesRoutineStatus 3 "FAULTED" 2 "READY_TO_FILL" 1 "MOVING_TO_FILL_POSITION" 0 "NOT_READY" ;
-VAL_ 737 VCFRONT_vbatMonitorVoltage 4095 "SNA" ;
-VAL_ 737 VCFRONT_AS8510Voltage 4095 "SNA" ;
-VAL_ 737 VCFRONT_activeLouverState 17 "AUTO_DETECT_MEASURE_3" 16 "AUTO_DETECT_WAIT_3" 15 "AUTO_DETECT_PAUSE_3" 14 "AUTO_DETECT_MEASURE_2" 13 "AUTO_DETECT_WAIT_2" 12 "AUTO_DETECT_PAUSE_2" 11 "AUTO_DETECT_MEASURE_1" 10 "AUTO_DETECT_WAIT_1" 9 "AUTO_DETECT_PAUSE_1" 8 "AUTO_DETECT_BACKOFF" 7 "FAILSAFE_LOCKED" 6 "FAILSAFE_OPEN" 5 "FAULTED" 4 "READY" 3 "CALIB_OPEN" 2 "CALIB_CLOSE" 1 "UNCALIBRATED" 0 "NOT_READY" ;
-VAL_ 737 VCFRONT_windshieldCameraHeaterPo 63 "SNA" ;
 VAL_ 507 VCLEFT_TLCStatusIndex 2 "INVALID" 1 "1" 0 "0" ;
 VAL_ 507 VCLEFT_TLCTemperature -128 "SNA" ;
 VAL_ 507 VCLEFT_TLCLeftTurnVoltage 255 "SNA" ;
@@ -2502,110 +726,9 @@ VAL_ 507 VCLEFT_TLCState_Tail 5 "VCLEFT_TLC_LIGHT_STATE_SNA" 4 "VCLEFT_TLC_LIGHT
 VAL_ 507 VCLEFT_TLCState_Stop 5 "VCLEFT_TLC_LIGHT_STATE_SNA" 4 "VCLEFT_TLC_LIGHT_STATE_FAULT" 3 "VCLEFT_TLC_LIGHT_STATE_ON_WITH_LOAD" 2 "VCLEFT_TLC_LIGHT_STATE_ON_WITHOUT_LOAD" 1 "VCLEFT_TLC_LIGHT_STATE_OFF_WITH_LOAD" 0 "VCLEFT_TLC_LIGHT_STATE_OFF_WITHOUT_LOAD" ;
 VAL_ 507 VCLEFT_TLCState_Fog 5 "VCLEFT_TLC_LIGHT_STATE_SNA" 4 "VCLEFT_TLC_LIGHT_STATE_FAULT" 3 "VCLEFT_TLC_LIGHT_STATE_ON_WITH_LOAD" 2 "VCLEFT_TLC_LIGHT_STATE_ON_WITHOUT_LOAD" 1 "VCLEFT_TLC_LIGHT_STATE_OFF_WITH_LOAD" 0 "VCLEFT_TLC_LIGHT_STATE_OFF_WITHOUT_LOAD" ;
 VAL_ 507 VCLEFT_TLCState_Reverse 5 "VCLEFT_TLC_LIGHT_STATE_SNA" 4 "VCLEFT_TLC_LIGHT_STATE_FAULT" 3 "VCLEFT_TLC_LIGHT_STATE_ON_WITH_LOAD" 2 "VCLEFT_TLC_LIGHT_STATE_ON_WITHOUT_LOAD" 1 "VCLEFT_TLC_LIGHT_STATE_OFF_WITH_LOAD" 0 "VCLEFT_TLC_LIGHT_STATE_OFF_WITHOUT_LOAD" ;
-VAL_ 1802 VCLEFT_logging0point1HzIndex 1 "END" 0 "MISC" ;
-VAL_ 1802 VCLEFT_leftBrakeTailLightCurrent 511 "SNA" ;
-VAL_ 1802 VCLEFT_leftBrakeTailLightCu_0001 4 "FALLING_EDGE_TRANSIENT" 3 "STEADY_STATE_ON" 2 "RISING_EDGE_TRANSIENT" 1 "STEADY_STATE_OFF" 0 "SNA" ;
-VAL_ 1802 VCLEFT_leftRearTurnLightCurrent 511 "SNA" ;
-VAL_ 1802 VCLEFT_leftRearTurnLightCurrentS 4 "FALLING_EDGE_TRANSIENT" 3 "STEADY_STATE_ON" 2 "RISING_EDGE_TRANSIENT" 1 "STEADY_STATE_OFF" 0 "SNA" ;
-VAL_ 930 VCLEFT_statusIndex 2 "MUX2" 1 "MUX1" 0 "MUX0" ;
-VAL_ 930 VCLEFT_swcInputVoltage 255 "SNA" ;
-VAL_ 930 VCLEFT_swcPCBATemperature -128 "SNA" ;
-VAL_ 930 VCLEFT_LVBatteryTypeDBG 5 "LV_BATTERY_TYPE_TESLA_48V_LI_ION" 4 "LV_BATTERY_TYPE_TESLA_16V_LI_ION" 3 "LV_BATTERY_TYPE_CATL_LI_ION" 2 "LV_BATTERY_TYPE_CLARIOS_B24_FLOODED" 1 "LV_BATTERY_TYPE_ATLASBX_B24_FLOODED" 0 "LV_BATTERY_TYPE_UNKNOWN" ;
-VAL_ 930 VCLEFT_trailerAuxCurrent 4095 "SNA" ;
-VAL_ 930 VCLEFT_swcHeatTmp 1023 "SNA" ;
-VAL_ 930 VCLEFT_swcHeatStatus 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
-VAL_ 930 VCLEFT_swcHeatPwr 511 "SNA" ;
-VAL_ 930 VCLEFT_swcHeatDutyCycle 127 "SNA" ;
-VAL_ 962 VCLEFT_switchStatusIndex 1 "1" 0 "0" ;
-VAL_ 962 VCLEFT_rightMirrorTilt 4 "MIRROR_TILT_LEFT" 3 "MIRROR_TILT_RIGHT" 2 "MIRROR_TILT_UP" 1 "MIRROR_TILT_DOWN" 0 "MIRROR_TILT_STOP" ;
-VAL_ 962 VCLEFT_frontSeatTrackBack 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatTrackForward 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatTiltDown 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatTiltUp 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatLiftDown 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatLiftUp 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatBackrestBack 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatBackrestForward 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatLumbarDown 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatLumbarUp 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatLumbarIn 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontSeatLumbarOut 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_frontOccupancySwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_rearLeftBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_rearCenterOccupancySwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_rearLeftOccupancySwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_rearRightOccupancySwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_rearCenterBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcLeftTiltRight 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcLeftPressed 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcRightTiltLeft 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcRightTiltRight 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcRightPressed 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcLeftTiltLeft 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcWiperButtonState 3 "FAULT" 2 "HARD_PRESS" 1 "SOFT_PRESS" 0 "INACTIVE" ;
-VAL_ 962 VCLEFT_swcTurnSignalLeftButtonSt 3 "FAULT" 2 "HARD_PRESS" 1 "SOFT_PRESS" 0 "INACTIVE" ;
-VAL_ 962 VCLEFT_swcTurnSignalRightButtonS 3 "FAULT" 2 "HARD_PRESS" 1 "SOFT_PRESS" 0 "INACTIVE" ;
-VAL_ 962 VCLEFT_swcHighBeamButtonState 3 "FAULT" 2 "HARD_PRESS" 1 "SOFT_PRESS" 0 "INACTIVE" ;
-VAL_ 962 VCLEFT_swcVoiceControlPress 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 962 VCLEFT_swcCameraButtonState 3 "FAULT" 2 "HARD_PRESS" 1 "SOFT_PRESS" 0 "INACTIVE" ;
-VAL_ 962 VCLEFT_swcRightPressedQF 1 "VALID" 0 "INVALID" ;
-VAL_ 962 VCLEFT_2RowSeatReclineSwitchpack 6 "FAULT" 5 "REARWARD_FAST" 4 "REARWARD_SLOW" 3 "FORWARD_FAST" 2 "FORWARD_SLOW" 1 "INACTIVE" 0 "DISCONNECTED" ;
-VAL_ 962 VCLEFT_frontSeatResistiveOccupan 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 1114 VCRIGHT_AP_hvacState10HzIndex 2 "END" 1 "MUX_1" 0 "MUX_0" ;
-VAL_ 1114 VCRIGHT_AP_hvacModelInitStatus 5 "INIT_WAITING_FOR_SENSORS" 4 "INIT_FORWARD_CALC" 3 "INIT_FROM_SENSORS_PREDICTION_ERROR" 2 "INIT_FROM_SENSORS" 1 "NOT_INIT_WAIT_FOR_GTW" 0 "NOT_INIT_WAIT_FOR_SENSORS" ;
-VAL_ 1114 VCRIGHT_AP_cabinTempWindshield 255 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_cabinTempSideGlassRig 255 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_cabinTempSideGlassLef 255 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_hvacAirDistributionMo 7 "DEFROST_PANEL_FLOOR" 6 "DEFROST_PANEL" 5 "DEFROST_FLOOR" 4 "DEFROST" 3 "PANEL_FLOOR" 2 "PANEL" 1 "FLOOR" 0 "NONE" ;
-VAL_ 1114 VCRIGHT_AP_tempDuctDefrost 255 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_cameraFanDutyRequest 127 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_turnCameraFanOffReaso 7 "TURN_OFF_REASON_CABIN_HUMIDITY" 6 "TURN_OFF_REASON_EVAP_CONTROLS_COMPROMISED" 5 "TURN_OFF_REASON_FLASH_FOGGING" 4 "TURN_OFF_REASON_VOC_CONCENTRATION_HIGH" 3 "TURN_OFF_REASON_START_OF_COLD_DRIVE" 2 "TURN_OFF_REASON_RADIATOR_STEAMING" 1 "TURN_OFF_REASON_EVAP_JUST_TURNED_OFF" 0 "TURN_OFF_REASON_NONE" ;
-VAL_ 1114 VCRIGHT_AP_cameraTurnOnTime 255 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_solarFluxOnRightWindo 255 "SNA" ;
-VAL_ 1114 VCRIGHT_AP_solarFluxOnLeftWindow 255 "SNA" ;
-VAL_ 1795 VCRIGHT_debugThermal10HzIndex 10 "END" 9 "HVAC_ACTUATOR_TUNNING" 8 "HVAC_PTC_COI_DEV4" 7 "HVAC_PTC_COI_DEV3" 6 "HVAC_PTC_COI_DEV2" 5 "HVAC_PTC_COI_DEV1" 4 "actuatorStatus" 3 "cabinModel" 2 "airflow" 1 "temps" 0 "heaterAndEvapWatts" ;
-VAL_ 1795 VCRIGHT_setTempAdjustmentLeft 127 "SNA" ;
-VAL_ 1795 VCRIGHT_setTempAdjustmentRight 127 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterPowerLeft 63 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterPowerLeft 63 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerPowerLeft 63 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterPowerRight 63 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterPowerRight 63 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerPowerRight 63 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterStoneTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterStoneTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerStoneTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerStoneTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterStoneTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterRodTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterAirTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterRodTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerRodTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterAirTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerAirTempLeft 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterStoneTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterRodTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCouterAirTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterRodTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerRodTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCcenterAirTempRight 255 "SNA" ;
-VAL_ 1795 VCRIGHT_PTCinnerAirTempRight 255 "SNA" ;
 VAL_ 291 VCRIGHT_doorStatus2Index 1 "MUX1" 0 "MUX0" ;
 VAL_ 291 VCRIGHT_BPillarCameraHeaterState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
 VAL_ 291 VCRIGHT_BPillarCameraHeaterCurre 63 "SNA" ;
-VAL_ 739 VCRIGHT_seatStatus2Index 12 "SEAT_2ROW_ADJUSTABLE_FOLD_FLAT_2" 11 "SEAT_2ROW_ADJUSTABLE_FOLD_FLAT" 10 "OCS_IEE" 9 "SEAT_2ROW_EASY_ENTRY" 8 "SEAT_SWITCH_VOLTAGES_2" 7 "SEAT_SWITCH_VOLTAGES_1" 6 "SEAT_2ROW_ACTUATOR" 5 "SEAT_HEAT_REARR_BACKREST" 4 "OCCUPANCY" 3 "SEAT_HEAT_REARR" 2 "SEAT_HEAT_REARC" 1 "SEAT_HEAT_REARL_CUSHION" 0 "SEAT_HEAT_FRONT" ;
-VAL_ 739 VCRIGHT_frontSeatHeatCurrent 12 "SNA" ;
-VAL_ 739 VCRIGHT_2RowSeatReclineState 15 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_SNA" 12 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_CALIBRATING_ABSOLUTE_SENSOR" 11 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_CALIBRATING_ZERO_POSITION" 10 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_WAITING_TO_CLEAR_FOR_UNFOLD" 9 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_WAITING_TO_CLEAR_FOR_FOLD" 8 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_MOVING_REARWARD_TO_POSITION" 7 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_MOVING_FORWARD_TO_POSITION" 6 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_UNFOLDING" 5 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_FOLDING" 4 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_REARWARD_FAST" 3 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_FORWARD_FAST" 2 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_REARWARD_COMFORT" 1 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_FORWARD_COMFORT" 0 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_STOPPED" ;
-VAL_ 739 VCRIGHT_2RowSeatReclineAbsPosSwi 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
-VAL_ 739 VCRIGHT_2RowSeatReclinePositionS 4 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_SNA" 3 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_UNKNOWN" 2 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_UNSAFE_INTERMEDIATE" 1 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_UNFOLDED" 0 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_FOLDED" ;
-VAL_ 739 VCRIGHT_2RowSeatReclineNextToggl 2 "SEAT_ADJUSTABLE_FOLD_FLAT_NEXT_TOGGLE_DIRECTION_SNA" 1 "SEAT_ADJUSTABLE_FOLD_FLAT_NEXT_TOGGLE_DIRECTION_UNFOLD" 0 "SEAT_ADJUSTABLE_FOLD_FLAT_NEXT_TOGGLE_DIRECTION_FOLD" ;
-VAL_ 739 VCRIGHT_2RowSeat1RClashAvoidance 6 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_OCCUPANCY" 5 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_MOVING" 4 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_PROFILE_RECALL" 3 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_REAR_SEAT_UNCALIBRATED" 2 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_UNCALIBRATED" 1 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_VEHICLE_IN_MOTION" 0 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_NONE" ;
-VAL_ 739 VCRIGHT_2RowSeat1RClashAvoi_0001 3 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_RESTORING_FRONT_SEAT" 2 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_WAITING_TO_RESTORE_FRONT_SEAT" 1 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_FRONT_SEAT_CLEARING" 0 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_IDLE" ;
-VAL_ 835 VCRIGHT_LVBatteryTypeDBG 5 "LV_BATTERY_TYPE_TESLA_48V_LI_ION" 4 "LV_BATTERY_TYPE_TESLA_16V_LI_ION" 3 "LV_BATTERY_TYPE_CATL_LI_ION" 2 "LV_BATTERY_TYPE_CLARIOS_B24_FLOODED" 1 "LV_BATTERY_TYPE_ATLASBX_B24_FLOODED" 0 "LV_BATTERY_TYPE_UNKNOWN" ;
-VAL_ 835 VCRIGHT_rearDefrostState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
-VAL_ 835 VCRIGHT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
-VAL_ 835 VCRIGHT_steeringWheelHeaterDCTgt 127 "SNA" ;
 VAL_ 899 VCRIGHT_thsTemperature 255 "SNA" ;
 VAL_ 899 VCRIGHT_thsState 4 "IDLE" 3 "WAIT_CRC_RESPONSE" 2 "WAIT_CRC_REQUEST" 1 "CONFIG" 0 "INIT" ;
 VAL_ 899 VCRIGHT_thsLINCurrentSchedule 7 "OTHER" 3 "DIAGNOSTIC" 2 "CONFIG" 1 "MAIN" 0 "OFF" ;

@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ADSP APSB BB CMP CP DAS DPB EPASTP EPASTS GTW IDB OCS1P PTC RCM RCU TCU TCU2 UI UIS VCLEFT VCSEAT2L VCSEAT2R VCSEC
+BU_: ADSP APSB BB CMP DAS DPB EPASTP EPASTS GTW IDB OCS1P PTC RCM RCU TCU TCU2 UI UIS VCLEFT VCSEAT2L VCSEAT2R
 
 
 BO_ 1360 ADSP_alertLog: 8 ADSP
@@ -1196,9 +1196,6 @@ BO_ 551 CMP_HVStatus: 8 CMP
  SG_ CMP_inputLVVoltage : 16|8@1+ (0.1,0) [0|25.5] "V" Vector__XXX
  SG_ CMP_inputHVCurrent : 24|16@1+ (0.1,0) [0|6553.4] "A" Vector__XXX
  SG_ CMP_inputHVPower : 40|16@1+ (1,0) [0|65534] "W" Vector__XXX
-
-BO_ 1767 CP_IsoTpPipeToPncd: 8 CP
- SG_ CP_isoTpToPncdData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 778 DAS_object: 8 DAS
  SG_ DAS_objectId M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -8220,16 +8217,6 @@ BO_ 746 VCSEAT2R_seatStatus2: 8 VCSEAT2R
  SG_ VCSEAT2R_choreographyCollisionPa m4 : 32|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCSEAT2R_2rMovingForChoreography m4 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 474 VCSEC_IsoTpPipeRemoteUI: 8 VCSEC
- SG_ VCSEC_IsoTpRemoteUI0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCSEC_IsoTpRemoteUI7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
-
 BO_TX_BU_ 1360 : ADSP;
 BO_TX_BU_ 1361 : ADSP;
 BO_TX_BU_ 1362 : ADSP;
@@ -8245,7 +8232,6 @@ BO_TX_BU_ 976 : APSB;
 BO_TX_BU_ 1003 : APSB;
 BO_TX_BU_ 943 : BB;
 BO_TX_BU_ 551 : CMP;
-BO_TX_BU_ 1767 : CP;
 BO_TX_BU_ 778 : DAS;
 BO_TX_BU_ 781 : DAS;
 BO_TX_BU_ 1548 : DAS;
@@ -8321,15 +8307,13 @@ BO_TX_BU_ 1374 : VCSEAT2R;
 BO_TX_BU_ 1008 : VCSEAT2R;
 BO_TX_BU_ 765 : VCSEAT2R;
 BO_TX_BU_ 746 : VCSEAT2R;
-BO_TX_BU_ 474 : VCSEC;
 
 
-CM_ "Tesla Model 3 / Model Y CAN bus database; bus ETH; firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ "Tesla Model 3 / Model Y CAN bus database; bus ETH (Ethernet-side ids, not CAN ids); firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
 CM_ BU_ ADSP "Audio amplifier";
 CM_ BU_ APSB "APSB ECU";
 CM_ BU_ BB "BB ECU";
 CM_ BU_ CMP "A/C compressor";
-CM_ BU_ CP "Charge port controller";
 CM_ BU_ DAS "Driver assistance computer";
 CM_ BU_ DPB "DPB ECU";
 CM_ BU_ EPASTP "EPASTP ECU";
@@ -8347,7 +8331,6 @@ CM_ BU_ UIS "UIS ECU";
 CM_ BU_ VCLEFT "Left body controller";
 CM_ BU_ VCSEAT2L "VCSEAT2L ECU";
 CM_ BU_ VCSEAT2R "VCSEAT2R ECU";
-CM_ BU_ VCSEC "Vehicle security controller";
 CM_ BO_ 1360 "Audio amplifier message: alert log";
 CM_ SG_ 1360 ADSP_alertID "Audio amplifier: alert ID";
 CM_ SG_ 1360 ADSP_alertState "Audio amplifier: alert state";
@@ -9134,7 +9117,7 @@ CM_ SG_ 1482 APSB_sw315_status "APSB ECU: sw315 status";
 CM_ SG_ 1482 APSB_sw317_motionControlCommand "APSB ECU: sw317 motion control command";
 CM_ SG_ 1482 APSB_sw317_vehicleControl2 "APSB ECU: sw317 vehicle control2";
 CM_ BO_ 731 "APSB ECU message: eac monitor";
-CM_ SG_ 731 APSB_eacAllow "Indicates whether or not the Aurix external angle control (EAC) monitor logic currently allows angle control for Autopilot functions.; raw 3 = signal not available (SNA)";
+CM_ SG_ 731 APSB_eacAllow "Indicates whether or not the Aurix external angle control (EAC) monitor logic currently allows angle control for Autopilot functions; raw 3 = signal not available (SNA)";
 CM_ SG_ 731 APSB_eacMonitorCounter "APSB ECU: eac monitor counter";
 CM_ SG_ 731 APSB_eacMonitorChecksum "APSB ECU: eac monitor checksum";
 CM_ BO_ 992 "APSB ECU message: power state inputs";
@@ -9166,7 +9149,7 @@ CM_ SG_ 1864 APSB_stateCounter "APSB ECU: state counter";
 CM_ BO_ 971 "APSB ECU message: status";
 CM_ SG_ 971 APSB_appStatusMonitorState "APSB ECU: app status monitor state";
 CM_ SG_ 971 APSB_vehBehaviorState "APSB ECU: veh behavior state";
-CM_ SG_ 971 APSB_canMaster "Indicates which of the autopilot computers is currently controlling outgoing CAN traffic.; raw 3 = signal not available (SNA)";
+CM_ SG_ 971 APSB_canMaster "Indicates which of the autopilot computers is currently controlling outgoing CAN traffic; raw 3 = signal not available (SNA)";
 CM_ SG_ 971 APSB_appGpioState "APSB ECU: app gpio state";
 CM_ SG_ 971 APSB_eacInternalState "APSB ECU: eac internal state";
 CM_ SG_ 971 APSB_switchState "APSB ECU: switch state";
@@ -9494,13 +9477,11 @@ CM_ SG_ 551 CMP_inputHVVoltage "Compressor high voltage input voltage";
 CM_ SG_ 551 CMP_inputLVVoltage "A/C compressor: input LV voltage";
 CM_ SG_ 551 CMP_inputHVCurrent "A/C compressor: input HV current";
 CM_ SG_ 551 CMP_inputHVPower "Compressor high voltage input power";
-CM_ BO_ 1767 "Charge port controller message: iso tp pipe to pncd";
-CM_ SG_ 1767 CP_isoTpToPncdData "Charge port controller: iso tp to pncd data";
 CM_ BO_ 778 "Driver assistance computer message: object";
 CM_ SG_ 778 DAS_objectId "Driver assistance computer: object id";
 CM_ SG_ 778 DAS_leadVehType "Driver assistance computer: lead veh type";
 CM_ SG_ 778 DAS_leadVehRelevantForControl "Driver assistance computer: lead veh relevant for control";
-CM_ SG_ 778 DAS_leadVehDx "Measures the distance to lead vehicle, or vehicle in the ego lane.; raw 255 = signal not available (SNA)";
+CM_ SG_ 778 DAS_leadVehDx "Measures the distance to lead vehicle, or vehicle in the ego lane; raw 255 = signal not available (SNA)";
 CM_ SG_ 778 DAS_leadVehVxRel "Driver assistance computer: lead veh vx rel; raw 15 = signal not available (SNA)";
 CM_ SG_ 778 DAS_leadVehDy "Driver assistance computer: lead veh dy";
 CM_ SG_ 778 DAS_leadVehId "Driver assistance computer: lead veh id; raw 127 = signal not available (SNA)";
@@ -13953,7 +13934,7 @@ CM_ SG_ 831 RCU_infoAssemblyID "RCU ECU: info assembly ID";
 CM_ SG_ 831 RCU_infoUsageID "RCU ECU: info usage ID";
 CM_ SG_ 831 RCU_infoSubUsageID "RCU ECU: info sub usage ID";
 CM_ BO_ 1415 "TCU2 ECU message: sleep config";
-CM_ SG_ 1415 TCU2_tc10Version "Indicates which version of Open Alliance's TC10 protocol is supported by the modem.; raw 0 = signal not available (SNA)";
+CM_ SG_ 1415 TCU2_tc10Version "Indicates which version of Open Alliance's TC10 protocol is supported by the modem; raw 0 = signal not available (SNA)";
 CM_ BO_ 1413 "TCU2 ECU message: alert log";
 CM_ SG_ 1413 TCU2_alertID "TCU2 ECU: alert ID";
 CM_ SG_ 1413 TCU2_alertState "TCU2 ECU: alert state";
@@ -14011,7 +13992,7 @@ CM_ SG_ 1412 TCU2_mdmUplinkAvgRate "TCU2 ECU: mdm uplink avg rate";
 CM_ SG_ 1412 TCU2_mdmServiceState "TCU2 ECU: mdm service state";
 CM_ SG_ 1412 TCU2_mdmIMSStatus "Indicates the current IP Multimedia System (IMS) registration state.";
 CM_ SG_ 1412 TCU2_mdmSIMStatus "TCU2 ECU: mdm SIM status";
-CM_ SG_ 1412 TCU2_mdmBusyActive "Reports whether the modem busy service is active on the modem application processor.; raw 4294967295 = signal not available (SNA)";
+CM_ SG_ 1412 TCU2_mdmBusyActive "Reports whether the modem busy service is active on the modem application processor; raw 4294967295 = signal not available (SNA)";
 CM_ SG_ 1412 TCU2_modemUptime "Indicates the current modem Application Processor uptime.";
 CM_ SG_ 1412 TCU2_mdmDataRat "Reports which Radio Access Technology (RAT) is active for the current data bearer.";
 CM_ SG_ 1412 TCU2_mdmDataCallStatus "Indicates the current state of the Packet Data Protocol (PDP) context.";
@@ -14028,7 +14009,7 @@ CM_ SG_ 1412 TCU2_checkInternetFailCount "Reports the count of unsuccessful cell
 CM_ SG_ 1412 TCU2_mdmBand "Indicates the band which the baseband processor is currently attached to the cellular network.";
 CM_ SG_ 1412 TCU2_wakeSource "Indicates the source of wake event in the modem.";
 CM_ BO_ 1159 "TCU ECU message: sleep config";
-CM_ SG_ 1159 TCU_tc10Version "Indicates which version of Open Alliance's TC10 protocol is supported by the modem.; raw 0 = signal not available (SNA)";
+CM_ SG_ 1159 TCU_tc10Version "Indicates which version of Open Alliance's TC10 protocol is supported by the modem; raw 0 = signal not available (SNA)";
 CM_ BO_ 1157 "TCU ECU message: alert log";
 CM_ SG_ 1157 TCU_alertID "TCU ECU: alert ID";
 CM_ SG_ 1157 TCU_alertState "TCU ECU: alert state";
@@ -14086,7 +14067,7 @@ CM_ SG_ 1155 TCU_mdmUplinkAvgRate "TCU ECU: mdm uplink avg rate";
 CM_ SG_ 1155 TCU_mdmServiceState "TCU ECU: mdm service state";
 CM_ SG_ 1155 TCU_mdmIMSStatus "Indicates the current IP Multimedia System (IMS) registration state.";
 CM_ SG_ 1155 TCU_mdmSIMStatus "TCU ECU: mdm SIM status";
-CM_ SG_ 1155 TCU_mdmBusyActive "Reports whether the modem busy service is active on the modem application processor.; raw 4294967295 = signal not available (SNA)";
+CM_ SG_ 1155 TCU_mdmBusyActive "Reports whether the modem busy service is active on the modem application processor; raw 4294967295 = signal not available (SNA)";
 CM_ SG_ 1155 TCU_modemUptime "Indicates the current modem Application Processor uptime.";
 CM_ SG_ 1155 TCU_mdmDataRat "Reports which Radio Access Technology (RAT) is active for the current data bearer.";
 CM_ SG_ 1155 TCU_mdmDataCallStatus "Indicates the current state of the Packet Data Protocol (PDP) context.";
@@ -14530,7 +14511,7 @@ CM_ SG_ 1056 UIS_amdSocPkgPower "UIS ECU: amd soc pkg power";
 CM_ SG_ 1056 UIS_activeAppView "Shows the currently displayed app";
 CM_ SG_ 1056 UIS_CamViewerServiceEnabled "Reports whether the cam-viewer service is enabled.";
 CM_ BO_ 979 "Touchscreen user interface computer message: airbag cutoff status";
-CM_ SG_ 979 UI_airbagCutoffSwState "Reports the front passenger airbag cutoff switch request.; raw 2 = signal not available (SNA)";
+CM_ SG_ 979 UI_airbagCutoffSwState "Reports the front passenger airbag cutoff switch request; raw 2 = signal not available (SNA)";
 CM_ SG_ 979 UI_warningIndicatorStatus "Touchscreen user interface computer: warning indicator status; raw 3 = signal not available (SNA)";
 CM_ BO_ 1523 "Touchscreen user interface computer message: alert log";
 CM_ SG_ 1523 UI_alertID "Touchscreen user interface computer: alert ID";
@@ -16441,15 +16422,6 @@ CM_ SG_ 746 VCSEAT2R_choreography3RBackrestV "VCSEAT2R ECU: choreography3 r back
 CM_ SG_ 746 VCSEAT2R_choreographyState "VCSEAT2R ECU: choreography state";
 CM_ SG_ 746 VCSEAT2R_choreographyCollisionPa "VCSEAT2R ECU: choreography collision pair";
 CM_ SG_ 746 VCSEAT2R_2rMovingForChoreography "VCSEAT2R ECU: 2r moving for choreography";
-CM_ BO_ 474 "Vehicle security controller message: iso tp pipe remote UI";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI0 "Vehicle security controller: iso tp remote UI0";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI1 "Vehicle security controller: iso tp remote UI1";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI2 "Vehicle security controller: iso tp remote UI2";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI3 "Vehicle security controller: iso tp remote UI3";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI4 "Vehicle security controller: iso tp remote UI4";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI5 "Vehicle security controller: iso tp remote UI5";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI6 "Vehicle security controller: iso tp remote UI6";
-CM_ SG_ 474 VCSEC_IsoTpRemoteUI7 "Vehicle security controller: iso tp remote UI7";
 BA_DEF_ "BusType" STRING;
 BA_DEF_ "DBName" STRING;
 BA_DEF_ "Baudrate" INT 0 1000000;
@@ -16494,7 +16466,6 @@ BA_ "ECU" BU_ ADSP "ADSP";
 BA_ "ECU" BU_ APSB "APSB";
 BA_ "ECU" BU_ BB "BB";
 BA_ "ECU" BU_ CMP "CMP";
-BA_ "ECU" BU_ CP "CP";
 BA_ "ECU" BU_ DAS "DAS";
 BA_ "ECU" BU_ DPB "DPB";
 BA_ "ECU" BU_ EPASTP "EPASTP";
@@ -16512,7 +16483,6 @@ BA_ "ECU" BU_ UIS "UIS";
 BA_ "ECU" BU_ VCLEFT "VCLEFT";
 BA_ "ECU" BU_ VCSEAT2L "VCSEAT2L";
 BA_ "ECU" BU_ VCSEAT2R "VCSEAT2R";
-BA_ "ECU" BU_ VCSEC "VCSEC";
 BA_ "GenMsgCycleTime" BO_ 1360 0;
 BA_ "GenMsgSendType" BO_ 1360 8;
 BA_ "VFrameFormat" BO_ 1360 0;
@@ -16558,9 +16528,6 @@ BA_ "VFrameFormat" BO_ 943 0;
 BA_ "GenMsgCycleTime" BO_ 551 100;
 BA_ "GenMsgSendType" BO_ 551 0;
 BA_ "VFrameFormat" BO_ 551 0;
-BA_ "GenMsgCycleTime" BO_ 1767 0;
-BA_ "GenMsgSendType" BO_ 1767 8;
-BA_ "VFrameFormat" BO_ 1767 0;
 BA_ "GenMsgCycleTime" BO_ 778 30;
 BA_ "GenMsgSendType" BO_ 778 0;
 BA_ "VFrameFormat" BO_ 778 0;
@@ -16786,9 +16753,6 @@ BA_ "VFrameFormat" BO_ 765 0;
 BA_ "GenMsgCycleTime" BO_ 746 200;
 BA_ "GenMsgSendType" BO_ 746 0;
 BA_ "VFrameFormat" BO_ 746 0;
-BA_ "GenMsgCycleTime" BO_ 474 0;
-BA_ "GenMsgSendType" BO_ 474 8;
-BA_ "VFrameFormat" BO_ 474 0;
 BA_ "Confidence" SG_ 1360 ADSP_alertID 1;
 BA_ "Confidence" SG_ 1360 ADSP_alertState 1;
 BA_ "Confidence" SG_ 1360 ADSP_a002_core 2;
@@ -18021,7 +17985,6 @@ BA_ "Confidence" SG_ 551 CMP_inputHVVoltage 0;
 BA_ "Confidence" SG_ 551 CMP_inputLVVoltage 0;
 BA_ "Confidence" SG_ 551 CMP_inputHVCurrent 0;
 BA_ "Confidence" SG_ 551 CMP_inputHVPower 0;
-BA_ "Confidence" SG_ 1767 CP_isoTpToPncdData 2;
 BA_ "Confidence" SG_ 778 DAS_objectId 1;
 BA_ "Confidence" SG_ 778 DAS_leadVehType 0;
 BA_ "Confidence" SG_ 778 DAS_leadVehRelevantForControl 0;
@@ -25999,14 +25962,6 @@ BA_ "Confidence" SG_ 746 VCSEAT2R_choreographyState 0;
 BA_ "Confidence" SG_ 746 VCSEAT2R_choreographyCollisionPa 0;
 BA_ "SystemSignalLongSymbol" SG_ 746 VCSEAT2R_choreographyCollisionPa "VCSEAT2R_choreographyCollisionPair";
 BA_ "Confidence" SG_ 746 VCSEAT2R_2rMovingForChoreography 0;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI0 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI1 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI2 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI3 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI4 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI5 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI6 2;
-BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI7 2;
 VAL_ 1360 ADSP_alertID 84 "w084_sharc1LowCpuUsage" 83 "w083_sharc0LowCpuUsage" 80 "w080_micInitError" 77 "w077_mediaMathExcept" 76 "w076_activeSafetyChannelUnderrun" 75 "w075_tdspArmError" 74 "w074_tdspArmXrun" 73 "w073_romFLError" 72 "w072_turnSignalChannelUnderrun" 71 "w071_versionMismatch" 70 "w070_baseamp3Fault" 69 "w069_baseamp2Fault" 68 "w068_baseamp1Fault" 67 "w067_baseamp0Fault" 66 "w066_rearPwsFault" 65 "w065_tcuGpioExpanderCriticalError" 61 "w061_tcuGpioServiceError" 60 "w060_baseamp3SmFault" 59 "w059_nvmmError" 58 "w058_hfpMathExcept2INF" 57 "w057_hfpMathExcept2NAN" 56 "w056_hfpMathExcept1INF" 55 "w055_hfpMathExcept1NAN" 54 "w054_canethRxError" 53 "w053_audioSystemUnavailable" 52 "w052_criticalReset" 51 "w051_extspkFailure" 50 "w050_extSpkFault" 49 "w049_sae" 48 "w048_eCallSelfTestFailed" 47 "w047_sharc1AweFrameOverload" 46 "w046_sharc0AweFrameOverload" 45 "w045_ancEnableFail" 44 "w044_canethChecksum" 43 "w043_aweControlError" 42 "w042_twiReadError" 41 "w041_twiWriteError" 40 "w040_socSciHeartbeat" 39 "w039_ancPing" 38 "w038_a2bbIdleFailed" 37 "w037_a2baIdleFailed" 36 "w036_a2bbFault" 35 "w035_a2baFault" 34 "w034_a2bbDiscoveryFailed" 33 "w033_a2baDiscoveryFailed" 32 "w032_baseamp2SmFault" 31 "w031_baseamp1SmFault" 30 "w030_ethSysErr" 29 "w029_baseamp0SmFault" 28 "w028_ethTcpErr" 27 "w027_ethUdpErr" 26 "w026_ethIcmpErr" 25 "w025_ethIpErr" 24 "w024_ethIpfragErr" 23 "w023_ethEtharpErr" 22 "w022_emacErr" 21 "w021_usbTxAborted" 20 "w020_usbTxFailed" 19 "w019_usbTxUnderrun" 18 "w018_usbTxOverrun" 17 "w017_usbRxUnderrun" 16 "w016_usbRxOverrun" 15 "w015_eavbUnderrun" 14 "w014_eavbOverrun" 13 "w013_sharc1HighCpuUsage" 12 "w012_sharc0HighCpuUsage" 11 "w011_armHighCpuUsage" 10 "w010_12vAudioFiltLow" 8 "w008_internalTempHigh" 7 "w007_ethLinkErr" 6 "w006_eavbSeqno" 5 "w005_stackOverflow" 4 "w004_malloc" 3 "w003_assert" 2 "w002_exception" 1 "w001_flashInit" 0 "ALERT_DO_NOT_USE_ZERO" ;
 VAL_ 1360 ADSP_alertState 1 "SET" 0 "CLEARED" ;
 VAL_ 1360 ADSP_a002_cause 9 "WDOG_TASK_EXPIRED" 8 "FREERTOS_HOOK" 7 "ARM_FATAL" 6 "SHARC_ASSERTION" 5 "SHARC_CCES_FATAL" 4 "WDOG1_EXPIRED" 3 "WDOG0_EXPIRED" 2 "PREFETCH_ABORT" 1 "DATA_ABORT" 0 "UNKNOWN" ;

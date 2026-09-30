@@ -1,0 +1,211 @@
+VERSION "dbc-export 1 2025.20.8"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: DI
+
+
+BO_ 646 DI_locStatus: 8 DI
+ SG_ DI_locStatusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_locStatusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_cruiseState : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_cruiseSetSpeed : 15|9@1+ (0.5,0) [0|255.5] "speed" Vector__XXX
+ SG_ DI_cruiseSetSpeedUnits : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_autoparkState : 25|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ DI_parkBrakeState : 29|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ DI_aebState : 33|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ DI_loncDeactivationReason : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_vehicleHoldState : 38|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_summonInPanic : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_onePedalDrivingState : 42|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_brakeStandActive : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_regenBackfillState : 47|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_cruiseNotAvailableReason : 49|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ DI_cruiseFaultReason : 55|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ DI_cruiseCancelReason : 60|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 615 DI_vehicleEstimates: 8 DI
+ SG_ DI_mass : 0|8@1+ (25,1500) [1500|7850] "kg" Vector__XXX
+ SG_ DI_massRLS : 8|7@1+ (45,1500) [1500|7170] "kg" Vector__XXX
+ SG_ DI_trailerDetected : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_vehicleEstimatesCounter : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_relativeTireTreadDepth : 19|6@1- (0.4,0) [-12.4|12.4] "mm" Vector__XXX
+ SG_ DI_tireFitment : 25|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DI_rollCoeff : 27|5@1+ (0.001,0) [0|0.03] "g" Vector__XXX
+ SG_ DI_massConfidence : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_gradeEst : 33|7@1- (1,0) [-40|40] "%" Vector__XXX
+ SG_ DI_vehicleEstimatesChecksum : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_gradeEstInternal : 48|7@1- (1,0) [-40|40] "%" Vector__XXX
+ SG_ DI_massConfidenceRLS : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_steeringAngleOffset : 56|8@1- (0.2,0) [-25.6|25.4] "Deg" Vector__XXX
+
+BO_TX_BU_ 646 : DI;
+BO_TX_BU_ 615 : DI;
+
+
+CM_ "Tesla Model Y CAN bus database; bus bus1 (inferred PARTY); firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ DI "Drive inverter";
+CM_ BO_ 646 "Drive inverter message: loc status";
+CM_ SG_ 646 DI_locStatusChecksum "Drive inverter: loc status checksum";
+CM_ SG_ 646 DI_locStatusCounter "Drive inverter: loc status counter";
+CM_ SG_ 646 DI_cruiseState "Cruise control state.";
+CM_ SG_ 646 DI_cruiseSetSpeed "Cruise control set point.";
+CM_ SG_ 646 DI_cruiseSetSpeedUnits "Drive inverter: cruise set speed units";
+CM_ SG_ 646 DI_autoparkState "Drive inverter: autopark state; raw 15 = signal not available (SNA)";
+CM_ SG_ 646 DI_parkBrakeState "DI Park Brake control and EPB interface state; raw 15 = signal not available (SNA)";
+CM_ SG_ 646 DI_aebState "Reports the Automatic Emergency Braking (AEB) state; raw 7 = signal not available (SNA)";
+CM_ SG_ 646 DI_loncDeactivationReason "Drive inverter: lonc deactivation reason";
+CM_ SG_ 646 DI_vehicleHoldState "Vehicle hold state.";
+CM_ SG_ 646 DI_summonInPanic "Drive inverter: summon in panic";
+CM_ SG_ 646 DI_onePedalDrivingState "One Pedal Driving State machine state";
+CM_ SG_ 646 DI_brakeStandActive "Detects active brake stand.";
+CM_ SG_ 646 DI_regenBackfillState "Regen backfill state";
+CM_ SG_ 646 DI_cruiseNotAvailableReason "Drive inverter: cruise not available reason; raw 20 = signal not available (SNA)";
+CM_ SG_ 646 DI_cruiseFaultReason "Cruise control fault reason; raw 17 = signal not available (SNA)";
+CM_ SG_ 646 DI_cruiseCancelReason "Cruise control cancel reason";
+CM_ BO_ 615 "Drive inverter message: vehicle estimates";
+CM_ SG_ 615 DI_mass "Detects learned mass.";
+CM_ SG_ 615 DI_massRLS "Drive inverter: mass RLS";
+CM_ SG_ 615 DI_trailerDetected "Drive inverter: trailer detected";
+CM_ SG_ 615 DI_vehicleEstimatesCounter "Drive inverter: vehicle estimates counter";
+CM_ SG_ 615 DI_relativeTireTreadDepth "Reports estimate of tire wear ratio, represented in estimated tread depth difference between front and rear tires. A positive value indicates the rear tires are more worn than the front tires; raw 32 = signal not available (SNA)";
+CM_ SG_ 615 DI_tireFitment "Drive inverter: tire fitment; raw 3 = signal not available (SNA)";
+CM_ SG_ 615 DI_rollCoeff "Drive inverter: roll coeff";
+CM_ SG_ 615 DI_massConfidence "Drive inverter: mass confidence";
+CM_ SG_ 615 DI_gradeEst "Grade estimate reported by the drive inverter.";
+CM_ SG_ 615 DI_vehicleEstimatesChecksum "Drive inverter: vehicle estimates checksum";
+CM_ SG_ 615 DI_gradeEstInternal "Drive inverter: grade est internal";
+CM_ SG_ 615 DI_massConfidenceRLS "Drive inverter: mass confidence RLS";
+CM_ SG_ 615 DI_steeringAngleOffset "Steering angle offset learned by vehicle dynamics control (VDC) represented as a hand wheel angle";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "ModelY_PARTY";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2025.20.8";
+BA_ "VehicleModel" "Model Y";
+BA_ "ECU" BU_ DI "DI";
+BA_ "GenMsgCycleTime" BO_ 646 100;
+BA_ "GenMsgSendType" BO_ 646 0;
+BA_ "VFrameFormat" BO_ 646 0;
+BA_ "GenMsgCycleTime" BO_ 615 1000;
+BA_ "GenMsgSendType" BO_ 615 0;
+BA_ "VFrameFormat" BO_ 615 0;
+BA_ "Confidence" SG_ 646 DI_locStatusChecksum 0;
+BA_ "Confidence" SG_ 646 DI_locStatusCounter 0;
+BA_ "Confidence" SG_ 646 DI_cruiseState 0;
+BA_ "Confidence" SG_ 646 DI_cruiseSetSpeed 0;
+BA_ "Confidence" SG_ 646 DI_cruiseSetSpeedUnits 0;
+BA_ "Confidence" SG_ 646 DI_autoparkState 0;
+BA_ "GenSigSNA" SG_ 646 DI_autoparkState "15";
+BA_ "Confidence" SG_ 646 DI_parkBrakeState 0;
+BA_ "GenSigSNA" SG_ 646 DI_parkBrakeState "15";
+BA_ "Confidence" SG_ 646 DI_aebState 0;
+BA_ "GenSigSNA" SG_ 646 DI_aebState "7";
+BA_ "Confidence" SG_ 646 DI_loncDeactivationReason 0;
+BA_ "Confidence" SG_ 646 DI_vehicleHoldState 0;
+BA_ "Confidence" SG_ 646 DI_summonInPanic 0;
+BA_ "Confidence" SG_ 646 DI_onePedalDrivingState 0;
+BA_ "Confidence" SG_ 646 DI_brakeStandActive 0;
+BA_ "Confidence" SG_ 646 DI_regenBackfillState 0;
+BA_ "Confidence" SG_ 646 DI_cruiseNotAvailableReason 0;
+BA_ "GenSigSNA" SG_ 646 DI_cruiseNotAvailableReason "20";
+BA_ "Confidence" SG_ 646 DI_cruiseFaultReason 0;
+BA_ "GenSigSNA" SG_ 646 DI_cruiseFaultReason "17";
+BA_ "Confidence" SG_ 646 DI_cruiseCancelReason 0;
+BA_ "Confidence" SG_ 615 DI_mass 0;
+BA_ "Confidence" SG_ 615 DI_massRLS 0;
+BA_ "Confidence" SG_ 615 DI_trailerDetected 0;
+BA_ "Confidence" SG_ 615 DI_vehicleEstimatesCounter 0;
+BA_ "Confidence" SG_ 615 DI_relativeTireTreadDepth 0;
+BA_ "GenSigSNA" SG_ 615 DI_relativeTireTreadDepth "32";
+BA_ "Confidence" SG_ 615 DI_tireFitment 0;
+BA_ "GenSigSNA" SG_ 615 DI_tireFitment "3";
+BA_ "Confidence" SG_ 615 DI_rollCoeff 0;
+BA_ "Confidence" SG_ 615 DI_massConfidence 0;
+BA_ "Confidence" SG_ 615 DI_gradeEst 0;
+BA_ "Confidence" SG_ 615 DI_vehicleEstimatesChecksum 0;
+BA_ "Confidence" SG_ 615 DI_gradeEstInternal 0;
+BA_ "Confidence" SG_ 615 DI_massConfidenceRLS 0;
+BA_ "Confidence" SG_ 615 DI_steeringAngleOffset 0;
+VAL_ 646 DI_cruiseState 7 "CRS_STATE_PRE_CANCEL" 6 "CRS_STATE_PRE_FAULT" 5 "CRS_STATE_FAULT" 4 "CRS_STATE_OVERRIDE" 3 "CRS_STATE_STANDSTILL" 2 "CRS_STATE_ENABLED" 1 "CRS_STATE_STANDBY" 0 "CRS_STATE_UNAVAILABLE" ;
+VAL_ 646 DI_cruiseSetSpeedUnits 1 "DI_SPEED_KPH" 0 "DI_SPEED_MPH" ;
+VAL_ 646 DI_autoparkState 15 "DI_APC_SNA" 9 "DI_APC_SELFPARK_STARTED" 8 "DI_APC_UNPARK_COMPLETE" 7 "DI_APC_RESUMED" 6 "DI_APC_ABORTED" 5 "DI_APC_PAUSED" 4 "DI_APC_COMPLETE" 3 "DI_APC_ACTIVE" 2 "DI_APC_STARTED" 1 "DI_APC_STANDBY" 0 "DI_APC_UNAVAILABLE" ;
+VAL_ 646 DI_parkBrakeState 15 "DI_PBRK_SNA" 7 "DI_PBRK_RELEASING" 6 "DI_PBRK_PANIC_SKID" 5 "DI_PBRK_PANIC_EPB" 4 "DI_PBRK_FAULTED" 3 "DI_PBRK_APPLIED" 2 "DI_PBRK_REQUESTED" 1 "DI_PBRK_RELEASED" 0 "DI_PBRK_UNAVAILABLE" ;
+VAL_ 646 DI_aebState 7 "AEB_CAN_STATE_SNA" 5 "AEB_CAN_STATE_UNAVAILABLE_ALERT" 4 "AEB_CAN_STATE_FAULT" 3 "AEB_CAN_STATE_STANDSTILL" 2 "AEB_CAN_STATE_ENABLED" 1 "AEB_CAN_STATE_STANDBY" 0 "AEB_CAN_STATE_UNAVAILABLE" ;
+VAL_ 646 DI_loncDeactivationReason 3 "ABORT" 2 "DAS_CANCEL" 1 "USER_CANCEL" 0 "NO_CANCEL" ;
+VAL_ 646 DI_vehicleHoldState 7 "DI_VHLD_STATE_INIT" 6 "DI_VHLD_STATE_FAULT" 5 "DI_VHLD_STATE_PARK" 4 "DI_VHLD_STATE_BLEND_OUT" 3 "DI_VHLD_STATE_STANDSTILL" 2 "DI_VHLD_STATE_BLEND_IN" 1 "DI_VHLD_STATE_STANDBY" 0 "DI_VHLD_STATE_UNAVAILABLE" ;
+VAL_ 646 DI_onePedalDrivingState 8 "DI_OPD_NUM_STATES" 7 "DI_OPD_MOTOR_BLEND_IN" 6 "DI_OPD_NO_MOTOR" 5 "DI_OPD_MOTOR_BLEND_OUT_ACTIVE" 4 "DI_OPD_MOTOR_BLEND_OUT_PENDING" 3 "DI_OPD_NOMINAL" 2 "DI_OPD_STANDBY" 1 "DI_OPD_QUICK_BRAKE_RAMP" 0 "DI_OPD_UNAVAILABLE" ;
+VAL_ 646 DI_regenBackfillState 2 "BFILL_ACTIVE" 1 "BFILL_STANDBY" 0 "BFILL_UNAVAILABLE" ;
+VAL_ 646 DI_cruiseNotAvailableReason 50 "DI_CRUISE_NOT_AVAILABLE_AIR_COMPRESSOR_FAULT" 49 "DI_CRUISE_NOT_AVAILABLE_ABS_FAULT" 48 "DI_CRUISE_NOT_AVAILABLE_DRIVERLESS_AUTONOMY_BEHAVIOR" 47 "DI_CRUISE_NOT_AVAILABLE_EPB_DYNAMIC_APPLY" 46 "DI_CRUISE_NOT_AVAILABLE_SGS_REQUEST" 45 "DI_CRUISE_NOT_AVAILABLE_VDC_FAULT" 44 "DI_CRUISE_NOT_AVAILABLE_ACCEL_JERK_OUT_OF_ISO_BOUNDS" 43 "DI_CRUISE_NOT_AVAILABLE_REDUNDANT_BRAKES_ACTIVE" 42 "DI_CRUISE_NOT_AVAILABLE_ABS_UNAVAILABLE" 41 "DI_CRUISE_NOT_AVAILABLE_LONC_DEGRADED" 40 "DI_CRUISE_NOT_AVAILABLE_FACTORY_MODE" 39 "DI_CRUISE_NOT_AVAILABLE_EPB_FAULT" 38 "DI_CRUISE_NOT_AVAILABLE_AEB_STACK_UNAVAILABLE" 37 "DI_CRUISE_NOT_AVAILABLE_AEB_STACK_EVENT_INACTIVE" 36 "DI_CRUISE_NOT_AVAILABLE_DFLK_ENGAGED" 35 "DI_CRUISE_NOT_AVAILABLE_INTERFACE_NOT_SUPPORTED" 34 "DI_CRUISE_NOT_AVAILABLE_CANCEL_ACTIVE" 33 "DI_CRUISE_NOT_AVAILABLE_CONTROL_STACK_SWITCH" 32 "DI_CRUISE_NOT_AVAILABLE_SHIFT_OUTSIDE_SPEED_THRESHOLD" 31 "DI_CRUISE_NOT_AVAILABLE_SHIFT_TIMEOUT" 30 "DI_CRUISE_NOT_AVAILABLE_OFFROAD_MODE_ACTIVE" 29 "DI_CRUISE_NOT_AVAILABLE_DAS_CONTROL_MIA" 28 "DI_CRUISE_NOT_AVAILABLE_UNIT0_FAULT" 27 "DI_CRUISE_NOT_AVAILABLE_BRAKE_TEMPERATURE" 26 "DI_CRUISE_NOT_AVAILABLE_ACC_BACKWARD_AT_HIGH_FORWARD_SPEED" 25 "DI_CRUISE_NOT_AVAILABLE_DAS_SET_SPEED_TOO_HIGH_IN_REVERSE" 24 "DI_CRUISE_NOT_AVAILABLE_MOTOR_SPEED_TOO_HIGH_IN_REVERSE" 23 "DI_CRUISE_NOT_AVAILABLE_VHLD_UNAVAILABLE" 22 "DI_CRUISE_NOT_AVAILABLE_CRUISE_FAULTED" 21 "DI_CRUISE_NOT_AVAILABLE_TRACK_MODE_ACTIVE" 20 "DI_CRUISE_NOT_AVAILABLE_DAS_SNA" 19 "DI_CRUISE_NOT_AVAILABLE_UI_MIA" 18 "DI_CRUISE_NOT_AVAILABLE_WAIT_INIT" 17 "DI_CRUISE_NOT_AVAILABLE_VEL_EST" 16 "DI_CRUISE_NOT_AVAILABLE_MAX_SPEED" 15 "DI_CRUISE_NOT_AVAILABLE_MIN_SPEED" 14 "DI_CRUISE_NOT_AVAILABLE_AEB" 13 "DI_CRUISE_NOT_AVAILABLE_CONFIG" 12 "DI_CRUISE_NOT_AVAILABLE_DI_STATE" 11 "DI_CRUISE_NOT_AVAILABLE_MOTOR_SPEED" 10 "DI_CRUISE_NOT_AVAILABLE_EBR" 9 "DI_CRUISE_NOT_AVAILABLE_VALET_MODE" 8 "DI_CRUISE_NOT_AVAILABLE_SEAT_BELT_UNBUCKLED" 7 "DI_CRUISE_NOT_AVAILABLE_CLOSURE_OPEN" 6 "DI_CRUISE_NOT_AVAILABLE_ACC_CANCEL" 5 "DI_CRUISE_NOT_AVAILABLE_ABS_ACTIVE" 4 "DI_CRUISE_NOT_AVAILABLE_TC_ACTIVE" 3 "DI_CRUISE_NOT_AVAILABLE_VDC_ACTIVE_OR_DEGRADED" 2 "DI_CRUISE_NOT_AVAILABLE_VDC_OR_TC_OFF" 1 "DI_CRUISE_NOT_AVAILABLE_NO_ALERT" 0 "DI_CRUISE_NOT_AVAILABLE_NONE" ;
+VAL_ 646 DI_cruiseFaultReason 22 "DI_CRUISE_FAULT_VHLD_FAULTED" 21 "DI_CRUISE_FAULT_CONFIG_MISMATCH" 20 "DI_CRUISE_FAULT_EPB_MIA" 19 "DI_CRUISE_FAULT_ACCEL_JERK_OUT_OF_ISO_BOUNDS" 17 "DI_CRUISE_FAULT_DAS_SNA" 16 "DI_CRUISE_FAULT_VELOCITY_ESTIMATE_NOT_NORMAL" 15 "DI_CRUISE_FAULT_ACCEL_OUT_OF_BOUNDS" 14 "DI_CRUISE_FAULT_EBR_FAULT" 13 "DI_CRUISE_FAULT_TC_FAULT" 12 "DI_CRUISE_FAULT_ESP_MIA" 11 "DI_CRUISE_FAULT_VDC_FAULT" 10 "DI_CRUISE_FAULT_EPB_FAULT" 9 "DI_CRUISE_FAULT_BRAKE_MIA" 8 "DI_CRUISE_FAULT_CRS_STATE_MISM" 7 "DI_CRUISE_FAULT_ABS_MIA" 6 "DI_CRUISE_FAULT_CRUISE_SCCM_MIA" 5 "DI_CRUISE_FAULT_BRAKE_INVALID" 4 "DI_CRUISE_FAULT_STALK" 3 "DI_CRUISE_FAULT_PM_REQUEST" 2 "DI_CRUISE_FAULT_PM_MIA" 1 "DI_CRUISE_FAULT_MOTOR_SPEED_MISMATCH" 0 "DI_CRUISE_FAULT_NONE" ;
+VAL_ 646 DI_cruiseCancelReason 11 "DI_CRUISE_CANCEL_DAS_MIA_PEDAL_APPLY" 10 "DI_CRUISE_CANCEL_ACC_FSD_EXIT" 9 "DI_CRUISE_CANCEL_SHIFT_REQUEST" 8 "DI_CRUISE_CANCEL_ACCEL_OVERRIDE_IN_REVERSE" 7 "DI_CRUISE_CANCEL_DAS" 6 "DI_CRUISE_CANCEL_PARK" 5 "DI_CRUISE_CANCEL_GEAR" 4 "DI_CRUISE_CANCEL_STALK" 3 "DI_CRUISE_CANCEL_BRAKE" 2 "DI_CRUISE_CANCEL_SKID" 1 "DI_CRUISE_CANCEL_APC_REQUEST" 0 "DI_CRUISE_CANCEL_NONE" ;
+VAL_ 615 DI_trailerDetected 1 "TRAILER_DETECTED" 0 "TRAILER_NOT_DETECTED" ;
+VAL_ 615 DI_relativeTireTreadDepth -32 "SNA" ;
+VAL_ 615 DI_tireFitment 3 "FITMENT_SNA" 1 "FITMENT_STAGGERED" 0 "FITMENT_SQUARE" ;
+VAL_ 615 DI_massConfidence 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;
+VAL_ 615 DI_massConfidenceRLS 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;

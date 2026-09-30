@@ -1,4 +1,4 @@
-VERSION "dbc-export 1 2025.20.8"
+VERSION "dbc-export 1 2026.26.6.5"
 
 
 NS_ :
@@ -33,8 +33,18 @@ NS_ :
 
 BS_:
 
-BU_: DIF VCLEFT
+BU_: DAS DIF VCLEFT
 
+
+BO_ 584 DAS_autonomyUiControl: 3 DAS
+ SG_ DAS_autonomyUiControlChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DAS_autonomyUiControlCounter : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DAS_rideState : 11|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ DAS_infotainmentResetRequested : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_rideHailingActive : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_autonomyCriticalMode : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_micFocusRequest : 17|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DAS_autonomyUiBehavior : 20|2@1+ (1,0) [1|3] "" Vector__XXX
 
 BO_ 1622 DIF_info: 8 DIF
  SG_ DIF_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -46,7 +56,7 @@ BO_ 1622 DIF_info: 8 DIF
  SG_ DIF_assemblyId m11 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIF_usageId m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ DIF_subUsageId m11 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
- SG_ DIF_motorType m12 : 8|5@1+ (1,0) [1|31] "" Vector__XXX
+ SG_ DIF_motorType m12 : 8|6@1+ (1,0) [1|63] "" Vector__XXX
  SG_ DIF_siliconType m12 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DIF_mechSafeStateType m12 : 24|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ DIF_applicationCrc m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
@@ -79,6 +89,8 @@ BO_ 258 VCLEFT_doorStatus: 8 VCLEFT
  SG_ VCLEFT_rearLatchStatus : 18|4@1+ (1,0) [1|15] "" Vector__XXX
  SG_ VCLEFT_lastDoorReqSourceFront : 22|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCLEFT_lastDoorReqSourceRear : 25|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_frontIntSwitchFaulted : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearIntSwitchFaulted : 29|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCLEFT_frontIntSwitchPressed : 31|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCLEFT_rearIntSwitchPressed : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCLEFT_mirrorTiltXPosition : 33|8@1+ (0.02,0) [0|5] "V" Vector__XXX
@@ -91,13 +103,24 @@ BO_ 258 VCLEFT_doorStatus: 8 VCLEFT
  SG_ VCLEFT_frontHandlePulledPersist : 62|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCLEFT_mirrorDipped : 63|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_TX_BU_ 584 : DAS;
 BO_TX_BU_ 1622 : DIF;
 BO_TX_BU_ 258 : VCLEFT;
 
 
-CM_ "Tesla Bayberry CAN bus database; bus BUS1; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ "Tesla Bayberry CAN bus database; bus bus1 (inferred PARTY); firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ DAS "Driver assistance computer";
 CM_ BU_ DIF "Front drive inverter";
 CM_ BU_ VCLEFT "Left body controller";
+CM_ BO_ 584 "Driver assistance computer message: autonomy ui control";
+CM_ SG_ 584 DAS_autonomyUiControlChecksum "Driver assistance computer: autonomy ui control checksum";
+CM_ SG_ 584 DAS_autonomyUiControlCounter "Driver assistance computer: autonomy ui control counter";
+CM_ SG_ 584 DAS_rideState "Driver assistance computer: ride state; raw 0 = signal not available (SNA)";
+CM_ SG_ 584 DAS_infotainmentResetRequested "Driver assistance computer: infotainment reset requested";
+CM_ SG_ 584 DAS_rideHailingActive "Driver assistance computer: ride hailing active";
+CM_ SG_ 584 DAS_autonomyCriticalMode "Driver assistance computer: autonomy critical mode";
+CM_ SG_ 584 DAS_micFocusRequest "Driver assistance computer: mic focus request";
+CM_ SG_ 584 DAS_autonomyUiBehavior "Driver assistance computer: autonomy ui behavior; raw 0 = signal not available (SNA)";
 CM_ BO_ 1622 "Front drive inverter message: info";
 CM_ SG_ 1622 DIF_infoIndex "Front drive inverter: info index";
 CM_ SG_ 1622 DIF_buildType "Front drive inverter: build type";
@@ -140,6 +163,8 @@ CM_ SG_ 258 VCLEFT_frontLatchStatus "Status of left front door latch; raw 0 = si
 CM_ SG_ 258 VCLEFT_rearLatchStatus "Status of rear left door latch; raw 0 = signal not available (SNA)";
 CM_ SG_ 258 VCLEFT_lastDoorReqSourceFront "last source of front door open request";
 CM_ SG_ 258 VCLEFT_lastDoorReqSourceRear "last source of rear door open request";
+CM_ SG_ 258 VCLEFT_frontIntSwitchFaulted "Indicates if the front door interior button is faulted";
+CM_ SG_ 258 VCLEFT_rearIntSwitchFaulted "Indicates if the rear door interior button is faulted";
 CM_ SG_ 258 VCLEFT_frontIntSwitchPressed "Left body controller: front int switch pressed";
 CM_ SG_ 258 VCLEFT_rearIntSwitchPressed "Left body controller: rear int switch pressed";
 CM_ SG_ 258 VCLEFT_mirrorTiltXPosition "Value representing left side view mirror tilt horizontal position";
@@ -186,19 +211,33 @@ BA_DEF_DEF_ "GenSigSNA" "";
 BA_DEF_DEF_ "SystemSignalLongSymbol" "";
 BA_DEF_DEF_ "Confidence" "layout-only";
 BA_ "BusType" "CAN";
-BA_ "DBName" "Bayberry_BUS1";
+BA_ "DBName" "Bayberry_PARTY";
 BA_ "Baudrate" 500000;
 BA_ "Manufacturer" "Tesla";
-BA_ "FirmwareVersion" "2025.20.8";
+BA_ "FirmwareVersion" "2026.26.6.5";
 BA_ "VehicleModel" "Bayberry";
+BA_ "ECU" BU_ DAS "DAS";
 BA_ "ECU" BU_ DIF "DIF";
 BA_ "ECU" BU_ VCLEFT "VCLEFT";
+BA_ "GenMsgCycleTime" BO_ 584 100;
+BA_ "GenMsgSendType" BO_ 584 0;
+BA_ "VFrameFormat" BO_ 584 0;
 BA_ "GenMsgCycleTime" BO_ 1622 1000;
 BA_ "GenMsgSendType" BO_ 1622 0;
 BA_ "VFrameFormat" BO_ 1622 0;
 BA_ "GenMsgCycleTime" BO_ 258 100;
 BA_ "GenMsgSendType" BO_ 258 0;
 BA_ "VFrameFormat" BO_ 258 0;
+BA_ "Confidence" SG_ 584 DAS_autonomyUiControlChecksum 0;
+BA_ "Confidence" SG_ 584 DAS_autonomyUiControlCounter 0;
+BA_ "Confidence" SG_ 584 DAS_rideState 0;
+BA_ "GenSigSNA" SG_ 584 DAS_rideState "0";
+BA_ "Confidence" SG_ 584 DAS_infotainmentResetRequested 0;
+BA_ "Confidence" SG_ 584 DAS_rideHailingActive 0;
+BA_ "Confidence" SG_ 584 DAS_autonomyCriticalMode 0;
+BA_ "Confidence" SG_ 584 DAS_micFocusRequest 0;
+BA_ "Confidence" SG_ 584 DAS_autonomyUiBehavior 0;
+BA_ "GenSigSNA" SG_ 584 DAS_autonomyUiBehavior "0";
 BA_ "Confidence" SG_ 1622 DIF_infoIndex 1;
 BA_ "Confidence" SG_ 1622 DIF_buildType 0;
 BA_ "Confidence" SG_ 1622 DIF_buildConfigurationId 0;
@@ -208,7 +247,7 @@ BA_ "Confidence" SG_ 1622 DIF_pcbaId 0;
 BA_ "Confidence" SG_ 1622 DIF_assemblyId 0;
 BA_ "Confidence" SG_ 1622 DIF_usageId 0;
 BA_ "Confidence" SG_ 1622 DIF_subUsageId 0;
-BA_ "Confidence" SG_ 1622 DIF_motorType 1;
+BA_ "Confidence" SG_ 1622 DIF_motorType 0;
 BA_ "GenSigSNA" SG_ 1622 DIF_motorType "0";
 BA_ "Confidence" SG_ 1622 DIF_siliconType 0;
 BA_ "Confidence" SG_ 1622 DIF_mechSafeStateType 0;
@@ -249,6 +288,8 @@ BA_ "Confidence" SG_ 258 VCLEFT_rearLatchStatus 0;
 BA_ "GenSigSNA" SG_ 258 VCLEFT_rearLatchStatus "0";
 BA_ "Confidence" SG_ 258 VCLEFT_lastDoorReqSourceFront 0;
 BA_ "Confidence" SG_ 258 VCLEFT_lastDoorReqSourceRear 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontIntSwitchFaulted 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearIntSwitchFaulted 0;
 BA_ "Confidence" SG_ 258 VCLEFT_frontIntSwitchPressed 0;
 BA_ "Confidence" SG_ 258 VCLEFT_rearIntSwitchPressed 0;
 BA_ "Confidence" SG_ 258 VCLEFT_mirrorTiltXPosition 0;
@@ -261,10 +302,13 @@ BA_ "GenSigSNA" SG_ 258 VCLEFT_mirrorHeatState "0";
 BA_ "Confidence" SG_ 258 VCLEFT_rearHandlePulledPersist 0;
 BA_ "Confidence" SG_ 258 VCLEFT_frontHandlePulledPersist 0;
 BA_ "Confidence" SG_ 258 VCLEFT_mirrorDipped 0;
+VAL_ 584 DAS_rideState 6 "PULLOVER" 5 "IDLE" 4 "ENROUTE" 3 "WAITING" 2 "SUMMON" 1 "INACTIVE" 0 "SNA" ;
+VAL_ 584 DAS_micFocusRequest 4 "ENTIRE_CABIN" 3 "FRONT_ROW" 2 "FRONT_PASSENGER" 1 "FRONT_DRIVER" 0 "NONE" ;
+VAL_ 584 DAS_autonomyUiBehavior 3 "AUTONOMY_SUMMON" 2 "RIDEHAILING_ROAMING" 1 "NONE" 0 "SNA" ;
 VAL_ 1622 DIF_infoIndex 255 "INFO_END" 44 "TRACKING_DATA_5" 43 "TRACKING_DATA_4" 42 "TRACKING_DATA_3" 41 "TRACKING_DATA_2" 40 "TRACKING_DATA_1" 34 "INFO_SUBCOMPONENT2_HWID" 33 "INFO_SUBCOMPONENT_HWID" 32 "INFO_SUBCOMPONENT2_GITHASH" 31 "INFO_SUBCOMPONENT_GITHASH" 23 "INFO_SUBCOMPONENT2" 20 "INFO_UDS_PROTOCOL_BOOTCRC" 19 "INFO_VERSION_DEPRECATED" 18 "INFO_BOOTLOADER_GITHASH" 17 "INFO_APP_GITHASH" 16 "INFO_SUBCOMPONENT" 15 "INFO_BOOTLOADER_CRC" 14 "INFO_BOOTLOADER_SVN" 13 "INFO_APP_CRC" 11 "INFO_PCBAID_ASSYID_USAGEID" 10 "INFO_BUILD_HWID_COMPONENTID" 9 "INFO_DEPRECATED_9" 8 "INFO_DEPRECATED_8" 7 "INFO_DEPRECATED_7" 6 "INFO_DEPRECATED_6" 5 "INFO_DEPRECATED_5" 4 "INFO_DEPRECATED_4" 3 "INFO_DEPRECATED_3" 2 "INFO_DEPRECATED_2" 1 "INFO_DEPRECATED_1" 0 "INFO_DEPRECATED_0" ;
 VAL_ 1622 DIF_buildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
 VAL_ 1622 DIF_hardwareId 252 "CONFIGURABLE_HWID_PLACEHOLDER" ;
-VAL_ 1622 DIF_motorType 31 "DI_MOTOR_PM216E" 20 "DI_MOTOR_PM215D_1KV" 18 "DI_MOTOR_IM260E_1KV" 17 "DI_MOTOR_IM260D_1KV" 16 "DI_MOTOR_PM261C" 15 "DI_MOTOR_PM215C_1KV" 14 "DI_MOTOR_IM260C_1KV" 13 "DI_MOTOR_PM215A_1KV" 12 "DI_MOTOR_IM260A_1KV" 11 "DI_MOTOR_IM228HEA" 10 "DI_MOTOR_PM228HEA" 9 "DI_MOTOR_PM275C" 8 "DI_MOTOR_PM291D" 7 "DI_MOTOR_PM291C" 6 "DI_MOTOR_PM228C" 5 "DI_MOTOR_PM350B" 4 "DI_MOTOR_PM275B" 3 "DI_MOTOR_IM130D_AL" 2 "DI_MOTOR_IM130D" 1 "DI_MOTOR_PM216D" 0 "DI_MOTOR_SNA" ;
+VAL_ 1622 DIF_motorType 36 "DI_MOTOR_PM240C" 35 "DI_MOTOR_IM188A" 34 "DI_MOTOR_IM130E_AL" 32 "DI_MOTOR_PM261D" 31 "DI_MOTOR_PM216E" 20 "DI_MOTOR_PM215D_1KV" 18 "DI_MOTOR_IM260E_1KV" 17 "DI_MOTOR_IM260D_1KV" 16 "DI_MOTOR_PM261C" 15 "DI_MOTOR_PM215C_1KV" 14 "DI_MOTOR_IM260C_1KV" 13 "DI_MOTOR_PM215A_1KV" 12 "DI_MOTOR_IM260A_1KV" 11 "DI_MOTOR_IM228HEA" 10 "DI_MOTOR_PM228HEA" 9 "DI_MOTOR_PM275C" 8 "DI_MOTOR_PM291D" 7 "DI_MOTOR_PM291C" 6 "DI_MOTOR_PM228C" 5 "DI_MOTOR_PM350B" 4 "DI_MOTOR_PM275B" 3 "DI_MOTOR_IM130D_AL" 2 "DI_MOTOR_IM130D" 1 "DI_MOTOR_PM216D" 0 "DI_MOTOR_SNA" ;
 VAL_ 1622 DIF_siliconType 1 "IGBT" 0 "MOSFET" ;
 VAL_ 1622 DIF_mechSafeStateType 2 "DI_MECH_SAFE_STATE_TYPE_PRESENT" 1 "DI_MECH_SAFE_STATE_TYPE_NONE" 0 "DI_MECH_SAFE_STATE_TYPE_SNA" ;
 VAL_ 1622 DIF_oilPumpBuildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;

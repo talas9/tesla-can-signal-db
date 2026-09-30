@@ -85,6 +85,8 @@ FRAME_FORMATS = ['StandardCAN', 'ExtendedCAN', 'reserved', 'J1939PG'] + \
     ['reserved'] * 10 + ['StandardCAN_FD', 'ExtendedCAN_FD']
 CONFIDENCE = ['validated', 'plausible', 'layout-only', 'contradicted']
 VERDICT_OVERRIDES = ('validated', 'plausible', 'contradicted')
+BUS_LABELS = {'VEH': 'VEH (vehicle CAN)', 'CH': 'CH (chassis CAN)',
+              'PARTY': 'bus1 (inferred PARTY)', 'ETH': 'ETH (Ethernet-side ids, not CAN ids)'}
 MAX_NAME = 32
 IDENT_RE = re.compile(r'^[A-Za-z_][A-Za-z0-9_]{0,31}$')
 DBC_KEYWORDS = set(NS_SYMBOLS) | {'VERSION', 'NS_', 'BS_', 'BU_', 'BO_', 'SG_', 'EV_',
@@ -353,7 +355,7 @@ def describe_signal(sig):
             text = 'Signal reported by %s' % node_label(node_of(sig['message']))
         text = text[0].upper() + text[1:]
     if sig['sna'] is not None:
-        text += '; raw %d = signal not available (SNA)' % sig['sna']
+        text = text.rstrip('. ') + '; raw %d = signal not available (SNA)' % sig['sna']
     return text
 
 
@@ -509,7 +511,7 @@ def render_dbc(msgs, firmware, model, bus):
     L.append('')
     L.append('')
     net_comment = ('Tesla %s CAN bus database; bus %s; firmware %s. Decoded CAN signal '
-                   'definitions (layout, scaling, units, value tables).' % (model_label(model), bus, firmware))
+                   'definitions (layout, scaling, units, value tables).' % (model_label(model), BUS_LABELS.get(bus, bus), firmware))
     L.append('CM_ "%s";' % ascii_text(net_comment))
     for n in nodes:
         L.append('CM_ BU_ %s "%s";' % (n, ascii_text(node_label(n))))
@@ -585,7 +587,7 @@ def render_dbc(msgs, firmware, model, bus):
     text = '\n'.join(L)
     jm = {
         'firmware': firmware, 'model': model, 'bus': bus, 'db_name': dbname,
-        'bus_type': 'CAN FD' if fd_file else 'CAN',
+        'bus_type': 'CAN FD' if fd_file else 'CAN', 'bus_label': BUS_LABELS.get(bus, bus),
         'messages': [{
             'name': m['name'], 'frame_id': m['frame_id'], 'extended': m['extended'],
             'length': m['size'], 'fd': m['fd'], 'transmitter': m['transmitter'],
@@ -1043,7 +1045,7 @@ def check(out_dir):
 def _json_free_text(obj):
     if isinstance(obj, dict):
         for k, v in obj.items():
-            if k in ('comment', 'reason', 'db_name', 'bus_type') and isinstance(v, str):
+            if k in ('comment', 'reason', 'db_name', 'bus_type', 'bus_label') and isinstance(v, str):
                 yield v
             else:
                 yield from _json_free_text(v)
@@ -1077,20 +1079,23 @@ def load_inputs(fwdir):
     if mp.exists():
         kw['routing'], kw['msg_meta'] = {}, {}
         for r in _read_csv(mp):
-            for c in ('message', 'length', 'cycle_ms', 'routes'):
+            for c in ('message', 'length', 'cycle_ms'):
                 if c not in r:
                     raise ExportError('%s: missing column %s' % (mp, c))
             kw['msg_meta'][r['message']] = {
                 'length': parse_int(r['length'], r['message'] + '.length') if r['length'] else 0,
                 'cycle_ms': parse_int(r['cycle_ms'], r['message'] + '.cycle_ms') if r['cycle_ms'] else 0}
             routes = []
-            for part in filter(None, r['routes'].split(';')):
+            for part in filter(None, (r.get('routes') or '').split(';')):
                 bits = part.split(':')
                 if len(bits) != 3:
                     raise ExportError('%s: bad route %r' % (mp, part))
                 routes.append((bits[0], parse_int(bits[1], r['message'] + '.route'), bits[2]))
             if routes:
                 kw['routing'][r['message']] = routes
+    ip = fwdir / 'id-map.csv'
+    if ip.exists():
+        kw['routing'] = load_id_map(ip, kw['signal_rows'], fwdir.name)
     sp = fwdir / 'signal-meta.csv'
     if sp.exists():
         kw['signal_meta'] = {(r['message'], r['signal']): r for r in _read_csv(sp)}
@@ -1111,7 +1116,7 @@ def load_id_map(path, signal_rows, firmware=None):
 
     CSV columns: eth_id, bus, can_id (required); fw, message, how (optional).
     eth_id/can_id may be decimal or 0x-hex; bus is an upper-case bus name
-    (VEH, CH, BUS1, ...); how is 'native' (default) or 'gateway'. Rows whose
+    (VEH, CH, PARTY, ...); how is 'native' (default) or 'gateway'. Rows whose
     fw differs from firmware are skipped. eth_id is joined to message names
     through signal_rows; a message column, when present, must agree.
     """
@@ -1126,7 +1131,7 @@ def load_id_map(path, signal_rows, firmware=None):
     for r in rows:
         if firmware and r.get('fw') and r['fw'] != firmware:
             continue
-        eth = parse_int(r['eth_id'], path + ' eth_id')
+        eth = parse_int(r['eth_id'], '%s eth_id' % path)
         if eth not in by_eth:
             continue
         msg = by_eth[eth]
@@ -1136,7 +1141,7 @@ def load_id_map(path, signal_rows, firmware=None):
         if not re.match(r'^[A-Z][A-Z0-9]*$', bus):
             raise ExportError('%s: bad bus %r' % (path, r['bus']))
         how = (r.get('how') or 'native').strip() or 'native'
-        route = (bus, parse_int(r['can_id'], path + ' can_id'), how)
+        route = (bus, parse_int(r['can_id'], '%s can_id' % path), how)
         if route not in routing.setdefault(msg, []):
             routing[msg].append(route)
     return {m: sorted(v) for m, v in routing.items()}
@@ -1166,6 +1171,57 @@ def _readme_with_coverage(readme_text, reports):
     head, rest = readme_text.split(COVERAGE_BEGIN, 1)
     _, tail = rest.split(COVERAGE_END, 1)
     return head + COVERAGE_BEGIN + '\n' + coverage_markdown(reports) + COVERAGE_END + tail
+
+
+# Id anchors confirmed for 2026.26.6.5 (CAN id on a bus <-> Ethernet-side id).
+ANCHORS = [
+    # (bus file, CAN id, expected message or None, Ethernet-side id or None)
+    ('VEH', 0x352, 'BMS_energyStatus', 0x2B2),
+    ('VEH', 0x72A, 'BMS_serialNumber', 0x7FA),  # no signal layout yet -> skipped
+    ('VEH', 0x5F3, 'UI_odo', 0x3F3),
+    ('CH', 0x111, 'RCM_inertial2', 0x116),
+]
+ANCHORS_ABSENT = [('VEH', 0x111, 'VCRIGHT_'), ('VEH', 0x112, 'VCRIGHT_')]
+
+
+def check_anchors(dbc_root, firmware='2026.26.6.5'):
+    """Assert the known id anchors in AllModels/<fw>/<BUS>.dbc.
+
+    Returns (errors, skipped): an anchor whose message has no signal layout in
+    this firmware's data (absent from both files) is skipped, not failed."""
+    import cantools
+    dbc_root = Path(dbc_root)
+    errs, skipped = [], []
+    eth_path = dbc_root / firmware / 'ETH.dbc'
+    if not eth_path.exists():
+        return ['anchors: %s missing' % eth_path.relative_to(dbc_root)], skipped
+    eth = {m.frame_id: m.name for m in cantools.database.load_file(str(eth_path), strict=False).messages}
+    cache = {}
+
+    def bus_ids(bus):
+        if bus not in cache:
+            p = dbc_root / 'AllModels' / firmware / ('%s.dbc' % bus)
+            cache[bus] = {m.frame_id: m.name for m in cantools.database.load_file(str(p), strict=False).messages} \
+                if p.exists() else None
+        return cache[bus]
+    for bus, can_id, name, eth_id in ANCHORS:
+        ids = bus_ids(bus)
+        if ids is None:
+            errs.append('anchors: %s.dbc missing' % bus)
+            continue
+        got = ids.get(can_id)
+        want = name or eth.get(eth_id)
+        if got is None and eth_id is not None and eth.get(eth_id) is None:
+            skipped.append('%s 0x%X (%s): no signal layout in the data yet' % (bus, can_id, name))
+            continue
+        if got is None or got != want or (eth_id is not None and eth.get(eth_id) != got):
+            errs.append('anchor %s 0x%X: got %s, expected %s (Ethernet-side 0x%X = %s)' % (
+                bus, can_id, got, want, eth_id or 0, eth.get(eth_id)))
+    for bus, can_id, prefix in ANCHORS_ABSENT:
+        ids = bus_ids(bus) or {}
+        if (ids.get(can_id) or '').startswith(prefix):
+            errs.append('anchor %s 0x%X must not be %s*' % (bus, can_id, prefix))
+    return errs, skipped
 
 
 def _diff_trees(a, b):
@@ -1198,6 +1254,8 @@ def main(argv=None):
             reports = _build_all(repo, tmp, args.id_map, unresolved)
             diffs = _diff_trees(tmp, committed) if committed.exists() else ['dbc/ missing']
             errors = check(committed if committed.exists() else tmp)
+            anchor_errs, anchor_skipped = check_anchors(committed if committed.exists() else tmp)
+            errors += anchor_errs
             readme = repo / 'README.md'
             if readme.read_text(encoding='utf-8') != _readme_with_coverage(readme.read_text(encoding='utf-8'), reports):
                 diffs.append('README.md coverage table is stale (run tools/export_dbc.py)')
@@ -1229,10 +1287,23 @@ def main(argv=None):
         if diffs or errors:
             print('CHECK FAILED: %d diffs, %d errors' % (len(diffs), len(errors)))
             return 1
+        for a in anchor_skipped:
+            print('ANCHOR SKIPPED: ' + a)
+        print('ANCHORS OK: %d of %d id anchors checked + %d must-not-be-on-VEH checks' % (
+            len(ANCHORS) - len(anchor_skipped), len(ANCHORS), len(ANCHORS_ABSENT)))
         print('CHECK OK: %d DBC files regenerated identically, checklist lint clean, cantools strict load + '
               'round trip OK, JSON twins agree, canmatrix load OK, PII + source-disclosure gates clean' % nfiles)
         return 0
+    before = {p for p in committed.rglob('*') if p.is_file()} if committed.exists() else set()
     reports = _build_all(repo, committed, args.id_map, unresolved)
+    produced = set()
+    for r in reports:
+        produced |= {committed / r['file'], (committed / r['file']).with_suffix('.json')}
+    for stale in sorted(before - produced):
+        # generated output that the current inputs no longer produce (git keeps history)
+        if stale.suffix in ('.dbc', '.json'):
+            print('removed stale generated file %s' % stale.relative_to(repo))
+            stale.unlink()
     readme = repo / 'README.md'
     readme.write_text(_readme_with_coverage(readme.read_text(encoding='utf-8'), reports), encoding='utf-8')
     for r in reports:

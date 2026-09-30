@@ -52,13 +52,13 @@ BO_TX_BU_ 1279 : APP;
 BO_TX_BU_ 401 : DAS;
 
 
-CM_ "Tesla GoldenSnitch CAN bus database; bus CH; firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ "Tesla GoldenSnitch CAN bus database; bus CH (chassis CAN); firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
 CM_ BU_ APP "Driver assistance computer (primary)";
 CM_ BU_ DAS "Driver assistance computer";
 CM_ BO_ 1279 "Driver assistance computer (primary) message: defog info message";
-CM_ SG_ 1279 APP_cameraDefogMode "Instructs SGK to activate or deactivate cameras when the vehicle is in a parked state.; raw 0 = signal not available (SNA)";
-CM_ SG_ 1279 APP_selfieCamFanRpm "Indicates the selfie camera fan rpm.; raw 65535 = signal not available (SNA)";
-CM_ SG_ 1279 APP_forceDefroster "Force Front Defroster mode instructs VC to activate defog/defrost when AP detects dew/fog.; raw 0 = signal not available (SNA)";
+CM_ SG_ 1279 APP_cameraDefogMode "Instructs SGK to activate or deactivate cameras when the vehicle is in a parked state; raw 0 = signal not available (SNA)";
+CM_ SG_ 1279 APP_selfieCamFanRpm "Indicates the selfie camera fan rpm; raw 65535 = signal not available (SNA)";
+CM_ SG_ 1279 APP_forceDefroster "Force Front Defroster mode instructs VC to activate defog/defrost when AP detects dew/fog; raw 0 = signal not available (SNA)";
 CM_ SG_ 1279 APP_checkThermalSysHealth "Driver assistance computer (primary): check thermal sys health; raw 0 = signal not available (SNA)";
 CM_ SG_ 1279 APP_defogInfoMessageChecksum "Driver assistance computer (primary): defog info message checksum";
 CM_ SG_ 1279 APP_hvacRequest "Das request to turn on HVAC; raw 0 = signal not available (SNA)";

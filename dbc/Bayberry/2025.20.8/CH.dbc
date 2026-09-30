@@ -73,7 +73,7 @@ BO_TX_BU_ 859 : APP;
 BO_TX_BU_ 846 : PARK;
 
 
-CM_ "Tesla Bayberry CAN bus database; bus CH; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ "Tesla Bayberry CAN bus database; bus CH (chassis CAN); firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
 CM_ BU_ APP "Driver assistance computer (primary)";
 CM_ BU_ PARK "Parking assist sensors";
 CM_ BO_ 605 "Driver assistance computer (primary) message: traffic control";
@@ -81,7 +81,7 @@ CM_ SG_ 605 APP_tcFeatureState "The feature level state of stopping for traffic 
 CM_ SG_ 605 APP_tcStateMachine "The traffic control state machine's internal control state.";
 CM_ SG_ 605 APP_tcControlSource "The input data source for the traffic control object";
 CM_ SG_ 605 APP_tcControlType "The specific type of traffic control, note not all are control worthy.";
-CM_ SG_ 605 APP_tcControlDistance "The distance to the nearest critical traffic control object.; raw 255 = signal not available (SNA)";
+CM_ SG_ 605 APP_tcControlDistance "The distance to the nearest critical traffic control object; raw 255 = signal not available (SNA)";
 CM_ SG_ 605 APP_tcControlLightState "Driver assistance computer (primary): tc control light state";
 CM_ SG_ 605 APP_tcContinuationReason "The reason the traffic control state machine entered the continue state.";
 CM_ SG_ 605 APP_tcConfirmationType "The mechanism of how the driver confirmed the traffic control.";
@@ -100,9 +100,9 @@ CM_ SG_ 859 APP_visionOcsAdultProbRaw "Driver assistance computer (primary): vis
 CM_ SG_ 859 APP_visionOcsFrontPasClsVisionSt "Reports classification state of front passenger seat after Bayesian filter.";
 CM_ SG_ 859 APP_visionOcsStatusCounter "Driver assistance computer (primary): vision ocs status counter";
 CM_ BO_ 846 "Parking assist sensors message: pas front middle";
-CM_ SG_ 846 PARK_frontLeftMiddleRawDistData "Zone defined as -38 degrees -> +12 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
-CM_ SG_ 846 PARK_frontMiddleRawDistData "Zone defined as -12 degrees to +12 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
-CM_ SG_ 846 PARK_frontRightMiddleRawDistData "Zone defined +12 degrees to +38 degreees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 846 PARK_frontLeftMiddleRawDistData "Zone defined as -38 degrees -> +12 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA)";
+CM_ SG_ 846 PARK_frontMiddleRawDistData "Zone defined as -12 degrees to +12 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA)";
+CM_ SG_ 846 PARK_frontRightMiddleRawDistData "Zone defined +12 degrees to +38 degreees, distance to object in units of centimeters; raw 255 = signal not available (SNA)";
 CM_ SG_ 846 PARK_pasFrontMiddleCounter "Parking assist sensors: pas front middle counter";
 CM_ SG_ 846 PARK_pasFrontMiddleChecksum "Parking assist sensors: pas front middle checksum";
 BA_DEF_ "BusType" STRING;

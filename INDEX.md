@@ -54,7 +54,7 @@
 
 ## DBC Files
 
-- `dbc/<model>/<firmware>/<BUS>.dbc` - CAN DBC files with real on-bus CAN ids (VEH, CH, BUS1); see README for coverage
+- `dbc/<model>/<firmware>/<BUS>.dbc` - CAN DBC files with real on-bus CAN ids (VEH, CH, PARTY); see README for coverage
 - `dbc/<firmware>/ETH.dbc` - every message under its Ethernet-side id (not for use on a CAN bus)
 
 ## Data Files

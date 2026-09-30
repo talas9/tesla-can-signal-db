@@ -1,0 +1,822 @@
+VERSION "dbc-export 1 2025.20.8"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS CP DIF ICR UI VCFRONT VCLEFT VCSEC
+
+
+BO_ 594 BMS_powerAvailable: 8 BMS
+ SG_ BMS_maxRegenPower : 0|16@1+ (0.01,0) [0|655.35] "kW" Vector__XXX
+ SG_ BMS_maxDischargePower : 16|16@1+ (0.013,0) [0|850] "kW" Vector__XXX
+ SG_ BMS_maxStationaryHeatPower : 32|10@1+ (0.01,0) [0|10.23] "kW" Vector__XXX
+ SG_ BMS_powerLimitsState : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_notEnoughPowerForHeatPump : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 754 BMS_vehNm: 2 BMS
+ SG_ BMS_nmGoingToSleep : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_nmWakeUpBus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_hvsBusAsleep : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_nmKeepAwakeReason : 4|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ BMS_nmWakeUpReason : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 669 CP_dcChargeStatus: 4 CP
+ SG_ CP_evseOutputDcCurrent : 0|15@1- (0.125,0) [-2048|2047.875] "A" Vector__XXX
+ SG_ CP_evseOutputDcVoltage : 16|13@1+ (0.07324219,0) [0|599.92675822] "V" Vector__XXX
+ SG_ CP_evseOutputDcCurrentStale : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1885 CP_loggingFast: 8 CP
+ SG_ CP_loggingFastSelect M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ CP_inductiveSensor_raw m0 : 4|28@1+ (1,0) [0|268435455] "" Vector__XXX
+ SG_ CP_doorOpenActuationTime m0 : 32|14@1+ (1,0) [0|16383] "ms" Vector__XXX
+ SG_ CP_doorCloseActuationTime m0 : 46|14@1+ (1,0) [0|16383] "ms" Vector__XXX
+ SG_ CP_chargeCableSecured m0 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_chargeCablePresent m0 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_latchCheckAvailable m0 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_UHF_controlState m2 : 4|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ CP_proximityV m2 : 8|16@1+ (0.0001,0) [0|6.5535] "V" Vector__XXX
+ SG_ CP_proximityV_GBCC1 m2 : 24|14@1+ (0.001,0) [0|13.3] "V" Vector__XXX
+ SG_ CP_proximityV_GBCC2 m2 : 38|14@1+ (0.001,0) [0|13.3] "V" Vector__XXX
+ SG_ CP_doorPot m2 : 52|12@1+ (0.025,0) [0|100] "%" Vector__XXX
+ SG_ CP_doorOpenRequest m3 : 16|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ CP_doorOpenEndOfDriveReason m3 : 20|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_coverClosed m3 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_doorCloseEndOfDriveReason m3 : 24|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_doorCloseRequest m3 : 27|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ CP_latchDisengagingTime m3 : 32|10@1+ (1,0) [0|1023] "ms" Vector__XXX
+ SG_ CP_latchEngagingTime m3 : 42|10@1+ (1,0) [0|1023] "ms" Vector__XXX
+ SG_ CP_latchDisengagingStopReason m3 : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_latchEngagingStopReason m3 : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_doorIdDetectionState m3 : 59|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ CP_doorIdDetectedBin m3 : 61|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2042 CP_loggingSlow: 8 CP
+ SG_ CP_loggingSlowSelect M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ CP_UHF_chipState m3 : 4|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_UHF_rssi m3 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CP_UHF_rxOverflow m3 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_UHF_rxNumBytes m3 : 17|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CP_UHF_selfTestRssi m3 : 25|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ CP_latchI m3 : 33|12@1+ (0.0025,0) [0|10.2375] "A" Vector__XXX
+ SG_ CP_inlet1HarnessIdState m3 : 45|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ CP_inlet1HarnessIdValue m3 : 47|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_inlet2HarnessIdState m3 : 50|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ CP_inlet2HarnessIdValue m3 : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_inletHeaterState m3 : 55|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ CP_inletHeaterDuty m3 : 57|7@1+ (1,0) [0|100] "%" Vector__XXX
+ SG_ CP_nvm_dataValid m5 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_nvm_doorOpenCycles m5 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ CP_nvm_doorCloseCycles m5 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ CP_nvm_doorOpen m5 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_nvm_doorPresent m5 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_nvm_doorPresentValid m5 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_nvm_badPilotDiodeDetected m5 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_nvm_pilotDiodeFaultCount m5 : 44|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ CP_doorOpenLimiterMaxCount m5 : 47|4@1+ (1,0) [0|15] "counts" Vector__XXX
+ SG_ CP_doorOpenLimiterMaxRequestType m5 : 51|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ CP_doorCloseLimiterMaxCount m5 : 55|4@1+ (1,0) [0|15] "counts" Vector__XXX
+ SG_ CP_doorCloseLimiterMaxRequestTyp m5 : 59|5@1+ (1,0) [0|31] "" Vector__XXX
+
+BO_ 893 CP_thermalStatus: 8 CP
+ SG_ CP_thermalStatusSelect M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ CP_pinTemperature1 m1 : 8|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
+ SG_ CP_pinTemperature2 m1 : 16|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
+ SG_ CP_pinTemperature3 m1 : 24|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
+
+BO_ 1622 DIF_info: 8 DIF
+ SG_ DIF_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_buildType m10 : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_buildConfigurationId m10 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_hardwareId m10 : 32|8@1+ (1,0) [0|252] "" Vector__XXX
+ SG_ DIF_componentId m10 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_pcbaId m11 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_assemblyId m11 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_usageId m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_subUsageId m11 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_motorType m12 : 8|5@1+ (1,0) [1|31] "" Vector__XXX
+ SG_ DIF_siliconType m12 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_mechSafeStateType m12 : 24|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ DIF_applicationCrc m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_oilPumpBuildType m16 : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_oilPumpAppCrc m16 : 16|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_FPGA_version m16 : 48|8@1+ (1,0) [0|254] "" Vector__XXX
+ SG_ DIF_appGitHash m17 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
+ SG_ DIF_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
+ SG_ DIF_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_infoBootLdUdsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_oilPumpPcbaId m33 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_oilPumpAssemblyId m33 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_oilPumpUsageId m33 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_refRotorFlux m35 : 8|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_refRotorOffset m35 : 24|12@1- (0.1,0) [-180|180] "deg" Vector__XXX
+ SG_ DIF_speedWearTotal m36 : 8|8@1+ (0.4,0) [0|100] "%" Vector__XXX
+ SG_ DIF_torqueWearTotal m36 : 24|8@1+ (0.02,0) [0|5.08] "1" Vector__XXX
+
+BO_ 2023 ICR_status: 5 ICR
+ SG_ ICR_sensorMode : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ICR_blocked : 8|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ ICR_algoVersion : 10|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ ICR_l2HeapUsage : 25|7@1+ (1,0) [0|127] "PCT" Vector__XXX
+ SG_ ICR_intrusionStatus : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ICR_booted : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ICR_rdMapDumpCompleted : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 819 UI_chargeRequest: 5 UI
+ SG_ UI_openChargePortDoorRequest : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_closeChargePortDoorRequest : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_chargeEnableRequest : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_acChargeCurrentLimit : 8|7@1+ (1,0) [0|126] "A" Vector__XXX
+ SG_ UI_chargeTerminationPct : 16|10@1+ (0.1,0) [5|100] "%" Vector__XXX
+ SG_ UI_scheduledDepartureEnabled : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_chargePortLatchRequest : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_cpInletHeaterRequest : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 929 VCFRONT_vehicleStatus: 8 VCFRONT
+ SG_ VCFRONT_vehicleStatusMuxIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_vehicleStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCFRONT_vehicleStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCFRONT_preconditionRequest m0 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_APGlassHeaterState m0 : 2|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ VCFRONT_thermalSystemType m0 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_standbySupplySupported m0 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_driverPresent m0 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_passengerPresent m0 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_accPlusAvailable m0 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_diPowerOnState m0 : 10|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCFRONT_12vStatusForDrive m0 : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_dcr12VMilliOhms m0 : 16|8@1+ (1,0) [0|255] "mOhm" Vector__XXX
+ SG_ VC_userPresenceState m0 : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_factoryLimitsOverrideOk m0 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_ota12VSupportRequest m0 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_driverBuckleStatus m0 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_driverDoorStatus m0 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_driverUnbuckled m0 : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_passengerUnbuckled m0 : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_2RowLeftUnbuckled m0 : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_2RowCenterUnbuckled m0 : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_2RowRightUnbuckled m0 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_pcsEFuseVoltage m0 : 42|10@1+ (0.1,0) [0|102.2] "V" Vector__XXX
+ SG_ VCFRONT_bmsHvChargeEnable m1 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_3RowLeftUnbuckled m1 : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_3RowRightUnbuckled m1 : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_maxBattHeatRejection m1 : 6|10@1+ (30,0) [0|30690] "W" Vector__XXX
+ SG_ VCFRONT_hvacReqBattCoolOutTemp m1 : 16|9@1+ (0.1,40) [40|91.1] "degC" Vector__XXX
+ SG_ VCFRONT_PCSCurrent m1 : 25|13@1- (0.1,0) [-409.6|409.5] "A" Vector__XXX
+ SG_ VCFRONT_refSystemNominal m1 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_driverEnteredCabinEstima m1 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_anySWEFuseActive m1 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_hpBattHeatingPowerTrgt m1 : 41|7@1+ (100,0) [0|10000] "W" Vector__XXX
+
+BO_ 258 VCLEFT_doorStatus: 8 VCLEFT
+ SG_ VCLEFT_doorClosureStatusFront : 0|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_doorClosureStatusRear : 4|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_frontLatchSwitch : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearLatchSwitch : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontHandlePulled : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearHandlePulled : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontRelActuatorSwitch : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearRelActuatorSwitch : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontLatchStatus : 14|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_rearLatchStatus : 18|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_lastDoorReqSourceFront : 22|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_lastDoorReqSourceRear : 25|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_frontIntSwitchPressed : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearIntSwitchPressed : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_mirrorTiltXPosition : 33|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCLEFT_mirrorTiltYPosition : 41|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCLEFT_mirrorState : 49|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_mirrorFoldState : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_mirrorRecallState : 55|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_mirrorHeatState : 58|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ VCLEFT_rearHandlePulledPersist : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontHandlePulledPersist : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_mirrorDipped : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1817 VCSEC_debug100ms: 8 VCSEC
+ SG_ VCSEC_debug100msIndex M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCSEC_walkAwayLockKeyState m0 : 5|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCSEC_thresholdOffsetVersion m0 : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCSEC_walkAwayLockState m0 : 11|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCSEC_rssi0WLEntry m0 : 16|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCSEC_endpointLayout m0 : 21|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCSEC_rssi1WLEntry m0 : 24|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCSEC_rssi2WLEntry m0 : 32|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCSEC_walkUpUnlockState m0 : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCSEC_algoHighThreshLeft m0 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEC_algoHighThreshRight m0 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEC_algoHighThreshCenter m0 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEC_pollingReason m0 : 43|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCSEC_numberOfPubKeysOnWhitelist m0 : 56|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCSEC_thermalDetectState m0 : 61|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_TX_BU_ 594 : BMS;
+BO_TX_BU_ 754 : BMS;
+BO_TX_BU_ 669 : CP;
+BO_TX_BU_ 1885 : CP;
+BO_TX_BU_ 2042 : CP;
+BO_TX_BU_ 893 : CP;
+BO_TX_BU_ 1622 : DIF;
+BO_TX_BU_ 2023 : ICR;
+BO_TX_BU_ 819 : UI;
+BO_TX_BU_ 929 : VCFRONT;
+BO_TX_BU_ 258 : VCLEFT;
+BO_TX_BU_ 1817 : VCSEC;
+
+
+CM_ "Tesla Bayberry CAN bus database; bus ETH (Ethernet-side ids, not CAN ids); firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ BMS "High-voltage battery management system";
+CM_ BU_ CP "Charge port controller";
+CM_ BU_ DIF "Front drive inverter";
+CM_ BU_ ICR "ICR ECU";
+CM_ BU_ UI "Touchscreen user interface computer";
+CM_ BU_ VCFRONT "Front body controller";
+CM_ BU_ VCLEFT "Left body controller";
+CM_ BU_ VCSEC "Vehicle security controller";
+CM_ BO_ 594 "High-voltage battery management system message: power available";
+CM_ SG_ 594 BMS_maxRegenPower "Calculated max regen power";
+CM_ SG_ 594 BMS_maxDischargePower "Calculated max discharge power possible based on max discharge current and sum of loaded voltages";
+CM_ SG_ 594 BMS_maxStationaryHeatPower "Maximum heating power the DI can produce when in stationary heating mode";
+CM_ SG_ 594 BMS_powerLimitsState "High-voltage battery management system: power limits state";
+CM_ SG_ 594 BMS_notEnoughPowerForHeatPump "Flag indicating the min pack power is lower than specified threshold to support heating with the heat pump";
+CM_ BO_ 754 "High-voltage battery management system message: veh nm";
+CM_ SG_ 754 BMS_nmGoingToSleep "High-voltage battery management system: nm going to sleep";
+CM_ SG_ 754 BMS_nmWakeUpBus "High-voltage battery management system: nm wake up bus";
+CM_ SG_ 754 BMS_hvsBusAsleep "HVS bus reported as off";
+CM_ SG_ 754 BMS_nmKeepAwakeReason "BMS' determined reason to keep CAN awake; raw 0 = signal not available (SNA)";
+CM_ SG_ 754 BMS_nmWakeUpReason "BMS' determined reason to wake up CAN";
+CM_ BO_ 669 "Charge port controller message: dc charge status";
+CM_ SG_ 669 CP_evseOutputDcCurrent "The DC EVSE's measured output current";
+CM_ SG_ 669 CP_evseOutputDcVoltage "The DC EVSE's measured output voltage";
+CM_ SG_ 669 CP_evseOutputDcCurrentStale "Indicates whether the data in CP_evseOutputDcCurrent has not been updated with new info from the DC EVSE recently";
+CM_ BO_ 1885 "Charge port controller message: logging fast";
+CM_ SG_ 1885 CP_loggingFastSelect "Charge port controller: logging fast select";
+CM_ SG_ 1885 CP_inductiveSensor_raw "Charge port controller: inductive sensor raw";
+CM_ SG_ 1885 CP_doorOpenActuationTime "Charge port controller: door open actuation time";
+CM_ SG_ 1885 CP_doorCloseActuationTime "Charge port controller: door close actuation time";
+CM_ SG_ 1885 CP_chargeCableSecured "Indicates whether a charge cable is secured in any inlet";
+CM_ SG_ 1885 CP_chargeCablePresent "Indicates whether a charge cable is present in any inlet";
+CM_ SG_ 1885 CP_latchCheckAvailable "Charge port controller: latch check available";
+CM_ SG_ 1885 CP_UHF_controlState "Control state of UHF receiver";
+CM_ SG_ 1885 CP_proximityV "Charge port controller: proximity v";
+CM_ SG_ 1885 CP_proximityV_GBCC1 "Sensed voltage of GB DC inlet CC1 connection";
+CM_ SG_ 1885 CP_proximityV_GBCC2 "Sensed voltage of GB DC inlet CC2 connection";
+CM_ SG_ 1885 CP_doorPot "Position of the charge port door potentiometer";
+CM_ SG_ 1885 CP_doorOpenRequest "Door open request trigger";
+CM_ SG_ 1885 CP_doorOpenEndOfDriveReason "Reason why the door stopped moving in the open direction";
+CM_ SG_ 1885 CP_coverClosed "Charge port controller: cover closed";
+CM_ SG_ 1885 CP_doorCloseEndOfDriveReason "Reason why the door stopped moving in the closing direction";
+CM_ SG_ 1885 CP_doorCloseRequest "Door close request trigger";
+CM_ SG_ 1885 CP_latchDisengagingTime "Charge port controller: latch disengaging time";
+CM_ SG_ 1885 CP_latchEngagingTime "Charge port controller: latch engaging time";
+CM_ SG_ 1885 CP_latchDisengagingStopReason "Reason why the latch stopped moving in the engaged direction";
+CM_ SG_ 1885 CP_latchEngagingStopReason "Reason why the latch stopped moving in the engaged direction";
+CM_ SG_ 1885 CP_doorIdDetectionState "Charge port controller: door id detection state; raw 0 = signal not available (SNA)";
+CM_ SG_ 1885 CP_doorIdDetectedBin "Charge port controller: door id detected bin";
+CM_ BO_ 2042 "Charge port controller message: logging slow";
+CM_ SG_ 2042 CP_loggingSlowSelect "Charge port controller: logging slow select";
+CM_ SG_ 2042 CP_UHF_chipState "Charge port controller: UHF chip state";
+CM_ SG_ 2042 CP_UHF_rssi "Signal strength of received UHF signal";
+CM_ SG_ 2042 CP_UHF_rxOverflow "Charge port controller: UHF rx overflow";
+CM_ SG_ 2042 CP_UHF_rxNumBytes "Charge port controller: UHF rx num bytes";
+CM_ SG_ 2042 CP_UHF_selfTestRssi "Signal strength of received self-test UHF signal";
+CM_ SG_ 2042 CP_latchI "Charge port controller: latch i";
+CM_ SG_ 2042 CP_inlet1HarnessIdState "State of the CP's inlet 1 harness pedigree; raw 0 = signal not available (SNA)";
+CM_ SG_ 2042 CP_inlet1HarnessIdValue "Pedigree of the CP's inlet 1 harness";
+CM_ SG_ 2042 CP_inlet2HarnessIdState "State of the CP's inlet 2 harness pedigree; raw 0 = signal not available (SNA)";
+CM_ SG_ 2042 CP_inlet2HarnessIdValue "Pedigree of the CP's inlet 2 harness";
+CM_ SG_ 2042 CP_inletHeaterState "Reports the present state of the inlet heater.";
+CM_ SG_ 2042 CP_inletHeaterDuty "Inlet heater PWM duty cycle";
+CM_ SG_ 2042 CP_nvm_dataValid "Charge port controller: nvm data valid";
+CM_ SG_ 2042 CP_nvm_doorOpenCycles "Charge port controller: nvm door open cycles";
+CM_ SG_ 2042 CP_nvm_doorCloseCycles "Charge port controller: nvm door close cycles";
+CM_ SG_ 2042 CP_nvm_doorOpen "Charge port controller: nvm door open";
+CM_ SG_ 2042 CP_nvm_doorPresent "Charge port controller: nvm door present";
+CM_ SG_ 2042 CP_nvm_doorPresentValid "Charge port controller: nvm door present valid";
+CM_ SG_ 2042 CP_nvm_badPilotDiodeDetected "Charge port controller: nvm bad pilot diode detected";
+CM_ SG_ 2042 CP_nvm_pilotDiodeFaultCount "Charge port controller: nvm pilot diode fault count";
+CM_ SG_ 2042 CP_doorOpenLimiterMaxCount "Charge port controller: door open limiter max count";
+CM_ SG_ 2042 CP_doorOpenLimiterMaxRequestType "Charge port controller: door open limiter max request type";
+CM_ SG_ 2042 CP_doorCloseLimiterMaxCount "Charge port controller: door close limiter max count";
+CM_ SG_ 2042 CP_doorCloseLimiterMaxRequestTyp "Charge port controller: door close limiter max request type";
+CM_ BO_ 893 "Charge port controller message: thermal status";
+CM_ SG_ 893 CP_thermalStatusSelect "Charge port controller: thermal status select";
+CM_ SG_ 893 CP_pinTemperature1 "Sensed temperature of the charge port inlet pins";
+CM_ SG_ 893 CP_pinTemperature2 "Sensed temperature of the charge port inlet pins";
+CM_ SG_ 893 CP_pinTemperature3 "Sensed temperature of the charge port inlet pins";
+CM_ BO_ 1622 "Front drive inverter message: info";
+CM_ SG_ 1622 DIF_infoIndex "Front drive inverter: info index";
+CM_ SG_ 1622 DIF_buildType "Front drive inverter: build type";
+CM_ SG_ 1622 DIF_buildConfigurationId "Front drive inverter: build configuration id";
+CM_ SG_ 1622 DIF_hardwareId "Front drive inverter: hardware id";
+CM_ SG_ 1622 DIF_componentId "Front drive inverter: component id";
+CM_ SG_ 1622 DIF_pcbaId "Front drive inverter: pcba id";
+CM_ SG_ 1622 DIF_assemblyId "Front drive inverter: assembly id";
+CM_ SG_ 1622 DIF_usageId "Front drive inverter: usage id";
+CM_ SG_ 1622 DIF_subUsageId "Front drive inverter: sub usage id";
+CM_ SG_ 1622 DIF_motorType "Front drive inverter: motor type; raw 0 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_siliconType "Front drive inverter: silicon type";
+CM_ SG_ 1622 DIF_mechSafeStateType "Front drive inverter: mech safe state type; raw 0 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_applicationCrc "Front drive inverter: application crc";
+CM_ SG_ 1622 DIF_oilPumpBuildType "Front drive inverter: oil pump build type";
+CM_ SG_ 1622 DIF_oilPumpAppCrc "Front drive inverter: oil pump app crc";
+CM_ SG_ 1622 DIF_FPGA_version "Front drive inverter: FPGA version; raw 255 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_appGitHash "Front drive inverter: app git hash";
+CM_ SG_ 1622 DIF_bootGitHash "Front drive inverter: boot git hash";
+CM_ SG_ 1622 DIF_platformTyp "Front drive inverter: platform typ";
+CM_ SG_ 1622 DIF_infoBootLdUdsProtocolVersion "Front drive inverter: info boot ld uds protocol version";
+CM_ SG_ 1622 DIF_bootloaderCrc "Front drive inverter: bootloader crc";
+CM_ SG_ 1622 DIF_oilPumpPcbaId "Front drive inverter: oil pump pcba id";
+CM_ SG_ 1622 DIF_oilPumpAssemblyId "Front drive inverter: oil pump assembly id";
+CM_ SG_ 1622 DIF_oilPumpUsageId "Front drive inverter: oil pump usage id";
+CM_ SG_ 1622 DIF_refRotorFlux "Front drive inverter: ref rotor flux";
+CM_ SG_ 1622 DIF_refRotorOffset "Front drive inverter: ref rotor offset; raw 2048 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_speedWearTotal "Front drive inverter: speed wear total; raw 255 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_torqueWearTotal "Front drive inverter: torque wear total; raw 255 = signal not available (SNA)";
+CM_ BO_ 2023 "ICR ECU message: status";
+CM_ SG_ 2023 ICR_sensorMode "ICR ECU: sensor mode";
+CM_ SG_ 2023 ICR_blocked "Indicates if sensor is blocked or not; raw 0 = signal not available (SNA)";
+CM_ SG_ 2023 ICR_algoVersion "ICR ECU: algo version";
+CM_ SG_ 2023 ICR_l2HeapUsage "ICR ECU: l2 heap usage";
+CM_ SG_ 2023 ICR_intrusionStatus "ICR ECU: intrusion status";
+CM_ SG_ 2023 ICR_booted "Indicates if ICR has rebooted";
+CM_ SG_ 2023 ICR_rdMapDumpCompleted "ICR ECU: rd map dump completed";
+CM_ BO_ 819 "Touchscreen user interface computer message: charge request";
+CM_ SG_ 819 UI_openChargePortDoorRequest "Request to open charge port.";
+CM_ SG_ 819 UI_closeChargePortDoorRequest "Request to close charge port.";
+CM_ SG_ 819 UI_chargeEnableRequest "Charging request initiated";
+CM_ SG_ 819 UI_acChargeCurrentLimit "UI charging line current request; raw 127 = signal not available (SNA)";
+CM_ SG_ 819 UI_chargeTerminationPct "Charge Termination Limit Percent";
+CM_ SG_ 819 UI_scheduledDepartureEnabled "Reports scheduled departure feature enablement.";
+CM_ SG_ 819 UI_chargePortLatchRequest "Request to engage or disengage the latch.";
+CM_ SG_ 819 UI_cpInletHeaterRequest "Enable charge port inlet heater";
+CM_ BO_ 929 "Front body controller message: vehicle status";
+CM_ SG_ 929 VCFRONT_vehicleStatusMuxIndex "Front body controller: vehicle status mux index";
+CM_ SG_ 929 VCFRONT_vehicleStatusCounter "Front body controller: vehicle status counter";
+CM_ SG_ 929 VCFRONT_vehicleStatusChecksum "Front body controller: vehicle status checksum";
+CM_ SG_ 929 VCFRONT_preconditionRequest "Front body controller: precondition request";
+CM_ SG_ 929 VCFRONT_APGlassHeaterState "Front body controller: AP glass heater state; raw 0 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_thermalSystemType "Front body controller: thermal system type; raw 1 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_standbySupplySupported "Front body controller: standby supply supported";
+CM_ SG_ 929 VCFRONT_driverPresent "Front body controller: driver present";
+CM_ SG_ 929 VCFRONT_passengerPresent "Front body controller: passenger present";
+CM_ SG_ 929 VCFRONT_accPlusAvailable "Front body controller: acc plus available";
+CM_ SG_ 929 VCFRONT_diPowerOnState "Front body controller: di power on state";
+CM_ SG_ 929 VCFRONT_12vStatusForDrive "Front body controller: 12v status for drive";
+CM_ SG_ 929 VCFRONT_dcr12VMilliOhms "Front body controller: dcr12 v milli ohms";
+CM_ SG_ 929 VC_userPresenceState "User presence state";
+CM_ SG_ 929 VCFRONT_factoryLimitsOverrideOk "Front body controller: factory limits override ok";
+CM_ SG_ 929 VCFRONT_ota12VSupportRequest "Front body controller: ota12 v support request";
+CM_ SG_ 929 VCFRONT_driverBuckleStatus "Front body controller: driver buckle status";
+CM_ SG_ 929 VCFRONT_driverDoorStatus "Front body controller: driver door status";
+CM_ SG_ 929 VCFRONT_driverUnbuckled "Front body controller: driver unbuckled; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_passengerUnbuckled "Front body controller: passenger unbuckled; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_2RowLeftUnbuckled "Front body controller: 2 row left unbuckled; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_2RowCenterUnbuckled "Front body controller: 2 row center unbuckled; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_2RowRightUnbuckled "Front body controller: 2 row right unbuckled; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_pcsEFuseVoltage "Front body controller: pcs e fuse voltage; raw 1023 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_bmsHvChargeEnable "Front body controller: bms hv charge enable";
+CM_ SG_ 929 VCFRONT_3RowLeftUnbuckled "Indication that the third row left passenger has unbuckled their seat belt; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_3RowRightUnbuckled "Indication that the third row right passenger has unbuckled their seat belt; raw 2 = signal not available (SNA)";
+CM_ SG_ 929 VCFRONT_maxBattHeatRejection "Radiator max heat rejection estimated at zero vehicle speed.";
+CM_ SG_ 929 VCFRONT_hvacReqBattCoolOutTemp "Battery outlet coolant temp target to allow HVAC min comfort";
+CM_ SG_ 929 VCFRONT_PCSCurrent "Front body controller: PCS current";
+CM_ SG_ 929 VCFRONT_refSystemNominal "Front body controller: ref system nominal";
+CM_ SG_ 929 VCFRONT_driverEnteredCabinEstima "Front body controller: driver entered cabin estimate DBG";
+CM_ SG_ 929 VCFRONT_anySWEFuseActive "Front body controller: any SWE fuse active";
+CM_ SG_ 929 VCFRONT_hpBattHeatingPowerTrgt "Reports the heat pump battery heating power target.";
+CM_ BO_ 258 "Left body controller message: door status";
+CM_ SG_ 258 VCLEFT_doorClosureStatusFront "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_doorClosureStatusRear "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_frontLatchSwitch "State of front left door latch switch representing door open/closed. 0 is open and 1 is closed";
+CM_ SG_ 258 VCLEFT_rearLatchSwitch "State of rear left door latch switch representing door open/closed. 0 is open and 1 is closed";
+CM_ SG_ 258 VCLEFT_frontHandlePulled "Left body controller: front handle pulled";
+CM_ SG_ 258 VCLEFT_rearHandlePulled "Left body controller: rear handle pulled";
+CM_ SG_ 258 VCLEFT_frontRelActuatorSwitch "State of front left door latch switch representing latch arm/unarmed. Disarms while door handle is pulled.";
+CM_ SG_ 258 VCLEFT_rearRelActuatorSwitch "State of rear left door latch switch representing latch arm/unarmed. Disarms while door handle is pulled";
+CM_ SG_ 258 VCLEFT_frontLatchStatus "Status of left front door latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_rearLatchStatus "Status of rear left door latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_lastDoorReqSourceFront "last source of front door open request";
+CM_ SG_ 258 VCLEFT_lastDoorReqSourceRear "last source of rear door open request";
+CM_ SG_ 258 VCLEFT_frontIntSwitchPressed "Left body controller: front int switch pressed";
+CM_ SG_ 258 VCLEFT_rearIntSwitchPressed "Left body controller: rear int switch pressed";
+CM_ SG_ 258 VCLEFT_mirrorTiltXPosition "Value representing left side view mirror tilt horizontal position";
+CM_ SG_ 258 VCLEFT_mirrorTiltYPosition "Value representing left side view mirror tilt vertical position";
+CM_ SG_ 258 VCLEFT_mirrorState "State of the left side view mirror.";
+CM_ SG_ 258 VCLEFT_mirrorFoldState "Fold state for the left side view mirror";
+CM_ SG_ 258 VCLEFT_mirrorRecallState "State of Mirror Recall.";
+CM_ SG_ 258 VCLEFT_mirrorHeatState "Left body controller: mirror heat state; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_rearHandlePulledPersist "Left body controller: rear handle pulled persist";
+CM_ SG_ 258 VCLEFT_frontHandlePulledPersist "Left body controller: front handle pulled persist";
+CM_ SG_ 258 VCLEFT_mirrorDipped "Reports if the side view mirrors in are in the dipped position.";
+CM_ BO_ 1817 "Vehicle security controller message: debug100ms";
+CM_ SG_ 1817 VCSEC_debug100msIndex "Vehicle security controller: debug100ms index";
+CM_ SG_ 1817 VCSEC_walkAwayLockKeyState "Walk away lock key state of the vehicle";
+CM_ SG_ 1817 VCSEC_thresholdOffsetVersion "Vehicle security controller: threshold offset version";
+CM_ SG_ 1817 VCSEC_walkAwayLockState "Walk away lock state of the vehicle";
+CM_ SG_ 1817 VCSEC_rssi0WLEntry "Whitelist entry of the rssi0 device";
+CM_ SG_ 1817 VCSEC_endpointLayout "Vehicle security controller: endpoint layout";
+CM_ SG_ 1817 VCSEC_rssi1WLEntry "Whitelist entry of the rssi1 device";
+CM_ SG_ 1817 VCSEC_rssi2WLEntry "Whitelist entry of the rssi2 device";
+CM_ SG_ 1817 VCSEC_walkUpUnlockState "Status of walk up unlock state";
+CM_ SG_ 1817 VCSEC_algoHighThreshLeft "Vehicle security controller: algo high thresh left";
+CM_ SG_ 1817 VCSEC_algoHighThreshRight "Vehicle security controller: algo high thresh right";
+CM_ SG_ 1817 VCSEC_algoHighThreshCenter "Vehicle security controller: algo high thresh center";
+CM_ SG_ 1817 VCSEC_pollingReason "Reason that the vehicle is currently polling for location";
+CM_ SG_ 1817 VCSEC_numberOfPubKeysOnWhitelist "Number of public keys on keys whitelist.";
+CM_ SG_ 1817 VCSEC_thermalDetectState "Reports the current state of thermal detection.";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "Bayberry_ETH";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2025.20.8";
+BA_ "VehicleModel" "Bayberry";
+BA_ "ECU" BU_ BMS "BMS";
+BA_ "ECU" BU_ CP "CP";
+BA_ "ECU" BU_ DIF "DIF";
+BA_ "ECU" BU_ ICR "ICR";
+BA_ "ECU" BU_ UI "UI";
+BA_ "ECU" BU_ VCFRONT "VCFRONT";
+BA_ "ECU" BU_ VCLEFT "VCLEFT";
+BA_ "ECU" BU_ VCSEC "VCSEC";
+BA_ "GenMsgCycleTime" BO_ 594 100;
+BA_ "GenMsgSendType" BO_ 594 0;
+BA_ "VFrameFormat" BO_ 594 0;
+BA_ "GenMsgCycleTime" BO_ 754 100;
+BA_ "GenMsgSendType" BO_ 754 0;
+BA_ "VFrameFormat" BO_ 754 0;
+BA_ "GenMsgCycleTime" BO_ 669 100;
+BA_ "GenMsgSendType" BO_ 669 0;
+BA_ "VFrameFormat" BO_ 669 0;
+BA_ "GenMsgCycleTime" BO_ 1885 200;
+BA_ "GenMsgSendType" BO_ 1885 0;
+BA_ "VFrameFormat" BO_ 1885 0;
+BA_ "GenMsgCycleTime" BO_ 2042 1000;
+BA_ "GenMsgSendType" BO_ 2042 0;
+BA_ "VFrameFormat" BO_ 2042 0;
+BA_ "GenMsgCycleTime" BO_ 893 1000;
+BA_ "GenMsgSendType" BO_ 893 0;
+BA_ "VFrameFormat" BO_ 893 0;
+BA_ "GenMsgCycleTime" BO_ 1622 1000;
+BA_ "GenMsgSendType" BO_ 1622 0;
+BA_ "VFrameFormat" BO_ 1622 0;
+BA_ "GenMsgCycleTime" BO_ 2023 100;
+BA_ "GenMsgSendType" BO_ 2023 0;
+BA_ "VFrameFormat" BO_ 2023 0;
+BA_ "GenMsgCycleTime" BO_ 819 500;
+BA_ "GenMsgSendType" BO_ 819 0;
+BA_ "VFrameFormat" BO_ 819 0;
+BA_ "GenMsgCycleTime" BO_ 929 50;
+BA_ "GenMsgSendType" BO_ 929 0;
+BA_ "VFrameFormat" BO_ 929 0;
+BA_ "GenMsgCycleTime" BO_ 258 100;
+BA_ "GenMsgSendType" BO_ 258 0;
+BA_ "VFrameFormat" BO_ 258 0;
+BA_ "GenMsgCycleTime" BO_ 1817 50;
+BA_ "GenMsgSendType" BO_ 1817 0;
+BA_ "VFrameFormat" BO_ 1817 0;
+BA_ "Confidence" SG_ 594 BMS_maxRegenPower 0;
+BA_ "Confidence" SG_ 594 BMS_maxDischargePower 0;
+BA_ "Confidence" SG_ 594 BMS_maxStationaryHeatPower 0;
+BA_ "Confidence" SG_ 594 BMS_powerLimitsState 0;
+BA_ "Confidence" SG_ 594 BMS_notEnoughPowerForHeatPump 1;
+BA_ "Confidence" SG_ 754 BMS_nmGoingToSleep 0;
+BA_ "Confidence" SG_ 754 BMS_nmWakeUpBus 0;
+BA_ "Confidence" SG_ 754 BMS_hvsBusAsleep 0;
+BA_ "Confidence" SG_ 754 BMS_nmKeepAwakeReason 1;
+BA_ "GenSigSNA" SG_ 754 BMS_nmKeepAwakeReason "0";
+BA_ "Confidence" SG_ 754 BMS_nmWakeUpReason 0;
+BA_ "Confidence" SG_ 669 CP_evseOutputDcCurrent 0;
+BA_ "Confidence" SG_ 669 CP_evseOutputDcVoltage 0;
+BA_ "Confidence" SG_ 669 CP_evseOutputDcCurrentStale 0;
+BA_ "Confidence" SG_ 1885 CP_loggingFastSelect 1;
+BA_ "Confidence" SG_ 1885 CP_inductiveSensor_raw 0;
+BA_ "Confidence" SG_ 1885 CP_doorOpenActuationTime 0;
+BA_ "Confidence" SG_ 1885 CP_doorCloseActuationTime 0;
+BA_ "Confidence" SG_ 1885 CP_chargeCableSecured 0;
+BA_ "Confidence" SG_ 1885 CP_chargeCablePresent 0;
+BA_ "Confidence" SG_ 1885 CP_latchCheckAvailable 0;
+BA_ "Confidence" SG_ 1885 CP_UHF_controlState 0;
+BA_ "Confidence" SG_ 1885 CP_proximityV 0;
+BA_ "Confidence" SG_ 1885 CP_proximityV_GBCC1 0;
+BA_ "Confidence" SG_ 1885 CP_proximityV_GBCC2 0;
+BA_ "Confidence" SG_ 1885 CP_doorPot 0;
+BA_ "Confidence" SG_ 1885 CP_doorOpenRequest 0;
+BA_ "Confidence" SG_ 1885 CP_doorOpenEndOfDriveReason 0;
+BA_ "Confidence" SG_ 1885 CP_coverClosed 0;
+BA_ "Confidence" SG_ 1885 CP_doorCloseEndOfDriveReason 0;
+BA_ "Confidence" SG_ 1885 CP_doorCloseRequest 0;
+BA_ "Confidence" SG_ 1885 CP_latchDisengagingTime 0;
+BA_ "Confidence" SG_ 1885 CP_latchEngagingTime 0;
+BA_ "Confidence" SG_ 1885 CP_latchDisengagingStopReason 0;
+BA_ "Confidence" SG_ 1885 CP_latchEngagingStopReason 1;
+BA_ "Confidence" SG_ 1885 CP_doorIdDetectionState 0;
+BA_ "GenSigSNA" SG_ 1885 CP_doorIdDetectionState "0";
+BA_ "Confidence" SG_ 1885 CP_doorIdDetectedBin 0;
+BA_ "Confidence" SG_ 2042 CP_loggingSlowSelect 1;
+BA_ "Confidence" SG_ 2042 CP_UHF_chipState 0;
+BA_ "Confidence" SG_ 2042 CP_UHF_rssi 0;
+BA_ "Confidence" SG_ 2042 CP_UHF_rxOverflow 0;
+BA_ "Confidence" SG_ 2042 CP_UHF_rxNumBytes 0;
+BA_ "Confidence" SG_ 2042 CP_UHF_selfTestRssi 0;
+BA_ "Confidence" SG_ 2042 CP_latchI 0;
+BA_ "Confidence" SG_ 2042 CP_inlet1HarnessIdState 0;
+BA_ "GenSigSNA" SG_ 2042 CP_inlet1HarnessIdState "0";
+BA_ "Confidence" SG_ 2042 CP_inlet1HarnessIdValue 0;
+BA_ "Confidence" SG_ 2042 CP_inlet2HarnessIdState 0;
+BA_ "GenSigSNA" SG_ 2042 CP_inlet2HarnessIdState "0";
+BA_ "Confidence" SG_ 2042 CP_inlet2HarnessIdValue 0;
+BA_ "Confidence" SG_ 2042 CP_inletHeaterState 0;
+BA_ "Confidence" SG_ 2042 CP_inletHeaterDuty 0;
+BA_ "Confidence" SG_ 2042 CP_nvm_dataValid 0;
+BA_ "Confidence" SG_ 2042 CP_nvm_doorOpenCycles 2;
+BA_ "Confidence" SG_ 2042 CP_nvm_doorCloseCycles 2;
+BA_ "Confidence" SG_ 2042 CP_nvm_doorOpen 2;
+BA_ "Confidence" SG_ 2042 CP_nvm_doorPresent 2;
+BA_ "Confidence" SG_ 2042 CP_nvm_doorPresentValid 2;
+BA_ "Confidence" SG_ 2042 CP_nvm_badPilotDiodeDetected 2;
+BA_ "Confidence" SG_ 2042 CP_nvm_pilotDiodeFaultCount 2;
+BA_ "Confidence" SG_ 2042 CP_doorOpenLimiterMaxCount 1;
+BA_ "Confidence" SG_ 2042 CP_doorOpenLimiterMaxRequestType 1;
+BA_ "Confidence" SG_ 2042 CP_doorCloseLimiterMaxCount 1;
+BA_ "Confidence" SG_ 2042 CP_doorCloseLimiterMaxRequestTyp 1;
+BA_ "SystemSignalLongSymbol" SG_ 2042 CP_doorCloseLimiterMaxRequestTyp "CP_doorCloseLimiterMaxRequestType";
+BA_ "Confidence" SG_ 893 CP_thermalStatusSelect 1;
+BA_ "Confidence" SG_ 893 CP_pinTemperature1 0;
+BA_ "Confidence" SG_ 893 CP_pinTemperature2 0;
+BA_ "Confidence" SG_ 893 CP_pinTemperature3 0;
+BA_ "Confidence" SG_ 1622 DIF_infoIndex 1;
+BA_ "Confidence" SG_ 1622 DIF_buildType 0;
+BA_ "Confidence" SG_ 1622 DIF_buildConfigurationId 0;
+BA_ "Confidence" SG_ 1622 DIF_hardwareId 0;
+BA_ "Confidence" SG_ 1622 DIF_componentId 0;
+BA_ "Confidence" SG_ 1622 DIF_pcbaId 0;
+BA_ "Confidence" SG_ 1622 DIF_assemblyId 0;
+BA_ "Confidence" SG_ 1622 DIF_usageId 0;
+BA_ "Confidence" SG_ 1622 DIF_subUsageId 0;
+BA_ "Confidence" SG_ 1622 DIF_motorType 1;
+BA_ "GenSigSNA" SG_ 1622 DIF_motorType "0";
+BA_ "Confidence" SG_ 1622 DIF_siliconType 0;
+BA_ "Confidence" SG_ 1622 DIF_mechSafeStateType 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_mechSafeStateType "0";
+BA_ "Confidence" SG_ 1622 DIF_applicationCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpBuildType 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpAppCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_FPGA_version 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_FPGA_version "255";
+BA_ "Confidence" SG_ 1622 DIF_appGitHash 0;
+BA_ "Confidence" SG_ 1622 DIF_bootGitHash 0;
+BA_ "Confidence" SG_ 1622 DIF_platformTyp 0;
+BA_ "Confidence" SG_ 1622 DIF_infoBootLdUdsProtocolVersion 0;
+BA_ "Confidence" SG_ 1622 DIF_bootloaderCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpPcbaId 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpAssemblyId 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpUsageId 0;
+BA_ "Confidence" SG_ 1622 DIF_refRotorFlux 0;
+BA_ "Confidence" SG_ 1622 DIF_refRotorOffset 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_refRotorOffset "2048";
+BA_ "Confidence" SG_ 1622 DIF_speedWearTotal 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_speedWearTotal "255";
+BA_ "Confidence" SG_ 1622 DIF_torqueWearTotal 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_torqueWearTotal "255";
+BA_ "Confidence" SG_ 2023 ICR_sensorMode 1;
+BA_ "Confidence" SG_ 2023 ICR_blocked 1;
+BA_ "GenSigSNA" SG_ 2023 ICR_blocked "0";
+BA_ "Confidence" SG_ 2023 ICR_algoVersion 1;
+BA_ "Confidence" SG_ 2023 ICR_l2HeapUsage 1;
+BA_ "Confidence" SG_ 2023 ICR_intrusionStatus 1;
+BA_ "Confidence" SG_ 2023 ICR_booted 1;
+BA_ "Confidence" SG_ 2023 ICR_rdMapDumpCompleted 2;
+BA_ "Confidence" SG_ 819 UI_openChargePortDoorRequest 0;
+BA_ "Confidence" SG_ 819 UI_closeChargePortDoorRequest 0;
+BA_ "Confidence" SG_ 819 UI_chargeEnableRequest 0;
+BA_ "Confidence" SG_ 819 UI_acChargeCurrentLimit 0;
+BA_ "GenSigSNA" SG_ 819 UI_acChargeCurrentLimit "127";
+BA_ "Confidence" SG_ 819 UI_chargeTerminationPct 0;
+BA_ "Confidence" SG_ 819 UI_scheduledDepartureEnabled 0;
+BA_ "Confidence" SG_ 819 UI_chargePortLatchRequest 0;
+BA_ "Confidence" SG_ 819 UI_cpInletHeaterRequest 0;
+BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusMuxIndex 1;
+BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusCounter 0;
+BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusChecksum 0;
+BA_ "Confidence" SG_ 929 VCFRONT_preconditionRequest 0;
+BA_ "Confidence" SG_ 929 VCFRONT_APGlassHeaterState 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_APGlassHeaterState "0";
+BA_ "Confidence" SG_ 929 VCFRONT_thermalSystemType 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_thermalSystemType "1";
+BA_ "Confidence" SG_ 929 VCFRONT_standbySupplySupported 0;
+BA_ "Confidence" SG_ 929 VCFRONT_driverPresent 0;
+BA_ "Confidence" SG_ 929 VCFRONT_passengerPresent 0;
+BA_ "Confidence" SG_ 929 VCFRONT_accPlusAvailable 0;
+BA_ "Confidence" SG_ 929 VCFRONT_diPowerOnState 0;
+BA_ "Confidence" SG_ 929 VCFRONT_12vStatusForDrive 0;
+BA_ "Confidence" SG_ 929 VCFRONT_dcr12VMilliOhms 0;
+BA_ "Confidence" SG_ 929 VC_userPresenceState 0;
+BA_ "Confidence" SG_ 929 VCFRONT_factoryLimitsOverrideOk 0;
+BA_ "Confidence" SG_ 929 VCFRONT_ota12VSupportRequest 0;
+BA_ "Confidence" SG_ 929 VCFRONT_driverBuckleStatus 0;
+BA_ "Confidence" SG_ 929 VCFRONT_driverDoorStatus 0;
+BA_ "Confidence" SG_ 929 VCFRONT_driverUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_driverUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_passengerUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_passengerUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_2RowLeftUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_2RowLeftUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_2RowCenterUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_2RowCenterUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_2RowRightUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_2RowRightUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_pcsEFuseVoltage 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_pcsEFuseVoltage "1023";
+BA_ "Confidence" SG_ 929 VCFRONT_bmsHvChargeEnable 0;
+BA_ "Confidence" SG_ 929 VCFRONT_3RowLeftUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_3RowLeftUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_3RowRightUnbuckled 0;
+BA_ "GenSigSNA" SG_ 929 VCFRONT_3RowRightUnbuckled "2";
+BA_ "Confidence" SG_ 929 VCFRONT_maxBattHeatRejection 0;
+BA_ "Confidence" SG_ 929 VCFRONT_hvacReqBattCoolOutTemp 0;
+BA_ "Confidence" SG_ 929 VCFRONT_PCSCurrent 0;
+BA_ "Confidence" SG_ 929 VCFRONT_refSystemNominal 0;
+BA_ "Confidence" SG_ 929 VCFRONT_driverEnteredCabinEstima 0;
+BA_ "SystemSignalLongSymbol" SG_ 929 VCFRONT_driverEnteredCabinEstima "VCFRONT_driverEnteredCabinEstimateDBG";
+BA_ "Confidence" SG_ 929 VCFRONT_anySWEFuseActive 0;
+BA_ "Confidence" SG_ 929 VCFRONT_hpBattHeatingPowerTrgt 0;
+BA_ "Confidence" SG_ 258 VCLEFT_doorClosureStatusFront 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_doorClosureStatusFront "0";
+BA_ "Confidence" SG_ 258 VCLEFT_doorClosureStatusRear 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_doorClosureStatusRear "0";
+BA_ "Confidence" SG_ 258 VCLEFT_frontLatchSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearLatchSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontHandlePulled 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearHandlePulled 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontRelActuatorSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearRelActuatorSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontLatchStatus 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_frontLatchStatus "0";
+BA_ "Confidence" SG_ 258 VCLEFT_rearLatchStatus 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_rearLatchStatus "0";
+BA_ "Confidence" SG_ 258 VCLEFT_lastDoorReqSourceFront 0;
+BA_ "Confidence" SG_ 258 VCLEFT_lastDoorReqSourceRear 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontIntSwitchPressed 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearIntSwitchPressed 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorTiltXPosition 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorTiltYPosition 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorState 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorFoldState 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorRecallState 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorHeatState 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_mirrorHeatState "0";
+BA_ "Confidence" SG_ 258 VCLEFT_rearHandlePulledPersist 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontHandlePulledPersist 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorDipped 0;
+BA_ "Confidence" SG_ 1817 VCSEC_debug100msIndex 1;
+BA_ "Confidence" SG_ 1817 VCSEC_walkAwayLockKeyState 0;
+BA_ "Confidence" SG_ 1817 VCSEC_thresholdOffsetVersion 0;
+BA_ "Confidence" SG_ 1817 VCSEC_walkAwayLockState 0;
+BA_ "Confidence" SG_ 1817 VCSEC_rssi0WLEntry 0;
+BA_ "Confidence" SG_ 1817 VCSEC_endpointLayout 0;
+BA_ "Confidence" SG_ 1817 VCSEC_rssi1WLEntry 0;
+BA_ "Confidence" SG_ 1817 VCSEC_rssi2WLEntry 0;
+BA_ "Confidence" SG_ 1817 VCSEC_walkUpUnlockState 0;
+BA_ "Confidence" SG_ 1817 VCSEC_algoHighThreshLeft 0;
+BA_ "Confidence" SG_ 1817 VCSEC_algoHighThreshRight 0;
+BA_ "Confidence" SG_ 1817 VCSEC_algoHighThreshCenter 0;
+BA_ "Confidence" SG_ 1817 VCSEC_pollingReason 0;
+BA_ "Confidence" SG_ 1817 VCSEC_numberOfPubKeysOnWhitelist 1;
+BA_ "Confidence" SG_ 1817 VCSEC_thermalDetectState 1;
+VAL_ 594 BMS_powerLimitsState 1 "POWER_CALCULATED_FOR_DRIVE" 0 "POWER_NOT_CALCULATED_FOR_DRIVE" ;
+VAL_ 754 BMS_nmKeepAwakeReason 7 "BMS_KEEPAWAKE_REASON_PRECONDITIONING" 6 "BMS_KEEPAWAKE_REASON_CP_ACTIVE" 5 "BMS_KEEPAWAKE_REASON_BMS_ACTIVE" 4 "BMS_KEEPAWAKE_REASON_HVP_ACTIVE" 3 "BMS_KEEPAWAKE_REASON_FC_CTR_CLEANING" 2 "BMS_KEEPAWAKE_REASON_CRITICAL_ALERT" 1 "BMS_KEEPAWAKE_REASON_CTRS_CLOSED" 0 "BMS_KEEPAWAKE_REASON_NONE_SNA" ;
+VAL_ 754 BMS_nmWakeUpReason 4 "BMS_WAKEUP_REASON_CRITICALALERT" 3 "BMS_WAKEUP_REASON_WANTTOCHARGE" 2 "BMS_WAKEUP_REASON_CAN_HVS" 1 "BMS_WAKEUP_REASON_CAN_VEH" 0 "BMS_WAKEUP_REASON_NONE" ;
+VAL_ 1885 CP_loggingFastSelect 5 "5" 4 "4" 3 "3" 2 "2" 1 "1" 0 "0" ;
+VAL_ 1885 CP_chargeCablePresent 1 "CABLE_PRESENT" 0 "CABLE_NOT_PRESENT" ;
+VAL_ 1885 CP_UHF_controlState 10 "CP_UHF_FAULT" 9 "CP_UHF_SLEEP" 8 "CP_UHF_HANDLE_FOUND" 7 "CP_UHF_READ_RXFIFO" 6 "CP_UHF_CHECK_RX" 5 "CP_UHF_RX" 4 "CP_UHF_PREPARE_RX" 3 "CP_UHF_CALIBRATE" 2 "CP_UHF_IDLE" 1 "CP_UHF_CONFIG" 0 "CP_UHF_INIT" ;
+VAL_ 1885 CP_doorOpenRequest 8 "CPD_OPEN_REQ_NUM" 7 "CPD_OPEN_REQ_CABLE_RECONNECTED" 6 "CPD_OPEN_REQ_VCFRONT" 5 "CPD_OPEN_REQ_CLOSING_FAILED" 4 "CPD_OPEN_REQ_PUSH_TO_OPEN" 3 "CPD_OPEN_REQ_UHF" 2 "CPD_OPEN_REQ_SEC" 1 "CPD_OPEN_REQ_UI" 0 "CPD_OPEN_REQ_NONE" ;
+VAL_ 1885 CP_doorOpenEndOfDriveReason 7 "CP_STOP_DRIVE_REASON_OVERCURRENT" 6 "CP_STOP_DRIVE_REASON_REQ_OVERRIDE" 5 "CP_STOP_DRIVE_REASON_ABSOLUTE_TIMEOUT" 4 "CP_STOP_DRIVE_REASON_MAX_TARGET_V" 3 "CP_STOP_DRIVE_REASON_REACHED_STOP" 2 "CP_STOP_DRIVE_REASON_STOPPED_MOVING_TIMEOUT" 1 "CP_STOP_DRIVE_REASON_STALLED" 0 "CP_STOP_DRIVE_REASON_NONE" ;
+VAL_ 1885 CP_doorCloseEndOfDriveReason 7 "CP_STOP_DRIVE_REASON_OVERCURRENT" 6 "CP_STOP_DRIVE_REASON_REQ_OVERRIDE" 5 "CP_STOP_DRIVE_REASON_ABSOLUTE_TIMEOUT" 4 "CP_STOP_DRIVE_REASON_MAX_TARGET_V" 3 "CP_STOP_DRIVE_REASON_REACHED_STOP" 2 "CP_STOP_DRIVE_REASON_STOPPED_MOVING_TIMEOUT" 1 "CP_STOP_DRIVE_REASON_STALLED" 0 "CP_STOP_DRIVE_REASON_NONE" ;
+VAL_ 1885 CP_doorCloseRequest 16 "CPD_CLOSE_REQ_NUM" 15 "CPD_CLOSE_REQ_COVER_OPEN" 14 "CPD_CLOSE_REQ_VCFRONT" 13 "CPD_CLOSE_REQ_OPEN_ON_WAKE" 12 "CPD_CLOSE_REQ_SENSOR_COMMS_RECOVERED" 11 "CPD_CLOSE_REQ_SENSOR_MISMATCH" 10 "CPD_CLOSE_REQ_INITIAL_CINCH" 9 "CPD_CLOSE_REQ_OPENED_IN_DRIVE_STATE" 8 "CPD_CLOSE_REQ_ENTER_DRIVE" 7 "CPD_CLOSE_REQ_FAULT_LINE" 6 "CPD_CLOSE_REQ_CAR_WASH" 5 "CPD_CLOSE_REQ_PUSH_TO_CLOSE" 4 "CPD_CLOSE_REQ_SEC" 3 "CPD_CLOSE_REQ_UI" 2 "CPD_CLOSE_REQ_DOOR_OPEN_TIMEOUT" 1 "CPD_CLOSE_REQ_CABLE_UNPLUGGED" 0 "CPD_CLOSE_REQ_NONE" ;
+VAL_ 1885 CP_latchDisengagingStopReason 7 "CP_STOP_DRIVE_REASON_OVERCURRENT" 6 "CP_STOP_DRIVE_REASON_REQ_OVERRIDE" 5 "CP_STOP_DRIVE_REASON_ABSOLUTE_TIMEOUT" 4 "CP_STOP_DRIVE_REASON_MAX_TARGET_V" 3 "CP_STOP_DRIVE_REASON_REACHED_STOP" 2 "CP_STOP_DRIVE_REASON_STOPPED_MOVING_TIMEOUT" 1 "CP_STOP_DRIVE_REASON_STALLED" 0 "CP_STOP_DRIVE_REASON_NONE" ;
+VAL_ 1885 CP_latchEngagingStopReason 7 "CP_STOP_DRIVE_REASON_OVERCURRENT" 6 "CP_STOP_DRIVE_REASON_REQ_OVERRIDE" 5 "CP_STOP_DRIVE_REASON_ABSOLUTE_TIMEOUT" 4 "CP_STOP_DRIVE_REASON_MAX_TARGET_V" 3 "CP_STOP_DRIVE_REASON_REACHED_STOP" 2 "CP_STOP_DRIVE_REASON_STOPPED_MOVING_TIMEOUT" 1 "CP_STOP_DRIVE_REASON_STALLED" 0 "CP_STOP_DRIVE_REASON_NONE" ;
+VAL_ 1885 CP_doorIdDetectionState 2 "DOOR_ID_VALID" 1 "DOOR_ID_INVALID" 0 "DOOR_ID_UNKNOWN_SNA" ;
+VAL_ 1885 CP_doorIdDetectedBin 3 "DOOR_ID_BIN_OPAL" 2 "DOOR_ID_BIN_HMC" 1 "DOOR_ID_BIN_NMB" 0 "DOOR_ID_BIN_UNKNOWN" ;
+VAL_ 2042 CP_loggingSlowSelect 7 "7" 6 "6" 5 "5" 4 "4" 3 "3" 2 "2" 1 "1" 0 "0" ;
+VAL_ 2042 CP_inlet1HarnessIdState 2 "HARNESS_PEDIGREE_VALID" 1 "HARNESS_PEDIGREE_INVALID" 0 "HARNESS_PEDIGREE_UNKNOWN_SNA" ;
+VAL_ 2042 CP_inlet2HarnessIdState 2 "HARNESS_PEDIGREE_VALID" 1 "HARNESS_PEDIGREE_INVALID" 0 "HARNESS_PEDIGREE_UNKNOWN_SNA" ;
+VAL_ 2042 CP_inletHeaterState 3 "INLET_HEATER_FAULTED" 2 "INLET_HEATER_ENABLED_LOWTEMP" 1 "INLET_HEATER_ENABLED_HIGHTEMP" 0 "INLET_HEATER_DISABLED" ;
+VAL_ 2042 CP_doorOpenLimiterMaxRequestType 8 "CPD_OPEN_REQ_NUM" 7 "CPD_OPEN_REQ_CABLE_RECONNECTED" 6 "CPD_OPEN_REQ_VCFRONT" 5 "CPD_OPEN_REQ_CLOSING_FAILED" 4 "CPD_OPEN_REQ_PUSH_TO_OPEN" 3 "CPD_OPEN_REQ_UHF" 2 "CPD_OPEN_REQ_SEC" 1 "CPD_OPEN_REQ_UI" 0 "CPD_OPEN_REQ_NONE" ;
+VAL_ 2042 CP_doorCloseLimiterMaxRequestTyp 16 "CPD_CLOSE_REQ_NUM" 15 "CPD_CLOSE_REQ_COVER_OPEN" 14 "CPD_CLOSE_REQ_VCFRONT" 13 "CPD_CLOSE_REQ_OPEN_ON_WAKE" 12 "CPD_CLOSE_REQ_SENSOR_COMMS_RECOVERED" 11 "CPD_CLOSE_REQ_SENSOR_MISMATCH" 10 "CPD_CLOSE_REQ_INITIAL_CINCH" 9 "CPD_CLOSE_REQ_OPENED_IN_DRIVE_STATE" 8 "CPD_CLOSE_REQ_ENTER_DRIVE" 7 "CPD_CLOSE_REQ_FAULT_LINE" 6 "CPD_CLOSE_REQ_CAR_WASH" 5 "CPD_CLOSE_REQ_PUSH_TO_CLOSE" 4 "CPD_CLOSE_REQ_SEC" 3 "CPD_CLOSE_REQ_UI" 2 "CPD_CLOSE_REQ_DOOR_OPEN_TIMEOUT" 1 "CPD_CLOSE_REQ_CABLE_UNPLUGGED" 0 "CPD_CLOSE_REQ_NONE" ;
+VAL_ 893 CP_thermalStatusSelect 1 "1" 0 "0" ;
+VAL_ 1622 DIF_infoIndex 255 "INFO_END" 44 "TRACKING_DATA_5" 43 "TRACKING_DATA_4" 42 "TRACKING_DATA_3" 41 "TRACKING_DATA_2" 40 "TRACKING_DATA_1" 34 "INFO_SUBCOMPONENT2_HWID" 33 "INFO_SUBCOMPONENT_HWID" 32 "INFO_SUBCOMPONENT2_GITHASH" 31 "INFO_SUBCOMPONENT_GITHASH" 23 "INFO_SUBCOMPONENT2" 20 "INFO_UDS_PROTOCOL_BOOTCRC" 19 "INFO_VERSION_DEPRECATED" 18 "INFO_BOOTLOADER_GITHASH" 17 "INFO_APP_GITHASH" 16 "INFO_SUBCOMPONENT" 15 "INFO_BOOTLOADER_CRC" 14 "INFO_BOOTLOADER_SVN" 13 "INFO_APP_CRC" 11 "INFO_PCBAID_ASSYID_USAGEID" 10 "INFO_BUILD_HWID_COMPONENTID" 9 "INFO_DEPRECATED_9" 8 "INFO_DEPRECATED_8" 7 "INFO_DEPRECATED_7" 6 "INFO_DEPRECATED_6" 5 "INFO_DEPRECATED_5" 4 "INFO_DEPRECATED_4" 3 "INFO_DEPRECATED_3" 2 "INFO_DEPRECATED_2" 1 "INFO_DEPRECATED_1" 0 "INFO_DEPRECATED_0" ;
+VAL_ 1622 DIF_buildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
+VAL_ 1622 DIF_hardwareId 252 "CONFIGURABLE_HWID_PLACEHOLDER" ;
+VAL_ 1622 DIF_motorType 31 "DI_MOTOR_PM216E" 20 "DI_MOTOR_PM215D_1KV" 18 "DI_MOTOR_IM260E_1KV" 17 "DI_MOTOR_IM260D_1KV" 16 "DI_MOTOR_PM261C" 15 "DI_MOTOR_PM215C_1KV" 14 "DI_MOTOR_IM260C_1KV" 13 "DI_MOTOR_PM215A_1KV" 12 "DI_MOTOR_IM260A_1KV" 11 "DI_MOTOR_IM228HEA" 10 "DI_MOTOR_PM228HEA" 9 "DI_MOTOR_PM275C" 8 "DI_MOTOR_PM291D" 7 "DI_MOTOR_PM291C" 6 "DI_MOTOR_PM228C" 5 "DI_MOTOR_PM350B" 4 "DI_MOTOR_PM275B" 3 "DI_MOTOR_IM130D_AL" 2 "DI_MOTOR_IM130D" 1 "DI_MOTOR_PM216D" 0 "DI_MOTOR_SNA" ;
+VAL_ 1622 DIF_siliconType 1 "IGBT" 0 "MOSFET" ;
+VAL_ 1622 DIF_mechSafeStateType 2 "DI_MECH_SAFE_STATE_TYPE_PRESENT" 1 "DI_MECH_SAFE_STATE_TYPE_NONE" 0 "DI_MECH_SAFE_STATE_TYPE_SNA" ;
+VAL_ 1622 DIF_oilPumpBuildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
+VAL_ 1622 DIF_FPGA_version 255 "SNA" 254 "LOCAL_BUILD" ;
+VAL_ 1622 DIF_refRotorOffset -2048 "SNA" ;
+VAL_ 1622 DIF_speedWearTotal 255 "SNA" ;
+VAL_ 1622 DIF_torqueWearTotal 255 "SNA" ;
+VAL_ 2023 ICR_sensorMode 15 "ICR_SENSOR_INTERFACE_MODE_ERROR" 7 "ICR_SENSOR_INTERFACE_MODE_LPM_TEST" 6 "ICR_SENSOR_INTERFACE_MODE_OCCUPANCY_DETECTION" 5 "ICR_SENSOR_INTERFACE_MODE_HPM_TEST" 4 "ICR_SENSOR_INTERFACE_MODE_CALIBRATION" 3 "ICR_SENSOR_INTERFACE_MODE_CW" 2 "ICR_SENSOR_MODE_END_OF_LINE_TEST" 1 "ICR_SENSOR_MODE_INTRUSTION" 0 "ICR_SENSOR_MODE_SENSOR_STOPPED" ;
+VAL_ 2023 ICR_blocked 2 "ICR_BLOCKED_TRUE" 1 "ICR_BLOCKED_FALSE" 0 "ICR_BLOCKED_SNA" ;
+VAL_ 2023 ICR_algoVersion 37 "ICR_ALGO_VERSION_FUTURE_RELEASE_37" 36 "ICR_ALGO_VERSION_v06112025" 35 "ICR_ALGO_VERSION_v04232025" 34 "ICR_ALGO_VERSION_v03192025" 33 "ICR_ALGO_VERSION_v02142025" 32 "ICR_ALGO_VERSION_v01222025" 31 "ICR_ALGO_VERSION_v10072024" 30 "ICR_ALGO_VERSION_v08282024" 29 "ICR_ALGO_VERSION_v07172024" 28 "ICR_ALGO_VERSION_v06122024" 27 "ICR_ALGO_VERSION_v04242024" 26 "ICR_ALGO_VERSION_v03142024" 25 "ICR_ALGO_VERSION_v01312024" 24 "ICR_ALGO_VERSION_v12192023" 23 "ICR_ALGO_VERSION_v10252023" 22 "ICR_ALGO_VERSION_v10112023" 21 "ICR_ALGO_VERSION_v09222023" 20 "ICR_ALGO_VERSION_V08302023" 19 "ICR_ALGO_VERSION_V07172023" 18 "ICR_ALGO_VERSION_V06152023" 17 "ICR_ALGO_VERSION_V06072023" 16 "ICR_ALGO_VERSION_V05192023" 15 "ICR_ALGO_VERSION_V04262023" 14 "ICR_ALGO_VERSION_V1222" 13 "ICR_ALGO_VERSION_V1125" 12 "ICR_ALGO_VERSION_V1118" 11 "ICR_ALGO_VERSION_V1103" 10 "ICR_ALGO_VERSION_V1013" 9 "ICR_ALGO_VERSION_V1006" 8 "ICR_ALGO_VERSION_V927" 7 "ICR_ALGO_VERSION_V902" 6 "ICR_ALGO_VERSION_V826" 5 "ICR_ALGO_VERSION_V803" 4 "ICR_ALGO_VERSION_V715" 3 "ICR_ALGO_VERSION_V711" 2 "ICR_ALGO_VERSION_V204" 1 "ICR_ALGO_VERSION_EXPERIMENTAL" 0 "ICR_ALGO_VERSION_NONE" ;
+VAL_ 2023 ICR_intrusionStatus 2 "INSTRUSION_STATUS_INTRUSION_DETECTED" 1 "INSTRUSION_STATUS_NONE" 0 "INSTRUSION_STATUS_UNKNOWN" ;
+VAL_ 819 UI_acChargeCurrentLimit 127 "SNA" ;
+VAL_ 819 UI_chargePortLatchRequest 2 "UI_LATCH_REQUEST_DISENGAGE" 1 "UI_LATCH_REQUEST_ENGAGE" 0 "UI_LATCH_REQUEST_NONE" ;
+VAL_ 819 UI_cpInletHeaterRequest 2 "HEATER_MANUAL_OVERRIDE" 1 "HEATER_AUTO" 0 "HEATER_OFF" ;
+VAL_ 929 VCFRONT_vehicleStatusMuxIndex 1 "MUX1" 0 "MUX0" ;
+VAL_ 929 VCFRONT_APGlassHeaterState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
+VAL_ 929 VCFRONT_thermalSystemType 1 "HEAT_PUMP_THERMAL_SYSTEM" 0 "LEGACY_THERMAL_SYSTEM" ;
+VAL_ 929 VCFRONT_diPowerOnState 5 "DI_POWERED_ON_FOR_WINCH" 4 "DI_POWER_GOING_DOWN" 3 "DI_POWERED_ON_FOR_DRIVE" 2 "DI_POWERED_ON_FOR_STATIONARY_HEAT" 1 "DI_POWERED_ON_FOR_SUMMON" 0 "DI_POWERED_OFF" ;
+VAL_ 929 VCFRONT_12vStatusForDrive 2 "EXIT_DRIVE_REQUESTED_12V" 1 "READY_FOR_DRIVE_12V" 0 "NOT_READY_FOR_DRIVE_12V" ;
+VAL_ 929 VC_userPresenceState 3 "TIMED_OUT" 2 "PRESENT" 1 "NOT_PRESENT" 0 "INIT" ;
+VAL_ 929 VCFRONT_driverBuckleStatus 1 "BUCKLED" 0 "UNBUCKLED" ;
+VAL_ 929 VCFRONT_driverDoorStatus 1 "DOOR_CLOSED" 0 "DOOR_OPEN" ;
+VAL_ 929 VCFRONT_driverUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 929 VCFRONT_passengerUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 929 VCFRONT_2RowLeftUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 929 VCFRONT_2RowCenterUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 929 VCFRONT_2RowRightUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 929 VCFRONT_pcsEFuseVoltage 1023 "SNA" ;
+VAL_ 929 VCFRONT_3RowLeftUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 929 VCFRONT_3RowRightUnbuckled 2 "CHIME_SNA" 1 "CHIME_OCCUPIED_AND_UNBUCKLED" 0 "CHIME_NONE" ;
+VAL_ 258 VCLEFT_doorClosureStatusFront 8 "CLOSURE_STATUS_FAULT" 2 "CLOSURE_STATUS_CLOSED" 1 "CLOSURE_STATUS_OPEN" 0 "CLOSURE_STATUS_SNA" ;
+VAL_ 258 VCLEFT_doorClosureStatusRear 8 "CLOSURE_STATUS_FAULT" 2 "CLOSURE_STATUS_CLOSED" 1 "CLOSURE_STATUS_OPEN" 0 "CLOSURE_STATUS_SNA" ;
+VAL_ 258 VCLEFT_frontLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 258 VCLEFT_rearLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 258 VCLEFT_lastDoorReqSourceFront 4 "DOOR_REQUEST_SOURCE_ECU" 3 "DOOR_REQUEST_SOURCE_VCSEC" 2 "DOOR_REQUEST_SOURCE_EXTERIOR_HANDLE" 1 "DOOR_REQUEST_SOURCE_INTERIOR_BUTTON" 0 "DOOR_REQUEST_SOURCE_UNKNOWN" ;
+VAL_ 258 VCLEFT_lastDoorReqSourceRear 4 "DOOR_REQUEST_SOURCE_ECU" 3 "DOOR_REQUEST_SOURCE_VCSEC" 2 "DOOR_REQUEST_SOURCE_EXTERIOR_HANDLE" 1 "DOOR_REQUEST_SOURCE_INTERIOR_BUTTON" 0 "DOOR_REQUEST_SOURCE_UNKNOWN" ;
+VAL_ 258 VCLEFT_mirrorState 5 "MIRROR_STATE_CALIBRATION" 4 "MIRROR_STATE_RECALL" 3 "MIRROR_STATE_FOLD_UNFOLD" 2 "MIRROR_STATE_TILT_Y" 1 "MIRROR_STATE_TILT_X" 0 "MIRROR_STATE_IDLE" ;
+VAL_ 258 VCLEFT_mirrorFoldState 4 "MIRROR_FOLD_STATE_UNFOLDING" 3 "MIRROR_FOLD_STATE_FOLDING" 2 "MIRROR_FOLD_STATE_UNFOLDED" 1 "MIRROR_FOLD_STATE_FOLDED" 0 "MIRROR_FOLD_STATE_UNKNOWN" ;
+VAL_ 258 VCLEFT_mirrorRecallState 5 "MIRROR_RECALL_STATE_RECALLING_STOPPED" 4 "MIRROR_RECALL_STATE_RECALLING_FAILED" 3 "MIRROR_RECALL_STATE_RECALLING_COMPLETE" 2 "MIRROR_RECALL_STATE_RECALLING_AXIS_2" 1 "MIRROR_RECALL_STATE_RECALLING_AXIS_1" 0 "MIRROR_RECALL_STATE_INIT" ;
+VAL_ 258 VCLEFT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
+VAL_ 1817 VCSEC_debug100msIndex 23 "ConnectionBenchmark2" 22 "ConnectionBenchmark1" 21 "ConnectionBenchmark0" 20 "WatchDebug" 19 "SerialPortDebug" 14 "NNClassifierDebug" 13 "ProtobufDebug" 12 "RoutableDebug" 10 "UHFReceiver" 9 "NIState2" 8 "NIState0" 7 "BLEBondingState" 5 "Mux5" 2 "LastAdvertRSSI" 1 "Mux1" 0 "Mux0" ;
+VAL_ 1817 VCSEC_walkAwayLockKeyState 3 "SECURITY_WALKAWAYLOCKING_NO_KEYS_PRESENT" 2 "SECURITY_WALKAWAYLOCKING_KEY_WAIT_FOR_NO_KEYS_PRESENT" 1 "SECURITY_WALKAWAYLOCKING_KEY_STATE_AWAITING_KEY_LEAVING" 0 "SECURITY_WALKAWAYLOCKING_KEY_STATE_IDLE" ;
+VAL_ 1817 VCSEC_walkAwayLockState 5 "SECURITY_WALKAWAYLOCKING_STATE_INHIBITED" 4 "SECURITY_WALKAWAYLOCKING_STATE_DISABLED_DUE_TO_KEY_PRESENT" 3 "SECURITY_WALKAWAYLOCKING_STATE_LOCK_DESIRED" 2 "SECURITY_WALKAWAYLOCKING_STATE_WAITING_FOR_KEY_LEAVING" 1 "SECURITY_WALKAWAYLOCKING_STATE_WALK_AWAY_LOCK_ARMING" 0 "SECURITY_WALKAWAYLOCKING_STATE_IDLE" ;
+VAL_ 1817 VCSEC_endpointLayout 2 "VCSEC_ENDPOINT_LAYOUT_3" 1 "VCSEC_ENDPOINT_LAYOUT_2" 0 "VCSEC_ENDPOINT_LAYOUT_1" ;
+VAL_ 1817 VCSEC_walkUpUnlockState 4 "WALK_UP_UNLOCK_STATE_DISABLED" 3 "WALK_UP_UNLOCK_STATE_UNLOCK_DESIRED" 2 "WALK_UP_UNLOCK_STATE_AWAITING_KEY" 1 "WALK_UP_UNLOCK_STATE_ARMING" 0 "WALK_UP_UNLOCK_STATE_IDLE" ;
+VAL_ 1817 VCSEC_pollingReason 13 "POLLINGREASON_MULTIPLE" 12 "POLLINGREASON_AUTOPILOT" 11 "POLLINGREASON_APPROACH_LIGHTING" 10 "POLLINGREASON_AUTO_PRESENT_HANDLES" 9 "POLLINGREASON_AUTORELOCK" 8 "POLLINGREASON_DRIVE_AWAY_CHECK_FOR_KEY" 7 "POLLINGREASON_AUTO_PRESENT_DOOR" 6 "POLLINGREASON_ACCESSORY_RAIL" 5 "POLLINGREASON_WALK_UP_UNLOCK" 4 "POLLINGREASON_WALK_AWAY_LOCK" 3 "POLLINGREASON_PASSIVE_UNLOCK" 2 "POLLINGREASON_PASSIVE_AUTHENTICATION" 1 "POLLINGREASON_IMMOBILIZER" 0 "POLLINGREASON_NONE" ;
+VAL_ 1817 VCSEC_thermalDetectState 3 "VCSEC_THERMALDETECTIONSTATE_TRIPPED" 2 "VCSEC_THERMALDETECTIONSTATE_CONFIRMING_THRESHOLD" 1 "VCSEC_THERMALDETECTIONSTATE_MONITORING" 0 "VCSEC_THERMALDETECTIONSTATE_DISABLED" ;
