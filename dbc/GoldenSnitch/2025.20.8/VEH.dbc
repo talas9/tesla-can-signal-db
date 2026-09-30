@@ -1,0 +1,93 @@
+VERSION "dbc-export 1 2025.20.8"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: GTW
+
+
+BO_ 819 UI_chargeRequest: 5 GTW
+ SG_ UI_dSocAlertEnable : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_TX_BU_ 819 : GTW;
+
+
+CM_ "Tesla GoldenSnitch CAN bus database; bus VEH; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ GTW "Gateway";
+CM_ BO_ 819 "Touchscreen user interface computer message: charge request; forwarded onto this bus by the gateway";
+CM_ SG_ 819 UI_dSocAlertEnable "Set when the BMS_a117_SW_Delta_SOC_Weak_Short alert for the BMS should have a functional response";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "GoldenSnitch_VEH";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2025.20.8";
+BA_ "VehicleModel" "GoldenSnitch";
+BA_ "ECU" BU_ GTW "GTW";
+BA_ "GenMsgCycleTime" BO_ 819 500;
+BA_ "GenMsgSendType" BO_ 819 0;
+BA_ "VFrameFormat" BO_ 819 0;
+BA_ "Confidence" SG_ 819 UI_dSocAlertEnable 1;

@@ -52,6 +52,11 @@
 - **With unit/description**: 3,556 (10.7%)
 - **Layout-only**: 29,719 (89.3%)
 
+## DBC Files
+
+- `dbc/<model>/<firmware>/<BUS>.dbc` - CAN DBC files with real on-bus CAN ids (VEH, CH, BUS1); see README for coverage
+- `dbc/<firmware>/ETH.dbc` - every message under its Ethernet-side id (not for use on a CAN bus)
+
 ## Data Files
 
 - `data/2026.26.6.5/signals.csv` - 2026.26.6.5 signals in CSV format

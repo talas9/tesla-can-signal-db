@@ -8,22 +8,30 @@ Library API (no hard-coded paths; every path is an argument)
         Read a signals CSV (columns of data/<fw>/signals.csv). Extra columns
         are tolerated; a missing required column raises ExportError.
 
-    export(signal_rows, firmware, out_dir, model_map=None, routing=None)
-                                      -> report dict
-        Build every DBC/JSON for one firmware under out_dir and return a
-        report (files written, per-file counts, dropped signals).
-        * model_map: {signal_name: [model, ...]} or None. Signals listed go
-          to dbc/<model>/<fw>/...; None writes the single-file layout.
-        * routing:   {message_name: [(bus, can_id), ...]} or None. None puts
-          every message in ALL.dbc under its internal message id.
-        Deterministic and idempotent: same inputs -> byte-identical files.
+    load_inputs(fw_dir)               -> dict of export() keyword arguments
+        Reads <fw_dir>/signals.csv plus, when present, messages.csv
+        (message,length,cycle_ms,routes with routes = BUS:can_id:native|gateway
+        joined by ';'), signal-meta.csv (message,signal,unit,enum_values,sna,
+        models,cross_checked) and log-verdicts.csv (fw,signal,message,eth_id,
+        can_id,bus,verdict,logs_seen,frames,in_range_pct,evidence; only
+        fw/message/signal/verdict are used, evidence is never copied).
+
+    export(signal_rows, firmware, out_dir, routing=None, msg_meta=None,
+           signal_meta=None, verdicts=None)  -> {'files': [report, ...]}
+        Writes <out_dir>/<fw>/ETH.{dbc,json} (Ethernet-side ids) and, when routing is given,
+        <out_dir>/<model>/<fw>/<BUS>.{dbc,json}. Deterministic and idempotent:
+        same inputs -> byte-identical files. Raises ExportError on any input it
+        cannot handle.
+
+    coverage_markdown(reports)        -> str (README coverage table)
 
     check(out_dir)                    -> list[str] (errors; empty = pass)
         Validate every .dbc under out_dir: generator checklist (ASCII,
-        section order, identifiers, attributes, nodes, FD lengths, duplicate
-        ids/VAL_), cantools strict load, cantools round trip, JSON twin
-        agreement, canmatrix load (if installed), PII + source-disclosure
-        gates (from tools/build.py).
+        section order, NS_ block, empty BS_, identifiers, attributes and their
+        defaults, ENUM indexes, nodes, BO_TX_BU_, FD lengths, duplicate
+        ids/VAL_, one-line CM_), cantools strict load, cantools round trip,
+        JSON twin agreement, canmatrix load (if installed), PII +
+        source-disclosure gates (from tools/build.py).
 
 CLI (thin wrapper):
     python3 tools/export_dbc.py            # regenerate dbc/ from data/
@@ -75,7 +83,8 @@ SEND_TYPES = ['Cyclic', 'NotUsed', 'NotUsed', 'NotUsed', 'NotUsed', 'NotUsed',
               'NotUsed', 'IfActive', 'NoMsgSendType', 'NotUsed']
 FRAME_FORMATS = ['StandardCAN', 'ExtendedCAN', 'reserved', 'J1939PG'] + \
     ['reserved'] * 10 + ['StandardCAN_FD', 'ExtendedCAN_FD']
-CONFIDENCE = ['layout-only', 'plausible', 'validated']
+CONFIDENCE = ['validated', 'plausible', 'layout-only', 'contradicted']
+VERDICT_OVERRIDES = ('validated', 'plausible', 'contradicted')
 MAX_NAME = 32
 IDENT_RE = re.compile(r'^[A-Za-z_][A-Za-z0-9_]{0,31}$')
 DBC_KEYWORDS = set(NS_SYMBOLS) | {'VERSION', 'NS_', 'BS_', 'BU_', 'BO_', 'SG_', 'EV_',
@@ -224,8 +233,28 @@ def load_signal_rows(path):
         return list(reader)
 
 
-def normalise_rows(rows):
-    """Validate + convert rows. Returns (signals, dropped)."""
+def parse_enum(text, what):
+    out = {}
+    try:
+        raw = json.loads(text)
+    except ValueError:
+        raise ExportError('%s: enum_values is not JSON: %r' % (what, text[:80]))
+    if not isinstance(raw, dict):
+        raise ExportError('%s: enum_values must be a JSON object' % what)
+    for k, v in raw.items():
+        out[parse_int(str(k), what + ' enum key')] = ascii_text(str(v)) or str(k)
+    return out
+
+
+def normalise_rows(rows, signal_meta=None, verdicts=None):
+    """Validate + convert rows. Returns (signals, dropped).
+
+    signal_meta: {(message, signal): {'unit', 'enum_values', 'sna', 'models',
+    'cross_checked'}} fills unit/value table/SNA where the row has none and
+    gives the per-model assignment. verdicts: {(message, signal): verdict}.
+    """
+    signal_meta = signal_meta or {}
+    verdicts = verdicts or {}
     signals, dropped = [], []
     for r in rows:
         missing = [c for c in REQUIRED_COLUMNS if c not in r]
@@ -266,19 +295,27 @@ def normalise_rows(rows):
             raise ExportError('%s: scale is 0' % name)
         ev = r['enum_values'].strip()
         if ev:
-            try:
-                raw = json.loads(ev)
-            except ValueError:
-                raise ExportError('%s: enum_values is not JSON: %r' % (name, ev[:80]))
-            if not isinstance(raw, dict):
-                raise ExportError('%s: enum_values must be a JSON object' % name)
-            for k, v in raw.items():
-                sig['enum'][parse_int(str(k), name + '.enum key')] = ascii_text(str(v)) or str(k)
+            sig['enum'] = parse_enum(ev, name)
         sna = (r.get('sna') or '').strip()
         if sna:
             sig['sna'] = parse_int(sna, name + '.sna')
         if (r.get('is_float') or '').strip() == '1':
             sig['is_float'] = True
+        meta = signal_meta.get((msg, name), {})
+        if not sig['unit'] and meta.get('unit'):
+            sig['unit'] = ascii_text(meta['unit'])
+        if not sig['enum'] and meta.get('enum_values'):
+            sig['enum'] = parse_enum(meta['enum_values'], name)
+        if sig['sna'] is None and meta.get('sna'):
+            sig['sna'] = parse_int(meta['sna'], name + '.sna')
+        sig['models'] = sorted(m for m in (meta.get('models') or '').split(';') if m)
+        for m in sig['models']:
+            if not re.match(r'^[A-Za-z][A-Za-z0-9]*$', m):
+                raise ExportError('%s: bad model name %r' % (name, m))
+        sig['cross_checked'] = (meta.get('cross_checked') or '0') == '1'
+        v = verdicts.get((msg, name))
+        if v in VERDICT_OVERRIDES:
+            sig['confidence_hint'] = v
         signals.append(sig)
     return signals, dropped
 
@@ -321,20 +358,22 @@ def describe_signal(sig):
 
 
 def describe_message(msg):
+    origin = msg.get('routed_from') or msg['transmitter']
     w = words_from_name(msg['name'])
-    text = '%s message: %s' % (node_label(msg['transmitter']), w) if w else \
-        '%s message' % node_label(msg['transmitter'])
+    text = '%s message: %s' % (node_label(origin), w) if w else '%s message' % node_label(origin)
     if gated(text):
-        text = '%s message' % node_label(msg['transmitter'])
+        text = '%s message' % node_label(origin)
+    if msg.get('routed_from'):
+        text += '; forwarded onto this bus by the gateway'
     return text
 
 
 def phys_range(sig):
     lo, hi = raw_range(sig['length'], sig['signed'])
     if sig['sna'] is not None:
-        if sig['sna'] == hi and hi > lo:
+        if sig['sna'] == hi and hi - lo >= 2:
             hi -= 1
-        elif sig['sna'] == lo and hi > lo:
+        elif sig['sna'] == lo and hi - lo >= 2:
             lo += 1
     a, b = lo * sig['scale'] + sig['offset'], hi * sig['scale'] + sig['offset']
     rmin, rmax = min(a, b), max(a, b)
@@ -350,6 +389,8 @@ def phys_range(sig):
 def confidence_of(sig):
     if sig['confidence_hint'] in CONFIDENCE:
         return sig['confidence_hint']
+    if sig.get('cross_checked'):
+        return 'validated'
     if sig['unit'] or sig['enum'] or ascii_text(sig['description']):
         return 'plausible'
     return 'layout-only'
@@ -358,8 +399,9 @@ def confidence_of(sig):
 def build_messages(signals, msg_meta=None):
     """Group signals into messages, resolve overlaps. Returns (msgs, dropped).
 
-    msg_meta: {message_name: {'id': int, 'cycle_ms': int, 'transmitter': str}}
-    overrides the frame id / cycle time (bus files use the on-bus CAN id).
+    msg_meta: {message_name: {'id': int, 'length': int, 'cycle_ms': int,
+    'transmitter': str, 'routed_from': str}} overrides the frame id (bus files
+    use the on-bus CAN id), frame length, cycle time and transmitter.
     """
     msg_meta = msg_meta or {}
     by_msg = {}
@@ -407,7 +449,11 @@ def build_messages(signals, msg_meta=None):
             continue
         maxbit = max(max(signal_bits(s)) for s in kept)
         nbytes = maxbit // 8 + 1
-        size = 8 if nbytes <= 8 else next((n for n in FD_SIZES if n >= nbytes), None)
+        want = int(meta.get('length') or 0)
+        if nbytes <= want <= 8:
+            size = want
+        else:
+            size = 8 if nbytes <= 8 else next((n for n in FD_SIZES if n >= nbytes), None)
         if size is None:
             for s in kept:
                 dropped.append({'message': mname, 'signal': s['name'], 'reason': 'message longer than 64 bytes'})
@@ -420,6 +466,7 @@ def build_messages(signals, msg_meta=None):
         msgs.append({
             'name': mname, 'frame_id': fid, 'extended': extended, 'size': size,
             'fd': size > 8, 'transmitter': tx, 'cycle_ms': int(meta.get('cycle_ms') or 0),
+            'routed_from': meta.get('routed_from'),
             'selector': next(iter(sel_names)) if sel_names else None,
             'signals': sorted(kept, key=lambda s: (s['mux_value'] is not None, s['mux_value'] or 0, s['start'], s['name'])),
         })
@@ -456,6 +503,10 @@ def render_dbc(msgs, firmware, model, bus):
                 '-' if s['signed'] else '+', fmt_num(s['scale']), fmt_num(s['offset']),
                 fmt_num(lo), fmt_num(hi), s['unit']))
         L.append('')
+    for m in msgs:
+        if m['transmitter'] != 'Vector__XXX':
+            L.append('BO_TX_BU_ %d : %s;' % (m['dbc_id'], m['transmitter']))
+    L.append('')
     L.append('')
     net_comment = ('Tesla %s CAN bus database; bus %s; firmware %s. Decoded CAN signal '
                    'definitions (layout, scaling, units, value tables).' % (model_label(model), bus, firmware))
@@ -567,37 +618,133 @@ def _write(path, text):
         f.write(text)
 
 
-def export(signal_rows, firmware, out_dir, model_map=None, routing=None, msg_meta=None):
-    """Write DBC + JSON files for one firmware. Returns a report dict.
-
-    Layout without model_map/routing: <out_dir>/<firmware>/ALL.{dbc,json}.
-    """
-    if not re.match(r'^\d{4}\.\d+(\.\d+)*$', firmware):
-        raise ExportError('bad firmware version %r' % firmware)
-    if model_map is not None or routing is not None:
-        raise ExportError('model_map/routing layout not implemented in this version')
-    out_dir = Path(out_dir)
-    signals, dropped = normalise_rows(signal_rows)
-    msgs, drop2 = build_messages(signals, msg_meta)
-    dropped += drop2
-    text, jm = render_dbc(msgs, firmware, 'AllModels', 'ALL')
-    jm['dropped'] = sorted(dropped, key=lambda d: (d['message'], d['signal']))
-    base = out_dir / firmware / 'ALL'
-    _write(base.with_suffix('.dbc'), text)
-    _write(base.with_suffix('.json'), json.dumps(jm, indent=1, sort_keys=True) + '\n')
-    sigs = [s for m in jm['messages'] for s in m['signals']]
-    rep = {
-        'firmware': firmware, 'model': 'AllModels', 'bus': 'ALL',
-        'file': str(base.with_suffix('.dbc').relative_to(out_dir)),
+def _report(jm, rel):
+    sigs = [x for m in jm['messages'] for x in m['signals']]
+    return {
+        'firmware': jm['firmware'], 'model': jm['model'], 'bus': jm['bus'], 'file': rel,
         'messages': len(jm['messages']), 'signals': len(sigs),
-        'enums': sum(1 for s in sigs if s['values']),
-        'validated': sum(1 for s in sigs if s['confidence'] == 'validated'),
-        'plausible': sum(1 for s in sigs if s['confidence'] == 'plausible'),
-        'layout_only': sum(1 for s in sigs if s['confidence'] == 'layout-only'),
+        'enums': sum(1 for x in sigs if x['values']),
+        'validated': sum(1 for x in sigs if x['confidence'] == 'validated'),
+        'plausible': sum(1 for x in sigs if x['confidence'] == 'plausible'),
+        'layout_only': sum(1 for x in sigs if x['confidence'] == 'layout-only'),
+        'contradicted': sum(1 for x in sigs if x['confidence'] == 'contradicted'),
         'dropped': len(jm['dropped']),
         'dropped_reasons': _count(d['reason'].split(' in mux')[0] for d in jm['dropped']),
     }
-    return {'files': [rep]}
+
+
+def _emit(out_dir, rel, signals, dropped_in, firmware, model, bus, msg_meta):
+    msgs, dropped = build_messages(signals, msg_meta)
+    dropped = dropped_in + dropped
+    text, jm = render_dbc(msgs, firmware, model, bus)
+    names = {(m['name'], x['name']) for m in jm['messages'] for x in m['signals']}
+    jm['dropped'] = sorted((d for d in dropped if (d['message'], d['signal']) not in names),
+                           key=lambda d: (d['message'], d['signal'], d['reason']))
+    base = out_dir / rel
+    _write(base.with_suffix('.dbc'), text)
+    _write(base.with_suffix('.json'), json.dumps(jm, sort_keys=True, separators=(',', ':')) + '\n')
+    return _report(jm, str(Path(rel).with_suffix('.dbc')))
+
+
+def _with_selectors(subset, all_signals):
+    """Add the multiplexer switch of every multiplexed signal in subset."""
+    by_key = {(x['message'], x['name']): x for x in all_signals}
+    out = {(x['message'], x['name']): x for x in subset}
+    for x in subset:
+        if x['mux_signal']:
+            k = (x['message'], x['mux_signal'])
+            if k in by_key:
+                out[k] = by_key[k]
+    return [out[k] for k in sorted(out)]
+
+
+def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_meta=None, verdicts=None):
+    """Write the DBC + JSON files of one firmware under out_dir; return a report.
+
+    Writes <out_dir>/<firmware>/ETH.{dbc,json}: every message under its
+    Ethernet-side (internal) id - not CAN ids.
+    With routing (a dict, may be empty) also writes
+    <out_dir>/<model>/<firmware>/<BUS>.{dbc,json} for model AllModels (every
+    signal) and for each model named in signal_meta 'models' (signals with
+    per-model evidence plus the multiplexer switches they need).
+
+    signal_rows: rows shaped like data/<fw>/signals.csv (see REQUIRED_COLUMNS).
+    routing:     {message: [(bus, can_id, 'native'|'gateway'), ...]}; a routed
+                 message is written to each bus file under its on-bus id; a
+                 message with no route goes to ETH.dbc under its internal id.
+    msg_meta:    {message: {'length': int, 'cycle_ms': int}}.
+    signal_meta: {(message, signal): {...}} (see normalise_rows).
+    verdicts:    {(message, signal): 'validated'|'plausible'|'contradicted'|...}.
+    Raises ExportError on anything it cannot handle.
+    """
+    if not re.match(r'^\d{4}\.\d+(\.\d+)*$', firmware):
+        raise ExportError('bad firmware version %r' % firmware)
+    out_dir = Path(out_dir)
+    msg_meta = msg_meta or {}
+    signals, dropped = normalise_rows(signal_rows, signal_meta, verdicts)
+    # <fw>/ETH: every message under its Ethernet-side (internal) id.
+    reports = [_emit(out_dir, '%s/ETH' % firmware, signals, dropped, firmware, 'AllModels', 'ETH', msg_meta)]
+    if routing is None:
+        return {'files': reports}
+    for mname, routes in routing.items():
+        for r in routes:
+            if len(r) != 3 or not re.match(r'^[A-Z][A-Z0-9]*$', str(r[0])) or r[2] not in ('native', 'gateway') \
+                    or not isinstance(r[1], int) or not 0 <= r[1] <= 0x1FFFFFFF:
+                raise ExportError('bad route for %s: %r' % (mname, r))
+    buses = {}
+    for x in signals:
+        for bus, can_id, how in sorted(routing.get(x['message']) or [('ETH', None, 'native')]):
+            buses.setdefault(bus, {})[x['message']] = (can_id, how)
+    models = sorted({m for x in signals for m in x['models']})
+    for model in ['AllModels'] + models:
+        subset = signals if model == 'AllModels' else \
+            _with_selectors([x for x in signals if model in x['models']], signals)
+        for bus in sorted(buses):
+            route = buses[bus]
+            part = [x for x in subset if x['message'] in route]
+            if not part:
+                continue
+            meta = {}
+            for mname, (can_id, how) in route.items():
+                d = dict(msg_meta.get(mname, {}))
+                if can_id is not None:
+                    d['id'] = can_id
+                if how == 'gateway':
+                    d['transmitter'] = 'GTW'
+                    d['routed_from'] = node_of(mname)
+                meta[mname] = d
+            ids = {}
+            for mname in sorted({x['message'] for x in part}):
+                fid = meta[mname].get('id', next(x['msg_id'] for x in part if x['message'] == mname))
+                if fid in ids:
+                    raise ExportError('%s %s: id %d used by %s and %s' % (model, bus, fid, ids[fid], mname))
+                ids[fid] = mname
+            reports.append(_emit(out_dir, '%s/%s/%s' % (model, firmware, bus), part,
+                                 [d for d in dropped if d['message'] in route] if model == 'AllModels' else [],
+                                 firmware, model, bus, meta))
+    unresolved = {}
+    for x in signals:
+        if not [r for r in routing.get(x['message']) or () if r[0] != 'ETH']:
+            u = unresolved.setdefault(x['message'], [x['msg_id'], 0])
+            u[1] += 1
+    return {'files': reports,
+            'unresolved': [{'firmware': firmware, 'message': m, 'eth_id': v[0], 'signals': v[1]}
+                           for m, v in sorted(unresolved.items())]}
+
+
+def coverage_markdown(reports):
+    """Coverage table (Markdown) for README, generated from export reports."""
+    rows = ['| Model | Firmware | Bus | Messages | Signals | Enums | Validated | Plausible | '
+            'Layout-only | Contradicted |', '|---|---|---|---:|---:|---:|---:|---:|---:|---:|']
+    order = lambda r: (r['model'] != 'AllModels', r['model'], [-int(p) for p in r['firmware'].split('.')],
+                       r['bus'] == 'ETH', '/' not in r['file'].split('/', 1)[1], r['bus'])
+    for r in sorted(reports, key=order):
+        where = r['file'].rsplit('.', 1)[0]
+        label = r['bus'] if '/' in where.split('/', 1)[1] else 'ETH-side ids, all messages'
+        rows.append('| %s | %s | [%s](dbc/%s.dbc) | %d | %d | %d | %d | %d | %d | %d |' % (
+            model_label(r['model']), r['firmware'], label, where, r['messages'], r['signals'],
+            r['enums'], r['validated'], r['plausible'], r['layout_only'], r['contradicted']))
+    return '\n'.join(rows) + '\n'
 
 
 def _count(it):
@@ -716,6 +863,14 @@ def _lint_dbc(path, text):
             bits = range(st, st + ln_) if m.group(5) == '1' else motorola_bits(st, ln_)
             if max(bits) >= 8 * cur_size or min(bits) < 0:
                 errs.append('signal %s does not fit %s' % (sname, cur))
+        elif ln.startswith('BO_TX_BU_ '):
+            m = re.match(r'^BO_TX_BU_ (\d+) : ([\w,]+);$', ln)
+            if not m or int(m.group(1)) not in msg_ids:
+                errs.append('bad BO_TX_BU_ %s' % ln[:80])
+            else:
+                for n in m.group(2).split(','):
+                    if n not in nodes:
+                        errs.append('BO_TX_BU_ node %s not in BU_' % n)
         elif ln.startswith('CM_'):
             if ln.count('"') != 2 or '\\' in ln or not ln.endswith('";'):
                 errs.append('bad CM_ line %s' % ln[:80])
@@ -909,14 +1064,108 @@ def json_free_text(text):
 
 # ----------------------------------------------------------------- CLI
 
-def _build_all(repo, out_dir):
+def _read_csv(path):
+    with open(path, newline='', encoding='utf-8') as f:
+        return list(csv.DictReader(f))
+
+
+def load_inputs(fwdir):
+    """Load one data/<fw>/ directory into export() keyword arguments."""
+    fwdir = Path(fwdir)
+    kw = {'signal_rows': load_signal_rows(fwdir / 'signals.csv'), 'firmware': fwdir.name}
+    mp = fwdir / 'messages.csv'
+    if mp.exists():
+        kw['routing'], kw['msg_meta'] = {}, {}
+        for r in _read_csv(mp):
+            for c in ('message', 'length', 'cycle_ms', 'routes'):
+                if c not in r:
+                    raise ExportError('%s: missing column %s' % (mp, c))
+            kw['msg_meta'][r['message']] = {
+                'length': parse_int(r['length'], r['message'] + '.length') if r['length'] else 0,
+                'cycle_ms': parse_int(r['cycle_ms'], r['message'] + '.cycle_ms') if r['cycle_ms'] else 0}
+            routes = []
+            for part in filter(None, r['routes'].split(';')):
+                bits = part.split(':')
+                if len(bits) != 3:
+                    raise ExportError('%s: bad route %r' % (mp, part))
+                routes.append((bits[0], parse_int(bits[1], r['message'] + '.route'), bits[2]))
+            if routes:
+                kw['routing'][r['message']] = routes
+    sp = fwdir / 'signal-meta.csv'
+    if sp.exists():
+        kw['signal_meta'] = {(r['message'], r['signal']): r for r in _read_csv(sp)}
+    vp = fwdir / 'log-verdicts.csv'
+    if vp.exists():
+        kw['verdicts'] = {}
+        for r in _read_csv(vp):
+            for c in ('fw', 'signal', 'message', 'verdict'):
+                if c not in r:
+                    raise ExportError('%s: missing column %s' % (vp, c))
+            if r['fw'] == fwdir.name:
+                kw['verdicts'][(r['message'], r['signal'])] = r['verdict'].strip()
+    return kw
+
+
+def load_id_map(path, signal_rows, firmware=None):
+    """Load a pluggable internal-id -> CAN-bus id map into export()'s routing.
+
+    CSV columns: eth_id, bus, can_id (required); fw, message, how (optional).
+    eth_id/can_id may be decimal or 0x-hex; bus is an upper-case bus name
+    (VEH, CH, BUS1, ...); how is 'native' (default) or 'gateway'. Rows whose
+    fw differs from firmware are skipped. eth_id is joined to message names
+    through signal_rows; a message column, when present, must agree.
+    """
+    rows = _read_csv(path)
+    for c in ('eth_id', 'bus', 'can_id'):
+        if rows and c not in rows[0]:
+            raise ExportError('%s: missing column %s' % (path, c))
+    by_eth = {}
+    for r in signal_rows:
+        by_eth[parse_int(r['eth_id'], r['signal'] + '.eth_id')] = r['message'].strip()
+    routing = {}
+    for r in rows:
+        if firmware and r.get('fw') and r['fw'] != firmware:
+            continue
+        eth = parse_int(r['eth_id'], path + ' eth_id')
+        if eth not in by_eth:
+            continue
+        msg = by_eth[eth]
+        if r.get('message') and r['message'].strip() and r['message'].strip() != msg:
+            raise ExportError('%s: eth_id %d is %s in the signals, %s in the map' % (path, eth, msg, r['message']))
+        bus = r['bus'].strip().upper()
+        if not re.match(r'^[A-Z][A-Z0-9]*$', bus):
+            raise ExportError('%s: bad bus %r' % (path, r['bus']))
+        how = (r.get('how') or 'native').strip() or 'native'
+        route = (bus, parse_int(r['can_id'], path + ' can_id'), how)
+        if route not in routing.setdefault(msg, []):
+            routing[msg].append(route)
+    return {m: sorted(v) for m, v in routing.items()}
+
+
+def _build_all(repo, out_dir, id_map=None, unresolved=None):
     reports = []
     for fwdir in sorted((repo / 'data').iterdir()):
-        csvp = fwdir / 'signals.csv'
-        if fwdir.is_dir() and csvp.exists():
-            rows = load_signal_rows(csvp)
-            reports += export(rows, fwdir.name, out_dir)['files']
+        if fwdir.is_dir() and (fwdir / 'signals.csv').exists():
+            kw = load_inputs(fwdir)
+            if id_map:
+                kw['routing'] = load_id_map(id_map, kw['signal_rows'], fwdir.name)
+            res = export(out_dir=out_dir, **kw)
+            reports += res['files']
+            if unresolved is not None:
+                unresolved += res.get('unresolved', [])
     return reports
+
+
+COVERAGE_BEGIN = '<!-- coverage:begin (generated by tools/export_dbc.py) -->'
+COVERAGE_END = '<!-- coverage:end -->'
+
+
+def _readme_with_coverage(readme_text, reports):
+    if COVERAGE_BEGIN not in readme_text or COVERAGE_END not in readme_text:
+        raise ExportError('README.md lacks the coverage markers')
+    head, rest = readme_text.split(COVERAGE_BEGIN, 1)
+    _, tail = rest.split(COVERAGE_END, 1)
+    return head + COVERAGE_BEGIN + '\n' + coverage_markdown(reports) + COVERAGE_END + tail
 
 
 def _diff_trees(a, b):
@@ -937,15 +1186,21 @@ def main(argv=None):
                     help='signal database repository root (default: this tool\'s repo)')
     ap.add_argument('--check', action='store_true',
                     help='regenerate to a temp dir, diff against committed dbc/, validate')
+    ap.add_argument('--id-map', default=None,
+                    help='CSV mapping internal ids to (bus, CAN id); overrides the routes in data/<fw>/messages.csv')
     args = ap.parse_args(argv)
+    unresolved = []
     repo = Path(args.repo)
     committed = repo / 'dbc'
     if args.check:
         tmp = Path(tempfile.mkdtemp(prefix='dbc_check_'))
         try:
-            reports = _build_all(repo, tmp)
+            reports = _build_all(repo, tmp, args.id_map, unresolved)
             diffs = _diff_trees(tmp, committed) if committed.exists() else ['dbc/ missing']
             errors = check(committed if committed.exists() else tmp)
+            readme = repo / 'README.md'
+            if readme.read_text(encoding='utf-8') != _readme_with_coverage(readme.read_text(encoding='utf-8'), reports):
+                diffs.append('README.md coverage table is stale (run tools/export_dbc.py)')
             for doc in ('README.md', 'INDEX.md'):
                 dp = repo / doc
                 if dp.exists():
@@ -959,9 +1214,13 @@ def main(argv=None):
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
         for r in reports:
-            print('%-40s messages=%d signals=%d enums=%d validated=%d plausible=%d layout-only=%d dropped=%d %s' % (
+            print('%-36s msgs=%d sigs=%d enums=%d validated=%d plausible=%d layout-only=%d contradicted=%d dropped=%d %s' % (
                 r['file'], r['messages'], r['signals'], r['enums'], r['validated'], r['plausible'],
-                r['layout_only'], r['dropped'], r['dropped_reasons']))
+                r['layout_only'], r['contradicted'], r['dropped'], r['dropped_reasons']))
+        for u in unresolved:
+            print('UNRESOLVED (no CAN-bus id): %s %s eth_id=%d signals=%d' % (
+                u['firmware'], u['message'], u['eth_id'], u['signals']))
+        print('UNRESOLVED total: %d messages, %d signals' % (len(unresolved), sum(u['signals'] for u in unresolved)))
         for d in diffs:
             print('DETERMINISM: ' + d)
         for e in errors[:200]:
@@ -973,7 +1232,9 @@ def main(argv=None):
         print('CHECK OK: %d DBC files regenerated identically, checklist lint clean, cantools strict load + '
               'round trip OK, JSON twins agree, canmatrix load OK, PII + source-disclosure gates clean' % nfiles)
         return 0
-    reports = _build_all(repo, committed)
+    reports = _build_all(repo, committed, args.id_map, unresolved)
+    readme = repo / 'README.md'
+    readme.write_text(_readme_with_coverage(readme.read_text(encoding='utf-8'), reports), encoding='utf-8')
     for r in reports:
         print('wrote %s: %d messages, %d signals, dropped %d' % (r['file'], r['messages'], r['signals'], r['dropped']))
     return 0

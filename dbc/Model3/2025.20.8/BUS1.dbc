@@ -1,0 +1,2206 @@
+VERSION "dbc-export 1 2025.20.8"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: DAS DI DIF DIR EPAS3P ESP IBST PM PMF PMR RCM VCFRONT VCLEFT VCRIGHT
+
+
+BO_ 697 DAS_control: 8 DAS
+ SG_ DAS_setSpeed : 0|12@1+ (0.1,0) [0|409.4] "kph" Vector__XXX
+ SG_ DAS_accState : 12|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ DAS_aebEvent : 16|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DAS_jerkMin : 18|9@1+ (0.03,-15.232) [-15.232|0.068] "m/s^3" Vector__XXX
+ SG_ DAS_jerkMax : 27|8@1+ (0.059,0) [0|14.986] "m/s^3" Vector__XXX
+ SG_ DAS_accelMin : 35|9@1+ (0.04,-15) [-15|5.4] "m/s^2" Vector__XXX
+ SG_ DAS_accelMax : 44|9@1+ (0.04,-15) [-15|5.4] "m/s^2" Vector__XXX
+ SG_ DAS_controlCounter : 53|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DAS_controlChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 299 DAS_smartShift: 4 DAS
+ SG_ DAS_smartShiftChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DAS_smartShiftCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DAS_smartShiftTorqueDirection : 12|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ DAS_smartShiftTorqueReason : 15|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ DAS_autoshiftTorqueDirectionDbg : 19|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ DAS_autoshiftUpcomingDirection : 22|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DAS_autoshiftBrakeRequired : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_autoshiftSteerRequest : 25|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1879 DIF_debug: 8 DIF
+ SG_ DIF_debugSelector M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_phaseOutBusbarTemp m70 : 8|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_phaseOutBusbarWeldTemp m70 : 16|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_phaseOutLugTemp m70 : 24|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_dcLinkCapTemp m70 : 32|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_hvDcCableTemp m70 : 40|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_negDcBusbarTemp m70 : 48|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_posDcBusbarTemp m70 : 56|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_statorEndWindingTemp m72 : 8|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_rotorMaxMagnetTemp m72 : 16|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_lightSenseV m72 : 24|6@1+ (0.1,0) [0|3.3] "V" Vector__XXX
+ SG_ DIF_pyroSenseV m72 : 30|8@1+ (0.02,0) [0|3.3] "V" Vector__XXX
+ SG_ DIF_statorSlotWindingTemp m72 : 46|8@1+ (1,-40) [-39|215] "DegC" Vector__XXX
+ SG_ DIF_intervalMaxHvBusV m72 : 54|10@1+ (1,0) [0|1023] "V" Vector__XXX
+
+BO_ 1622 DIF_info: 8 DIF
+ SG_ DIF_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_buildType m10 : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_buildConfigurationId m10 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_hardwareId m10 : 32|8@1+ (1,0) [0|252] "" Vector__XXX
+ SG_ DIF_componentId m10 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_pcbaId m11 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_assemblyId m11 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_usageId m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_subUsageId m11 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_motorType m12 : 8|5@1+ (1,0) [1|31] "" Vector__XXX
+ SG_ DIF_siliconType m12 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_mechSafeStateType m12 : 24|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ DIF_applicationCrc m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_oilPumpBuildType m16 : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_oilPumpAppCrc m16 : 16|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_FPGA_version m16 : 48|8@1+ (1,0) [0|254] "" Vector__XXX
+ SG_ DIF_appGitHash m17 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
+ SG_ DIF_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
+ SG_ DIF_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_infoBootLdUdsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ DIF_oilPumpPcbaId m33 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_oilPumpAssemblyId m33 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_oilPumpUsageId m33 : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ DIF_refRotorFlux m35 : 8|16@1+ (0.0001,0) [0|6.5535] "Wb" Vector__XXX
+ SG_ DIF_refRotorOffset m35 : 24|12@1- (0.1,0) [-180|180] "deg" Vector__XXX
+ SG_ DIF_speedWearTotal m36 : 8|8@1+ (0.4,0) [0|100] "%" Vector__XXX
+ SG_ DIF_torqueWearTotal m36 : 24|8@1+ (0.02,0) [0|5.08] "1" Vector__XXX
+
+BO_ 421 DIF_motorStatus: 4 DIF
+ SG_ DIF_motorCurrent : 0|11@1+ (1,0) [0|2047] "A" Vector__XXX
+ SG_ DIF_switchingFrequency : 11|11@1+ (0.01,0) [0|20] "kHz" Vector__XXX
+ SG_ DIF_targetFluxMode : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_switchShortTestRetryCount : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 918 DIF_oilPump: 8 DIF
+ SG_ DIF_oilPumpState : 0|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ DIF_oilPumpFluidTQF : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_oilPumpLeadAngle : 4|4@1+ (1.875,0) [0|28.125] "degrees" Vector__XXX
+ SG_ DIF_oilPumpFlowTarget : 8|8@1+ (0.1,0) [0|25.4] "LPM" Vector__XXX
+ SG_ DIF_oilPumpFlowActual : 16|8@1+ (0.1,0) [0|25.4] "LPM" Vector__XXX
+ SG_ DIF_oilPumpFluidT : 24|8@1+ (1,-40) [-40|214] "DegC" Vector__XXX
+ SG_ DIF_oilPumpPhaseCurrent : 32|8@1+ (0.1,0) [0|25.4] "A" Vector__XXX
+ SG_ DIF_oilPumpPressureEstimate : 40|8@1+ (2,0) [0|500] "kPa" Vector__XXX
+ SG_ DIF_oilPumpPressureExpected : 48|8@1+ (2,0) [0|500] "kPa" Vector__XXX
+ SG_ DIF_oilPumpPressureResidual : 56|8@1+ (4,-500) [-500|500] "kPa" Vector__XXX
+
+BO_ 725 DIF_status: 7 DIF
+ SG_ DIF_statusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_statusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIF_state : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIF_keepAliveRequest : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_soptState : 16|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIF_sysLimpRequest : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_adState : 21|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_driveModeState : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_lvSupplyV : 24|8@1+ (0.1,0) [0|25.5] "V" Vector__XXX
+ SG_ DIF_wasteState : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_haltRequest : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_axleSpeedLimitRequest : 36|12@1+ (1,40) [40|2750] "RPM" Vector__XXX
+ SG_ DIF_adDirection : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIF_spinDownLearningState : 49|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIF_spinDownLearningMode : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 390 DIF_torque: 8 DIF
+ SG_ DIF_torqueChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIF_torqueCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIF_torqueCommand : 12|13@1- (2,0) [-7500|7500] "Nm" Vector__XXX
+ SG_ DIF_axleSpeedQF : 25|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_torqueActual : 27|13@1- (2,0) [-7500|7500] "Nm" Vector__XXX
+ SG_ DIF_axleSpeed : 40|16@1- (0.1,0) [-2750|2750] "RPM" Vector__XXX
+ SG_ DIF_axleTorqueQF : 56|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIF_axlePowerCalcQF : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 294 DIR_motorStatus: 4 DIR
+ SG_ DIR_motorCurrent : 0|11@1+ (1,0) [0|2047] "A" Vector__XXX
+ SG_ DIR_switchingFrequency : 11|11@1+ (0.01,0) [0|20] "kHz" Vector__XXX
+ SG_ DIR_targetFluxMode : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_switchShortTestRetryCount : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 598 DIR_status: 7 DIR
+ SG_ DIR_statusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIR_statusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIR_state : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DIR_keepAliveRequest : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_soptState : 16|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIR_sysLimpRequest : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_adState : 21|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_driveModeState : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_lvSupplyV : 24|8@1+ (0.1,0) [0|25.5] "V" Vector__XXX
+ SG_ DIR_wasteState : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_haltRequest : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_axleSpeedLimitRequest : 36|12@1+ (1,40) [400|2750] "RPM" Vector__XXX
+ SG_ DIR_adDirection : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DIR_spinDownLearningState : 49|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIR_spinDownLearningMode : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 264 DIR_torque: 8 DIR
+ SG_ DIR_torqueChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DIR_torqueCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DIR_torqueCommand : 12|13@1- (2,0) [-7500|7500] "Nm" Vector__XXX
+ SG_ DIR_axleSpeedQF : 25|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_torqueActual : 27|13@1- (2,0) [-7500|7500] "Nm" Vector__XXX
+ SG_ DIR_axleSpeed : 40|16@1- (0.1,0) [-2750|2750] "RPM" Vector__XXX
+ SG_ DIR_axleTorqueQF : 56|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DIR_axlePowerCalcQF : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 328 DI_chassisControl: 8 DI
+ SG_ DI_chassisControlChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_chassisControlCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_imuOffsetLearnRequest : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_brakeCommandType : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_brakeTorqueRequestActive : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_brakeTorqueCommand : 16|13@1+ (3,0) [0|24573] "Nm" Vector__XXX
+ SG_ DI_ptcStateGlobal : 29|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DI_ptcActive : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_vdcState : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_isAnyVdcControlActive : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_vdcMode : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_pedalAssistCurveSelect : 38|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_isAnyTcActive : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_VehicleMuConfidence : 43|6@1+ (0.02,0) [0|1.26] "-" Vector__XXX
+ SG_ DI_VehicleMu : 49|6@1+ (0.024,0) [0|1.512] "-" Vector__XXX
+ SG_ DI_trailerSwayIndex : 55|5@1+ (0.035,0) [0|1] "-" Vector__XXX
+ SG_ DI_vdcControlActive : 60|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_treadDepthAlertSet : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1861 DI_chassisControl2: 8 DI
+ SG_ DI_gradeAngle : 0|6@1- (0.01,0) [-0.3125|0.31] "rad" Vector__XXX
+ SG_ DI_bankAngle : 6|6@1- (0.01,0) [-0.3125|0.31] "rad" Vector__XXX
+ SG_ DI_chassisControlVideoRequest : 12|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_tireUtilizationRatioFrL : 17|5@1+ (0.0625,0) [0|1.9375] "-" Vector__XXX
+ SG_ DI_tireUtilizationRatioFrR : 22|5@1+ (0.0625,0) [0|1.9375] "-" Vector__XXX
+ SG_ DI_tireUtilizationRatioReL : 27|5@1+ (0.0625,0) [0|1.9375] "-" Vector__XXX
+ SG_ DI_tireUtilizationRatioReR : 32|5@1+ (0.0625,0) [0|1.9375] "-" Vector__XXX
+ SG_ DI_counterSteerTarget : 37|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_splitMuProbability : 39|2@1+ (0.334,0) [0|1] "-" Vector__XXX
+ SG_ DI_mzError : 41|2@1+ (1667,0) [0|5000] "Nm" Vector__XXX
+ SG_ DI_slipDifferenceFrontRear : 43|3@1- (0.133,0) [-0.52|0.399] "rad" Vector__XXX
+ SG_ DI_highFreqYawRate : 46|2@1+ (0.334,0) [0|1] "-" Vector__XXX
+ SG_ DI_turnDirection : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_absolutePreControlRequest : 49|2@1+ (5000,0) [0|15000] "Nm" Vector__XXX
+ SG_ DI_oppositeBuildDirFrontAxle : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_oppositeBuildDirRearAxle : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_saturatedEffectiveness : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_driverPanicIndex : 54|2@1+ (0.334,0) [0|1] "-" Vector__XXX
+ SG_ DI_learnDownMu : 56|2@1+ (0.334,0) [0|1] "mu" Vector__XXX
+ SG_ DI_preControlOpposingTurnDir : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_driverFxError : 59|2@1+ (1000,0) [0|3000] "N" Vector__XXX
+ SG_ DI_targetSaturation : 61|3@1+ (0.572,0) [0|4] "G" Vector__XXX
+
+BO_ 1869 DI_chassisControl3: 8 DI
+ SG_ DI_tireWearFactor_FrL : 0|6@1+ (0.00125,0.96) [0.96|1.03875] "ratio" Vector__XXX
+ SG_ DI_tireWearFactor_FrR : 6|6@1+ (0.00125,0.96) [0.96|1.03875] "ratio" Vector__XXX
+ SG_ DI_tireWearFactor_ReL : 12|6@1+ (0.00125,0.96) [0.96|1.03875] "ratio" Vector__XXX
+ SG_ DI_tireWearFactor_ReR : 18|6@1+ (0.00125,0.96) [0.96|1.03875] "ratio" Vector__XXX
+ SG_ DI_kTireEstReUnSat : 24|7@1+ (0.001,0.008) [0.008|0.075] "-" Vector__XXX
+ SG_ DI_tireConfigSaved : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_distanceSinceLastTireConfig : 32|6@1+ (500,0) [0|31000] "km" Vector__XXX
+ SG_ DI_hydroplaningRisk : 38|2@1+ (0.333333343267,0) [0|1] "-" Vector__XXX
+ SG_ DI_hydroplaningPuddlesWet : 40|4@1+ (1,0) [0|15] "-" Vector__XXX
+ SG_ DI_hydroplaningPuddlesDry : 44|3@1+ (1,0) [0|7] "-" Vector__XXX
+ SG_ DI_vehicleStuck : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_kTireEstRe : 48|5@1+ (0.001,0.03) [0.03|0.06] "-" Vector__XXX
+ SG_ DI_stickyMu : 53|6@1+ (0.025,0) [0|1.575] "-" Vector__XXX
+ SG_ DI_stickyMuConfidence : 59|5@1+ (0.1,0) [0|3] "probability" Vector__XXX
+
+BO_ 646 DI_locStatus: 8 DI
+ SG_ DI_locStatusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_locStatusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_cruiseState : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_cruiseSetSpeed : 15|9@1+ (0.5,0) [0|255.5] "speed" Vector__XXX
+ SG_ DI_cruiseSetSpeedUnits : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_autoparkState : 25|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ DI_parkBrakeState : 29|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ DI_aebState : 33|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ DI_loncDeactivationReason : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_vehicleHoldState : 38|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_summonInPanic : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_onePedalDrivingState : 42|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_brakeStandActive : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_regenBackfillState : 47|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_cruiseNotAvailableReason : 49|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ DI_cruiseFaultReason : 55|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ DI_cruiseCancelReason : 60|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1270 DI_locStatus2: 7 DI
+ SG_ DI_locStatus2Checksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_locStatus2Counter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_doublePedalState : 12|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_autopilotRequest : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_rollPreventionState : 17|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_locIntegratorSaturated : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_temporaryOpdActiveAfterLoncCa : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_reapplyOnParkRequest : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_regenBlendingState : 23|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_brakeCpScale : 25|11@1+ (0.005,0) [0|10] "N/N" Vector__XXX
+ SG_ DI_rollbackDistance : 36|8@1+ (0.005,0) [0|1.275] "m" Vector__XXX
+ SG_ DI_lowMuProbabilityConfidence : 44|4@1+ (0.06666667,0) [0|1] "-" Vector__XXX
+ SG_ DI_pedalAssistCurveSelectForSX : 48|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_longitudinalControlStack : 52|3@1+ (1,0) [1|7] "" Vector__XXX
+
+BO_ 822 DI_maxRatedPower: 3 DI
+ SG_ DI_sysDrivePowerRated : 0|10@1+ (1,0) [0|1023] "kW" Vector__XXX
+ SG_ DI_obdDriveCycleStatus : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_sysRegenPowerRated : 16|8@1+ (1,-100) [-100|0] "kW" Vector__XXX
+
+BO_ 599 DI_speed: 8 DI
+ SG_ DI_speedChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_speedCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_uiSpeed : 24|9@1+ (1,0) [0|510] "" Vector__XXX
+ SG_ DI_uiSpeedUnits : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_accelPedalPressed : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_sideslipEstimate : 35|8@1- (0.0025,0) [-0.32|0.3175] "rad" Vector__XXX
+ SG_ DI_vehicleSpeed : 43|13@1+ (0.08,-40) [-40|480] "kph" Vector__XXX
+ SG_ DI_velocityEstimatorState : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_autoEnableHazards : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_longControlCommandActive : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 600 DI_stalklessInterfaces: 3 DI
+ SG_ DI_stalklessInterfacesChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_stalklessInterfacesCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_smartShiftClosureOpen : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_smartShiftSeatbeltUnbuckled : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_smartShiftAvailable : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_smartShiftPrimed : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_smartShiftBrakePressed : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_smartShiftBrakeReapplyRequire : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 597 DI_suggestedGear: 4 DI
+ SG_ DI_lastQualifiedGear : 0|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ DI_lastDrivingGear : 3|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ DI_distDrivenInGear : 8|8@1+ (0.0235294122249,0) [0|6] "m" Vector__XXX
+ SG_ DI_frontBlocked : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_rearBlocked : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_firstShiftOccurred : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_suggestedGearReason : 19|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_parallelParked : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_smartShiftGear : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_smartShiftUnavailableReason : 26|5@1+ (1,0) [1|31] "" Vector__XXX
+
+BO_ 282 DI_vdcRight: 8 DI
+ SG_ DI_vdcRightChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_vdcRightCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_vdcCommandTypeFrR : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_vdcCommandTypeReR : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DI_vdcCommandABSFrR : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_vdcCommandABSReR : 19|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_brakeTorqueTarFrR : 22|12@1+ (3,-3) [-3|12282] "Nm" Vector__XXX
+ SG_ DI_brakeTorqueTarReR : 34|12@1+ (3,-3) [-3|12282] "Nm" Vector__XXX
+ SG_ DI_wheelSlipLimitFrR : 46|8@1+ (0.004,-0.004) [-0.004|1] "1" Vector__XXX
+ SG_ DI_wheelSlipLimitReR : 54|6@1+ (0.004,-0.004) [-0.004|0.248] "1" Vector__XXX
+ SG_ DI_rawLowMuProbability : 60|4@1+ (0.06666667,0) [0|1] "-" Vector__XXX
+
+BO_ 615 DI_vehicleEstimates: 8 DI
+ SG_ DI_mass : 0|8@1+ (25,1500) [1500|7850] "kg" Vector__XXX
+ SG_ DI_massRLS : 8|7@1+ (45,1500) [1500|7170] "kg" Vector__XXX
+ SG_ DI_trailerDetected : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_vehicleEstimatesCounter : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DI_relativeTireTreadDepth : 19|6@1- (0.4,0) [-12.4|12.4] "mm" Vector__XXX
+ SG_ DI_tireFitment : 25|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DI_rollCoeff : 27|5@1+ (0.001,0) [0|0.03] "g" Vector__XXX
+ SG_ DI_massConfidence : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_gradeEst : 33|7@1- (1,0) [-40|40] "%" Vector__XXX
+ SG_ DI_vehicleEstimatesChecksum : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_gradeEstInternal : 48|7@1- (1,0) [-40|40] "%" Vector__XXX
+ SG_ DI_massConfidenceRLS : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_steeringAngleOffset : 56|8@1- (0.2,0) [-25.6|25.4] "Deg" Vector__XXX
+
+BO_ 977 EPAS3P_angleCalibration: 8 EPAS3P
+ SG_ EPAS3P_appliedAngleOffset : 0|8@1+ (0.1,-12.8) [-12.8|12.7] "deg" Vector__XXX
+ SG_ EPAS3P_calculatedAngleOffset : 8|8@1+ (0.1,-12.8) [-12.8|12.7] "deg" Vector__XXX
+ SG_ EPAS3P_resyncStatus : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_pullDriftLongTermTrq : 17|12@1+ (0.01,-10) [-10|10] "Nm" Vector__XXX
+ SG_ EPAS3P_pullDriftCompTrq : 29|12@1+ (0.01,-10) [-10|10] "Nm" Vector__XXX
+ SG_ EPAS3P_learnedSCCMOffset : 41|8@1+ (0.1,-12.8) [-12.8|12.7] "deg" Vector__XXX
+
+BO_ 817 EPAS3P_info: 8 EPAS3P
+ SG_ EPAS3P_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ EPAS3P_infoBuildType m10 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ EPAS3P_infoComponentID m10 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ EPAS3P_infoPcbaID m11 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ EPAS3P_infoAssemblyID m11 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ EPAS3P_infoUsageID m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ EPAS3P_infoApplicationCRC m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ EPAS3P_infoBootUdsProtoVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ EPAS3P_infoBootloaderCRC m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ EPAS3P_infoSubcomponent2 m23 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 880 EPAS3P_sysStatus: 8 EPAS3P
+ SG_ EPAS3P_steeringRackForce : 1|10@0+ (50,-25575) [-25575|25525] "N" Vector__XXX
+ SG_ EPAS3P_steeringFault : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_steeringReduced : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_internalSASQF : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_currentTuneMode : 5|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ EPAS3P_torsionBarTorque : 19|12@0+ (0.01,-20.5) [-20.5|20.44] "Nm" Vector__XXX
+ SG_ EPAS3P_eacErrorCode : 20|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ EPAS3P_internalSAS : 37|14@0+ (0.1,-819.2) [-819.2|819] "deg" Vector__XXX
+ SG_ EPAS3P_handsOnLevel : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_sysStatusCounter : 48|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ EPAS3P_tireIDActive : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_eacStatus : 53|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ EPAS3P_sysStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 909 ESP_party3: 7 ESP
+ SG_ ESP_party3Crc : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ESP_party3Counter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ ESP_absActive : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_vehicleStandstill : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_vehicleStandstillQF : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_pEstMaximum : 16|8@1+ (1,0) [0|255] "bar" Vector__XXX
+ SG_ ESP_privateVehicleSpd : 24|8@1+ (0.4,0) [0|102] "m/s" Vector__XXX
+ SG_ ESP_decoupledBrakePressOffsetCom : 33|7@1+ (0.25,-16) [-16|15.5] "bar" Vector__XXX
+ SG_ ESP_privateVehicleSpdQF : 41|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_brakeMasterCylPress : 44|10@1+ (0.3,-30) [-30|276.6] "bar" Vector__XXX
+ SG_ ESP_brakeMasterCylPressQF : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 325 ESP_status: 8 ESP
+ SG_ ESP_statusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ESP_statusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ ESP_espModeActive : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_stabilityControlSts2 : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_ebdFaultLamp : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_absFaultLamp : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_espFaultLamp : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_hydraulicBoostEnabled : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_espLampFlash : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_brakeLamp : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_absBrakeEvent2 : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_longitudinalAccelQF : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_lateralAccelQF : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_yawRateQF : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_steeringAngleQF : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_brakeDiscWipingActive : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_driverBrakeApply : 29|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ ESP_brakeApply : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_aesPrimaryActuatorStatus : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_cdpStatus : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_ptcTargetState : 36|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ ESP_btcTargetState : 38|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ ESP_decoupledBrakePressEst : 40|8@1+ (1,-30) [-30|224] "bar" Vector__XXX
+ SG_ ESP_ebrStandstillSkid : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ ESP_ebrStatus : 49|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ ESP_brakeTorqueTarget : 51|13@1+ (3,0) [0|24573] "Nm" Vector__XXX
+
+BO_ 925 IBST_status: 5 IBST
+ SG_ IBST_statusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ IBST_statusCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ IBST_iBoosterStatus : 12|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ IBST_driverBrakeApply : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ IBST_internalState : 18|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ IBST_sInputRodDriver : 21|12@1+ (0.015625,-5) [-5|47] "mm" Vector__XXX
+ SG_ IBST_LVPowerModeState : 35|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1316 PMF_mfgData: 7 PMF
+ SG_ PMF_processorDieIdLot : 0|24@1+ (1,0) [0|16777215] "" Vector__XXX
+ SG_ PMF_processorDieIdWafer : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ PMF_processorDieIdX : 32|12@1+ (1,0) [0|4095] "" Vector__XXX
+ SG_ PMF_processorDieIdY : 44|12@1+ (1,0) [0|4095] "" Vector__XXX
+
+BO_ 1364 PMR_mfgData: 7 PMR
+ SG_ PMR_processorDieIdLot : 0|24@1+ (1,0) [0|16777215] "" Vector__XXX
+ SG_ PMR_processorDieIdWafer : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ PMR_processorDieIdX : 32|12@1+ (1,0) [0|4095] "" Vector__XXX
+ SG_ PMR_processorDieIdY : 44|12@1+ (1,0) [0|4095] "" Vector__XXX
+
+BO_ 2038 PM_vdcDebug: 8 PM
+ SG_ PM_vdcDebugSelector M : 0|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ PM_VDCA_TCSlipTargetMod_RA_Fwd m5 : 8|6@1- (0.1,0) [-3|3] "m/s" Vector__XXX
+ SG_ PM_VDCA_TCSlipTargetMod_RA_Rwd m5 : 16|6@1- (0.1,0) [-3|3] "m/s" Vector__XXX
+ SG_ PM_VSE_forceY_RA m5 : 22|9@1- (40,240) [-10000|10440] "N" Vector__XXX
+ SG_ PM_VDCT_observerSlipAngle_RA m5 : 31|9@1- (0.005,0.03) [-1.25|1.305] "rad" Vector__XXX
+ SG_ PM_VSE_muVehicleFxLow m5 : 40|5@1+ (0.05,0) [0|1.55] "mu" Vector__XXX
+ SG_ PM_VE_fxmFres m13 : 8|8@1- (200,0) [-20000|20000] "N" Vector__XXX
+ SG_ PM_VE_fxAccelMass m13 : 16|8@1- (0.16,0) [-20|20] "m/s^2" Vector__XXX
+ SG_ PM_VE_vxDotGrade m13 : 24|8@1- (0.1,0.8) [-12|13.5] "m/s^2" Vector__XXX
+ SG_ PM_VE_betaEst m13 : 32|8@1- (0.01,0) [-1|1] "rad" Vector__XXX
+ SG_ PM_VSE_muVehicleFxHigh m13 : 40|5@1+ (0.05,0) [0|1.55] "mu" Vector__XXX
+ SG_ PM_VSE_muVehicleDecLeakRate m29 : 6|5@1+ (0.05,0) [0|1.55] "mu" Vector__XXX
+ SG_ PM_VSE_muVehicleLearnDown m29 : 11|5@1+ (0.05,0) [0|1.55] "mu" Vector__XXX
+ SG_ PM_VSE_muVehicleDecFilter m29 : 16|5@1+ (0.05,0) [0|1.55] "mu" Vector__XXX
+ SG_ PM_VSE_muVehicleLatDecLeakRate m29 : 21|5@1+ (0.05,0) [0|1.55] "mu" Vector__XXX
+ SG_ PM_VSE_splitMuProbability m29 : 26|5@1+ (0.05,0) [0|1.55] "probability" Vector__XXX
+ SG_ PM_VSE_splitMuTotalMz m29 : 31|9@1- (60,360) [-15000|15660] "Nm" Vector__XXX
+ SG_ PM_VSE_attitudeBankAngle m29 : 40|9@1- (0.005,0.03) [-1.25|1.305] "rad" Vector__XXX
+ SG_ PM_VSE_attitudeDBetaInControl m29 : 49|8@1- (0.01,0.03) [-1.25|1.3] "rad" Vector__XXX
+ SG_ PM_VSE_roadWheelAngleAverage m29 : 57|7@1- (0.015,0.255) [-0.7|1.2] "rad" Vector__XXX
+
+BO_ 17 RCM_collision: 4 RCM
+ SG_ RCM_collisionChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCM_collisionCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ RCM_collisionRear : 12|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_collisionRight : 14|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_collisionLeft : 16|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_collisionFront : 18|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_collisionRollover : 20|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_collisionPedPro : 22|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_collisionSeverity : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 289 RCM_nearDeploy: 4 RCM
+ SG_ RCM_nearDeployChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCM_nearDeployCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ RCM_nearDeployRear : 12|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_nearDeployRight : 14|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_nearDeployLeft : 16|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_nearDeployFront : 18|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_nearDeployRollover : 20|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ RCM_crashAlgoWakeup : 22|2@1+ (1,0) [0|2] "" Vector__XXX
+
+BO_ 260 VCFRONT_partyDebug: 7 VCFRONT
+ SG_ VCFRONT_vcleftHighPower : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_vcrightHighPower : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_uiHighPower : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_5VAStable : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_5VBStable : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_12VAStable : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_12VBStable : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_railA : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_railB : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_chargePumpStable : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_vehicleSM : 10|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCFRONT_revBattFault : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_battSM : 16|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCFRONT_U13Init : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_U16Init : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_anyVehLoadShedActiveDBG : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCFRONT_battVoltage : 24|12@1+ (0.005443676,0) [0|22.29185322] "V" Vector__XXX
+ SG_ VCFRONT_battCurrent : 40|16@1- (0.005,0) [-163.84|163.835] "A" Vector__XXX
+
+BO_ 258 VCLEFT_doorStatus: 8 VCLEFT
+ SG_ VCLEFT_doorClosureStatusFront : 0|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_doorClosureStatusRear : 4|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_frontLatchSwitch : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearLatchSwitch : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontHandlePulled : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearHandlePulled : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontRelActuatorSwitch : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearRelActuatorSwitch : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontLatchStatus : 14|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_rearLatchStatus : 18|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCLEFT_lastDoorReqSourceFront : 22|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_lastDoorReqSourceRear : 25|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_frontIntSwitchPressed : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_rearIntSwitchPressed : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_mirrorTiltXPosition : 33|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCLEFT_mirrorTiltYPosition : 41|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCLEFT_mirrorState : 49|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_mirrorFoldState : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_mirrorRecallState : 55|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_mirrorHeatState : 58|3@1+ (1,0) [1|7] "" Vector__XXX
+ SG_ VCLEFT_rearHandlePulledPersist : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_frontHandlePulledPersist : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_mirrorDipped : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 546 VCLEFT_epbmStatus: 8 VCLEFT
+ SG_ VCLEFT_cdpRequestState : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_epbmSystemStatusQF : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_epbmUnitStatus : 4|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCLEFT_epbmCdpState : 9|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCLEFT_epbmStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCLEFT_epbmStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 778 VCLEFT_restraintStatus: 8 VCLEFT
+ SG_ VCLEFT_frontOccupancyStatus : 0|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ VCLEFT_frontBuckleStatus : 3|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCLEFT_rearLeftOccupancyStatus : 5|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCLEFT_rearCenterOccupancyStatus : 8|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCLEFT_rearRightOccupancyStatus : 10|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCLEFT_rearLeftBuckleStatus : 12|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCLEFT_rearCenterBuckleStatus : 14|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCLEFT_seatTrackPosition : 16|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ VCLEFT_restraintStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCLEFT_restraintStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 259 VCRIGHT_doorStatus: 8 VCRIGHT
+ SG_ VCRIGHT_doorClosureStatusFront : 0|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCRIGHT_doorClosureStatusRear : 4|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCRIGHT_frontLatchSwitch : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_rearLatchSwitch : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontHandlePulled : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_rearHandlePulled : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontRelActuatorSwitch : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_rearRelActuatorSwitch : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontLatchStatus : 14|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCRIGHT_rearLatchStatus : 18|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCRIGHT_lastDoorReqSourceFront : 22|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCRIGHT_lastDoorReqSourceRear : 25|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCRIGHT_frontHandlePulledPersist : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontIntSwitchPressed : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_rearIntSwitchPressed : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_mirrorTiltXPosition : 33|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCRIGHT_mirrorTiltYPosition : 41|8@1+ (0.02,0) [0|5] "V" Vector__XXX
+ SG_ VCRIGHT_mirrorState : 49|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCRIGHT_mirrorFoldState : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCRIGHT_mirrorDipped : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_trunkLatchStatus : 56|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ VCRIGHT_mirrorRecallState : 60|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCRIGHT_rearHandlePulledPersist : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 611 VCRIGHT_epbmStatus: 8 VCRIGHT
+ SG_ VCRIGHT_cdpRequestState : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_epbmSystemStatusQF : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_epbmUnitStatus : 4|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ VCRIGHT_epbmCdpState : 9|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_epbmStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCRIGHT_epbmStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 794 VCRIGHT_restraintStatus: 8 VCRIGHT
+ SG_ VCRIGHT_frontOccupancyStatus : 0|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ VCRIGHT_frontBuckleStatus : 3|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_rearCenterBuckleStatus : 5|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_rearRightBuckleStatus : 8|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_rearRightOccupancyStatus : 10|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_3RowLeftBuckleStatus : 12|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_3RowRightBuckleStatus : 14|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_3RowLeftOccupancyStatus : 16|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_3RowRightOccupancyStatus : 18|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ VCRIGHT_seatTrackPosition : 20|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ VCRIGHT_occupantClassification : 23|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ VCRIGHT_occupantClassificationQF : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_classificationEnabled : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_classificationEnabledQF : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_restraintStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCRIGHT_restraintStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_TX_BU_ 697 : DAS;
+BO_TX_BU_ 299 : DAS;
+BO_TX_BU_ 1879 : DIF;
+BO_TX_BU_ 1622 : DIF;
+BO_TX_BU_ 421 : DIF;
+BO_TX_BU_ 918 : DIF;
+BO_TX_BU_ 725 : DIF;
+BO_TX_BU_ 390 : DIF;
+BO_TX_BU_ 294 : DIR;
+BO_TX_BU_ 598 : DIR;
+BO_TX_BU_ 264 : DIR;
+BO_TX_BU_ 328 : DI;
+BO_TX_BU_ 1861 : DI;
+BO_TX_BU_ 1869 : DI;
+BO_TX_BU_ 646 : DI;
+BO_TX_BU_ 1270 : DI;
+BO_TX_BU_ 822 : DI;
+BO_TX_BU_ 599 : DI;
+BO_TX_BU_ 600 : DI;
+BO_TX_BU_ 597 : DI;
+BO_TX_BU_ 282 : DI;
+BO_TX_BU_ 615 : DI;
+BO_TX_BU_ 977 : EPAS3P;
+BO_TX_BU_ 817 : EPAS3P;
+BO_TX_BU_ 880 : EPAS3P;
+BO_TX_BU_ 909 : ESP;
+BO_TX_BU_ 325 : ESP;
+BO_TX_BU_ 925 : IBST;
+BO_TX_BU_ 1316 : PMF;
+BO_TX_BU_ 1364 : PMR;
+BO_TX_BU_ 2038 : PM;
+BO_TX_BU_ 17 : RCM;
+BO_TX_BU_ 289 : RCM;
+BO_TX_BU_ 260 : VCFRONT;
+BO_TX_BU_ 258 : VCLEFT;
+BO_TX_BU_ 546 : VCLEFT;
+BO_TX_BU_ 778 : VCLEFT;
+BO_TX_BU_ 259 : VCRIGHT;
+BO_TX_BU_ 611 : VCRIGHT;
+BO_TX_BU_ 794 : VCRIGHT;
+
+
+CM_ "Tesla Model 3 CAN bus database; bus BUS1; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ DAS "Driver assistance computer";
+CM_ BU_ DI "Drive inverter";
+CM_ BU_ DIF "Front drive inverter";
+CM_ BU_ DIR "Rear drive inverter";
+CM_ BU_ EPAS3P "Electric power steering (primary)";
+CM_ BU_ ESP "Electronic stability control";
+CM_ BU_ IBST "Electric brake booster";
+CM_ BU_ PM "PM ECU";
+CM_ BU_ PMF "PMF ECU";
+CM_ BU_ PMR "PMR ECU";
+CM_ BU_ RCM "Restraint control module";
+CM_ BU_ VCFRONT "Front body controller";
+CM_ BU_ VCLEFT "Left body controller";
+CM_ BU_ VCRIGHT "Right body controller";
+CM_ BO_ 697 "Driver assistance computer message: control";
+CM_ SG_ 697 DAS_setSpeed "Detects the commanded Traffic Aware Cruise Control (TACC) or Autopilot set speed for the Drive Inverter (DI).; raw 4095 = signal not available (SNA)";
+CM_ SG_ 697 DAS_accState "Reports the state of Adaptive Cruise Control (ACC), Traffic-Aware Cruise Control (TACC), and Autopark / Summon.; raw 15 = signal not available (SNA)";
+CM_ SG_ 697 DAS_aebEvent "Driver assistance computer: aeb event; raw 3 = signal not available (SNA)";
+CM_ SG_ 697 DAS_jerkMin "Reports the minimum allowed jerk the Drive Inverter (DI) can generate to reach the commanded set speed.; raw 511 = signal not available (SNA)";
+CM_ SG_ 697 DAS_jerkMax "Reports the maximum allowed jerk the Drive Inverter (DI) can generate to reach the commanded set speed.; raw 255 = signal not available (SNA)";
+CM_ SG_ 697 DAS_accelMin "Reports the minimum acceleration the drive inverter can apply to reach the commanded set speed.; raw 511 = signal not available (SNA)";
+CM_ SG_ 697 DAS_accelMax "Reports the maximum acceleration the drive inverter can apply to reach the commanded set speed.; raw 511 = signal not available (SNA)";
+CM_ SG_ 697 DAS_controlCounter "Driver assistance computer: control counter";
+CM_ SG_ 697 DAS_controlChecksum "Driver assistance computer: control checksum";
+CM_ BO_ 299 "Driver assistance computer message: smart shift";
+CM_ SG_ 299 DAS_smartShiftChecksum "Driver assistance computer: smart shift checksum";
+CM_ SG_ 299 DAS_smartShiftCounter "Driver assistance computer: smart shift counter";
+CM_ SG_ 299 DAS_smartShiftTorqueDirection "Reports Driver Assistance System (DAS) Smart Shift torque direction.; raw 0 = signal not available (SNA)";
+CM_ SG_ 299 DAS_smartShiftTorqueReason "Reports Driver Assistance System (DAS) Smart Shift torque direction reason.; raw 0 = signal not available (SNA)";
+CM_ SG_ 299 DAS_autoshiftTorqueDirectionDbg "Driver assistance computer: autoshift torque direction dbg; raw 0 = signal not available (SNA)";
+CM_ SG_ 299 DAS_autoshiftUpcomingDirection "Reports the Driver Assistance System (DAS) upcoming torque direction.; raw 3 = signal not available (SNA)";
+CM_ SG_ 299 DAS_autoshiftBrakeRequired "Reports whether brake press is required for Autoshift Drive/Reverse (D/R).";
+CM_ SG_ 299 DAS_autoshiftSteerRequest "Reports the Driver Assistance System (DAS) steering angle direction requested for Autoshift Drive/Reverse (D/R).";
+CM_ BO_ 1879 "Front drive inverter message: debug";
+CM_ SG_ 1879 DIF_debugSelector "Front drive inverter: debug selector";
+CM_ SG_ 1879 DIF_phaseOutBusbarTemp "Front drive inverter: phase out busbar temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_phaseOutBusbarWeldTemp "Front drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_phaseOutLugTemp "Front drive inverter: phase out lug temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_dcLinkCapTemp "Front drive inverter: dc link cap temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_hvDcCableTemp "Front drive inverter: hv dc cable temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_negDcBusbarTemp "Front drive inverter: neg dc busbar temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_posDcBusbarTemp "Front drive inverter: pos dc busbar temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_statorEndWindingTemp "Front drive inverter: stator end winding temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_rotorMaxMagnetTemp "Reports the maximum temperature of the rotor magnet.; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_lightSenseV "Front drive inverter: light sense v";
+CM_ SG_ 1879 DIF_pyroSenseV "Front drive inverter: pyro sense v";
+CM_ SG_ 1879 DIF_statorSlotWindingTemp "Front drive inverter: stator slot winding temp; raw 0 = signal not available (SNA)";
+CM_ SG_ 1879 DIF_intervalMaxHvBusV "Front drive inverter: interval max hv bus v";
+CM_ BO_ 1622 "Front drive inverter message: info";
+CM_ SG_ 1622 DIF_infoIndex "Front drive inverter: info index";
+CM_ SG_ 1622 DIF_buildType "Front drive inverter: build type";
+CM_ SG_ 1622 DIF_buildConfigurationId "Front drive inverter: build configuration id";
+CM_ SG_ 1622 DIF_hardwareId "Front drive inverter: hardware id";
+CM_ SG_ 1622 DIF_componentId "Front drive inverter: component id";
+CM_ SG_ 1622 DIF_pcbaId "Front drive inverter: pcba id";
+CM_ SG_ 1622 DIF_assemblyId "Front drive inverter: assembly id";
+CM_ SG_ 1622 DIF_usageId "Front drive inverter: usage id";
+CM_ SG_ 1622 DIF_subUsageId "Front drive inverter: sub usage id";
+CM_ SG_ 1622 DIF_motorType "Front drive inverter: motor type; raw 0 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_siliconType "Front drive inverter: silicon type";
+CM_ SG_ 1622 DIF_mechSafeStateType "Front drive inverter: mech safe state type; raw 0 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_applicationCrc "Front drive inverter: application crc";
+CM_ SG_ 1622 DIF_oilPumpBuildType "Front drive inverter: oil pump build type";
+CM_ SG_ 1622 DIF_oilPumpAppCrc "Front drive inverter: oil pump app crc";
+CM_ SG_ 1622 DIF_FPGA_version "Front drive inverter: FPGA version; raw 255 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_appGitHash "Front drive inverter: app git hash";
+CM_ SG_ 1622 DIF_bootGitHash "Front drive inverter: boot git hash";
+CM_ SG_ 1622 DIF_platformTyp "Front drive inverter: platform typ";
+CM_ SG_ 1622 DIF_infoBootLdUdsProtocolVersion "Front drive inverter: info boot ld uds protocol version";
+CM_ SG_ 1622 DIF_bootloaderCrc "Front drive inverter: bootloader crc";
+CM_ SG_ 1622 DIF_oilPumpPcbaId "Front drive inverter: oil pump pcba id";
+CM_ SG_ 1622 DIF_oilPumpAssemblyId "Front drive inverter: oil pump assembly id";
+CM_ SG_ 1622 DIF_oilPumpUsageId "Front drive inverter: oil pump usage id";
+CM_ SG_ 1622 DIF_refRotorFlux "Front drive inverter: ref rotor flux";
+CM_ SG_ 1622 DIF_refRotorOffset "Front drive inverter: ref rotor offset; raw 2048 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_speedWearTotal "Front drive inverter: speed wear total; raw 255 = signal not available (SNA)";
+CM_ SG_ 1622 DIF_torqueWearTotal "Front drive inverter: torque wear total; raw 255 = signal not available (SNA)";
+CM_ BO_ 421 "Front drive inverter message: motor status";
+CM_ SG_ 421 DIF_motorCurrent "Drive Inverer measured motor RMS phase current.";
+CM_ SG_ 421 DIF_switchingFrequency "Front drive inverter: switching frequency";
+CM_ SG_ 421 DIF_targetFluxMode "Front drive inverter: target flux mode";
+CM_ SG_ 421 DIF_switchShortTestRetryCount "Front drive inverter: switch short test retry count";
+CM_ BO_ 918 "Front drive inverter message: oil pump";
+CM_ SG_ 918 DIF_oilPumpState "Reports the state of the oil pump.; raw 7 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpFluidTQF "Front drive inverter: oil pump fluid TQF";
+CM_ SG_ 918 DIF_oilPumpLeadAngle "Front drive inverter: oil pump lead angle";
+CM_ SG_ 918 DIF_oilPumpFlowTarget "Detects oil pump flow target.; raw 255 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpFlowActual "Detects oil pump flow.; raw 255 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpFluidT "Detects oil pump fluid tester.; raw 255 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpPhaseCurrent "Front drive inverter: oil pump phase current; raw 255 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpPressureEstimate "Oil pump pressure estimate.; raw 255 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpPressureExpected "Oil pump pressure expected.; raw 255 = signal not available (SNA)";
+CM_ SG_ 918 DIF_oilPumpPressureResidual "Oil pressure error outside of allowed tolerance; raw 255 = signal not available (SNA)";
+CM_ BO_ 725 "Front drive inverter message: status";
+CM_ SG_ 725 DIF_statusChecksum "Front drive inverter: status checksum";
+CM_ SG_ 725 DIF_statusCounter "Front drive inverter: status counter";
+CM_ SG_ 725 DIF_state "DI unit state machine state.";
+CM_ SG_ 725 DIF_keepAliveRequest "Used to detect that the Drive Inverter (DI) expects 12V and High Voltage (HV) to be kept up in order to protect hardware.";
+CM_ SG_ 725 DIF_soptState "Detects the state of the the Switch Off Path Test (SOPT).; raw 8 = signal not available (SNA)";
+CM_ SG_ 725 DIF_sysLimpRequest "Front drive inverter: sys limp request";
+CM_ SG_ 725 DIF_adState "Front drive inverter: ad state";
+CM_ SG_ 725 DIF_driveModeState "Reports the system drive mode state.";
+CM_ SG_ 725 DIF_lvSupplyV "Front drive inverter: lv supply v";
+CM_ SG_ 725 DIF_wasteState "Reports the Drive Inverter (DI) waste heat state.";
+CM_ SG_ 725 DIF_haltRequest "Front drive inverter: halt request";
+CM_ SG_ 725 DIF_axleSpeedLimitRequest "Front drive inverter: axle speed limit request";
+CM_ SG_ 725 DIF_adDirection "Front drive inverter: ad direction";
+CM_ SG_ 725 DIF_spinDownLearningState "Front drive inverter: spin down learning state";
+CM_ SG_ 725 DIF_spinDownLearningMode "Front drive inverter: spin down learning mode";
+CM_ BO_ 390 "Front drive inverter message: torque";
+CM_ SG_ 390 DIF_torqueChecksum "Front drive inverter: torque checksum";
+CM_ SG_ 390 DIF_torqueCounter "Front drive inverter: torque counter";
+CM_ SG_ 390 DIF_torqueCommand "Torque commanded to the drive unit, referred to the axle/wheel; raw 4096 = signal not available (SNA)";
+CM_ SG_ 390 DIF_axleSpeedQF "Front drive inverter: axle speed QF";
+CM_ SG_ 390 DIF_torqueActual "Actual torque the drive unit is controlling to referred to the axle/wheel; raw 4096 = signal not available (SNA)";
+CM_ SG_ 390 DIF_axleSpeed "Drive Inverter motor speed normalized at axle level; raw 32768 = signal not available (SNA)";
+CM_ SG_ 390 DIF_axleTorqueQF "Front drive inverter: axle torque QF";
+CM_ SG_ 390 DIF_axlePowerCalcQF "Front drive inverter: axle power calc QF";
+CM_ BO_ 294 "Rear drive inverter message: motor status";
+CM_ SG_ 294 DIR_motorCurrent "Drive Inverer measured motor RMS phase current.";
+CM_ SG_ 294 DIR_switchingFrequency "Rear drive inverter: switching frequency";
+CM_ SG_ 294 DIR_targetFluxMode "Rear drive inverter: target flux mode";
+CM_ SG_ 294 DIR_switchShortTestRetryCount "Rear drive inverter: switch short test retry count";
+CM_ BO_ 598 "Rear drive inverter message: status";
+CM_ SG_ 598 DIR_statusChecksum "Rear drive inverter: status checksum";
+CM_ SG_ 598 DIR_statusCounter "Rear drive inverter: status counter";
+CM_ SG_ 598 DIR_state "DI unit state machine state.";
+CM_ SG_ 598 DIR_keepAliveRequest "Used to detect that the Drive Inverter (DI) expects 12V and High Voltage (HV) to be kept up in order to protect hardware.";
+CM_ SG_ 598 DIR_soptState "Detects the state of the the Switch Off Path Test (SOPT).; raw 8 = signal not available (SNA)";
+CM_ SG_ 598 DIR_sysLimpRequest "Rear drive inverter: sys limp request";
+CM_ SG_ 598 DIR_adState "Rear drive inverter: ad state";
+CM_ SG_ 598 DIR_driveModeState "Rear drive inverter: drive mode state";
+CM_ SG_ 598 DIR_lvSupplyV "Rear drive inverter: lv supply v";
+CM_ SG_ 598 DIR_wasteState "Reports the Drive Inverter (DI) waste heat state.";
+CM_ SG_ 598 DIR_haltRequest "Rear drive inverter: halt request";
+CM_ SG_ 598 DIR_axleSpeedLimitRequest "Rear drive inverter: axle speed limit request";
+CM_ SG_ 598 DIR_adDirection "Rear drive inverter: ad direction";
+CM_ SG_ 598 DIR_spinDownLearningState "Rear drive inverter: spin down learning state";
+CM_ SG_ 598 DIR_spinDownLearningMode "Rear drive inverter: spin down learning mode";
+CM_ BO_ 264 "Rear drive inverter message: torque";
+CM_ SG_ 264 DIR_torqueChecksum "Rear drive inverter: torque checksum";
+CM_ SG_ 264 DIR_torqueCounter "Rear drive inverter: torque counter";
+CM_ SG_ 264 DIR_torqueCommand "Torque commanded to the drive unit, referred to the axle/wheel; raw 4096 = signal not available (SNA)";
+CM_ SG_ 264 DIR_axleSpeedQF "Rear drive inverter: axle speed QF";
+CM_ SG_ 264 DIR_torqueActual "Actual torque the drive unit is controlling to referred to the axle/wheel; raw 4096 = signal not available (SNA)";
+CM_ SG_ 264 DIR_axleSpeed "Drive Inverter motor speed normalized at axle level; raw 32768 = signal not available (SNA)";
+CM_ SG_ 264 DIR_axleTorqueQF "Rear drive inverter: axle torque QF";
+CM_ SG_ 264 DIR_axlePowerCalcQF "Rear drive inverter: axle power calc QF";
+CM_ BO_ 328 "Drive inverter message: chassis control";
+CM_ SG_ 328 DI_chassisControlChecksum "Drive inverter: chassis control checksum";
+CM_ SG_ 328 DI_chassisControlCounter "Drive inverter: chassis control counter";
+CM_ SG_ 328 DI_imuOffsetLearnRequest "Drive inverter: imu offset learn request";
+CM_ SG_ 328 DI_brakeCommandType "Drive inverter: brake command type";
+CM_ SG_ 328 DI_brakeTorqueRequestActive "Drive inverter: brake torque request active";
+CM_ SG_ 328 DI_brakeTorqueCommand "Brake torque command to ESP";
+CM_ SG_ 328 DI_ptcStateGlobal "Indicates state of Tesla traction control system; raw 3 = signal not available (SNA)";
+CM_ SG_ 328 DI_ptcActive "TRUE when pedal-positive (drive) traction control is active";
+CM_ SG_ 328 DI_vdcState "Status of VDC";
+CM_ SG_ 328 DI_isAnyVdcControlActive "Drive inverter: is any vdc control active";
+CM_ SG_ 328 DI_vdcMode "Indicates mode of VDC";
+CM_ SG_ 328 DI_pedalAssistCurveSelect "Drive inverter: pedal assist curve select";
+CM_ SG_ 328 DI_isAnyTcActive "TRUE when either drive or regen traction control is active";
+CM_ SG_ 328 DI_VehicleMuConfidence "Confidence in surface mu estimate for development use only";
+CM_ SG_ 328 DI_VehicleMu "Learn-up estimate of surface mu for development use only";
+CM_ SG_ 328 DI_trailerSwayIndex "VDC trailer sway index";
+CM_ SG_ 328 DI_vdcControlActive "Type of VDC control while VDC is actuating";
+CM_ SG_ 328 DI_treadDepthAlertSet "Drive inverter: tread depth alert set";
+CM_ BO_ 1861 "Drive inverter message: chassis control2";
+CM_ SG_ 1861 DI_gradeAngle "Reports the grade angle.";
+CM_ SG_ 1861 DI_bankAngle "Reports the bank angle.";
+CM_ SG_ 1861 DI_chassisControlVideoRequest "Drive inverter: chassis control video request";
+CM_ SG_ 1861 DI_tireUtilizationRatioFrL "Drive inverter: tire utilization ratio fr l";
+CM_ SG_ 1861 DI_tireUtilizationRatioFrR "Drive inverter: tire utilization ratio fr r";
+CM_ SG_ 1861 DI_tireUtilizationRatioReL "Drive inverter: tire utilization ratio re l";
+CM_ SG_ 1861 DI_tireUtilizationRatioReR "Drive inverter: tire utilization ratio re r";
+CM_ SG_ 1861 DI_counterSteerTarget "Drive inverter: counter steer target";
+CM_ SG_ 1861 DI_splitMuProbability "Drive inverter: split mu probability";
+CM_ SG_ 1861 DI_mzError "Drive inverter: mz error";
+CM_ SG_ 1861 DI_slipDifferenceFrontRear "Drive inverter: slip difference front rear";
+CM_ SG_ 1861 DI_highFreqYawRate "Drive inverter: high freq yaw rate";
+CM_ SG_ 1861 DI_turnDirection "Drive inverter: turn direction";
+CM_ SG_ 1861 DI_absolutePreControlRequest "Drive inverter: absolute pre control request";
+CM_ SG_ 1861 DI_oppositeBuildDirFrontAxle "Drive inverter: opposite build dir front axle";
+CM_ SG_ 1861 DI_oppositeBuildDirRearAxle "Drive inverter: opposite build dir rear axle";
+CM_ SG_ 1861 DI_saturatedEffectiveness "Drive inverter: saturated effectiveness";
+CM_ SG_ 1861 DI_driverPanicIndex "Drive inverter: driver panic index";
+CM_ SG_ 1861 DI_learnDownMu "Drive inverter: learn down mu";
+CM_ SG_ 1861 DI_preControlOpposingTurnDir "Drive inverter: pre control opposing turn dir";
+CM_ SG_ 1861 DI_driverFxError "Drive inverter: driver fx error";
+CM_ SG_ 1861 DI_targetSaturation "Drive inverter: target saturation";
+CM_ BO_ 1869 "Drive inverter message: chassis control3";
+CM_ SG_ 1869 DI_tireWearFactor_FrL "Drive inverter: tire wear factor fr l";
+CM_ SG_ 1869 DI_tireWearFactor_FrR "Drive inverter: tire wear factor fr r";
+CM_ SG_ 1869 DI_tireWearFactor_ReL "Drive inverter: tire wear factor re l";
+CM_ SG_ 1869 DI_tireWearFactor_ReR "Drive inverter: tire wear factor re r";
+CM_ SG_ 1869 DI_kTireEstReUnSat "Drive inverter: k tire est re un sat; raw 127 = signal not available (SNA)";
+CM_ SG_ 1869 DI_tireConfigSaved "Drive inverter: tire config saved";
+CM_ SG_ 1869 DI_distanceSinceLastTireConfig "distance since odometer reading when Tire Configuration was last run; raw 63 = signal not available (SNA)";
+CM_ SG_ 1869 DI_hydroplaningRisk "Drive inverter: hydroplaning risk";
+CM_ SG_ 1869 DI_hydroplaningPuddlesWet "Drive inverter: hydroplaning puddles wet";
+CM_ SG_ 1869 DI_hydroplaningPuddlesDry "Drive inverter: hydroplaning puddles dry";
+CM_ SG_ 1869 DI_vehicleStuck "Drive inverter: vehicle stuck";
+CM_ SG_ 1869 DI_kTireEstRe "Drive inverter: k tire est re; raw 31 = signal not available (SNA)";
+CM_ SG_ 1869 DI_stickyMu "Drive inverter: sticky mu";
+CM_ SG_ 1869 DI_stickyMuConfidence "Drive inverter: sticky mu confidence";
+CM_ BO_ 646 "Drive inverter message: loc status";
+CM_ SG_ 646 DI_locStatusChecksum "Drive inverter: loc status checksum";
+CM_ SG_ 646 DI_locStatusCounter "Drive inverter: loc status counter";
+CM_ SG_ 646 DI_cruiseState "Cruise control state.";
+CM_ SG_ 646 DI_cruiseSetSpeed "Cruise control set point.";
+CM_ SG_ 646 DI_cruiseSetSpeedUnits "Drive inverter: cruise set speed units";
+CM_ SG_ 646 DI_autoparkState "Drive inverter: autopark state; raw 15 = signal not available (SNA)";
+CM_ SG_ 646 DI_parkBrakeState "DI Park Brake control and EPB interface state.; raw 15 = signal not available (SNA)";
+CM_ SG_ 646 DI_aebState "Reports the Automatic Emergency Braking (AEB) state.; raw 7 = signal not available (SNA)";
+CM_ SG_ 646 DI_loncDeactivationReason "Drive inverter: lonc deactivation reason";
+CM_ SG_ 646 DI_vehicleHoldState "Vehicle hold state.";
+CM_ SG_ 646 DI_summonInPanic "Drive inverter: summon in panic";
+CM_ SG_ 646 DI_onePedalDrivingState "One Pedal Driving State machine state";
+CM_ SG_ 646 DI_brakeStandActive "Detects active brake stand.";
+CM_ SG_ 646 DI_regenBackfillState "Regen backfill state";
+CM_ SG_ 646 DI_cruiseNotAvailableReason "Drive inverter: cruise not available reason; raw 20 = signal not available (SNA)";
+CM_ SG_ 646 DI_cruiseFaultReason "Cruise control fault reason; raw 17 = signal not available (SNA)";
+CM_ SG_ 646 DI_cruiseCancelReason "Cruise control cancel reason";
+CM_ BO_ 1270 "Drive inverter message: loc status2";
+CM_ SG_ 1270 DI_locStatus2Checksum "Drive inverter: loc status2 checksum";
+CM_ SG_ 1270 DI_locStatus2Counter "Drive inverter: loc status2 counter";
+CM_ SG_ 1270 DI_doublePedalState "Drive inverter: double pedal state";
+CM_ SG_ 1270 DI_autopilotRequest "Drive inverter: autopilot request";
+CM_ SG_ 1270 DI_rollPreventionState "Drive inverter: roll prevention state";
+CM_ SG_ 1270 DI_locIntegratorSaturated "Drive inverter: loc integrator saturated";
+CM_ SG_ 1270 DI_temporaryOpdActiveAfterLoncCa "Drive inverter: temporary opd active after lonc cancel";
+CM_ SG_ 1270 DI_reapplyOnParkRequest "Drive inverter: reapply on park request";
+CM_ SG_ 1270 DI_regenBlendingState "Drive inverter: regen blending state";
+CM_ SG_ 1270 DI_brakeCpScale "Drive inverter: brake cp scale";
+CM_ SG_ 1270 DI_rollbackDistance "Maximum vehicle rollback distance in current stopping event when OPD/Cruise is active";
+CM_ SG_ 1270 DI_lowMuProbabilityConfidence "Drive inverter: low mu probability confidence";
+CM_ SG_ 1270 DI_pedalAssistCurveSelectForSX "Drive inverter: pedal assist curve select for SX";
+CM_ SG_ 1270 DI_longitudinalControlStack "Drive inverter: longitudinal control stack; raw 0 = signal not available (SNA)";
+CM_ BO_ 822 "Drive inverter message: max rated power";
+CM_ SG_ 822 DI_sysDrivePowerRated "Drive inverter: sys drive power rated; raw 511 = signal not available (SNA)";
+CM_ SG_ 822 DI_obdDriveCycleStatus "OBD qualified drive cycle status";
+CM_ SG_ 822 DI_sysRegenPowerRated "Drive inverter: sys regen power rated; raw 255 = signal not available (SNA)";
+CM_ BO_ 599 "Drive inverter message: speed";
+CM_ SG_ 599 DI_speedChecksum "Drive inverter: speed checksum";
+CM_ SG_ 599 DI_speedCounter "Drive inverter: speed counter";
+CM_ SG_ 599 DI_uiSpeed "Drive inverter: ui speed; raw 511 = signal not available (SNA)";
+CM_ SG_ 599 DI_uiSpeedUnits "Drive inverter: ui speed units";
+CM_ SG_ 599 DI_accelPedalPressed "TRUE when the calibrated accel pedal position > 0.0";
+CM_ SG_ 599 DI_sideslipEstimate "Drive inverter: sideslip estimate";
+CM_ SG_ 599 DI_vehicleSpeed "Reports vehicle speed.; raw 8191 = signal not available (SNA)";
+CM_ SG_ 599 DI_velocityEstimatorState "Drive inverter: velocity estimator state";
+CM_ SG_ 599 DI_autoEnableHazards "Drive inverter: auto enable hazards";
+CM_ SG_ 599 DI_longControlCommandActive "Drive inverter: long control command active";
+CM_ BO_ 600 "Drive inverter message: stalkless interfaces";
+CM_ SG_ 600 DI_stalklessInterfacesChecksum "Drive inverter: stalkless interfaces checksum";
+CM_ SG_ 600 DI_stalklessInterfacesCounter "Drive inverter: stalkless interfaces counter";
+CM_ SG_ 600 DI_smartShiftClosureOpen "Drive inverter: smart shift closure open";
+CM_ SG_ 600 DI_smartShiftSeatbeltUnbuckled "Drive inverter: smart shift seatbelt unbuckled";
+CM_ SG_ 600 DI_smartShiftAvailable "Drive inverter: smart shift available";
+CM_ SG_ 600 DI_smartShiftPrimed "Drive inverter: smart shift primed";
+CM_ SG_ 600 DI_smartShiftBrakePressed "Drive inverter: smart shift brake pressed";
+CM_ SG_ 600 DI_smartShiftBrakeReapplyRequire "Drive inverter: smart shift brake reapply required";
+CM_ BO_ 597 "Drive inverter message: suggested gear";
+CM_ SG_ 597 DI_lastQualifiedGear "Drive inverter: last qualified gear; raw 7 = signal not available (SNA)";
+CM_ SG_ 597 DI_lastDrivingGear "Drive inverter: last driving gear; raw 7 = signal not available (SNA)";
+CM_ SG_ 597 DI_distDrivenInGear "Drive inverter: dist driven in gear";
+CM_ SG_ 597 DI_frontBlocked "Drive inverter: front blocked";
+CM_ SG_ 597 DI_rearBlocked "Drive inverter: rear blocked";
+CM_ SG_ 597 DI_firstShiftOccurred "Drive inverter: first shift occurred";
+CM_ SG_ 597 DI_suggestedGearReason "Reason for the suggested gear";
+CM_ SG_ 597 DI_parallelParked "Drive inverter: parallel parked";
+CM_ SG_ 597 DI_smartShiftGear "Gear vehicle will shift into if smart shift occurs";
+CM_ SG_ 597 DI_smartShiftUnavailableReason "Reports the reason why Smart Shift is unavailable.; raw 0 = signal not available (SNA)";
+CM_ BO_ 282 "Drive inverter message: vdc right";
+CM_ SG_ 282 DI_vdcRightChecksum "Drive inverter: vdc right checksum";
+CM_ SG_ 282 DI_vdcRightCounter "Drive inverter: vdc right counter";
+CM_ SG_ 282 DI_vdcCommandTypeFrR "Drive inverter: vdc command type fr r";
+CM_ SG_ 282 DI_vdcCommandTypeReR "Drive inverter: vdc command type re r";
+CM_ SG_ 282 DI_vdcCommandABSFrR "Drive inverter: vdc command ABS fr r";
+CM_ SG_ 282 DI_vdcCommandABSReR "Drive inverter: vdc command ABS re r";
+CM_ SG_ 282 DI_brakeTorqueTarFrR "Drive inverter: brake torque tar fr r";
+CM_ SG_ 282 DI_brakeTorqueTarReR "Drive inverter: brake torque tar re r";
+CM_ SG_ 282 DI_wheelSlipLimitFrR "Drive inverter: wheel slip limit fr r";
+CM_ SG_ 282 DI_wheelSlipLimitReR "Drive inverter: wheel slip limit re r";
+CM_ SG_ 282 DI_rawLowMuProbability "Drive inverter: raw low mu probability";
+CM_ BO_ 615 "Drive inverter message: vehicle estimates";
+CM_ SG_ 615 DI_mass "Detects learned mass.";
+CM_ SG_ 615 DI_massRLS "Drive inverter: mass RLS";
+CM_ SG_ 615 DI_trailerDetected "Drive inverter: trailer detected";
+CM_ SG_ 615 DI_vehicleEstimatesCounter "Drive inverter: vehicle estimates counter";
+CM_ SG_ 615 DI_relativeTireTreadDepth "Reports estimate of tire wear ratio, represented in estimated tread depth difference between front and rear tires. A positive value indicates the rear tires are more worn than the front tires.; raw 32 = signal not available (SNA)";
+CM_ SG_ 615 DI_tireFitment "Drive inverter: tire fitment; raw 3 = signal not available (SNA)";
+CM_ SG_ 615 DI_rollCoeff "Drive inverter: roll coeff";
+CM_ SG_ 615 DI_massConfidence "Drive inverter: mass confidence";
+CM_ SG_ 615 DI_gradeEst "Grade estimate reported by the drive inverter.";
+CM_ SG_ 615 DI_vehicleEstimatesChecksum "Drive inverter: vehicle estimates checksum";
+CM_ SG_ 615 DI_gradeEstInternal "Drive inverter: grade est internal";
+CM_ SG_ 615 DI_massConfidenceRLS "Drive inverter: mass confidence RLS";
+CM_ SG_ 615 DI_steeringAngleOffset "Steering angle offset learned by vehicle dynamics control (VDC) represented as a hand wheel angle";
+CM_ BO_ 977 "Electric power steering (primary) message: angle calibration";
+CM_ SG_ 977 EPAS3P_appliedAngleOffset "This represents the angle delta between the absolute steering angle reference and what EPAS estimates to be straight ahead. The steering angle offset can change up to 5deg at the beginning of each drive cycle.";
+CM_ SG_ 977 EPAS3P_calculatedAngleOffset "Reports the calculated steering angle offset learned between the Steering Column Control Module (SCCM) and the Electronic Power Assist Steering (EPAS) steering angle.";
+CM_ SG_ 977 EPAS3P_resyncStatus "Electric power steering (primary): resync status";
+CM_ SG_ 977 EPAS3P_pullDriftLongTermTrq "The learned, long term pull drift or road crown compensation torque that the rack is applying to the steering wheel.";
+CM_ SG_ 977 EPAS3P_pullDriftCompTrq "The current pull drift or road crown compensation torque that the rack is applying to the steering wheel.";
+CM_ SG_ 977 EPAS3P_learnedSCCMOffset "Electric power steering (primary): learned SCCM offset";
+CM_ BO_ 817 "Electric power steering (primary) message: info";
+CM_ SG_ 817 EPAS3P_infoIndex "Electric power steering (primary): info index";
+CM_ SG_ 817 EPAS3P_infoBuildType "Electric power steering (primary): info build type";
+CM_ SG_ 817 EPAS3P_infoComponentID "Electric power steering (primary): info component ID";
+CM_ SG_ 817 EPAS3P_infoPcbaID "Electric power steering (primary): info pcba ID";
+CM_ SG_ 817 EPAS3P_infoAssemblyID "Electric power steering (primary): info assembly ID";
+CM_ SG_ 817 EPAS3P_infoUsageID "Electric power steering (primary): info usage ID";
+CM_ SG_ 817 EPAS3P_infoApplicationCRC "Electric power steering (primary): info application CRC";
+CM_ SG_ 817 EPAS3P_infoBootUdsProtoVersion "Electric power steering (primary): info boot uds proto version";
+CM_ SG_ 817 EPAS3P_infoBootloaderCRC "Electric power steering (primary): info bootloader CRC";
+CM_ SG_ 817 EPAS3P_infoSubcomponent2 "Electric power steering (primary): info subcomponent2";
+CM_ BO_ 880 "Electric power steering (primary) message: sys status";
+CM_ SG_ 880 EPAS3P_steeringRackForce "The real time, estimated force applied by the steering rack to the tie rods.; raw 1023 = signal not available (SNA)";
+CM_ SG_ 880 EPAS3P_steeringFault "Electric power steering (primary): steering fault";
+CM_ SG_ 880 EPAS3P_steeringReduced "Electric power steering (primary): steering reduced";
+CM_ SG_ 880 EPAS3P_internalSASQF "This signal identifies the validity of the EPAS3P_internalSAS signal.";
+CM_ SG_ 880 EPAS3P_currentTuneMode "Electric power steering (primary): current tune mode";
+CM_ SG_ 880 EPAS3P_torsionBarTorque "The measurement of the steering wheel torque input. If the value is positive the steering wheel torque is applied in the clockwise direction.; raw 4095 = signal not available (SNA)";
+CM_ SG_ 880 EPAS3P_eacErrorCode "Electric power steering (primary): eac error code; raw 15 = signal not available (SNA)";
+CM_ SG_ 880 EPAS3P_internalSAS "The measurement of the steering wheel angle that is calculated by electronic power steering assist steering. Clockwise positive.";
+CM_ SG_ 880 EPAS3P_handsOnLevel "Electric power steering (primary): hands on level";
+CM_ SG_ 880 EPAS3P_sysStatusCounter "Electric power steering (primary): sys status counter";
+CM_ SG_ 880 EPAS3P_tireIDActive "Electric power steering (primary): tire ID active";
+CM_ SG_ 880 EPAS3P_eacStatus "Electric power steering (primary): eac status";
+CM_ SG_ 880 EPAS3P_sysStatusChecksum "Electric power steering (primary): sys status checksum";
+CM_ BO_ 909 "Electronic stability control message: party3";
+CM_ SG_ 909 ESP_party3Crc "Electronic stability control: party3 crc";
+CM_ SG_ 909 ESP_party3Counter "Electronic stability control: party3 counter";
+CM_ SG_ 909 ESP_absActive "Electronic stability control: abs active";
+CM_ SG_ 909 ESP_vehicleStandstill "Indicates that the vehicle is completely stationary.";
+CM_ SG_ 909 ESP_vehicleStandstillQF "Qualifier of ESP_vehicleStandstill.";
+CM_ SG_ 909 ESP_pEstMaximum "Maximum of estimated wheel braking pressure.";
+CM_ SG_ 909 ESP_privateVehicleSpd "Vehicle speed as calculated by the ESP from the wheel speed sensors.";
+CM_ SG_ 909 ESP_decoupledBrakePressOffsetCom "Master cylinder pressure sensor offset; raw 127 = signal not available (SNA)";
+CM_ SG_ 909 ESP_privateVehicleSpdQF "ESP private vehicle speed qualifier";
+CM_ SG_ 909 ESP_brakeMasterCylPress "Master cylinder pressure measured in the ESP.; raw 1023 = signal not available (SNA)";
+CM_ SG_ 909 ESP_brakeMasterCylPressQF "Reports the brake master cylinder pressure signal (ESP_brakeMasterCylPress) qualification status.";
+CM_ BO_ 325 "Electronic stability control message: status";
+CM_ SG_ 325 ESP_statusChecksum "Electronic stability control: status checksum";
+CM_ SG_ 325 ESP_statusCounter "Electronic stability control: status counter";
+CM_ SG_ 325 ESP_espModeActive "Electronic stability control: esp mode active";
+CM_ SG_ 325 ESP_stabilityControlSts2 "Electronic stability control: stability control sts2";
+CM_ SG_ 325 ESP_ebdFaultLamp "Electronic stability control: ebd fault lamp";
+CM_ SG_ 325 ESP_absFaultLamp "ESP request to display ABS Fault Lamp.";
+CM_ SG_ 325 ESP_espFaultLamp "ESP request to display ESP Fault lamp in instrument cluster.";
+CM_ SG_ 325 ESP_hydraulicBoostEnabled "Electronic stability control: hydraulic boost enabled";
+CM_ SG_ 325 ESP_espLampFlash "Electronic stability control: esp lamp flash";
+CM_ SG_ 325 ESP_brakeLamp "Electronic stability control: brake lamp";
+CM_ SG_ 325 ESP_absBrakeEvent2 "Indicates if ABS is active and on which axle.";
+CM_ SG_ 325 ESP_longitudinalAccelQF "Longitudinal accel sensor quialifier from ESP";
+CM_ SG_ 325 ESP_lateralAccelQF "Lateral accel sensor quialifier from ESP";
+CM_ SG_ 325 ESP_yawRateQF "Electronic stability control: yaw rate QF";
+CM_ SG_ 325 ESP_steeringAngleQF "Electronic stability control: steering angle QF";
+CM_ SG_ 325 ESP_brakeDiscWipingActive "Indicates when brake disc wiping is active.";
+CM_ SG_ 325 ESP_driverBrakeApply "Indicates when the driver applies the brake pedal.; raw 3 = signal not available (SNA)";
+CM_ SG_ 325 ESP_brakeApply "Electronic stability control: brake apply";
+CM_ SG_ 325 ESP_aesPrimaryActuatorStatus "Electronic stability control: aes primary actuator status";
+CM_ SG_ 325 ESP_cdpStatus "Indicates the state of the ESP to perform pressure builds through ESP for dynamic apply";
+CM_ SG_ 325 ESP_ptcTargetState "Electronic stability control: ptc target state; raw 3 = signal not available (SNA)";
+CM_ SG_ 325 ESP_btcTargetState "Electronic stability control: btc target state; raw 3 = signal not available (SNA)";
+CM_ SG_ 325 ESP_decoupledBrakePressEst "Reports the master cylinder pressure estimated by the Electronic Stability Program (ESP) which includes four wheel ESP active pressure builds; raw 255 = signal not available (SNA)";
+CM_ SG_ 325 ESP_ebrStandstillSkid "Electronic stability control: ebr standstill skid";
+CM_ SG_ 325 ESP_ebrStatus "Electronic stability control: ebr status";
+CM_ SG_ 325 ESP_brakeTorqueTarget "Electronic stability control: brake torque target";
+CM_ BO_ 925 "Electric brake booster message: status";
+CM_ SG_ 925 IBST_statusChecksum "Electric brake booster: status checksum";
+CM_ SG_ 925 IBST_statusCounter "Electric brake booster: status counter";
+CM_ SG_ 925 IBST_iBoosterStatus "Indication of iBooster functional state";
+CM_ SG_ 925 IBST_driverBrakeApply "Indicates when the driver applies the brake pedal.";
+CM_ SG_ 925 IBST_internalState "Indication of iBooster internal state";
+CM_ SG_ 925 IBST_sInputRodDriver "IBST estimated input rod stroke";
+CM_ SG_ 925 IBST_LVPowerModeState "Electric brake booster: LV power mode state";
+CM_ BO_ 1316 "PMF ECU message: mfg data";
+CM_ SG_ 1316 PMF_processorDieIdLot "PMF ECU: processor die id lot";
+CM_ SG_ 1316 PMF_processorDieIdWafer "PMF ECU: processor die id wafer";
+CM_ SG_ 1316 PMF_processorDieIdX "PMF ECU: processor die id x";
+CM_ SG_ 1316 PMF_processorDieIdY "PMF ECU: processor die id y";
+CM_ BO_ 1364 "PMR ECU message: mfg data";
+CM_ SG_ 1364 PMR_processorDieIdLot "PMR ECU: processor die id lot";
+CM_ SG_ 1364 PMR_processorDieIdWafer "PMR ECU: processor die id wafer";
+CM_ SG_ 1364 PMR_processorDieIdX "PMR ECU: processor die id x";
+CM_ SG_ 1364 PMR_processorDieIdY "PMR ECU: processor die id y";
+CM_ BO_ 2038 "PM ECU message: vdc debug";
+CM_ SG_ 2038 PM_vdcDebugSelector "PM ECU: vdc debug selector";
+CM_ SG_ 2038 PM_VDCA_TCSlipTargetMod_RA_Fwd "PM ECU: VDCA TC slip target mod RA fwd";
+CM_ SG_ 2038 PM_VDCA_TCSlipTargetMod_RA_Rwd "PM ECU: VDCA TC slip target mod RA rwd";
+CM_ SG_ 2038 PM_VSE_forceY_RA "PM ECU: VSE force y RA";
+CM_ SG_ 2038 PM_VDCT_observerSlipAngle_RA "PM ECU: VDCT observer slip angle RA";
+CM_ SG_ 2038 PM_VSE_muVehicleFxLow "PM ECU: VSE mu vehicle fx low";
+CM_ SG_ 2038 PM_VE_fxmFres "PM ECU: VE fxm fres";
+CM_ SG_ 2038 PM_VE_fxAccelMass "PM ECU: VE fx accel mass";
+CM_ SG_ 2038 PM_VE_vxDotGrade "PM ECU: VE vx dot grade";
+CM_ SG_ 2038 PM_VE_betaEst "PM ECU: VE beta est";
+CM_ SG_ 2038 PM_VSE_muVehicleFxHigh "PM ECU: VSE mu vehicle fx high";
+CM_ SG_ 2038 PM_VSE_muVehicleDecLeakRate "PM ECU: VSE mu vehicle dec leak rate";
+CM_ SG_ 2038 PM_VSE_muVehicleLearnDown "PM ECU: VSE mu vehicle learn down";
+CM_ SG_ 2038 PM_VSE_muVehicleDecFilter "PM ECU: VSE mu vehicle dec filter";
+CM_ SG_ 2038 PM_VSE_muVehicleLatDecLeakRate "PM ECU: VSE mu vehicle lat dec leak rate";
+CM_ SG_ 2038 PM_VSE_splitMuProbability "PM ECU: VSE split mu probability";
+CM_ SG_ 2038 PM_VSE_splitMuTotalMz "PM ECU: VSE split mu total mz";
+CM_ SG_ 2038 PM_VSE_attitudeBankAngle "PM ECU: VSE attitude bank angle";
+CM_ SG_ 2038 PM_VSE_attitudeDBetaInControl "PM ECU: VSE attitude d beta in control";
+CM_ SG_ 2038 PM_VSE_roadWheelAngleAverage "PM ECU: VSE road wheel angle average";
+CM_ BO_ 17 "Restraint control module message: collision";
+CM_ SG_ 17 RCM_collisionChecksum "Restraint control module: collision checksum";
+CM_ SG_ 17 RCM_collisionCounter "Restraint control module: collision counter";
+CM_ SG_ 17 RCM_collisionRear "Indicates that a rear collision occurred; raw 3 = signal not available (SNA)";
+CM_ SG_ 17 RCM_collisionRight "Indicates that a right side collision occurred; raw 3 = signal not available (SNA)";
+CM_ SG_ 17 RCM_collisionLeft "Indicates that a left side collision occurred; raw 3 = signal not available (SNA)";
+CM_ SG_ 17 RCM_collisionFront "Indicates that a frontal collision occurred; raw 3 = signal not available (SNA)";
+CM_ SG_ 17 RCM_collisionRollover "Indicates that a rollover has occurred; raw 3 = signal not available (SNA)";
+CM_ SG_ 17 RCM_collisionPedPro "Indicates that a pedestrian impact has occurred; raw 3 = signal not available (SNA)";
+CM_ SG_ 17 RCM_collisionSeverity "Collision severity";
+CM_ BO_ 289 "Restraint control module message: near deploy";
+CM_ SG_ 289 RCM_nearDeployChecksum "Restraint control module: near deploy checksum";
+CM_ SG_ 289 RCM_nearDeployCounter "Restraint control module: near deploy counter";
+CM_ SG_ 289 RCM_nearDeployRear "Indicates that a rear near deploy event has occurred. No airbags have been deployed.; raw 3 = signal not available (SNA)";
+CM_ SG_ 289 RCM_nearDeployRight "Indicates that a right side near deploy event has occurred. No airbags have been deployed.; raw 3 = signal not available (SNA)";
+CM_ SG_ 289 RCM_nearDeployLeft "Indicates that a left side near deploy event has occurred. No airbags have been deployed.; raw 3 = signal not available (SNA)";
+CM_ SG_ 289 RCM_nearDeployFront "Indicates that a frontal near deploy event has occurred. No airbags have been deployed.; raw 3 = signal not available (SNA)";
+CM_ SG_ 289 RCM_nearDeployRollover "Indicates that a roll over near deploy event has occurred. No airbags have been deployed.; raw 3 = signal not available (SNA)";
+CM_ SG_ 289 RCM_crashAlgoWakeup "Crash Algorithm Wakeup status; raw 3 = signal not available (SNA)";
+CM_ BO_ 260 "Front body controller message: party debug";
+CM_ SG_ 260 VCFRONT_vcleftHighPower "Front body controller: vcleft high power";
+CM_ SG_ 260 VCFRONT_vcrightHighPower "Front body controller: vcright high power";
+CM_ SG_ 260 VCFRONT_uiHighPower "Front body controller: ui high power";
+CM_ SG_ 260 VCFRONT_5VAStable "Front body controller: 5 VA stable";
+CM_ SG_ 260 VCFRONT_5VBStable "Front body controller: 5 VB stable";
+CM_ SG_ 260 VCFRONT_12VAStable "Front body controller: 12 VA stable";
+CM_ SG_ 260 VCFRONT_12VBStable "Front body controller: 12 VB stable";
+CM_ SG_ 260 VCFRONT_railA "Front body controller: rail a";
+CM_ SG_ 260 VCFRONT_railB "Front body controller: rail b";
+CM_ SG_ 260 VCFRONT_chargePumpStable "Front body controller: charge pump stable";
+CM_ SG_ 260 VCFRONT_vehicleSM "Vehicle state machine state; raw 18 = signal not available (SNA)";
+CM_ SG_ 260 VCFRONT_revBattFault "Front body controller: rev batt fault";
+CM_ SG_ 260 VCFRONT_battSM "Front body controller: batt SM";
+CM_ SG_ 260 VCFRONT_U13Init "Front body controller: U13 init";
+CM_ SG_ 260 VCFRONT_U16Init "Front body controller: U16 init";
+CM_ SG_ 260 VCFRONT_anyVehLoadShedActiveDBG "Front body controller: any veh load shed active DBG";
+CM_ SG_ 260 VCFRONT_battVoltage "Front body controller: batt voltage";
+CM_ SG_ 260 VCFRONT_battCurrent "Front body controller: batt current";
+CM_ BO_ 258 "Left body controller message: door status";
+CM_ SG_ 258 VCLEFT_doorClosureStatusFront "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_doorClosureStatusRear "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_frontLatchSwitch "State of front left door latch switch representing door open/closed. 0 is open and 1 is closed";
+CM_ SG_ 258 VCLEFT_rearLatchSwitch "State of rear left door latch switch representing door open/closed. 0 is open and 1 is closed";
+CM_ SG_ 258 VCLEFT_frontHandlePulled "Left body controller: front handle pulled";
+CM_ SG_ 258 VCLEFT_rearHandlePulled "Left body controller: rear handle pulled";
+CM_ SG_ 258 VCLEFT_frontRelActuatorSwitch "State of front left door latch switch representing latch arm/unarmed. Disarms while door handle is pulled.";
+CM_ SG_ 258 VCLEFT_rearRelActuatorSwitch "State of rear left door latch switch representing latch arm/unarmed. Disarms while door handle is pulled";
+CM_ SG_ 258 VCLEFT_frontLatchStatus "Status of left front door latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_rearLatchStatus "Status of rear left door latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_lastDoorReqSourceFront "last source of front door open request";
+CM_ SG_ 258 VCLEFT_lastDoorReqSourceRear "last source of rear door open request";
+CM_ SG_ 258 VCLEFT_frontIntSwitchPressed "Left body controller: front int switch pressed";
+CM_ SG_ 258 VCLEFT_rearIntSwitchPressed "Left body controller: rear int switch pressed";
+CM_ SG_ 258 VCLEFT_mirrorTiltXPosition "Value representing left side view mirror tilt horizontal position";
+CM_ SG_ 258 VCLEFT_mirrorTiltYPosition "Value representing left side view mirror tilt vertical position";
+CM_ SG_ 258 VCLEFT_mirrorState "State of the left side view mirror.";
+CM_ SG_ 258 VCLEFT_mirrorFoldState "Fold state for the left side view mirror";
+CM_ SG_ 258 VCLEFT_mirrorRecallState "State of Mirror Recall.";
+CM_ SG_ 258 VCLEFT_mirrorHeatState "Left body controller: mirror heat state; raw 0 = signal not available (SNA)";
+CM_ SG_ 258 VCLEFT_rearHandlePulledPersist "Left body controller: rear handle pulled persist";
+CM_ SG_ 258 VCLEFT_frontHandlePulledPersist "Left body controller: front handle pulled persist";
+CM_ SG_ 258 VCLEFT_mirrorDipped "Reports if the side view mirrors in are in the dipped position.";
+CM_ BO_ 546 "Left body controller message: epbm status";
+CM_ SG_ 546 VCLEFT_cdpRequestState "If the Electronic Parking Brake makes a Controlled Deceleration for Parking Brake request, when cdpOkayToRequest is EPB_CDP_REQUEST_INVALID, cdpRequestState shall transition to EPB_CDP_REQUEST_INVALID, untill the Electronic Parking Brake Monitor enters unitStatus PARKED. Stability Control listens to this signal to qualify Controlled Deceleration for Parking Brake requests from the Electronic Parking Brake.";
+CM_ SG_ 546 VCLEFT_epbmSystemStatusQF "Left body controller: epbm system status QF";
+CM_ SG_ 546 VCLEFT_epbmUnitStatus "Electronic Parking Brake Monitors state.";
+CM_ SG_ 546 VCLEFT_epbmCdpState "Left body controller: epbm cdp state";
+CM_ SG_ 546 VCLEFT_epbmStatusCounter "Left body controller: epbm status counter";
+CM_ SG_ 546 VCLEFT_epbmStatusChecksum "Left body controller: epbm status checksum";
+CM_ BO_ 778 "Left body controller message: restraint status";
+CM_ SG_ 778 VCLEFT_frontOccupancyStatus "Left body controller: front occupancy status; raw 7 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_frontBuckleStatus "Status of front left seatbelt buckle; raw 3 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_rearLeftOccupancyStatus "Status of rear left seat occupancy sensor; raw 3 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_rearCenterOccupancyStatus "Status of rear center seat occupancy sensor; raw 3 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_rearRightOccupancyStatus "Status of rear right seat occupancy sensor; raw 3 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_rearLeftBuckleStatus "Status of rear left seatbelt buckle; raw 3 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_rearCenterBuckleStatus "Status of rear center seatbelt buckle; raw 3 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_seatTrackPosition "Status of seat track position sensor; raw 7 = signal not available (SNA)";
+CM_ SG_ 778 VCLEFT_restraintStatusCounter "Left body controller: restraint status counter";
+CM_ SG_ 778 VCLEFT_restraintStatusChecksum "Left body controller: restraint status checksum";
+CM_ BO_ 259 "Right body controller message: door status";
+CM_ SG_ 259 VCRIGHT_doorClosureStatusFront "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
+CM_ SG_ 259 VCRIGHT_doorClosureStatusRear "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
+CM_ SG_ 259 VCRIGHT_frontLatchSwitch "State of front left door latch switch representing door open/closed. 0 is open and 1 is closed";
+CM_ SG_ 259 VCRIGHT_rearLatchSwitch "State of rear right door latch switch representing door open/closed. 0 is open and 1 is closed";
+CM_ SG_ 259 VCRIGHT_frontHandlePulled "Right body controller: front handle pulled";
+CM_ SG_ 259 VCRIGHT_rearHandlePulled "Right body controller: rear handle pulled";
+CM_ SG_ 259 VCRIGHT_frontRelActuatorSwitch "State of front left door latch switch representing latch arm/unarmed. Disarms while door handle is pulled.";
+CM_ SG_ 259 VCRIGHT_rearRelActuatorSwitch "State of rear right door latch switch representing latch arm/unarmed. Disarms while door handle is pulled";
+CM_ SG_ 259 VCRIGHT_frontLatchStatus "Status of right front door latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 259 VCRIGHT_rearLatchStatus "Status of rear right door latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 259 VCRIGHT_lastDoorReqSourceFront "last source of front door open request";
+CM_ SG_ 259 VCRIGHT_lastDoorReqSourceRear "last source of rear door open request";
+CM_ SG_ 259 VCRIGHT_frontHandlePulledPersist "Right body controller: front handle pulled persist";
+CM_ SG_ 259 VCRIGHT_frontIntSwitchPressed "Right body controller: front int switch pressed";
+CM_ SG_ 259 VCRIGHT_rearIntSwitchPressed "Right body controller: rear int switch pressed";
+CM_ SG_ 259 VCRIGHT_mirrorTiltXPosition "Value representing right side view mirror tilt horizontal position";
+CM_ SG_ 259 VCRIGHT_mirrorTiltYPosition "Value representing right side view mirror tilt vertical position";
+CM_ SG_ 259 VCRIGHT_mirrorState "State of the right side view mirror.";
+CM_ SG_ 259 VCRIGHT_mirrorFoldState "Fold state for the right side view mirror";
+CM_ SG_ 259 VCRIGHT_mirrorDipped "Reports if the side view mirrors in are in the dipped position.";
+CM_ SG_ 259 VCRIGHT_trunkLatchStatus "State of the trunk latch; raw 0 = signal not available (SNA)";
+CM_ SG_ 259 VCRIGHT_mirrorRecallState "State of Mirror Recall.";
+CM_ SG_ 259 VCRIGHT_rearHandlePulledPersist "Right body controller: rear handle pulled persist";
+CM_ BO_ 611 "Right body controller message: epbm status";
+CM_ SG_ 611 VCRIGHT_cdpRequestState "If the Electronic Parking Brake makes a Controlled Deceleration for Parking Brake request, when cdpOkayToRequest is EPB_CDP_REQUEST_INVALID, cdpRequestState shall transition to EPB_CDP_REQUEST_INVALID, untill the Electronic Parking Brake Monitor enters unitStatus PARKED. Stability Control listens to this signal to qualify Controlled Deceleration for Parking Brake requests from the Electronic Parking Brake.";
+CM_ SG_ 611 VCRIGHT_epbmSystemStatusQF "Right body controller: epbm system status QF";
+CM_ SG_ 611 VCRIGHT_epbmUnitStatus "Electronic Parking Brake Monitors state.";
+CM_ SG_ 611 VCRIGHT_epbmCdpState "Right body controller: epbm cdp state";
+CM_ SG_ 611 VCRIGHT_epbmStatusCounter "Right body controller: epbm status counter";
+CM_ SG_ 611 VCRIGHT_epbmStatusChecksum "Right body controller: epbm status checksum";
+CM_ BO_ 794 "Right body controller message: restraint status";
+CM_ SG_ 794 VCRIGHT_frontOccupancyStatus "Right body controller: front occupancy status; raw 7 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_frontBuckleStatus "Status of front right seatbelt buckle; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_rearCenterBuckleStatus "Right body controller: rear center buckle status; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_rearRightBuckleStatus "Right body controller: rear right buckle status; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_rearRightOccupancyStatus "Right body controller: rear right occupancy status; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_3RowLeftBuckleStatus "Status of third row left seatbelt buckle; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_3RowRightBuckleStatus "Right body controller: 3 row right buckle status; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_3RowLeftOccupancyStatus "Right body controller: 3 row left occupancy status; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_3RowRightOccupancyStatus "Right body controller: 3 row right occupancy status; raw 3 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_seatTrackPosition "Right body controller: seat track position; raw 7 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_occupantClassification "Right body controller: occupant classification; raw 7 = signal not available (SNA)";
+CM_ SG_ 794 VCRIGHT_occupantClassificationQF "Right body controller: occupant classification QF";
+CM_ SG_ 794 VCRIGHT_classificationEnabled "Indicates whether the RCM should consume VCRIGHT occupant classification rather than another source such as OCS1P";
+CM_ SG_ 794 VCRIGHT_classificationEnabledQF "Indicates whether the VCRIGHT_classificationEnabled signal is valid";
+CM_ SG_ 794 VCRIGHT_restraintStatusCounter "Right body controller: restraint status counter";
+CM_ SG_ 794 VCRIGHT_restraintStatusChecksum "Right body controller: restraint status checksum";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "Model3_BUS1";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2025.20.8";
+BA_ "VehicleModel" "Model 3";
+BA_ "ECU" BU_ DAS "DAS";
+BA_ "ECU" BU_ DI "DI";
+BA_ "ECU" BU_ DIF "DIF";
+BA_ "ECU" BU_ DIR "DIR";
+BA_ "ECU" BU_ EPAS3P "EPAS3P";
+BA_ "ECU" BU_ ESP "ESP";
+BA_ "ECU" BU_ IBST "IBST";
+BA_ "ECU" BU_ PM "PM";
+BA_ "ECU" BU_ PMF "PMF";
+BA_ "ECU" BU_ PMR "PMR";
+BA_ "ECU" BU_ RCM "RCM";
+BA_ "ECU" BU_ VCFRONT "VCFRONT";
+BA_ "ECU" BU_ VCLEFT "VCLEFT";
+BA_ "ECU" BU_ VCRIGHT "VCRIGHT";
+BA_ "GenMsgCycleTime" BO_ 697 40;
+BA_ "GenMsgSendType" BO_ 697 0;
+BA_ "VFrameFormat" BO_ 697 0;
+BA_ "GenMsgCycleTime" BO_ 299 100;
+BA_ "GenMsgSendType" BO_ 299 0;
+BA_ "VFrameFormat" BO_ 299 0;
+BA_ "GenMsgCycleTime" BO_ 1879 100;
+BA_ "GenMsgSendType" BO_ 1879 0;
+BA_ "VFrameFormat" BO_ 1879 0;
+BA_ "GenMsgCycleTime" BO_ 1622 1000;
+BA_ "GenMsgSendType" BO_ 1622 0;
+BA_ "VFrameFormat" BO_ 1622 0;
+BA_ "GenMsgCycleTime" BO_ 421 100;
+BA_ "GenMsgSendType" BO_ 421 0;
+BA_ "VFrameFormat" BO_ 421 0;
+BA_ "GenMsgCycleTime" BO_ 918 100;
+BA_ "GenMsgSendType" BO_ 918 0;
+BA_ "VFrameFormat" BO_ 918 0;
+BA_ "GenMsgCycleTime" BO_ 725 10;
+BA_ "GenMsgSendType" BO_ 725 0;
+BA_ "VFrameFormat" BO_ 725 0;
+BA_ "GenMsgCycleTime" BO_ 390 100;
+BA_ "GenMsgSendType" BO_ 390 0;
+BA_ "VFrameFormat" BO_ 390 0;
+BA_ "GenMsgCycleTime" BO_ 294 100;
+BA_ "GenMsgSendType" BO_ 294 0;
+BA_ "VFrameFormat" BO_ 294 0;
+BA_ "GenMsgCycleTime" BO_ 598 10;
+BA_ "GenMsgSendType" BO_ 598 0;
+BA_ "VFrameFormat" BO_ 598 0;
+BA_ "GenMsgCycleTime" BO_ 264 10;
+BA_ "GenMsgSendType" BO_ 264 0;
+BA_ "VFrameFormat" BO_ 264 0;
+BA_ "GenMsgCycleTime" BO_ 328 20;
+BA_ "GenMsgSendType" BO_ 328 0;
+BA_ "VFrameFormat" BO_ 328 0;
+BA_ "GenMsgCycleTime" BO_ 1861 100;
+BA_ "GenMsgSendType" BO_ 1861 0;
+BA_ "VFrameFormat" BO_ 1861 0;
+BA_ "GenMsgCycleTime" BO_ 1869 1000;
+BA_ "GenMsgSendType" BO_ 1869 0;
+BA_ "VFrameFormat" BO_ 1869 0;
+BA_ "GenMsgCycleTime" BO_ 646 100;
+BA_ "GenMsgSendType" BO_ 646 0;
+BA_ "VFrameFormat" BO_ 646 0;
+BA_ "GenMsgCycleTime" BO_ 1270 100;
+BA_ "GenMsgSendType" BO_ 1270 0;
+BA_ "VFrameFormat" BO_ 1270 0;
+BA_ "GenMsgCycleTime" BO_ 822 1000;
+BA_ "GenMsgSendType" BO_ 822 0;
+BA_ "VFrameFormat" BO_ 822 0;
+BA_ "GenMsgCycleTime" BO_ 599 20;
+BA_ "GenMsgSendType" BO_ 599 0;
+BA_ "VFrameFormat" BO_ 599 0;
+BA_ "GenMsgCycleTime" BO_ 600 100;
+BA_ "GenMsgSendType" BO_ 600 0;
+BA_ "VFrameFormat" BO_ 600 0;
+BA_ "GenMsgCycleTime" BO_ 597 100;
+BA_ "GenMsgSendType" BO_ 597 0;
+BA_ "VFrameFormat" BO_ 597 0;
+BA_ "GenMsgCycleTime" BO_ 282 20;
+BA_ "GenMsgSendType" BO_ 282 0;
+BA_ "VFrameFormat" BO_ 282 0;
+BA_ "GenMsgCycleTime" BO_ 615 1000;
+BA_ "GenMsgSendType" BO_ 615 0;
+BA_ "VFrameFormat" BO_ 615 0;
+BA_ "GenMsgCycleTime" BO_ 977 1000;
+BA_ "GenMsgSendType" BO_ 977 0;
+BA_ "VFrameFormat" BO_ 977 0;
+BA_ "GenMsgCycleTime" BO_ 817 1000;
+BA_ "GenMsgSendType" BO_ 817 0;
+BA_ "VFrameFormat" BO_ 817 0;
+BA_ "GenMsgCycleTime" BO_ 880 10;
+BA_ "GenMsgSendType" BO_ 880 0;
+BA_ "VFrameFormat" BO_ 880 0;
+BA_ "GenMsgCycleTime" BO_ 909 10;
+BA_ "GenMsgSendType" BO_ 909 0;
+BA_ "VFrameFormat" BO_ 909 0;
+BA_ "GenMsgCycleTime" BO_ 325 20;
+BA_ "GenMsgSendType" BO_ 325 0;
+BA_ "VFrameFormat" BO_ 325 0;
+BA_ "GenMsgCycleTime" BO_ 925 40;
+BA_ "GenMsgSendType" BO_ 925 0;
+BA_ "VFrameFormat" BO_ 925 0;
+BA_ "GenMsgCycleTime" BO_ 1316 1000;
+BA_ "GenMsgSendType" BO_ 1316 0;
+BA_ "VFrameFormat" BO_ 1316 0;
+BA_ "GenMsgCycleTime" BO_ 1364 1000;
+BA_ "GenMsgSendType" BO_ 1364 0;
+BA_ "VFrameFormat" BO_ 1364 0;
+BA_ "GenMsgCycleTime" BO_ 2038 20;
+BA_ "GenMsgSendType" BO_ 2038 0;
+BA_ "VFrameFormat" BO_ 2038 0;
+BA_ "GenMsgCycleTime" BO_ 17 10;
+BA_ "GenMsgSendType" BO_ 17 0;
+BA_ "VFrameFormat" BO_ 17 0;
+BA_ "GenMsgCycleTime" BO_ 289 10;
+BA_ "GenMsgSendType" BO_ 289 0;
+BA_ "VFrameFormat" BO_ 289 0;
+BA_ "GenMsgCycleTime" BO_ 260 100;
+BA_ "GenMsgSendType" BO_ 260 0;
+BA_ "VFrameFormat" BO_ 260 0;
+BA_ "GenMsgCycleTime" BO_ 258 100;
+BA_ "GenMsgSendType" BO_ 258 0;
+BA_ "VFrameFormat" BO_ 258 0;
+BA_ "GenMsgCycleTime" BO_ 546 100;
+BA_ "GenMsgSendType" BO_ 546 0;
+BA_ "VFrameFormat" BO_ 546 0;
+BA_ "GenMsgCycleTime" BO_ 778 50;
+BA_ "GenMsgSendType" BO_ 778 0;
+BA_ "VFrameFormat" BO_ 778 0;
+BA_ "GenMsgCycleTime" BO_ 259 100;
+BA_ "GenMsgSendType" BO_ 259 0;
+BA_ "VFrameFormat" BO_ 259 0;
+BA_ "GenMsgCycleTime" BO_ 611 100;
+BA_ "GenMsgSendType" BO_ 611 0;
+BA_ "VFrameFormat" BO_ 611 0;
+BA_ "GenMsgCycleTime" BO_ 794 50;
+BA_ "GenMsgSendType" BO_ 794 0;
+BA_ "VFrameFormat" BO_ 794 0;
+BA_ "Confidence" SG_ 697 DAS_setSpeed 0;
+BA_ "GenSigSNA" SG_ 697 DAS_setSpeed "4095";
+BA_ "Confidence" SG_ 697 DAS_accState 0;
+BA_ "GenSigSNA" SG_ 697 DAS_accState "15";
+BA_ "Confidence" SG_ 697 DAS_aebEvent 0;
+BA_ "GenSigSNA" SG_ 697 DAS_aebEvent "3";
+BA_ "Confidence" SG_ 697 DAS_jerkMin 0;
+BA_ "GenSigSNA" SG_ 697 DAS_jerkMin "511";
+BA_ "Confidence" SG_ 697 DAS_jerkMax 0;
+BA_ "GenSigSNA" SG_ 697 DAS_jerkMax "255";
+BA_ "Confidence" SG_ 697 DAS_accelMin 0;
+BA_ "GenSigSNA" SG_ 697 DAS_accelMin "511";
+BA_ "Confidence" SG_ 697 DAS_accelMax 0;
+BA_ "GenSigSNA" SG_ 697 DAS_accelMax "511";
+BA_ "Confidence" SG_ 697 DAS_controlCounter 0;
+BA_ "Confidence" SG_ 697 DAS_controlChecksum 0;
+BA_ "Confidence" SG_ 299 DAS_smartShiftChecksum 0;
+BA_ "Confidence" SG_ 299 DAS_smartShiftCounter 0;
+BA_ "Confidence" SG_ 299 DAS_smartShiftTorqueDirection 0;
+BA_ "GenSigSNA" SG_ 299 DAS_smartShiftTorqueDirection "0";
+BA_ "Confidence" SG_ 299 DAS_smartShiftTorqueReason 0;
+BA_ "GenSigSNA" SG_ 299 DAS_smartShiftTorqueReason "0";
+BA_ "Confidence" SG_ 299 DAS_autoshiftTorqueDirectionDbg 0;
+BA_ "GenSigSNA" SG_ 299 DAS_autoshiftTorqueDirectionDbg "0";
+BA_ "Confidence" SG_ 299 DAS_autoshiftUpcomingDirection 0;
+BA_ "GenSigSNA" SG_ 299 DAS_autoshiftUpcomingDirection "3";
+BA_ "Confidence" SG_ 299 DAS_autoshiftBrakeRequired 0;
+BA_ "Confidence" SG_ 299 DAS_autoshiftSteerRequest 0;
+BA_ "Confidence" SG_ 1879 DIF_debugSelector 1;
+BA_ "Confidence" SG_ 1879 DIF_phaseOutBusbarTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_phaseOutBusbarTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_phaseOutBusbarWeldTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_phaseOutBusbarWeldTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_phaseOutLugTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_phaseOutLugTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_dcLinkCapTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_dcLinkCapTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_hvDcCableTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_hvDcCableTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_negDcBusbarTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_negDcBusbarTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_posDcBusbarTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_posDcBusbarTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_statorEndWindingTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_statorEndWindingTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_rotorMaxMagnetTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_rotorMaxMagnetTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_lightSenseV 0;
+BA_ "Confidence" SG_ 1879 DIF_pyroSenseV 0;
+BA_ "Confidence" SG_ 1879 DIF_statorSlotWindingTemp 0;
+BA_ "GenSigSNA" SG_ 1879 DIF_statorSlotWindingTemp "0";
+BA_ "Confidence" SG_ 1879 DIF_intervalMaxHvBusV 0;
+BA_ "Confidence" SG_ 1622 DIF_infoIndex 1;
+BA_ "Confidence" SG_ 1622 DIF_buildType 0;
+BA_ "Confidence" SG_ 1622 DIF_buildConfigurationId 0;
+BA_ "Confidence" SG_ 1622 DIF_hardwareId 0;
+BA_ "Confidence" SG_ 1622 DIF_componentId 0;
+BA_ "Confidence" SG_ 1622 DIF_pcbaId 0;
+BA_ "Confidence" SG_ 1622 DIF_assemblyId 0;
+BA_ "Confidence" SG_ 1622 DIF_usageId 0;
+BA_ "Confidence" SG_ 1622 DIF_subUsageId 0;
+BA_ "Confidence" SG_ 1622 DIF_motorType 1;
+BA_ "GenSigSNA" SG_ 1622 DIF_motorType "0";
+BA_ "Confidence" SG_ 1622 DIF_siliconType 0;
+BA_ "Confidence" SG_ 1622 DIF_mechSafeStateType 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_mechSafeStateType "0";
+BA_ "Confidence" SG_ 1622 DIF_applicationCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpBuildType 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpAppCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_FPGA_version 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_FPGA_version "255";
+BA_ "Confidence" SG_ 1622 DIF_appGitHash 0;
+BA_ "Confidence" SG_ 1622 DIF_bootGitHash 0;
+BA_ "Confidence" SG_ 1622 DIF_platformTyp 0;
+BA_ "Confidence" SG_ 1622 DIF_infoBootLdUdsProtocolVersion 0;
+BA_ "Confidence" SG_ 1622 DIF_bootloaderCrc 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpPcbaId 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpAssemblyId 0;
+BA_ "Confidence" SG_ 1622 DIF_oilPumpUsageId 0;
+BA_ "Confidence" SG_ 1622 DIF_refRotorFlux 0;
+BA_ "Confidence" SG_ 1622 DIF_refRotorOffset 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_refRotorOffset "2048";
+BA_ "Confidence" SG_ 1622 DIF_speedWearTotal 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_speedWearTotal "255";
+BA_ "Confidence" SG_ 1622 DIF_torqueWearTotal 0;
+BA_ "GenSigSNA" SG_ 1622 DIF_torqueWearTotal "255";
+BA_ "Confidence" SG_ 421 DIF_motorCurrent 0;
+BA_ "Confidence" SG_ 421 DIF_switchingFrequency 0;
+BA_ "Confidence" SG_ 421 DIF_targetFluxMode 0;
+BA_ "Confidence" SG_ 421 DIF_switchShortTestRetryCount 0;
+BA_ "Confidence" SG_ 918 DIF_oilPumpState 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpState "7";
+BA_ "Confidence" SG_ 918 DIF_oilPumpFluidTQF 0;
+BA_ "Confidence" SG_ 918 DIF_oilPumpLeadAngle 0;
+BA_ "Confidence" SG_ 918 DIF_oilPumpFlowTarget 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpFlowTarget "255";
+BA_ "Confidence" SG_ 918 DIF_oilPumpFlowActual 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpFlowActual "255";
+BA_ "Confidence" SG_ 918 DIF_oilPumpFluidT 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpFluidT "255";
+BA_ "Confidence" SG_ 918 DIF_oilPumpPhaseCurrent 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpPhaseCurrent "255";
+BA_ "Confidence" SG_ 918 DIF_oilPumpPressureEstimate 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpPressureEstimate "255";
+BA_ "Confidence" SG_ 918 DIF_oilPumpPressureExpected 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpPressureExpected "255";
+BA_ "Confidence" SG_ 918 DIF_oilPumpPressureResidual 0;
+BA_ "GenSigSNA" SG_ 918 DIF_oilPumpPressureResidual "255";
+BA_ "Confidence" SG_ 725 DIF_statusChecksum 0;
+BA_ "Confidence" SG_ 725 DIF_statusCounter 0;
+BA_ "Confidence" SG_ 725 DIF_state 0;
+BA_ "Confidence" SG_ 725 DIF_keepAliveRequest 1;
+BA_ "Confidence" SG_ 725 DIF_soptState 1;
+BA_ "GenSigSNA" SG_ 725 DIF_soptState "8";
+BA_ "Confidence" SG_ 725 DIF_sysLimpRequest 2;
+BA_ "Confidence" SG_ 725 DIF_adState 0;
+BA_ "Confidence" SG_ 725 DIF_driveModeState 0;
+BA_ "Confidence" SG_ 725 DIF_lvSupplyV 0;
+BA_ "Confidence" SG_ 725 DIF_wasteState 0;
+BA_ "Confidence" SG_ 725 DIF_haltRequest 0;
+BA_ "Confidence" SG_ 725 DIF_axleSpeedLimitRequest 0;
+BA_ "Confidence" SG_ 725 DIF_adDirection 0;
+BA_ "Confidence" SG_ 725 DIF_spinDownLearningState 0;
+BA_ "Confidence" SG_ 725 DIF_spinDownLearningMode 1;
+BA_ "Confidence" SG_ 390 DIF_torqueChecksum 0;
+BA_ "Confidence" SG_ 390 DIF_torqueCounter 0;
+BA_ "Confidence" SG_ 390 DIF_torqueCommand 0;
+BA_ "GenSigSNA" SG_ 390 DIF_torqueCommand "4096";
+BA_ "Confidence" SG_ 390 DIF_axleSpeedQF 0;
+BA_ "Confidence" SG_ 390 DIF_torqueActual 0;
+BA_ "GenSigSNA" SG_ 390 DIF_torqueActual "4096";
+BA_ "Confidence" SG_ 390 DIF_axleSpeed 0;
+BA_ "GenSigSNA" SG_ 390 DIF_axleSpeed "32768";
+BA_ "Confidence" SG_ 390 DIF_axleTorqueQF 0;
+BA_ "Confidence" SG_ 390 DIF_axlePowerCalcQF 0;
+BA_ "Confidence" SG_ 294 DIR_motorCurrent 0;
+BA_ "Confidence" SG_ 294 DIR_switchingFrequency 0;
+BA_ "Confidence" SG_ 294 DIR_targetFluxMode 0;
+BA_ "Confidence" SG_ 294 DIR_switchShortTestRetryCount 0;
+BA_ "Confidence" SG_ 598 DIR_statusChecksum 0;
+BA_ "Confidence" SG_ 598 DIR_statusCounter 0;
+BA_ "Confidence" SG_ 598 DIR_state 0;
+BA_ "Confidence" SG_ 598 DIR_keepAliveRequest 1;
+BA_ "Confidence" SG_ 598 DIR_soptState 1;
+BA_ "GenSigSNA" SG_ 598 DIR_soptState "8";
+BA_ "Confidence" SG_ 598 DIR_sysLimpRequest 2;
+BA_ "Confidence" SG_ 598 DIR_adState 0;
+BA_ "Confidence" SG_ 598 DIR_driveModeState 0;
+BA_ "Confidence" SG_ 598 DIR_lvSupplyV 0;
+BA_ "Confidence" SG_ 598 DIR_wasteState 0;
+BA_ "Confidence" SG_ 598 DIR_haltRequest 0;
+BA_ "Confidence" SG_ 598 DIR_axleSpeedLimitRequest 0;
+BA_ "Confidence" SG_ 598 DIR_adDirection 0;
+BA_ "Confidence" SG_ 598 DIR_spinDownLearningState 0;
+BA_ "Confidence" SG_ 598 DIR_spinDownLearningMode 1;
+BA_ "Confidence" SG_ 264 DIR_torqueChecksum 0;
+BA_ "Confidence" SG_ 264 DIR_torqueCounter 0;
+BA_ "Confidence" SG_ 264 DIR_torqueCommand 0;
+BA_ "GenSigSNA" SG_ 264 DIR_torqueCommand "4096";
+BA_ "Confidence" SG_ 264 DIR_axleSpeedQF 0;
+BA_ "Confidence" SG_ 264 DIR_torqueActual 0;
+BA_ "GenSigSNA" SG_ 264 DIR_torqueActual "4096";
+BA_ "Confidence" SG_ 264 DIR_axleSpeed 0;
+BA_ "GenSigSNA" SG_ 264 DIR_axleSpeed "32768";
+BA_ "Confidence" SG_ 264 DIR_axleTorqueQF 0;
+BA_ "Confidence" SG_ 264 DIR_axlePowerCalcQF 0;
+BA_ "Confidence" SG_ 328 DI_chassisControlChecksum 0;
+BA_ "Confidence" SG_ 328 DI_chassisControlCounter 0;
+BA_ "Confidence" SG_ 328 DI_imuOffsetLearnRequest 0;
+BA_ "Confidence" SG_ 328 DI_brakeCommandType 0;
+BA_ "Confidence" SG_ 328 DI_brakeTorqueRequestActive 0;
+BA_ "Confidence" SG_ 328 DI_brakeTorqueCommand 0;
+BA_ "Confidence" SG_ 328 DI_ptcStateGlobal 0;
+BA_ "GenSigSNA" SG_ 328 DI_ptcStateGlobal "3";
+BA_ "Confidence" SG_ 328 DI_ptcActive 0;
+BA_ "Confidence" SG_ 328 DI_vdcState 0;
+BA_ "Confidence" SG_ 328 DI_isAnyVdcControlActive 0;
+BA_ "Confidence" SG_ 328 DI_vdcMode 0;
+BA_ "Confidence" SG_ 328 DI_pedalAssistCurveSelect 0;
+BA_ "Confidence" SG_ 328 DI_isAnyTcActive 0;
+BA_ "Confidence" SG_ 328 DI_VehicleMuConfidence 0;
+BA_ "Confidence" SG_ 328 DI_VehicleMu 0;
+BA_ "Confidence" SG_ 328 DI_trailerSwayIndex 0;
+BA_ "Confidence" SG_ 328 DI_vdcControlActive 0;
+BA_ "Confidence" SG_ 328 DI_treadDepthAlertSet 0;
+BA_ "Confidence" SG_ 1861 DI_gradeAngle 0;
+BA_ "Confidence" SG_ 1861 DI_bankAngle 0;
+BA_ "Confidence" SG_ 1861 DI_chassisControlVideoRequest 0;
+BA_ "Confidence" SG_ 1861 DI_tireUtilizationRatioFrL 0;
+BA_ "Confidence" SG_ 1861 DI_tireUtilizationRatioFrR 0;
+BA_ "Confidence" SG_ 1861 DI_tireUtilizationRatioReL 0;
+BA_ "Confidence" SG_ 1861 DI_tireUtilizationRatioReR 0;
+BA_ "Confidence" SG_ 1861 DI_counterSteerTarget 0;
+BA_ "Confidence" SG_ 1861 DI_splitMuProbability 0;
+BA_ "Confidence" SG_ 1861 DI_mzError 0;
+BA_ "Confidence" SG_ 1861 DI_slipDifferenceFrontRear 0;
+BA_ "Confidence" SG_ 1861 DI_highFreqYawRate 0;
+BA_ "Confidence" SG_ 1861 DI_turnDirection 0;
+BA_ "Confidence" SG_ 1861 DI_absolutePreControlRequest 0;
+BA_ "Confidence" SG_ 1861 DI_oppositeBuildDirFrontAxle 0;
+BA_ "Confidence" SG_ 1861 DI_oppositeBuildDirRearAxle 0;
+BA_ "Confidence" SG_ 1861 DI_saturatedEffectiveness 0;
+BA_ "Confidence" SG_ 1861 DI_driverPanicIndex 0;
+BA_ "Confidence" SG_ 1861 DI_learnDownMu 0;
+BA_ "Confidence" SG_ 1861 DI_preControlOpposingTurnDir 0;
+BA_ "Confidence" SG_ 1861 DI_driverFxError 0;
+BA_ "Confidence" SG_ 1861 DI_targetSaturation 0;
+BA_ "Confidence" SG_ 1869 DI_tireWearFactor_FrL 0;
+BA_ "Confidence" SG_ 1869 DI_tireWearFactor_FrR 0;
+BA_ "Confidence" SG_ 1869 DI_tireWearFactor_ReL 0;
+BA_ "Confidence" SG_ 1869 DI_tireWearFactor_ReR 0;
+BA_ "Confidence" SG_ 1869 DI_kTireEstReUnSat 0;
+BA_ "GenSigSNA" SG_ 1869 DI_kTireEstReUnSat "127";
+BA_ "Confidence" SG_ 1869 DI_tireConfigSaved 0;
+BA_ "Confidence" SG_ 1869 DI_distanceSinceLastTireConfig 0;
+BA_ "GenSigSNA" SG_ 1869 DI_distanceSinceLastTireConfig "63";
+BA_ "Confidence" SG_ 1869 DI_hydroplaningRisk 0;
+BA_ "Confidence" SG_ 1869 DI_hydroplaningPuddlesWet 0;
+BA_ "Confidence" SG_ 1869 DI_hydroplaningPuddlesDry 0;
+BA_ "Confidence" SG_ 1869 DI_vehicleStuck 0;
+BA_ "Confidence" SG_ 1869 DI_kTireEstRe 0;
+BA_ "GenSigSNA" SG_ 1869 DI_kTireEstRe "31";
+BA_ "Confidence" SG_ 1869 DI_stickyMu 0;
+BA_ "Confidence" SG_ 1869 DI_stickyMuConfidence 0;
+BA_ "Confidence" SG_ 646 DI_locStatusChecksum 0;
+BA_ "Confidence" SG_ 646 DI_locStatusCounter 0;
+BA_ "Confidence" SG_ 646 DI_cruiseState 0;
+BA_ "Confidence" SG_ 646 DI_cruiseSetSpeed 0;
+BA_ "Confidence" SG_ 646 DI_cruiseSetSpeedUnits 0;
+BA_ "Confidence" SG_ 646 DI_autoparkState 0;
+BA_ "GenSigSNA" SG_ 646 DI_autoparkState "15";
+BA_ "Confidence" SG_ 646 DI_parkBrakeState 0;
+BA_ "GenSigSNA" SG_ 646 DI_parkBrakeState "15";
+BA_ "Confidence" SG_ 646 DI_aebState 0;
+BA_ "GenSigSNA" SG_ 646 DI_aebState "7";
+BA_ "Confidence" SG_ 646 DI_loncDeactivationReason 0;
+BA_ "Confidence" SG_ 646 DI_vehicleHoldState 0;
+BA_ "Confidence" SG_ 646 DI_summonInPanic 0;
+BA_ "Confidence" SG_ 646 DI_onePedalDrivingState 0;
+BA_ "Confidence" SG_ 646 DI_brakeStandActive 0;
+BA_ "Confidence" SG_ 646 DI_regenBackfillState 0;
+BA_ "Confidence" SG_ 646 DI_cruiseNotAvailableReason 0;
+BA_ "GenSigSNA" SG_ 646 DI_cruiseNotAvailableReason "20";
+BA_ "Confidence" SG_ 646 DI_cruiseFaultReason 0;
+BA_ "GenSigSNA" SG_ 646 DI_cruiseFaultReason "17";
+BA_ "Confidence" SG_ 646 DI_cruiseCancelReason 0;
+BA_ "Confidence" SG_ 1270 DI_locStatus2Checksum 0;
+BA_ "Confidence" SG_ 1270 DI_locStatus2Counter 0;
+BA_ "Confidence" SG_ 1270 DI_doublePedalState 0;
+BA_ "Confidence" SG_ 1270 DI_autopilotRequest 0;
+BA_ "Confidence" SG_ 1270 DI_rollPreventionState 0;
+BA_ "Confidence" SG_ 1270 DI_locIntegratorSaturated 0;
+BA_ "Confidence" SG_ 1270 DI_temporaryOpdActiveAfterLoncCa 0;
+BA_ "SystemSignalLongSymbol" SG_ 1270 DI_temporaryOpdActiveAfterLoncCa "DI_temporaryOpdActiveAfterLoncCancel";
+BA_ "Confidence" SG_ 1270 DI_reapplyOnParkRequest 0;
+BA_ "Confidence" SG_ 1270 DI_regenBlendingState 1;
+BA_ "Confidence" SG_ 1270 DI_brakeCpScale 0;
+BA_ "Confidence" SG_ 1270 DI_rollbackDistance 0;
+BA_ "Confidence" SG_ 1270 DI_lowMuProbabilityConfidence 0;
+BA_ "Confidence" SG_ 1270 DI_pedalAssistCurveSelectForSX 0;
+BA_ "Confidence" SG_ 1270 DI_longitudinalControlStack 0;
+BA_ "GenSigSNA" SG_ 1270 DI_longitudinalControlStack "0";
+BA_ "Confidence" SG_ 822 DI_sysDrivePowerRated 0;
+BA_ "GenSigSNA" SG_ 822 DI_sysDrivePowerRated "511";
+BA_ "Confidence" SG_ 822 DI_obdDriveCycleStatus 1;
+BA_ "Confidence" SG_ 822 DI_sysRegenPowerRated 0;
+BA_ "GenSigSNA" SG_ 822 DI_sysRegenPowerRated "255";
+BA_ "Confidence" SG_ 599 DI_speedChecksum 0;
+BA_ "Confidence" SG_ 599 DI_speedCounter 0;
+BA_ "Confidence" SG_ 599 DI_uiSpeed 0;
+BA_ "GenSigSNA" SG_ 599 DI_uiSpeed "511";
+BA_ "Confidence" SG_ 599 DI_uiSpeedUnits 0;
+BA_ "Confidence" SG_ 599 DI_accelPedalPressed 0;
+BA_ "Confidence" SG_ 599 DI_sideslipEstimate 0;
+BA_ "Confidence" SG_ 599 DI_vehicleSpeed 0;
+BA_ "GenSigSNA" SG_ 599 DI_vehicleSpeed "8191";
+BA_ "Confidence" SG_ 599 DI_velocityEstimatorState 0;
+BA_ "Confidence" SG_ 599 DI_autoEnableHazards 0;
+BA_ "Confidence" SG_ 599 DI_longControlCommandActive 0;
+BA_ "Confidence" SG_ 600 DI_stalklessInterfacesChecksum 0;
+BA_ "Confidence" SG_ 600 DI_stalklessInterfacesCounter 0;
+BA_ "Confidence" SG_ 600 DI_smartShiftClosureOpen 0;
+BA_ "Confidence" SG_ 600 DI_smartShiftSeatbeltUnbuckled 0;
+BA_ "Confidence" SG_ 600 DI_smartShiftAvailable 0;
+BA_ "Confidence" SG_ 600 DI_smartShiftPrimed 0;
+BA_ "Confidence" SG_ 600 DI_smartShiftBrakePressed 0;
+BA_ "Confidence" SG_ 600 DI_smartShiftBrakeReapplyRequire 0;
+BA_ "SystemSignalLongSymbol" SG_ 600 DI_smartShiftBrakeReapplyRequire "DI_smartShiftBrakeReapplyRequired";
+BA_ "Confidence" SG_ 597 DI_lastQualifiedGear 0;
+BA_ "GenSigSNA" SG_ 597 DI_lastQualifiedGear "7";
+BA_ "Confidence" SG_ 597 DI_lastDrivingGear 0;
+BA_ "GenSigSNA" SG_ 597 DI_lastDrivingGear "7";
+BA_ "Confidence" SG_ 597 DI_distDrivenInGear 0;
+BA_ "Confidence" SG_ 597 DI_frontBlocked 0;
+BA_ "Confidence" SG_ 597 DI_rearBlocked 0;
+BA_ "Confidence" SG_ 597 DI_firstShiftOccurred 0;
+BA_ "Confidence" SG_ 597 DI_suggestedGearReason 0;
+BA_ "Confidence" SG_ 597 DI_parallelParked 0;
+BA_ "Confidence" SG_ 597 DI_smartShiftGear 0;
+BA_ "Confidence" SG_ 597 DI_smartShiftUnavailableReason 0;
+BA_ "GenSigSNA" SG_ 597 DI_smartShiftUnavailableReason "0";
+BA_ "Confidence" SG_ 282 DI_vdcRightChecksum 0;
+BA_ "Confidence" SG_ 282 DI_vdcRightCounter 0;
+BA_ "Confidence" SG_ 282 DI_vdcCommandTypeFrR 0;
+BA_ "Confidence" SG_ 282 DI_vdcCommandTypeReR 0;
+BA_ "Confidence" SG_ 282 DI_vdcCommandABSFrR 0;
+BA_ "Confidence" SG_ 282 DI_vdcCommandABSReR 0;
+BA_ "Confidence" SG_ 282 DI_brakeTorqueTarFrR 0;
+BA_ "Confidence" SG_ 282 DI_brakeTorqueTarReR 0;
+BA_ "Confidence" SG_ 282 DI_wheelSlipLimitFrR 0;
+BA_ "Confidence" SG_ 282 DI_wheelSlipLimitReR 0;
+BA_ "Confidence" SG_ 282 DI_rawLowMuProbability 0;
+BA_ "Confidence" SG_ 615 DI_mass 0;
+BA_ "Confidence" SG_ 615 DI_massRLS 0;
+BA_ "Confidence" SG_ 615 DI_trailerDetected 0;
+BA_ "Confidence" SG_ 615 DI_vehicleEstimatesCounter 0;
+BA_ "Confidence" SG_ 615 DI_relativeTireTreadDepth 0;
+BA_ "GenSigSNA" SG_ 615 DI_relativeTireTreadDepth "32";
+BA_ "Confidence" SG_ 615 DI_tireFitment 0;
+BA_ "GenSigSNA" SG_ 615 DI_tireFitment "3";
+BA_ "Confidence" SG_ 615 DI_rollCoeff 0;
+BA_ "Confidence" SG_ 615 DI_massConfidence 0;
+BA_ "Confidence" SG_ 615 DI_gradeEst 0;
+BA_ "Confidence" SG_ 615 DI_vehicleEstimatesChecksum 0;
+BA_ "Confidence" SG_ 615 DI_gradeEstInternal 0;
+BA_ "Confidence" SG_ 615 DI_massConfidenceRLS 0;
+BA_ "Confidence" SG_ 615 DI_steeringAngleOffset 0;
+BA_ "Confidence" SG_ 977 EPAS3P_appliedAngleOffset 0;
+BA_ "Confidence" SG_ 977 EPAS3P_calculatedAngleOffset 0;
+BA_ "Confidence" SG_ 977 EPAS3P_resyncStatus 0;
+BA_ "Confidence" SG_ 977 EPAS3P_pullDriftLongTermTrq 0;
+BA_ "Confidence" SG_ 977 EPAS3P_pullDriftCompTrq 0;
+BA_ "Confidence" SG_ 977 EPAS3P_learnedSCCMOffset 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoIndex 1;
+BA_ "Confidence" SG_ 817 EPAS3P_infoBuildType 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoComponentID 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoPcbaID 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoAssemblyID 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoUsageID 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoApplicationCRC 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoBootUdsProtoVersion 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoBootloaderCRC 0;
+BA_ "Confidence" SG_ 817 EPAS3P_infoSubcomponent2 0;
+BA_ "Confidence" SG_ 880 EPAS3P_steeringRackForce 1;
+BA_ "GenSigSNA" SG_ 880 EPAS3P_steeringRackForce "1023";
+BA_ "Confidence" SG_ 880 EPAS3P_steeringFault 1;
+BA_ "Confidence" SG_ 880 EPAS3P_steeringReduced 1;
+BA_ "Confidence" SG_ 880 EPAS3P_internalSASQF 1;
+BA_ "Confidence" SG_ 880 EPAS3P_currentTuneMode 1;
+BA_ "Confidence" SG_ 880 EPAS3P_torsionBarTorque 1;
+BA_ "GenSigSNA" SG_ 880 EPAS3P_torsionBarTorque "4095";
+BA_ "Confidence" SG_ 880 EPAS3P_eacErrorCode 1;
+BA_ "GenSigSNA" SG_ 880 EPAS3P_eacErrorCode "15";
+BA_ "Confidence" SG_ 880 EPAS3P_internalSAS 1;
+BA_ "Confidence" SG_ 880 EPAS3P_handsOnLevel 1;
+BA_ "Confidence" SG_ 880 EPAS3P_sysStatusCounter 2;
+BA_ "Confidence" SG_ 880 EPAS3P_tireIDActive 2;
+BA_ "Confidence" SG_ 880 EPAS3P_eacStatus 1;
+BA_ "Confidence" SG_ 880 EPAS3P_sysStatusChecksum 2;
+BA_ "Confidence" SG_ 909 ESP_party3Crc 0;
+BA_ "Confidence" SG_ 909 ESP_party3Counter 0;
+BA_ "Confidence" SG_ 909 ESP_absActive 0;
+BA_ "Confidence" SG_ 909 ESP_vehicleStandstill 0;
+BA_ "Confidence" SG_ 909 ESP_vehicleStandstillQF 0;
+BA_ "Confidence" SG_ 909 ESP_pEstMaximum 0;
+BA_ "Confidence" SG_ 909 ESP_privateVehicleSpd 0;
+BA_ "Confidence" SG_ 909 ESP_decoupledBrakePressOffsetCom 0;
+BA_ "GenSigSNA" SG_ 909 ESP_decoupledBrakePressOffsetCom "127";
+BA_ "SystemSignalLongSymbol" SG_ 909 ESP_decoupledBrakePressOffsetCom "ESP_decoupledBrakePressOffsetComp";
+BA_ "Confidence" SG_ 909 ESP_privateVehicleSpdQF 0;
+BA_ "Confidence" SG_ 909 ESP_brakeMasterCylPress 0;
+BA_ "GenSigSNA" SG_ 909 ESP_brakeMasterCylPress "1023";
+BA_ "Confidence" SG_ 909 ESP_brakeMasterCylPressQF 0;
+BA_ "Confidence" SG_ 325 ESP_statusChecksum 0;
+BA_ "Confidence" SG_ 325 ESP_statusCounter 0;
+BA_ "Confidence" SG_ 325 ESP_espModeActive 0;
+BA_ "Confidence" SG_ 325 ESP_stabilityControlSts2 0;
+BA_ "Confidence" SG_ 325 ESP_ebdFaultLamp 0;
+BA_ "Confidence" SG_ 325 ESP_absFaultLamp 0;
+BA_ "Confidence" SG_ 325 ESP_espFaultLamp 0;
+BA_ "Confidence" SG_ 325 ESP_hydraulicBoostEnabled 0;
+BA_ "Confidence" SG_ 325 ESP_espLampFlash 0;
+BA_ "Confidence" SG_ 325 ESP_brakeLamp 0;
+BA_ "Confidence" SG_ 325 ESP_absBrakeEvent2 0;
+BA_ "Confidence" SG_ 325 ESP_longitudinalAccelQF 0;
+BA_ "Confidence" SG_ 325 ESP_lateralAccelQF 0;
+BA_ "Confidence" SG_ 325 ESP_yawRateQF 0;
+BA_ "Confidence" SG_ 325 ESP_steeringAngleQF 0;
+BA_ "Confidence" SG_ 325 ESP_brakeDiscWipingActive 0;
+BA_ "Confidence" SG_ 325 ESP_driverBrakeApply 0;
+BA_ "GenSigSNA" SG_ 325 ESP_driverBrakeApply "3";
+BA_ "Confidence" SG_ 325 ESP_brakeApply 0;
+BA_ "Confidence" SG_ 325 ESP_aesPrimaryActuatorStatus 0;
+BA_ "Confidence" SG_ 325 ESP_cdpStatus 0;
+BA_ "Confidence" SG_ 325 ESP_ptcTargetState 0;
+BA_ "GenSigSNA" SG_ 325 ESP_ptcTargetState "3";
+BA_ "Confidence" SG_ 325 ESP_btcTargetState 0;
+BA_ "GenSigSNA" SG_ 325 ESP_btcTargetState "3";
+BA_ "Confidence" SG_ 325 ESP_decoupledBrakePressEst 0;
+BA_ "GenSigSNA" SG_ 325 ESP_decoupledBrakePressEst "255";
+BA_ "Confidence" SG_ 325 ESP_ebrStandstillSkid 0;
+BA_ "Confidence" SG_ 325 ESP_ebrStatus 0;
+BA_ "Confidence" SG_ 325 ESP_brakeTorqueTarget 0;
+BA_ "Confidence" SG_ 925 IBST_statusChecksum 0;
+BA_ "Confidence" SG_ 925 IBST_statusCounter 0;
+BA_ "Confidence" SG_ 925 IBST_iBoosterStatus 0;
+BA_ "Confidence" SG_ 925 IBST_driverBrakeApply 0;
+BA_ "Confidence" SG_ 925 IBST_internalState 0;
+BA_ "Confidence" SG_ 925 IBST_sInputRodDriver 0;
+BA_ "Confidence" SG_ 925 IBST_LVPowerModeState 0;
+BA_ "Confidence" SG_ 1316 PMF_processorDieIdLot 0;
+BA_ "Confidence" SG_ 1316 PMF_processorDieIdWafer 0;
+BA_ "Confidence" SG_ 1316 PMF_processorDieIdX 0;
+BA_ "Confidence" SG_ 1316 PMF_processorDieIdY 0;
+BA_ "Confidence" SG_ 1364 PMR_processorDieIdLot 0;
+BA_ "Confidence" SG_ 1364 PMR_processorDieIdWafer 0;
+BA_ "Confidence" SG_ 1364 PMR_processorDieIdX 0;
+BA_ "Confidence" SG_ 1364 PMR_processorDieIdY 0;
+BA_ "Confidence" SG_ 2038 PM_vdcDebugSelector 1;
+BA_ "Confidence" SG_ 2038 PM_VDCA_TCSlipTargetMod_RA_Fwd 0;
+BA_ "Confidence" SG_ 2038 PM_VDCA_TCSlipTargetMod_RA_Rwd 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_forceY_RA 0;
+BA_ "Confidence" SG_ 2038 PM_VDCT_observerSlipAngle_RA 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_muVehicleFxLow 0;
+BA_ "Confidence" SG_ 2038 PM_VE_fxmFres 0;
+BA_ "Confidence" SG_ 2038 PM_VE_fxAccelMass 0;
+BA_ "Confidence" SG_ 2038 PM_VE_vxDotGrade 0;
+BA_ "Confidence" SG_ 2038 PM_VE_betaEst 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_muVehicleFxHigh 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_muVehicleDecLeakRate 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_muVehicleLearnDown 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_muVehicleDecFilter 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_muVehicleLatDecLeakRate 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_splitMuProbability 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_splitMuTotalMz 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_attitudeBankAngle 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_attitudeDBetaInControl 0;
+BA_ "Confidence" SG_ 2038 PM_VSE_roadWheelAngleAverage 0;
+BA_ "Confidence" SG_ 17 RCM_collisionChecksum 0;
+BA_ "Confidence" SG_ 17 RCM_collisionCounter 0;
+BA_ "Confidence" SG_ 17 RCM_collisionRear 0;
+BA_ "GenSigSNA" SG_ 17 RCM_collisionRear "3";
+BA_ "Confidence" SG_ 17 RCM_collisionRight 0;
+BA_ "GenSigSNA" SG_ 17 RCM_collisionRight "3";
+BA_ "Confidence" SG_ 17 RCM_collisionLeft 0;
+BA_ "GenSigSNA" SG_ 17 RCM_collisionLeft "3";
+BA_ "Confidence" SG_ 17 RCM_collisionFront 0;
+BA_ "GenSigSNA" SG_ 17 RCM_collisionFront "3";
+BA_ "Confidence" SG_ 17 RCM_collisionRollover 0;
+BA_ "GenSigSNA" SG_ 17 RCM_collisionRollover "3";
+BA_ "Confidence" SG_ 17 RCM_collisionPedPro 0;
+BA_ "GenSigSNA" SG_ 17 RCM_collisionPedPro "3";
+BA_ "Confidence" SG_ 17 RCM_collisionSeverity 0;
+BA_ "Confidence" SG_ 289 RCM_nearDeployChecksum 0;
+BA_ "Confidence" SG_ 289 RCM_nearDeployCounter 0;
+BA_ "Confidence" SG_ 289 RCM_nearDeployRear 0;
+BA_ "GenSigSNA" SG_ 289 RCM_nearDeployRear "3";
+BA_ "Confidence" SG_ 289 RCM_nearDeployRight 0;
+BA_ "GenSigSNA" SG_ 289 RCM_nearDeployRight "3";
+BA_ "Confidence" SG_ 289 RCM_nearDeployLeft 0;
+BA_ "GenSigSNA" SG_ 289 RCM_nearDeployLeft "3";
+BA_ "Confidence" SG_ 289 RCM_nearDeployFront 0;
+BA_ "GenSigSNA" SG_ 289 RCM_nearDeployFront "3";
+BA_ "Confidence" SG_ 289 RCM_nearDeployRollover 0;
+BA_ "GenSigSNA" SG_ 289 RCM_nearDeployRollover "3";
+BA_ "Confidence" SG_ 289 RCM_crashAlgoWakeup 0;
+BA_ "GenSigSNA" SG_ 289 RCM_crashAlgoWakeup "3";
+BA_ "Confidence" SG_ 260 VCFRONT_vcleftHighPower 0;
+BA_ "Confidence" SG_ 260 VCFRONT_vcrightHighPower 0;
+BA_ "Confidence" SG_ 260 VCFRONT_uiHighPower 0;
+BA_ "Confidence" SG_ 260 VCFRONT_5VAStable 0;
+BA_ "Confidence" SG_ 260 VCFRONT_5VBStable 0;
+BA_ "Confidence" SG_ 260 VCFRONT_12VAStable 0;
+BA_ "Confidence" SG_ 260 VCFRONT_12VBStable 0;
+BA_ "Confidence" SG_ 260 VCFRONT_railA 0;
+BA_ "Confidence" SG_ 260 VCFRONT_railB 0;
+BA_ "Confidence" SG_ 260 VCFRONT_chargePumpStable 0;
+BA_ "Confidence" SG_ 260 VCFRONT_vehicleSM 0;
+BA_ "GenSigSNA" SG_ 260 VCFRONT_vehicleSM "18";
+BA_ "Confidence" SG_ 260 VCFRONT_revBattFault 0;
+BA_ "Confidence" SG_ 260 VCFRONT_battSM 0;
+BA_ "Confidence" SG_ 260 VCFRONT_U13Init 0;
+BA_ "Confidence" SG_ 260 VCFRONT_U16Init 0;
+BA_ "Confidence" SG_ 260 VCFRONT_anyVehLoadShedActiveDBG 0;
+BA_ "Confidence" SG_ 260 VCFRONT_battVoltage 0;
+BA_ "Confidence" SG_ 260 VCFRONT_battCurrent 0;
+BA_ "Confidence" SG_ 258 VCLEFT_doorClosureStatusFront 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_doorClosureStatusFront "0";
+BA_ "Confidence" SG_ 258 VCLEFT_doorClosureStatusRear 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_doorClosureStatusRear "0";
+BA_ "Confidence" SG_ 258 VCLEFT_frontLatchSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearLatchSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontHandlePulled 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearHandlePulled 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontRelActuatorSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearRelActuatorSwitch 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontLatchStatus 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_frontLatchStatus "0";
+BA_ "Confidence" SG_ 258 VCLEFT_rearLatchStatus 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_rearLatchStatus "0";
+BA_ "Confidence" SG_ 258 VCLEFT_lastDoorReqSourceFront 0;
+BA_ "Confidence" SG_ 258 VCLEFT_lastDoorReqSourceRear 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontIntSwitchPressed 0;
+BA_ "Confidence" SG_ 258 VCLEFT_rearIntSwitchPressed 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorTiltXPosition 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorTiltYPosition 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorState 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorFoldState 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorRecallState 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorHeatState 0;
+BA_ "GenSigSNA" SG_ 258 VCLEFT_mirrorHeatState "0";
+BA_ "Confidence" SG_ 258 VCLEFT_rearHandlePulledPersist 0;
+BA_ "Confidence" SG_ 258 VCLEFT_frontHandlePulledPersist 0;
+BA_ "Confidence" SG_ 258 VCLEFT_mirrorDipped 0;
+BA_ "Confidence" SG_ 546 VCLEFT_cdpRequestState 0;
+BA_ "Confidence" SG_ 546 VCLEFT_epbmSystemStatusQF 0;
+BA_ "Confidence" SG_ 546 VCLEFT_epbmUnitStatus 0;
+BA_ "Confidence" SG_ 546 VCLEFT_epbmCdpState 0;
+BA_ "Confidence" SG_ 546 VCLEFT_epbmStatusCounter 0;
+BA_ "Confidence" SG_ 546 VCLEFT_epbmStatusChecksum 0;
+BA_ "Confidence" SG_ 778 VCLEFT_frontOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_frontOccupancyStatus "7";
+BA_ "Confidence" SG_ 778 VCLEFT_frontBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_frontBuckleStatus "3";
+BA_ "Confidence" SG_ 778 VCLEFT_rearLeftOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_rearLeftOccupancyStatus "3";
+BA_ "Confidence" SG_ 778 VCLEFT_rearCenterOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_rearCenterOccupancyStatus "3";
+BA_ "Confidence" SG_ 778 VCLEFT_rearRightOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_rearRightOccupancyStatus "3";
+BA_ "Confidence" SG_ 778 VCLEFT_rearLeftBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_rearLeftBuckleStatus "3";
+BA_ "Confidence" SG_ 778 VCLEFT_rearCenterBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_rearCenterBuckleStatus "3";
+BA_ "Confidence" SG_ 778 VCLEFT_seatTrackPosition 0;
+BA_ "GenSigSNA" SG_ 778 VCLEFT_seatTrackPosition "7";
+BA_ "Confidence" SG_ 778 VCLEFT_restraintStatusCounter 0;
+BA_ "Confidence" SG_ 778 VCLEFT_restraintStatusChecksum 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_doorClosureStatusFront 0;
+BA_ "GenSigSNA" SG_ 259 VCRIGHT_doorClosureStatusFront "0";
+BA_ "Confidence" SG_ 259 VCRIGHT_doorClosureStatusRear 0;
+BA_ "GenSigSNA" SG_ 259 VCRIGHT_doorClosureStatusRear "0";
+BA_ "Confidence" SG_ 259 VCRIGHT_frontLatchSwitch 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_rearLatchSwitch 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_frontHandlePulled 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_rearHandlePulled 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_frontRelActuatorSwitch 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_rearRelActuatorSwitch 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_frontLatchStatus 0;
+BA_ "GenSigSNA" SG_ 259 VCRIGHT_frontLatchStatus "0";
+BA_ "Confidence" SG_ 259 VCRIGHT_rearLatchStatus 0;
+BA_ "GenSigSNA" SG_ 259 VCRIGHT_rearLatchStatus "0";
+BA_ "Confidence" SG_ 259 VCRIGHT_lastDoorReqSourceFront 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_lastDoorReqSourceRear 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_frontHandlePulledPersist 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_frontIntSwitchPressed 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_rearIntSwitchPressed 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_mirrorTiltXPosition 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_mirrorTiltYPosition 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_mirrorState 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_mirrorFoldState 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_mirrorDipped 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_trunkLatchStatus 0;
+BA_ "GenSigSNA" SG_ 259 VCRIGHT_trunkLatchStatus "0";
+BA_ "Confidence" SG_ 259 VCRIGHT_mirrorRecallState 0;
+BA_ "Confidence" SG_ 259 VCRIGHT_rearHandlePulledPersist 0;
+BA_ "Confidence" SG_ 611 VCRIGHT_cdpRequestState 0;
+BA_ "Confidence" SG_ 611 VCRIGHT_epbmSystemStatusQF 0;
+BA_ "Confidence" SG_ 611 VCRIGHT_epbmUnitStatus 0;
+BA_ "Confidence" SG_ 611 VCRIGHT_epbmCdpState 0;
+BA_ "Confidence" SG_ 611 VCRIGHT_epbmStatusCounter 0;
+BA_ "Confidence" SG_ 611 VCRIGHT_epbmStatusChecksum 0;
+BA_ "Confidence" SG_ 794 VCRIGHT_frontOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_frontOccupancyStatus "7";
+BA_ "Confidence" SG_ 794 VCRIGHT_frontBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_frontBuckleStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_rearCenterBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_rearCenterBuckleStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_rearRightBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_rearRightBuckleStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_rearRightOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_rearRightOccupancyStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_3RowLeftBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_3RowLeftBuckleStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_3RowRightBuckleStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_3RowRightBuckleStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_3RowLeftOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_3RowLeftOccupancyStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_3RowRightOccupancyStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_3RowRightOccupancyStatus "3";
+BA_ "Confidence" SG_ 794 VCRIGHT_seatTrackPosition 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_seatTrackPosition "7";
+BA_ "Confidence" SG_ 794 VCRIGHT_occupantClassification 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_occupantClassification "7";
+BA_ "Confidence" SG_ 794 VCRIGHT_occupantClassificationQF 0;
+BA_ "Confidence" SG_ 794 VCRIGHT_classificationEnabled 0;
+BA_ "Confidence" SG_ 794 VCRIGHT_classificationEnabledQF 0;
+BA_ "Confidence" SG_ 794 VCRIGHT_restraintStatusCounter 0;
+BA_ "Confidence" SG_ 794 VCRIGHT_restraintStatusChecksum 0;
+VAL_ 697 DAS_setSpeed 4095 "SNA" ;
+VAL_ 697 DAS_accState 15 "FAULT_SNA" 13 "ACC_CANCEL_GENERIC_SILENT" 12 "ACC_PARK" 11 "APC_SELFPARK_START" 10 "APC_UNPARK_COMPLETE" 9 "APC_PAUSE" 8 "APC_ABORT" 7 "APC_COMPLETE" 6 "APC_FORWARD" 5 "APC_BACKWARD" 4 "ACC_ON" 3 "ACC_HOLD" 2 "ACC_FORWARD" 1 "ACC_BACKWARD" 0 "ACC_CANCEL_GENERIC" ;
+VAL_ 697 DAS_aebEvent 3 "AEB_SNA" 2 "AEB_FAULT" 1 "AEB_ACTIVE" 0 "AEB_NOT_ACTIVE" ;
+VAL_ 697 DAS_jerkMin 511 "SNA" ;
+VAL_ 697 DAS_jerkMax 255 "SNA" ;
+VAL_ 697 DAS_accelMin 511 "SNA" ;
+VAL_ 697 DAS_accelMax 511 "SNA" ;
+VAL_ 299 DAS_smartShiftTorqueDirection 4 "SUGGESTED_TORQUE_DIRECTION_NOT_READY" 3 "SUGGESTED_TORQUE_DIRECTION_FORWARD" 2 "SUGGESTED_TORQUE_DIRECTION_REVERSE" 1 "SUGGESTED_TORQUE_DIRECTION_NOT_CONFIDENT" 0 "SUGGESTED_TORQUE_DIRECTION_SNA" ;
+VAL_ 299 DAS_smartShiftTorqueReason 15 "SUGGESTED_TORQUE_REASON_FSD_E2E" 14 "SUGGESTED_TORQUE_REASON_PERP_PARKING" 13 "SUGGESTED_TORQUE_REASON_PLL_PARKING" 12 "SUGGESTED_TORQUE_REASON_BLOCKING_VEHICLE" 11 "SUGGESTED_TORQUE_REASON_STATIC_OBSTACLE" 10 "SUGGESTED_TORQUE_REASON_CURB" 9 "SUGGESTED_TORQUE_REASON_RETRACE" 8 "SUGGESTED_TORQUE_REASON_PLL_TO_ROAD_SUBS_SHFT" 7 "SUGGESTED_TORQUE_REASON_PLL_TO_ROAD_1ST_SHFT" 6 "SUGGESTED_TORQUE_REASON_CIPV" 5 "SUGGESTED_TORQUE_REASON_GATE" 4 "SUGGESTED_TORQUE_REASON_ROAD_MARKING" 3 "SUGGESTED_TORQUE_REASON_SMART_SUMMON_SHORT_PLAN" 2 "SUGGESTED_TORQUE_REASON_SMART_SUMMON_PLAN" 1 "SUGGESTED_TORQUE_REASON_SMART_SHIFT_PLAN" 0 "SUGGESTED_TORQUE_REASON_SNA" ;
+VAL_ 299 DAS_autoshiftTorqueDirectionDbg 4 "SUGGESTED_TORQUE_DIRECTION_NOT_READY" 3 "SUGGESTED_TORQUE_DIRECTION_FORWARD" 2 "SUGGESTED_TORQUE_DIRECTION_REVERSE" 1 "SUGGESTED_TORQUE_DIRECTION_NOT_CONFIDENT" 0 "SUGGESTED_TORQUE_DIRECTION_SNA" ;
+VAL_ 299 DAS_autoshiftUpcomingDirection 3 "AUTOSHIFT_DIRECTION_SNA" 2 "AUTOSHIFT_DIRECTION_DRIVE" 1 "AUTOSHIFT_DIRECTION_REVERSE" 0 "AUTOSHIFT_DIRECTION_NONE" ;
+VAL_ 299 DAS_autoshiftSteerRequest 3 "AUTOSHIFT_STEERING_DIRECTION_LEFT" 2 "AUTOSHIFT_STEERING_DIRECTION_RIGHT" 1 "AUTOSHIFT_STEERING_DIRECTION_ANY" 0 "AUTOSHIFT_STEERING_DIRECTION_NONE" ;
+VAL_ 1879 DIF_debugSelector 132 "Mux132" 131 "Mux131" 128 "Mux128" 72 "Mux72" 70 "Mux70" 69 "Mux69" 68 "Mux68" 67 "Mux67" 66 "Mux66" 64 "Mux64" 63 "Mux63" 52 "Mux52" 50 "Mux50" 49 "Mux49" 48 "Mux48" 47 "Mux47" 46 "Mux46" 44 "Mux44" 43 "Mux43" 42 "Mux42" 41 "Mux41" 40 "Mux40" 39 "Mux39" 38 "Mux38" 37 "Mux37" 36 "Mux36" 35 "Mux35" 34 "Mux34" 33 "Mux33" 32 "Mux32" ;
+VAL_ 1879 DIF_phaseOutBusbarTemp 0 "SNA" ;
+VAL_ 1879 DIF_phaseOutBusbarWeldTemp 0 "SNA" ;
+VAL_ 1879 DIF_phaseOutLugTemp 0 "SNA" ;
+VAL_ 1879 DIF_dcLinkCapTemp 0 "SNA" ;
+VAL_ 1879 DIF_hvDcCableTemp 0 "SNA" ;
+VAL_ 1879 DIF_negDcBusbarTemp 0 "SNA" ;
+VAL_ 1879 DIF_posDcBusbarTemp 0 "SNA" ;
+VAL_ 1879 DIF_statorEndWindingTemp 0 "SNA" ;
+VAL_ 1879 DIF_rotorMaxMagnetTemp 0 "SNA" ;
+VAL_ 1879 DIF_statorSlotWindingTemp 0 "SNA" ;
+VAL_ 1622 DIF_infoIndex 255 "INFO_END" 44 "TRACKING_DATA_5" 43 "TRACKING_DATA_4" 42 "TRACKING_DATA_3" 41 "TRACKING_DATA_2" 40 "TRACKING_DATA_1" 34 "INFO_SUBCOMPONENT2_HWID" 33 "INFO_SUBCOMPONENT_HWID" 32 "INFO_SUBCOMPONENT2_GITHASH" 31 "INFO_SUBCOMPONENT_GITHASH" 23 "INFO_SUBCOMPONENT2" 20 "INFO_UDS_PROTOCOL_BOOTCRC" 19 "INFO_VERSION_DEPRECATED" 18 "INFO_BOOTLOADER_GITHASH" 17 "INFO_APP_GITHASH" 16 "INFO_SUBCOMPONENT" 15 "INFO_BOOTLOADER_CRC" 14 "INFO_BOOTLOADER_SVN" 13 "INFO_APP_CRC" 11 "INFO_PCBAID_ASSYID_USAGEID" 10 "INFO_BUILD_HWID_COMPONENTID" 9 "INFO_DEPRECATED_9" 8 "INFO_DEPRECATED_8" 7 "INFO_DEPRECATED_7" 6 "INFO_DEPRECATED_6" 5 "INFO_DEPRECATED_5" 4 "INFO_DEPRECATED_4" 3 "INFO_DEPRECATED_3" 2 "INFO_DEPRECATED_2" 1 "INFO_DEPRECATED_1" 0 "INFO_DEPRECATED_0" ;
+VAL_ 1622 DIF_buildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
+VAL_ 1622 DIF_hardwareId 252 "CONFIGURABLE_HWID_PLACEHOLDER" ;
+VAL_ 1622 DIF_motorType 31 "DI_MOTOR_PM216E" 20 "DI_MOTOR_PM215D_1KV" 18 "DI_MOTOR_IM260E_1KV" 17 "DI_MOTOR_IM260D_1KV" 16 "DI_MOTOR_PM261C" 15 "DI_MOTOR_PM215C_1KV" 14 "DI_MOTOR_IM260C_1KV" 13 "DI_MOTOR_PM215A_1KV" 12 "DI_MOTOR_IM260A_1KV" 11 "DI_MOTOR_IM228HEA" 10 "DI_MOTOR_PM228HEA" 9 "DI_MOTOR_PM275C" 8 "DI_MOTOR_PM291D" 7 "DI_MOTOR_PM291C" 6 "DI_MOTOR_PM228C" 5 "DI_MOTOR_PM350B" 4 "DI_MOTOR_PM275B" 3 "DI_MOTOR_IM130D_AL" 2 "DI_MOTOR_IM130D" 1 "DI_MOTOR_PM216D" 0 "DI_MOTOR_SNA" ;
+VAL_ 1622 DIF_siliconType 1 "IGBT" 0 "MOSFET" ;
+VAL_ 1622 DIF_mechSafeStateType 2 "DI_MECH_SAFE_STATE_TYPE_PRESENT" 1 "DI_MECH_SAFE_STATE_TYPE_NONE" 0 "DI_MECH_SAFE_STATE_TYPE_SNA" ;
+VAL_ 1622 DIF_oilPumpBuildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
+VAL_ 1622 DIF_FPGA_version 255 "SNA" 254 "LOCAL_BUILD" ;
+VAL_ 1622 DIF_refRotorOffset -2048 "SNA" ;
+VAL_ 1622 DIF_speedWearTotal 255 "SNA" ;
+VAL_ 1622 DIF_torqueWearTotal 255 "SNA" ;
+VAL_ 421 DIF_targetFluxMode 2 "DI_FLUXMODE_FW" 1 "DI_FLUXMODE_FS" 0 "DI_FLUXMODE_OPTIMUM" ;
+VAL_ 918 DIF_oilPumpState 7 "OIL_PUMP_SNA" 6 "OIL_PUMP_FAULTED" 2 "OIL_PUMP_COLD_STARTUP" 1 "OIL_PUMP_ENABLE" 0 "OIL_PUMP_STANDBY" ;
+VAL_ 918 DIF_oilPumpFluidTQF 1 "OIL_PUMP_FLUIDT_HIGH_CONFIDENCE" 0 "OIL_PUMP_FLUIDT_LOW_CONFIDENCE" ;
+VAL_ 918 DIF_oilPumpFlowTarget 255 "SNA" ;
+VAL_ 918 DIF_oilPumpFlowActual 255 "SNA" ;
+VAL_ 918 DIF_oilPumpFluidT 255 "SNA" ;
+VAL_ 918 DIF_oilPumpPhaseCurrent 255 "SNA" ;
+VAL_ 918 DIF_oilPumpPressureEstimate 255 "SNA" ;
+VAL_ 918 DIF_oilPumpPressureExpected 255 "SNA" ;
+VAL_ 918 DIF_oilPumpPressureResidual 255 "SNA" ;
+VAL_ 725 DIF_state 4 "DI_STATE_ENABLE" 3 "DI_STATE_ABORT" 2 "DI_STATE_FAULT" 1 "DI_STATE_STANDBY" 0 "DI_STATE_UNAVAILABLE" ;
+VAL_ 725 DIF_keepAliveRequest 1 "KEEP_ALIVE" 0 "NO_REQUEST" ;
+VAL_ 725 DIF_soptState 9 "SOPT_DISABLED" 8 "SOPT_SNA" 7 "SOPT_TEST_FAILED" 6 "SOPT_TEST_SKIPPED" 5 "SOPT_TEST_PASSED" 4 "SOPT_CURRENT_TEST" 3 "SOPT_ASC_TEST" 2 "SOPT_PSTG_BRING_UP_AT_SPEED" 1 "SOPT_PSTG_BRING_UP" 0 "SOPT_INIT" ;
+VAL_ 725 DIF_adState 3 "AD_STATE_FAULTED" 2 "AD_STATE_BACKUP" 1 "AD_STATE_NORMAL" 0 "AD_STATE_STARTUP" ;
+VAL_ 725 DIF_driveModeState 1 "DM_STATE_DRIVE" 0 "DM_STATE_NONDRIVE" ;
+VAL_ 725 DIF_wasteState 3 "DI_WASTE_STATIONARY" 2 "DI_WASTE_ON" 1 "DI_WASTE_AVAILABLE" 0 "DI_WASTE_UNAVAILABLE" ;
+VAL_ 725 DIF_haltRequest 2 "DI_HALT_GRACEFUL" 1 "DI_HALT_IMMEDIATE" 0 "DI_HALT_NONE" ;
+VAL_ 725 DIF_adDirection 1 "AD_FORWARD" 0 "AD_BACKWARD" ;
+VAL_ 725 DIF_spinDownLearningState 9 "SPINDOWN_STATE_DONE" 8 "SPINDOWN_STATE_WRITE" 7 "SPINDOWN_STATE_VERIFY" 6 "SPINDOWN_STATE_CORRECT" 5 "SPINDOWN_STATE_MEASURE" 4 "SPINDOWN_STATE_COAST" 3 "SPINDOWN_STATE_ACCELERATE" 2 "SPINDOWN_STATE_WAIT" 1 "SPINDOWN_STATE_PRECHECK" 0 "SPINDOWN_STATE_INIT" ;
+VAL_ 725 DIF_spinDownLearningMode 1 "SPINDOWN_MODE_ON_GROUND" 0 "SPINDOWN_MODE_ON_LIFT" ;
+VAL_ 390 DIF_torqueCommand -4096 "SNA" ;
+VAL_ 390 DIF_axleSpeedQF 2 "FAULTED" 1 "VALID" 0 "INVALID" ;
+VAL_ 390 DIF_torqueActual -4096 "SNA" ;
+VAL_ 390 DIF_axleSpeed -32768 "SNA" ;
+VAL_ 390 DIF_axleTorqueQF 2 "FAULTED" 1 "VALID" 0 "INVALID" ;
+VAL_ 390 DIF_axlePowerCalcQF 1 "VALID" 0 "INVALID" ;
+VAL_ 294 DIR_targetFluxMode 2 "DI_FLUXMODE_FW" 1 "DI_FLUXMODE_FS" 0 "DI_FLUXMODE_OPTIMUM" ;
+VAL_ 598 DIR_state 4 "DI_STATE_ENABLE" 3 "DI_STATE_ABORT" 2 "DI_STATE_FAULT" 1 "DI_STATE_STANDBY" 0 "DI_STATE_UNAVAILABLE" ;
+VAL_ 598 DIR_keepAliveRequest 1 "KEEP_ALIVE" 0 "NO_REQUEST" ;
+VAL_ 598 DIR_soptState 9 "SOPT_DISABLED" 8 "SOPT_SNA" 7 "SOPT_TEST_FAILED" 6 "SOPT_TEST_SKIPPED" 5 "SOPT_TEST_PASSED" 4 "SOPT_CURRENT_TEST" 3 "SOPT_ASC_TEST" 2 "SOPT_PSTG_BRING_UP_AT_SPEED" 1 "SOPT_PSTG_BRING_UP" 0 "SOPT_INIT" ;
+VAL_ 598 DIR_adState 3 "AD_STATE_FAULTED" 2 "AD_STATE_BACKUP" 1 "AD_STATE_NORMAL" 0 "AD_STATE_STARTUP" ;
+VAL_ 598 DIR_driveModeState 1 "DM_STATE_DRIVE" 0 "DM_STATE_NONDRIVE" ;
+VAL_ 598 DIR_wasteState 3 "DI_WASTE_STATIONARY" 2 "DI_WASTE_ON" 1 "DI_WASTE_AVAILABLE" 0 "DI_WASTE_UNAVAILABLE" ;
+VAL_ 598 DIR_haltRequest 2 "DI_HALT_GRACEFUL" 1 "DI_HALT_IMMEDIATE" 0 "DI_HALT_NONE" ;
+VAL_ 598 DIR_adDirection 1 "AD_FORWARD" 0 "AD_BACKWARD" ;
+VAL_ 598 DIR_spinDownLearningState 9 "SPINDOWN_STATE_DONE" 8 "SPINDOWN_STATE_WRITE" 7 "SPINDOWN_STATE_VERIFY" 6 "SPINDOWN_STATE_CORRECT" 5 "SPINDOWN_STATE_MEASURE" 4 "SPINDOWN_STATE_COAST" 3 "SPINDOWN_STATE_ACCELERATE" 2 "SPINDOWN_STATE_WAIT" 1 "SPINDOWN_STATE_PRECHECK" 0 "SPINDOWN_STATE_INIT" ;
+VAL_ 598 DIR_spinDownLearningMode 1 "SPINDOWN_MODE_ON_GROUND" 0 "SPINDOWN_MODE_ON_LIFT" ;
+VAL_ 264 DIR_torqueCommand -4096 "SNA" ;
+VAL_ 264 DIR_axleSpeedQF 2 "FAULTED" 1 "VALID" 0 "INVALID" ;
+VAL_ 264 DIR_torqueActual -4096 "SNA" ;
+VAL_ 264 DIR_axleSpeed -32768 "SNA" ;
+VAL_ 264 DIR_axleTorqueQF 2 "FAULTED" 1 "VALID" 0 "INVALID" ;
+VAL_ 264 DIR_axlePowerCalcQF 1 "VALID" 0 "INVALID" ;
+VAL_ 328 DI_imuOffsetLearnRequest 2 "IMU_FAST_LEARNING_TIME" 1 "IMU_SLOW_LEARNING_DISTANCE" 0 "IMU_OFFSET_LEARNING_OFF" ;
+VAL_ 328 DI_brakeCommandType 1 "QUIET" 0 "FAST" ;
+VAL_ 328 DI_brakeTorqueRequestActive 1 "ACTIVE" 0 "INACTIVE" ;
+VAL_ 328 DI_ptcStateGlobal 3 "GLOBAL_PTC_STATE_SNA" 2 "GLOBAL_PTC_STATE_ON" 1 "GLOBAL_PTC_STATE_BACKUP" 0 "GLOBAL_PTC_STATE_FAULTED" ;
+VAL_ 328 DI_ptcActive 1 "ACTIVE" 0 "INACTIVE" ;
+VAL_ 328 DI_vdcState 3 "VDC_STATE_STARTUP" 2 "VDC_STATE_NORMAL" 1 "VDC_STATE_BACKUP_A" 0 "VDC_STATE_FAULTED" ;
+VAL_ 328 DI_isAnyVdcControlActive 2 "UNUSED_VALUE" 1 "VDC_CONTROL_ACTIVE" 0 "VDC_NO_CONTROL_ACTIVE" ;
+VAL_ 328 DI_vdcMode 2 "VDC_MODE_TRACK" 1 "VDC_MODE_ON" 0 "VDC_MODE_OFF" ;
+VAL_ 328 DI_pedalAssistCurveSelect 15 "PEDAL_ASSIST_CURVE_15" 12 "PEDAL_ASSIST_CURVE_12" 11 "PEDAL_ASSIST_CURVE_11" 8 "PEDAL_ASSIST_CURVE_8" 6 "PEDAL_ASSIST_CURVE_6" 3 "PEDAL_ASSIST_CURVE_3" 0 "PEDAL_ASSIST_CURVE_0" ;
+VAL_ 328 DI_isAnyTcActive 1 "ACTIVE" 0 "INACTIVE" ;
+VAL_ 328 DI_vdcControlActive 4 "VDC_DECEL_ACTIVE" 3 "VDC_TRAILER_SWAY_ACTIVE" 2 "VDC_UNDERSTEER_ACTIVE" 1 "VDC_OVERSTEER_ACTIVE" 0 "VDC_NOT_ACTIVE" ;
+VAL_ 328 DI_treadDepthAlertSet 1 "TRUE" 0 "FALSE" ;
+VAL_ 1861 DI_chassisControlVideoRequest 15 "CHASSIS_CONTROL_EVENT_15" 14 "CHASSIS_CONTROL_EVENT_14" 13 "CHASSIS_CONTROL_EVENT_13" 12 "CHASSIS_CONTROL_EVENT_12" 11 "CHASSIS_CONTROL_EVENT_11" 10 "CHASSIS_CONTROL_EVENT_10" 9 "CHASSIS_CONTROL_EVENT_9" 8 "CHASSIS_CONTROL_EVENT_8" 7 "CHASSIS_CONTROL_EVENT_7" 6 "CHASSIS_CONTROL_EVENT_6" 5 "CHASSIS_CONTROL_EVENT_5" 4 "CHASSIS_CONTROL_EVENT_4" 3 "CHASSIS_CONTROL_EVENT_3" 2 "CHASSIS_CONTROL_EVENT_2" 1 "CHASSIS_CONTROL_EVENT_1" 0 "CHASSIS_CONTROL_EVENT_NONE" ;
+VAL_ 1861 DI_counterSteerTarget 2 "EXPIRED" 1 "ACTIVE" 0 "INACTIVE" ;
+VAL_ 1861 DI_turnDirection 1 "VDC_TURNING_LEFT" 0 "VDC_TURNING_RIGHT" ;
+VAL_ 1861 DI_oppositeBuildDirFrontAxle 1 "TRUE" 0 "FALSE" ;
+VAL_ 1861 DI_oppositeBuildDirRearAxle 1 "TRUE" 0 "FALSE" ;
+VAL_ 1861 DI_saturatedEffectiveness 1 "TRUE" 0 "FALSE" ;
+VAL_ 1861 DI_preControlOpposingTurnDir 1 "TRUE" 0 "FALSE" ;
+VAL_ 1869 DI_kTireEstReUnSat 127 "SNA" ;
+VAL_ 1869 DI_distanceSinceLastTireConfig 63 "SNA" ;
+VAL_ 1869 DI_kTireEstRe 31 "SNA" ;
+VAL_ 646 DI_cruiseState 7 "CRS_STATE_PRE_CANCEL" 6 "CRS_STATE_PRE_FAULT" 5 "CRS_STATE_FAULT" 4 "CRS_STATE_OVERRIDE" 3 "CRS_STATE_STANDSTILL" 2 "CRS_STATE_ENABLED" 1 "CRS_STATE_STANDBY" 0 "CRS_STATE_UNAVAILABLE" ;
+VAL_ 646 DI_cruiseSetSpeedUnits 1 "DI_SPEED_KPH" 0 "DI_SPEED_MPH" ;
+VAL_ 646 DI_autoparkState 15 "DI_APC_SNA" 9 "DI_APC_SELFPARK_STARTED" 8 "DI_APC_UNPARK_COMPLETE" 7 "DI_APC_RESUMED" 6 "DI_APC_ABORTED" 5 "DI_APC_PAUSED" 4 "DI_APC_COMPLETE" 3 "DI_APC_ACTIVE" 2 "DI_APC_STARTED" 1 "DI_APC_STANDBY" 0 "DI_APC_UNAVAILABLE" ;
+VAL_ 646 DI_parkBrakeState 15 "DI_PBRK_SNA" 7 "DI_PBRK_RELEASING" 6 "DI_PBRK_PANIC_SKID" 5 "DI_PBRK_PANIC_EPB" 4 "DI_PBRK_FAULTED" 3 "DI_PBRK_APPLIED" 2 "DI_PBRK_REQUESTED" 1 "DI_PBRK_RELEASED" 0 "DI_PBRK_UNAVAILABLE" ;
+VAL_ 646 DI_aebState 7 "AEB_CAN_STATE_SNA" 5 "AEB_CAN_STATE_UNAVAILABLE_ALERT" 4 "AEB_CAN_STATE_FAULT" 3 "AEB_CAN_STATE_STANDSTILL" 2 "AEB_CAN_STATE_ENABLED" 1 "AEB_CAN_STATE_STANDBY" 0 "AEB_CAN_STATE_UNAVAILABLE" ;
+VAL_ 646 DI_loncDeactivationReason 3 "ABORT" 2 "DAS_CANCEL" 1 "USER_CANCEL" 0 "NO_CANCEL" ;
+VAL_ 646 DI_vehicleHoldState 7 "DI_VHLD_STATE_INIT" 6 "DI_VHLD_STATE_FAULT" 5 "DI_VHLD_STATE_PARK" 4 "DI_VHLD_STATE_BLEND_OUT" 3 "DI_VHLD_STATE_STANDSTILL" 2 "DI_VHLD_STATE_BLEND_IN" 1 "DI_VHLD_STATE_STANDBY" 0 "DI_VHLD_STATE_UNAVAILABLE" ;
+VAL_ 646 DI_onePedalDrivingState 8 "DI_OPD_NUM_STATES" 7 "DI_OPD_MOTOR_BLEND_IN" 6 "DI_OPD_NO_MOTOR" 5 "DI_OPD_MOTOR_BLEND_OUT_ACTIVE" 4 "DI_OPD_MOTOR_BLEND_OUT_PENDING" 3 "DI_OPD_NOMINAL" 2 "DI_OPD_STANDBY" 1 "DI_OPD_QUICK_BRAKE_RAMP" 0 "DI_OPD_UNAVAILABLE" ;
+VAL_ 646 DI_regenBackfillState 2 "BFILL_ACTIVE" 1 "BFILL_STANDBY" 0 "BFILL_UNAVAILABLE" ;
+VAL_ 646 DI_cruiseNotAvailableReason 50 "DI_CRUISE_NOT_AVAILABLE_AIR_COMPRESSOR_FAULT" 49 "DI_CRUISE_NOT_AVAILABLE_ABS_FAULT" 48 "DI_CRUISE_NOT_AVAILABLE_DRIVERLESS_AUTONOMY_BEHAVIOR" 47 "DI_CRUISE_NOT_AVAILABLE_EPB_DYNAMIC_APPLY" 46 "DI_CRUISE_NOT_AVAILABLE_SGS_REQUEST" 45 "DI_CRUISE_NOT_AVAILABLE_VDC_FAULT" 44 "DI_CRUISE_NOT_AVAILABLE_ACCEL_JERK_OUT_OF_ISO_BOUNDS" 43 "DI_CRUISE_NOT_AVAILABLE_REDUNDANT_BRAKES_ACTIVE" 42 "DI_CRUISE_NOT_AVAILABLE_ABS_UNAVAILABLE" 41 "DI_CRUISE_NOT_AVAILABLE_LONC_DEGRADED" 40 "DI_CRUISE_NOT_AVAILABLE_FACTORY_MODE" 39 "DI_CRUISE_NOT_AVAILABLE_EPB_FAULT" 38 "DI_CRUISE_NOT_AVAILABLE_AEB_STACK_UNAVAILABLE" 37 "DI_CRUISE_NOT_AVAILABLE_AEB_STACK_EVENT_INACTIVE" 36 "DI_CRUISE_NOT_AVAILABLE_DFLK_ENGAGED" 35 "DI_CRUISE_NOT_AVAILABLE_INTERFACE_NOT_SUPPORTED" 34 "DI_CRUISE_NOT_AVAILABLE_CANCEL_ACTIVE" 33 "DI_CRUISE_NOT_AVAILABLE_CONTROL_STACK_SWITCH" 32 "DI_CRUISE_NOT_AVAILABLE_SHIFT_OUTSIDE_SPEED_THRESHOLD" 31 "DI_CRUISE_NOT_AVAILABLE_SHIFT_TIMEOUT" 30 "DI_CRUISE_NOT_AVAILABLE_OFFROAD_MODE_ACTIVE" 29 "DI_CRUISE_NOT_AVAILABLE_DAS_CONTROL_MIA" 28 "DI_CRUISE_NOT_AVAILABLE_UNIT0_FAULT" 27 "DI_CRUISE_NOT_AVAILABLE_BRAKE_TEMPERATURE" 26 "DI_CRUISE_NOT_AVAILABLE_ACC_BACKWARD_AT_HIGH_FORWARD_SPEED" 25 "DI_CRUISE_NOT_AVAILABLE_DAS_SET_SPEED_TOO_HIGH_IN_REVERSE" 24 "DI_CRUISE_NOT_AVAILABLE_MOTOR_SPEED_TOO_HIGH_IN_REVERSE" 23 "DI_CRUISE_NOT_AVAILABLE_VHLD_UNAVAILABLE" 22 "DI_CRUISE_NOT_AVAILABLE_CRUISE_FAULTED" 21 "DI_CRUISE_NOT_AVAILABLE_TRACK_MODE_ACTIVE" 20 "DI_CRUISE_NOT_AVAILABLE_DAS_SNA" 19 "DI_CRUISE_NOT_AVAILABLE_UI_MIA" 18 "DI_CRUISE_NOT_AVAILABLE_WAIT_INIT" 17 "DI_CRUISE_NOT_AVAILABLE_VEL_EST" 16 "DI_CRUISE_NOT_AVAILABLE_MAX_SPEED" 15 "DI_CRUISE_NOT_AVAILABLE_MIN_SPEED" 14 "DI_CRUISE_NOT_AVAILABLE_AEB" 13 "DI_CRUISE_NOT_AVAILABLE_CONFIG" 12 "DI_CRUISE_NOT_AVAILABLE_DI_STATE" 11 "DI_CRUISE_NOT_AVAILABLE_MOTOR_SPEED" 10 "DI_CRUISE_NOT_AVAILABLE_EBR" 9 "DI_CRUISE_NOT_AVAILABLE_VALET_MODE" 8 "DI_CRUISE_NOT_AVAILABLE_SEAT_BELT_UNBUCKLED" 7 "DI_CRUISE_NOT_AVAILABLE_CLOSURE_OPEN" 6 "DI_CRUISE_NOT_AVAILABLE_ACC_CANCEL" 5 "DI_CRUISE_NOT_AVAILABLE_ABS_ACTIVE" 4 "DI_CRUISE_NOT_AVAILABLE_TC_ACTIVE" 3 "DI_CRUISE_NOT_AVAILABLE_VDC_ACTIVE_OR_DEGRADED" 2 "DI_CRUISE_NOT_AVAILABLE_VDC_OR_TC_OFF" 1 "DI_CRUISE_NOT_AVAILABLE_NO_ALERT" 0 "DI_CRUISE_NOT_AVAILABLE_NONE" ;
+VAL_ 646 DI_cruiseFaultReason 22 "DI_CRUISE_FAULT_VHLD_FAULTED" 21 "DI_CRUISE_FAULT_CONFIG_MISMATCH" 20 "DI_CRUISE_FAULT_EPB_MIA" 19 "DI_CRUISE_FAULT_ACCEL_JERK_OUT_OF_ISO_BOUNDS" 17 "DI_CRUISE_FAULT_DAS_SNA" 16 "DI_CRUISE_FAULT_VELOCITY_ESTIMATE_NOT_NORMAL" 15 "DI_CRUISE_FAULT_ACCEL_OUT_OF_BOUNDS" 14 "DI_CRUISE_FAULT_EBR_FAULT" 13 "DI_CRUISE_FAULT_TC_FAULT" 12 "DI_CRUISE_FAULT_ESP_MIA" 11 "DI_CRUISE_FAULT_VDC_FAULT" 10 "DI_CRUISE_FAULT_EPB_FAULT" 9 "DI_CRUISE_FAULT_BRAKE_MIA" 8 "DI_CRUISE_FAULT_CRS_STATE_MISM" 7 "DI_CRUISE_FAULT_ABS_MIA" 6 "DI_CRUISE_FAULT_CRUISE_SCCM_MIA" 5 "DI_CRUISE_FAULT_BRAKE_INVALID" 4 "DI_CRUISE_FAULT_STALK" 3 "DI_CRUISE_FAULT_PM_REQUEST" 2 "DI_CRUISE_FAULT_PM_MIA" 1 "DI_CRUISE_FAULT_MOTOR_SPEED_MISMATCH" 0 "DI_CRUISE_FAULT_NONE" ;
+VAL_ 646 DI_cruiseCancelReason 11 "DI_CRUISE_CANCEL_DAS_MIA_PEDAL_APPLY" 10 "DI_CRUISE_CANCEL_ACC_FSD_EXIT" 9 "DI_CRUISE_CANCEL_SHIFT_REQUEST" 8 "DI_CRUISE_CANCEL_ACCEL_OVERRIDE_IN_REVERSE" 7 "DI_CRUISE_CANCEL_DAS" 6 "DI_CRUISE_CANCEL_PARK" 5 "DI_CRUISE_CANCEL_GEAR" 4 "DI_CRUISE_CANCEL_STALK" 3 "DI_CRUISE_CANCEL_BRAKE" 2 "DI_CRUISE_CANCEL_SKID" 1 "DI_CRUISE_CANCEL_APC_REQUEST" 0 "DI_CRUISE_CANCEL_NONE" ;
+VAL_ 1270 DI_doublePedalState 12 "DBL_BRKSTAND_TRQ_RAMPUP_DONE" 11 "DBL_BRKSTAND_LAUNCH" 10 "DBL_BRKSTAND_TRQ_HOLD" 9 "DBL_BRKSTAND_INIT_TRQ_RAMPUP" 8 "DBL_BRKSTAND_ARMED2" 7 "DBL_BRKSTAND_ARMED1" 6 "DBL_BRKOVR_RAMPUP" 5 "DBL_BRKOVR_RAMPDOWN" 4 "DBL_BRKPRESS_PREOVR" 3 "DBL_BRKPRESS_RAMPUP" 2 "DBL_BRKPRESS_RAMPDOWN" 1 "DBL_DRIVING" 0 "DBL_IDLE" ;
+VAL_ 1270 DI_autopilotRequest 1 "DI_AP_RQST_ACTIVATE" 0 "DI_AP_RQST_IDLE" ;
+VAL_ 1270 DI_rollPreventionState 7 "DI_RP_STATE_INIT" 6 "DI_RP_STATE_FAULT" 5 "DI_RP_STATE_MAX_BRAKE_TORQUE" 4 "DI_RP_STATE_HOLD" 3 "DI_RP_STATE_BUILD" 2 "DI_RP_STATE_READY" 1 "DI_RP_STATE_STANDBY" 0 "DI_RP_STATE_UNAVAILABLE" ;
+VAL_ 1270 DI_regenBlendingState 3 "BLEND_FRICTION_ONLY" 2 "BLEND_ACTIVE" 1 "BLEND_STANDBY" 0 "BLEND_UNAVAILABLE" ;
+VAL_ 1270 DI_pedalAssistCurveSelectForSX 15 "PEDAL_ASSIST_CURVE_15" 12 "PEDAL_ASSIST_CURVE_12" 11 "PEDAL_ASSIST_CURVE_11" 8 "PEDAL_ASSIST_CURVE_8" 6 "PEDAL_ASSIST_CURVE_6" 3 "PEDAL_ASSIST_CURVE_3" 0 "PEDAL_ASSIST_CURVE_0" ;
+VAL_ 1270 DI_longitudinalControlStack 7 "VELOCITY_PROFILE_CONTROL_SUPPRESS_CANCEL" 6 "DIRECT_TORQUE_CONTROL" 5 "DIRECT_PEDAL_CONTROL" 4 "AEB_CONTROL" 3 "VELOCITY_PROFILE_CONTROL" 2 "LONC_TORQUE_PROFILER" 1 "LEGACY_CRUISE" 0 "REQUEST_SNA" ;
+VAL_ 822 DI_sysDrivePowerRated 511 "SNA" ;
+VAL_ 822 DI_sysRegenPowerRated 255 "SNA" ;
+VAL_ 599 DI_uiSpeed 511 "DI_UI_SPEED_SNA" ;
+VAL_ 599 DI_uiSpeedUnits 1 "DI_SPEED_KPH" 0 "DI_SPEED_MPH" ;
+VAL_ 599 DI_vehicleSpeed 8191 "SNA" ;
+VAL_ 599 DI_velocityEstimatorState 5 "VE_STATE_BACKUP_MOTOR" 4 "VE_STATE_BACKUP_WHEELS_B" 3 "VE_STATE_BACKUP_WHEELS_A" 2 "VE_STATE_WHEELS_REDUCED" 1 "VE_STATE_WHEELS_NORMAL" 0 "VE_STATE_NOT_INITIALIZED" ;
+VAL_ 597 DI_lastQualifiedGear 7 "DI_GEAR_SNA" 4 "DI_GEAR_D" 3 "DI_GEAR_N" 2 "DI_GEAR_R" 1 "DI_GEAR_P" 0 "DI_GEAR_INVALID" ;
+VAL_ 597 DI_lastDrivingGear 7 "DI_GEAR_SNA" 4 "DI_GEAR_D" 3 "DI_GEAR_N" 2 "DI_GEAR_R" 1 "DI_GEAR_P" 0 "DI_GEAR_INVALID" ;
+VAL_ 597 DI_suggestedGearReason 14 "REASON_1ST_SHFT_PAR_PARK_NO_USS" 13 "REASON_AP_NOT_READY" 12 "REASON_EEPROM" 11 "REASON_AP_MIA" 10 "REASON_AP_NOT_CONFIDENT" 9 "REASON_AP" 8 "REASON_SUB_SHFT" 7 "REASON_SUB_SHFT_PAR_PARK" 6 "REASON_SUB_SHFT_RE_BLCK_PAR_PARK" 5 "REASON_SUB_SHFT_RE_BLCK" 4 "REASON_1ST_SHFT_FR_BLCK_PAR_PARK" 3 "REASON_1ST_SHFT_RE_BLCK" 2 "REASON_1ST_SHFT_FR_BLCK" 1 "REASON_1ST_SHFT_PAR_PARK" 0 "REASON_RETRACE" ;
+VAL_ 597 DI_smartShiftGear 2 "REVERSE" 1 "DRIVE" 0 "NONE" ;
+VAL_ 597 DI_smartShiftUnavailableReason 18 "SMART_SHIFT_UNAVAILABLE_DAS_MIA" 17 "SMART_SHIFT_UNAVAILABLE_DAS_NOT_CONFIDENT" 16 "SMART_SHIFT_UNAVAILABLE_DISPLAY_ERROR" 15 "SMART_SHIFT_UNAVAILABLE_VDC_UNAVAILABLE" 14 "SMART_SHIFT_UNAVAILABLE_VHLD_UNAVAILABLE" 13 "SMART_SHIFT_UNAVAILABLE_OPD_UNAVAILABLE" 12 "SMART_SHIFT_UNAVAILABLE_BLS_UNKNOWN" 11 "SMART_SHIFT_UNAVAILABLE_IBST_MIA" 10 "SMART_SHIFT_SILENT_UNAVAILABLE_AEB_ACTIVE" 9 "SMART_SHIFT_SILENT_UNAVAILABLE_CRUISE_REGULATING" 8 "SMART_SHIFT_SILENT_UNAVAILABLE_GTW_NOT_QUALIFIED" 7 "SMART_SHIFT_SILENT_UNAVAILABLE_SGS_ACTIVE" 6 "SMART_SHIFT_SILENT_UNAVAILABLE_CLOSURE_OPEN" 5 "SMART_SHIFT_SILENT_UNAVAILABLE_CHARGE_CABLE_CONNECTED" 4 "SMART_SHIFT_SILENT_UNAVAILABLE_DRIVER_BUCKLED_QF" 3 "SMART_SHIFT_SILENT_UNAVAILABLE_NON_STANDARD_MODE" 2 "SMART_SHIFT_SILENT_UNAVAILABLE_UI_DISABLE" 1 "SMART_SHIFT_UNAVAILABLE_NONE" 0 "SMART_SHIFT_UNAVAILABLE_SNA" ;
+VAL_ 282 DI_vdcCommandTypeFrR 3 "VDC_SLIP_COMMAND" 2 "VDC_TORQUE_COMMAND" 1 "BTC_TORQUE_COMMAND" 0 "NO_TORQUE_COMMAND" ;
+VAL_ 282 DI_vdcCommandTypeReR 3 "VDC_SLIP_COMMAND" 2 "VDC_TORQUE_COMMAND" 1 "BTC_TORQUE_COMMAND" 0 "NO_TORQUE_COMMAND" ;
+VAL_ 282 DI_vdcCommandABSFrR 4 "MODIFY_BY_ABS_NO_GMA_NO_EBD" 3 "MODIFY_BY_ABS_NO_GMA" 2 "MODIFY_BY_ABS_ALL" 1 "FEED_THROUGH" 0 "NO_COMMAND" ;
+VAL_ 282 DI_vdcCommandABSReR 4 "MODIFY_BY_ABS_NO_GMA_NO_EBD" 3 "MODIFY_BY_ABS_NO_GMA" 2 "MODIFY_BY_ABS_ALL" 1 "FEED_THROUGH" 0 "NO_COMMAND" ;
+VAL_ 282 DI_brakeTorqueTarFrR 0 "NO_COMMAND" ;
+VAL_ 282 DI_brakeTorqueTarReR 0 "NO_COMMAND" ;
+VAL_ 282 DI_wheelSlipLimitFrR 0 "NO_COMMAND" ;
+VAL_ 282 DI_wheelSlipLimitReR 0 "NO_COMMAND" ;
+VAL_ 615 DI_trailerDetected 1 "TRAILER_DETECTED" 0 "TRAILER_NOT_DETECTED" ;
+VAL_ 615 DI_relativeTireTreadDepth -32 "SNA" ;
+VAL_ 615 DI_tireFitment 3 "FITMENT_SNA" 1 "FITMENT_STAGGERED" 0 "FITMENT_SQUARE" ;
+VAL_ 615 DI_massConfidence 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;
+VAL_ 615 DI_massConfidenceRLS 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;
+VAL_ 977 EPAS3P_resyncStatus 1 "RESYNC_COMPLETE" 0 "RESYNC_PENDING" ;
+VAL_ 817 EPAS3P_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;
+VAL_ 817 EPAS3P_infoBuildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
+VAL_ 880 EPAS3P_steeringRackForce 1023 "SNA" 1022 "NOT_IN_SPEC" ;
+VAL_ 880 EPAS3P_steeringFault 1 "FAULT" 0 "NO_FAULT" ;
+VAL_ 880 EPAS3P_steeringReduced 1 "REDUCED_ASSIST" 0 "NORMAL_ASSIST" ;
+VAL_ 880 EPAS3P_internalSASQF 1 "IN_SPEC" 0 "UNDEFINABLE_ACCURACY" ;
+VAL_ 880 EPAS3P_currentTuneMode 5 "STEERING_TUNE_RWD_SPORT" 4 "STEERING_TUNE_RWD_STANDARD" 3 "STEERING_TUNE_RWD_COMFORT" 2 "STEERING_TUNE_DM_SPORT" 1 "STEERING_TUNE_DM_STANDARD" 0 "STEERING_TUNE_DM_COMFORT" ;
+VAL_ 880 EPAS3P_torsionBarTorque 4095 "SNA" 4094 "UNDEFINABLE_DATA" ;
+VAL_ 880 EPAS3P_eacErrorCode 15 "SNA" 14 "EAC_EXTERNAL_MONITOR_INHIBIT" 13 "EAC_ERROR_PINION_VEL_DIFF" 12 "EAC_ERROR_LOW_ASSIST" 11 "EAC_ERROR_HIGH_TORSION_SAFETY" 10 "EAC_ERROR_HIGH_MMOT_SAFETY" 9 "EAC_ERROR_HIGH_ANGLE_RATE_SAFETY" 8 "EAC_ERROR_HIGH_ANGLE_SAFETY" 7 "EAC_ERROR_HIGH_ANGLE_RATE_REQ" 6 "EAC_ERROR_HIGH_ANGLE_REQ" 5 "EAR_ERROR_MAX_STEER_DELTA" 4 "EAC_ERROR_TMP_FAULT" 3 "EAC_ERROR_HANDS_ON" 2 "EAC_ERROR_MAX_SPEED" 1 "EAC_ERROR_MIN_SPEED" 0 "EAC_ERROR_IDLE" ;
+VAL_ 880 EPAS3P_handsOnLevel 3 "LEVEL_3" 2 "LEVEL_2" 1 "LEVEL_1" 0 "LEVEL_0" ;
+VAL_ 880 EPAS3P_eacStatus 7 "EAC_ELK_ACTIVE" 6 "EAC_ELK_AVAILABLE" 5 "EAC_LKA_ACTIVE" 4 "EAC_LKA_ELK_AVAILABLE" 3 "EAC_FAULT" 2 "EAC_ACTIVE" 1 "EAC_AVAILABLE" 0 "EAC_INHIBITED" ;
+VAL_ 909 ESP_absActive 1 "ABS_ACTIVE" 0 "ABS_NOT_ACTIVE" ;
+VAL_ 909 ESP_vehicleStandstill 1 "STANDSTILL" 0 "NOT_STANDSTILL" ;
+VAL_ 909 ESP_vehicleStandstillQF 2 "STANDSTILL_FAULTED" 1 "STANDSTILL_NORMAL" 0 "STANDSTILL_NOT_INIT" ;
+VAL_ 909 ESP_decoupledBrakePressOffsetCom 127 "SNA" ;
+VAL_ 909 ESP_privateVehicleSpdQF 2 "Faulty" 1 "Normal" 0 "NotInit_orOff" ;
+VAL_ 909 ESP_brakeMasterCylPress 1023 "SNA" ;
+VAL_ 909 ESP_brakeMasterCylPressQF 3 "PRESSURE_FAULTED2" 2 "PRESSURE_FAULTED" 1 "PRESSURE_NORMAL" 0 "PRESSURE_NOT_INITIALIZED" ;
+VAL_ 325 ESP_espModeActive 3 "ESP_MODE_03" 2 "ESP_MODE_02" 1 "ESP_MODE_01" 0 "ESP_MODE_00_NORMAL" ;
+VAL_ 325 ESP_stabilityControlSts2 3 "FAULTED" 2 "ENGAGED" 1 "ON" 0 "INIT" ;
+VAL_ 325 ESP_ebdFaultLamp 1 "EBD_FAULT_LAMP_ON" 0 "EBD_FAULT_LAMP_OFF" ;
+VAL_ 325 ESP_absFaultLamp 1 "ABS_FAULT_LAMP_ON" 0 "ABS_FAULT_LAMP_OFF" ;
+VAL_ 325 ESP_espFaultLamp 1 "ESP_FAULT_LAMP_ON" 0 "ESP_FAULT_LAMP_OFF" ;
+VAL_ 325 ESP_espLampFlash 1 "ESP_LAMP_FLASH" 0 "ESP_LAMP_OFF" ;
+VAL_ 325 ESP_brakeLamp 1 "LAMP_ON" 0 "LAMP_OFF" ;
+VAL_ 325 ESP_absBrakeEvent2 3 "ABS_EVENT_ACTIVE_REAR" 2 "ABS_EVENT_ACTIVE_FRONT" 1 "ABS_EVENT_ACTIVE_FRONT_REAR" 0 "ABS_EVENT_NOT_ACTIVE" ;
+VAL_ 325 ESP_longitudinalAccelQF 1 "IN_SPEC" 0 "UNDEFINABLE_ACCURACY" ;
+VAL_ 325 ESP_lateralAccelQF 1 "IN_SPEC" 0 "UNDEFINABLE_ACCURACY" ;
+VAL_ 325 ESP_yawRateQF 1 "IN_SPEC" 0 "UNDEFINABLE_ACCURACY" ;
+VAL_ 325 ESP_steeringAngleQF 1 "IN_SPEC" 0 "UNDEFINABLE_ACCURACY" ;
+VAL_ 325 ESP_brakeDiscWipingActive 1 "BDW_ACTIVE" 0 "BDW_INACTIVE" ;
+VAL_ 325 ESP_driverBrakeApply 3 "Faulty_SNA" 2 "Driver_applying_brakes" 1 "Not_Applied" 0 "NotInit_orOff" ;
+VAL_ 325 ESP_brakeApply 1 "BLS_ACTIVE" 0 "BLS_INACTIVE" ;
+VAL_ 325 ESP_aesPrimaryActuatorStatus 3 "AES_FAILURE" 2 "AES_ACTIVE" 1 "AES_AVAILABLE" 0 "AES_NOT_SUPPORTED_OR_NOT_INIT" ;
+VAL_ 325 ESP_cdpStatus 3 "CDP_COMMAND_INVALID" 2 "ACTUATING_EPB_CDP" 1 "CDP_IS_AVAILABLE" 0 "CDP_IS_NOT_AVAILABLE" ;
+VAL_ 325 ESP_ptcTargetState 3 "SNA" 2 "ON" 1 "BACKUP" 0 "FAULT" ;
+VAL_ 325 ESP_btcTargetState 3 "SNA" 2 "ON" 1 "BACKUP" 0 "OFF" ;
+VAL_ 325 ESP_decoupledBrakePressEst 255 "SNA" ;
+VAL_ 325 ESP_ebrStandstillSkid 1 "STANDSTILL_SKID_DETECTED" 0 "NO_STANDSTILL_SKID" ;
+VAL_ 325 ESP_ebrStatus 3 "EBR_COMMAND_INVALID" 2 "ACTUATING_DI_EBR" 1 "EBR_IS_AVAILABLE" 0 "EBR_IS_NOT_AVAILABLE" ;
+VAL_ 925 IBST_iBoosterStatus 6 "IBOOSTER_ACTUATION" 5 "IBOOSTER_READY" 4 "IBOOSTER_ACTIVE_GOOD_CHECK" 3 "IBOOSTER_DIAGNOSTIC" 2 "IBOOSTER_FAILURE" 1 "IBOOSTER_INIT" 0 "IBOOSTER_OFF" ;
+VAL_ 925 IBST_driverBrakeApply 3 "FAULT" 2 "DRIVER_APPLYING_BRAKES" 1 "BRAKES_NOT_APPLIED" 0 "NOT_INIT_OR_OFF" ;
+VAL_ 925 IBST_internalState 6 "POST_DRIVE_CHECK" 5 "TRANSITION_TO_IDLE" 4 "DIAGNOSTIC" 3 "EXTERNAL_BRAKE_REQUEST" 2 "LOCAL_BRAKE_REQUEST" 1 "PRE_DRIVE_CHECK" 0 "NO_MODE_ACTIVE" ;
+VAL_ 925 IBST_LVPowerModeState 3 "PEAK_POWER_REDUCTION_RESERVED" 2 "PEAK_POWER_REDUCTION_ACTIVE_MAX600W_NOMINAL350W" 1 "PEAK_POWER_REDUCTION_AVAILABLE" 0 "PEAK_POWER_REDUCTION_NOT_SUPPORTED" ;
+VAL_ 2038 PM_vdcDebugSelector 32 "Mux32" 31 "Mux31" 30 "Mux30" 29 "Mux29" 28 "Mux28" 27 "Mux27" 26 "Mux26" 25 "Mux25" 24 "Mux24" 23 "Mux23" 22 "Mux22" 21 "Mux21" 20 "Mux20" 19 "Mux19" 18 "Mux18" 17 "Mux17" 16 "Mux16" 15 "Mux15" 14 "Mux14" 13 "Mux13" 12 "Mux12" 11 "Mux11" 10 "Mux10" 9 "Mux9" 8 "Mux8" 7 "Mux7" 6 "Mux6" 5 "Mux5" 4 "Mux4" 3 "Mux3" 2 "Mux2" 1 "Mux1" 0 "Mux0" ;
+VAL_ 17 RCM_collisionRear 3 "RCM_COLLISION_EVENT_SNA" 1 "RCM_COLLISION_EVENT_ACTIVE" 0 "RCM_COLLISION_EVENT_INACTIVE" ;
+VAL_ 17 RCM_collisionRight 3 "RCM_COLLISION_EVENT_SNA" 1 "RCM_COLLISION_EVENT_ACTIVE" 0 "RCM_COLLISION_EVENT_INACTIVE" ;
+VAL_ 17 RCM_collisionLeft 3 "RCM_COLLISION_EVENT_SNA" 1 "RCM_COLLISION_EVENT_ACTIVE" 0 "RCM_COLLISION_EVENT_INACTIVE" ;
+VAL_ 17 RCM_collisionFront 3 "RCM_COLLISION_EVENT_SNA" 1 "RCM_COLLISION_EVENT_ACTIVE" 0 "RCM_COLLISION_EVENT_INACTIVE" ;
+VAL_ 17 RCM_collisionRollover 3 "RCM_COLLISION_EVENT_SNA" 1 "RCM_COLLISION_EVENT_ACTIVE" 0 "RCM_COLLISION_EVENT_INACTIVE" ;
+VAL_ 17 RCM_collisionPedPro 3 "RCM_COLLISION_EVENT_SNA" 1 "RCM_COLLISION_EVENT_ACTIVE" 0 "RCM_COLLISION_EVENT_INACTIVE" ;
+VAL_ 17 RCM_collisionSeverity 3 "RCM_COLLISION_SEVERITY_PEDPRO_EVENT" 2 "RCM_COLLISION_SEVERITY_SECOND_STAGE" 1 "RCM_COLLISION_SEVERITY_FIRST_STAGE" 0 "RCM_COLLISION_SEVERITY_PRETENSIONER" ;
+VAL_ 289 RCM_nearDeployRear 3 "RCM_NEAR_DEPLOY_EVENT_SNA" 1 "RCM_NEAR_DEPLOY_EVENT_ACTIVE" 0 "RCM_NEAR_DEPLOY_EVENT_INACTIVE" ;
+VAL_ 289 RCM_nearDeployRight 3 "RCM_NEAR_DEPLOY_EVENT_SNA" 1 "RCM_NEAR_DEPLOY_EVENT_ACTIVE" 0 "RCM_NEAR_DEPLOY_EVENT_INACTIVE" ;
+VAL_ 289 RCM_nearDeployLeft 3 "RCM_NEAR_DEPLOY_EVENT_SNA" 1 "RCM_NEAR_DEPLOY_EVENT_ACTIVE" 0 "RCM_NEAR_DEPLOY_EVENT_INACTIVE" ;
+VAL_ 289 RCM_nearDeployFront 3 "RCM_NEAR_DEPLOY_EVENT_SNA" 1 "RCM_NEAR_DEPLOY_EVENT_ACTIVE" 0 "RCM_NEAR_DEPLOY_EVENT_INACTIVE" ;
+VAL_ 289 RCM_nearDeployRollover 3 "RCM_NEAR_DEPLOY_EVENT_SNA" 1 "RCM_NEAR_DEPLOY_EVENT_ACTIVE" 0 "RCM_NEAR_DEPLOY_EVENT_INACTIVE" ;
+VAL_ 289 RCM_crashAlgoWakeup 3 "RCM_CRASH_ALGO_WAKEUP_EVENT_SNA" 1 "RCM_CRASH_ALGO_WAKEUP_EVENT_ACTIVE" 0 "RCM_CRASH_ALGO_WAKEUP_EVENT_INACTIVE" ;
+VAL_ 260 VCFRONT_vehicleSM 18 "VEHICLE_STATUS_SNA" 17 "VEHICLE_STATUS_RESET" 16 "VEHICLE_STATUS_TURN_ON_RAILS" 15 "VEHICLE_STATUS_OTA" 14 "VEHICLE_STATUS_CRASH" 13 "VEHICLE_STATUS_DRIVE" 12 "VEHICLE_STATUS_CONDITIONING" 11 "VEHICLE_STATUS_ACCESSORY_PLUS" 10 "VEHICLE_STATUS_ACCESSORY" 9 "VEHICLE_STATUS_HV_UP_STANDBY" 8 "VEHICLE_STATUS_LV_AWAKE" 7 "VEHICLE_STATUS_LV_SHUTDOWN" 6 "VEHICLE_STATUS_SLEEP_STANDBY" 5 "VEHICLE_STATUS_SLEEP_SHUTDOWN" 4 "VEHICLE_STATUS_SYSTEM_CHECKS" 3 "VEHICLE_STATUS_BATTERY_POST_WAKE" 2 "VEHICLE_STATUS_SILENT_WAKE" 1 "VEHICLE_STATUS_LOW_POWER_STANDBY" 0 "VEHICLE_STATUS_INIT" ;
+VAL_ 260 VCFRONT_battSM 10 "BATTERY_SM_STATE_EXTERNAL_LV_BUS_CONTROL" 9 "BATTERY_SM_STATE_RECOVERY" 8 "BATTERY_SM_STATE_FAULT" 7 "BATTERY_SM_STATE_SHORTED_CELL_TEST" 6 "BATTERY_SM_STATE_DISCONNECTED_BATTERY_TEST" 5 "BATTERY_SM_STATE_OTA_STANDBY" 4 "BATTERY_SM_STATE_RESISTANCE_ESTIMATION" 3 "BATTERY_SM_STATE_STANDBY" 2 "BATTERY_SM_STATE_DISCHARGE" 1 "BATTERY_SM_STATE_CHARGE" 0 "BATTERY_SM_STATE_INIT" ;
+VAL_ 258 VCLEFT_doorClosureStatusFront 8 "CLOSURE_STATUS_FAULT" 2 "CLOSURE_STATUS_CLOSED" 1 "CLOSURE_STATUS_OPEN" 0 "CLOSURE_STATUS_SNA" ;
+VAL_ 258 VCLEFT_doorClosureStatusRear 8 "CLOSURE_STATUS_FAULT" 2 "CLOSURE_STATUS_CLOSED" 1 "CLOSURE_STATUS_OPEN" 0 "CLOSURE_STATUS_SNA" ;
+VAL_ 258 VCLEFT_frontLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 258 VCLEFT_rearLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 258 VCLEFT_lastDoorReqSourceFront 4 "DOOR_REQUEST_SOURCE_ECU" 3 "DOOR_REQUEST_SOURCE_VCSEC" 2 "DOOR_REQUEST_SOURCE_EXTERIOR_HANDLE" 1 "DOOR_REQUEST_SOURCE_INTERIOR_BUTTON" 0 "DOOR_REQUEST_SOURCE_UNKNOWN" ;
+VAL_ 258 VCLEFT_lastDoorReqSourceRear 4 "DOOR_REQUEST_SOURCE_ECU" 3 "DOOR_REQUEST_SOURCE_VCSEC" 2 "DOOR_REQUEST_SOURCE_EXTERIOR_HANDLE" 1 "DOOR_REQUEST_SOURCE_INTERIOR_BUTTON" 0 "DOOR_REQUEST_SOURCE_UNKNOWN" ;
+VAL_ 258 VCLEFT_mirrorState 5 "MIRROR_STATE_CALIBRATION" 4 "MIRROR_STATE_RECALL" 3 "MIRROR_STATE_FOLD_UNFOLD" 2 "MIRROR_STATE_TILT_Y" 1 "MIRROR_STATE_TILT_X" 0 "MIRROR_STATE_IDLE" ;
+VAL_ 258 VCLEFT_mirrorFoldState 4 "MIRROR_FOLD_STATE_UNFOLDING" 3 "MIRROR_FOLD_STATE_FOLDING" 2 "MIRROR_FOLD_STATE_UNFOLDED" 1 "MIRROR_FOLD_STATE_FOLDED" 0 "MIRROR_FOLD_STATE_UNKNOWN" ;
+VAL_ 258 VCLEFT_mirrorRecallState 5 "MIRROR_RECALL_STATE_RECALLING_STOPPED" 4 "MIRROR_RECALL_STATE_RECALLING_FAILED" 3 "MIRROR_RECALL_STATE_RECALLING_COMPLETE" 2 "MIRROR_RECALL_STATE_RECALLING_AXIS_2" 1 "MIRROR_RECALL_STATE_RECALLING_AXIS_1" 0 "MIRROR_RECALL_STATE_INIT" ;
+VAL_ 258 VCLEFT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
+VAL_ 546 VCLEFT_cdpRequestState 1 "EPB_CDP_REQUEST_VALID" 0 "EPB_CDP_REQUEST_INVALID" ;
+VAL_ 546 VCLEFT_epbmSystemStatusQF 1 "EPBM_SYSTEM_STATUS_INVALID" 0 "EPBM_SYSTEM_STATUS_VALID" ;
+VAL_ 546 VCLEFT_epbmUnitStatus 23 "EPB_STATUS_COUNT" 22 "EPB_STATUS_AUTONOMY_OPEN" 21 "EPB_STATUS_FREE_ROLL_MODE" 20 "EPB_STATUS_DYNAMIC_PARKING" 19 "EPB_STATUS_EXTERNAL_PARKING" 18 "EPB_STATUS_RELEASING_FOR_EXTERNAL_PARK" 17 "EPB_STATUS_EXTERNAL_DYNAMIC" 16 "EPB_STATUS_SUMMON_PARKING" 15 "EPB_STATUS_SUMMON_RELEASING" 14 "EPB_STATUS_SUMMON" 13 "EPB_STATUS_WINCHMODE_PENDING" 12 "EPB_STATUS_PARK_PENDING" 11 "EPB_STATUS_SERVICE_RELEASING" 10 "EPB_STATUS_RELEASING" 9 "EPB_STATUS_DYNAMIC_APPLYING" 8 "EPB_STATUS_PARKING" 7 "EPB_STATUS_WINCHMODE_RELEASING" 6 "EPB_STATUS_WINCHMODE" 5 "EPB_STATUS_SERVICE" 4 "EPB_STATUS_START" 3 "EPB_STATUS_PARK" 2 "EPB_STATUS_DYNAMIC" 1 "EPB_STATUS_OPEN" 0 "EPB_STATUS_UNKNOWN" ;
+VAL_ 546 VCLEFT_epbmCdpState 2 "EPB_CDP_STATE_FAULT" 1 "EPB_CDP_STATE_VALID" 0 "EPB_CDP_STATE_UNKNOWN" ;
+VAL_ 778 VCLEFT_frontOccupancyStatus 7 "SEAT_OCCUPANCY_SNA" 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 778 VCLEFT_frontBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 778 VCLEFT_rearLeftOccupancyStatus 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 778 VCLEFT_rearCenterOccupancyStatus 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 778 VCLEFT_rearRightOccupancyStatus 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 778 VCLEFT_rearLeftBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 778 VCLEFT_rearCenterBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 778 VCLEFT_seatTrackPosition 7 "SEAT_TRACK_POSITION_SNA" 3 "SEAT_TRACK_POSITION_FAULTED" 2 "SEAT_TRACK_POSITION_NOT_CONFIGURED" 1 "SEAT_TRACK_POSITION_REARWARD" 0 "SEAT_TRACK_POSITION_FORWARD" ;
+VAL_ 259 VCRIGHT_doorClosureStatusFront 8 "CLOSURE_STATUS_FAULT" 2 "CLOSURE_STATUS_CLOSED" 1 "CLOSURE_STATUS_OPEN" 0 "CLOSURE_STATUS_SNA" ;
+VAL_ 259 VCRIGHT_doorClosureStatusRear 8 "CLOSURE_STATUS_FAULT" 2 "CLOSURE_STATUS_CLOSED" 1 "CLOSURE_STATUS_OPEN" 0 "CLOSURE_STATUS_SNA" ;
+VAL_ 259 VCRIGHT_frontLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 259 VCRIGHT_rearLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 259 VCRIGHT_lastDoorReqSourceFront 4 "DOOR_REQUEST_SOURCE_ECU" 3 "DOOR_REQUEST_SOURCE_VCSEC" 2 "DOOR_REQUEST_SOURCE_EXTERIOR_HANDLE" 1 "DOOR_REQUEST_SOURCE_INTERIOR_BUTTON" 0 "DOOR_REQUEST_SOURCE_UNKNOWN" ;
+VAL_ 259 VCRIGHT_lastDoorReqSourceRear 4 "DOOR_REQUEST_SOURCE_ECU" 3 "DOOR_REQUEST_SOURCE_VCSEC" 2 "DOOR_REQUEST_SOURCE_EXTERIOR_HANDLE" 1 "DOOR_REQUEST_SOURCE_INTERIOR_BUTTON" 0 "DOOR_REQUEST_SOURCE_UNKNOWN" ;
+VAL_ 259 VCRIGHT_mirrorState 5 "MIRROR_STATE_CALIBRATION" 4 "MIRROR_STATE_RECALL" 3 "MIRROR_STATE_FOLD_UNFOLD" 2 "MIRROR_STATE_TILT_Y" 1 "MIRROR_STATE_TILT_X" 0 "MIRROR_STATE_IDLE" ;
+VAL_ 259 VCRIGHT_mirrorFoldState 4 "MIRROR_FOLD_STATE_UNFOLDING" 3 "MIRROR_FOLD_STATE_FOLDING" 2 "MIRROR_FOLD_STATE_UNFOLDED" 1 "MIRROR_FOLD_STATE_FOLDED" 0 "MIRROR_FOLD_STATE_UNKNOWN" ;
+VAL_ 259 VCRIGHT_trunkLatchStatus 8 "LATCH_FAULT" 7 "LATCH_DEFAULT" 6 "LATCH_TIMEOUT" 5 "LATCH_AJAR" 4 "LATCH_OPENING" 3 "LATCH_CLOSING" 2 "LATCH_CLOSED" 1 "LATCH_OPENED" 0 "LATCH_SNA" ;
+VAL_ 259 VCRIGHT_mirrorRecallState 5 "MIRROR_RECALL_STATE_RECALLING_STOPPED" 4 "MIRROR_RECALL_STATE_RECALLING_FAILED" 3 "MIRROR_RECALL_STATE_RECALLING_COMPLETE" 2 "MIRROR_RECALL_STATE_RECALLING_AXIS_2" 1 "MIRROR_RECALL_STATE_RECALLING_AXIS_1" 0 "MIRROR_RECALL_STATE_INIT" ;
+VAL_ 611 VCRIGHT_cdpRequestState 1 "EPB_CDP_REQUEST_VALID" 0 "EPB_CDP_REQUEST_INVALID" ;
+VAL_ 611 VCRIGHT_epbmSystemStatusQF 1 "EPBM_SYSTEM_STATUS_INVALID" 0 "EPBM_SYSTEM_STATUS_VALID" ;
+VAL_ 611 VCRIGHT_epbmUnitStatus 23 "EPB_STATUS_COUNT" 22 "EPB_STATUS_AUTONOMY_OPEN" 21 "EPB_STATUS_FREE_ROLL_MODE" 20 "EPB_STATUS_DYNAMIC_PARKING" 19 "EPB_STATUS_EXTERNAL_PARKING" 18 "EPB_STATUS_RELEASING_FOR_EXTERNAL_PARK" 17 "EPB_STATUS_EXTERNAL_DYNAMIC" 16 "EPB_STATUS_SUMMON_PARKING" 15 "EPB_STATUS_SUMMON_RELEASING" 14 "EPB_STATUS_SUMMON" 13 "EPB_STATUS_WINCHMODE_PENDING" 12 "EPB_STATUS_PARK_PENDING" 11 "EPB_STATUS_SERVICE_RELEASING" 10 "EPB_STATUS_RELEASING" 9 "EPB_STATUS_DYNAMIC_APPLYING" 8 "EPB_STATUS_PARKING" 7 "EPB_STATUS_WINCHMODE_RELEASING" 6 "EPB_STATUS_WINCHMODE" 5 "EPB_STATUS_SERVICE" 4 "EPB_STATUS_START" 3 "EPB_STATUS_PARK" 2 "EPB_STATUS_DYNAMIC" 1 "EPB_STATUS_OPEN" 0 "EPB_STATUS_UNKNOWN" ;
+VAL_ 611 VCRIGHT_epbmCdpState 2 "EPB_CDP_STATE_FAULT" 1 "EPB_CDP_STATE_VALID" 0 "EPB_CDP_STATE_UNKNOWN" ;
+VAL_ 794 VCRIGHT_frontOccupancyStatus 7 "SEAT_OCCUPANCY_SNA" 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 794 VCRIGHT_frontBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 794 VCRIGHT_rearCenterBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 794 VCRIGHT_rearRightBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 794 VCRIGHT_rearRightOccupancyStatus 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 794 VCRIGHT_3RowLeftBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 794 VCRIGHT_3RowRightBuckleStatus 3 "SEAT_BELT_BUCKLE_NOT_CONFIGURED" 2 "SEAT_BELT_BUCKLE_STATUS_FAULTED" 1 "SEAT_BELT_BUCKLE_STATUS_LATCHED" 0 "SEAT_BELT_BUCKLE_STATUS_UNLATCHED" ;
+VAL_ 794 VCRIGHT_3RowLeftOccupancyStatus 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 794 VCRIGHT_3RowRightOccupancyStatus 3 "SEAT_NOT_CONFIGURED" 2 "SEAT_OCCUPANCY_FAULTED" 1 "SEAT_OCCUPIED" 0 "SEAT_UNOCCUPIED" ;
+VAL_ 794 VCRIGHT_seatTrackPosition 7 "SEAT_TRACK_POSITION_SNA" 3 "SEAT_TRACK_POSITION_FAULTED" 2 "SEAT_TRACK_POSITION_NOT_CONFIGURED" 1 "SEAT_TRACK_POSITION_REARWARD" 0 "SEAT_TRACK_POSITION_FORWARD" ;
+VAL_ 794 VCRIGHT_occupantClassification 7 "SEAT_OCCUPANT_CLASSIFICATON_SNA" 6 "SEAT_OCCUPANT_CLASSIFICATON_OUT_OF_POSITION" 5 "SEAT_OCCUPANT_CLASSIFICATON_NOT_CONFIGURED" 4 "SEAT_OCCUPANT_CLASSIFICATON_INIT" 3 "SEAT_OCCUPANT_CLASSIFICATON_LARGE" 2 "SEAT_OCCUPANT_CLASSIFICATON_SMALL" 1 "SEAT_OCCUPANT_CLASSIFICATON_INHIBIT" 0 "SEAT_OCCUPANT_CLASSIFICATON_EMPTY" ;
+VAL_ 794 VCRIGHT_occupantClassificationQF 1 "SEAT_OCCUPANT_CLASSIFICATON_NOT_FAULTED" 0 "SEAT_OCCUPANT_CLASSIFICATON_FAULTED" ;
+VAL_ 794 VCRIGHT_classificationEnabled 1 "VCRIGHT_CLASSIFICATION_SOURCE" 0 "OCS1P_CLASSIFICATION_SOURCE" ;
+VAL_ 794 VCRIGHT_classificationEnabledQF 1 "CLASSIFICATION_ENABLED_NOT_FAULTED" 0 "CLASSIFICATION_ENABLED_FAULTED" ;

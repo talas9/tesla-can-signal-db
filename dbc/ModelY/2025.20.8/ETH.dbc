@@ -1,0 +1,242 @@
+VERSION "dbc-export 1 2025.20.8"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: GTW RCU UI
+
+
+BO_ 838 GTW_autopilotOverride: 8 GTW
+ SG_ GTW_autopilotOverrideState : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_autopilotConfig : 2|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ GTW_autopilotOverrideConfig : 5|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ GTW_autopilotOverrideExpireTime : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 904 GTW_canStatus: 3 GTW
+ SG_ GTW_VEH_canBusActivity : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARTY_canBusActivity : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CH_canBusActivity : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VEH_txWarning : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARTY_txWarning : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CH_txWarning : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VEH_rxWarning : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARTY_rxWarning : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CH_rxWarning : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VEH_faultConfinement : 9|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_PARTY_faultConfinement : 11|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_CH_faultConfinement : 13|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1638 GTW_diagSession: 4 GTW
+ SG_ GTW_diagRemainingSeconds : 0|16@1+ (1,0) [0|65535] "seconds" Vector__XXX
+ SG_ GTW_diagSessionActive : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_diagLevel : 17|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ GTW_diagUnlockProcedureActive : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_diagOverrideActive : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_diagPhysicalLinkEstablished : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2033 GTW_hrl: 7 GTW
+ SG_ GTW_hrlIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_hrlState m2 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_hrlTriggerDuration m2 : 15|16@0+ (1,0) [0|65535] "seconds" Vector__XXX
+ SG_ GTW_hrlTriggerType m2 : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ GTW_hrlTriggerId m2 : 39|16@0+ (1,0) [0|65535] "" Vector__XXX
+ SG_ GTW_hrlTriggerBus m2 : 53|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 831 RCU_info: 8 RCU
+ SG_ RCU_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCU_infoPcbaID m11 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCU_infoAssemblyID m11 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCU_infoUsageID m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ RCU_infoSubUsageID m11 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 563 UI_stalklessControl: 6 UI
+ SG_ UI_fullScreenMode : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_TX_BU_ 838 : GTW;
+BO_TX_BU_ 904 : GTW;
+BO_TX_BU_ 1638 : GTW;
+BO_TX_BU_ 2033 : GTW;
+BO_TX_BU_ 831 : RCU;
+BO_TX_BU_ 563 : UI;
+
+
+CM_ "Tesla Model Y CAN bus database; bus ETH; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ GTW "Gateway";
+CM_ BU_ RCU "RCU ECU";
+CM_ BU_ UI "Touchscreen user interface computer";
+CM_ BO_ 838 "Gateway message: autopilot override";
+CM_ SG_ 838 GTW_autopilotOverrideState "Signals whether an autopilot trial or subscription is active";
+CM_ SG_ 838 GTW_autopilotConfig "Current level of permanent Autopilot firmware";
+CM_ SG_ 838 GTW_autopilotOverrideConfig "Current level of trial or subscription Autopilot firmware";
+CM_ SG_ 838 GTW_autopilotOverrideExpireTime "Expiration time for the currently active autopilot trial or subscription";
+CM_ BO_ 904 "Gateway message: can status";
+CM_ SG_ 904 GTW_VEH_canBusActivity "Active if any frame detected on the bus";
+CM_ SG_ 904 GTW_PARTY_canBusActivity "Active if any frame detected on the bus";
+CM_ SG_ 904 GTW_CH_canBusActivity "Active if any frame detected on the bus";
+CM_ SG_ 904 GTW_VEH_txWarning "Gateway: VEH tx warning";
+CM_ SG_ 904 GTW_PARTY_txWarning "Gateway: PARTY tx warning";
+CM_ SG_ 904 GTW_CH_txWarning "Gateway: CH tx warning";
+CM_ SG_ 904 GTW_VEH_rxWarning "Gateway: VEH rx warning";
+CM_ SG_ 904 GTW_PARTY_rxWarning "Gateway: PARTY rx warning";
+CM_ SG_ 904 GTW_CH_rxWarning "Gateway: CH rx warning";
+CM_ SG_ 904 GTW_VEH_faultConfinement "Fault confinement as per CAN spec";
+CM_ SG_ 904 GTW_PARTY_faultConfinement "Fault confinement as per CAN spec";
+CM_ SG_ 904 GTW_CH_faultConfinement "Fault confinement as per CAN spec";
+CM_ BO_ 1638 "Gateway message: diag session";
+CM_ SG_ 1638 GTW_diagRemainingSeconds "Seconds remaining for the diagnostics session";
+CM_ SG_ 1638 GTW_diagSessionActive "UDS Session Active";
+CM_ SG_ 1638 GTW_diagLevel "Current diagnostics level";
+CM_ SG_ 1638 GTW_diagUnlockProcedureActive "GTW diag unlock procedure active";
+CM_ SG_ 1638 GTW_diagOverrideActive "GTW diag level override active";
+CM_ SG_ 1638 GTW_diagPhysicalLinkEstablished "Physical diag cable connected to the switch and link established";
+CM_ BO_ 2033 "Gateway message: hrl";
+CM_ SG_ 2033 GTW_hrlIndex "Gateway: hrl index";
+CM_ SG_ 2033 GTW_hrlState "GTW hrl state";
+CM_ SG_ 2033 GTW_hrlTriggerDuration "HRL duration";
+CM_ SG_ 2033 GTW_hrlTriggerType "HRL trigger type";
+CM_ SG_ 2033 GTW_hrlTriggerId "HRL trigger ID. A unique ID representing the signal conditions causing the HRL event to occur.";
+CM_ SG_ 2033 GTW_hrlTriggerBus "Gateway: hrl trigger bus";
+CM_ BO_ 831 "RCU ECU message: info";
+CM_ SG_ 831 RCU_infoIndex "RCU ECU: info index";
+CM_ SG_ 831 RCU_infoPcbaID "RCU ECU: info pcba ID";
+CM_ SG_ 831 RCU_infoAssemblyID "RCU ECU: info assembly ID";
+CM_ SG_ 831 RCU_infoUsageID "RCU ECU: info usage ID";
+CM_ SG_ 831 RCU_infoSubUsageID "RCU ECU: info sub usage ID";
+CM_ BO_ 563 "Touchscreen user interface computer message: stalkless control";
+CM_ SG_ 563 UI_fullScreenMode "Aggregates all situations with which the UI is using the entire screen so stalkless gear controls are not present";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "ModelY_ETH";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2025.20.8";
+BA_ "VehicleModel" "Model Y";
+BA_ "ECU" BU_ GTW "GTW";
+BA_ "ECU" BU_ RCU "RCU";
+BA_ "ECU" BU_ UI "UI";
+BA_ "GenMsgCycleTime" BO_ 838 1000;
+BA_ "GenMsgSendType" BO_ 838 0;
+BA_ "VFrameFormat" BO_ 838 0;
+BA_ "GenMsgCycleTime" BO_ 904 1000;
+BA_ "GenMsgSendType" BO_ 904 0;
+BA_ "VFrameFormat" BO_ 904 0;
+BA_ "GenMsgCycleTime" BO_ 1638 250;
+BA_ "GenMsgSendType" BO_ 1638 0;
+BA_ "VFrameFormat" BO_ 1638 0;
+BA_ "GenMsgCycleTime" BO_ 2033 2000;
+BA_ "GenMsgSendType" BO_ 2033 0;
+BA_ "VFrameFormat" BO_ 2033 0;
+BA_ "GenMsgCycleTime" BO_ 831 10000;
+BA_ "GenMsgSendType" BO_ 831 0;
+BA_ "VFrameFormat" BO_ 831 0;
+BA_ "GenMsgCycleTime" BO_ 563 500;
+BA_ "GenMsgSendType" BO_ 563 0;
+BA_ "VFrameFormat" BO_ 563 0;
+BA_ "Confidence" SG_ 838 GTW_autopilotOverrideState 1;
+BA_ "Confidence" SG_ 838 GTW_autopilotConfig 1;
+BA_ "Confidence" SG_ 838 GTW_autopilotOverrideConfig 1;
+BA_ "Confidence" SG_ 838 GTW_autopilotOverrideExpireTime 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_canBusActivity 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_canBusActivity 0;
+BA_ "Confidence" SG_ 904 GTW_CH_canBusActivity 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_txWarning 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_txWarning 0;
+BA_ "Confidence" SG_ 904 GTW_CH_txWarning 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_rxWarning 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_rxWarning 0;
+BA_ "Confidence" SG_ 904 GTW_CH_rxWarning 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_faultConfinement 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_faultConfinement 0;
+BA_ "Confidence" SG_ 904 GTW_CH_faultConfinement 0;
+BA_ "Confidence" SG_ 1638 GTW_diagRemainingSeconds 0;
+BA_ "Confidence" SG_ 1638 GTW_diagSessionActive 0;
+BA_ "Confidence" SG_ 1638 GTW_diagLevel 0;
+BA_ "Confidence" SG_ 1638 GTW_diagUnlockProcedureActive 0;
+BA_ "Confidence" SG_ 1638 GTW_diagOverrideActive 0;
+BA_ "Confidence" SG_ 1638 GTW_diagPhysicalLinkEstablished 0;
+BA_ "Confidence" SG_ 2033 GTW_hrlIndex 1;
+BA_ "Confidence" SG_ 2033 GTW_hrlState 0;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerDuration 1;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerType 0;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerId 1;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerBus 2;
+BA_ "Confidence" SG_ 831 RCU_infoIndex 1;
+BA_ "Confidence" SG_ 831 RCU_infoPcbaID 0;
+BA_ "Confidence" SG_ 831 RCU_infoAssemblyID 0;
+BA_ "Confidence" SG_ 831 RCU_infoUsageID 0;
+BA_ "Confidence" SG_ 831 RCU_infoSubUsageID 0;
+BA_ "Confidence" SG_ 563 UI_fullScreenMode 1;
+VAL_ 838 GTW_autopilotOverrideState 3 "TIMEBOUND_SUBSCRIPTION" 2 "TRIAL" 1 "SUBSCRIPTION" 0 "BASE" ;
+VAL_ 838 GTW_autopilotConfig 4 "BASIC" 3 "SELF_DRIVING" 2 "ENHANCED" 1 "HIGHWAY" 0 "NONE" ;
+VAL_ 838 GTW_autopilotOverrideConfig 4 "BASIC" 3 "SELF_DRIVING" 2 "ENHANCED" 1 "HIGHWAY" 0 "NONE" ;
+VAL_ 904 GTW_VEH_faultConfinement 2 "BUS_OFF" 1 "ERROR_PASSIVE" 0 "ERROR_ACTIVE" ;
+VAL_ 904 GTW_PARTY_faultConfinement 2 "BUS_OFF" 1 "ERROR_PASSIVE" 0 "ERROR_ACTIVE" ;
+VAL_ 904 GTW_CH_faultConfinement 2 "BUS_OFF" 1 "ERROR_PASSIVE" 0 "ERROR_ACTIVE" ;
+VAL_ 1638 GTW_diagLevel 100 "LEVEL_NORMAL_OPERATION" 80 "LEVEL_PARK" 70 "LEVEL_PARK_ROBOTAXI" 50 "LEVEL_SERVICE_DRIVE" 25 "LEVEL_SERVICE" 10 "LEVEL_DIAG_LINK_ACTIVE" 0 "LEVEL_FACTORY" ;
+VAL_ 2033 GTW_hrlIndex 2 "Mux2" 1 "Mux1" ;
+VAL_ 2033 GTW_hrlState 1 "ENABLED" 0 "DISABLED" ;
+VAL_ 2033 GTW_hrlTriggerType 15 "HRL_TRIGGER_NONE" 5 "HRL_TRIGGER_EVENT_EXTERNAL" 4 "HRL_TRIGGER_PSEUDONYMOUS" 3 "HRL_TRIGGER_CONTINUOUS" 2 "HRL_TRIGGER_GAME_MODE" 1 "HRL_TRIGGER_EVENT" 0 "HRL_TRIGGER_UDPAPI" ;
+VAL_ 831 RCU_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;

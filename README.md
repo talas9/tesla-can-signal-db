@@ -1,4 +1,7 @@
-First cut: frame ids in dbc/<fw>/ALL.dbc are internal ids; per-bus files with real CAN ids are coming.
+CAN DBC files with real on-bus CAN ids: `dbc/<model>/<firmware>/<BUS>.dbc`, one
+file per CAN bus (VEH, CH, BUS1). The bus routes cover 490 of 582 messages
+(2026.26.6.5). Messages without a known CAN route are kept only in the
+Ethernet-side files; mapping them to CAN ids is still open.
 
 # Tesla CAN Signal Database
 
@@ -11,47 +14,146 @@ Provenance is stated as firmware version (and vehicle model) only.
 ## Repository structure
 
 - `dbc/` - Vector DBC files (+ JSON twins) generated from `data/`
-  - `dbc/<firmware>/ALL.dbc` - every decoded message of that firmware in one file
+  - `dbc/<model>/<firmware>/<BUS>.dbc` - one DBC per vehicle model, firmware and CAN bus
+  - `dbc/<firmware>/ETH.dbc` - every message under its Ethernet-side id (not CAN ids)
 - `data/<firmware>/signals.{csv,json}` - signal definitions per firmware
+- `data/<firmware>/messages.csv` - frame length, cycle time and bus routes per message
+- `data/<firmware>/signal-meta.csv` - units, value tables, SNA codes, per-model assignment
 - `tools/build.py` - PII / disclosure gates and shared helpers
-- `tools/export_dbc.py` - DBC exporter and validator
+- `tools/export_dbc.py` - DBC exporter and validator (Python API + CLI)
 - `INDEX.md` - device and signal summary by firmware
 - `NOTICE.md` - rights and publication notice
 
 ## DBC files
 
-**Status: v1 first cut.** One `ALL.dbc` per firmware. The per-model / per-bus
-split (`dbc/<model>/<firmware>/<BUS>.dbc`) and the full attribute set
-(cycle times, SNA values, confidence from cross-checks) follow in the next
-update.
+Tesla Model 3 / Model Y CAN bus DBC files with decoded signals for firmware
+2026.26.6.5 and 2025.20.8, one file per bus.
 
-What is in each file:
+### Tree
 
-- every message with its frame length (8 bytes, or the CAN FD length when a
-  layout extends past 8 bytes; such files set `BusType "CAN FD"`)
+```
+dbc/
+  AllModels/<firmware>/{VEH,CH,BUS1}.dbc       every signal of the firmware, per CAN bus
+  AllModels/<firmware>/ETH.dbc                 messages with no known CAN route
+  Model3/<firmware>/<BUS>.dbc                  signals with Model 3 evidence
+  ModelY/<firmware>/<BUS>.dbc                  signals with Model Y evidence
+  Bayberry/<firmware>/<BUS>.dbc                product codename, model not confirmed
+  GoldenSnitch/<firmware>/<BUS>.dbc            product codename, model not confirmed
+  <firmware>/ETH.dbc                           every message, Ethernet-side ids (see below)
+```
+
+Every `.dbc` has a `.json` twin with the same content in machine-readable form
+(messages, signals, value tables, confidence, dropped signals).
+
+**Buses.** `VEH` = vehicle CAN bus, `CH` = chassis CAN bus, `BUS1` = the third
+gateway CAN bus (its role is not confirmed). A message that the gateway
+forwards onto several buses appears in each of those bus files under its
+on-bus CAN id; when the gateway re-transmits a message, the transmitter is
+`GTW` and the comment says so. For 2025.20.8 the bus routes are taken from
+2026.26.6.5 by message name.
+
+**Ethernet-side ids.** Inside the car, messages also travel on an internal
+Ethernet link under their own message ids, which often differ from the CAN
+ids. Two kinds of file use those ids and must not be used on a CAN bus:
+`<model>/<firmware>/ETH.dbc` holds the messages with no known CAN route, and
+`dbc/<firmware>/ETH.dbc` (the former `ALL.dbc`) holds every message.
+
+**Models.** `AllModels` is the complete set: load it when you want every
+signal the firmware defines. A model folder holds only the signals that have
+per-model evidence for that product (plus the multiplexer switches they need),
+so it is a curated subset, not a replacement. Bayberry and GoldenSnitch are
+product codenames kept as-is because the model they map to is not confirmed.
+
+### What is in each file
+
+- every message with its frame length (from the firmware message table; the
+  CAN FD length when a layout extends past 8 bytes, with `BusType "CAN FD"`)
 - every signal with start bit, length, byte order (`@1` Intel / `@0` Motorola,
-  standard DBC sawtooth numbering), sign, factor, offset, min/max and unit
-  (ASCII units, e.g. `degC`)
+  standard DBC sawtooth numbering: Motorola start = most significant bit),
+  sign, factor, offset, min/max (SNA code excluded) and ASCII unit (`degC`)
 - multiplexed messages (`M` switch, `mN` pages)
-- `VAL_` value tables for enumerated signals
+- `VAL_` value tables for enumerated signals, with the SNA code labelled `SNA`
 - a one-line plain-language `CM_` comment for the network, every node,
   message and signal
+- `BO_TX_BU_` transmitter per message
 - attributes: `BusType`, `DBName`, `Baudrate`, `Manufacturer`,
-  `FirmwareVersion`, `VehicleModel`, `GenMsgCycleTime`, `GenMsgSendType`,
-  `VFrameFormat`, `GenSigSNA`, `Confidence` (per signal) and
+  `FirmwareVersion`, `VehicleModel`, `ECU`, `GenMsgCycleTime`,
+  `GenMsgSendType`, `VFrameFormat`, `GenSigSNA`, `Confidence` and
   `SystemSignalLongSymbol` for signal names longer than the 32-character DBC
-  limit (the DBC identifier is shortened; tools such as cantools restore the
-  full name from the attribute)
+  limit (the DBC identifier is shortened; cantools and CANoe restore the full
+  name from the attribute)
 
-Frame ids in `ALL.dbc` are the vehicle's internal message ids. Messages that
-are re-numbered when they are routed onto a physical CAN bus will carry the
-on-bus id in the per-bus files of the next update.
+### Coverage
+
+Generated by `tools/export_dbc.py`; `--check` fails if it is stale.
+
+<!-- coverage:begin (generated by tools/export_dbc.py) -->
+| Model | Firmware | Bus | Messages | Signals | Enums | Validated | Plausible | Layout-only | Contradicted |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Model 3 / Model Y | 2026.26.6.5 | [BUS1](dbc/AllModels/2026.26.6.5/BUS1.dbc) | 49 | 792 | 307 | 548 | 68 | 176 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [CH](dbc/AllModels/2026.26.6.5/CH.dbc) | 127 | 9131 | 1128 | 951 | 1007 | 7173 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [VEH](dbc/AllModels/2026.26.6.5/VEH.dbc) | 328 | 24288 | 4457 | 5320 | 5320 | 13648 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [ETH](dbc/AllModels/2026.26.6.5/ETH.dbc) | 92 | 8010 | 1886 | 897 | 1849 | 5264 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [ETH-side ids, all messages](dbc/2026.26.6.5/ETH.dbc) | 582 | 41912 | 7667 | 7583 | 8181 | 26148 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [BUS1](dbc/AllModels/2025.20.8/BUS1.dbc) | 42 | 664 | 257 | 456 | 47 | 161 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [CH](dbc/AllModels/2025.20.8/CH.dbc) | 120 | 8273 | 956 | 823 | 891 | 6559 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [VEH](dbc/AllModels/2025.20.8/VEH.dbc) | 285 | 18573 | 3570 | 4130 | 4457 | 9986 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [ETH](dbc/AllModels/2025.20.8/ETH.dbc) | 89 | 6048 | 1549 | 646 | 1470 | 3932 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [ETH-side ids, all messages](dbc/2025.20.8/ETH.dbc) | 522 | 33269 | 6225 | 5934 | 6799 | 20536 | 0 |
+| Bayberry | 2026.26.6.5 | [BUS1](dbc/Bayberry/2026.26.6.5/BUS1.dbc) | 3 | 61 | 24 | 60 | 1 | 0 | 0 |
+| Bayberry | 2026.26.6.5 | [CH](dbc/Bayberry/2026.26.6.5/CH.dbc) | 4 | 27 | 19 | 27 | 0 | 0 | 0 |
+| Bayberry | 2026.26.6.5 | [VEH](dbc/Bayberry/2026.26.6.5/VEH.dbc) | 20 | 305 | 127 | 295 | 10 | 0 | 0 |
+| Bayberry | 2025.20.8 | [BUS1](dbc/Bayberry/2025.20.8/BUS1.dbc) | 2 | 51 | 21 | 49 | 2 | 0 | 0 |
+| Bayberry | 2025.20.8 | [CH](dbc/Bayberry/2025.20.8/CH.dbc) | 3 | 26 | 18 | 26 | 0 | 0 | 0 |
+| Bayberry | 2025.20.8 | [VEH](dbc/Bayberry/2025.20.8/VEH.dbc) | 19 | 257 | 112 | 225 | 24 | 8 | 0 |
+| GoldenSnitch | 2026.26.6.5 | [CH](dbc/GoldenSnitch/2026.26.6.5/CH.dbc) | 2 | 8 | 7 | 8 | 0 | 0 | 0 |
+| GoldenSnitch | 2026.26.6.5 | [VEH](dbc/GoldenSnitch/2026.26.6.5/VEH.dbc) | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
+| GoldenSnitch | 2025.20.8 | [VEH](dbc/GoldenSnitch/2025.20.8/VEH.dbc) | 1 | 1 | 0 | 0 | 1 | 0 | 0 |
+| Model 3 | 2026.26.6.5 | [BUS1](dbc/Model3/2026.26.6.5/BUS1.dbc) | 47 | 589 | 291 | 546 | 37 | 6 | 0 |
+| Model 3 | 2026.26.6.5 | [CH](dbc/Model3/2026.26.6.5/CH.dbc) | 74 | 976 | 556 | 943 | 30 | 3 | 0 |
+| Model 3 | 2026.26.6.5 | [VEH](dbc/Model3/2026.26.6.5/VEH.dbc) | 243 | 5260 | 2151 | 5140 | 114 | 6 | 0 |
+| Model 3 | 2026.26.6.5 | [ETH](dbc/Model3/2026.26.6.5/ETH.dbc) | 34 | 694 | 383 | 664 | 26 | 4 | 0 |
+| Model 3 | 2025.20.8 | [BUS1](dbc/Model3/2025.20.8/BUS1.dbc) | 40 | 483 | 252 | 455 | 23 | 5 | 0 |
+| Model 3 | 2025.20.8 | [CH](dbc/Model3/2025.20.8/CH.dbc) | 67 | 884 | 514 | 817 | 59 | 8 | 0 |
+| Model 3 | 2025.20.8 | [VEH](dbc/Model3/2025.20.8/VEH.dbc) | 219 | 4407 | 1727 | 3995 | 355 | 57 | 0 |
+| Model 3 | 2025.20.8 | [ETH](dbc/Model3/2025.20.8/ETH.dbc) | 28 | 520 | 262 | 463 | 54 | 3 | 0 |
+| Model Y | 2026.26.6.5 | [BUS1](dbc/ModelY/2026.26.6.5/BUS1.dbc) | 8 | 115 | 55 | 114 | 1 | 0 | 0 |
+| Model Y | 2026.26.6.5 | [CH](dbc/ModelY/2026.26.6.5/CH.dbc) | 10 | 119 | 70 | 119 | 0 | 0 | 0 |
+| Model Y | 2026.26.6.5 | [VEH](dbc/ModelY/2026.26.6.5/VEH.dbc) | 37 | 952 | 434 | 932 | 19 | 1 | 0 |
+| Model Y | 2026.26.6.5 | [ETH](dbc/ModelY/2026.26.6.5/ETH.dbc) | 7 | 83 | 28 | 75 | 6 | 2 | 0 |
+| Model Y | 2025.20.8 | [BUS1](dbc/ModelY/2025.20.8/BUS1.dbc) | 9 | 94 | 50 | 90 | 4 | 0 | 0 |
+| Model Y | 2025.20.8 | [CH](dbc/ModelY/2025.20.8/CH.dbc) | 9 | 111 | 64 | 111 | 0 | 0 | 0 |
+| Model Y | 2025.20.8 | [VEH](dbc/ModelY/2025.20.8/VEH.dbc) | 32 | 605 | 266 | 549 | 50 | 6 | 0 |
+| Model Y | 2025.20.8 | [ETH](dbc/ModelY/2025.20.8/ETH.dbc) | 6 | 34 | 11 | 25 | 8 | 1 | 0 |
+<!-- coverage:end -->
+
+### Check against recorded vehicle logs
+
+Log A is a recorded Model Y vehicle-bus capture with payloads (35,350 frames,
+161 ids). "Decoded" means the id is in the DBC and the payload decodes
+without error. Log B is a 60-second Model 3 / Model Y vehicle-bus inventory
+(65,159 frames, 244 ids). It has ids and counts but no payloads, so only
+id matches can be counted.
+
+| DBC | Log A frames decoded | Log A ids decoded | Log B frames, id in DBC | Log B ids in DBC |
+|---|---:|---:|---:|---:|
+| Before: `dbc/2026.26.6.5/ETH.dbc` (Ethernet-side ids) | 61.3% | 85 / 161 | 77.6% | 179 / 244 |
+| After: `AllModels/2026.26.6.5/VEH.dbc` | 76.4% | 99 / 161 | 68.6% | 157 / 244 |
+| After: `AllModels/2025.20.8/VEH.dbc` | 77.5% | 103 / 161 | 65.7% | 149 / 244 |
+
+The "before" id matches on Log B overstate coverage. Of its 179 matched ids,
+only 140 (65.0% of frames) belong to the same message on the vehicle bus. The
+other 39 are numeric coincidences that decode a different message. The CAN-id
+files have no such cross-matches. Five CAN ids have also been confirmed on a
+live vehicle bus: the Ethernet-side file names 2 of them correctly and 2
+wrongly; `VEH.dbc` names 3 correctly, 0 wrongly, and does not cover the
+other 2 yet. The remaining gap is messages whose CAN route is not mapped yet.
 
 ### Load with cantools (Python)
 
 ```python
 import cantools
-db = cantools.database.load_file('dbc/2026.26.6.5/ALL.dbc', strict=True)
+db = cantools.database.load_file('dbc/AllModels/2026.26.6.5/VEH.dbc', strict=True)
 msg = db.get_message_by_name('BMS_status')
 print(msg.frame_id, [s.name for s in msg.signals])
 print(db.decode_message(msg.frame_id, bytes(msg.length)))
@@ -61,7 +163,7 @@ print(db.decode_message(msg.frame_id, bytes(msg.length)))
 
 ```python
 import can, cantools
-db = cantools.database.load_file('dbc/2026.26.6.5/ALL.dbc')
+db = cantools.database.load_file('dbc/AllModels/2026.26.6.5/VEH.dbc')
 with can.Bus(interface='socketcan', channel='can0') as bus:
     for frame in bus:
         try:
@@ -84,7 +186,7 @@ restored from `SystemSignalLongSymbol`.
 ### Kayak
 
 Kayak reads Kayak Bus Description (`.kcd`) files. Convert with
-`cantools convert dbc/2026.26.6.5/ALL.dbc ALL.kcd`.
+`cantools convert dbc/AllModels/2026.26.6.5/VEH.dbc VEH.kcd`.
 
 ## Signal data format (`data/<firmware>/signals.csv`)
 
@@ -113,6 +215,25 @@ python3 tools/export_dbc.py --check    # regenerate to a temp dir and diff,
 `python3 tools/build.py` runs the PII and disclosure gates on their own
 (no arguments needed; exit 0 = clean).
 
+Python API (for pipelines that add a new firmware):
+
+```python
+import sys; sys.path.insert(0, 'tools')
+import export_dbc
+kw = export_dbc.load_inputs('data/2026.26.6.5')    # or build the dicts yourself
+report = export_dbc.export(out_dir='dbc', **kw)     # writes the whole tree for that firmware
+errors = export_dbc.check('dbc')                    # [] when every file passes
+print(export_dbc.coverage_markdown(report['files']))
+```
+
+`export(signal_rows, firmware, out_dir, routing=None, msg_meta=None,
+signal_meta=None, verdicts=None)` takes no fixed paths. It is deterministic,
+and it raises `ExportError` on any column or value it cannot handle. An
+optional `data/<fw>/log-verdicts.csv` (`fw,signal,message,...,verdict,...`)
+sets `Confidence` to validated, plausible or contradicted for the signals it
+lists. Only the verdict is used; no other text from that file goes into the
+DBC. The module docstring has the full contract.
+
 `--check` needs `cantools` (and optionally `canmatrix`) installed in a
 virtual environment.
 
@@ -122,9 +243,10 @@ Each DBC signal carries a `Confidence` attribute:
 
 | Value | Meaning |
 |---|---|
-| validated | bit layout confirmed by two independent definitions |
+| validated | bit layout confirmed by two independent definitions, or confirmed on recorded vehicle logs |
 | plausible | layout plus unit, value table or description |
 | layout-only | bit layout and scaling only |
+| contradicted | recorded vehicle logs disagree with the definition - treat with care |
 
 ## Contact
 

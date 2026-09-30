@@ -1,0 +1,210 @@
+VERSION "dbc-export 1 2025.20.8"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: APP PARK
+
+
+BO_ 605 APP_trafficControl: 6 APP
+ SG_ APP_tcFeatureState : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ APP_tcStateMachine : 2|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ APP_tcControlSource : 9|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ APP_tcControlType : 11|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ APP_tcControlDistance : 16|8@1+ (1,0) [0|254] "m" Vector__XXX
+ SG_ APP_tcControlLightState : 24|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ APP_tcContinuationReason : 27|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ APP_tcConfirmationType : 31|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ APP_tcWarningSuppressionReason : 33|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ APP_tcUnavailableReason : 38|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ APP_tcVisionLight : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_tcVisionSign : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_tcVisionRoadMarking : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_tcVisionLine : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 859 APP_visionOcsStatus: 5 APP
+ SG_ APP_visionOcsStatusChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ APP_visionOcsStateRaw : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ APP_visionOcsEmptyProbRaw : 10|8@1+ (0.004,0) [0|1.016] "points" Vector__XXX
+ SG_ APP_visionOcsChildProbRaw : 18|8@1+ (0.004,0) [0|1.016] "points" Vector__XXX
+ SG_ APP_visionOcsAdultProbRaw : 26|8@1+ (0.004,0) [0|1.016] "points" Vector__XXX
+ SG_ APP_visionOcsFrontPasClsVisionSt : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ APP_visionOcsStatusCounter : 36|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 846 PARK_pasFrontMiddle: 5 PARK
+ SG_ PARK_frontLeftMiddleRawDistData : 0|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_frontMiddleRawDistData : 8|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_frontRightMiddleRawDistData : 16|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_pasFrontMiddleCounter : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ PARK_pasFrontMiddleChecksum : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_TX_BU_ 605 : APP;
+BO_TX_BU_ 859 : APP;
+BO_TX_BU_ 846 : PARK;
+
+
+CM_ "Tesla Bayberry CAN bus database; bus CH; firmware 2025.20.8. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ APP "Driver assistance computer (primary)";
+CM_ BU_ PARK "Parking assist sensors";
+CM_ BO_ 605 "Driver assistance computer (primary) message: traffic control";
+CM_ SG_ 605 APP_tcFeatureState "The feature level state of stopping for traffic controls";
+CM_ SG_ 605 APP_tcStateMachine "The traffic control state machine's internal control state.";
+CM_ SG_ 605 APP_tcControlSource "The input data source for the traffic control object";
+CM_ SG_ 605 APP_tcControlType "The specific type of traffic control, note not all are control worthy.";
+CM_ SG_ 605 APP_tcControlDistance "The distance to the nearest critical traffic control object.; raw 255 = signal not available (SNA)";
+CM_ SG_ 605 APP_tcControlLightState "Driver assistance computer (primary): tc control light state";
+CM_ SG_ 605 APP_tcContinuationReason "The reason the traffic control state machine entered the continue state.";
+CM_ SG_ 605 APP_tcConfirmationType "The mechanism of how the driver confirmed the traffic control.";
+CM_ SG_ 605 APP_tcWarningSuppressionReason "The suppression reason for the traffic control warning feature.";
+CM_ SG_ 605 APP_tcUnavailableReason "The reason why the traffic control feature is currently unavailable.";
+CM_ SG_ 605 APP_tcVisionLight "Whether or not the traffic light has a vision measurement.";
+CM_ SG_ 605 APP_tcVisionSign "Whether or not the traffic sign has a vision measurement.";
+CM_ SG_ 605 APP_tcVisionRoadMarking "Whether or not the road marking has a vision measurement.";
+CM_ SG_ 605 APP_tcVisionLine "Whether or not the traffic control line has a vision measurement.";
+CM_ BO_ 859 "Driver assistance computer (primary) message: vision ocs status";
+CM_ SG_ 859 APP_visionOcsStatusChecksum "Driver assistance computer (primary): vision ocs status checksum";
+CM_ SG_ 859 APP_visionOcsStateRaw "Reports classification state raw signal for front passenger from interior camera.";
+CM_ SG_ 859 APP_visionOcsEmptyProbRaw "Driver assistance computer (primary): vision ocs empty prob raw; raw 255 = signal not available (SNA)";
+CM_ SG_ 859 APP_visionOcsChildProbRaw "Driver assistance computer (primary): vision ocs child prob raw; raw 255 = signal not available (SNA)";
+CM_ SG_ 859 APP_visionOcsAdultProbRaw "Driver assistance computer (primary): vision ocs adult prob raw; raw 255 = signal not available (SNA)";
+CM_ SG_ 859 APP_visionOcsFrontPasClsVisionSt "Reports classification state of front passenger seat after Bayesian filter.";
+CM_ SG_ 859 APP_visionOcsStatusCounter "Driver assistance computer (primary): vision ocs status counter";
+CM_ BO_ 846 "Parking assist sensors message: pas front middle";
+CM_ SG_ 846 PARK_frontLeftMiddleRawDistData "Zone defined as -38 degrees -> +12 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 846 PARK_frontMiddleRawDistData "Zone defined as -12 degrees to +12 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 846 PARK_frontRightMiddleRawDistData "Zone defined +12 degrees to +38 degreees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 846 PARK_pasFrontMiddleCounter "Parking assist sensors: pas front middle counter";
+CM_ SG_ 846 PARK_pasFrontMiddleChecksum "Parking assist sensors: pas front middle checksum";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "Bayberry_CH";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2025.20.8";
+BA_ "VehicleModel" "Bayberry";
+BA_ "ECU" BU_ APP "APP";
+BA_ "ECU" BU_ PARK "PARK";
+BA_ "GenMsgCycleTime" BO_ 605 500;
+BA_ "GenMsgSendType" BO_ 605 0;
+BA_ "VFrameFormat" BO_ 605 0;
+BA_ "GenMsgCycleTime" BO_ 859 100;
+BA_ "GenMsgSendType" BO_ 859 0;
+BA_ "VFrameFormat" BO_ 859 0;
+BA_ "GenMsgCycleTime" BO_ 846 100;
+BA_ "GenMsgSendType" BO_ 846 0;
+BA_ "VFrameFormat" BO_ 846 0;
+BA_ "Confidence" SG_ 605 APP_tcFeatureState 0;
+BA_ "Confidence" SG_ 605 APP_tcStateMachine 0;
+BA_ "Confidence" SG_ 605 APP_tcControlSource 0;
+BA_ "Confidence" SG_ 605 APP_tcControlType 0;
+BA_ "Confidence" SG_ 605 APP_tcControlDistance 0;
+BA_ "GenSigSNA" SG_ 605 APP_tcControlDistance "255";
+BA_ "Confidence" SG_ 605 APP_tcControlLightState 0;
+BA_ "Confidence" SG_ 605 APP_tcContinuationReason 0;
+BA_ "Confidence" SG_ 605 APP_tcConfirmationType 0;
+BA_ "Confidence" SG_ 605 APP_tcWarningSuppressionReason 0;
+BA_ "Confidence" SG_ 605 APP_tcUnavailableReason 0;
+BA_ "Confidence" SG_ 605 APP_tcVisionLight 0;
+BA_ "Confidence" SG_ 605 APP_tcVisionSign 0;
+BA_ "Confidence" SG_ 605 APP_tcVisionRoadMarking 0;
+BA_ "Confidence" SG_ 605 APP_tcVisionLine 0;
+BA_ "Confidence" SG_ 859 APP_visionOcsStatusChecksum 0;
+BA_ "Confidence" SG_ 859 APP_visionOcsStateRaw 0;
+BA_ "Confidence" SG_ 859 APP_visionOcsEmptyProbRaw 0;
+BA_ "GenSigSNA" SG_ 859 APP_visionOcsEmptyProbRaw "255";
+BA_ "Confidence" SG_ 859 APP_visionOcsChildProbRaw 0;
+BA_ "GenSigSNA" SG_ 859 APP_visionOcsChildProbRaw "255";
+BA_ "Confidence" SG_ 859 APP_visionOcsAdultProbRaw 0;
+BA_ "GenSigSNA" SG_ 859 APP_visionOcsAdultProbRaw "255";
+BA_ "Confidence" SG_ 859 APP_visionOcsFrontPasClsVisionSt 0;
+BA_ "SystemSignalLongSymbol" SG_ 859 APP_visionOcsFrontPasClsVisionSt "APP_visionOcsFrontPasClsVisionStateFlt";
+BA_ "Confidence" SG_ 859 APP_visionOcsStatusCounter 0;
+BA_ "Confidence" SG_ 846 PARK_frontLeftMiddleRawDistData 0;
+BA_ "GenSigSNA" SG_ 846 PARK_frontLeftMiddleRawDistData "255";
+BA_ "Confidence" SG_ 846 PARK_frontMiddleRawDistData 0;
+BA_ "GenSigSNA" SG_ 846 PARK_frontMiddleRawDistData "255";
+BA_ "Confidence" SG_ 846 PARK_frontRightMiddleRawDistData 0;
+BA_ "GenSigSNA" SG_ 846 PARK_frontRightMiddleRawDistData "255";
+BA_ "Confidence" SG_ 846 PARK_pasFrontMiddleCounter 0;
+BA_ "Confidence" SG_ 846 PARK_pasFrontMiddleChecksum 0;
+VAL_ 605 APP_tcFeatureState 3 "TC_ACTIVE" 2 "TC_AVAILABLE" 1 "TC_UNAVAILABLE" 0 "TC_DISABLED" ;
+VAL_ 605 APP_tcStateMachine 6 "TCSM_CONTINUING" 5 "TCSM_STOPPED" 4 "TCSM_STOPPING" 3 "TCSM_WARNING" 2 "TCSM_AWARE" 1 "TCSM_STANDBY" 0 "TCSM_DISABLED" ;
+VAL_ 605 APP_tcControlSource 3 "TC_SOURCE_MAP_AND_VISION" 2 "TC_SOURCE_VISION" 1 "TC_SOURCE_MAP" 0 "TC_SOURCE_NONE" ;
+VAL_ 605 APP_tcControlType 22 "TC_TYPE_T_ARM" 21 "TC_TYPE_BEV_JUNCTION" 20 "TC_TYPE_T_IMPLICIT_BY_GEOM" 19 "TC_TYPE_T_IMPLICIT_BY_NAME" 18 "TC_TYPE_T_IMPLICIT" 17 "TC_TYPE_NO_STOP" 16 "TC_TYPE_BIKE_MERGE_FROM_RIGHT" 15 "TC_TYPE_BIKE_MERGE_FROM_LEFT" 14 "TC_TYPE_ALL_WAY_STOP_SIGN" 13 "TC_TYPE_TRAFFIC_RULE" 12 "TC_TYPE_SPEED_HUMP" 11 "TC_TYPE_SPEED_BUMP" 10 "TC_TYPE_RAMP_METER" 9 "TC_TYPE_PEDESTRIAN_CROSSING" 8 "TC_TYPE_SUICIDE_LEFT" 7 "TC_TYPE_KEEP_CLEAR_EXIT" 6 "TC_TYPE_KEEP_CLEAR_ENTER" 5 "TC_TYPE_CROSSWALK" 4 "TC_TYPE_YIELD" 3 "TC_TYPE_TRAFFIC_LIGHT" 2 "TC_TYPE_STOP_SIGN" 1 "TC_TYPE_UNKNOWN" 0 "TC_TYPE_INVALID" ;
+VAL_ 605 APP_tcControlDistance 255 "SNA" ;
+VAL_ 605 APP_tcControlLightState 6 "TC_LIGHTSTATE_OTHER" 5 "TC_LIGHTSTAET_WHITE" 4 "TC_LIGHTSTATE_OFF" 3 "TC_LIGHTSTATE_YELLOW" 2 "TC_LIGHTSTATE_GREEN" 1 "TC_LIGHTSTATE_RED" 0 "TC_LIGHTSTATE_NONE" ;
+VAL_ 605 APP_tcContinuationReason 13 "TC_CONTINUE_CONTROL_UNAVAILABLE" 12 "TC_CONTINUE_SUMMON_TIMEOUT" 11 "TC_CONTINUE_CLEAR_TO_GO" 10 "TC_CONTINUE_WARNING_TIMEOUT" 9 "TC_CONTINUE_INVALID_MAP_OR_VISION_CONTROL" 8 "TC_CONTINUE_PASSED_STOP" 7 "TC_CONTINUE_ASSUMED_DRIVER_STOPPED" 6 "TC_CONTINUE_AP_ACTIVATED_ON_HARD_STOP" 5 "TC_CONTINUE_VISION_SIGNALS" 4 "TC_CONTINUE_REQUIRED_DECEL_TOO_HIGH" 3 "TC_CONTINUE_USER_INPUT_ON_RED" 2 "TC_CONTINUE_USER_INPUT_ON_GREEN" 1 "TC_CONTINUE_GREEN_LIGHT_WITH_CIPV" 0 "TC_CONTINUE_NONE" ;
+VAL_ 605 APP_tcConfirmationType 2 "TC_CONFIRM_PEDAL" 1 "TC_CONFIRM_STALK" 0 "TC_CONFIRM_NONE" ;
+VAL_ 605 APP_tcWarningSuppressionReason 18 "TC_WARNING_SUPPRESS_TOO_FAR_FROM_PREDICTED_JUNCTION" 17 "TC_WARNING_SUPPRESS_NOT_SUPPORTED_BY_MEASUREMENTS" 16 "TC_WARNING_SUPPRESS_NO_ASSOCIATED_VISION_LINE" 15 "TC_WARNING_SUPPRESS_AMBIGUOUS_VISION_TYPE" 14 "TC_WARNING_SUPPRESS_CIPV_DID_NOT_STOP" 13 "TC_WARNING_SUPPRESS_STALE_SIGN_DETECTION" 12 "TC_WARNING_SUPPRESS_WRONG_MAP_TYPE" 11 "TC_WARNING_SUPPRESS_LIGHT_UNASSOCIATED" 10 "TC_WARNING_SUPPRESS_CIPV_CONTINUING" 9 "TC_WARNING_SUPPRESS_PEDAL_OVERRIDE" 8 "TC_WARNING_SUPPRESS_LOCALIZATION_DEGRADED" 7 "TC_WARNING_SUPPRESS_HARD_TURN" 6 "TC_WARNING_SUPPRESS_ASSUMED_YELLOW" 5 "TC_WARNING_SUPPRESS_DRIVER_SLOWING_DOWN" 4 "TC_WARNING_SUPPRESS_BELOW_MIN_SPEED" 3 "TC_WARNING_SUPPRESS_SLOWDOWN_PLANNED" 2 "TC_WARNING_SUPPRESS_INSUFFICIENT_DATA" 1 "TC_WARNING_SUPPRESS_FEATURE_DISABLED" 0 "TC_WARNING_SUPPRESS_NONE" ;
+VAL_ 605 APP_tcUnavailableReason 9 "AP_UNAVAILBLE_SUN_GLARE_ON_ROAD_RESTRICTED" 8 "AP_UNAVAILBLE_CAMERA_BLINDED_ON_ROAD_RESTRICTED" 7 "AP_UNAVAILBLE_GPS_DEGRADED" 6 "AP_UNAVAILBLE_ROAD_ESTIMATOR_UNHEALTHY" 5 "AP_UNAVAILBLE_SUN_GLARE" 4 "AP_UNAVAILBLE_CAMERA_BLINDED" 3 "AP_UNAVAILBLE_ROAD_CLASS" 2 "AP_UNAVAILBLE_LOST_MAP_LOCALIZATION" 1 "AP_UNAVAILBLE_MCU_DISABLED" 0 "AP_UNAVAILBLE_NONE" ;
+VAL_ 859 APP_visionOcsStateRaw 3 "ADULT" 2 "CHILD" 1 "EMPTY" 0 "UNKNOWN" ;
+VAL_ 859 APP_visionOcsEmptyProbRaw 255 "SNA" ;
+VAL_ 859 APP_visionOcsChildProbRaw 255 "SNA" ;
+VAL_ 859 APP_visionOcsAdultProbRaw 255 "SNA" ;
+VAL_ 859 APP_visionOcsFrontPasClsVisionSt 3 "ADULT" 2 "CHILD" 1 "EMPTY" 0 "UNKNOWN" ;
+VAL_ 846 PARK_frontLeftMiddleRawDistData 255 "SNA" ;
+VAL_ 846 PARK_frontMiddleRawDistData 255 "SNA" ;
+VAL_ 846 PARK_frontRightMiddleRawDistData 255 "SNA" ;

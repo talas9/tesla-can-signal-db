@@ -1,0 +1,430 @@
+VERSION "dbc-export 1 2026.26.6.5"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: GTW RCU TCU2 VCSEAT2R
+
+
+BO_ 838 GTW_autopilotOverride: 8 GTW
+ SG_ GTW_autopilotOverrideState : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ GTW_autopilotConfig : 4|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ GTW_autopilotOverrideConfig : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ GTW_autopilotConfigSource : 11|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_autopilotOverrideExpireTime : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 904 GTW_canStatus: 3 GTW
+ SG_ GTW_VEH_canBusActivity : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARTY_canBusActivity : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CH_canBusActivity : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VEH_txWarning : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARTY_txWarning : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CH_txWarning : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VEH_rxWarning : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARTY_rxWarning : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CH_rxWarning : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VEH_faultConfinement : 9|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_PARTY_faultConfinement : 11|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_CH_faultConfinement : 13|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1638 GTW_diagSession: 4 GTW
+ SG_ GTW_diagRemainingSeconds : 0|16@1+ (1,0) [0|65535] "seconds" Vector__XXX
+ SG_ GTW_diagSessionActive : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_diagLevel : 17|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ GTW_diagUnlockProcedureActive : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_diagOverrideActive : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_diagPhysicalLinkEstablished : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2033 GTW_hrl: 7 GTW
+ SG_ GTW_hrlIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_hrlPagesCount m1 : 15|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ GTW_hrlSdCardSizeGB m1 : 40|8@1+ (1,0) [1|255] "" Vector__XXX
+ SG_ GTW_hrlState m2 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_hrlTriggerDuration m2 : 15|16@0+ (1,0) [0|65535] "seconds" Vector__XXX
+ SG_ GTW_hrlTriggerType m2 : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ GTW_hrlTriggerId m2 : 39|16@0+ (1,0) [0|65535] "" Vector__XXX
+ SG_ GTW_hrlTriggerBus m2 : 53|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 831 RCU_info: 8 RCU
+ SG_ RCU_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCU_infoPcbaID m11 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCU_infoAssemblyID m11 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ RCU_infoUsageID m11 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ RCU_infoSubUsageID m11 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 1412 TCU2_log: 8 TCU2
+ SG_ TCU2_logMux M : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_cpuTemp m0 : 32|32@1+ (1,0) [0|4294967295] "C" Vector__XXX
+ SG_ TCU2_cpuUsage m1 : 32|32@1+ (1,0) [0|4294967295] "%" Vector__XXX
+ SG_ TCU2_mdmCoreTemperature m2 : 32|32@1+ (1,0) [0|4294967295] "C" Vector__XXX
+ SG_ TCU2_availableMemory m3 : 32|32@1+ (1,0) [0|4294967295] "KB" Vector__XXX
+ SG_ TCU2_pwm m4 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_pwmcap m5 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_totalResumes m6 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmUplinkQueueSize m7 : 32|32@1+ (1,0) [0|4294967295] "bytes" Vector__XXX
+ SG_ TCU2_mdmRSRP m8 : 32|32@1- (1,0) [-2147483648|2147483647] "dBm" Vector__XXX
+ SG_ TCU2_mdmSINR m9 : 32|32@1- (1,0) [-2147483648|2147483647] "dBm" Vector__XXX
+ SG_ TCU2_mdmUplinkAllowedRate m10 : 32|32@1+ (1,0) [0|4294967295] "Kbps" Vector__XXX
+ SG_ TCU2_mdmUplinkAvgRate m11 : 32|32@1+ (1,0) [0|4294967295] "Kbps" Vector__XXX
+ SG_ TCU2_mdmServiceState m12 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmIMSStatus m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmSIMStatus m14 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmBusyActive m15 : 32|32@1+ (1,0) [0|4294967294] "" Vector__XXX
+ SG_ TCU2_modemUptime m16 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmDataRat m17 : 32|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ TCU2_mdmDataCallStatus m18 : 32|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ TCU2_mdmNSAAvailable m19 : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ TCU2_mdmPCIID m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmMnc m21 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmMcc m22 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmTxKiloBytes m23 : 32|32@1+ (1,0) [0|4294967295] "KB" Vector__XXX
+ SG_ TCU2_mdmDataCallTermReason m24 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmDataCallTermCode m25 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_cellularSMState m26 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_tcuSMState m27 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_checkInternetFailCount m28 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_mdmBand m29 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ TCU2_wakeSource m30 : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 765 VCSEAT2R_seatStatus: 8 VCSEAT2R
+ SG_ VCSEAT2R_row2SeatStatusIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCSEAT2R_seatTrackPosReal m1 : 4|12@1- (1,0) [-2048|2047] "mm" Vector__XXX
+ SG_ VCSEAT2R_seatTrackPosOffset m1 : 16|12@1- (1,0) [-2048|2047] "mm" Vector__XXX
+ SG_ VCSEAT2R_seatReclineState m1 : 28|4@1+ (1,0) [0|14] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineCalibrated m1 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclinePositionStat m1 : 33|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineAbsPosS_0001 m1 : 36|12@1- (0.1,0) [-204.8|204.7] "deg" Vector__XXX
+ SG_ VCSEAT2R_seatReclineAbsPosSwitch m1 : 48|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineFoldAllowed m1 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineUnfoldAllowe m1 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineAdjustmentAl m1 : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEAT2R_seat1RClashAvoidanceBlo m1 : 53|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCSEAT2R_seat1RClashAvoidanceSta m1 : 56|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineChoreoBlocke m1 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCSEAT2R_seatReclineNextToggleDi m1 : 59|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_TX_BU_ 838 : GTW;
+BO_TX_BU_ 904 : GTW;
+BO_TX_BU_ 1638 : GTW;
+BO_TX_BU_ 2033 : GTW;
+BO_TX_BU_ 831 : RCU;
+BO_TX_BU_ 1412 : TCU2;
+BO_TX_BU_ 765 : VCSEAT2R;
+
+
+CM_ "Tesla Model Y CAN bus database; bus ETH; firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ GTW "Gateway";
+CM_ BU_ RCU "RCU ECU";
+CM_ BU_ TCU2 "TCU2 ECU";
+CM_ BU_ VCSEAT2R "VCSEAT2R ECU";
+CM_ BO_ 838 "Gateway message: autopilot override";
+CM_ SG_ 838 GTW_autopilotOverrideState "Signals whether an autopilot trial or subscription is active";
+CM_ SG_ 838 GTW_autopilotConfig "Current level of permanent Autopilot firmware";
+CM_ SG_ 838 GTW_autopilotOverrideConfig "Current level of trial or subscription Autopilot firmware";
+CM_ SG_ 838 GTW_autopilotConfigSource "Source of Autopilot configuration broadcast by Gateway";
+CM_ SG_ 838 GTW_autopilotOverrideExpireTime "Expiration time for the currently active autopilot trial or subscription";
+CM_ BO_ 904 "Gateway message: can status";
+CM_ SG_ 904 GTW_VEH_canBusActivity "Active if any frame detected on the bus";
+CM_ SG_ 904 GTW_PARTY_canBusActivity "Active if any frame detected on the bus";
+CM_ SG_ 904 GTW_CH_canBusActivity "Active if any frame detected on the bus";
+CM_ SG_ 904 GTW_VEH_txWarning "Gateway: VEH tx warning";
+CM_ SG_ 904 GTW_PARTY_txWarning "Gateway: PARTY tx warning";
+CM_ SG_ 904 GTW_CH_txWarning "Gateway: CH tx warning";
+CM_ SG_ 904 GTW_VEH_rxWarning "Gateway: VEH rx warning";
+CM_ SG_ 904 GTW_PARTY_rxWarning "Gateway: PARTY rx warning";
+CM_ SG_ 904 GTW_CH_rxWarning "Gateway: CH rx warning";
+CM_ SG_ 904 GTW_VEH_faultConfinement "Fault confinement as per CAN spec";
+CM_ SG_ 904 GTW_PARTY_faultConfinement "Fault confinement as per CAN spec";
+CM_ SG_ 904 GTW_CH_faultConfinement "Fault confinement as per CAN spec";
+CM_ BO_ 1638 "Gateway message: diag session";
+CM_ SG_ 1638 GTW_diagRemainingSeconds "Seconds remaining for the diagnostics session";
+CM_ SG_ 1638 GTW_diagSessionActive "UDS Session Active";
+CM_ SG_ 1638 GTW_diagLevel "Current diagnostics level";
+CM_ SG_ 1638 GTW_diagUnlockProcedureActive "GTW diag unlock procedure active";
+CM_ SG_ 1638 GTW_diagOverrideActive "GTW diag level override active";
+CM_ SG_ 1638 GTW_diagPhysicalLinkEstablished "Physical diag cable connected to the switch and link established";
+CM_ BO_ 2033 "Gateway message: hrl";
+CM_ SG_ 2033 GTW_hrlIndex "Gateway: hrl index";
+CM_ SG_ 2033 GTW_hrlPagesCount "Gateway: hrl pages count";
+CM_ SG_ 2033 GTW_hrlSdCardSizeGB "Gateway: hrl sd card size GB; raw 0 = signal not available (SNA)";
+CM_ SG_ 2033 GTW_hrlState "GTW hrl state";
+CM_ SG_ 2033 GTW_hrlTriggerDuration "HRL duration";
+CM_ SG_ 2033 GTW_hrlTriggerType "HRL trigger type";
+CM_ SG_ 2033 GTW_hrlTriggerId "HRL trigger ID. A unique ID representing the signal conditions causing the HRL event to occur.";
+CM_ SG_ 2033 GTW_hrlTriggerBus "Gateway: hrl trigger bus";
+CM_ BO_ 831 "RCU ECU message: info";
+CM_ SG_ 831 RCU_infoIndex "RCU ECU: info index";
+CM_ SG_ 831 RCU_infoPcbaID "RCU ECU: info pcba ID";
+CM_ SG_ 831 RCU_infoAssemblyID "RCU ECU: info assembly ID";
+CM_ SG_ 831 RCU_infoUsageID "RCU ECU: info usage ID";
+CM_ SG_ 831 RCU_infoSubUsageID "RCU ECU: info sub usage ID";
+CM_ BO_ 1412 "TCU2 ECU message: log";
+CM_ SG_ 1412 TCU2_logMux "TCU2 ECU: log mux";
+CM_ SG_ 1412 TCU2_cpuTemp "Indicates the current temperature reported by the Central Processing Unit (CPU) in the modem application processor";
+CM_ SG_ 1412 TCU2_cpuUsage "Indicates the current CPU usage in percentage reported by the modem application processor";
+CM_ SG_ 1412 TCU2_mdmCoreTemperature "Indicates the current Communication Processor (CP) temperature reported by the modem CP.";
+CM_ SG_ 1412 TCU2_availableMemory "Indicates the currently available Random Access Memory in the modem application processor";
+CM_ SG_ 1412 TCU2_pwm "Indicates the active Pulse Width Modulation (PWM) duty cycle applied to the modem fan.";
+CM_ SG_ 1412 TCU2_pwmcap "Indicates the active Pulse Width Modulation (PWM) duty cycle restriciton applied to the modem fan.";
+CM_ SG_ 1412 TCU2_totalResumes "Indicates the total amount of times the modem has been resumed";
+CM_ SG_ 1412 TCU2_mdmUplinkQueueSize "TCU2 ECU: mdm uplink queue size";
+CM_ SG_ 1412 TCU2_mdmRSRP "TCU2 ECU: mdm RSRP";
+CM_ SG_ 1412 TCU2_mdmSINR "TCU2 ECU: mdm SINR";
+CM_ SG_ 1412 TCU2_mdmUplinkAllowedRate "TCU2 ECU: mdm uplink allowed rate";
+CM_ SG_ 1412 TCU2_mdmUplinkAvgRate "TCU2 ECU: mdm uplink avg rate";
+CM_ SG_ 1412 TCU2_mdmServiceState "TCU2 ECU: mdm service state";
+CM_ SG_ 1412 TCU2_mdmIMSStatus "Indicates the current IP Multimedia System (IMS) registration state.";
+CM_ SG_ 1412 TCU2_mdmSIMStatus "TCU2 ECU: mdm SIM status";
+CM_ SG_ 1412 TCU2_mdmBusyActive "Reports whether the modem busy service is active on the modem application processor.; raw 4294967295 = signal not available (SNA)";
+CM_ SG_ 1412 TCU2_modemUptime "Indicates the current modem Application Processor uptime.";
+CM_ SG_ 1412 TCU2_mdmDataRat "Reports which Radio Access Technology (RAT) is active for the current data bearer.";
+CM_ SG_ 1412 TCU2_mdmDataCallStatus "Indicates the current state of the Packet Data Protocol (PDP) context.";
+CM_ SG_ 1412 TCU2_mdmNSAAvailable "TCU2 ECU: mdm NSA available";
+CM_ SG_ 1412 TCU2_mdmPCIID "TCU2 ECU: mdm PCIID";
+CM_ SG_ 1412 TCU2_mdmMnc "TCU2 ECU: mdm mnc";
+CM_ SG_ 1412 TCU2_mdmMcc "TCU2 ECU: mdm mcc";
+CM_ SG_ 1412 TCU2_mdmTxKiloBytes "TCU2 ECU: mdm tx kilo bytes";
+CM_ SG_ 1412 TCU2_mdmDataCallTermReason "Indicates the internal reason which the Data Call was terminated.";
+CM_ SG_ 1412 TCU2_mdmDataCallTermCode "Indicates the termination code informed by the network that caused the Data Call termination.";
+CM_ SG_ 1412 TCU2_cellularSMState "Indicates the current state of cellular state machine.";
+CM_ SG_ 1412 TCU2_tcuSMState "Reports the state of the Telematics Control Unit (TCU) state machine.";
+CM_ SG_ 1412 TCU2_checkInternetFailCount "Reports the count of unsuccessful cellular connectivity checks.";
+CM_ SG_ 1412 TCU2_mdmBand "Indicates the band which the baseband processor is currently attached to the cellular network.";
+CM_ SG_ 1412 TCU2_wakeSource "Indicates the source of wake event in the modem.";
+CM_ BO_ 765 "VCSEAT2R ECU message: seat status";
+CM_ SG_ 765 VCSEAT2R_row2SeatStatusIndex "VCSEAT2R ECU: row2 seat status index";
+CM_ SG_ 765 VCSEAT2R_seatTrackPosReal "Reports real position of seat track";
+CM_ SG_ 765 VCSEAT2R_seatTrackPosOffset "VCSEAT2R ECU: seat track pos offset";
+CM_ SG_ 765 VCSEAT2R_seatReclineState "Reports the active state of the 2nd row seat recliner; raw 15 = signal not available (SNA)";
+CM_ SG_ 765 VCSEAT2R_seatReclineCalibrated "Reports calibration status of the 2nd row seat recliner";
+CM_ SG_ 765 VCSEAT2R_seatReclinePositionStat "Reports the active position state of the 2nd row seat recliner; raw 4 = signal not available (SNA)";
+CM_ SG_ 765 VCSEAT2R_seatReclineAbsPosS_0001 "VCSEAT2R ECU: seat recline abs pos switch trans point";
+CM_ SG_ 765 VCSEAT2R_seatReclineAbsPosSwitch "Reports the status of 2nd row seat recline absolute position (comfort zone) switch; raw 0 = signal not available (SNA)";
+CM_ SG_ 765 VCSEAT2R_seatReclineFoldAllowed "VCSEAT2R ECU: seat recline fold allowed";
+CM_ SG_ 765 VCSEAT2R_seatReclineUnfoldAllowe "VCSEAT2R ECU: seat recline unfold allowed";
+CM_ SG_ 765 VCSEAT2R_seatReclineAdjustmentAl "VCSEAT2R ECU: seat recline adjustment allowed";
+CM_ SG_ 765 VCSEAT2R_seat1RClashAvoidanceBlo "VCSEAT2R ECU: seat1 r clash avoidance blocked reason";
+CM_ SG_ 765 VCSEAT2R_seat1RClashAvoidanceSta "VCSEAT2R ECU: seat1 r clash avoidance state";
+CM_ SG_ 765 VCSEAT2R_seatReclineChoreoBlocke "VCSEAT2R ECU: seat recline choreo blocked by occupancy";
+CM_ SG_ 765 VCSEAT2R_seatReclineNextToggleDi "VCSEAT2R ECU: seat recline next toggle direction; raw 2 = signal not available (SNA)";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "ModelY_ETH";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2026.26.6.5";
+BA_ "VehicleModel" "Model Y";
+BA_ "ECU" BU_ GTW "GTW";
+BA_ "ECU" BU_ RCU "RCU";
+BA_ "ECU" BU_ TCU2 "TCU2";
+BA_ "ECU" BU_ VCSEAT2R "VCSEAT2R";
+BA_ "GenMsgCycleTime" BO_ 838 1000;
+BA_ "GenMsgSendType" BO_ 838 0;
+BA_ "VFrameFormat" BO_ 838 0;
+BA_ "GenMsgCycleTime" BO_ 904 1000;
+BA_ "GenMsgSendType" BO_ 904 0;
+BA_ "VFrameFormat" BO_ 904 0;
+BA_ "GenMsgCycleTime" BO_ 1638 250;
+BA_ "GenMsgSendType" BO_ 1638 0;
+BA_ "VFrameFormat" BO_ 1638 0;
+BA_ "GenMsgCycleTime" BO_ 2033 2000;
+BA_ "GenMsgSendType" BO_ 2033 0;
+BA_ "VFrameFormat" BO_ 2033 0;
+BA_ "GenMsgCycleTime" BO_ 831 10000;
+BA_ "GenMsgSendType" BO_ 831 0;
+BA_ "VFrameFormat" BO_ 831 0;
+BA_ "GenMsgCycleTime" BO_ 1412 1000;
+BA_ "GenMsgSendType" BO_ 1412 0;
+BA_ "VFrameFormat" BO_ 1412 0;
+BA_ "GenMsgCycleTime" BO_ 765 100;
+BA_ "GenMsgSendType" BO_ 765 0;
+BA_ "VFrameFormat" BO_ 765 0;
+BA_ "Confidence" SG_ 838 GTW_autopilotOverrideState 0;
+BA_ "Confidence" SG_ 838 GTW_autopilotConfig 0;
+BA_ "Confidence" SG_ 838 GTW_autopilotOverrideConfig 0;
+BA_ "Confidence" SG_ 838 GTW_autopilotConfigSource 0;
+BA_ "Confidence" SG_ 838 GTW_autopilotOverrideExpireTime 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_canBusActivity 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_canBusActivity 0;
+BA_ "Confidence" SG_ 904 GTW_CH_canBusActivity 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_txWarning 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_txWarning 0;
+BA_ "Confidence" SG_ 904 GTW_CH_txWarning 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_rxWarning 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_rxWarning 0;
+BA_ "Confidence" SG_ 904 GTW_CH_rxWarning 0;
+BA_ "Confidence" SG_ 904 GTW_VEH_faultConfinement 0;
+BA_ "Confidence" SG_ 904 GTW_PARTY_faultConfinement 0;
+BA_ "Confidence" SG_ 904 GTW_CH_faultConfinement 0;
+BA_ "Confidence" SG_ 1638 GTW_diagRemainingSeconds 0;
+BA_ "Confidence" SG_ 1638 GTW_diagSessionActive 0;
+BA_ "Confidence" SG_ 1638 GTW_diagLevel 0;
+BA_ "Confidence" SG_ 1638 GTW_diagUnlockProcedureActive 0;
+BA_ "Confidence" SG_ 1638 GTW_diagOverrideActive 0;
+BA_ "Confidence" SG_ 1638 GTW_diagPhysicalLinkEstablished 0;
+BA_ "Confidence" SG_ 2033 GTW_hrlIndex 1;
+BA_ "Confidence" SG_ 2033 GTW_hrlPagesCount 2;
+BA_ "Confidence" SG_ 2033 GTW_hrlSdCardSizeGB 0;
+BA_ "GenSigSNA" SG_ 2033 GTW_hrlSdCardSizeGB "0";
+BA_ "Confidence" SG_ 2033 GTW_hrlState 0;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerDuration 1;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerType 0;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerId 1;
+BA_ "Confidence" SG_ 2033 GTW_hrlTriggerBus 2;
+BA_ "Confidence" SG_ 831 RCU_infoIndex 1;
+BA_ "Confidence" SG_ 831 RCU_infoPcbaID 0;
+BA_ "Confidence" SG_ 831 RCU_infoAssemblyID 0;
+BA_ "Confidence" SG_ 831 RCU_infoUsageID 0;
+BA_ "Confidence" SG_ 831 RCU_infoSubUsageID 0;
+BA_ "Confidence" SG_ 1412 TCU2_logMux 1;
+BA_ "Confidence" SG_ 1412 TCU2_cpuTemp 0;
+BA_ "Confidence" SG_ 1412 TCU2_cpuUsage 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmCoreTemperature 0;
+BA_ "Confidence" SG_ 1412 TCU2_availableMemory 0;
+BA_ "Confidence" SG_ 1412 TCU2_pwm 0;
+BA_ "Confidence" SG_ 1412 TCU2_pwmcap 0;
+BA_ "Confidence" SG_ 1412 TCU2_totalResumes 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmUplinkQueueSize 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmRSRP 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmSINR 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmUplinkAllowedRate 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmUplinkAvgRate 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmServiceState 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmIMSStatus 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmSIMStatus 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmBusyActive 0;
+BA_ "GenSigSNA" SG_ 1412 TCU2_mdmBusyActive "4294967295";
+BA_ "Confidence" SG_ 1412 TCU2_modemUptime 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmDataRat 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmDataCallStatus 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmNSAAvailable 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmPCIID 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmMnc 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmMcc 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmTxKiloBytes 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmDataCallTermReason 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmDataCallTermCode 0;
+BA_ "Confidence" SG_ 1412 TCU2_cellularSMState 0;
+BA_ "Confidence" SG_ 1412 TCU2_tcuSMState 0;
+BA_ "Confidence" SG_ 1412 TCU2_checkInternetFailCount 0;
+BA_ "Confidence" SG_ 1412 TCU2_mdmBand 0;
+BA_ "Confidence" SG_ 1412 TCU2_wakeSource 0;
+BA_ "Confidence" SG_ 765 VCSEAT2R_row2SeatStatusIndex 1;
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatTrackPosReal 0;
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatTrackPosOffset 0;
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineState 0;
+BA_ "GenSigSNA" SG_ 765 VCSEAT2R_seatReclineState "15";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineCalibrated 0;
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclinePositionStat 0;
+BA_ "GenSigSNA" SG_ 765 VCSEAT2R_seatReclinePositionStat "4";
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclinePositionStat "VCSEAT2R_seatReclinePositionState";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineAbsPosS_0001 0;
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclineAbsPosS_0001 "VCSEAT2R_seatReclineAbsPosSwitchTransPoint";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineAbsPosSwitch 0;
+BA_ "GenSigSNA" SG_ 765 VCSEAT2R_seatReclineAbsPosSwitch "0";
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclineAbsPosSwitch "VCSEAT2R_seatReclineAbsPosSwitchState";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineFoldAllowed 0;
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineUnfoldAllowe 0;
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclineUnfoldAllowe "VCSEAT2R_seatReclineUnfoldAllowed";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineAdjustmentAl 0;
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclineAdjustmentAl "VCSEAT2R_seatReclineAdjustmentAllowed";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seat1RClashAvoidanceBlo 0;
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seat1RClashAvoidanceBlo "VCSEAT2R_seat1RClashAvoidanceBlockedReason";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seat1RClashAvoidanceSta 0;
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seat1RClashAvoidanceSta "VCSEAT2R_seat1RClashAvoidanceState";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineChoreoBlocke 0;
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclineChoreoBlocke "VCSEAT2R_seatReclineChoreoBlockedByOccupancy";
+BA_ "Confidence" SG_ 765 VCSEAT2R_seatReclineNextToggleDi 0;
+BA_ "GenSigSNA" SG_ 765 VCSEAT2R_seatReclineNextToggleDi "2";
+BA_ "SystemSignalLongSymbol" SG_ 765 VCSEAT2R_seatReclineNextToggleDi "VCSEAT2R_seatReclineNextToggleDirection";
+VAL_ 838 GTW_autopilotOverrideState 8 "UNKNOWN" 7 "VEHICLE_MANAGED" 6 "OPTION_OVERRIDE" 5 "OPTION_CODE" 4 "TIMEBOUND_TRIAL" 3 "TIMEBOUND_SUBSCRIPTION" 2 "TRIAL" 1 "SUBSCRIPTION" 0 "BASE" ;
+VAL_ 838 GTW_autopilotConfig 4 "BASIC" 3 "SELF_DRIVING" 2 "ENHANCED" 1 "HIGHWAY" 0 "NONE" ;
+VAL_ 838 GTW_autopilotOverrideConfig 4 "BASIC" 3 "SELF_DRIVING" 2 "ENHANCED" 1 "HIGHWAY" 0 "NONE" ;
+VAL_ 838 GTW_autopilotConfigSource 2 "AUTOPILOT_NOT_UPDATED" 1 "AUTOPILOT" 0 "GATEWAY" ;
+VAL_ 904 GTW_VEH_faultConfinement 2 "BUS_OFF" 1 "ERROR_PASSIVE" 0 "ERROR_ACTIVE" ;
+VAL_ 904 GTW_PARTY_faultConfinement 2 "BUS_OFF" 1 "ERROR_PASSIVE" 0 "ERROR_ACTIVE" ;
+VAL_ 904 GTW_CH_faultConfinement 2 "BUS_OFF" 1 "ERROR_PASSIVE" 0 "ERROR_ACTIVE" ;
+VAL_ 1638 GTW_diagLevel 100 "LEVEL_NORMAL_OPERATION" 80 "LEVEL_PARK" 70 "LEVEL_PARK_ROBOTAXI" 50 "LEVEL_SERVICE_DRIVE" 25 "LEVEL_SERVICE" 10 "LEVEL_DIAG_LINK_ACTIVE" 0 "LEVEL_FACTORY" ;
+VAL_ 2033 GTW_hrlIndex 2 "Mux2" 1 "Mux1" ;
+VAL_ 2033 GTW_hrlSdCardSizeGB 0 "SNA" ;
+VAL_ 2033 GTW_hrlState 1 "ENABLED" 0 "DISABLED" ;
+VAL_ 2033 GTW_hrlTriggerType 15 "HRL_TRIGGER_NONE" 5 "HRL_TRIGGER_EVENT_EXTERNAL" 4 "HRL_TRIGGER_PSEUDONYMOUS" 3 "HRL_TRIGGER_CONTINUOUS" 2 "HRL_TRIGGER_GAME_MODE" 1 "HRL_TRIGGER_EVENT" 0 "HRL_TRIGGER_UDPAPI" ;
+VAL_ 831 RCU_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;
+VAL_ 1412 TCU2_logMux 30 "wakeSource" 29 "mdmBand" 28 "checkInternetFailCount" 27 "tcuSMState" 26 "cellularSMState" 25 "mdmDataCallTermCode" 24 "mdmDataCallTermReason" 23 "mdmTxKiloBytes" 22 "mdmMcc" 21 "mdmMnc" 20 "mdmPCIID" 19 "mdmNSAAvailable" 18 "mdmDataCallStatus" 17 "mdmDataRat" 16 "modemUptime" 15 "mdmBusyActive" 14 "mdmSIMStatus" 13 "mdmIMSStatus" 12 "mdmServiceState" 11 "mdmUplinkAvgRate" 10 "mdmUplinkAllowedRate" 9 "mdmSINR" 8 "mdmRSRP" 7 "mdmUplinkQueueSize" 6 "totalResumes" 5 "pwmcap" 4 "pwm" 3 "availableMemory" 2 "mdmCoreTemperature" 1 "cpuUsage" 0 "cpuTemp" ;
+VAL_ 1412 TCU2_mdmBusyActive 4294967295 "SNA" ;
+VAL_ 1412 TCU2_mdmDataRat 6 "RAT_NR5G_UNKNOWN" 5 "RAT_NR5G_SA" 4 "RAT_NR5G_NSA" 3 "RAT_LTE" 2 "RAT_WCDMA" 1 "RAT_GSM" 0 "RAT_UNKNOWN" ;
+VAL_ 1412 TCU2_mdmDataCallStatus 4 "DISCONNECTED" 3 "DISCONNECTING" 2 "CONNECTED" 1 "CONNECTING" 0 "UNKNOWN" ;
+VAL_ 1412 TCU2_mdmNSAAvailable 2 "NSA_NOT_AVAILABLE" 1 "NSA_AVAILABLE" 0 "NSA_UNKNOWN" ;
+VAL_ 1412 TCU2_cellularSMState 7 "RECOVERING" 6 "LINK_CONNECTED" 5 "CHECKING_INTERNET" 4 "DATA_CONNECTED" 3 "IN_SERVICE" 2 "OUT_OF_SERVICE" 1 "WAITING_COMPONENT" 0 "UNKNOWN" ;
+VAL_ 1412 TCU2_tcuSMState 7 "UPDATING" 6 "RESUMING" 5 "SUSPENDED" 4 "PREPARING_SLEEP" 3 "POWER_CYCLING" 2 "IN_OPERATION" 1 "SEARCHING_COMPONENT" 0 "UNKNOWN" ;
+VAL_ 1412 TCU2_wakeSource 3 "ETHERNET" 2 "WOIP" 1 "SMS" 0 "NONE" ;
+VAL_ 765 VCSEAT2R_row2SeatStatusIndex 3 "ARMREST" 2 "ADJUSTABLE_FOLD_FLAT" 1 "POSITION" 0 "TRACK" ;
+VAL_ 765 VCSEAT2R_seatReclineState 15 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_SNA" 12 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_CALIBRATING_ABSOLUTE_SENSOR" 11 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_CALIBRATING_ZERO_POSITION" 10 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_WAITING_TO_CLEAR_FOR_UNFOLD" 9 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_WAITING_TO_CLEAR_FOR_FOLD" 8 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_MOVING_REARWARD_TO_POSITION" 7 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_MOVING_FORWARD_TO_POSITION" 6 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_UNFOLDING" 5 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_FOLDING" 4 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_REARWARD_FAST" 3 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_FORWARD_FAST" 2 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_REARWARD_COMFORT" 1 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_ADJUSTING_FORWARD_COMFORT" 0 "SEAT_ADJUSTABLE_FOLD_FLAT_STATE_STOPPED" ;
+VAL_ 765 VCSEAT2R_seatReclinePositionStat 4 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_SNA" 3 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_UNKNOWN" 2 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_UNSAFE_INTERMEDIATE" 1 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_UNFOLDED" 0 "SEAT_ADJUSTABLE_FOLD_FLAT_POSITION_STATE_FOLDED" ;
+VAL_ 765 VCSEAT2R_seatReclineAbsPosSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
+VAL_ 765 VCSEAT2R_seat1RClashAvoidanceBlo 6 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_OCCUPANCY" 5 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_MOVING" 4 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_PROFILE_RECALL" 3 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_REAR_SEAT_UNCALIBRATED" 2 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_FRONT_SEAT_UNCALIBRATED" 1 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_VEHICLE_IN_MOTION" 0 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_REASON_NONE" ;
+VAL_ 765 VCSEAT2R_seat1RClashAvoidanceSta 3 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_RESTORING_FRONT_SEAT" 2 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_WAITING_TO_RESTORE_FRONT_SEAT" 1 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_FRONT_SEAT_CLEARING" 0 "SEAT_FOLD_FLAT_CLASH_AVOIDANCE_STATE_IDLE" ;
+VAL_ 765 VCSEAT2R_seatReclineNextToggleDi 2 "SEAT_ADJUSTABLE_FOLD_FLAT_NEXT_TOGGLE_DIRECTION_SNA" 1 "SEAT_ADJUSTABLE_FOLD_FLAT_NEXT_TOGGLE_DIRECTION_UNFOLD" 0 "SEAT_ADJUSTABLE_FOLD_FLAT_NEXT_TOGGLE_DIRECTION_FOLD" ;

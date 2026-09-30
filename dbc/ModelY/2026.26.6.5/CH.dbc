@@ -1,0 +1,616 @@
+VERSION "dbc-export 1 2026.26.6.5"
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: APP APS DAS GTW PARK
+
+
+BO_ 1040 APP_cameraStatus: 3 APP
+ SG_ APP_backupCameraFeedGood : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_backupCameraFrameRate : 1|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ APP_cameraBlockedFrontMain : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedFrontFisheye : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedFrontNarrow : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedLeftPillar : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedLeftRepeater : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedRightPillar : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedRightRepeater : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_cameraBlockedBackup : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APP_fasciaCameraTemperature : 16|8@1+ (1,-60) [-60|194] "C" Vector__XXX
+
+BO_ 992 APS_powerStateInputs: 3 APS
+ SG_ APS_A_lowPowerRequest : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ APS_A_lowPowerRequestor : 4|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ APS_A_forcePowerOffRequest : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ APS_B_lowPowerRequest : 9|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ APS_B_lowPowerRequestor : 12|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ APS_B_forcePowerOffRequest : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 401 DAS_autonomyDebugInfo: 2 DAS
+ SG_ DAS_rmfActive : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_autonomyUnsupervisedActive : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_autonomyUnavailableReason : 2|9@1+ (1,0) [0|511] "" Vector__XXX
+
+BO_ 586 DAS_visualDebug: 8 DAS
+ SG_ DAS_autosteerVehiclesUsage : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_autosteerHPPUsage : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_autosteerNavigationUsage : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_autosteerModelUsage : 10|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_autosteerBottsDotsUsage : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_offsetSide : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_roadSurfaceType : 16|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ DAS_autosteerHealthAnomalyLevel : 18|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DAS_autosteerHealthState : 21|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DAS_lastLinePreferenceReason : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DAS_plannerState : 28|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DAS_lastAutosteerAbortReason : 32|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ DAS_devAppInterfaceEnabled : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_navAvailable : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_navDistance : 40|8@1+ (100,0) [0|25500] "km" Vector__XXX
+ SG_ DAS_accSmartSpeedActive : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_accSmartSpeedState : 49|3@1+ (1,0) [0|6] "" Vector__XXX
+ SG_ DAS_ulcInProgress : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_trafficAwareSetSpeedInUse : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_isaSystemState : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_behaviorType : 56|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_ulcType : 58|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DAS_rearVehDetectedThisCycle : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_rearLeftVehDetectedCurrent : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_rearRightVehDetectedTrip : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_rearLeftVehDetectedTrip : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 862 PARK_pasRearMiddle: 5 PARK
+ SG_ PARK_rearLeftMiddleRawDistData : 0|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_rearMiddleRawDistData : 8|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_rearRightMiddleRawDistData : 16|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_pasRearMiddleCounter : 24|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ PARK_pasRearMiddleChecksum : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 526 PARK_sdiFront: 8 PARK
+ SG_ PARK_sdiSensor1RawDistData : 0|9@1+ (1,0) [0|510] "cm" Vector__XXX
+ SG_ PARK_sdiSensor2RawDistData : 9|9@1+ (1,0) [0|510] "cm" Vector__XXX
+ SG_ PARK_sdiSensor3RawDistData : 18|9@1+ (1,0) [0|510] "cm" Vector__XXX
+ SG_ PARK_sdiSensor4RawDistData : 27|9@1+ (1,0) [0|510] "cm" Vector__XXX
+ SG_ PARK_sdiSensor5RawDistData : 36|9@1+ (1,0) [0|510] "cm" Vector__XXX
+ SG_ PARK_sdiSensor6RawDistData : 45|9@1+ (1,0) [0|510] "cm" Vector__XXX
+ SG_ PARK_sdiFrontCounter : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ PARK_sdiFrontChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 830 PARK_sensorStatusRear: 5 PARK
+ SG_ PARK_rearRightSensorState : 0|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_rearRightMiddleSensorState : 2|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_rearLeftMiddleSensorState : 4|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_rearLeftSensorState : 6|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_rearLeftRawDistData : 8|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_rearRightRawDistData : 16|8@1+ (1,0) [0|254] "cm" Vector__XXX
+ SG_ PARK_systemStatusRear : 24|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_rearDtcPresent : 26|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_sensorStatusRearCounter : 28|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ PARK_sensorStatusRearChecksum : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 782 PARK_status2: 8 PARK
+ SG_ PARK_frontSVACharID : 0|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ PARK_pscRightCurbType : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ PARK_rearSVACharID : 8|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ PARK_pscLeftCurbType : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ PARK_autoCalComplete : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PARK_geometryType : 17|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ PARK_tireFitment : 19|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_rackDetected : 21|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_sdiActive : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PARK_sdiNoise : 25|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_sdiBlindSpotRight : 27|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_sdiBlindSpotLeft : 29|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_sensorType : 32|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ PARK_status2Counter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ PARK_status2Checksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 991 UI_status2: 8 GTW
+ SG_ UI_userActivity : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_activeTouchPoints : 24|8@1+ (1,0) [0|255] "1" Vector__XXX
+ SG_ UI_linkState : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_autopilotSentryRequest : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_mobileAppConnected : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_phoneLeftInCabin : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_autoshiftDRState : 40|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ UI_wifiBtModuleType : 43|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ UI_selfParkState : 48|8@1+ (1,0) [0|254] "" Vector__XXX
+ SG_ UI_summonDeviceIndex : 56|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_fullScreenMode : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 947 UI_vehicleControl2: 8 GTW
+ SG_ UI_gloveboxRequest : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_trunkRequest : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_PINToDriveEnabled : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_PINToDrivePassed : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_disableMirrorAutoDim : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_lightSwitch : 9|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ UI_readyToAddKey : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_alarmTriggerRequest : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_displayOnForUser : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_BLEPushNotificationRequest : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_keepAutopilotAwake : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_batteryPreconditioningRequest : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_autopilotPowerStateRequest : 25|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_autoRollWindowsOnLockEnable : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_steeringWheelHeatReq : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_disableHorn : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_frontLeftSeatFanReq : 37|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_frontRightSeatAutoClimateReq : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_frontRightSeatFanReq : 40|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_3RLeftSeatHeatReq : 44|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_3RRightSeatHeatReq : 46|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ UI_frontLeftSeatAutoClimateReq : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_wiperHeaterReq : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_silentAlarm : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_TX_BU_ 1040 : APP;
+BO_TX_BU_ 992 : APS;
+BO_TX_BU_ 401 : DAS;
+BO_TX_BU_ 586 : DAS;
+BO_TX_BU_ 862 : PARK;
+BO_TX_BU_ 526 : PARK;
+BO_TX_BU_ 830 : PARK;
+BO_TX_BU_ 782 : PARK;
+BO_TX_BU_ 991 : GTW;
+BO_TX_BU_ 947 : GTW;
+
+
+CM_ "Tesla Model Y CAN bus database; bus CH; firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
+CM_ BU_ APP "Driver assistance computer (primary)";
+CM_ BU_ APS "Driver assistance computer (secondary)";
+CM_ BU_ DAS "Driver assistance computer";
+CM_ BU_ GTW "Gateway";
+CM_ BU_ PARK "Parking assist sensors";
+CM_ BO_ 1040 "Driver assistance computer (primary) message: camera status";
+CM_ SG_ 1040 APP_backupCameraFeedGood "Indicates if the backup camera stream is healthy.";
+CM_ SG_ 1040 APP_backupCameraFrameRate "The backup camera frame rate.";
+CM_ SG_ 1040 APP_cameraBlockedFrontMain "Indicates that a blockage was detected by the main forward camera.";
+CM_ SG_ 1040 APP_cameraBlockedFrontFisheye "Indicates that a blockage was detected by the fisheye camera.";
+CM_ SG_ 1040 APP_cameraBlockedFrontNarrow "Indicates that a blockage was detected by the narrow camera.";
+CM_ SG_ 1040 APP_cameraBlockedLeftPillar "Indicates that a blockage was detected by the left pillar camera.";
+CM_ SG_ 1040 APP_cameraBlockedLeftRepeater "Indicates that a blockage was detected by the left repeater camera.";
+CM_ SG_ 1040 APP_cameraBlockedRightPillar "Indicates that a blockage was detected by the right pillar camera.";
+CM_ SG_ 1040 APP_cameraBlockedRightRepeater "Indicates that a blockage was detected by the right repeater camera.";
+CM_ SG_ 1040 APP_cameraBlockedBackup "Indicates that a blockage was detected by the backup camera.";
+CM_ SG_ 1040 APP_fasciaCameraTemperature "Die temperature of camera image sensor; raw 255 = signal not available (SNA)";
+CM_ BO_ 992 "Driver assistance computer (secondary) message: power state inputs";
+CM_ SG_ 992 APS_A_lowPowerRequest "Indicates Autopilot Secondary Processor (APS) low power state request presence.";
+CM_ SG_ 992 APS_A_lowPowerRequestor "Indicates who initiated the Autopilot Secondary Processor (APS) low power request.";
+CM_ SG_ 992 APS_A_forcePowerOffRequest "Driver assistance computer (secondary): a force power off request";
+CM_ SG_ 992 APS_B_lowPowerRequest "Indicates Autopilot Secondary Processor (APS) low power state request presence.";
+CM_ SG_ 992 APS_B_lowPowerRequestor "Indicates who initiated the Autopilot Secondary Processor (APS) low power request.";
+CM_ SG_ 992 APS_B_forcePowerOffRequest "Driver assistance computer (secondary): b force power off request";
+CM_ BO_ 401 "Driver assistance computer message: autonomy debug info";
+CM_ SG_ 401 DAS_rmfActive "Driver assistance computer: rmf active";
+CM_ SG_ 401 DAS_autonomyUnsupervisedActive "Reports when the Robotaxi Unsupervised (no takeover) autonomy mode is active";
+CM_ SG_ 401 DAS_autonomyUnavailableReason "Reports the reason for Autonomy being unavailable";
+CM_ BO_ 586 "Driver assistance computer message: visual debug";
+CM_ SG_ 586 DAS_autosteerVehiclesUsage "Driver assistance computer: autosteer vehicles usage";
+CM_ SG_ 586 DAS_autosteerHPPUsage "Driver assistance computer: autosteer HPP usage";
+CM_ SG_ 586 DAS_autosteerNavigationUsage "Driver assistance computer: autosteer navigation usage";
+CM_ SG_ 586 DAS_autosteerModelUsage "Driver assistance computer: autosteer model usage";
+CM_ SG_ 586 DAS_autosteerBottsDotsUsage "Driver assistance computer: autosteer botts dots usage";
+CM_ SG_ 586 DAS_offsetSide "Driver assistance computer: offset side";
+CM_ SG_ 586 DAS_roadSurfaceType "Driver assistance computer: road surface type; raw 0 = signal not available (SNA)";
+CM_ SG_ 586 DAS_autosteerHealthAnomalyLevel "Driver assistance computer: autosteer health anomaly level";
+CM_ SG_ 586 DAS_autosteerHealthState "Driver assistance computer: autosteer health state";
+CM_ SG_ 586 DAS_lastLinePreferenceReason "Driver assistance computer: last line preference reason";
+CM_ SG_ 586 DAS_plannerState "Driver assistance computer: planner state";
+CM_ SG_ 586 DAS_lastAutosteerAbortReason "Driver assistance computer: last autosteer abort reason";
+CM_ SG_ 586 DAS_devAppInterfaceEnabled "Driver assistance computer: dev app interface enabled";
+CM_ SG_ 586 DAS_navAvailable "Driver assistance computer: nav available";
+CM_ SG_ 586 DAS_navDistance "Driver assistance computer: nav distance";
+CM_ SG_ 586 DAS_accSmartSpeedActive "Driver assistance computer: acc smart speed active";
+CM_ SG_ 586 DAS_accSmartSpeedState "Driver assistance computer: acc smart speed state; raw 7 = signal not available (SNA)";
+CM_ SG_ 586 DAS_ulcInProgress "Reports active lane changes that were not commanded.";
+CM_ SG_ 586 DAS_trafficAwareSetSpeedInUse "Indicates that autopilot is using cruise set speed based on flow of traffic";
+CM_ SG_ 586 DAS_isaSystemState "ISA system state";
+CM_ SG_ 586 DAS_behaviorType "Driver assistance computer: behavior type";
+CM_ SG_ 586 DAS_ulcType "Reports the underlying reason for the uncommanded lane change, whether for speed or route.";
+CM_ SG_ 586 DAS_rearVehDetectedThisCycle "Driver assistance computer: rear veh detected this cycle";
+CM_ SG_ 586 DAS_rearLeftVehDetectedCurrent "Driver assistance computer: rear left veh detected current";
+CM_ SG_ 586 DAS_rearRightVehDetectedTrip "Driver assistance computer: rear right veh detected trip";
+CM_ SG_ 586 DAS_rearLeftVehDetectedTrip "Driver assistance computer: rear left veh detected trip";
+CM_ BO_ 862 "Parking assist sensors message: pas rear middle";
+CM_ SG_ 862 PARK_rearLeftMiddleRawDistData "Zone defined as -124 degrees to -166 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 862 PARK_rearMiddleRawDistData "Zone defined as -166 degrees to +166 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 862 PARK_rearRightMiddleRawDistData "Zone defined as +166 degrees to +124 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 862 PARK_pasRearMiddleCounter "Parking assist sensors: pas rear middle counter";
+CM_ SG_ 862 PARK_pasRearMiddleChecksum "Parking assist sensors: pas rear middle checksum";
+CM_ BO_ 526 "Parking assist sensors message: sdi front";
+CM_ SG_ 526 PARK_sdiSensor1RawDistData "Parking assist sensors: sdi sensor1 raw dist data; raw 511 = signal not available (SNA)";
+CM_ SG_ 526 PARK_sdiSensor2RawDistData "Parking assist sensors: sdi sensor2 raw dist data; raw 511 = signal not available (SNA)";
+CM_ SG_ 526 PARK_sdiSensor3RawDistData "Parking assist sensors: sdi sensor3 raw dist data; raw 511 = signal not available (SNA)";
+CM_ SG_ 526 PARK_sdiSensor4RawDistData "Parking assist sensors: sdi sensor4 raw dist data; raw 511 = signal not available (SNA)";
+CM_ SG_ 526 PARK_sdiSensor5RawDistData "Parking assist sensors: sdi sensor5 raw dist data; raw 511 = signal not available (SNA)";
+CM_ SG_ 526 PARK_sdiSensor6RawDistData "Parking assist sensors: sdi sensor6 raw dist data; raw 511 = signal not available (SNA)";
+CM_ SG_ 526 PARK_sdiFrontCounter "Parking assist sensors: sdi front counter";
+CM_ SG_ 526 PARK_sdiFrontChecksum "Parking assist sensors: sdi front checksum";
+CM_ BO_ 830 "Parking assist sensors message: sensor status rear";
+CM_ SG_ 830 PARK_rearRightSensorState "Reports the state of the rear right ultrasonic sensor.; raw 3 = signal not available (SNA)";
+CM_ SG_ 830 PARK_rearRightMiddleSensorState "Reports the state of the rear right middle ultrasonic sensor.; raw 3 = signal not available (SNA)";
+CM_ SG_ 830 PARK_rearLeftMiddleSensorState "Reports the state of the rear left middle ultrasonic sensor.; raw 3 = signal not available (SNA)";
+CM_ SG_ 830 PARK_rearLeftSensorState "Reports the state of the rear left ultrasonic sensor.; raw 3 = signal not available (SNA)";
+CM_ SG_ 830 PARK_rearLeftRawDistData "Zone defined as -90 degrees to -125 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 830 PARK_rearRightRawDistData "Zone defined as +125 degrees to +90 degrees, distance to object in units of centimeters.; raw 255 = signal not available (SNA)";
+CM_ SG_ 830 PARK_systemStatusRear "Parking assist sensors: system status rear; raw 3 = signal not available (SNA)";
+CM_ SG_ 830 PARK_rearDtcPresent "Parking assist sensors: rear dtc present; raw 3 = signal not available (SNA)";
+CM_ SG_ 830 PARK_sensorStatusRearCounter "Parking assist sensors: sensor status rear counter";
+CM_ SG_ 830 PARK_sensorStatusRearChecksum "Parking assist sensors: sensor status rear checksum";
+CM_ BO_ 782 "Parking assist sensors message: status2";
+CM_ SG_ 782 PARK_frontSVACharID "Parking assist sensors: front SVA char ID";
+CM_ SG_ 782 PARK_pscRightCurbType "The type of curb for the parallel parking slot on the right side.";
+CM_ SG_ 782 PARK_rearSVACharID "Parking assist sensors: rear SVA char ID";
+CM_ SG_ 782 PARK_pscLeftCurbType "The type of curb identified for a parallel parking space on the left.";
+CM_ SG_ 782 PARK_autoCalComplete "Parking assist sensors: auto cal complete";
+CM_ SG_ 782 PARK_geometryType "Parking assist sensors: geometry type";
+CM_ SG_ 782 PARK_tireFitment "Parking assist sensors: tire fitment; raw 3 = signal not available (SNA)";
+CM_ SG_ 782 PARK_rackDetected "Parking assist sensors: rack detected; raw 3 = signal not available (SNA)";
+CM_ SG_ 782 PARK_sdiActive "Whether or not the raw sensor measurements from the ultrasonics are present and valid";
+CM_ SG_ 782 PARK_sdiNoise "The output of the noise detection algorithm for raw sensor measurements, indicates if the measurements are degraded due to ambient noise.; raw 3 = signal not available (SNA)";
+CM_ SG_ 782 PARK_sdiBlindSpotRight "The output of the PARK ECU blindspot algorithm on the right side of the car, indicates the presence of a vehicle.; raw 3 = signal not available (SNA)";
+CM_ SG_ 782 PARK_sdiBlindSpotLeft "The output of the PARK ECU blindspot algorithm on the left side of the car, indicates the presence of a vehicle.; raw 3 = signal not available (SNA)";
+CM_ SG_ 782 PARK_sensorType "Parking assist sensors: sensor type; raw 3 = signal not available (SNA)";
+CM_ SG_ 782 PARK_status2Counter "Parking assist sensors: status2 counter";
+CM_ SG_ 782 PARK_status2Checksum "Parking assist sensors: status2 checksum";
+CM_ BO_ 991 "Touchscreen user interface computer message: status2; forwarded onto this bus by the gateway";
+CM_ SG_ 991 UI_userActivity "Indicates user interaction with the center display";
+CM_ SG_ 991 UI_activeTouchPoints "Quantity of active touch points on the Center Display";
+CM_ SG_ 991 UI_linkState "Connectivity link state";
+CM_ SG_ 991 UI_autopilotSentryRequest "whether AP sentry mode should be enabled";
+CM_ SG_ 991 UI_mobileAppConnected "Reports if Web Real-Time Communication (WebRTC) connection is connected while summon screen is open on the mobile app.";
+CM_ SG_ 991 UI_phoneLeftInCabin "Used for monitoring phone left behind feature";
+CM_ SG_ 991 UI_autoshiftDRState "Reports the User Interface (UI) autoshift Drive/Reverse state.";
+CM_ SG_ 991 UI_wifiBtModuleType "Reports the type of Wi-Fi and Bluetooth (BT) module.";
+CM_ SG_ 991 UI_selfParkState "Reports the auto park state changes.; raw 255 = signal not available (SNA)";
+CM_ SG_ 991 UI_summonDeviceIndex "Reports which device is being used to control summon.";
+CM_ SG_ 991 UI_fullScreenMode "Aggregates all situations with which the UI is using the entire screen so stalkless gear controls are not present";
+CM_ BO_ 947 "Touchscreen user interface computer message: vehicle control2; forwarded onto this bus by the gateway";
+CM_ SG_ 947 UI_gloveboxRequest "UI request to open the glovebox";
+CM_ SG_ 947 UI_trunkRequest "Rear trunk request";
+CM_ SG_ 947 UI_PINToDriveEnabled "UI customer level request to pin to drive enabled.";
+CM_ SG_ 947 UI_PINToDrivePassed "UI customer level request to enable drive with pin passed.";
+CM_ SG_ 947 UI_disableMirrorAutoDim "Request to disable side and rear-view mirror auto dim";
+CM_ SG_ 947 UI_lightSwitch "Headlight mode; raw 4 = signal not available (SNA)";
+CM_ SG_ 947 UI_readyToAddKey "Ready to add key";
+CM_ SG_ 947 UI_alarmTriggerRequest "Alarm activation request from UI";
+CM_ SG_ 947 UI_displayOnForUser "User is present";
+CM_ SG_ 947 UI_BLEPushNotificationRequest "Reports that the User Interface (UI) wants to talk to a phone and Vehicle Controller Security (VCSEC) should let all connected phones know.";
+CM_ SG_ 947 UI_keepAutopilotAwake "Reports the request for Vehicle Controller (VC) to keep autopilot awake.";
+CM_ SG_ 947 UI_batteryPreconditioningRequest "Requests battery preconditioning.";
+CM_ SG_ 947 UI_autopilotPowerStateRequest "Requests different power states from autopilot ECU depending on feature usage.";
+CM_ SG_ 947 UI_autoRollWindowsOnLockEnable "UI customer level request to enable auto-roll windows on lock";
+CM_ SG_ 947 UI_steeringWheelHeatReq "Request to enable steering wheel heater";
+CM_ SG_ 947 UI_disableHorn "Request to disable horn";
+CM_ SG_ 947 UI_frontLeftSeatFanReq "Request for front left seat ventilation";
+CM_ SG_ 947 UI_frontRightSeatAutoClimateReq "UI setting to enable auto seat heating and cooling for front right seat";
+CM_ SG_ 947 UI_frontRightSeatFanReq "Request for front left seat ventilation";
+CM_ SG_ 947 UI_3RLeftSeatHeatReq "UI request for third row left seat heater";
+CM_ SG_ 947 UI_3RRightSeatHeatReq "UI request for third row right seat heater";
+CM_ SG_ 947 UI_frontLeftSeatAutoClimateReq "UI setting to enable auto seat heating and cooling for front left seat";
+CM_ SG_ 947 UI_wiperHeaterReq "UI request to enable the wiper heater";
+CM_ SG_ 947 UI_silentAlarm "Signal indicating alarms should be silenced";
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "DBName" STRING;
+BA_DEF_ "Baudrate" INT 0 1000000;
+BA_DEF_ "BaudrateCANFD" INT 0 16000000;
+BA_DEF_ "Manufacturer" STRING;
+BA_DEF_ "FirmwareVersion" STRING;
+BA_DEF_ "VehicleModel" STRING;
+BA_DEF_ BU_ "ECU" STRING;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ BO_ "GenMsgSendType" ENUM "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","NoMsgSendType","NotUsed";
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_ BO_ "CANFD_BRS" ENUM "0","1";
+BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT -1000000000000 1000000000000;
+BA_DEF_ SG_ "GenSigSNA" STRING;
+BA_DEF_ SG_ "SystemSignalLongSymbol" STRING;
+BA_DEF_ SG_ "Confidence" ENUM "validated","plausible","layout-only","contradicted";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "DBName" "";
+BA_DEF_DEF_ "Baudrate" 500000;
+BA_DEF_DEF_ "BaudrateCANFD" 2000000;
+BA_DEF_DEF_ "Manufacturer" "";
+BA_DEF_DEF_ "FirmwareVersion" "";
+BA_DEF_DEF_ "VehicleModel" "";
+BA_DEF_DEF_ "ECU" "";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "CANFD_BRS" "1";
+BA_DEF_DEF_ "SystemMessageLongSymbol" "";
+BA_DEF_DEF_ "GenSigStartValue" 0;
+BA_DEF_DEF_ "GenSigSNA" "";
+BA_DEF_DEF_ "SystemSignalLongSymbol" "";
+BA_DEF_DEF_ "Confidence" "layout-only";
+BA_ "BusType" "CAN";
+BA_ "DBName" "ModelY_CH";
+BA_ "Baudrate" 500000;
+BA_ "Manufacturer" "Tesla";
+BA_ "FirmwareVersion" "2026.26.6.5";
+BA_ "VehicleModel" "Model Y";
+BA_ "ECU" BU_ APP "APP";
+BA_ "ECU" BU_ APS "APS";
+BA_ "ECU" BU_ DAS "DAS";
+BA_ "ECU" BU_ GTW "GTW";
+BA_ "ECU" BU_ PARK "PARK";
+BA_ "GenMsgCycleTime" BO_ 1040 500;
+BA_ "GenMsgSendType" BO_ 1040 0;
+BA_ "VFrameFormat" BO_ 1040 0;
+BA_ "GenMsgCycleTime" BO_ 992 100;
+BA_ "GenMsgSendType" BO_ 992 0;
+BA_ "VFrameFormat" BO_ 992 0;
+BA_ "GenMsgCycleTime" BO_ 401 100;
+BA_ "GenMsgSendType" BO_ 401 0;
+BA_ "VFrameFormat" BO_ 401 0;
+BA_ "GenMsgCycleTime" BO_ 586 100;
+BA_ "GenMsgSendType" BO_ 586 0;
+BA_ "VFrameFormat" BO_ 586 0;
+BA_ "GenMsgCycleTime" BO_ 862 100;
+BA_ "GenMsgSendType" BO_ 862 0;
+BA_ "VFrameFormat" BO_ 862 0;
+BA_ "GenMsgCycleTime" BO_ 526 40;
+BA_ "GenMsgSendType" BO_ 526 0;
+BA_ "VFrameFormat" BO_ 526 0;
+BA_ "GenMsgCycleTime" BO_ 830 100;
+BA_ "GenMsgSendType" BO_ 830 0;
+BA_ "VFrameFormat" BO_ 830 0;
+BA_ "GenMsgCycleTime" BO_ 782 250;
+BA_ "GenMsgSendType" BO_ 782 0;
+BA_ "VFrameFormat" BO_ 782 0;
+BA_ "GenMsgCycleTime" BO_ 991 500;
+BA_ "GenMsgSendType" BO_ 991 0;
+BA_ "VFrameFormat" BO_ 991 0;
+BA_ "GenMsgCycleTime" BO_ 947 500;
+BA_ "GenMsgSendType" BO_ 947 0;
+BA_ "VFrameFormat" BO_ 947 0;
+BA_ "Confidence" SG_ 1040 APP_backupCameraFeedGood 0;
+BA_ "Confidence" SG_ 1040 APP_backupCameraFrameRate 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedFrontMain 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedFrontFisheye 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedFrontNarrow 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedLeftPillar 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedLeftRepeater 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedRightPillar 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedRightRepeater 0;
+BA_ "Confidence" SG_ 1040 APP_cameraBlockedBackup 0;
+BA_ "Confidence" SG_ 1040 APP_fasciaCameraTemperature 0;
+BA_ "GenSigSNA" SG_ 1040 APP_fasciaCameraTemperature "255";
+BA_ "Confidence" SG_ 992 APS_A_lowPowerRequest 0;
+BA_ "Confidence" SG_ 992 APS_A_lowPowerRequestor 0;
+BA_ "Confidence" SG_ 992 APS_A_forcePowerOffRequest 0;
+BA_ "Confidence" SG_ 992 APS_B_lowPowerRequest 0;
+BA_ "Confidence" SG_ 992 APS_B_lowPowerRequestor 0;
+BA_ "Confidence" SG_ 992 APS_B_forcePowerOffRequest 0;
+BA_ "Confidence" SG_ 401 DAS_rmfActive 0;
+BA_ "Confidence" SG_ 401 DAS_autonomyUnsupervisedActive 0;
+BA_ "Confidence" SG_ 401 DAS_autonomyUnavailableReason 0;
+BA_ "Confidence" SG_ 586 DAS_autosteerVehiclesUsage 0;
+BA_ "Confidence" SG_ 586 DAS_autosteerHPPUsage 0;
+BA_ "Confidence" SG_ 586 DAS_autosteerNavigationUsage 0;
+BA_ "Confidence" SG_ 586 DAS_autosteerModelUsage 0;
+BA_ "Confidence" SG_ 586 DAS_autosteerBottsDotsUsage 0;
+BA_ "Confidence" SG_ 586 DAS_offsetSide 0;
+BA_ "Confidence" SG_ 586 DAS_roadSurfaceType 0;
+BA_ "GenSigSNA" SG_ 586 DAS_roadSurfaceType "0";
+BA_ "Confidence" SG_ 586 DAS_autosteerHealthAnomalyLevel 0;
+BA_ "Confidence" SG_ 586 DAS_autosteerHealthState 0;
+BA_ "Confidence" SG_ 586 DAS_lastLinePreferenceReason 0;
+BA_ "Confidence" SG_ 586 DAS_plannerState 0;
+BA_ "Confidence" SG_ 586 DAS_lastAutosteerAbortReason 0;
+BA_ "Confidence" SG_ 586 DAS_devAppInterfaceEnabled 0;
+BA_ "Confidence" SG_ 586 DAS_navAvailable 0;
+BA_ "Confidence" SG_ 586 DAS_navDistance 0;
+BA_ "Confidence" SG_ 586 DAS_accSmartSpeedActive 0;
+BA_ "Confidence" SG_ 586 DAS_accSmartSpeedState 0;
+BA_ "GenSigSNA" SG_ 586 DAS_accSmartSpeedState "7";
+BA_ "Confidence" SG_ 586 DAS_ulcInProgress 0;
+BA_ "Confidence" SG_ 586 DAS_trafficAwareSetSpeedInUse 0;
+BA_ "Confidence" SG_ 586 DAS_isaSystemState 0;
+BA_ "Confidence" SG_ 586 DAS_behaviorType 0;
+BA_ "Confidence" SG_ 586 DAS_ulcType 0;
+BA_ "Confidence" SG_ 586 DAS_rearVehDetectedThisCycle 0;
+BA_ "Confidence" SG_ 586 DAS_rearLeftVehDetectedCurrent 0;
+BA_ "Confidence" SG_ 586 DAS_rearRightVehDetectedTrip 0;
+BA_ "Confidence" SG_ 586 DAS_rearLeftVehDetectedTrip 0;
+BA_ "Confidence" SG_ 862 PARK_rearLeftMiddleRawDistData 0;
+BA_ "GenSigSNA" SG_ 862 PARK_rearLeftMiddleRawDistData "255";
+BA_ "Confidence" SG_ 862 PARK_rearMiddleRawDistData 0;
+BA_ "GenSigSNA" SG_ 862 PARK_rearMiddleRawDistData "255";
+BA_ "Confidence" SG_ 862 PARK_rearRightMiddleRawDistData 0;
+BA_ "GenSigSNA" SG_ 862 PARK_rearRightMiddleRawDistData "255";
+BA_ "Confidence" SG_ 862 PARK_pasRearMiddleCounter 0;
+BA_ "Confidence" SG_ 862 PARK_pasRearMiddleChecksum 0;
+BA_ "Confidence" SG_ 526 PARK_sdiSensor1RawDistData 0;
+BA_ "GenSigSNA" SG_ 526 PARK_sdiSensor1RawDistData "511";
+BA_ "Confidence" SG_ 526 PARK_sdiSensor2RawDistData 0;
+BA_ "GenSigSNA" SG_ 526 PARK_sdiSensor2RawDistData "511";
+BA_ "Confidence" SG_ 526 PARK_sdiSensor3RawDistData 0;
+BA_ "GenSigSNA" SG_ 526 PARK_sdiSensor3RawDistData "511";
+BA_ "Confidence" SG_ 526 PARK_sdiSensor4RawDistData 0;
+BA_ "GenSigSNA" SG_ 526 PARK_sdiSensor4RawDistData "511";
+BA_ "Confidence" SG_ 526 PARK_sdiSensor5RawDistData 0;
+BA_ "GenSigSNA" SG_ 526 PARK_sdiSensor5RawDistData "511";
+BA_ "Confidence" SG_ 526 PARK_sdiSensor6RawDistData 0;
+BA_ "GenSigSNA" SG_ 526 PARK_sdiSensor6RawDistData "511";
+BA_ "Confidence" SG_ 526 PARK_sdiFrontCounter 0;
+BA_ "Confidence" SG_ 526 PARK_sdiFrontChecksum 0;
+BA_ "Confidence" SG_ 830 PARK_rearRightSensorState 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearRightSensorState "3";
+BA_ "Confidence" SG_ 830 PARK_rearRightMiddleSensorState 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearRightMiddleSensorState "3";
+BA_ "Confidence" SG_ 830 PARK_rearLeftMiddleSensorState 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearLeftMiddleSensorState "3";
+BA_ "Confidence" SG_ 830 PARK_rearLeftSensorState 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearLeftSensorState "3";
+BA_ "Confidence" SG_ 830 PARK_rearLeftRawDistData 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearLeftRawDistData "255";
+BA_ "Confidence" SG_ 830 PARK_rearRightRawDistData 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearRightRawDistData "255";
+BA_ "Confidence" SG_ 830 PARK_systemStatusRear 0;
+BA_ "GenSigSNA" SG_ 830 PARK_systemStatusRear "3";
+BA_ "Confidence" SG_ 830 PARK_rearDtcPresent 0;
+BA_ "GenSigSNA" SG_ 830 PARK_rearDtcPresent "3";
+BA_ "Confidence" SG_ 830 PARK_sensorStatusRearCounter 0;
+BA_ "Confidence" SG_ 830 PARK_sensorStatusRearChecksum 0;
+BA_ "Confidence" SG_ 782 PARK_frontSVACharID 0;
+BA_ "Confidence" SG_ 782 PARK_pscRightCurbType 0;
+BA_ "Confidence" SG_ 782 PARK_rearSVACharID 0;
+BA_ "Confidence" SG_ 782 PARK_pscLeftCurbType 0;
+BA_ "Confidence" SG_ 782 PARK_autoCalComplete 0;
+BA_ "Confidence" SG_ 782 PARK_geometryType 0;
+BA_ "Confidence" SG_ 782 PARK_tireFitment 0;
+BA_ "GenSigSNA" SG_ 782 PARK_tireFitment "3";
+BA_ "Confidence" SG_ 782 PARK_rackDetected 0;
+BA_ "GenSigSNA" SG_ 782 PARK_rackDetected "3";
+BA_ "Confidence" SG_ 782 PARK_sdiActive 0;
+BA_ "Confidence" SG_ 782 PARK_sdiNoise 0;
+BA_ "GenSigSNA" SG_ 782 PARK_sdiNoise "3";
+BA_ "Confidence" SG_ 782 PARK_sdiBlindSpotRight 0;
+BA_ "GenSigSNA" SG_ 782 PARK_sdiBlindSpotRight "3";
+BA_ "Confidence" SG_ 782 PARK_sdiBlindSpotLeft 0;
+BA_ "GenSigSNA" SG_ 782 PARK_sdiBlindSpotLeft "3";
+BA_ "Confidence" SG_ 782 PARK_sensorType 0;
+BA_ "GenSigSNA" SG_ 782 PARK_sensorType "3";
+BA_ "Confidence" SG_ 782 PARK_status2Counter 0;
+BA_ "Confidence" SG_ 782 PARK_status2Checksum 0;
+BA_ "Confidence" SG_ 991 UI_userActivity 0;
+BA_ "Confidence" SG_ 991 UI_activeTouchPoints 0;
+BA_ "Confidence" SG_ 991 UI_linkState 0;
+BA_ "Confidence" SG_ 991 UI_autopilotSentryRequest 0;
+BA_ "Confidence" SG_ 991 UI_mobileAppConnected 0;
+BA_ "Confidence" SG_ 991 UI_phoneLeftInCabin 0;
+BA_ "Confidence" SG_ 991 UI_autoshiftDRState 0;
+BA_ "Confidence" SG_ 991 UI_wifiBtModuleType 0;
+BA_ "Confidence" SG_ 991 UI_selfParkState 0;
+BA_ "GenSigSNA" SG_ 991 UI_selfParkState "255";
+BA_ "Confidence" SG_ 991 UI_summonDeviceIndex 0;
+BA_ "Confidence" SG_ 991 UI_fullScreenMode 0;
+BA_ "Confidence" SG_ 947 UI_gloveboxRequest 0;
+BA_ "Confidence" SG_ 947 UI_trunkRequest 0;
+BA_ "Confidence" SG_ 947 UI_PINToDriveEnabled 0;
+BA_ "Confidence" SG_ 947 UI_PINToDrivePassed 0;
+BA_ "Confidence" SG_ 947 UI_disableMirrorAutoDim 0;
+BA_ "Confidence" SG_ 947 UI_lightSwitch 0;
+BA_ "GenSigSNA" SG_ 947 UI_lightSwitch "4";
+BA_ "Confidence" SG_ 947 UI_readyToAddKey 0;
+BA_ "Confidence" SG_ 947 UI_alarmTriggerRequest 0;
+BA_ "Confidence" SG_ 947 UI_displayOnForUser 0;
+BA_ "Confidence" SG_ 947 UI_BLEPushNotificationRequest 0;
+BA_ "Confidence" SG_ 947 UI_keepAutopilotAwake 0;
+BA_ "Confidence" SG_ 947 UI_batteryPreconditioningRequest 0;
+BA_ "Confidence" SG_ 947 UI_autopilotPowerStateRequest 0;
+BA_ "Confidence" SG_ 947 UI_autoRollWindowsOnLockEnable 0;
+BA_ "Confidence" SG_ 947 UI_steeringWheelHeatReq 0;
+BA_ "Confidence" SG_ 947 UI_disableHorn 0;
+BA_ "Confidence" SG_ 947 UI_frontLeftSeatFanReq 0;
+BA_ "Confidence" SG_ 947 UI_frontRightSeatAutoClimateReq 0;
+BA_ "Confidence" SG_ 947 UI_frontRightSeatFanReq 0;
+BA_ "Confidence" SG_ 947 UI_3RLeftSeatHeatReq 0;
+BA_ "Confidence" SG_ 947 UI_3RRightSeatHeatReq 0;
+BA_ "Confidence" SG_ 947 UI_frontLeftSeatAutoClimateReq 0;
+BA_ "Confidence" SG_ 947 UI_wiperHeaterReq 0;
+BA_ "Confidence" SG_ 947 UI_silentAlarm 0;
+VAL_ 1040 APP_fasciaCameraTemperature 255 "SNA" ;
+VAL_ 992 APS_A_lowPowerRequest 5 "APS_LOW_POWER_COLD_RESET" 4 "APS_LOW_POWER_SOC_WARM_RESET" 3 "APS_LOW_POWER_AP_WARM_RESET" 2 "APS_LOW_POWER_OFF" 1 "APS_LOW_POWER_SUSPEND" 0 "APS_LOW_POWER_NONE" ;
+VAL_ 992 APS_A_lowPowerRequestor 10 "APS_LOW_POWER_REQ_COUNT" 9 "APS_LOW_POWER_REQ_SGK_PGOOD_IRQ" 8 "APS_LOW_POWER_REQ_SGK_CONSOLE" 7 "APS_LOW_POWER_REQ_SGK_SLEEP" 6 "APS_LOW_POWER_REQ_SGK_UDS" 5 "APS_LOW_POWER_REQ_SGK_BRIDGE" 4 "APS_LOW_POWER_REQ_SGK_FM" 3 "APS_LOW_POWER_REQ_SGK_POWER" 2 "APS_LOW_POWER_REQ_AP_MAILBOX" 1 "APS_LOW_POWER_REQ_AP_ATF" 0 "APS_LOW_POWER_REQ_NONE" ;
+VAL_ 992 APS_B_lowPowerRequest 5 "APS_LOW_POWER_COLD_RESET" 4 "APS_LOW_POWER_SOC_WARM_RESET" 3 "APS_LOW_POWER_AP_WARM_RESET" 2 "APS_LOW_POWER_OFF" 1 "APS_LOW_POWER_SUSPEND" 0 "APS_LOW_POWER_NONE" ;
+VAL_ 992 APS_B_lowPowerRequestor 10 "APS_LOW_POWER_REQ_COUNT" 9 "APS_LOW_POWER_REQ_SGK_PGOOD_IRQ" 8 "APS_LOW_POWER_REQ_SGK_CONSOLE" 7 "APS_LOW_POWER_REQ_SGK_SLEEP" 6 "APS_LOW_POWER_REQ_SGK_UDS" 5 "APS_LOW_POWER_REQ_SGK_BRIDGE" 4 "APS_LOW_POWER_REQ_SGK_FM" 3 "APS_LOW_POWER_REQ_SGK_POWER" 2 "APS_LOW_POWER_REQ_AP_MAILBOX" 1 "APS_LOW_POWER_REQ_AP_ATF" 0 "APS_LOW_POWER_REQ_NONE" ;
+VAL_ 401 DAS_rmfActive 1 "TRUE" 0 "FALSE" ;
+VAL_ 401 DAS_autonomyUnsupervisedActive 1 "TRUE" 0 "FALSE" ;
+VAL_ 401 DAS_autonomyUnavailableReason 414 "TRAJECTORY_ON_PUBLIC_ROAD_NOT_INDOORS" 413 "STOP_IN_LANE_NOT_HONORED" 412 "SIMPLE_SUMMON_OBSTACLE_BLOCKED" 411 "SEVERE_SINGLE_FRONT_VISION_OCCLUSION_AFTER_WIPE" 410 "PHONE_TOO_FAR_TO_START" 409 "MAX_SPEED_LIMIT_FOR_MODE_EXCEEDED" 408 "EPB_REDUNDANT_BRAKING_UNAVAILABLE" 407 "EGO_GEAR_NOT_ALLOWED" 406 "EGO_EXCEEDED_MAX_SUMMON_DISTANCE" 405 "DUAL_EPB_UNAVAILABLE" 404 "COMPRESSOR_FRAME_DROP_RATE_HIGH" 403 "CAN_RX_VALIDATION_ERROR" 402 "BRAKE_APPLIED_PARKED" 401 "ALARM_ACTIVE" 400 "SAFETY_DRIVER_UNBUCKLED_PRE_ACTIVATION" 399 "NOT_FACTORY_SCHEDULE" 398 "FSD_REGION_NOT_ALLOWED" 397 "FSD_QUIZ_REQUIRED" 396 "EPAS_EAC_NOT_ACTIVE_OTHER" 395 "EPAS_EAC_NOT_ACTIVE_HANDS_ON" 394 "DI_CONTROL_INTEGRATOR_WINDUP" 393 "SEVERE_SINGLE_FRONT_VISION_OCCLUSION_HIGH_FOGGING_RISK" 392 "EGO_NEAR_SUMMON_MAP_BOUNDARY_NOT_INDOORS" 391 "GOAL_NEAR_SUMMON_MAP_BOUNDARY_NOT_INDOORS" 390 "GRADE_TOO_HIGH_WITHOUT_REDUNDANT_BRAKING_LOW_MU" 389 "NAV_DESTINATION_OUTSIDE_GEOFENCE" 388 "RCM_COLLISION_SEVERITY_TRIGGERED" 387 "EPB_PARKING_AVAILABILITY_TOO_STEEP" 386 "REVERSE_GEAR_NOT_AVAILABLE" 385 "DESTINATION_OUTSIDE_GEOFENCE_AP" 384 "SSD_CLIP_LOGGING_CRITICAL" 383 "DRIVE_GEAR_NOT_AVAILABLE" 382 "SIDE_VISIBILITY_DEGRADED_PARKED_DOORS_CLOSED" 381 "PERSISTENT_FRAME_DROPS" 380 "PERSISTENT_HANDS_ON_NOT_ALLOWED" 379 "NAV_ROUTE_EXCEEDS_GEOFENCE_BUFFER" 378 "RANKER_OUTPUT_STALE" 377 "VISION_PLANNER_STALE" 376 "AUTO_WIPERS_OFF" 375 "COUNTRY_NOT_ALLOWED_FOR_OPERATION" 374 "OUTSIDE_TRACK_TEST_GEOFENCE" 373 "TEMPERATURE_EXCEEDS_ODD" 372 "RIDESHARE_NAV_GOAL_NOT_IN_SYNC" 371 "HV_BATTERY_AC_CHARGING_UNHEALTHY" 370 "HV_BATTERY_DC_CHARGING_UNHEALTHY" 369 "UI_RIDE_SETUP_IN_PROGRESS" 368 "AUTO_HEADLIGHTS_OFF" 367 "IMMOBILIZER_AUTH_AUTONOMY" 366 "DI_RESTRICTED_DRIVING_MANUAL_RECOVERY" 365 "SUMMON_ACTIVE_DURATION_EXCEEDED" 364 "ESKF_SPEED_SOURCE_ACTIVE" 363 "IMU_DATA_NOT_RELIABLE_WITH_FLEET_CONFIG_ENABLED" 362 "FASCIA_VISION_OCCLUSION_AT_LONG_STOP" 361 "HIGH_SPEED_ROAD_ON_ROUTE" 360 "EGO_ON_HIGH_SPEED_ROAD" 359 "UNACCOMPANIED_UNDERAGE_RIDER_DETECTED" 358 "AEB_FAULTED" 357 "AUDIO_HARDWARE_ODIN_FAILED" 356 "FASCIA_VISION_FAILSAFE_PARKED" 355 "APS_B_EPLANNER_NO_VALID_TRAJECTORY" 354 "APS_A_EPLANNER_NO_VALID_TRAJECTORY" 353 "FASCIA_CAM_INTEGRATED_HEATER_FAULT" 352 "BACKUP_CAM_INTEGRATED_HEATER_FAULT" 351 "RIGHT_REPEATER_CAM_INTEGRATED_HEATER_FAULT" 350 "LEFT_REPEATER_CAM_INTEGRATED_HEATER_FAULT" 349 "RIGHT_PILLAR_CAM_INTEGRATED_HEATER_FAULT" 348 "LEFT_PILLAR_CAM_INTEGRATED_HEATER_FAULT" 347 "RIGHT_PILLAR_CAM_WIRE_HEATER_FAULT" 346 "LEFT_PILLAR_CAM_WIRE_HEATER_FAULT" 345 "WINDSHIELD_CAM_WIRE_HEATER_FAULT" 344 "CONTROLLER_EPLANNER_UNHEALTHY" 343 "VEHICLE_COLLISION_DETECTED" 342 "VRU_COLLISION_DETECTED" 341 "MAJOR_COLLISION_DETECTED" 340 "ONGOING_COLLISION_DETECTED" 339 "INTEGRATOR_ACCELERATION_INVALID" 338 "CABIN_CAM_DRIVER_MONITORING_SYSTEM_UNAVAILABLE" 337 "DCAS_DRIVER_ATTENTION_STATE_DETERMINATION_DEGRADED" 336 "NON_MAIN_FRONT_CAMERAS_STREAM_LOST" 335 "MAIN_CAMERA_STREAM_LOST" 334 "DRIVER_WIPER_WASH_HEALTH_DEGRADED" 333 "EPB_AUTONOMY_BEHAVIOR_MISMATCH" 332 "DI_AUTONOMY_BEHAVIOR_MISMATCH" 331 "VC_AUTONOMY_BEHAVIOR_MISMATCH" 330 "DCAS_EXITED_REGION_TIMEOUT" 329 "WASHER_PUMP_NOT_HEALTHY" 328 "AP_B_SOC_UNHEALTHY" 327 "RCM_AIR_BAG_DEPLOY" 326 "RCM_NEAR_DEPLOY" 325 "AP_A_SOC_UNHEALTHY" 324 "ROUTE_EXCEEDS_SPEED_LIMIT" 323 "PERSISTENT_INVALID_NAV_ROUTE" 322 "NAV_ROUTE_EXITS_GEOFENCE" 321 "NAV_AVOID_HIGH_SPEED_ROADS_DISABLED" 320 "NAV_WHITELIST_ROUTING_DISABLED" 319 "NAV_ROUTE_RANKER_DISABLED" 318 "NAV_AVOID_SHORT_LANE_CHANGE_DISABLED" 317 "NAV_AVOID_UNPROTECTED_TURN_DISABLED" 316 "HIGHWAY_ON_ROUTE" 315 "EGO_ON_HIGHWAY" 314 "INVALID_VEHICLE_OPERATION_MODE" 313 "STEERING_ANGLE_OFFSET_HIGH" 312 "SAFETY_DRIVER_INATTENTIVE" 311 "TRACK_MODE_ACTIVE" 310 "EXT_TEMP_LOW_CERAMIC_BRAKES" 309 "GOAL_NEAR_SUMMON_MAP_BOUNDARY" 308 "SUMMON_HEARTBEAT_MISSING" 307 "EGO_NEAR_SUMMON_MAP_BOUNDARY" 306 "EGO_OUTSIDE_SUMMON_MAP_RADIUS" 305 "SUMMON_MAP_INVALID" 304 "RAW_UI_SUMMON_GOAL_INVALID" 303 "SUMMON_GOAL_INVALID" 302 "SYSTEM_CDP_UNAVAILABLE" 301 "SUMMON_COLLISION_DETECTION_ACTIVE" 300 "PHONE_TOO_FAR" 299 "PHONE_GPS_INVALID" 298 "GRADE_TOO_HIGH_WITHOUT_REDUNDANT_BRAKING" 297 "CABIN_CAM_DRIVER_MONITORING_UNAVAILABLE" 296 "CABIN_CAMERA_STREAM_FAILURE" 295 "DRIVER_PRESENCE_VISION_UNAVAILABLE" 294 "PEDAL_OVERRIDE_EXCEEDS_CONTROLLER_LIMITS" 293 "UPCOMING_FERRY_CROSSING" 292 "DRIVER_PARTIALLY_OCCLUDED" 291 "DRIVER_REQUIREMENTS_NOT_MET_VC" 290 "DRIVER_AGE_REQUIREMENTS_NOT_MET_VISION" 289 "GPS_DEGRADED" 288 "PILLARS_SWAP_DETECTED" 287 "NARROW_FISHEYE_SWAP_DETECTED" 286 "SCCM_MIA" 285 "RECENT_STALK_GEAR_SHIFT" 284 "IBOOSTER_MIA" 283 "PARKING_SPOT_SELECTED" 282 "SCROLL_WHEEL_INTERACTION" 281 "PEDAL_OVERRIDE_STRIKEOUT_FOR_DRIVE" 280 "PEDAL_OVERRIDE_STRIKEOUT" 279 "ABOVE_MAX_ACTIVATION_SPEED" 278 "DRIVER_MONITOR_SUSPENSION_ACTIVE" 277 "DRIVER_MONITOR_STRUCK_OUT_FOR_DRIVE" 276 "VC_CAMERA_AIR_CLEANING_STATUS_MIA" 275 "VC_CAMERA_FLUID_CLEANING_STATUS_MIA" 274 "INVALID_DI_PEDAL_POS" 273 "CABIN_CAMERA_FAN_RPM_FAULT" 272 "SELF_NETWORK_DECRYPTION_NOT_READY" 271 "OFF_ROAD_MODE_ACTIVE" 270 "SSD_CLIP_LOGGING_INACTIVE" 269 "CAMERA_EXPOSURE_INACTIVE" 268 "CAMERA_EXPOSURE_MISMATCH" 267 "CABIN_CAMERA_IR_LED_FAULTED" 266 "TAMPERING_DETECTED" 265 "NO_IMU_SOURCES_AVAILABLE" 264 "IMU_REDUNDANCY_LOST" 263 "DI_AUTONOMY_HEALTH_CAN_MESSAGE_MIA" 262 "ALL_WHEEL_SPEEDS_SENSORS_FAULTED" 261 "WHEEL_SPEEDS_CAN_MESSAGE_MIA" 260 "AP_THERMAL_MODEL_FAULT_DETECTED" 259 "SGK_AUTONOMY_MODE_NOT_IN_SYNC" 258 "SGK_AUTONOMY_STATE_NOT_IN_SYNC" 257 "ANY_RIGHT_DOOR_OPEN_BUTTON_FAULTED" 256 "ANY_LEFT_DOOR_OPEN_BUTTON_FAULTED" 255 "VCRIGHT_DOOR_STATUS_CAN_MESSAGE_MIA" 254 "VCLEFT_DOOR_STATUS_CAN_MESSAGE_MIA" 253 "BB_STATUS_CAN_MESSAGE_MIA" 252 "GTW_CAR_CONFIG_CAN_MESSAGE_MIA" 251 "TRAILER_MODE_ACTIVE" 250 "UI_LIMIT_MODE_ACTIVE" 249 "UI_QT_CAR_UNAVAILABLE" 248 "UI_CONNECTIVITY_HW_UNHEALTHY" 247 "UI_CONNECTIVITY_OFFLINE" 246 "UI_CENTER_DISPLAY_UNAVAILABLE" 245 "UI_HEALTH_STATUS_CAN_MESSAGE_MIA" 244 "ANY_LV_HEALTH_CAN_MESSAGE_INVALID" 243 "ANY_LV_HEALTH_CAN_MESSAGE_MIA" 242 "AP_SYSTEM_ISSUE_PENDING_REBOOT" 241 "AP_TASK_PENDING_REBOOT" 240 "APS_DUAL_CAMERA_POWER_FAILURE" 239 "APS_SINGLE_CAMERA_POWER_FAILURE" 238 "APS_ETH_BRIDGE_DOWN" 237 "APS_PEER_PMIC_FAULTED" 236 "APS_SELF_PMIC_FAULTED" 235 "APS_PEER_VRM_FAULTED" 234 "APS_SELF_VRM_FAULTED" 233 "APS_PEER_IMEM_FAULTED" 232 "APS_SELF_IMEM_FAULTED" 231 "APS_PEER_CAN_FAULTED" 230 "APS_SELF_CAN_FAULTED" 229 "APS_B_UNHEALTHY" 228 "APS_A_UNHEALTHY" 227 "PEER_VISION_FAILOVER_ACTIVE" 226 "ARBITER_SELECTED_BEHAVIOR_OUT_OF_DATE" 225 "ARBITER_SELECTED_BEHAVIOR_NOT_E2E" 224 "MISSION_PLANNER_DESIRED_BEHAVIOR_NOT_E2E" 223 "AUTONOMY_CONTROLLING_AND_NOT_PARKED" 222 "NO_VALID_SGK_STATUS" 221 "AUTONOMOUS_BEHAVIORS_LINK_NOT_ESTABLISHED" 220 "GNSS_PPS_MIA" 219 "GNSS_ANTENNA_DISCONNECTED" 218 "GNSS_UART_FAULTED" 217 "AP_THERMAL_DEGRADED_PULLOVER_REQ" 216 "AP_THERMAL_DEGRADED_BLOCK_ACTIVATION" 215 "DRIVER_PRESENT_NOT_ALLOWED" 214 "UNSUPERVISED_OPERATION_NOT_ALLOWED" 213 "NOT_IN_RT_NO_TAKEOVER_FLEET" 212 "SAFETY_OPERATOR_NOT_PRESENT" 211 "CAMERA_PRECONDITIONING_REQUIRED" 210 "BMS_CAN_MESSAGES_MIA" 209 "VEHICLE_LOSING_HV" 208 "HV_DRIVE_NO_RESTART" 207 "AUTONOMOUS_BEHAVIORS_TASK_SUSPENDING" 206 "AUDIO_BUS_DOWN" 205 "CAMERA_REDUNDANCY_NOT_READY" 204 "NO_VEHICLE_SPEED_SOURCE_AVAILABLE" 203 "DI_PRIMARY_SPEED_SOURCE_UNAVAILABLE" 202 "DI_SPEED_CAN_MESSAGE_MIA" 201 "DEFOG_SYSTEM_UNHEALTHY" 200 "COOLANT_SYSTEM_UNHEALTHY" 199 "DEFOG_SYSTEM_NOT_READY" 198 "COOLANT_SYSTEM_NOT_READY" 197 "NOT_AUTHENTICATED_FOR_DRIVE" 196 "UNASSIGNED_PASSENGER_UNBUCKLED" 195 "WAITING_FOR_PASSENGER_EGRESS" 194 "PASSENGER_UNEXPECTED_RIDE_INACTIVE" 193 "DRIVER_NOT_PRESENT_PRE_ACTIVATION" 192 "NARROW_WASH_NOT_AVAILABLE" 191 "REDUNDANT_IMU_CAN_MESSAGES_MIA" 190 "IMU_CAN_MESSAGES_MIA" 189 "BRAKING_CAN_MESSAGES_MIA" 188 "EPB_AUTONOMY_CAN_MESSAGES_MIA" 187 "PARK_BRAKE_CAN_MESSAGES_MIA" 186 "STEERING_CAN_MESSAGES_MIA" 185 "DI_SYSTEM_STATUS_CAN_MESSAGES_MIA" 184 "DI_CHASSIS_CONTROL_CAN_MESSAGE_MIA" 183 "APS_CAN_MESSAGES_MIA" 182 "POOR_LOCALIZATION_ACCURACY" 181 "VISION_FAILOVER_ACTIVE" 180 "SEAT_OCCUPANCY_STATUS_UNHEALTHY" 179 "TO_STREAMS_UNHEALTHY" 178 "SEATBELT_STATUS_UNHEALTHY" 177 "RCM_WARNING_INDICATOR_ON" 176 "REDUNDANT_BRAKES_FAIL_OPERATIONAL" 175 "REDUNDANT_BRAKES_REDUNDANCY_LOST" 174 "REDUNDANT_BRAKES_NOT_ARMED" 173 "REDUNDANT_BRAKES_NOT_READY" 172 "REDUNDANT_BRAKE_PATH_ACTIVE" 171 "RANKER_NOT_HEALTHY" 170 "PARKED_A_PEDAL_PRESSED" 169 "ANY_CANCEL_ACTIVE" 168 "BRAKE_CONFIRM_PENDING_PARK" 167 "BRAKE_APPLIED_D_R_N" 166 "BRAKE_RELEASE_PENDING_PARK" 165 "ENFORCED_UNPARK_DELAY_ACTIVE" 164 "WIPER_NOT_HEALTHY" 163 "RIGHT_PILLAR_CAM_HEATER_FAULT" 162 "LEFT_PILLAR_CAM_HEATER_FAULT" 161 "WINDSHIELD_CAM_HEATER_FAULT" 160 "ALL_TAIL_LIGHTS_FAULTED_IN_LOW_VIS" 159 "TAIL_LIGHT_FAULTED" 158 "REVERSE_LIGHT_FAULTED" 157 "RIGHT_TURN_LIGHT_FAULTED" 156 "LEFT_TURN_LIGHT_FAULTED" 155 "ALL_BRAKE_LIGHTS_FAULTED" 154 "BRAKE_LIGHT_FAULTED" 153 "HIGH_BEAM_LIGHT_FAULTED_IN_LOW_VIS" 152 "LOW_BEAM_LIGHT_FAULTED_IN_LOW_VIS" 151 "HIGH_BEAM_LIGHT_FAULTED" 150 "LOW_BEAM_LIGHT_FAULTED" 149 "HEADLIGHTS_NOT_AIMED" 148 "HEADLIGHTS_OFF_AT_NIGHT" 147 "AP_REDUNDANCY_UNAVAILABLE" 146 "DI_BRAKING_DECELERATION_UNAVAILABLE" 145 "DI_VDC_ACTIVE" 144 "DI_TC_ACTIVE" 143 "DI_VDC_STATE_NOT_NORMAL" 142 "DI_LOSING_PROPULSION" 141 "EPB_STATUS_NOT_PARKED" 140 "EPB_PARKING_AVAILABILITY_UNKNOWN" 139 "EPB_PARKING_AVAILABILITY_REQUEST_PATH_DEGRADED" 138 "EPB_PARKING_AVAILABILITY_SPEED_INVALID" 137 "EPB_PARKING_AVAILABILITY_FAULTED" 136 "TIRE_PRESSURE_SENSOR_FAULT" 135 "FLAT_TIRE" 134 "INTEGRATOR_HEALTH_CRITICAL" 133 "IMU_DATA_NOT_RELIABLE" 132 "FASCIA_FLUID_CLEAN_CRITICAL" 131 "BACKUP_FLUID_CLEAN_CRITICAL" 130 "RIGHT_REPEATER_FLUID_CLEAN_CRITICAL" 129 "LEFT_REPEATER_FLUID_CLEAN_CRITICAL" 128 "FASCIA_AIR_CLEAN_CRITICAL" 127 "BACKUP_AIR_CLEAN_CRITICAL" 126 "RIGHT_REPEATER_AIR_CLEAN_CRITICAL" 125 "LEFT_REPEATER_AIR_CLEAN_CRITICAL" 124 "FASCIA_FLUID_CLEAN_DEGRADED" 123 "BACKUP_FLUID_CLEAN_DEGRADED" 122 "RIGHT_REPEATER_FLUID_CLEAN_DEGRADED" 121 "LEFT_REPEATER_FLUID_CLEAN_DEGRADED" 120 "FASCIA_AIR_CLEAN_DEGRADED" 119 "BACKUP_AIR_CLEAN_DEGRADED" 118 "RIGHT_REPEATER_AIR_CLEAN_DEGRADED" 117 "LEFT_REPEATER_AIR_CLEAN_DEGRADED" 116 "TERTIARY_WASHER_FLUID_LOW" 115 "SECONDARY_WASHER_FLUID_LOW" 114 "WASHER_FLUID_LOW" 113 "ELEVATED_TIRE_PRESSURE_READING" 112 "LOW_TIRE_PRESSURE_READING" 111 "VISION_CABIN_OCCUPANCY_UNAVAILABLE" 110 "SGK_AUTOSTEER_MONITOR_ACTIVE" 109 "SGK_PLANNER_ACTIVE_D_R_N" 108 "FLEET_MAINTENANCE_EXPIRING_SOON" 107 "FLEET_MAINTENANCE_REQUIRED" 106 "CHARGE_CABLE_CONNECTED_OR_STATUS_UNKNOWN" 105 "PASSENGER_UNBUCKLED_ACTIVE_RIDE" 104 "PASSENGER_UNBUCKLED" 103 "SYSTEM_UNHEALTHY_DEV_OVERRIDE" 102 "SINGLE_SOC_HEALTHY_EXCEPTION" 101 "IMU_REPLICATION_NOT_READY" 100 "STATE_MACHINE_DISABLED" 99 "INCOMPATIBLE_SYSTEM_HEALTH" 98 "CABIN_CAM_BLINDED" 97 "RIDESHARE_INGRESS_NO_NAV_ROUTE" 96 "PASSENGER_EXPECTED" 95 "DRIVER_MONITOR_STRIKEOUT" 94 "DRIVER_NOT_PRESENT" 93 "CONTROLLER_SOLVER_CRITICAL" 92 "CONTROLLER_SOLVER_DEGRADED" 91 "CONTROLLER_DEGRADED_PEDAL_OVERRIDE" 90 "CONTROLLER_SOLVER_FAILURE" 89 "LV_CRITICAL_STATE" 88 "LV_DEGRADED_STATE" 87 "VEHICLE_AUTONOMY_BEHAVIOR_MISMATCH" 86 "CRUISE_STACK_MISMATCH" 85 "EPB_REDUNDANT_BRAKING_STATUS" 84 "EXTENDED_COMPUTE_INACTIVE_OTHER" 83 "EXTENDED_COMPUTE_TIME_SYNC_CRITICAL_DEGRADED" 82 "EXTENDED_COMPUTE_OTHER_SOC_STATE_UNKNOWN" 81 "EXTENDED_COMPUTE_OTHER_SOC_STATE_INACTIVE" 80 "EXTENDED_COMPUTE_PCIE_LINK_HEALTH" 79 "EXTENDED_COMPUTE_ETHERNET_LINK_HEALTH" 78 "EXTENDED_COMPUTE_OTHER_SOC_HEALTH_CRITICAL" 77 "EXTENDED_COMPUTE_OTHER_SOC_HEALTH_UNKNOWN" 76 "EXTENDED_COMPUTE_SOC_HEALTH_CRITICAL" 75 "EXTENDED_COMPUTE_SOC_HEALTH_UNKNOWN" 74 "FSD_FROM_PARK_DISABLED" 73 "NOT_IN_PARK_NO_TAKEOVER" 72 "NO_FIXED_ROUTE" 71 "NAV_GOAL_INVALID" 70 "ANY_EPAS_FAULT" 69 "EPAS_SYSTEM_TORQUE_REDUCED" 68 "EPAS_SECONDARY_MASTER" 67 "EPAS_REDUNDANCY_LOST" 66 "EPAS_DRIVERLESS_MODE_NOT_ACTIVE" 65 "EPAS_EAC_NOT_ACTIVE" 64 "EPAS_EAC_UNAVAILABLE" 63 "STEERING_ANGLE_INVALID" 62 "CRUISE_FAULT" 61 "CRUISE_NOT_ACTIVE_OTHER" 60 "CRUISE_NOT_ACTIVE_ESTOP" 59 "CRUISE_UNAVAILABLE_OTHER" 58 "CRUISE_UNAVAILABLE_BRAKE_APPLIED" 57 "NOT_POWER_STATE_DRIVE" 56 "FRUNK_OPEN" 55 "TRUNK_OPEN" 54 "PASSENGER_DOOR_OPEN" 53 "DRIVER_DOOR_OPEN" 52 "VISION_FPS_LOW_CAMERA_DROPS" 51 "VISION_LATENCY_HIGH" 50 "SAFETY_DRIVER_UNBUCKLED" 49 "FASCIA_VISION_OCCLUSION_AT_STOP" 48 "SEVERE_RIGHT_VISION_OCCLUSION_REVERSE" 47 "SEVERE_LEFT_VISION_OCCLUSION_REVERSE" 46 "SEVERE_BACKUP_VISION_OCCLUSION_REVERSE" 45 "SEVERE_RIGHT_VISION_OCCLUSION_MANEUVER" 44 "SEVERE_LEFT_VISION_OCCLUSION_MANEUVER" 43 "SEVERE_RIGHT_VISION_OCCLUSION" 42 "SEVERE_LEFT_VISION_OCCLUSION" 41 "SEVERE_MULTIPLE_FRONT_VISION_OCCLUSION" 40 "SEVERE_SINGLE_FRONT_VISION_OCCLUSION" 39 "CAMERA_HEALTH_METRICS_UNHEALTHY" 38 "VISION_SCENETAGS_UNHEALTHY" 37 "VISION_AUTOWIPER_UNHEALTHY" 36 "VISION_AUTOHIGHBEAM_UNHEALTHY" 35 "VISION_FAILSAFES_UNHEALTHY" 34 "RIGHT_VISION_FAILSAFE_PARKED" 33 "LEFT_VISION_FAILSAFE_PARKED" 32 "FRONT_VISION_FAILSAFE_PARKED" 31 "REAR_VISION_FAILSAFE_PARKED" 30 "CAMERA_OFFGASSING" 29 "CAMERA_OFFGASSING_PRE_ALERT" 28 "INTERMITTENT_FRAME_DROPS" 27 "CAMERA_AUTOEXPOSURE_LOST" 26 "OUT_OF_SYNC_CAMERA_STREAMS" 25 "FASCIA_CAMERA_STREAM_LOST" 24 "BACKUP_CAMERA_STREAM_LOST" 23 "RIGHT_CAMERAS_STREAM_LOST" 22 "LEFT_CAMERAS_STREAM_LOST" 21 "FRONT_CAMERAS_STREAM_LOST" 20 "CAMERA_MCU_FW_MISMATCH" 19 "FACTORY_CALIBRATION" 18 "CAMERA_PITCH_OUT_OF_BOUNDS" 17 "CAMERA_CALIBRATION" 16 "GNSS_DEGRADED_SIGNAL_STRENGTH" 15 "AP_POWER_REQUEST_NOT_NOMINAL" 14 "SENTRY_ACTIVE" 13 "NO_REDUNDANT_BRAKING" 12 "HK_RESTRICTED" 11 "OUTSIDE_GEOFENCE" 10 "RUN_MODE_NOT_FSD" 9 "AEB_ACTIVE" 8 "SUMMON_ACTIVE" 7 "AUTOPARK_ACTIVE" 6 "FSD_DISABLED" 5 "CAR_WASH_MODE" 4 "DELIVERED" 3 "NO_AUTONOMY_MODE_ACTIVE" 2 "NEUTRAL_GEAR" 1 "NONE" 0 "UNKNOWN" ;
+VAL_ 586 DAS_autosteerVehiclesUsage 3 "BLACKLISTED" 2 "FUSED" 1 "AVAILABLE" 0 "REJECTED_UNAVAILABLE" ;
+VAL_ 586 DAS_autosteerHPPUsage 3 "BLACKLISTED" 2 "FUSED" 1 "AVAILABLE" 0 "REJECTED_UNAVAILABLE" ;
+VAL_ 586 DAS_autosteerNavigationUsage 3 "BLACKLISTED" 2 "FUSED" 1 "AVAILABLE" 0 "REJECTED_UNAVAILABLE" ;
+VAL_ 586 DAS_autosteerModelUsage 3 "BLACKLISTED" 2 "FUSED" 1 "AVAILABLE" 0 "REJECTED_UNAVAILABLE" ;
+VAL_ 586 DAS_autosteerBottsDotsUsage 3 "BLACKLISTED" 2 "FUSED" 1 "AVAILABLE" 0 "REJECTED_UNAVAILABLE" ;
+VAL_ 586 DAS_offsetSide 3 "OFFSET_BOTH_OBJECTS" 2 "OFFSET_LEFT_OBJECT" 1 "OFFSET_RIGHT_OBJECT" 0 "NO_OFFSET" ;
+VAL_ 586 DAS_roadSurfaceType 2 "ROAD_SURFACE_ENHANCED" 1 "ROAD_SURFACE_NORMAL" 0 "ROAD_SURFACE_SNA" ;
+VAL_ 586 DAS_autosteerHealthState 5 "HEALTH_FAULT" 4 "HEALTH_ABORTING" 3 "HEALTH_SEVERELY_DEGRADED" 2 "HEALTH_DEGRADED" 1 "HEALTH_NOMINAL" 0 "HEALTH_UNAVAILABLE" ;
+VAL_ 586 DAS_lastLinePreferenceReason 15 "NONE" 5 "COUNTRY_DRIVING_SIDE" 4 "AVOID_ONCOMING_LANES" 3 "NAVIGATION_BRANCH" 2 "NEIGHBOR_LANE_PROBABILIY" 1 "AGREEMENT_WITH_NEIGHBOR_LANES" 0 "OTHER_LANE_DISAGREES_WITH_MODEL" ;
+VAL_ 586 DAS_plannerState 7 "TP_EXTSTATE_LANECHANGE_ABORT" 6 "TP_EXTSTATE_LANECHANGE_WAIT_FOR_FWD_OBSTACLE" 5 "TP_EXTSTATE_LANECHANGE_WAIT_FOR_SIDE_OBSTACLE" 4 "TP_EXTSTATE_LANECHANGE_IN_PROGRESS" 3 "TP_EXTSTATE_LANECHANGE_REQUESTED" 2 "TP_EXTSTATE_FOLLOW" 1 "TP_EXTSTATE_VL" 0 "TP_EXTSTATE_DISABLED" ;
+VAL_ 586 DAS_lastAutosteerAbortReason 36 "UI_ABORT_REASON_AHB_MANUAL_OVERRIDE" 35 "UI_ABORT_REASON_DRIVER_NOT_PRESENT" 34 "UI_ABORT_REASON_USER_OVERRIDE_STRIKEOUT" 33 "UI_ABORT_REASON_SEATBELT_UNBUCKLED" 32 "UI_ABORT_REASON_AEB" 31 "UI_ABORT_REASON_NO_ABORT" 30 "UI_ABORT_REASON_CAMERA_FAILSAFES" 29 "UI_ABORT_REASON_ACC_CANCEL" 28 "UI_ABORT_REASON_EPAS_ERROR_CODE" 27 "UI_ABORT_REASON_PLANNER_OUTPUT_INVALID" 26 "UI_ABORT_REASON_FOLLOWER_OUTPUT_INVALID" 25 "UI_ABORT_REASON_VEHICLE_SPEED_ABOVE_MAX" 24 "UI_ABORT_REASON_DRIVING_OFF_NAV" 23 "UI_ABORT_REASON_CID_SWITCH_DISABLED" 22 "UI_ABORT_REASON_CRUISE_FAULT" 21 "UI_ABORT_REASON_COMPONENT_MIA" 20 "UI_ABORT_REASON_EPAS_EAC_DENIED" 19 "UI_ABORT_REASON_SIDE_COLLISION_IMMINENT" 18 "UI_ABORT_REASON_TRAILER_MODE" 17 "UI_ABORT_REASON_CAM_WATCHDOG" 16 "UI_ABORT_REASON_CAM_MSG_MIA" 15 "UI_ABORT_REASON_ME_MAIN_STATE_NOT_VISION" 14 "UI_ABORT_REASON_APP_ME_STATE_NOT_VISION" 2 "UI_ABORT_REASON_HM_STEERING_ERROR" 1 "UI_ABORT_REASON_HM_VIRTUAL_LANE_NO_INPUTS" 0 "UI_ABORT_REASON_HM_LANE_VIEW_RANGE" ;
+VAL_ 586 DAS_navAvailable 1 "DAS_NAV_AVAILABLE" 0 "DAS_NAV_UNAVAILABLE" ;
+VAL_ 586 DAS_accSmartSpeedState 7 "SNA" 5 "OFFRAMP_DELAY" 4 "SET_SPEED_SET_REQUESTED" 3 "ACTIVE_ONRAMP" 2 "ACTIVE_INTEGRATING" 1 "ACTIVE_OFFRAMP" 0 "NOT_ACTIVE" ;
+VAL_ 586 DAS_ulcInProgress 1 "ULC_ACTIVE" 0 "ULC_INACTIVE" ;
+VAL_ 586 DAS_isaSystemState 3 "ISA_UNAVAILABLE" 2 "ISA_INVALID" 1 "ISA_ASSUMED_LIMITS" 0 "ISA_NOMINAL" ;
+VAL_ 586 DAS_behaviorType 3 "DAS_BEHAVIOR_LANE_CHANGE_RIGHT" 2 "DAS_BEHAVIOR_LANE_CHANGE_LEFT" 1 "DAS_BEHAVIOR_IN_LANE" 0 "DAS_BEHAVIOR_INVALID" ;
+VAL_ 586 DAS_ulcType 2 "ULC_TYPE_SPEED" 1 "ULC_TYPE_NAV" 0 "ULC_TYPE_NONE" ;
+VAL_ 586 DAS_rearVehDetectedThisCycle 1 "VEHICLE_DETECTED" 0 "VEHICLE_NOT_DETECTED" ;
+VAL_ 586 DAS_rearLeftVehDetectedCurrent 1 "VEHICLE_DETECTED" 0 "VEHICLE_NOT_DETECTED" ;
+VAL_ 586 DAS_rearRightVehDetectedTrip 1 "VEHICLE_DETECTED" 0 "VEHICLE_NOT_DETECTED" ;
+VAL_ 586 DAS_rearLeftVehDetectedTrip 1 "VEHICLE_DETECTED" 0 "VEHICLE_NOT_DETECTED" ;
+VAL_ 862 PARK_rearLeftMiddleRawDistData 255 "SNA" ;
+VAL_ 862 PARK_rearMiddleRawDistData 255 "SNA" ;
+VAL_ 862 PARK_rearRightMiddleRawDistData 255 "SNA" ;
+VAL_ 526 PARK_sdiSensor1RawDistData 511 "SNA" 500 "NO_OBJECT_DETECTED" 1 "NEAR_DETECTION" 0 "BLOCKED" ;
+VAL_ 526 PARK_sdiSensor2RawDistData 511 "SNA" 500 "NO_OBJECT_DETECTED" 1 "NEAR_DETECTION" 0 "BLOCKED" ;
+VAL_ 526 PARK_sdiSensor3RawDistData 511 "SNA" 500 "NO_OBJECT_DETECTED" 1 "NEAR_DETECTION" 0 "BLOCKED" ;
+VAL_ 526 PARK_sdiSensor4RawDistData 511 "SNA" 500 "NO_OBJECT_DETECTED" 1 "NEAR_DETECTION" 0 "BLOCKED" ;
+VAL_ 526 PARK_sdiSensor5RawDistData 511 "SNA" 500 "NO_OBJECT_DETECTED" 1 "NEAR_DETECTION" 0 "BLOCKED" ;
+VAL_ 526 PARK_sdiSensor6RawDistData 511 "SNA" 500 "NO_OBJECT_DETECTED" 1 "NEAR_DETECTION" 0 "BLOCKED" ;
+VAL_ 830 PARK_rearRightSensorState 3 "SNA" 2 "TEMPORARY_FAILURE" 1 "PERMANENT_FAILURE" 0 "NO_FAILURE" ;
+VAL_ 830 PARK_rearRightMiddleSensorState 3 "SNA" 2 "TEMPORARY_FAILURE" 1 "PERMANENT_FAILURE" 0 "NO_FAILURE" ;
+VAL_ 830 PARK_rearLeftMiddleSensorState 3 "SNA" 2 "TEMPORARY_FAILURE" 1 "PERMANENT_FAILURE" 0 "NO_FAILURE" ;
+VAL_ 830 PARK_rearLeftSensorState 3 "SNA" 2 "TEMPORARY_FAILURE" 1 "PERMANENT_FAILURE" 0 "NO_FAILURE" ;
+VAL_ 830 PARK_rearLeftRawDistData 255 "SNA" ;
+VAL_ 830 PARK_rearRightRawDistData 255 "SNA" ;
+VAL_ 830 PARK_systemStatusRear 3 "SNA" 2 "UNUSED" 1 "ENABLED" 0 "DISABLED" ;
+VAL_ 830 PARK_rearDtcPresent 3 "SNA" 2 "UNUSED" 1 "TRUE" 0 "FALSE" ;
+VAL_ 782 PARK_pscRightCurbType 2 "HIGH_CURB" 1 "LOW_CURB" 0 "VIRTUAL_CURB" ;
+VAL_ 782 PARK_pscLeftCurbType 2 "HIGH_CURB" 1 "LOW_CURB" 0 "VIRTUAL_CURB" ;
+VAL_ 782 PARK_autoCalComplete 1 "COMPLETE" 0 "INCOMPLETE" ;
+VAL_ 782 PARK_geometryType 3 "MODELY" 2 "MODEL3" 1 "MODELX" 0 "MODELS" ;
+VAL_ 782 PARK_tireFitment 3 "SNA" 2 "NOT_USED" 1 "STAGGERED" 0 "SQUARE" ;
+VAL_ 782 PARK_rackDetected 3 "SNA" 2 "RACK_DETECTED" 1 "NO_RACK" 0 "UNKNOWN" ;
+VAL_ 782 PARK_sdiActive 1 "SDI_ENABLED" 0 "SDI_DISABLED" ;
+VAL_ 782 PARK_sdiNoise 3 "SDI_NOISE_SNA" 2 "SDI_NOISE_RAIN" 1 "SDI_NOISE_HIGH" 0 "SDI_NOISE_NOMINAL" ;
+VAL_ 782 PARK_sdiBlindSpotRight 3 "SNA" 2 "UNUSED" 1 "WARNING" 0 "NO_WARNING" ;
+VAL_ 782 PARK_sdiBlindSpotLeft 3 "SNA" 2 "UNUSED" 1 "WARNING" 0 "NO_WARNING" ;
+VAL_ 782 PARK_sensorType 3 "SNA" 2 "VALEO_HP" 1 "VALEO_HPFL" 0 "NONE" ;
+VAL_ 991 UI_userActivity 1 "USER_ACTIVE" 0 "USER_IDLE" ;
+VAL_ 991 UI_linkState 2 "LINK_STATE_WIFI" 1 "LINK_STATE_CELL" 0 "LINK_STATE_NONE" ;
+VAL_ 991 UI_mobileAppConnected 1 "CONNECTED" 0 "NOT_CONNECTED" ;
+VAL_ 991 UI_autoshiftDRState 6 "AUTOSHIFT_DR_STATE_BRAKE_GEAR_SHIFT_CONFIRMED_D" 5 "AUTOSHIFT_DR_STATE_BRAKE_GEAR_SHIFT_CONFIRMED_R" 4 "AUTOSHIFT_DR_STATE_BRAKE_STEERING_AND_BRAKE_CONFIRMED" 3 "AUTOSHIFT_DR_STATE_ONLY_STEERING_CONFIRMED" 2 "AUTOSHIFT_DR_STATE_ONLY_BRAKE_CONFIRMED" 1 "AUTOSHIFT_DR_STATE_PROMPT_SHOWING_UNCONFIRMED" 0 "AUTOSHIFT_DR_STATE_INACTIVE" ;
+VAL_ 991 UI_wifiBtModuleType 4 "ELEKTRA" 3 "TCU4G" 2 "BCM4359" 1 "QCA6595" 0 "UNKNOWN" ;
+VAL_ 991 UI_selfParkState 255 "SNA" 52 "SELF_PARK_USER_PAUSED" 51 "SELF_PARK_REMOTE_PRE_ABORT" 50 "SELF_PARK_RESUME" 49 "SELF_PARK_PAUSE" 48 "SELF_PARK_DV_MISMATCH" 47 "SELF_PARK_DI_PANIC" 46 "SELF_PARK_POST_ACTIVE_FAILURE" 45 "SELF_PARK_POST_ACTIVE_SUCCESS" 44 "SELF_PARK_CANCEL_AUTO_SUMMON" 43 "SELF_PARK_REMOTE_ABORT" 42 "SELF_PARK_OBSTACLE_NOT_CLEARED" 41 "SELF_PARK_OBSTACLE_CLEARED" 40 "SELF_PARK_OPEN_GATE" 39 "SELF_PARK_ACTIVE" 38 "SELF_PARK_STARTED_REVERSE" 37 "SELF_PARK_STARTED_FORWARD" 36 "SELF_PARK_NOT_STARTED_TIMEOUT" 35 "SELF_PARK_PRIMED" 34 "SELF_PARK_PREPRIMED" 33 "SELF_PARK_TURN_ON_DRIVE_RAIL" 32 "SELF_PARK_DETECT_KEY_FOB" 31 "SELF_PARK_WAKE_UP_BUSES" 30 "SELF_PARK_CONNECTING_BLUETOOTH" 29 "SELF_PARK_UNAVAILABLE_CAR_WASH_MODE" 28 "SELF_PARK_UNAVAILABLE_CAR_ALARM" 27 "SELF_PARK_UNAVAILABLE_CRASH_STATE" 26 "SELF_PARK_UNAVAILABLE_DRAG_STRIP_MODE" 25 "SELF_PARK_UNAVAILABLE_TRACK_MODE" 24 "SELF_PARK_UNAVAILABLE_SERVICE_MODE" 23 "SELF_PARK_UNAVAILABLE_DOG_MODE" 22 "SELF_PARK_UNAVAILABLE_GAME_MODE" 21 "SELF_PARK_UNAVAILABLE_BLUETOOTH_CONNECT_TIMEOUT" 20 "SELF_PARK_UNAVAILABLE_WAKEUP_TIMEOUT" 19 "SELF_PARK_UNAVAILABLE_NO_BLUETOOTH_DEVICES_PAIRED" 18 "SELF_PARK_UNAVAILABLE_BRAKE_PRESSED" 17 "SELF_PARK_UNAVAILABLE_ROAD_GRADE" 16 "SELF_PARK_UNAVAILABLE_TRAILER_MODE" 15 "SELF_PARK_UNAVAILABLE_KEY_FOB_BATTERY_LOW" 14 "SELF_PARK_UNAVAILABLE_KEY_FOB_NOT_DETECTED" 13 "SELF_PARK_UNAVAILABLE_PARK_SENSOR_ISSUE" 12 "SELF_PARK_UNAVAILABLE_AUTOSTEER_NOT_ENABLED" 11 "SELF_PARK_UNAVAILABLE_LV_BUS_SUPPORT_ISSUE" 10 "SELF_PARK_UNAVAILABLE_ON_PUBLIC_ROAD" 9 "SELF_PARK_UNAVAILABLE_PARKED_TOO_LONG" 8 "SELF_PARK_UNAVAILABLE_DOOR_OPEN" 7 "SELF_PARK_UNAVAILABLE_TRUNK_OPEN" 6 "SELF_PARK_UNAVAILABLE_FRUNK_OPEN" 5 "SELF_PARK_UNAVAILABLE_PLUGGED_IN" 4 "SELF_PARK_UNAVAILABLE_NOT_PARKED" 3 "SELF_PARK_UNAVAILABLE" 2 "SELF_PARK_IDLE" 1 "SELF_PARK_DRIVING" 0 "SELF_PARK_DISABLED" ;
+VAL_ 991 UI_summonDeviceIndex 3 "UNKNOWN" 2 "DEVICE_2" 1 "DEVICE_1" 0 "DEVICE_0" ;
+VAL_ 947 UI_lightSwitch 4 "LIGHT_SWITCH_SNA" 3 "LIGHT_SWITCH_OFF" 2 "LIGHT_SWITCH_PARKING" 1 "LIGHT_SWITCH_ON" 0 "LIGHT_SWITCH_AUTO" ;
+VAL_ 947 UI_autopilotPowerStateRequest 2 "AUTOPILOT_SUSPEND" 1 "AUTOPILOT_SENTRY" 0 "AUTOPILOT_NOMINAL" ;
+VAL_ 947 UI_frontLeftSeatFanReq 3 "FAN_REQUEST_LEVEL3" 2 "FAN_REQUEST_LEVEL2" 1 "FAN_REQUEST_LEVEL1" 0 "FAN_REQUEST_OFF" ;
+VAL_ 947 UI_frontRightSeatFanReq 3 "FAN_REQUEST_LEVEL3" 2 "FAN_REQUEST_LEVEL2" 1 "FAN_REQUEST_LEVEL1" 0 "FAN_REQUEST_OFF" ;
+VAL_ 947 UI_3RLeftSeatHeatReq 3 "HEATER_REQUEST_LEVEL3" 2 "HEATER_REQUEST_LEVEL2" 1 "HEATER_REQUEST_LEVEL1" 0 "HEATER_REQUEST_OFF" ;
+VAL_ 947 UI_3RRightSeatHeatReq 3 "HEATER_REQUEST_LEVEL3" 2 "HEATER_REQUEST_LEVEL2" 1 "HEATER_REQUEST_LEVEL1" 0 "HEATER_REQUEST_OFF" ;
