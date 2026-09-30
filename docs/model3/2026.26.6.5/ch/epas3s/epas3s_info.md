@@ -1,0 +1,57 @@
+---
+layout: default
+title: "EPAS3S_info (0x311) — Electric power steering (secondary), Tesla Model 3 2026.26.6.5 CH CAN"
+description: "Electric power steering (secondary) message: info. Tesla Model 3 CAN bus message EPAS3S_info (0x311) of Electric power steering (secondary), firmware 2026.26.6.5, 10 signals (EPAS3S_infoIndex, EPAS3S_infoBuildType, EPAS3S_infoComponentID, EPAS3S_infoPcbaID and 6 more). Bit layout, scaling, units and value tables."
+---
+
+# EPAS3S_info (0x311) — Electric power steering (secondary), Tesla Model 3 2026.26.6.5 CH CAN
+
+Electric power steering (secondary) message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of EPAS3S_info as defined for Tesla Model 3 firmware 2026.26.6.5 on the CH bus.
+
+## Message details
+
+| Property | Value |
+|---|---|
+| Message name | `EPAS3S_info` |
+| CAN id | 0x311 (785) |
+| ECU | [Electric power steering (secondary)](../../epas3s.md) |
+| Vehicle | Tesla Model 3 |
+| Firmware | 2026.26.6.5 |
+| Bus | CH (chassis CAN) |
+| Transmitter | EPAS3S |
+| Frame length | 8 bytes |
+| Cycle time | 1000 ms |
+| Signals | 10 |
+
+## Signals of EPAS3S_info
+
+Tesla Model 3 CAN bus signals in `EPAS3S_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+
+| Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `EPAS3S_infoIndex` | selector | Electric power steering (secondary): info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `DEPRECATED_0`<br>1 = `DEPRECATED_1`<br>2 = `DEPRECATED_2`<br>3 = `DEPRECATED_3`<br>4 = `DEPRECATED_4`<br>5 = `DEPRECATED_5`<br>6 = `DEPRECATED_6`<br>7 = `DEPRECATED_7`<br>8 = `DEPRECATED_8`<br>9 = `DEPRECATED_9`<br>10 = `BUILD_HWID_COMPONENTID`<br>11 = `PCBAID_ASSYID_USAGEID`<br>13 = `APP_CRC`<br>14 = `BOOTLOADER_SVN`<br>15 = `BOOTLOADER_CRC`<br>16 = `SUBCOMPONENT`<br>17 = `APP_GITHASH`<br>18 = `BOOTLOADER_GITHASH`<br>19 = `VERSION_DEPRECATED`<br>20 = `UDS_PROTOCOL_BOOTCRC`<br>22 = `VARIANTCRC`<br>23 = `SUBCOMPONENT2`<br>25 = `PACKAGE_PN_1_7`<br>26 = `PACKAGE_PN_8_14`<br>27 = `PACKAGE_PN_15_20`<br>29 = `PACKAGE_SN_1_7`<br>30 = `PACKAGE_SN_8_14`<br>31 = `SUBCOMPONENT_GITHASH`<br>255 = `END` | plausible |
+| `EPAS3S_infoBuildType` | page 10 | Electric power steering (secondary): info build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | validated |
+| `EPAS3S_infoComponentID` | page 10 | Electric power steering (secondary): info component ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
+| `EPAS3S_infoPcbaID` | page 11 | Electric power steering (secondary): info pcba ID | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `EPAS3S_infoAssemblyID` | page 11 | Electric power steering (secondary): info assembly ID | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `EPAS3S_infoUsageID` | page 11 | Electric power steering (secondary): info usage ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
+| `EPAS3S_infoApplicationCRC` | page 13 | Electric power steering (secondary): info application CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+| `EPAS3S_infoBootUdsProtoVersion` | page 20 | Electric power steering (secondary): info boot uds proto version | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `EPAS3S_infoBootloaderCRC` | page 20 | Electric power steering (secondary): info bootloader CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+| `EPAS3S_infoSubcomponent2` | page 23 | Electric power steering (secondary): info subcomponent2 | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+
+## Multiplexing
+
+`EPAS3S_infoIndex` is the multiplexer selector of this message. Its value picks which group of signals is valid in a frame: page 10 (2 signals), page 11 (3 signals), page 13 (1 signals), page 20 (2 signals), page 23 (1 signals). Signals without a page are present in every frame.
+
+## Download the DBC file
+
+- [Tesla Model 3 2026.26.6.5 CH DBC file](../../../../../dbc/Model3/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/Model3/2026.26.6.5/CH.json)
+
+## See also
+
+- [All Electric power steering (secondary) messages (EPAS3S)](../../epas3s.md)
+- [Signal index A-Z](../../../../signals/index.md)
+- [All messages](../../../../messages.md)
+- [Documentation home](../../../../index.md)

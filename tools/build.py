@@ -4,7 +4,7 @@ Tesla CAN signal database: shared helpers and the repository gates.
 
     python3 tools/build.py            # run the gates (same as --check)
     python3 tools/build.py --check    # PII + source-disclosure gates over
-                                      # data/, dbc/, README.md, INDEX.md
+                                      # data/, dbc/, docs/, README.md, INDEX.md
     python3 tools/build.py --fix      # rewrite gate-failing descriptions in
                                       # data/<fw>/signals.{csv,json}, then gate
 
@@ -176,13 +176,32 @@ def _free_text_of_data_file(path):
     return path.read_text(encoding='utf-8', errors='replace')
 
 
+def docs_prose(text):
+    """Prose of a generated docs page: link targets, code spans (vehicle
+    identifiers, names with an underscore) and anchors are dropped; titles, descriptions and text stay."""
+    text = re.sub(r'\]\([^)]*\)', ']', text)
+    text = re.sub(r'`[^`]*`', '``', text)
+    text = re.sub(r'\b\w*_\w*\b', '', text)  # vehicle identifiers with an underscore
+    return re.sub(r'<a id="[^"]*"></a>', '', text)
+
+
+def gate_docs_file(rel, raw):
+    """Gate findings for one docs/ file given its docs-relative path and bytes."""
+    findings = ['PII: %s' % l for l in scan_pii(raw)]
+    if rel.endswith('.md'):
+        findings += ['source disclosure: %s' % l
+                     for l in scan_source_disclosure(docs_prose(raw.decode('utf-8', errors='replace')))
+                     if l != 'file name']
+    return findings
+
+
 def run_gates(repo):
     """PII + source-disclosure gates over the repo's published content.
 
     Returns a list of 'path: finding' strings (empty = clean)."""
     findings = []
     targets = []
-    for sub in ('data', 'dbc'):
+    for sub in ('data', 'dbc', 'docs'):
         base = repo / sub
         if base.exists():
             targets += sorted(p for p in base.rglob('*') if p.is_file())
@@ -192,6 +211,11 @@ def run_gates(repo):
         raw = p.read_bytes()
         for label in scan_pii(raw):
             findings.append('%s: PII: %s' % (rel, label))
+        if rel.parts[0] == 'docs':
+            for label in gate_docs_file(str(Path(*rel.parts[1:])), raw):
+                if not label.startswith('PII'):  # PII already reported above
+                    findings.append('%s: %s' % (rel, label))
+            continue
         if rel.parts[0] == 'data':
             text = _free_text_of_data_file(p)
             labels = scan_source_disclosure(text)
@@ -233,7 +257,7 @@ def main(argv=None):
     if findings:
         print('GATES FAILED: %d findings' % len(findings), file=sys.stderr)
         return 1
-    print('GATES OK: PII + source disclosure clean (data/, dbc/, README.md, INDEX.md)', file=sys.stderr)
+    print('GATES OK: PII + source disclosure clean (data/, dbc/, docs/, README.md, INDEX.md)', file=sys.stderr)
     return 0
 
 

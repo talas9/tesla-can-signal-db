@@ -1,0 +1,277 @@
+---
+layout: default
+title: "PMR_alertLog (0x5A6) — PMR ECU, Tesla Model 3 2026.26.6.5 VEH CAN"
+description: "PMR ECU message: alert log. Tesla Model 3 CAN bus message PMR_alertLog (0x5A6) of PMR ECU, firmware 2026.26.6.5, 230 signals (PMR_alertID, PMR_alertState, PMR_a001_w0, PMR_a001_w1 and 226 more). Bit layout, scaling, units and value tables."
+---
+
+# PMR_alertLog (0x5A6) — PMR ECU, Tesla Model 3 2026.26.6.5 VEH CAN
+
+PMR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 230 signals of PMR_alertLog as defined for Tesla Model 3 firmware 2026.26.6.5 on the VEH bus.
+
+## Message details
+
+| Property | Value |
+|---|---|
+| Message name | `PMR_alertLog` |
+| CAN id | 0x5A6 (1446) |
+| ECU | [PMR ECU](../../pmr.md) |
+| Vehicle | Tesla Model 3 |
+| Firmware | 2026.26.6.5 |
+| Bus | VEH (vehicle CAN) |
+| Transmitter | PMR |
+| Frame length | 8 bytes |
+| Cycle time | not cyclic or not known |
+| Signals | 230 |
+
+## Signals of PMR_alertLog
+
+Tesla Model 3 CAN bus signals in `PMR_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+
+| Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `PMR_alertID` | selector | PMR ECU: alert ID | 0\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 | 0 = `ALERT_DO_NOT_USE_ZERO`<br>1 = `a001_absoluteTorque`<br>2 = `a002_excessiveAccelTorque`<br>3 = `a003_excessiveReversalTorque`<br>4 = `a004_excessiveDecelTorque`<br>5 = `a005_torqueInNeutralOrPark`<br>6 = `a006_underTorqueCheck`<br>8 = `a008_memoryError`<br>10 = `a010_diMIA`<br>11 = `a011_phaseCurrentIrrational`<br>12 = `a012_canDataBusA`<br>13 = `a013_canHardwareBusA`<br>17 = `a017_brakeMIA`<br>18 = `a018_encoderIrrational`<br>19 = `a019_statorTempIrrational`<br>25 = `a025_unintendedReset`<br>26 = `a026_diHeartBeatMIA`<br>27 = `a027_torqueEstimationOutOfBounds`<br>28 = `a028_torqueCmdError`<br>31 = `a031_highStackUsage`<br>32 = `a032_registerConfigError`<br>33 = `a033_selfTest`<br>34 = `a034_trqCrossCheck`<br>35 = `a035_udsTransactionInitiated`<br>36 = `a036_preWatchdog`<br>37 = `a037_hvpMIA`<br>39 = `a039_disMIA`<br>40 = `a040_pmMIA`<br>42 = `a042_gtwMIA`<br>45 = `a045_motorMovementDetected`<br>53 = `a053_vcfrontMIA`<br>54 = `a054_uiMIA`<br>55 = `a055_resolver`<br>56 = `a056_canHardwareBusB`<br>57 = `a057_canDataBusB`<br>58 = `a058_measuredHvilCurrentFrozen`<br>61 = `a061_DIPMVersionMismatch`<br>62 = `a062_eccError`<br>64 = `a064_torqueIntervention`<br>80 = `a080_exceptionPrefetchAbort`<br>81 = `a081_exceptionDataAbort`<br>82 = `a082_exceptionDataAbort2`<br>83 = `a083_ahbWriteError`<br>84 = `a084_exceptionMpuFirewall`<br>86 = `a086_exceptionUndefinedInstruction`<br>92 = `a092_xtalOscillator`<br>94 = `a094_safetyICWarn`<br>95 = `a095_safetyICFault`<br>96 = `a096_safetyICDebug`<br>97 = `a097_lowFlowAlmostTripped`<br>100 = `a100_diTraceInfo1`<br>101 = `a101_hwVoltageMonitorTrip`<br>102 = `a102_ipcFluidTempHigh`<br>114 = `a114_ramScrubTimedOut`<br>121 = `a121_unintendedReset2` | plausible |
+| `PMR_alertState` |  | PMR ECU: alert state | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `CLEARED`<br>1 = `SET` | plausible |
+| `PMR_a001_w0` | page 1 | PMR ECU: a001 w0 | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a001_w1` | page 1 | PMR ECU: a001 w1 | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a001_w2` | page 1 | PMR ECU: a001 w2 | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a002_torqueAverage` | page 2 | PMR ECU: a002 torque average | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a002_torqueWindow` | page 2 | PMR ECU: a002 torque window | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a002_torqueMeasured` | page 2 | PMR ECU: a002 torque measured; raw 4096 = signal not available (SNA) | 18\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a002_torqueAccelAverage` | page 2 | PMR ECU: a002 torque accel average; raw 4096 = signal not available (SNA) | 32\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a002_torqueAccelWindow` | page 2 | PMR ECU: a002 torque accel window; raw 4096 = signal not available (SNA) | 48\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a003_reverseGear` | page 3 | PMR ECU: a003 reverse gear | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a003_pedalPos` | page 3 | PMR ECU: a003 pedal pos | 24\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 102 |  | plausible |
+| `PMR_a003_zeroPointPedal` | page 3 | PMR ECU: a003 zero point pedal | 32\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 102 |  | plausible |
+| `PMR_a004_torqueAverage` | page 4 | PMR ECU: a004 torque average | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a004_torqueWindow` | page 4 | PMR ECU: a004 torque window | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a004_torqueMeasured` | page 4 | PMR ECU: a004 torque measured; raw 4096 = signal not available (SNA) | 18\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a004_torqueDecelAverage` | page 4 | PMR ECU: a004 torque decel average; raw 4096 = signal not available (SNA) | 32\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a004_torqueDecelWindow` | page 4 | PMR ECU: a004 torque decel window; raw 4096 = signal not available (SNA) | 48\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a005_torqueReason` | page 5 | PMR ECU: a005 torque reason | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `TORQUE_IN_NEUTRAL`<br>1 = `CURRENT_IN_NEUTRAL`<br>2 = `SLAVE_ENABLE_IN_NEUTRAL` | plausible |
+| `PMR_a005_torqueMeasured` | page 5 | PMR ECU: a005 torque measured; raw 4096 = signal not available (SNA) | 18\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a005_iDQmagnitude` | page 5 | PMR ECU: a005 i d qmagnitude | 32\|16 | little-endian | signed | 0.0939 | 0 | A | -3076.9152 to 3076.8213 |  | plausible |
+| `PMR_a006_torqueActual` | page 6 | PMR ECU: a006 torque actual; raw 4096 = signal not available (SNA) | 16\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a006_motorRPM` | page 6 | PMR ECU: a006 motor RPM | 32\|16 | little-endian | signed | 1 | 0 | RPM | -32768 to 32767 |  | plausible |
+| `PMR_a006_torqueMeasured` | page 6 | PMR ECU: a006 torque measured; raw 4096 = signal not available (SNA) | 48\|13 | little-endian | signed | 2 | 0 | Nm | -8192 to 8190 | -4096 = `SNA` | plausible |
+| `PMR_a010_messageId` | page 10 | PMR ECU: a010 message id | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a010_DI_status` | page 10 | PMR ECU: a010 DI status | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_torque` | page 10 | PMR ECU: a010 DI torque | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_slaveCommand` | page 10 | PMR ECU: a010 DI slave command | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_locStatus` | page 10 | PMR ECU: a010 DI loc status | 35\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_speed` | page 10 | PMR ECU: a010 DI speed | 36\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_systemStatus` | page 10 | PMR ECU: a010 DI system status | 37\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_chassisControl` | page 10 | PMR ECU: a010 DI chassis control | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_chassisControl2` | page 10 | PMR ECU: a010 DI chassis control2 | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_vdcLeft` | page 10 | PMR ECU: a010 vdc left | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_vdcRight` | page 10 | PMR ECU: a010 vdc right | 41\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_vehicleEstimates` | page 10 | PMR ECU: a010 DI vehicle estimates | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_brakeCommand` | page 10 | PMR ECU: a010 DI brake command | 43\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_autonomyHealth` | page 10 | PMR ECU: a010 DI autonomy health | 44\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_difCommand` | page 10 | PMR ECU: a010 DI dif command | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_dirCommand` | page 10 | PMR ECU: a010 DI dir command | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_dirVehicle` | page 10 | PMR ECU: a010 DI dir vehicle | 47\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a010_DI_locStatus2` | page 10 | PMR ECU: a010 DI loc status2 | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a011_Ia` | page 11 | PMR ECU: a011 ia | 16\|9 | little-endian | signed | 12.0192 | 0 | A | -3076.9152 to 3064.896 |  | plausible |
+| `PMR_a011_IaDelta` | page 11 | PMR ECU: a011 ia delta | 25\|8 | little-endian | signed | 24.0384 | 0 | A | -3076.9152 to 3052.8768 |  | plausible |
+| `PMR_a011_Ib` | page 11 | PMR ECU: a011 ib | 33\|9 | little-endian | signed | 12.0192 | 0 | A | -3076.9152 to 3064.896 |  | plausible |
+| `PMR_a011_IbDelta` | page 11 | PMR ECU: a011 ib delta | 42\|8 | little-endian | signed | 24.0384 | 0 | A | -3076.9152 to 3052.8768 |  | plausible |
+| `PMR_a011_currentVref` | page 11 | PMR ECU: a011 current vref | 50\|8 | little-endian | unsigned | 0.04 | 0 | V | 0 to 10.2 |  | plausible |
+| `PMR_a011_badPhaseAsample` | page 11 | PMR ECU: a011 bad phase asample | 58\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a011_badPhaseBsample` | page 11 | PMR ECU: a011 bad phase bsample | 59\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a011_sampleFreeze` | page 11 | PMR ECU: a011 sample freeze | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a011_rateOfChangeIrrational` | page 11 | PMR ECU: a011 rate of change irrational | 61\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a011_currentReadingIrrational` | page 11 | PMR ECU: a011 current reading irrational | 62\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a011_vrefIrrational` | page 11 | PMR ECU: a011 vref irrational | 63\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a017_EPBL_status` | page 17 | PMR ECU: a017 EPBL status | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a017_EPBR_status` | page 17 | PMR ECU: a017 EPBR status | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a017_EPBL_autonomyHealth` | page 17 | PMR ECU: a017 EPBL autonomy health | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a017_EPBR_autonomyHealth` | page 17 | PMR ECU: a017 EPBR autonomy health | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a018_w0` | page 18 | PMR ECU: a018 w0 | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a018_w1` | page 18 | PMR ECU: a018 w1 | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a018_w2` | page 18 | PMR ECU: a018 w2 | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a019_statorTemp1` | page 19 | PMR ECU: a019 stator temp1 | 16\|16 | little-endian | signed | 0.1 | 0 | DegC | -3276.8 to 3276.7 |  | plausible |
+| `PMR_a019_statorTslope1` | page 19 | PMR ECU: a019 stator tslope1 | 32\|16 | little-endian | signed | 0.1 | 0 | DegC/s | -3276.8 to 3276.7 |  | plausible |
+| `PMR_a025_sccReset` | page 25 | PMR ECU: a025 scc reset | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_hibernate` | page 25 | PMR ECU: a025 hibernate | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_hwBist` | page 25 | PMR ECU: a025 hw bist | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_nmiWatchdog` | page 25 | PMR ECU: a025 nmi watchdog | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_watchdog` | page 25 | PMR ECU: a025 watchdog | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_clockFailNmi` | page 25 | PMR ECU: a025 clock fail nmi | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_ramUncErrorNmi` | page 25 | PMR ECU: a025 ram unc error nmi | 22\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_flashUncErrorNmi` | page 25 | PMR ECU: a025 flash unc error nmi | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_cpu1signMismatchNmi` | page 25 | PMR ECU: a025 cpu1sign mismatch nmi | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_cpu2signMismatchNmi` | page 25 | PMR ECU: a025 cpu2sign mismatch nmi | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_pieVectErrorNmi` | page 25 | PMR ECU: a025 pie vect error nmi | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_sysDbgNmi` | page 25 | PMR ECU: a025 sys dbg nmi | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_rlNmi` | page 25 | PMR ECU: a025 rl nmi | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_ovfNmi` | page 25 | PMR ECU: a025 ovf nmi | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_possibleSafetyICReset` | page 25 | PMR ECU: a025 possible safety IC reset | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_powerOnReset` | page 25 | PMR ECU: a025 power on reset | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_watchdogTimer0` | page 25 | PMR ECU: a025 watchdog timer0 | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_watchdogTimer1` | page 25 | PMR ECU: a025 watchdog timer1 | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_watchdogTimer2` | page 25 | PMR ECU: a025 watchdog timer2 | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_watchdogTimer3` | page 25 | PMR ECU: a025 watchdog timer3 | 35\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_warmResetReq` | page 25 | PMR ECU: a025 warm reset req | 36\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_externalPadReset` | page 25 | PMR ECU: a025 external pad reset | 37\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_hwSecModuleWatchdogTimer` | page 25 | PMR ECU: a025 hw sec module watchdog timer | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_debugReset` | page 25 | PMR ECU: a025 debug reset | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_tempSense0` | page 25 | PMR ECU: a025 temp sense0 | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a025_tempSense1` | page 25 | PMR ECU: a025 temp sense1 | 41\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_reason` | page 26 | PMR ECU: a026 reason | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TooSlow`<br>1 = `TooFast` | plausible |
+| `PMR_a026_isrCount20kHz` | page 26 | PMR ECU: a026 isr count20k hz | 17\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 |  | layout-only |
+| `PMR_a026_isrCount1kHz` | page 26 | PMR ECU: a026 isr count1k hz | 22\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `PMR_a026_switchingActive` | page 26 | PMR ECU: a026 switching active | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_systemStackOvf` | page 26 | PMR ECU: a026 system stack ovf | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_controlStackOvf` | page 26 | PMR ECU: a026 control stack ovf | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_idleStackOvf` | page 26 | PMR ECU: a026 idle stack ovf | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_eepStackOvf` | page 26 | PMR ECU: a026 eep stack ovf | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_immStackOvf` | page 26 | PMR ECU: a026 imm stack ovf | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a026_xdcErrorIdMSW` | page 26 | PMR ECU: a026 xdc error id MSW | 32\|10 | little-endian | unsigned | 1 | 0 |  | 0 to 1023 |  | layout-only |
+| `PMR_a026_xdcErrorArg1` | page 26 | PMR ECU: a026 xdc error arg1 | 42\|22 | little-endian | signed | 1 | 0 |  | -2097152 to 2097151 |  | layout-only |
+| `PMR_a032_w0` | page 32 | PMR ECU: a032 w0 | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a032_w1` | page 32 | PMR ECU: a032 w1 | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a032_w2` | page 32 | PMR ECU: a032 w2 | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a033_state` | page 33 | PMR ECU: a033 state | 16\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `INIT`<br>1 = `PSTG_BRING_UP`<br>2 = `PSTG_BRING_UP_AT_SPEED`<br>3 = `ASC_TEST`<br>4 = `ASC_TEST_PASSED`<br>5 = `PWM_ENABLE`<br>6 = `CURRENT_TEST_POS`<br>7 = `CURRENT_TEST_NEG`<br>8 = `TEST_PRE_PASSED`<br>9 = `TEST_PASSED`<br>10 = `TEST_SKIPPED`<br>11 = `TEST_FAILED`<br>12 = `TEST_RESTART`<br>13 = `DISABLED` | plausible |
+| `PMR_a033_failReason` | page 33 | PMR ECU: a033 fail reason | 20\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `CACHED`<br>1 = `POS_CURRENT`<br>2 = `NEG_CURRENT`<br>3 = `DISAGREE`<br>4 = `TIMEDOUT`<br>5 = `SWITCH_SHORT_DISABLE_CONDITIONS_MET`<br>6 = `FAULT_PRESENT`<br>7 = `ASC_TEST` | plausible |
+| `PMR_a033_DSADC_Ia` | page 33 | PMR ECU: a033 DSADC ia | 24\|16 | little-endian | signed | 0.0939 | 0 | A | -3076.9152 to 3076.8213 |  | plausible |
+| `PMR_a033_DSADC_Ib` | page 33 | PMR ECU: a033 DSADC ib | 40\|16 | little-endian | signed | 0.0939 | 0 | A | -3076.9152 to 3076.8213 |  | plausible |
+| `PMR_a036_timeSinceTxHWI` | page 36 | PMR ECU: a036 time since tx HWI | 16\|6 | little-endian | unsigned | 64 | 0 | us | 0 to 4032 |  | plausible |
+| `PMR_a036_timeSinceRxHWI` | page 36 | PMR ECU: a036 time since rx HWI | 22\|6 | little-endian | unsigned | 64 | 0 | us | 0 to 4032 |  | plausible |
+| `PMR_a036_timeSince100HzTxSWI` | page 36 | PMR ECU: a036 time since100 hz tx SWI | 28\|6 | little-endian | unsigned | 0.32 | 0 | ms | 0 to 20.16 |  | plausible |
+| `PMR_a036_timeSince1kHzCLK` | page 36 | PMR ECU: a036 time since1k hz CLK | 34\|6 | little-endian | unsigned | 32 | 0 | us | 0 to 2016 |  | plausible |
+| `PMR_a036_timeSince1kHzSWI` | page 36 | PMR ECU: a036 time since1k hz SWI | 40\|6 | little-endian | unsigned | 32 | 0 | us | 0 to 2016 |  | plausible |
+| `PMR_a036_timeSinceIdle` | page 36 | PMR ECU: a036 time since idle | 46\|6 | little-endian | unsigned | 0.16 | 0 | ms | 0 to 10.08 |  | plausible |
+| `PMR_a036_ovfStackId` | page 36 | PMR ECU: a036 ovf stack id; raw 15 = signal not available (SNA) | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 14 | 15 = `SNA` | plausible |
+| `PMR_a036_inTxISR` | page 36 | PMR ECU: a036 in tx ISR | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_inTxHWI` | page 36 | PMR ECU: a036 in tx HWI | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_inRxHWI` | page 36 | PMR ECU: a036 in rx HWI | 58\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_in1kHzSWI` | page 36 | PMR ECU: a036 in1k hz SWI | 59\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_in1kHzCLK` | page 36 | PMR ECU: a036 in1k hz CLK | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_in100HzCLK` | page 36 | PMR ECU: a036 in100 hz CLK | 61\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_in10HzCLK` | page 36 | PMR ECU: a036 in10 hz CLK | 62\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a036_in1HzCLK` | page 36 | PMR ECU: a036 in1 hz CLK | 63\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a037_hvpFaults` | page 37 | PMR ECU: a037 hvp faults | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a039_DIS_status` | page 39 | PMR ECU: a039 DIS status | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a039_DIS_torque` | page 39 | PMR ECU: a039 DIS torque | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a039_messageId` | page 39 | PMR ECU: a039 message id | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a040_PM_state` | page 40 | PMR ECU: a040 PM state | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a040_messageId` | page 40 | PMR ECU: a040 message id | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `PMR_a040_PM_locState` | page 40 | PMR ECU: a040 PM loc state | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a042_GTW_carConfig` | page 42 | PMR ECU: a042 GTW car config | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a042_GTW_time` | page 42 | PMR ECU: a042 GTW time | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a042_GTW_drivetrainType` | page 42 | PMR ECU: a042 GTW drivetrain type | 18\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `RWD`<br>1 = `AWD` | plausible |
+| `PMR_a042_expectedPerformanceCfg` | page 42 | PMR ECU: a042 expected performance cfg | 21\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `RWD`<br>1 = `AWD` | plausible |
+| `PMR_a042_gearControl` | page 42 | PMR ECU: a042 gear control | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a053_LVPowerState` | page 53 | PMR ECU: a053 LV power state | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a053_coolant` | page 53 | PMR ECU: a053 coolant | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a053_vcleftSwitchStatus` | page 53 | PMR ECU: a053 vcleft switch status | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a053_restraintStatus` | page 53 | PMR ECU: a053 restraint status | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a053_sensors` | page 53 | PMR ECU: a053 sensors | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a054_uiPowertrainControl` | page 54 | PMR ECU: a054 ui powertrain control | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a054_uiChassisControl` | page 54 | PMR ECU: a054 ui chassis control | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a054_uiCruiseControl` | page 54 | PMR ECU: a054 ui cruise control | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a054_uiTrackModeSettings` | page 54 | PMR ECU: a054 ui track mode settings | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a054_uiTPMSRCPSetting` | page 54 | PMR ECU: a054 ui TPMSRCP setting | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_motorRPM` | page 55 | PMR ECU: a055 motor RPM | 16\|16 | little-endian | signed | 1 | 0 | RPM | -32768 to 32767 |  | plausible |
+| `PMR_a055_phaseAngle` | page 55 | PMR ECU: a055 phase angle | 32\|8 | little-endian | unsigned | 0.00308 | 0 | 1 | 0 to 0.7854 |  | plausible |
+| `PMR_a055_commonGain` | page 55 | PMR ECU: a055 common gain | 40\|8 | little-endian | unsigned | 0.02 | 0 | 1 | 0 to 5.1 |  | plausible |
+| `PMR_a055_notReady` | page 55 | PMR ECU: a055 not ready | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_noCarrier` | page 55 | PMR ECU: a055 no carrier | 49\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_phaseOutOfSpec` | page 55 | PMR ECU: a055 phase out of spec | 50\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_diElecAngleMismatch` | page 55 | PMR ECU: a055 di elec angle mismatch | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_diSpeedMismatch` | page 55 | PMR ECU: a055 di speed mismatch | 52\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_claMIA` | page 55 | PMR ECU: a055 cla MIA | 53\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_diMIA` | page 55 | PMR ECU: a055 di MIA | 54\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a055_diElecAngleMismatchWarn` | page 55 | PMR ECU: a055 di elec angle mismatch warn | 55\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a058_hvilCurrent` | page 58 | PMR ECU: a058 hvil current | 16\|8 | little-endian | unsigned | 0.1 | 0 | mA | 0 to 25.5 |  | plausible |
+| `PMR_a061_diIpcVersion` | page 61 | PMR ECU: a061 di ipc version | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a061_pmIpcVersion` | page 61 | PMR ECU: a061 pm ipc version | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a062_address` | page 62 | PMR ECU: a062 address | 16\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `PMR_a062_errorType` | page 62 | PMR ECU: a062 error type | 48\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `UNKNOWN`<br>1 = `FLASH_UNCORRECTABLE_LOW`<br>2 = `FLASH_UNCORRECTABLE_HIGH`<br>3 = `FLASH_FAIL0_LOW`<br>4 = `FLASH_FAIL0_HIGH`<br>5 = `FLASH_FAIL1_LOW`<br>6 = `FLASH_FAIL1_HIGH`<br>7 = `RAM_UNCORRECTABLE_CPU`<br>8 = `RAM_UNCORRECTABLE_CLA`<br>9 = `RAM_UNCORRECTABLE_DMA`<br>10 = `RAM_CORRECTABLE_CPU`<br>11 = `RAM_CORRECTABLE_CLA`<br>12 = `RAM_CORRECTABLE_DMA` | plausible |
+| `PMR_a062_detectedByRamScrub` | page 62 | PMR ECU: a062 detected by ram scrub | 52\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a064_interventionType` | page 64 | PMR ECU: a064 intervention type | 16\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `masterTorqueMonitorShutoff`<br>1 = `resolver`<br>2 = `torqueCmdInvalid`<br>3 = `cruiseFault`<br>4 = `motorMovementDetected`<br>5 = `accumulatedTorque`<br>6 = `torqueReversal`<br>7 = `excessiveRegenTorque`<br>8 = `torqueInNeutral`<br>9 = `inconsistentTorqueSign`<br>10 = `switchOffPathTestFail`<br>11 = `switchingAfterIntervention`<br>12 = `currentAfterIntervention`<br>13 = `diHeartbeat`<br>14 = `inconsistentAxleTorque`<br>15 = `excessiveMotorMz` | plausible |
+| `PMR_a064_torqueCmdState` | page 64 | PMR ECU: a064 torque cmd state; raw 0 = signal not available (SNA) | 20\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `SNA`<br>6 = `Valid`<br>8 = `Invalid` | plausible |
+| `PMR_a064_shortDetectedByDI` | page 64 | PMR ECU: a064 short detected by DI | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a064_UI_stoppingMode` | page 64 | PMR ECU: a064 UI stopping mode | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `STANDARD`<br>1 = `CREEP`<br>2 = `HOLD` | plausible |
+| `PMR_a064_diCrsState` | page 64 | PMR ECU: a064 di crs state | 27\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `UNAVAILABLE`<br>1 = `STANDBY`<br>2 = `ENABLED`<br>3 = `STANDSTILL`<br>4 = `OVERRIDE`<br>5 = `FAULT`<br>6 = `PRE_FAULT`<br>7 = `PRE_CANCEL` | plausible |
+| `PMR_a064_pmCrsState` | page 64 | PMR ECU: a064 pm crs state | 32\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `UNAVAILABLE`<br>1 = `STANDBY`<br>2 = `ENABLED`<br>3 = `STANDSTILL`<br>4 = `OVERRIDE`<br>5 = `FAULT`<br>6 = `PRE_FAULT`<br>7 = `PRE_CANCEL` | plausible |
+| `PMR_a082_faultAddress` | page 82 | PMR ECU: a082 fault address | 16\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `PMR_a082_isWriteNotRead` | page 82 | PMR ECU: a082 is write not read | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a084_faultAddress` | page 84 | PMR ECU: a084 fault address | 16\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `PMR_a084_firewallId` | page 84 | PMR ECU: a084 firewall id | 48\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `L2OCRAM_BANK0_SLV`<br>1 = `L2OCRAM_BANK1_SLV`<br>2 = `L2OCRAM_BANK2_SLV`<br>3 = `L2OCRAM_BANK3_SLV`<br>4 = `R5SS0_CORE0_AXIS_SLV`<br>5 = `R5SS0_CORE1_AXIS_SLV`<br>6 = `R5SS1_CORE0_AXIS_SLV`<br>7 = `R5SS1_CORE1_AXIS_SLV`<br>8 = `DTHE_SLV`<br>9 = `MBOX_RAM_SLV`<br>10 = `QSPI0_SLV`<br>11 = `SCRM2SCRP0_SLV`<br>12 = `SCRM2SCRP1_SLV`<br>13 = `R5SS0_CORE0_AHB_MST`<br>14 = `R5SS0_CORE1_AHB_MST`<br>15 = `R5SS1_CORE0_AHB_MST`<br>16 = `R5SS1_CORE1_AHB_MST`<br>17 = `HSM_SLV` | plausible |
+| `PMR_a084_privId` | page 84 | PMR ECU: a084 priv id | 56\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 1 = `M4FSS0_0`<br>4 = `R5FSS0_0`<br>5 = `R5FSS0_1`<br>6 = `R5FSS1_0`<br>7 = `R5FSS1_1`<br>9 = `ICSSM`<br>10 = `CPSW` | plausible |
+| `PMR_a084_ns` | page 84 | PMR ECU: a084 ns | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a084_faultType` | page 84 | PMR ECU: a084 fault type | 61\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NO_FAULT`<br>1 = `USER_EXE`<br>2 = `USER_WRITE`<br>3 = `USER_READ`<br>4 = `SUPER_EXE`<br>5 = `SUPER_WRITE`<br>6 = `SUPER_READ` | plausible |
+| `PMR_a092_pllClockSource` | page 92 | PMR ECU: a092 pll clock source | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INTOSC2`<br>1 = `XTAL`<br>2 = `INTOSC1` | plausible |
+| `PMR_a095_wwdErrIntFlag` | page 95 | PMR ECU: a095 wwd err int flag | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_fwdErrIntFlag` | page 95 | PMR ECU: a095 fwd err int flag | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_errMissStsFlag` | page 95 | PMR ECU: a095 err miss sts flag | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_preRegulatorOT` | page 95 | PMR ECU: a095 pre regulator OT | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_ucLdoOT` | page 95 | PMR ECU: a095 uc ldo OT | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_monitoringOT` | page 95 | PMR ECU: a095 monitoring OT | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_preRegulatorVoltShort` | page 95 | PMR ECU: a095 pre regulator volt short | 22\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_ucLdoShort` | page 95 | PMR ECU: a095 uc ldo short | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_standbyLdoShort` | page 95 | PMR ECU: a095 standby ldo short | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_coreVoltShort` | page 95 | PMR ECU: a095 core volt short | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_preRegulatorOV` | page 95 | PMR ECU: a095 pre regulator OV | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_ucLdoOV` | page 95 | PMR ECU: a095 uc ldo OV | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_standbyLdoOV` | page 95 | PMR ECU: a095 standby ldo OV | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_coreOV` | page 95 | PMR ECU: a095 core OV | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_voltRefOV` | page 95 | PMR ECU: a095 volt ref OV | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_ucLdoUV` | page 95 | PMR ECU: a095 uc ldo UV | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_standbyLdoUV` | page 95 | PMR ECU: a095 standby ldo UV | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_coreUV` | page 95 | PMR ECU: a095 core UV | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_supplyVoltOV` | page 95 | PMR ECU: a095 supply volt OV | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_bandgapComparatorUV` | page 95 | PMR ECU: a095 bandgap comparator UV | 35\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_bandgapComparatorOV` | page 95 | PMR ECU: a095 bandgap comparator OV | 36\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_biasCurrentTooLow` | page 95 | PMR ECU: a095 bias current too low | 37\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_biasCurrentTooHigh` | page 95 | PMR ECU: a095 bias current too high | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a095_safetyICstate` | page 95 | PMR ECU: a095 safety i cstate | 40\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `INIT`<br>2 = `NORMAL`<br>3 = `SLEEP`<br>4 = `STANDBY`<br>5 = `WAKE` | plausible |
+| `PMR_a095_motorRPM` | page 95 | PMR ECU: a095 motor RPM | 43\|12 | little-endian | signed | 10 | 0 | RPM | -20480 to 20470 |  | plausible |
+| `PMR_a095_wwdErrCounter` | page 95 | PMR ECU: a095 wwd err counter | 56\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `PMR_a095_fwdErrCounter` | page 95 | PMR ECU: a095 fwd err counter | 60\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `PMR_a100_index1kHzPeriodic` | page 100 | PMR ECU: a100 index1k hz periodic | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a100_index100HzPeriodic` | page 100 | PMR ECU: a100 index100 hz periodic | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a100_index10HzPeriodic` | page 100 | PMR ECU: a100 index10 hz periodic | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a100_indexSWI` | page 100 | PMR ECU: a100 index SWI | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a100_eepEvent` | page 100 | PMR ECU: a100 eep event | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_a100_module500HzActive` | page 100 | PMR ECU: a100 module500 hz active | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a100_module50HzActive` | page 100 | PMR ECU: a100 module50 hz active | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a100_module1HzActive` | page 100 | PMR ECU: a100 module1 hz active | 58\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a100_task10HzActive` | page 100 | PMR ECU: a100 task10 hz active | 59\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a100_taskUdsActive` | page 100 | PMR ECU: a100 task uds active | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDDA18_ref33_uv` | page 101 | PMR ECU: a101 VDDA18 ref33 uv | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VBGAP09_ov` | page 101 | PMR ECU: a101 VBGAP09 ov | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VBGAP09_uv` | page 101 | PMR ECU: a101 VBGAP09 uv | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDDA18_refBGAP_ov` | page 101 | PMR ECU: a101 VDDA18 ref BGAP ov | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDDA18_refBGAP_uv` | page 101 | PMR ECU: a101 VDDA18 ref BGAP uv | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDD12_ov` | page 101 | PMR ECU: a101 VDD12 ov | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDD12_uv` | page 101 | PMR ECU: a101 VDD12 uv | 22\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDDSBIO_ov` | page 101 | PMR ECU: a101 VDDSBIO ov | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDDSBIO_uv` | page 101 | PMR ECU: a101 VDDSBIO uv | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VSYS_MON_uv` | page 101 | PMR ECU: a101 VSYS MON uv | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_VDDA33_uv` | page 101 | PMR ECU: a101 VDDA33 uv | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADC0_REF_ov` | page 101 | PMR ECU: a101 ADC0 REF ov | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADC0_REF_uv` | page 101 | PMR ECU: a101 ADC0 REF uv | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADC12_REF_ov` | page 101 | PMR ECU: a101 ADC12 REF ov | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADC12_REF_uv` | page 101 | PMR ECU: a101 ADC12 REF uv | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADC34_REF_ov` | page 101 | PMR ECU: a101 ADC34 REF ov | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADC34_REF_uv` | page 101 | PMR ECU: a101 ADC34 REF uv | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADCR01_REF_ov` | page 101 | PMR ECU: a101 ADCR01 REF ov | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `PMR_a101_ADCR01_REF_uv` | page 101 | PMR ECU: a101 ADCR01 REF uv | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+
+## Multiplexing
+
+`PMR_alertID` is the multiplexer selector of this message. Its value picks which group of signals is valid in a frame: page 1 (3 signals), page 2 (5 signals), page 3 (3 signals), page 4 (5 signals), page 5 (3 signals), page 6 (3 signals), page 10 (18 signals), page 11 (11 signals), page 17 (4 signals), page 18 (3 signals), page 19 (2 signals), page 25 (26 signals), page 26 (11 signals), page 32 (3 signals), page 33 (4 signals), page 36 (15 signals), page 37 (1 signals), page 39 (3 signals), page 40 (3 signals), page 42 (5 signals), page 53 (5 signals), page 54 (5 signals), page 55 (11 signals), page 58 (1 signals), page 61 (2 signals), page 62 (3 signals), page 64 (6 signals), page 82 (2 signals), page 84 (5 signals), page 92 (1 signals), page 95 (27 signals), page 100 (10 signals), page 101 (19 signals). Signals without a page are present in every frame.
+
+## Download the DBC file
+
+- [Tesla Model 3 2026.26.6.5 VEH DBC file](../../../../../dbc/Model3/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/Model3/2026.26.6.5/VEH.json)
+
+## See also
+
+- [All PMR ECU messages (PMR)](../../pmr.md)
+- [Signal index A-Z](../../../../signals/index.md)
+- [All messages](../../../../messages.md)
+- [Documentation home](../../../../index.md)

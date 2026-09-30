@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace the host with the published site address.
+Sitemap: https://example.invalid/tesla-can-signal-db/sitemap.xml

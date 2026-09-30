@@ -1,0 +1,61 @@
+---
+layout: default
+title: "ADSP_alertMatrix2 (0x552) — Audio amplifier, Tesla Model Y 2026.26.6.5 ETH"
+description: "Audio amplifier message: alert matrix2. Ethernet-side message ADSP_alertMatrix2 of Audio amplifier for Tesla Model Y firmware 2026.26.6.5, 16 signals (ADSP_w065_tcuGpioExpanderCriticalError, ADSP_w066_rearPwsFault, ADSP_w067_baseamp0Fault, ADSP_w068_baseamp1Fault and 12 more). Bit layout, scaling, units and value tables."
+---
+
+# ADSP_alertMatrix2 (0x552) — Audio amplifier, Tesla Model Y 2026.26.6.5 ETH
+
+Audio amplifier message: alert matrix2. This page documents the 16 signals of ADSP_alertMatrix2 as defined for Tesla Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+
+## Message details
+
+| Property | Value |
+|---|---|
+| Message name | `ADSP_alertMatrix2` |
+| Ethernet-side id | 0x552 (1362) |
+| ECU | [Audio amplifier](../../adsp.md) |
+| Vehicle | Tesla Model Y |
+| Firmware | 2026.26.6.5 |
+| Bus | ETH (Ethernet-side ids, not CAN ids) |
+| Transmitter | ADSP |
+| Frame length | 8 bytes |
+| Cycle time | 1000 ms |
+| Signals | 16 |
+
+## Signals of ADSP_alertMatrix2
+
+Tesla Model Y CAN bus signals in `ADSP_alertMatrix2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+
+| Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `ADSP_w065_tcuGpioExpanderCriticalError` | Audio amplifier: w065 tcu gpio expander critical error | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w066_rearPwsFault` | Audio amplifier: w066 rear pws fault | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w067_baseamp0Fault` | Audio amplifier: w067 baseamp0 fault | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w068_baseamp1Fault` | Audio amplifier: w068 baseamp1 fault | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w069_baseamp2Fault` | Audio amplifier: w069 baseamp2 fault | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w070_baseamp3Fault` | Audio amplifier: w070 baseamp3 fault | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w071_versionMismatch` | Audio amplifier: w071 version mismatch | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w072_turnSignalChannelUnderrun` | Audio amplifier: w072 turn signal channel underrun | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w073_romFLError` | Audio amplifier: w073 rom FL error | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w074_tdspArmXrun` | Audio amplifier: w074 tdsp arm xrun | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w075_tdspArmError` | Audio amplifier: w075 tdsp arm error | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w076_activeSafetyChannelUnderrun` | Audio amplifier: w076 active safety channel underrun | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w077_mediaMathExcept` | Audio amplifier: w077 media math except | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w080_micInitError` | Audio amplifier: w080 mic init error | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w083_sharc0LowCpuUsage` | Audio amplifier: w083 sharc0 low cpu usage | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `ADSP_w084_sharc1LowCpuUsage` | Audio amplifier: w084 sharc1 low cpu usage | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+
+## Download the DBC file
+
+- [Tesla Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/ModelY/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/ModelY/2026.26.6.5/ETH.json)
+
+Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.
+
+## See also
+
+- [All Audio amplifier messages (ADSP)](../../adsp.md)
+- [Signal index A-Z](../../../../signals/index.md)
+- [All messages](../../../../messages.md)
+- [Documentation home](../../../../index.md)

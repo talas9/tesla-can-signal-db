@@ -1,0 +1,16 @@
+title: "Tesla Model 3 and Model Y CAN Signal Database"
+description: "Searchable reference of Tesla Model 3 and Model Y CAN bus messages and signals: bit layout, scaling, units and value tables, with DBC files."
+# Placeholder: set the real site address before publishing.
+url: "https://example.invalid"
+baseurl: "/tesla-can-signal-db"
+theme: jekyll-theme-minimal
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false

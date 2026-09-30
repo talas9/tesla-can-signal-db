@@ -36,7 +36,8 @@ Library API (no hard-coded paths; every path is an argument)
 CLI (thin wrapper):
     python3 tools/export_dbc.py            # regenerate dbc/ from data/
     python3 tools/export_dbc.py --check    # regenerate to a temp dir, diff
-                                           # against committed dbc/, check()
+                                           # against committed dbc/, check(),
+                                           # then tools/gen_docs.py --check
 
 Bit numbering: `start` in the input is DBC convention already (Intel = LSB
 position, Motorola = MSB position in sawtooth numbering) and is written
@@ -1481,6 +1482,8 @@ def main(argv=None):
                               if l != 'file name']
                     for label in scan_pii(raw) + labels:
                         errors.append('%s: gate: %s' % (doc, label))
+            import gen_docs  # docs/ is generated from the committed JSON twins
+            errors += gen_docs.check(repo)
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
         for r in reports:

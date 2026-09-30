@@ -1,0 +1,45 @@
+---
+layout: default
+title: "BMS_kwhCounter (0x3D2) — High-voltage battery management system, Tesla Model Y 2025.20.8 VEH CAN"
+description: "High-voltage battery management system message: kwh counter. Tesla Model Y CAN bus message BMS_kwhCounter (0x3D2) of High-voltage battery management system, firmware 2025.20.8, 2 signals (BMS_kwhDischargeTotal, BMS_kwhChargeTotal). Bit layout, scaling, units and value tables."
+---
+
+# BMS_kwhCounter (0x3D2) — High-voltage battery management system, Tesla Model Y 2025.20.8 VEH CAN
+
+High-voltage battery management system message: kwh counter; frame length from the layout, not yet observed on a vehicle bus. This page documents the 2 signals of BMS_kwhCounter as defined for Tesla Model Y firmware 2025.20.8 on the VEH bus.
+
+## Message details
+
+| Property | Value |
+|---|---|
+| Message name | `BMS_kwhCounter` |
+| CAN id | 0x3D2 (978) |
+| ECU | [High-voltage battery management system](../../bms.md) |
+| Vehicle | Tesla Model Y |
+| Firmware | 2025.20.8 |
+| Bus | VEH (vehicle CAN) |
+| Transmitter | BMS |
+| Frame length | 8 bytes |
+| Cycle time | 1000 ms |
+| Signals | 2 |
+
+## Signals of BMS_kwhCounter
+
+Tesla Model Y CAN bus signals in `BMS_kwhCounter`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+
+| Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `BMS_kwhDischargeTotal` | Total energy-lost kWh count during discharging | 0\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
+| `BMS_kwhChargeTotal` | Total energy-gained kWh count during charging | 32\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
+
+## Download the DBC file
+
+- [Tesla Model Y 2025.20.8 VEH DBC file](../../../../../dbc/ModelY/2025.20.8/VEH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/ModelY/2025.20.8/VEH.json)
+
+## See also
+
+- [All High-voltage battery management system messages (BMS)](../../bms.md)
+- [Signal index A-Z](../../../../signals/index.md)
+- [All messages](../../../../messages.md)
+- [Documentation home](../../../../index.md)

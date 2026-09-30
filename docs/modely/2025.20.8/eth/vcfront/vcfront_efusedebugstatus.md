@@ -1,0 +1,145 @@
+---
+layout: default
+title: "VCFRONT_eFuseDebugStatus (0x2F1) — Front body controller, Tesla Model Y 2025.20.8 ETH"
+description: "Front body controller message: e fuse debug status. Ethernet-side message VCFRONT_eFuseDebugStatus of Front body controller for Tesla Model Y firmware 2025.20.8, 96 signals (VCFRONT_eFuseDebugStatusIndex, VCFRONT_leftControllerState, VCFRONT_leftControllerFault, VCFRONT_vcleftSelfTestResult and 92 more). Bit layout, scaling, units and value tables."
+---
+
+# VCFRONT_eFuseDebugStatus (0x2F1) — Front body controller, Tesla Model Y 2025.20.8 ETH
+
+Front body controller message: e fuse debug status. This page documents the 96 signals of VCFRONT_eFuseDebugStatus as defined for Tesla Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+
+## Message details
+
+| Property | Value |
+|---|---|
+| Message name | `VCFRONT_eFuseDebugStatus` |
+| Ethernet-side id | 0x2F1 (753) |
+| ECU | [Front body controller](../../vcfront.md) |
+| Vehicle | Tesla Model Y |
+| Firmware | 2025.20.8 |
+| Bus | ETH (Ethernet-side ids, not CAN ids) |
+| Transmitter | VCFRONT |
+| Frame length | 8 bytes |
+| Cycle time | 100 ms |
+| Signals | 96 |
+
+## Signals of VCFRONT_eFuseDebugStatus
+
+Tesla Model Y CAN bus signals in `VCFRONT_eFuseDebugStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+
+| Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `VCFRONT_eFuseDebugStatusIndex` | selector | Front body controller: e fuse debug status index | 0\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `VCRIGHT`<br>1 = `VCLEFT`<br>2 = `PCS`<br>3 = `IBOOSTER`<br>4 = `EPAS3P`<br>5 = `EPAS3S`<br>6 = `ESP_MOTOR`<br>7 = `ESP_VALVE`<br>8 = `AUTOPILOT_1`<br>9 = `AUTOPILOT_2`<br>10 = `SLEEP_BYPASS`<br>11 = `MCU_LOGIC`<br>12 = `HEADLAMPS`<br>13 = `VBAT_FUSED_HIGH_CURRENT`<br>14 = `PUMPS`<br>15 = `RAILS_A_B`<br>16 = `MISC_RAILS`<br>17 = `LV_BATTERY_DEBUG`<br>18 = `MCU_MISC`<br>19 = `INVALID` | plausible |
+| `VCFRONT_leftControllerState` | page 1 | Front body controller: left controller state; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_leftControllerFault` | page 1 | Front body controller: left controller fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_vcleftSelfTestResult` | page 1 | Reports the result of the most recent self-test of the Vehicle Controller Left (VCLEFT) eFuse; raw 12 = signal not available (SNA) | 11\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_leftControllerTemp` | page 1 | Front body controller: left controller temp | 15\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_leftControllerEFuseVNFState` | page 1 | State of the leftController eFuse | 26\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `EFUSE_ASIC_STATE_UNKNOWN`<br>1 = `EFUSE_ASIC_STATE_STANDBY`<br>2 = `EFUSE_ASIC_STATE_WAKEUP`<br>3 = `EFUSE_ASIC_STATE_CONFIGURATION`<br>4 = `EFUSE_ASIC_STATE_UNLOCKED`<br>5 = `EFUSE_ASIC_STATE_LOCKED`<br>6 = `EFUSE_ASIC_STATE_SELF_TEST_PREP`<br>7 = `EFUSE_ASIC_STATE_SELF_TEST` | validated |
+| `VCFRONT_leftControllerEFuseOutput` | page 1 | Output state of the leftController efuse | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_leftControllerEFuseOutputDesired` | page 1 | Output of the leftController efuse | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_leftControllerVoltage` | page 1 | Front body controller: left controller voltage | 31\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 1638.3 |  | validated |
+| `VCFRONT_leftControllerEFuseBypass` | page 1 | Bypass output state of the leftController efuse | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_leftControllerEFuseBypassDesired` | page 1 | Bypass output of the leftController efuse | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_leftControllerCurrent` | page 1 | Front body controller: left controller current | 47\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.3 |  | validated |
+| `VCFRONT_leftControllerEFuseVNFSelfTestStatus` | page 1 | Front body controller: left controller e fuse VNF self test status | 61\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_SELF_TEST_NOT_COMPLETE`<br>1 = `EFUSE_SELF_TEST_ACTIVE`<br>2 = `EFUSE_SELF_TEST_COMPLETE`<br>3 = `EFUSE_SELF_TEST_SKIPPED` | validated |
+| `VCFRONT_PCSState` | page 2 | Front body controller: PCS state; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_PCSFault` | page 2 | Front body controller: PCS fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_pcsSelfTestResult` | page 2 | Reports the result of the most recent self-test of the Power Conversion System (PCS) eFuse; raw 12 = signal not available (SNA) | 11\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_PCSTemp` | page 2 | Front body controller: PCS temp | 15\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_PCSEFuseVNFState` | page 2 | State of the PCS eFuse | 26\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `EFUSE_ASIC_STATE_UNKNOWN`<br>1 = `EFUSE_ASIC_STATE_STANDBY`<br>2 = `EFUSE_ASIC_STATE_WAKEUP`<br>3 = `EFUSE_ASIC_STATE_CONFIGURATION`<br>4 = `EFUSE_ASIC_STATE_UNLOCKED`<br>5 = `EFUSE_ASIC_STATE_LOCKED`<br>6 = `EFUSE_ASIC_STATE_SELF_TEST_PREP`<br>7 = `EFUSE_ASIC_STATE_SELF_TEST` | validated |
+| `VCFRONT_PCSEFuseOutput` | page 2 | Output state of the PCS efuse | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_PCSEFuseOutputDesired` | page 2 | Output of the PCS efuse | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_PCSVoltage` | page 2 | Voltage of the power conversion system circuit | 31\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 1638.3 |  | validated |
+| `VCFRONT_PCSEFuseBypass` | page 2 | Bypass output state of the PCS efuse | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_PCSEFuseBypassDesired` | page 2 | Bypass output of the PCS efuse | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_PCSEFuseVNFSelfTestStatus` | page 2 | Front body controller: PCSE fuse VNF self test status | 61\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_SELF_TEST_NOT_COMPLETE`<br>1 = `EFUSE_SELF_TEST_ACTIVE`<br>2 = `EFUSE_SELF_TEST_COMPLETE`<br>3 = `EFUSE_SELF_TEST_SKIPPED` | validated |
+| `VCFRONT_iBoosterState` | page 3 | Front body controller: i booster state; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_iBoosterFault` | page 3 | Front body controller: i booster fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_iBoosterSelfTestResult` | page 3 | Reports the result of the most recent self-test of the iBooster eFuse; raw 12 = signal not available (SNA) | 11\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_iBoosterTemp` | page 3 | Front body controller: i booster temp | 15\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_IBoosterEFuseVNFState` | page 3 | Front body controller: i booster e fuse VNF state | 26\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `UNKNOWN`<br>1 = `STANDBY`<br>2 = `WAKEUP`<br>3 = `CONFIGURATION`<br>4 = `UNLOCKED`<br>5 = `LOCKED`<br>6 = `SELF_TEST_PREP`<br>7 = `SELF_TEST` | plausible |
+| `VCFRONT_IBoosterEFuseOutput` | page 3 | Front body controller: i booster e fuse output | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_IBoosterEFuseOutputDesired` | page 3 | Front body controller: i booster e fuse output desired | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_iBoosterVoltage` | page 3 | Front body controller: i booster voltage | 31\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 51.1 |  | plausible |
+| `VCFRONT_IBoosterEFuseBypass` | page 3 | Front body controller: i booster e fuse bypass | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_IBoosterEFuseBypassDesired` | page 3 | Front body controller: i booster e fuse bypass desired | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_iBoosterCurrent` | page 3 | Front body controller: i booster current | 47\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.3 |  | validated |
+| `VCFRONT_IBoosterEFuseVNFSelfTestStatus` | page 3 | Front body controller: i booster e fuse VNF self test status | 61\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NOT_COMPLETE`<br>1 = `ACTIVE`<br>2 = `COMPLETE`<br>3 = `SKIPPED` | plausible |
+| `VCFRONT_EPAS3PState` | page 4 | State of the primary power steering circuit; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_EPAS3PFault` | page 4 | Front body controller: EPAS3 p fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3PSelfTestResult` | page 4 | Reports the result of the most recent self-test of the Electric Power Assisted Steering Primary (EPAS3P) eFuse; raw 12 = signal not available (SNA) | 11\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_EPAS3PTemp` | page 4 | Front body controller: EPAS3 p temp | 15\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_EPAS3PEFuseVNFState` | page 4 | State of the EPAS3P eFuse | 26\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `EFUSE_ASIC_STATE_UNKNOWN`<br>1 = `EFUSE_ASIC_STATE_STANDBY`<br>2 = `EFUSE_ASIC_STATE_WAKEUP`<br>3 = `EFUSE_ASIC_STATE_CONFIGURATION`<br>4 = `EFUSE_ASIC_STATE_UNLOCKED`<br>5 = `EFUSE_ASIC_STATE_LOCKED`<br>6 = `EFUSE_ASIC_STATE_SELF_TEST_PREP`<br>7 = `EFUSE_ASIC_STATE_SELF_TEST` | validated |
+| `VCFRONT_EPAS3PEFuseOutput` | page 4 | Output state of the EPAS3P efuse | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3PEFuseOutputDesired` | page 4 | Output of the EPAS3P efuse | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3PVoltage` | page 4 | Voltage of the primary power steering circuit | 31\|9 | little-endian | unsigned | 0.1 | 0 | V | 0 to 51.1 |  | validated |
+| `VCFRONT_EPAS3PEFuseHardshortThresholdDbg` | page 4 | Front body controller: EPAS3 PE fuse hardshort threshold dbg | 40\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `VNF1048_HSHT_20_MV`<br>1 = `VNF1048_HSHT_23_MV`<br>2 = `VNF1048_HSHT_26_4_MV`<br>3 = `VNF1048_HSHT_30_3_MV`<br>4 = `VNF1048_HSHT_34_8_MV`<br>5 = `VNF1048_HSHT_40_MV`<br>6 = `VNF1048_HSHT_45_9_MV`<br>7 = `VNF1048_HSHT_52_8_MV`<br>8 = `VNF1048_HSHT_60_6_MV`<br>9 = `VNF1048_HSHT_69_6_MV`<br>10 = `VNF1048_HSHT_80_MV`<br>11 = `VNF1048_HSHT_91_9_MV`<br>12 = `VNF1048_HSHT_105_6_MV`<br>13 = `VNF1048_HSHT_121_3_MV`<br>14 = `VNF1048_HSHT_139_3_MV`<br>15 = `VNF1048_HSHT_160_MV` | validated |
+| `VCFRONT_EPAS3PEFuseBypass` | page 4 | Bypass output state of the EPAS3P efuse | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3PEFuseBypassDesired` | page 4 | Bypass output of the EPAS3P efuse | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3PCurrent` | page 4 | Electrical current of the primary power steering circuit | 47\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.3 |  | validated |
+| `VCFRONT_EPAS3PEFuseVNFSelfTestStatus` | page 4 | Front body controller: EPAS3 PE fuse VNF self test status | 61\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_SELF_TEST_NOT_COMPLETE`<br>1 = `EFUSE_SELF_TEST_ACTIVE`<br>2 = `EFUSE_SELF_TEST_COMPLETE`<br>3 = `EFUSE_SELF_TEST_SKIPPED` | validated |
+| `VCFRONT_EPAS3SState` | page 5 | State of the secondary power steering circuit; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_EPAS3SFault` | page 5 | Front body controller: EPAS3 s fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3SSelfTestResult` | page 5 | Reports the result of the most recent self-test of the Electric Power Assisted Steering Secondary (EPAS3S) eFuse; raw 12 = signal not available (SNA) | 11\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_EPAS3STemp` | page 5 | Front body controller: EPAS3 s temp | 15\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_EPAS3SEFuseVNFState` | page 5 | State of the EPAS3S eFuse | 26\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `EFUSE_ASIC_STATE_UNKNOWN`<br>1 = `EFUSE_ASIC_STATE_STANDBY`<br>2 = `EFUSE_ASIC_STATE_WAKEUP`<br>3 = `EFUSE_ASIC_STATE_CONFIGURATION`<br>4 = `EFUSE_ASIC_STATE_UNLOCKED`<br>5 = `EFUSE_ASIC_STATE_LOCKED`<br>6 = `EFUSE_ASIC_STATE_SELF_TEST_PREP`<br>7 = `EFUSE_ASIC_STATE_SELF_TEST` | validated |
+| `VCFRONT_EPAS3SEFuseOutput` | page 5 | Output state of the EPAS3S efuse | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3SEFuseOutputDesired` | page 5 | Output of the EPAS3S efuse | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3SVoltage` | page 5 | Voltage of the secondary power steering circuit | 31\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 1638.3 |  | validated |
+| `VCFRONT_EPAS3SEFuseBypass` | page 5 | Bypass output state of the EPAS3S efuse | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3SEFuseBypassDesired` | page 5 | Bypass output of the EPAS3S efuse | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_EPAS3SCurrent` | page 5 | Electrical current of the secondary power steering circuit | 47\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.3 |  | validated |
+| `VCFRONT_EPAS3SEFuseVNFSelfTestStatus` | page 5 | Front body controller: EPAS3 SE fuse VNF self test status | 61\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_SELF_TEST_NOT_COMPLETE`<br>1 = `EFUSE_SELF_TEST_ACTIVE`<br>2 = `EFUSE_SELF_TEST_COMPLETE`<br>3 = `EFUSE_SELF_TEST_SKIPPED` | validated |
+| `VCFRONT_ESPMotorState` | page 6 | Front body controller: ESP motor state; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_ESPMotorFault` | page 6 | Front body controller: ESP motor fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_ESPMotorSelfTestResult` | page 6 | Reports the result of the most recent self-test of the Electronic Stability Program Motor (ESP Motor) eFuse; raw 12 = signal not available (SNA) | 11\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_ESPMotorTemp` | page 6 | Front body controller: ESP motor temp | 15\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_ESPMotorEFuseVNFState` | page 6 | State of the ESPMotor eFuse | 26\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `EFUSE_ASIC_STATE_UNKNOWN`<br>1 = `EFUSE_ASIC_STATE_STANDBY`<br>2 = `EFUSE_ASIC_STATE_WAKEUP`<br>3 = `EFUSE_ASIC_STATE_CONFIGURATION`<br>4 = `EFUSE_ASIC_STATE_UNLOCKED`<br>5 = `EFUSE_ASIC_STATE_LOCKED`<br>6 = `EFUSE_ASIC_STATE_SELF_TEST_PREP`<br>7 = `EFUSE_ASIC_STATE_SELF_TEST` | validated |
+| `VCFRONT_ESPMotorEFuseOutput` | page 6 | Output state of the ESPMotor efuse | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_ESPMotorEFuseOutputDesired` | page 6 | Output of the ESPMotor efuse | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_ESPMotorVoltage` | page 6 | Front body controller: ESP motor voltage | 31\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 1638.3 |  | validated |
+| `VCFRONT_ESPMotorEFuseBypass` | page 6 | Bypass output state of the ESPMotor efuse | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_ESPMotorEFuseBypassDesired` | page 6 | Bypass output of the ESPMotor efuse | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_ESPMotorCurrent` | page 6 | Front body controller: ESP motor current | 47\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.3 |  | validated |
+| `VCFRONT_ESPMotorEFuseVNFSelfTestStatus` | page 6 | Front body controller: ESP motor e fuse VNF self test status | 61\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_SELF_TEST_NOT_COMPLETE`<br>1 = `EFUSE_SELF_TEST_ACTIVE`<br>2 = `EFUSE_SELF_TEST_COMPLETE`<br>3 = `EFUSE_SELF_TEST_SKIPPED` | validated |
+| `VCFRONT_ESPValveState` | page 7 | State of the stability controller motor circuit; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_ESPValveFault` | page 7 | Front body controller: ESP valve fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_ESPValveTemp` | page 7 | Front body controller: ESP valve temp | 12\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_ESPValveVoltage` | page 7 | Front body controller: ESP valve voltage | 28\|16 | little-endian | unsigned | 0.1 | 0 | V | 0 to 6553.5 |  | validated |
+| `VCFRONT_ESPValveCurrent` | page 7 | Electrical current of the stability controller motor circuit | 44\|16 | little-endian | unsigned | 0.01 | 0 | A | 0 to 655.35 |  | validated |
+| `VCFRONT_autopilot2State` | page 9 | Front body controller: autopilot2 state; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `EFUSE_STATE_OFF`<br>1 = `EFUSE_STATE_ON`<br>2 = `EFUSE_STATE_LOCKED_OUT`<br>3 = `EFUSE_STATE_SNA` | validated |
+| `VCFRONT_autopilot2Fault` | page 9 | Front body controller: autopilot2 fault | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_autopilot2Temp` | page 9 | Front body controller: autopilot2 temp | 11\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_autopilot2Voltage` | page 9 | Front body controller: autopilot2 voltage | 27\|16 | little-endian | unsigned | 0.1 | 0 | V | 0 to 6553.5 |  | validated |
+| `VCFRONT_autopilot2Current` | page 9 | Front body controller: autopilot2 current | 43\|10 | little-endian | unsigned | 0.044 | 0 | A | 0 to 45.012 |  | validated |
+| `VCFRONT_sleepBypassState` | page 10 | State of the sleep bypass circuit | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_sleepBypassFault` | page 10 | Front body controller: sleep bypass fault | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_sleepBypassVoltage` | page 10 | Front body controller: sleep bypass voltage | 10\|16 | little-endian | unsigned | 0.1 | 0 | V | 0 to 6553.5 |  | validated |
+| `VCFRONT_sleepBypassCurrent` | page 10 | Front body controller: sleep bypass current | 26\|16 | little-endian | unsigned | 0.1 | 0 | A | 0 to 6553.5 |  | validated |
+| `VCFRONT_vbatFusedHighState` | page 13 | Front body controller: vbat fused high state | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_vbatFusedHighFault` | page 13 | Front body controller: vbat fused high fault | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_vbatFusedSelfTestResult` | page 13 | Front body controller: vbat fused self test result; raw 12 = signal not available (SNA) | 10\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `EFUSE_SELF_TEST_EFUSE_RESULT_NOT_RUN`<br>1 = `EFUSE_SELF_TEST_EFUSE_RESULT_RUNNING`<br>2 = `EFUSE_SELF_TEST_EFUSE_RESULT_PASSED`<br>3 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_RAILS_UNSTABLE`<br>4 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_EFUSE_OUTPUT_SHORT`<br>5 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_STUCK_ON`<br>6 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_LOW_MALFUNCTION`<br>7 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_POWER_FET_CHANNEL_OPEN`<br>8 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_ENABLE_HIGH_MALFUNCTION`<br>9 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_TURN_OFF_PATH_TOO_SLOW`<br>10 = `EFUSE_SELF_TEST_EFUSE_RESULT_FAILED_NOT_LATCHED`<br>11 = `EFUSE_SELF_TEST_EFUSE_RESULT_SKIPPED`<br>12 = `EFUSE_SELF_TEST_EFUSE_RESULT_SNA` | validated |
+| `VCFRONT_vbatFusedHighTemp` | page 13 | Front body controller: vbat fused high temp | 14\|11 | little-endian | unsigned | 0.125 | -40 | degC | -40 to 150 |  | validated |
+| `VCFRONT_vbatFusedHighVoltage` | page 13 | Front body controller: vbat fused high voltage | 30\|16 | little-endian | unsigned | 0.1 | 0 | V | 0 to 6553.5 |  | validated |
+| `VCFRONT_vbatFusedHighCurrent` | page 13 | Front body controller: vbat fused high current | 46\|16 | little-endian | unsigned | 0.1 | 0 | A | 0 to 6553.5 |  | validated |
+| `VCFRONT_chargedIBSAmpHours` | page 17 | Front body controller: charged IBS amp hours | 8\|16 | little-endian | unsigned | 1 | 0 | Ah | 0 to 65535 |  | validated |
+| `VCFRONT_dischargedIBSAmpHours` | page 17 | Front body controller: discharged IBS amp hours | 24\|16 | little-endian | unsigned | 1 | 0 | Ah | 0 to 65535 |  | validated |
+| `VCFRONT_IBSUnfilteredTemperature` | page 17 | Front body controller: IBS unfiltered temperature; raw 32768 = signal not available (SNA) | 40\|16 | little-endian | signed | 0.01 | 0 | degC | -327.67 to 327.67 | -32768 = `SNA` | validated |
+
+## Multiplexing
+
+`VCFRONT_eFuseDebugStatusIndex` is the multiplexer selector of this message. Its value picks which group of signals is valid in a frame: page 1 (12 signals), page 2 (11 signals), page 3 (12 signals), page 4 (13 signals), page 5 (12 signals), page 6 (12 signals), page 7 (5 signals), page 9 (5 signals), page 10 (4 signals), page 13 (6 signals), page 17 (3 signals). Signals without a page are present in every frame.
+
+## Download the DBC file
+
+- [Tesla Model Y 2025.20.8 ETH DBC file](../../../../../dbc/ModelY/2025.20.8/ETH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/ModelY/2025.20.8/ETH.json)
+
+Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.
+
+## See also
+
+- [All Front body controller messages (VCFRONT)](../../vcfront.md)
+- [Signal index A-Z](../../../../signals/index.md)
+- [All messages](../../../../messages.md)
+- [Documentation home](../../../../index.md)
