@@ -331,6 +331,7 @@ BO_ 1270 DI_locStatus2: 8 DI
 
 BO_ 822 DI_maxRatedPower: 3 DI
  SG_ DI_sysDrivePowerRated : 0|10@1+ (1,0) [0|1023] "kW" Vector__XXX
+ SG_ DI_performancePackage : 11|3@1+ (1,0) [0|6] "" Vector__XXX
  SG_ DI_sysRegenPowerRated : 16|8@1+ (1,-100) [-100|0] "kW" Vector__XXX
 
 BO_ 599 DI_speed: 8 DI
@@ -395,6 +396,211 @@ BO_ 615 DI_vehicleEstimates: 8 DI
  SG_ DI_gradeEstInternal : 48|7@1- (1,0) [-40|40] "%" Vector__XXX
  SG_ DI_massConfidenceRLS : 55|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DI_steeringAngleOffset : 56|8@1- (0.2,0) [-25.6|25.4] "Deg" Vector__XXX
+
+BO_ 1426 EPAS3P_alertLog: 8 EPAS3P
+ SG_ EPAS3P_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ EPAS3P_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a147_transitionReason m147 : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a149_pcbTemp m149 : 16|8@1- (1,60) [-68|187] "degC" Vector__XXX
+ SG_ EPAS3P_a150_pcbTemp m150 : 16|8@1- (1,60) [-68|187] "degC" Vector__XXX
+ SG_ EPAS3P_a150_phaUMainPathCalcDiff m150 : 24|15@1+ (1,0) [0|32767] "Counts" Vector__XXX
+ SG_ EPAS3P_a150_phaVMainPathCalcDiff m150 : 39|15@1+ (1,0) [0|32767] "Counts" Vector__XXX
+ SG_ EPAS3P_a150_otherECUAssistStatus m150 : 54|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a155_vehicleSpeed m155 : 16|10@1+ (0.5,0) [0|511.5] "kph" Vector__XXX
+ SG_ EPAS3P_a156_vehicleSpeed m156 : 16|10@1+ (0.5,0) [0|511.5] "kph" Vector__XXX
+ SG_ EPAS3P_a160_currentSensorStatus m160 : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_gateDriverStatus m160 : 18|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_highSideDisconnectFe m160 : 20|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_phaseDisconnectFetSt m160 : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_inverterFetStatus m160 : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_hsdFetFailShortTest m160 : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_phaDisconnFailOpenTe m160 : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_phaDisconnFailShortT m160 : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_invFetInitTest m160 : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_gateDrvrInitTest m160 : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ EPAS3P_a160_latentFaultTestTimeo m160 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a161_pcoMinPhaseBCurrent m161 : 16|12@1- (0.1025,0) [-209.92|209.8175] "Amps" Vector__XXX
+ SG_ EPAS3P_a161_pcoMaxPhaseBCurrent m161 : 28|12@1- (0.1025,0) [-209.92|209.8175] "Amps" Vector__XXX
+ SG_ EPAS3P_a161_pcoMinPhaseACurrent m161 : 40|12@1- (0.1025,0) [-209.92|209.8175] "Amps" Vector__XXX
+ SG_ EPAS3P_a161_pcoMaxPhaseACurrent m161 : 52|12@1- (0.1025,0) [-209.92|209.8175] "Amps" Vector__XXX
+ SG_ EPAS3P_a162_vBridgeClosed m162 : 16|16@1+ (0.00537,0) [0|351.92295] "Volts" Vector__XXX
+ SG_ EPAS3P_a162_vBridgeOpen m162 : 32|16@1+ (0.00537,0) [0|351.92295] "Volts" Vector__XXX
+ SG_ EPAS3P_a163_gateDrvrStatusReg m163 : 16|11@1+ (1,0) [0|2047] "Counts" Vector__XXX
+ SG_ EPAS3P_a163_gateDrvrDiag2Reg m163 : 27|9@1+ (1,0) [0|511] "Counts" Vector__XXX
+ SG_ EPAS3P_a163_gateDrvrDiag1Reg m163 : 36|9@1+ (1,0) [0|511] "Counts" Vector__XXX
+ SG_ EPAS3P_a163_gateDrvrDiag0Reg m163 : 45|9@1+ (1,0) [0|511] "Counts" Vector__XXX
+ SG_ EPAS3P_a163_diagStatus m163 : 54|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a163_powerStatus m163 : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a164_dcsRegister0x19 m164 : 16|16@1+ (1,0) [0|65535] "Counts" Vector__XXX
+ SG_ EPAS3P_a164_currentSensorRailed m164 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 914 EPAS3P_alertMatrix: 8 EPAS3P
+ SG_ EPAS3P_matrixIndex M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ EPAS3P_a001_sent1Mia m0 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a002_sent1Error m0 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a003_trqSens1Supply m0 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a004_trqSens1Eeprom m0 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a005_sent2Mia m0 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a006_sent2Error m0 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a007_trqSens2Supply m0 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a008_trqSens2Eeprom m0 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a009_sentDiff m0 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a010_trqSensCalError m0 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a011_currentSensError m0 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a012_currentSensCalError m0 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a013_gateDriveError m0 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a014_gateDriveTxError m0 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a015_gateDriveEeprom m0 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a016_phaseUhighUv m0 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a017_phaseUlowUv m0 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a018_phaseVhighUv m0 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a019_phaseVlowUv m0 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a020_phaseWhighUv m0 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a021_phaseWlowUv m0 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a022_phaseUhighOv m0 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a023_phaseUlowOv m0 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a024_phaseVhighOv m0 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a025_phaseVlowOv m0 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a026_phaseWhighOv m0 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a027_phaseWlowOv m0 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a028_phaseUbootUv m0 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a029_phaseVbootUv m0 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a030_phaseWbootUv m0 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a031_abnormalShutdown m0 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a032_vRegOutputUv m0 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a033_vRegOutputOv m0 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a034_vRegError m0 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a035_vbbSupplyUv m0 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a036_vbbSupplyOv m0 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a037_motPos1ParityError m0 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a038_motPos1Uv m0 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a039_motPos1MagnetMia m0 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a040_motPos1LogicError m0 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a041_motPos1tempError m0 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a042_motPos2ParityError m0 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a043_motPos2Uv m0 : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a044_motPos2MagnetMia m0 : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a045_motPos2LogicError m0 : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a046_motPos2tempError m0 : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a047_motPosCorrError m0 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a048_motPosCalError m0 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a049_piCtrlError m0 : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a050_mcuSmuError m0 : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a051_mcuSupError m0 : 54|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a052_intWatchdogError m0 : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a053_extWatchdogError m0 : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a054_memoryProtectError m0 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a055_floatPointError m0 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a056_battUv m0 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a057_battUvReduced m0 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a058_battOv m0 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a059_battOvReduced m0 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a060_battBridgeDiff m0 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a061_bridgeUv m1 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a062_assistCorrError m1 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a063_dampCorrError m1 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a064_phaseCompCorrError m1 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a065_trqTarCorrError m1 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a066_returnCorrError m1 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a067_yawDampCorrError m1 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a068_hystCorrError m1 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a069_eacCorrError m1 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a070_hodCorrError m1 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a071_vehSpdCorrError m1 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a072_motFeedFwdError m1 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a073_motParEstError m1 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a074_overHeatProtect m1 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a075_fspPwrCut m1 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a076_tempSensOutofRange m1 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a077_highSideFetError m1 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a078_phaseDisconnectError m1 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a079_backupCurrentPlaus m1 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a080_ecuInitArbError m1 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a081_coggCompError m1 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a082_polarityCalError m1 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a083_crcMismatch m1 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a084_eacCancelled m1 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a085_canBusOff m1 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a086_dasMia m1 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a087_dasCntError m1 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a088_dasCsError m1 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a089_espWsMia m1 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a090_espWsCntError m1 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a091_espWsCsError m1 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a092_espWrMia m1 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a093_espWrCntError m1 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a094_espWrCsError m1 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a095_espWsStatus m1 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a096_rcmMia m1 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a097_rcmCntError m1 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a098_rcmCsError m1 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a099_yawRateStatus m1 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a100_diMia m1 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a101_diCntError m1 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a102_diCsError m1 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a103_vcFrontMia m1 : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a104_vcFrontCntError m1 : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a105_vcFrontCsError m1 : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a106_vcFrontTempMia m1 : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a107_uiTuneReqMia m1 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a108_uiTuneReqCntError m1 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a109_uiTuneReqCsError m1 : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a110_sasMia m1 : 53|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a111_sasCntError m1 : 54|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a112_sasCsError m1 : 55|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a113_sasStatusError m1 : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a114_gtwConfigMia m1 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a115_ecuStatMia m1 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a116_ecuStatCntError m1 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a117_ecuStatCrcError m1 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a118_privateBusOff m1 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a119_pvtEcuStatMia m1 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a120_pvtEcuStatCntError m1 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a121_pvtEcuStatCrcError m2 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a122_olpActive m2 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a123_combEcu2StatFail m2 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a124_tempSensStuckInRange m2 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a125_trqSensTrimOutRange m2 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a126_apsMia m2 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a127_apsCntError m2 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a128_apsCsError m2 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a129_combEcu1StatFail m2 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a130_sasOffsetNotCal m2 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a131_phaseFeedbackError m2 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a132_motFeedFwdCounter25 m2 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a133_motFeedFwdCounter50 m2 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a134_motFeedFwdCounter85 m2 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a135_piCtrlCounter25 m2 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a136_piCtrlCounter50 m2 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a137_piCtrlCounter85 m2 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a144_diSpdMia m2 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a145_diSpdCntError m2 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a146_diSpdCsError m2 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a147_backupVehSpeed m2 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a148_vMaxAssist m2 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a149_currentSensPathSwitc m2 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a150_currentSensOffsetDet m2 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a151_dcsCboot m2 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a152_dcsDiagReg m2 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a153_dcsInitOffset m2 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a154_assistTorqueDisabled m2 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a155_backupEacActive m2 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a156_angleSensorDivergenc m2 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a157_pmState2Mia m2 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a158_pmState2CntError m2 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a159_pmState2CsError m2 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a160_latentFaultTestResul m2 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a161_initTestPhaDisconnIn m2 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a162_initTestHSDFetInfo m2 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a163_initTestGateDrvrInfo m2 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a164_initTestDCSInfo m2 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a165_epbStatusMia m2 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a166_epbStatusCntError m2 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a167_epbStatusCsError m2 : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a168_torsionBarTorqueQfDe m2 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a169_difMia m2 : 46|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a170_difCntError m2 : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EPAS3P_a171_difCsError m2 : 48|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 977 EPAS3P_angleCalibration: 8 EPAS3P
  SG_ EPAS3P_appliedAngleOffset : 0|8@1+ (0.1,-12.8) [-12.8|12.7] "deg" Vector__XXX
@@ -716,6 +922,7 @@ BO_ 794 VCRIGHT_restraintStatus: 8 VCRIGHT
  SG_ VCRIGHT_occupantClassificationQF : 26|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCRIGHT_classificationEnabled : 27|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCRIGHT_classificationEnabledQF : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_3RowRightABStatus : 30|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCRIGHT_restraintStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCRIGHT_restraintStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
@@ -744,6 +951,8 @@ BO_TX_BU_ 600 : DI;
 BO_TX_BU_ 597 : DI;
 BO_TX_BU_ 282 : DI;
 BO_TX_BU_ 615 : DI;
+BO_TX_BU_ 1426 : EPAS3P;
+BO_TX_BU_ 914 : EPAS3P;
 BO_TX_BU_ 977 : EPAS3P;
 BO_TX_BU_ 817 : EPAS3P;
 BO_TX_BU_ 880 : EPAS3P;
@@ -785,7 +994,7 @@ CM_ BU_ VCCC "VCCC ECU";
 CM_ BU_ VCFRONT "Front body controller";
 CM_ BU_ VCLEFT "Left body controller";
 CM_ BU_ VCRIGHT "Right body controller";
-CM_ BO_ 526 "Driver assistance computer message: autonomy control";
+CM_ BO_ 526 "Driver assistance computer message: autonomy control; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 526 DAS_autonomyControlChecksum "Driver assistance computer: autonomy control checksum";
 CM_ SG_ 526 DAS_autonomyControlCounter "Driver assistance computer: autonomy control counter";
 CM_ SG_ 526 DAS_manualDrivingProhibited "Reports whether the driver is allowed to override autonomy control.";
@@ -798,7 +1007,7 @@ CM_ SG_ 526 DAS_epbOnlyStoppingTarget "Driver assistance computer: epb only stop
 CM_ SG_ 526 DAS_requireFirmBPedalCancel "Requests firmer brake press requirement to disengage autopilot";
 CM_ SG_ 526 DAS_authRequestType "Driver assistance computer: auth request type; raw 3 = signal not available (SNA)";
 CM_ SG_ 526 DAS_brakePedalMuted "Driver assistance computer: brake pedal muted";
-CM_ BO_ 584 "Driver assistance computer message: autonomy ui control";
+CM_ BO_ 584 "Driver assistance computer message: autonomy ui control; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 584 DAS_autonomyUiControlChecksum "Driver assistance computer: autonomy ui control checksum";
 CM_ SG_ 584 DAS_autonomyUiControlCounter "Driver assistance computer: autonomy ui control counter";
 CM_ SG_ 584 DAS_rideState "Driver assistance computer: ride state; raw 0 = signal not available (SNA)";
@@ -807,7 +1016,7 @@ CM_ SG_ 584 DAS_rideHailingActive "Driver assistance computer: ride hailing acti
 CM_ SG_ 584 DAS_autonomyCriticalMode "Driver assistance computer: autonomy critical mode";
 CM_ SG_ 584 DAS_micFocusRequest "Driver assistance computer: mic focus request";
 CM_ SG_ 584 DAS_autonomyUiBehavior "Driver assistance computer: autonomy ui behavior; raw 0 = signal not available (SNA)";
-CM_ BO_ 697 "Driver assistance computer message: control";
+CM_ BO_ 697 "Driver assistance computer message: control; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 697 DAS_setSpeed "Detects the commanded Traffic Aware Cruise Control (TACC) or Autopilot set speed for the Drive Inverter (DI); raw 4095 = signal not available (SNA)";
 CM_ SG_ 697 DAS_accState "Reports the state of Adaptive Cruise Control (ACC), Traffic-Aware Cruise Control (TACC), and Autopark / Summon; raw 15 = signal not available (SNA)";
 CM_ SG_ 697 DAS_aebEvent "Driver assistance computer: aeb event; raw 3 = signal not available (SNA)";
@@ -817,7 +1026,7 @@ CM_ SG_ 697 DAS_accelMin "Reports the minimum acceleration the drive inverter ca
 CM_ SG_ 697 DAS_accelMax "Reports the maximum acceleration the drive inverter can apply to reach the commanded set speed; raw 511 = signal not available (SNA)";
 CM_ SG_ 697 DAS_controlCounter "Driver assistance computer: control counter";
 CM_ SG_ 697 DAS_controlChecksum "Driver assistance computer: control checksum";
-CM_ BO_ 299 "Driver assistance computer message: smart shift";
+CM_ BO_ 299 "Driver assistance computer message: smart shift; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 299 DAS_smartShiftChecksum "Driver assistance computer: smart shift checksum";
 CM_ SG_ 299 DAS_smartShiftCounter "Driver assistance computer: smart shift counter";
 CM_ SG_ 299 DAS_smartShiftTorqueDirection "Reports Driver Assistance System (DAS) Smart Shift torque direction; raw 0 = signal not available (SNA)";
@@ -826,7 +1035,7 @@ CM_ SG_ 299 DAS_autoshiftTorqueDirectionDbg "Driver assistance computer: autoshi
 CM_ SG_ 299 DAS_autoshiftUpcomingDirection "Reports the Driver Assistance System (DAS) upcoming torque direction; raw 3 = signal not available (SNA)";
 CM_ SG_ 299 DAS_autoshiftBrakeRequired "Reports whether brake press is required for Autoshift Drive/Reverse (D/R).";
 CM_ SG_ 299 DAS_autoshiftSteerRequest "Reports the Driver Assistance System (DAS) steering angle direction requested for Autoshift Drive/Reverse (D/R).";
-CM_ BO_ 1879 "Front drive inverter message: debug";
+CM_ BO_ 1879 "Front drive inverter message: debug; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1879 DIF_debugSelector "Front drive inverter: debug selector";
 CM_ SG_ 1879 DIF_phaseOutBusbarTemp "Front drive inverter: phase out busbar temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_phaseOutBusbarWeldTemp "Front drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA)";
@@ -841,7 +1050,7 @@ CM_ SG_ 1879 DIF_lightSenseV "Front drive inverter: light sense v";
 CM_ SG_ 1879 DIF_pyroSenseV "Front drive inverter: pyro sense v";
 CM_ SG_ 1879 DIF_statorSlotWindingTemp "Front drive inverter: stator slot winding temp; raw 0 = signal not available (SNA)";
 CM_ SG_ 1879 DIF_intervalMaxHvBusV "Front drive inverter: interval max hv bus v";
-CM_ BO_ 1622 "Front drive inverter message: info";
+CM_ BO_ 1622 "Front drive inverter message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1622 DIF_infoIndex "Front drive inverter: info index";
 CM_ SG_ 1622 DIF_buildType "Front drive inverter: build type";
 CM_ SG_ 1622 DIF_buildConfigurationId "Front drive inverter: build configuration id";
@@ -870,7 +1079,7 @@ CM_ SG_ 1622 DIF_refRotorFlux "Front drive inverter: ref rotor flux";
 CM_ SG_ 1622 DIF_refRotorOffset "Front drive inverter: ref rotor offset; raw 2048 = signal not available (SNA)";
 CM_ SG_ 1622 DIF_speedWearTotal "Front drive inverter: speed wear total; raw 255 = signal not available (SNA)";
 CM_ SG_ 1622 DIF_torqueWearTotal "Front drive inverter: torque wear total; raw 255 = signal not available (SNA)";
-CM_ BO_ 421 "Front drive inverter message: motor status";
+CM_ BO_ 421 "Front drive inverter message: motor status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 421 DIF_motorCurrent "Drive Inverer measured motor RMS phase current.";
 CM_ SG_ 421 DIF_switchingFrequency "Front drive inverter: switching frequency";
 CM_ SG_ 421 DIF_targetFluxMode "Front drive inverter: target flux mode";
@@ -878,7 +1087,7 @@ CM_ SG_ 421 DIF_switchShortTestRetryCount "Front drive inverter: switch short te
 CM_ SG_ 421 DIF_keepAliveRequest "Used to detect that the Drive Inverter (DI) expects 12V and High Voltage (HV) to be kept up in order to protect hardware.";
 CM_ SG_ 421 DIF_motorStatusCounter "Front drive inverter: motor status counter";
 CM_ SG_ 421 DIF_motorStatusChecksum "Front drive inverter: motor status checksum";
-CM_ BO_ 918 "Front drive inverter message: oil pump";
+CM_ BO_ 918 "Front drive inverter message: oil pump; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 918 DIF_oilPumpState "Reports the state of the oil pump; raw 7 = signal not available (SNA)";
 CM_ SG_ 918 DIF_oilPumpFluidTQF "Front drive inverter: oil pump fluid TQF";
 CM_ SG_ 918 DIF_oilPumpLeadAngle "Front drive inverter: oil pump lead angle";
@@ -889,7 +1098,7 @@ CM_ SG_ 918 DIF_oilPumpPhaseCurrent "Front drive inverter: oil pump phase curren
 CM_ SG_ 918 DIF_oilPumpPressureEstimate "Oil pump pressure estimate; raw 255 = signal not available (SNA)";
 CM_ SG_ 918 DIF_oilPumpPressureExpected "Oil pump pressure expected; raw 255 = signal not available (SNA)";
 CM_ SG_ 918 DIF_oilPumpPressureResidual "Oil pressure error outside of allowed tolerance; raw 255 = signal not available (SNA)";
-CM_ BO_ 725 "Front drive inverter message: status";
+CM_ BO_ 725 "Front drive inverter message: status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 725 DIF_statusChecksum "Front drive inverter: status checksum";
 CM_ SG_ 725 DIF_statusCounter "Front drive inverter: status counter";
 CM_ SG_ 725 DIF_state "DI unit state machine state.";
@@ -905,7 +1114,7 @@ CM_ SG_ 725 DIF_axleSpeedLimitRequest "Front drive inverter: axle speed limit re
 CM_ SG_ 725 DIF_adDirection "Front drive inverter: ad direction";
 CM_ SG_ 725 DIF_spinDownLearningState "Front drive inverter: spin down learning state";
 CM_ SG_ 725 DIF_spinDownLearningMode "Front drive inverter: spin down learning mode";
-CM_ BO_ 390 "Front drive inverter message: torque";
+CM_ BO_ 390 "Front drive inverter message: torque; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 390 DIF_torqueChecksum "Front drive inverter: torque checksum";
 CM_ SG_ 390 DIF_torqueCounter "Front drive inverter: torque counter";
 CM_ SG_ 390 DIF_torqueCommand "Torque commanded to the drive unit, referred to the axle/wheel; raw 4096 = signal not available (SNA)";
@@ -915,7 +1124,7 @@ CM_ SG_ 390 DIF_axleSpeed "Drive Inverter motor speed normalized at axle level; 
 CM_ SG_ 390 DIF_axleTorqueQF "Front drive inverter: axle torque QF";
 CM_ SG_ 390 DIF_axlePowerCalcQF "Front drive inverter: axle power calc QF";
 CM_ SG_ 390 DIF_gear "Front drive inverter: gear; raw 7 = signal not available (SNA)";
-CM_ BO_ 294 "Rear drive inverter message: motor status";
+CM_ BO_ 294 "Rear drive inverter message: motor status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 294 DIR_motorCurrent "Drive Inverer measured motor RMS phase current.";
 CM_ SG_ 294 DIR_switchingFrequency "Rear drive inverter: switching frequency";
 CM_ SG_ 294 DIR_targetFluxMode "Rear drive inverter: target flux mode";
@@ -923,7 +1132,7 @@ CM_ SG_ 294 DIR_switchShortTestRetryCount "Rear drive inverter: switch short tes
 CM_ SG_ 294 DIR_keepAliveRequest "Used to detect that the Drive Inverter (DI) expects 12V and High Voltage (HV) to be kept up in order to protect hardware.";
 CM_ SG_ 294 DIR_motorStatusCounter "Rear drive inverter: motor status counter";
 CM_ SG_ 294 DIR_motorStatusChecksum "Rear drive inverter: motor status checksum";
-CM_ BO_ 598 "Rear drive inverter message: status";
+CM_ BO_ 598 "Rear drive inverter message: status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 598 DIR_statusChecksum "Rear drive inverter: status checksum";
 CM_ SG_ 598 DIR_statusCounter "Rear drive inverter: status counter";
 CM_ SG_ 598 DIR_state "DI unit state machine state.";
@@ -939,7 +1148,7 @@ CM_ SG_ 598 DIR_axleSpeedLimitRequest "Rear drive inverter: axle speed limit req
 CM_ SG_ 598 DIR_adDirection "Rear drive inverter: ad direction";
 CM_ SG_ 598 DIR_spinDownLearningState "Rear drive inverter: spin down learning state";
 CM_ SG_ 598 DIR_spinDownLearningMode "Rear drive inverter: spin down learning mode";
-CM_ BO_ 264 "Rear drive inverter message: torque";
+CM_ BO_ 264 "Rear drive inverter message: torque; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 264 DIR_torqueChecksum "Rear drive inverter: torque checksum";
 CM_ SG_ 264 DIR_torqueCounter "Rear drive inverter: torque counter";
 CM_ SG_ 264 DIR_torqueCommand "Torque commanded to the drive unit, referred to the axle/wheel; raw 4096 = signal not available (SNA)";
@@ -949,7 +1158,7 @@ CM_ SG_ 264 DIR_axleSpeed "Drive Inverter motor speed normalized at axle level; 
 CM_ SG_ 264 DIR_axleTorqueQF "Rear drive inverter: axle torque QF";
 CM_ SG_ 264 DIR_axlePowerCalcQF "Rear drive inverter: axle power calc QF";
 CM_ SG_ 264 DIR_gear "Rear drive inverter: gear; raw 7 = signal not available (SNA)";
-CM_ BO_ 84 "Drive inverter message: autonomy health";
+CM_ BO_ 84 "Drive inverter message: autonomy health; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 84 DI_ah_vehicleSpeedLimit "Drive inverter: ah vehicle speed limit";
 CM_ SG_ 84 DI_ah_vehicleReverseSpeedLimit "Drive inverter: ah vehicle reverse speed limit";
 CM_ SG_ 84 DI_autonomyBehavior "Drive inverter: autonomy behavior";
@@ -965,7 +1174,7 @@ CM_ SG_ 84 DI_loncDegradedReason "Drive inverter: lonc degraded reason";
 CM_ SG_ 84 DI_opdAvailableForPedalInterface "Drive inverter: opd available for pedal interface";
 CM_ SG_ 84 DI_epbUnavailable "Drive inverter: epb unavailable";
 CM_ SG_ 84 DI_loncInPreFaultStopping "Drive inverter: lonc in pre fault stopping";
-CM_ BO_ 328 "Drive inverter message: chassis control";
+CM_ BO_ 328 "Drive inverter message: chassis control; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 328 DI_chassisControlChecksum "Drive inverter: chassis control checksum";
 CM_ SG_ 328 DI_chassisControlCounter "Drive inverter: chassis control counter";
 CM_ SG_ 328 DI_imuOffsetLearnRequest "Drive inverter: imu offset learn request";
@@ -984,7 +1193,7 @@ CM_ SG_ 328 DI_VehicleMu "Learn-up estimate of surface mu for development use on
 CM_ SG_ 328 DI_trailerSwayIndex "VDC trailer sway index";
 CM_ SG_ 328 DI_vdcControlActive "Type of VDC control while VDC is actuating";
 CM_ SG_ 328 DI_treadDepthAlertSet "Drive inverter: tread depth alert set";
-CM_ BO_ 1861 "Drive inverter message: chassis control2";
+CM_ BO_ 1861 "Drive inverter message: chassis control2; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1861 DI_gradeAngle "Reports the grade angle.";
 CM_ SG_ 1861 DI_bankAngle "Reports the bank angle.";
 CM_ SG_ 1861 DI_chassisControlVideoRequest "Drive inverter: chassis control video request";
@@ -1008,7 +1217,7 @@ CM_ SG_ 1861 DI_learnDownMu "Drive inverter: learn down mu";
 CM_ SG_ 1861 DI_preControlOpposingTurnDir "Drive inverter: pre control opposing turn dir";
 CM_ SG_ 1861 DI_driverFxError "Drive inverter: driver fx error";
 CM_ SG_ 1861 DI_targetSaturation "Drive inverter: target saturation";
-CM_ BO_ 1869 "Drive inverter message: chassis control3";
+CM_ BO_ 1869 "Drive inverter message: chassis control3; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1869 DI_tireWearFactor_FrL "Drive inverter: tire wear factor fr l";
 CM_ SG_ 1869 DI_tireWearFactor_FrR "Drive inverter: tire wear factor fr r";
 CM_ SG_ 1869 DI_tireWearFactor_ReL "Drive inverter: tire wear factor re l";
@@ -1023,7 +1232,7 @@ CM_ SG_ 1869 DI_vehicleStuck "Drive inverter: vehicle stuck";
 CM_ SG_ 1869 DI_kTireEstRe "Drive inverter: k tire est re; raw 31 = signal not available (SNA)";
 CM_ SG_ 1869 DI_stickyMu "Drive inverter: sticky mu";
 CM_ SG_ 1869 DI_stickyMuConfidence "Drive inverter: sticky mu confidence";
-CM_ BO_ 646 "Drive inverter message: loc status";
+CM_ BO_ 646 "Drive inverter message: loc status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 646 DI_locStatusChecksum "Drive inverter: loc status checksum";
 CM_ SG_ 646 DI_locStatusCounter "Drive inverter: loc status counter";
 CM_ SG_ 646 DI_cruiseState "Cruise control state.";
@@ -1041,7 +1250,7 @@ CM_ SG_ 646 DI_regenBackfillState "Regen backfill state";
 CM_ SG_ 646 DI_cruiseNotAvailableReason "Drive inverter: cruise not available reason; raw 20 = signal not available (SNA)";
 CM_ SG_ 646 DI_cruiseFaultReason "Cruise control fault reason; raw 17 = signal not available (SNA)";
 CM_ SG_ 646 DI_cruiseCancelReason "Cruise control cancel reason";
-CM_ BO_ 1270 "Drive inverter message: loc status2";
+CM_ BO_ 1270 "Drive inverter message: loc status2; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1270 DI_locStatus2Checksum "Drive inverter: loc status2 checksum";
 CM_ SG_ 1270 DI_locStatus2Counter "Drive inverter: loc status2 counter";
 CM_ SG_ 1270 DI_doublePedalState "Drive inverter: double pedal state";
@@ -1059,10 +1268,11 @@ CM_ SG_ 1270 DI_longitudinalControlStack "Drive inverter: longitudinal control s
 CM_ SG_ 1270 DI_useDasFallbackBrakeCommands "Drive inverter: use das fallback brake commands";
 CM_ SG_ 1270 DI_regenBlendingState "Drive inverter: regen blending state";
 CM_ SG_ 1270 DI_executeBatLocStatus2 "Drive inverter: execute bat loc status2";
-CM_ BO_ 822 "Drive inverter message: max rated power";
+CM_ BO_ 822 "Drive inverter message: max rated power; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 822 DI_sysDrivePowerRated "Drive inverter: sys drive power rated; raw 511 = signal not available (SNA)";
+CM_ SG_ 822 DI_performancePackage "Drive inverter: performance package; raw 7 = signal not available (SNA)";
 CM_ SG_ 822 DI_sysRegenPowerRated "Drive inverter: sys regen power rated; raw 255 = signal not available (SNA)";
-CM_ BO_ 599 "Drive inverter message: speed";
+CM_ BO_ 599 "Drive inverter message: speed; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 599 DI_speedChecksum "Drive inverter: speed checksum";
 CM_ SG_ 599 DI_speedCounter "Drive inverter: speed counter";
 CM_ SG_ 599 DI_locSpeedEst "Drive inverter: loc speed est; raw 4095 = signal not available (SNA)";
@@ -1074,7 +1284,7 @@ CM_ SG_ 599 DI_vehicleSpeed "Reports vehicle speed; raw 8191 = signal not availa
 CM_ SG_ 599 DI_velocityEstimatorState "Drive inverter: velocity estimator state";
 CM_ SG_ 599 DI_autoEnableHazards "Drive inverter: auto enable hazards";
 CM_ SG_ 599 DI_longControlCommandActive "Drive inverter: long control command active";
-CM_ BO_ 600 "Drive inverter message: stalkless interfaces";
+CM_ BO_ 600 "Drive inverter message: stalkless interfaces; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 600 DI_stalklessInterfacesChecksum "Drive inverter: stalkless interfaces checksum";
 CM_ SG_ 600 DI_stalklessInterfacesCounter "Drive inverter: stalkless interfaces counter";
 CM_ SG_ 600 DI_smartShiftClosureOpen "Drive inverter: smart shift closure open";
@@ -1083,7 +1293,7 @@ CM_ SG_ 600 DI_smartShiftAvailable "Drive inverter: smart shift available";
 CM_ SG_ 600 DI_smartShiftPrimed "Drive inverter: smart shift primed";
 CM_ SG_ 600 DI_smartShiftBrakePressed "Drive inverter: smart shift brake pressed";
 CM_ SG_ 600 DI_smartShiftBrakeReapplyRequire "Drive inverter: smart shift brake reapply required";
-CM_ BO_ 597 "Drive inverter message: suggested gear";
+CM_ BO_ 597 "Drive inverter message: suggested gear; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 597 DI_lastQualifiedGear "Drive inverter: last qualified gear; raw 7 = signal not available (SNA)";
 CM_ SG_ 597 DI_lastDrivingGear "Drive inverter: last driving gear; raw 7 = signal not available (SNA)";
 CM_ SG_ 597 DI_distDrivenInGear "Drive inverter: dist driven in gear";
@@ -1094,7 +1304,7 @@ CM_ SG_ 597 DI_suggestedGearReason "Reason for the suggested gear";
 CM_ SG_ 597 DI_parallelParked "Drive inverter: parallel parked";
 CM_ SG_ 597 DI_smartShiftGear "Gear vehicle will shift into if smart shift occurs";
 CM_ SG_ 597 DI_smartShiftUnavailableReason "Reports the reason why Smart Shift is unavailable; raw 0 = signal not available (SNA)";
-CM_ BO_ 282 "Drive inverter message: vdc right";
+CM_ BO_ 282 "Drive inverter message: vdc right; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 282 DI_vdcRightChecksum "Drive inverter: vdc right checksum";
 CM_ SG_ 282 DI_vdcRightCounter "Drive inverter: vdc right counter";
 CM_ SG_ 282 DI_vdcCommandTypeFrR "Drive inverter: vdc command type fr r";
@@ -1106,7 +1316,7 @@ CM_ SG_ 282 DI_brakeTorqueTarReR "Drive inverter: brake torque tar re r";
 CM_ SG_ 282 DI_wheelSlipLimitFrR "Drive inverter: wheel slip limit fr r";
 CM_ SG_ 282 DI_wheelSlipLimitReR "Drive inverter: wheel slip limit re r";
 CM_ SG_ 282 DI_rawLowMuProbability "Drive inverter: raw low mu probability";
-CM_ BO_ 615 "Drive inverter message: vehicle estimates";
+CM_ BO_ 615 "Drive inverter message: vehicle estimates; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 615 DI_mass "Detects learned mass.";
 CM_ SG_ 615 DI_massRLS "Drive inverter: mass RLS";
 CM_ SG_ 615 DI_trailerDetected "Drive inverter: trailer detected";
@@ -1120,14 +1330,217 @@ CM_ SG_ 615 DI_vehicleEstimatesChecksum "Drive inverter: vehicle estimates check
 CM_ SG_ 615 DI_gradeEstInternal "Drive inverter: grade est internal";
 CM_ SG_ 615 DI_massConfidenceRLS "Drive inverter: mass confidence RLS";
 CM_ SG_ 615 DI_steeringAngleOffset "Steering angle offset learned by vehicle dynamics control (VDC) represented as a hand wheel angle";
-CM_ BO_ 977 "Electric power steering (primary) message: angle calibration";
+CM_ BO_ 1426 "Electric power steering (primary) message: alert log; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1426 EPAS3P_alertID "Electric power steering (primary): alert ID";
+CM_ SG_ 1426 EPAS3P_alertState "Electric power steering (primary): alert state";
+CM_ SG_ 1426 EPAS3P_a147_transitionReason "Electric power steering (primary): a147 transition reason";
+CM_ SG_ 1426 EPAS3P_a149_pcbTemp "Electric power steering (primary): a149 pcb temp";
+CM_ SG_ 1426 EPAS3P_a150_pcbTemp "Electric power steering (primary): a150 pcb temp";
+CM_ SG_ 1426 EPAS3P_a150_phaUMainPathCalcDiff "Electric power steering (primary): a150 pha u main path calc diff";
+CM_ SG_ 1426 EPAS3P_a150_phaVMainPathCalcDiff "Electric power steering (primary): a150 pha v main path calc diff";
+CM_ SG_ 1426 EPAS3P_a150_otherECUAssistStatus "Electric power steering (primary): a150 other ECU assist status flag";
+CM_ SG_ 1426 EPAS3P_a155_vehicleSpeed "Electric power steering (primary): a155 vehicle speed";
+CM_ SG_ 1426 EPAS3P_a156_vehicleSpeed "Electric power steering (primary): a156 vehicle speed";
+CM_ SG_ 1426 EPAS3P_a160_currentSensorStatus "Electric power steering (primary): a160 current sensor status";
+CM_ SG_ 1426 EPAS3P_a160_gateDriverStatus "Electric power steering (primary): a160 gate driver status";
+CM_ SG_ 1426 EPAS3P_a160_highSideDisconnectFe "Electric power steering (primary): a160 high side disconnect fet status";
+CM_ SG_ 1426 EPAS3P_a160_phaseDisconnectFetSt "Electric power steering (primary): a160 phase disconnect fet status";
+CM_ SG_ 1426 EPAS3P_a160_inverterFetStatus "Electric power steering (primary): a160 inverter fet status";
+CM_ SG_ 1426 EPAS3P_a160_hsdFetFailShortTest "Electric power steering (primary): a160 hsd fet fail short test";
+CM_ SG_ 1426 EPAS3P_a160_phaDisconnFailOpenTe "Electric power steering (primary): a160 pha disconn fail open test";
+CM_ SG_ 1426 EPAS3P_a160_phaDisconnFailShortT "Electric power steering (primary): a160 pha disconn fail short test";
+CM_ SG_ 1426 EPAS3P_a160_invFetInitTest "Electric power steering (primary): a160 inv fet init test";
+CM_ SG_ 1426 EPAS3P_a160_gateDrvrInitTest "Electric power steering (primary): a160 gate drvr init test";
+CM_ SG_ 1426 EPAS3P_a160_latentFaultTestTimeo "Electric power steering (primary): a160 latent fault test timeout";
+CM_ SG_ 1426 EPAS3P_a161_pcoMinPhaseBCurrent "Electric power steering (primary): a161 pco min phase b current";
+CM_ SG_ 1426 EPAS3P_a161_pcoMaxPhaseBCurrent "Electric power steering (primary): a161 pco max phase b current";
+CM_ SG_ 1426 EPAS3P_a161_pcoMinPhaseACurrent "Electric power steering (primary): a161 pco min phase a current";
+CM_ SG_ 1426 EPAS3P_a161_pcoMaxPhaseACurrent "Electric power steering (primary): a161 pco max phase a current";
+CM_ SG_ 1426 EPAS3P_a162_vBridgeClosed "Electric power steering (primary): a162 v bridge closed";
+CM_ SG_ 1426 EPAS3P_a162_vBridgeOpen "Electric power steering (primary): a162 v bridge open";
+CM_ SG_ 1426 EPAS3P_a163_gateDrvrStatusReg "Electric power steering (primary): a163 gate drvr status reg";
+CM_ SG_ 1426 EPAS3P_a163_gateDrvrDiag2Reg "Electric power steering (primary): a163 gate drvr diag2 reg";
+CM_ SG_ 1426 EPAS3P_a163_gateDrvrDiag1Reg "Electric power steering (primary): a163 gate drvr diag1 reg";
+CM_ SG_ 1426 EPAS3P_a163_gateDrvrDiag0Reg "Electric power steering (primary): a163 gate drvr diag0 reg";
+CM_ SG_ 1426 EPAS3P_a163_diagStatus "Electric power steering (primary): a163 diag status";
+CM_ SG_ 1426 EPAS3P_a163_powerStatus "Electric power steering (primary): a163 power status";
+CM_ SG_ 1426 EPAS3P_a164_dcsRegister0x19 "Electric power steering (primary): a164 dcs register0x19";
+CM_ SG_ 1426 EPAS3P_a164_currentSensorRailed "Electric power steering (primary): a164 current sensor railed";
+CM_ BO_ 914 "Electric power steering (primary) message: alert matrix; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 914 EPAS3P_matrixIndex "Electric power steering (primary): matrix index";
+CM_ SG_ 914 EPAS3P_a001_sent1Mia "Electric power steering (primary): a001 sent1 mia";
+CM_ SG_ 914 EPAS3P_a002_sent1Error "Electric power steering (primary): a002 sent1 error";
+CM_ SG_ 914 EPAS3P_a003_trqSens1Supply "Electric power steering (primary): a003 trq sens1 supply";
+CM_ SG_ 914 EPAS3P_a004_trqSens1Eeprom "Electric power steering (primary): a004 trq sens1 eeprom";
+CM_ SG_ 914 EPAS3P_a005_sent2Mia "Electric power steering (primary): a005 sent2 mia";
+CM_ SG_ 914 EPAS3P_a006_sent2Error "Electric power steering (primary): a006 sent2 error";
+CM_ SG_ 914 EPAS3P_a007_trqSens2Supply "Electric power steering (primary): a007 trq sens2 supply";
+CM_ SG_ 914 EPAS3P_a008_trqSens2Eeprom "Electric power steering (primary): a008 trq sens2 eeprom";
+CM_ SG_ 914 EPAS3P_a009_sentDiff "Electric power steering (primary): a009 sent diff";
+CM_ SG_ 914 EPAS3P_a010_trqSensCalError "Electric power steering (primary): a010 trq sens cal error";
+CM_ SG_ 914 EPAS3P_a011_currentSensError "Electric power steering (primary): a011 current sens error";
+CM_ SG_ 914 EPAS3P_a012_currentSensCalError "Electric power steering (primary): a012 current sens cal error";
+CM_ SG_ 914 EPAS3P_a013_gateDriveError "Electric power steering (primary): a013 gate drive error";
+CM_ SG_ 914 EPAS3P_a014_gateDriveTxError "Electric power steering (primary): a014 gate drive tx error";
+CM_ SG_ 914 EPAS3P_a015_gateDriveEeprom "Electric power steering (primary): a015 gate drive eeprom";
+CM_ SG_ 914 EPAS3P_a016_phaseUhighUv "Electric power steering (primary): a016 phase uhigh uv";
+CM_ SG_ 914 EPAS3P_a017_phaseUlowUv "Electric power steering (primary): a017 phase ulow uv";
+CM_ SG_ 914 EPAS3P_a018_phaseVhighUv "Electric power steering (primary): a018 phase vhigh uv";
+CM_ SG_ 914 EPAS3P_a019_phaseVlowUv "Electric power steering (primary): a019 phase vlow uv";
+CM_ SG_ 914 EPAS3P_a020_phaseWhighUv "Electric power steering (primary): a020 phase whigh uv";
+CM_ SG_ 914 EPAS3P_a021_phaseWlowUv "Electric power steering (primary): a021 phase wlow uv";
+CM_ SG_ 914 EPAS3P_a022_phaseUhighOv "Electric power steering (primary): a022 phase uhigh ov";
+CM_ SG_ 914 EPAS3P_a023_phaseUlowOv "Electric power steering (primary): a023 phase ulow ov";
+CM_ SG_ 914 EPAS3P_a024_phaseVhighOv "Electric power steering (primary): a024 phase vhigh ov";
+CM_ SG_ 914 EPAS3P_a025_phaseVlowOv "Electric power steering (primary): a025 phase vlow ov";
+CM_ SG_ 914 EPAS3P_a026_phaseWhighOv "Electric power steering (primary): a026 phase whigh ov";
+CM_ SG_ 914 EPAS3P_a027_phaseWlowOv "Electric power steering (primary): a027 phase wlow ov";
+CM_ SG_ 914 EPAS3P_a028_phaseUbootUv "Electric power steering (primary): a028 phase uboot uv";
+CM_ SG_ 914 EPAS3P_a029_phaseVbootUv "Electric power steering (primary): a029 phase vboot uv";
+CM_ SG_ 914 EPAS3P_a030_phaseWbootUv "Electric power steering (primary): a030 phase wboot uv";
+CM_ SG_ 914 EPAS3P_a031_abnormalShutdown "Electric power steering (primary): a031 abnormal shutdown";
+CM_ SG_ 914 EPAS3P_a032_vRegOutputUv "Electric power steering (primary): a032 v reg output uv";
+CM_ SG_ 914 EPAS3P_a033_vRegOutputOv "Electric power steering (primary): a033 v reg output ov";
+CM_ SG_ 914 EPAS3P_a034_vRegError "Electric power steering (primary): a034 v reg error";
+CM_ SG_ 914 EPAS3P_a035_vbbSupplyUv "Electric power steering (primary): a035 vbb supply uv";
+CM_ SG_ 914 EPAS3P_a036_vbbSupplyOv "Electric power steering (primary): a036 vbb supply ov";
+CM_ SG_ 914 EPAS3P_a037_motPos1ParityError "Electric power steering (primary): a037 mot pos1 parity error";
+CM_ SG_ 914 EPAS3P_a038_motPos1Uv "Electric power steering (primary): a038 mot pos1 uv";
+CM_ SG_ 914 EPAS3P_a039_motPos1MagnetMia "Electric power steering (primary): a039 mot pos1 magnet mia";
+CM_ SG_ 914 EPAS3P_a040_motPos1LogicError "Electric power steering (primary): a040 mot pos1 logic error";
+CM_ SG_ 914 EPAS3P_a041_motPos1tempError "Electric power steering (primary): a041 mot pos1temp error";
+CM_ SG_ 914 EPAS3P_a042_motPos2ParityError "Electric power steering (primary): a042 mot pos2 parity error";
+CM_ SG_ 914 EPAS3P_a043_motPos2Uv "Electric power steering (primary): a043 mot pos2 uv";
+CM_ SG_ 914 EPAS3P_a044_motPos2MagnetMia "Electric power steering (primary): a044 mot pos2 magnet mia";
+CM_ SG_ 914 EPAS3P_a045_motPos2LogicError "Electric power steering (primary): a045 mot pos2 logic error";
+CM_ SG_ 914 EPAS3P_a046_motPos2tempError "Electric power steering (primary): a046 mot pos2temp error";
+CM_ SG_ 914 EPAS3P_a047_motPosCorrError "Electric power steering (primary): a047 mot pos corr error";
+CM_ SG_ 914 EPAS3P_a048_motPosCalError "Electric power steering (primary): a048 mot pos cal error";
+CM_ SG_ 914 EPAS3P_a049_piCtrlError "Electric power steering (primary): a049 pi ctrl error";
+CM_ SG_ 914 EPAS3P_a050_mcuSmuError "Electric power steering (primary): a050 mcu smu error";
+CM_ SG_ 914 EPAS3P_a051_mcuSupError "Electric power steering (primary): a051 mcu sup error";
+CM_ SG_ 914 EPAS3P_a052_intWatchdogError "Electric power steering (primary): a052 int watchdog error";
+CM_ SG_ 914 EPAS3P_a053_extWatchdogError "Electric power steering (primary): a053 ext watchdog error";
+CM_ SG_ 914 EPAS3P_a054_memoryProtectError "Electric power steering (primary): a054 memory protect error";
+CM_ SG_ 914 EPAS3P_a055_floatPointError "Electric power steering (primary): a055 float point error";
+CM_ SG_ 914 EPAS3P_a056_battUv "Electric power steering (primary): a056 batt uv";
+CM_ SG_ 914 EPAS3P_a057_battUvReduced "Electric power steering (primary): a057 batt uv reduced";
+CM_ SG_ 914 EPAS3P_a058_battOv "Electric power steering (primary): a058 batt ov";
+CM_ SG_ 914 EPAS3P_a059_battOvReduced "Electric power steering (primary): a059 batt ov reduced";
+CM_ SG_ 914 EPAS3P_a060_battBridgeDiff "Electric power steering (primary): a060 batt bridge diff";
+CM_ SG_ 914 EPAS3P_a061_bridgeUv "Electric power steering (primary): a061 bridge uv";
+CM_ SG_ 914 EPAS3P_a062_assistCorrError "Electric power steering (primary): a062 assist corr error";
+CM_ SG_ 914 EPAS3P_a063_dampCorrError "Electric power steering (primary): a063 damp corr error";
+CM_ SG_ 914 EPAS3P_a064_phaseCompCorrError "Electric power steering (primary): a064 phase comp corr error";
+CM_ SG_ 914 EPAS3P_a065_trqTarCorrError "Electric power steering (primary): a065 trq tar corr error";
+CM_ SG_ 914 EPAS3P_a066_returnCorrError "Electric power steering (primary): a066 return corr error";
+CM_ SG_ 914 EPAS3P_a067_yawDampCorrError "Electric power steering (primary): a067 yaw damp corr error";
+CM_ SG_ 914 EPAS3P_a068_hystCorrError "Electric power steering (primary): a068 hyst corr error";
+CM_ SG_ 914 EPAS3P_a069_eacCorrError "Electric power steering (primary): a069 eac corr error";
+CM_ SG_ 914 EPAS3P_a070_hodCorrError "Electric power steering (primary): a070 hod corr error";
+CM_ SG_ 914 EPAS3P_a071_vehSpdCorrError "Electric power steering (primary): a071 veh spd corr error";
+CM_ SG_ 914 EPAS3P_a072_motFeedFwdError "Electric power steering (primary): a072 mot feed fwd error";
+CM_ SG_ 914 EPAS3P_a073_motParEstError "Electric power steering (primary): a073 mot par est error";
+CM_ SG_ 914 EPAS3P_a074_overHeatProtect "Electric power steering (primary): a074 over heat protect";
+CM_ SG_ 914 EPAS3P_a075_fspPwrCut "Electric power steering (primary): a075 fsp pwr cut";
+CM_ SG_ 914 EPAS3P_a076_tempSensOutofRange "Electric power steering (primary): a076 temp sens outof range";
+CM_ SG_ 914 EPAS3P_a077_highSideFetError "Electric power steering (primary): a077 high side fet error";
+CM_ SG_ 914 EPAS3P_a078_phaseDisconnectError "Electric power steering (primary): a078 phase disconnect error";
+CM_ SG_ 914 EPAS3P_a079_backupCurrentPlaus "Electric power steering (primary): a079 backup current plaus";
+CM_ SG_ 914 EPAS3P_a080_ecuInitArbError "Electric power steering (primary): a080 ecu init arb error";
+CM_ SG_ 914 EPAS3P_a081_coggCompError "Electric power steering (primary): a081 cogg comp error";
+CM_ SG_ 914 EPAS3P_a082_polarityCalError "Electric power steering (primary): a082 polarity cal error";
+CM_ SG_ 914 EPAS3P_a083_crcMismatch "Electric power steering (primary): a083 crc mismatch";
+CM_ SG_ 914 EPAS3P_a084_eacCancelled "Electric power steering (primary): a084 eac cancelled";
+CM_ SG_ 914 EPAS3P_a085_canBusOff "Electric power steering (primary): a085 can bus off";
+CM_ SG_ 914 EPAS3P_a086_dasMia "Electric power steering (primary): a086 das mia";
+CM_ SG_ 914 EPAS3P_a087_dasCntError "Electric power steering (primary): a087 das cnt error";
+CM_ SG_ 914 EPAS3P_a088_dasCsError "Electric power steering (primary): a088 das cs error";
+CM_ SG_ 914 EPAS3P_a089_espWsMia "Electric power steering (primary): a089 esp ws mia";
+CM_ SG_ 914 EPAS3P_a090_espWsCntError "Electric power steering (primary): a090 esp ws cnt error";
+CM_ SG_ 914 EPAS3P_a091_espWsCsError "Electric power steering (primary): a091 esp ws cs error";
+CM_ SG_ 914 EPAS3P_a092_espWrMia "Electric power steering (primary): a092 esp wr mia";
+CM_ SG_ 914 EPAS3P_a093_espWrCntError "Electric power steering (primary): a093 esp wr cnt error";
+CM_ SG_ 914 EPAS3P_a094_espWrCsError "Electric power steering (primary): a094 esp wr cs error";
+CM_ SG_ 914 EPAS3P_a095_espWsStatus "Electric power steering (primary): a095 esp ws status";
+CM_ SG_ 914 EPAS3P_a096_rcmMia "Electric power steering (primary): a096 rcm mia";
+CM_ SG_ 914 EPAS3P_a097_rcmCntError "Electric power steering (primary): a097 rcm cnt error";
+CM_ SG_ 914 EPAS3P_a098_rcmCsError "Electric power steering (primary): a098 rcm cs error";
+CM_ SG_ 914 EPAS3P_a099_yawRateStatus "Electric power steering (primary): a099 yaw rate status";
+CM_ SG_ 914 EPAS3P_a100_diMia "Electric power steering (primary): a100 di mia";
+CM_ SG_ 914 EPAS3P_a101_diCntError "Electric power steering (primary): a101 di cnt error";
+CM_ SG_ 914 EPAS3P_a102_diCsError "Electric power steering (primary): a102 di cs error";
+CM_ SG_ 914 EPAS3P_a103_vcFrontMia "Electric power steering (primary): a103 vc front mia";
+CM_ SG_ 914 EPAS3P_a104_vcFrontCntError "Electric power steering (primary): a104 vc front cnt error";
+CM_ SG_ 914 EPAS3P_a105_vcFrontCsError "Electric power steering (primary): a105 vc front cs error";
+CM_ SG_ 914 EPAS3P_a106_vcFrontTempMia "Electric power steering (primary): a106 vc front temp mia";
+CM_ SG_ 914 EPAS3P_a107_uiTuneReqMia "Electric power steering (primary): a107 ui tune req mia";
+CM_ SG_ 914 EPAS3P_a108_uiTuneReqCntError "Electric power steering (primary): a108 ui tune req cnt error";
+CM_ SG_ 914 EPAS3P_a109_uiTuneReqCsError "Electric power steering (primary): a109 ui tune req cs error";
+CM_ SG_ 914 EPAS3P_a110_sasMia "Electric power steering (primary): a110 sas mia";
+CM_ SG_ 914 EPAS3P_a111_sasCntError "Electric power steering (primary): a111 sas cnt error";
+CM_ SG_ 914 EPAS3P_a112_sasCsError "Electric power steering (primary): a112 sas cs error";
+CM_ SG_ 914 EPAS3P_a113_sasStatusError "Electric power steering (primary): a113 sas status error";
+CM_ SG_ 914 EPAS3P_a114_gtwConfigMia "Electric power steering (primary): a114 gtw config mia";
+CM_ SG_ 914 EPAS3P_a115_ecuStatMia "Electric power steering (primary): a115 ecu stat mia";
+CM_ SG_ 914 EPAS3P_a116_ecuStatCntError "Electric power steering (primary): a116 ecu stat cnt error";
+CM_ SG_ 914 EPAS3P_a117_ecuStatCrcError "Electric power steering (primary): a117 ecu stat crc error";
+CM_ SG_ 914 EPAS3P_a118_privateBusOff "Electric power steering (primary): a118 private bus off";
+CM_ SG_ 914 EPAS3P_a119_pvtEcuStatMia "Electric power steering (primary): a119 pvt ecu stat mia";
+CM_ SG_ 914 EPAS3P_a120_pvtEcuStatCntError "Electric power steering (primary): a120 pvt ecu stat cnt error";
+CM_ SG_ 914 EPAS3P_a121_pvtEcuStatCrcError "Electric power steering (primary): a121 pvt ecu stat crc error";
+CM_ SG_ 914 EPAS3P_a122_olpActive "Electric power steering (primary): a122 olp active";
+CM_ SG_ 914 EPAS3P_a123_combEcu2StatFail "Electric power steering (primary): a123 comb ecu2 stat fail";
+CM_ SG_ 914 EPAS3P_a124_tempSensStuckInRange "Electric power steering (primary): a124 temp sens stuck in range";
+CM_ SG_ 914 EPAS3P_a125_trqSensTrimOutRange "Electric power steering (primary): a125 trq sens trim out range";
+CM_ SG_ 914 EPAS3P_a126_apsMia "Electric power steering (primary): a126 aps mia";
+CM_ SG_ 914 EPAS3P_a127_apsCntError "Electric power steering (primary): a127 aps cnt error";
+CM_ SG_ 914 EPAS3P_a128_apsCsError "Electric power steering (primary): a128 aps cs error";
+CM_ SG_ 914 EPAS3P_a129_combEcu1StatFail "Electric power steering (primary): a129 comb ecu1 stat fail";
+CM_ SG_ 914 EPAS3P_a130_sasOffsetNotCal "Electric power steering (primary): a130 sas offset not cal";
+CM_ SG_ 914 EPAS3P_a131_phaseFeedbackError "Electric power steering (primary): a131 phase feedback error";
+CM_ SG_ 914 EPAS3P_a132_motFeedFwdCounter25 "Electric power steering (primary): a132 mot feed fwd counter25";
+CM_ SG_ 914 EPAS3P_a133_motFeedFwdCounter50 "Electric power steering (primary): a133 mot feed fwd counter50";
+CM_ SG_ 914 EPAS3P_a134_motFeedFwdCounter85 "Electric power steering (primary): a134 mot feed fwd counter85";
+CM_ SG_ 914 EPAS3P_a135_piCtrlCounter25 "Electric power steering (primary): a135 pi ctrl counter25";
+CM_ SG_ 914 EPAS3P_a136_piCtrlCounter50 "Electric power steering (primary): a136 pi ctrl counter50";
+CM_ SG_ 914 EPAS3P_a137_piCtrlCounter85 "Electric power steering (primary): a137 pi ctrl counter85";
+CM_ SG_ 914 EPAS3P_a144_diSpdMia "Electric power steering (primary): a144 di spd mia";
+CM_ SG_ 914 EPAS3P_a145_diSpdCntError "Electric power steering (primary): a145 di spd cnt error";
+CM_ SG_ 914 EPAS3P_a146_diSpdCsError "Electric power steering (primary): a146 di spd cs error";
+CM_ SG_ 914 EPAS3P_a147_backupVehSpeed "Electric power steering (primary): a147 backup veh speed";
+CM_ SG_ 914 EPAS3P_a148_vMaxAssist "Electric power steering (primary): a148 v max assist";
+CM_ SG_ 914 EPAS3P_a149_currentSensPathSwitc "Electric power steering (primary): a149 current sens path switch";
+CM_ SG_ 914 EPAS3P_a150_currentSensOffsetDet "Electric power steering (primary): a150 current sens offset detect";
+CM_ SG_ 914 EPAS3P_a151_dcsCboot "Electric power steering (primary): a151 dcs cboot";
+CM_ SG_ 914 EPAS3P_a152_dcsDiagReg "Electric power steering (primary): a152 dcs diag reg";
+CM_ SG_ 914 EPAS3P_a153_dcsInitOffset "Electric power steering (primary): a153 dcs init offset";
+CM_ SG_ 914 EPAS3P_a154_assistTorqueDisabled "Electric power steering (primary): a154 assist torque disabled";
+CM_ SG_ 914 EPAS3P_a155_backupEacActive "Electric power steering (primary): a155 backup eac active";
+CM_ SG_ 914 EPAS3P_a156_angleSensorDivergenc "Electric power steering (primary): a156 angle sensor divergence";
+CM_ SG_ 914 EPAS3P_a157_pmState2Mia "Electric power steering (primary): a157 pm state2 mia";
+CM_ SG_ 914 EPAS3P_a158_pmState2CntError "Electric power steering (primary): a158 pm state2 cnt error";
+CM_ SG_ 914 EPAS3P_a159_pmState2CsError "Electric power steering (primary): a159 pm state2 cs error";
+CM_ SG_ 914 EPAS3P_a160_latentFaultTestResul "Electric power steering (primary): a160 latent fault test result";
+CM_ SG_ 914 EPAS3P_a161_initTestPhaDisconnIn "Electric power steering (primary): a161 init test pha disconn info";
+CM_ SG_ 914 EPAS3P_a162_initTestHSDFetInfo "Electric power steering (primary): a162 init test HSD fet info";
+CM_ SG_ 914 EPAS3P_a163_initTestGateDrvrInfo "Electric power steering (primary): a163 init test gate drvr info";
+CM_ SG_ 914 EPAS3P_a164_initTestDCSInfo "Electric power steering (primary): a164 init test DCS info";
+CM_ SG_ 914 EPAS3P_a165_epbStatusMia "Electric power steering (primary): a165 epb status mia";
+CM_ SG_ 914 EPAS3P_a166_epbStatusCntError "Electric power steering (primary): a166 epb status cnt error";
+CM_ SG_ 914 EPAS3P_a167_epbStatusCsError "Electric power steering (primary): a167 epb status cs error";
+CM_ SG_ 914 EPAS3P_a168_torsionBarTorqueQfDe "Electric power steering (primary): a168 torsion bar torque qf degraded";
+CM_ SG_ 914 EPAS3P_a169_difMia "Electric power steering (primary): a169 dif mia";
+CM_ SG_ 914 EPAS3P_a170_difCntError "Electric power steering (primary): a170 dif cnt error";
+CM_ SG_ 914 EPAS3P_a171_difCsError "Electric power steering (primary): a171 dif cs error";
+CM_ BO_ 977 "Electric power steering (primary) message: angle calibration; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 977 EPAS3P_appliedAngleOffset "This represents the angle delta between the absolute steering angle reference and what EPAS estimates to be straight ahead. The steering angle offset can change up to 5deg at the beginning of each drive cycle.";
 CM_ SG_ 977 EPAS3P_calculatedAngleOffset "Reports the calculated steering angle offset learned between the Steering Column Control Module (SCCM) and the Electronic Power Assist Steering (EPAS) steering angle.";
 CM_ SG_ 977 EPAS3P_resyncStatus "Electric power steering (primary): resync status";
 CM_ SG_ 977 EPAS3P_pullDriftLongTermTrq "The learned, long term pull drift or road crown compensation torque that the rack is applying to the steering wheel.";
 CM_ SG_ 977 EPAS3P_pullDriftCompTrq "The current pull drift or road crown compensation torque that the rack is applying to the steering wheel.";
 CM_ SG_ 977 EPAS3P_learnedSCCMOffset "Electric power steering (primary): learned SCCM offset";
-CM_ BO_ 817 "Electric power steering (primary) message: info";
+CM_ BO_ 817 "Electric power steering (primary) message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 817 EPAS3P_infoIndex "Electric power steering (primary): info index";
 CM_ SG_ 817 EPAS3P_infoBuildType "Electric power steering (primary): info build type";
 CM_ SG_ 817 EPAS3P_infoComponentID "Electric power steering (primary): info component ID";
@@ -1138,7 +1551,7 @@ CM_ SG_ 817 EPAS3P_infoApplicationCRC "Electric power steering (primary): info a
 CM_ SG_ 817 EPAS3P_infoBootUdsProtoVersion "Electric power steering (primary): info boot uds proto version";
 CM_ SG_ 817 EPAS3P_infoBootloaderCRC "Electric power steering (primary): info bootloader CRC";
 CM_ SG_ 817 EPAS3P_infoSubcomponent2 "Electric power steering (primary): info subcomponent2";
-CM_ BO_ 880 "Electric power steering (primary) message: sys status";
+CM_ BO_ 880 "Electric power steering (primary) message: sys status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 880 EPAS3P_steeringRackForce "The real time, estimated force applied by the steering rack to the tie rods; raw 1023 = signal not available (SNA)";
 CM_ SG_ 880 EPAS3P_steeringFault "Electric power steering (primary): steering fault";
 CM_ SG_ 880 EPAS3P_steeringReduced "Electric power steering (primary): steering reduced";
@@ -1152,7 +1565,7 @@ CM_ SG_ 880 EPAS3P_sysStatusCounter "Electric power steering (primary): sys stat
 CM_ SG_ 880 EPAS3P_driverlessState "Electric power steering (primary): driverless state";
 CM_ SG_ 880 EPAS3P_eacStatus "Electric power steering (primary): eac status";
 CM_ SG_ 880 EPAS3P_sysStatusChecksum "Electric power steering (primary): sys status checksum";
-CM_ BO_ 909 "Electronic stability control message: party3";
+CM_ BO_ 909 "Electronic stability control message: party3; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 909 ESP_party3Crc "Electronic stability control: party3 crc";
 CM_ SG_ 909 ESP_party3Counter "Electronic stability control: party3 counter";
 CM_ SG_ 909 ESP_absActive "Electronic stability control: abs active";
@@ -1164,7 +1577,7 @@ CM_ SG_ 909 ESP_decoupledBrakePressOffsetCom "Master cylinder pressure sensor of
 CM_ SG_ 909 ESP_privateVehicleSpdQF "ESP private vehicle speed qualifier";
 CM_ SG_ 909 ESP_brakeMasterCylPress "Master cylinder pressure measured in the ESP; raw 1023 = signal not available (SNA)";
 CM_ SG_ 909 ESP_brakeMasterCylPressQF "Reports the brake master cylinder pressure signal (ESP_brakeMasterCylPress) qualification status.";
-CM_ BO_ 325 "Electronic stability control message: status";
+CM_ BO_ 325 "Electronic stability control message: status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 325 ESP_statusChecksum "Electronic stability control: status checksum";
 CM_ SG_ 325 ESP_statusCounter "Electronic stability control: status counter";
 CM_ SG_ 325 ESP_espModeActive "Electronic stability control: esp mode active";
@@ -1191,7 +1604,7 @@ CM_ SG_ 325 ESP_decoupledBrakePressEst "Reports the master cylinder pressure est
 CM_ SG_ 325 ESP_ebrStandstillSkid "Electronic stability control: ebr standstill skid";
 CM_ SG_ 325 ESP_ebrStatus "Electronic stability control: ebr status";
 CM_ SG_ 325 ESP_brakeTorqueTarget "Electronic stability control: brake torque target";
-CM_ BO_ 925 "Electric brake booster message: status";
+CM_ BO_ 925 "Electric brake booster message: status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 925 IBST_statusChecksum "Electric brake booster: status checksum";
 CM_ SG_ 925 IBST_statusCounter "Electric brake booster: status counter";
 CM_ SG_ 925 IBST_iBoosterStatus "Indication of iBooster functional state";
@@ -1199,17 +1612,17 @@ CM_ SG_ 925 IBST_driverBrakeApply "Indicates when the driver applies the brake p
 CM_ SG_ 925 IBST_internalState "Indication of iBooster internal state";
 CM_ SG_ 925 IBST_sInputRodDriver "IBST estimated input rod stroke";
 CM_ SG_ 925 IBST_LVPowerModeState "Electric brake booster: LV power mode state";
-CM_ BO_ 1316 "PMF ECU message: mfg data";
+CM_ BO_ 1316 "PMF ECU message: mfg data; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1316 PMF_processorDieIdLot "PMF ECU: processor die id lot";
 CM_ SG_ 1316 PMF_processorDieIdWafer "PMF ECU: processor die id wafer";
 CM_ SG_ 1316 PMF_processorDieIdX "PMF ECU: processor die id x";
 CM_ SG_ 1316 PMF_processorDieIdY "PMF ECU: processor die id y";
-CM_ BO_ 1364 "PMR ECU message: mfg data";
+CM_ BO_ 1364 "PMR ECU message: mfg data; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1364 PMR_processorDieIdLot "PMR ECU: processor die id lot";
 CM_ SG_ 1364 PMR_processorDieIdWafer "PMR ECU: processor die id wafer";
 CM_ SG_ 1364 PMR_processorDieIdX "PMR ECU: processor die id x";
 CM_ SG_ 1364 PMR_processorDieIdY "PMR ECU: processor die id y";
-CM_ BO_ 1973 "PM ECU message: itpms display";
+CM_ BO_ 1973 "PM ECU message: itpms display; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1973 PM_itpmsDisplaySelector "PM ECU: itpms display selector";
 CM_ SG_ 1973 PM_indirectTPMSTellTale "Indirect TPMS UI telltale status to indicate system availability";
 CM_ SG_ 1973 PM_indirectTPMSDisplayState "Indirect TPMS UI calibration state";
@@ -1224,7 +1637,7 @@ CM_ SG_ 1973 PM_fusedPressureEstimateFrL "Reports the estimated tire pressure at
 CM_ SG_ 1973 PM_fusedPressureEstimateFrR "Reports the estimated tire pressure at each wheel based on Indirect Tire Pressure Monitoring System (ITPMS) relative wheel speed and Global Navigation Satellite System (GNSS) absolute radius data.";
 CM_ SG_ 1973 PM_fusedPressureEstimateReL "Reports the estimated tire pressure at each wheel based on Indirect Tire Pressure Monitoring System (ITPMS) relative wheel speed and Global Navigation Satellite System (GNSS) absolute radius data.";
 CM_ SG_ 1973 PM_fusedPressureEstimateReR "Reports the estimated tire pressure at each wheel based on Indirect Tire Pressure Monitoring System (ITPMS) relative wheel speed and Global Navigation Satellite System (GNSS) absolute radius data.";
-CM_ BO_ 2038 "PM ECU message: vdc debug";
+CM_ BO_ 2038 "PM ECU message: vdc debug; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 2038 PM_vdcDebugSelector "PM ECU: vdc debug selector";
 CM_ SG_ 2038 PM_VDCA_TCSlipTargetMod_RA_Fwd "PM ECU: VDCA TC slip target mod RA fwd";
 CM_ SG_ 2038 PM_VDCA_TCSlipTargetMod_RA_Rwd "PM ECU: VDCA TC slip target mod RA rwd";
@@ -1245,7 +1658,7 @@ CM_ SG_ 2038 PM_VSE_splitMuTotalMz "PM ECU: VSE split mu total mz";
 CM_ SG_ 2038 PM_VSE_attitudeBankAngle "PM ECU: VSE attitude bank angle";
 CM_ SG_ 2038 PM_VSE_attitudeDBetaInControl "PM ECU: VSE attitude d beta in control";
 CM_ SG_ 2038 PM_VSE_roadWheelAngleAverage "PM ECU: VSE road wheel angle average";
-CM_ BO_ 17 "Restraint control module message: collision";
+CM_ BO_ 17 "Restraint control module message: collision; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 17 RCM_collisionChecksum "Restraint control module: collision checksum";
 CM_ SG_ 17 RCM_collisionCounter "Restraint control module: collision counter";
 CM_ SG_ 17 RCM_collisionRear "Indicates that a rear collision occurred; raw 3 = signal not available (SNA)";
@@ -1255,7 +1668,7 @@ CM_ SG_ 17 RCM_collisionFront "Indicates that a frontal collision occurred; raw 
 CM_ SG_ 17 RCM_collisionRollover "Indicates that a rollover has occurred; raw 3 = signal not available (SNA)";
 CM_ SG_ 17 RCM_collisionPedPro "Indicates that a pedestrian impact has occurred; raw 3 = signal not available (SNA)";
 CM_ SG_ 17 RCM_collisionSeverity "Collision severity";
-CM_ BO_ 289 "Restraint control module message: near deploy";
+CM_ BO_ 289 "Restraint control module message: near deploy; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 289 RCM_nearDeployChecksum "Restraint control module: near deploy checksum";
 CM_ SG_ 289 RCM_nearDeployCounter "Restraint control module: near deploy counter";
 CM_ SG_ 289 RCM_nearDeployRear "Indicates that a rear near deploy event has occurred. No airbags have been deployed; raw 3 = signal not available (SNA)";
@@ -1264,7 +1677,7 @@ CM_ SG_ 289 RCM_nearDeployLeft "Indicates that a left side near deploy event has
 CM_ SG_ 289 RCM_nearDeployFront "Indicates that a frontal near deploy event has occurred. No airbags have been deployed; raw 3 = signal not available (SNA)";
 CM_ SG_ 289 RCM_nearDeployRollover "Indicates that a roll over near deploy event has occurred. No airbags have been deployed; raw 3 = signal not available (SNA)";
 CM_ SG_ 289 RCM_crashAlgoWakeup "Crash Algorithm Wakeup status; raw 3 = signal not available (SNA)";
-CM_ BO_ 1618 "VCBATT0 ECU message: info";
+CM_ BO_ 1618 "VCBATT0 ECU message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1618 VCBATT0_infoIndex "VCBATT0 ECU: info index";
 CM_ SG_ 1618 VCBATT0_infoBuildType "VCBATT0 ECU: info build type";
 CM_ SG_ 1618 VCBATT0_infoBuildConfigId "VCBATT0 ECU: info build config id";
@@ -1279,7 +1692,7 @@ CM_ SG_ 1618 VCBATT0_infoAppGitHash "VCBATT0 ECU: info app git hash";
 CM_ SG_ 1618 VCBATT0_infoBootGitHash "VCBATT0 ECU: info boot git hash";
 CM_ SG_ 1618 VCBATT0_infoBootUdsProtoVersion "VCBATT0 ECU: info boot uds proto version";
 CM_ SG_ 1618 VCBATT0_infoBootCrc "VCBATT0 ECU: info boot crc";
-CM_ BO_ 1994 "VCCC ECU message: info";
+CM_ BO_ 1994 "VCCC ECU message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1994 VCCC_infoIndex "VCCC ECU: info index";
 CM_ SG_ 1994 VCCC_infoBuildType "VCCC ECU: info build type";
 CM_ SG_ 1994 VCCC_infoBuildConfigId "VCCC ECU: info build config id";
@@ -1294,7 +1707,7 @@ CM_ SG_ 1994 VCCC_infoAppGitHash "VCCC ECU: info app git hash";
 CM_ SG_ 1994 VCCC_infoBootGitHash "VCCC ECU: info boot git hash";
 CM_ SG_ 1994 VCCC_infoBootUdsProtoVersion "VCCC ECU: info boot uds proto version";
 CM_ SG_ 1994 VCCC_infoBootCrc "VCCC ECU: info boot crc";
-CM_ BO_ 260 "Front body controller message: party debug";
+CM_ BO_ 260 "Front body controller message: party debug; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 260 VCFRONT_vcleftHighPower "Front body controller: vcleft high power";
 CM_ SG_ 260 VCFRONT_vcrightHighPower "Front body controller: vcright high power";
 CM_ SG_ 260 VCFRONT_uiHighPower "Front body controller: ui high power";
@@ -1313,7 +1726,7 @@ CM_ SG_ 260 VCFRONT_U16Init "Front body controller: U16 init";
 CM_ SG_ 260 VCFRONT_anyVehLoadShedActiveDBG "Front body controller: any veh load shed active DBG";
 CM_ SG_ 260 VCFRONT_battVoltage "Front body controller: batt voltage";
 CM_ SG_ 260 VCFRONT_battCurrent "Front body controller: batt current";
-CM_ BO_ 258 "Left body controller message: door status";
+CM_ BO_ 258 "Left body controller message: door status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 258 VCLEFT_doorClosureStatusFront "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
 CM_ SG_ 258 VCLEFT_doorClosureStatusRear "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
 CM_ SG_ 258 VCLEFT_frontLatchSwitch "State of front left door latch switch representing door open/closed. 0 is open and 1 is closed";
@@ -1339,7 +1752,7 @@ CM_ SG_ 258 VCLEFT_mirrorHeatState "Left body controller: mirror heat state; raw
 CM_ SG_ 258 VCLEFT_rearHandlePulledPersist "Left body controller: rear handle pulled persist";
 CM_ SG_ 258 VCLEFT_frontHandlePulledPersist "Left body controller: front handle pulled persist";
 CM_ SG_ 258 VCLEFT_mirrorDipped "Reports if the side view mirrors in are in the dipped position.";
-CM_ BO_ 546 "Left body controller message: epbm status";
+CM_ BO_ 546 "Left body controller message: epbm status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 546 VCLEFT_cdpRequestState "If the Electronic Parking Brake makes a Controlled Deceleration for Parking Brake request, when cdpOkayToRequest is EPB_CDP_REQUEST_INVALID, cdpRequestState shall transition to EPB_CDP_REQUEST_INVALID, untill the Electronic Parking Brake Monitor enters unitStatus PARKED. Stability Control listens to this signal to qualify Controlled Deceleration for Parking Brake requests from the Electronic Parking Brake.";
 CM_ SG_ 546 VCLEFT_epbmSystemStatusQF "Left body controller: epbm system status QF";
 CM_ SG_ 546 VCLEFT_epbmUnitStatus "Electronic Parking Brake Monitors state.";
@@ -1347,7 +1760,7 @@ CM_ SG_ 546 VCLEFT_epbmCdpState "Left body controller: epbm cdp state";
 CM_ SG_ 546 VCLEFT_epbmRedundantBrakingEnabl "Left body controller: epbm redundant braking enabled";
 CM_ SG_ 546 VCLEFT_epbmStatusCounter "Left body controller: epbm status counter";
 CM_ SG_ 546 VCLEFT_epbmStatusChecksum "Left body controller: epbm status checksum";
-CM_ BO_ 778 "Left body controller message: restraint status";
+CM_ BO_ 778 "Left body controller message: restraint status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 778 VCLEFT_frontOccupancyStatus "Left body controller: front occupancy status; raw 7 = signal not available (SNA)";
 CM_ SG_ 778 VCLEFT_frontBuckleStatus "Status of front left seatbelt buckle";
 CM_ SG_ 778 VCLEFT_rearLeftOccupancyStatus "Status of rear left seat occupancy sensor";
@@ -1360,7 +1773,7 @@ CM_ SG_ 778 VCLEFT_3RowLeftABStatus "Reports status of third row left airbag sup
 CM_ SG_ 778 VCLEFT_3RowLeftBuckleStatus "Reports status of third row left seatbelt buckle";
 CM_ SG_ 778 VCLEFT_restraintStatusCounter "Left body controller: restraint status counter";
 CM_ SG_ 778 VCLEFT_restraintStatusChecksum "Left body controller: restraint status checksum";
-CM_ BO_ 1124 "Right body controller message: AP hvac state1 hz";
+CM_ BO_ 1124 "Right body controller message: AP hvac state1 hz; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1124 VCRIGHT_AP_hvacState1HzIndex "Right body controller: AP hvac state1 hz index";
 CM_ SG_ 1124 VCRIGHT_AP_tempCameraModele_0001 "Right body controller: AP temp camera modeled windshield out; raw 255 = signal not available (SNA)";
 CM_ SG_ 1124 VCRIGHT_AP_tempCameraModeledWind "Right body controller: AP temp camera modeled windshield in; raw 255 = signal not available (SNA)";
@@ -1370,7 +1783,7 @@ CM_ SG_ 1124 VCRIGHT_AP_maxAchievableASideTem "Right body controller: AP max ach
 CM_ SG_ 1124 VCRIGHT_AP_cameraModeledPocketWa "Right body controller: AP camera modeled pocket water mass; raw 1023 = signal not available (SNA)";
 CM_ SG_ 1124 VCRIGHT_AP_humidityModelInitStat "Right body controller: AP humidity model init status";
 CM_ SG_ 1124 VCRIGHT_AP_humidityModelStatus "Right body controller: AP humidity model status";
-CM_ BO_ 259 "Right body controller message: door status";
+CM_ BO_ 259 "Right body controller message: door status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 259 VCRIGHT_doorClosureStatusFront "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
 CM_ SG_ 259 VCRIGHT_doorClosureStatusRear "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
 CM_ SG_ 259 VCRIGHT_frontLatchSwitch "State of front left door latch switch representing door open/closed. 0 is open and 1 is closed";
@@ -1396,7 +1809,7 @@ CM_ SG_ 259 VCRIGHT_mirrorDipped "Reports if the side view mirrors in are in the
 CM_ SG_ 259 VCRIGHT_trunkLatchStatus "State of the trunk latch; raw 0 = signal not available (SNA)";
 CM_ SG_ 259 VCRIGHT_mirrorRecallState "State of Mirror Recall.";
 CM_ SG_ 259 VCRIGHT_rearHandlePulledPersist "Right body controller: rear handle pulled persist";
-CM_ BO_ 611 "Right body controller message: epbm status";
+CM_ BO_ 611 "Right body controller message: epbm status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 611 VCRIGHT_cdpRequestState "If the Electronic Parking Brake makes a Controlled Deceleration for Parking Brake request, when cdpOkayToRequest is EPB_CDP_REQUEST_INVALID, cdpRequestState shall transition to EPB_CDP_REQUEST_INVALID, untill the Electronic Parking Brake Monitor enters unitStatus PARKED. Stability Control listens to this signal to qualify Controlled Deceleration for Parking Brake requests from the Electronic Parking Brake.";
 CM_ SG_ 611 VCRIGHT_epbmSystemStatusQF "Right body controller: epbm system status QF";
 CM_ SG_ 611 VCRIGHT_epbmUnitStatus "Electronic Parking Brake Monitors state.";
@@ -1404,7 +1817,7 @@ CM_ SG_ 611 VCRIGHT_epbmCdpState "Right body controller: epbm cdp state";
 CM_ SG_ 611 VCRIGHT_epbmRedundantBrakingEnab "Right body controller: epbm redundant braking enabled";
 CM_ SG_ 611 VCRIGHT_epbmStatusCounter "Right body controller: epbm status counter";
 CM_ SG_ 611 VCRIGHT_epbmStatusChecksum "Right body controller: epbm status checksum";
-CM_ BO_ 794 "Right body controller message: restraint status";
+CM_ BO_ 794 "Right body controller message: restraint status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 794 VCRIGHT_frontOccupancyStatus "Right body controller: front occupancy status; raw 7 = signal not available (SNA)";
 CM_ SG_ 794 VCRIGHT_frontBuckleStatus "Status of front right seatbelt buckle";
 CM_ SG_ 794 VCRIGHT_rearCenterBuckleStatus "Right body controller: rear center buckle status";
@@ -1419,6 +1832,7 @@ CM_ SG_ 794 VCRIGHT_occupantClassification "Right body controller: occupant clas
 CM_ SG_ 794 VCRIGHT_occupantClassificationQF "Right body controller: occupant classification QF";
 CM_ SG_ 794 VCRIGHT_classificationEnabled "Indicates whether the RCM should consume VCRIGHT occupant classification rather than another source such as OCS1P";
 CM_ SG_ 794 VCRIGHT_classificationEnabledQF "Indicates whether the VCRIGHT_classificationEnabled signal is valid";
+CM_ SG_ 794 VCRIGHT_3RowRightABStatus "Reports status of third row right airbag suppression; raw 2 = signal not available (SNA)";
 CM_ SG_ 794 VCRIGHT_restraintStatusCounter "Right body controller: restraint status counter";
 CM_ SG_ 794 VCRIGHT_restraintStatusChecksum "Right body controller: restraint status checksum";
 BA_DEF_ "BusType" STRING;
@@ -1552,6 +1966,12 @@ BA_ "VFrameFormat" BO_ 282 0;
 BA_ "GenMsgCycleTime" BO_ 615 1000;
 BA_ "GenMsgSendType" BO_ 615 0;
 BA_ "VFrameFormat" BO_ 615 0;
+BA_ "GenMsgCycleTime" BO_ 1426 0;
+BA_ "GenMsgSendType" BO_ 1426 8;
+BA_ "VFrameFormat" BO_ 1426 0;
+BA_ "GenMsgCycleTime" BO_ 914 1000;
+BA_ "GenMsgSendType" BO_ 914 0;
+BA_ "VFrameFormat" BO_ 914 0;
 BA_ "GenMsgCycleTime" BO_ 977 1000;
 BA_ "GenMsgSendType" BO_ 977 0;
 BA_ "VFrameFormat" BO_ 977 0;
@@ -1936,6 +2356,8 @@ BA_ "Confidence" SG_ 1270 DI_regenBlendingState 0;
 BA_ "Confidence" SG_ 1270 DI_executeBatLocStatus2 0;
 BA_ "Confidence" SG_ 822 DI_sysDrivePowerRated 0;
 BA_ "GenSigSNA" SG_ 822 DI_sysDrivePowerRated "511";
+BA_ "Confidence" SG_ 822 DI_performancePackage 0;
+BA_ "GenSigSNA" SG_ 822 DI_performancePackage "7";
 BA_ "Confidence" SG_ 822 DI_sysRegenPowerRated 0;
 BA_ "GenSigSNA" SG_ 822 DI_sysRegenPowerRated "255";
 BA_ "Confidence" SG_ 599 DI_speedChecksum 0;
@@ -2000,6 +2422,219 @@ BA_ "Confidence" SG_ 615 DI_vehicleEstimatesChecksum 0;
 BA_ "Confidence" SG_ 615 DI_gradeEstInternal 0;
 BA_ "Confidence" SG_ 615 DI_massConfidenceRLS 0;
 BA_ "Confidence" SG_ 615 DI_steeringAngleOffset 0;
+BA_ "Confidence" SG_ 1426 EPAS3P_alertID 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_alertState 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a147_transitionReason 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a149_pcbTemp 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a150_pcbTemp 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a150_phaUMainPathCalcDiff 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a150_phaVMainPathCalcDiff 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a150_otherECUAssistStatus 2;
+BA_ "SystemSignalLongSymbol" SG_ 1426 EPAS3P_a150_otherECUAssistStatus "EPAS3P_a150_otherECUAssistStatusFlag";
+BA_ "Confidence" SG_ 1426 EPAS3P_a155_vehicleSpeed 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a156_vehicleSpeed 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_currentSensorStatus 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_gateDriverStatus 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_highSideDisconnectFe 1;
+BA_ "SystemSignalLongSymbol" SG_ 1426 EPAS3P_a160_highSideDisconnectFe "EPAS3P_a160_highSideDisconnectFetStatus";
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_phaseDisconnectFetSt 1;
+BA_ "SystemSignalLongSymbol" SG_ 1426 EPAS3P_a160_phaseDisconnectFetSt "EPAS3P_a160_phaseDisconnectFetStatus";
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_inverterFetStatus 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_hsdFetFailShortTest 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_phaDisconnFailOpenTe 1;
+BA_ "SystemSignalLongSymbol" SG_ 1426 EPAS3P_a160_phaDisconnFailOpenTe "EPAS3P_a160_phaDisconnFailOpenTest";
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_phaDisconnFailShortT 1;
+BA_ "SystemSignalLongSymbol" SG_ 1426 EPAS3P_a160_phaDisconnFailShortT "EPAS3P_a160_phaDisconnFailShortTest";
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_invFetInitTest 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_gateDrvrInitTest 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a160_latentFaultTestTimeo 2;
+BA_ "SystemSignalLongSymbol" SG_ 1426 EPAS3P_a160_latentFaultTestTimeo "EPAS3P_a160_latentFaultTestTimeout";
+BA_ "Confidence" SG_ 1426 EPAS3P_a161_pcoMinPhaseBCurrent 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a161_pcoMaxPhaseBCurrent 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a161_pcoMinPhaseACurrent 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a161_pcoMaxPhaseACurrent 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a162_vBridgeClosed 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a162_vBridgeOpen 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a163_gateDrvrStatusReg 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a163_gateDrvrDiag2Reg 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a163_gateDrvrDiag1Reg 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a163_gateDrvrDiag0Reg 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a163_diagStatus 2;
+BA_ "Confidence" SG_ 1426 EPAS3P_a163_powerStatus 2;
+BA_ "Confidence" SG_ 1426 EPAS3P_a164_dcsRegister0x19 1;
+BA_ "Confidence" SG_ 1426 EPAS3P_a164_currentSensorRailed 2;
+BA_ "Confidence" SG_ 914 EPAS3P_matrixIndex 1;
+BA_ "Confidence" SG_ 914 EPAS3P_a001_sent1Mia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a002_sent1Error 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a003_trqSens1Supply 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a004_trqSens1Eeprom 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a005_sent2Mia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a006_sent2Error 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a007_trqSens2Supply 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a008_trqSens2Eeprom 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a009_sentDiff 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a010_trqSensCalError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a011_currentSensError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a012_currentSensCalError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a013_gateDriveError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a014_gateDriveTxError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a015_gateDriveEeprom 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a016_phaseUhighUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a017_phaseUlowUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a018_phaseVhighUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a019_phaseVlowUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a020_phaseWhighUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a021_phaseWlowUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a022_phaseUhighOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a023_phaseUlowOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a024_phaseVhighOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a025_phaseVlowOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a026_phaseWhighOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a027_phaseWlowOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a028_phaseUbootUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a029_phaseVbootUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a030_phaseWbootUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a031_abnormalShutdown 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a032_vRegOutputUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a033_vRegOutputOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a034_vRegError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a035_vbbSupplyUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a036_vbbSupplyOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a037_motPos1ParityError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a038_motPos1Uv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a039_motPos1MagnetMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a040_motPos1LogicError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a041_motPos1tempError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a042_motPos2ParityError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a043_motPos2Uv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a044_motPos2MagnetMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a045_motPos2LogicError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a046_motPos2tempError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a047_motPosCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a048_motPosCalError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a049_piCtrlError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a050_mcuSmuError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a051_mcuSupError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a052_intWatchdogError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a053_extWatchdogError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a054_memoryProtectError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a055_floatPointError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a056_battUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a057_battUvReduced 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a058_battOv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a059_battOvReduced 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a060_battBridgeDiff 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a061_bridgeUv 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a062_assistCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a063_dampCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a064_phaseCompCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a065_trqTarCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a066_returnCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a067_yawDampCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a068_hystCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a069_eacCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a070_hodCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a071_vehSpdCorrError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a072_motFeedFwdError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a073_motParEstError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a074_overHeatProtect 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a075_fspPwrCut 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a076_tempSensOutofRange 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a077_highSideFetError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a078_phaseDisconnectError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a079_backupCurrentPlaus 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a080_ecuInitArbError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a081_coggCompError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a082_polarityCalError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a083_crcMismatch 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a084_eacCancelled 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a085_canBusOff 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a086_dasMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a087_dasCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a088_dasCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a089_espWsMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a090_espWsCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a091_espWsCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a092_espWrMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a093_espWrCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a094_espWrCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a095_espWsStatus 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a096_rcmMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a097_rcmCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a098_rcmCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a099_yawRateStatus 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a100_diMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a101_diCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a102_diCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a103_vcFrontMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a104_vcFrontCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a105_vcFrontCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a106_vcFrontTempMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a107_uiTuneReqMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a108_uiTuneReqCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a109_uiTuneReqCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a110_sasMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a111_sasCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a112_sasCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a113_sasStatusError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a114_gtwConfigMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a115_ecuStatMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a116_ecuStatCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a117_ecuStatCrcError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a118_privateBusOff 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a119_pvtEcuStatMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a120_pvtEcuStatCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a121_pvtEcuStatCrcError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a122_olpActive 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a123_combEcu2StatFail 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a124_tempSensStuckInRange 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a125_trqSensTrimOutRange 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a126_apsMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a127_apsCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a128_apsCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a129_combEcu1StatFail 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a130_sasOffsetNotCal 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a131_phaseFeedbackError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a132_motFeedFwdCounter25 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a133_motFeedFwdCounter50 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a134_motFeedFwdCounter85 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a135_piCtrlCounter25 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a136_piCtrlCounter50 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a137_piCtrlCounter85 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a144_diSpdMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a145_diSpdCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a146_diSpdCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a147_backupVehSpeed 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a148_vMaxAssist 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a149_currentSensPathSwitc 2;
+BA_ "SystemSignalLongSymbol" SG_ 914 EPAS3P_a149_currentSensPathSwitc "EPAS3P_a149_currentSensPathSwitch";
+BA_ "Confidence" SG_ 914 EPAS3P_a150_currentSensOffsetDet 2;
+BA_ "SystemSignalLongSymbol" SG_ 914 EPAS3P_a150_currentSensOffsetDet "EPAS3P_a150_currentSensOffsetDetect";
+BA_ "Confidence" SG_ 914 EPAS3P_a151_dcsCboot 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a152_dcsDiagReg 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a153_dcsInitOffset 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a154_assistTorqueDisabled 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a155_backupEacActive 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a156_angleSensorDivergenc 2;
+BA_ "SystemSignalLongSymbol" SG_ 914 EPAS3P_a156_angleSensorDivergenc "EPAS3P_a156_angleSensorDivergence";
+BA_ "Confidence" SG_ 914 EPAS3P_a157_pmState2Mia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a158_pmState2CntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a159_pmState2CsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a160_latentFaultTestResul 2;
+BA_ "SystemSignalLongSymbol" SG_ 914 EPAS3P_a160_latentFaultTestResul "EPAS3P_a160_latentFaultTestResult";
+BA_ "Confidence" SG_ 914 EPAS3P_a161_initTestPhaDisconnIn 2;
+BA_ "SystemSignalLongSymbol" SG_ 914 EPAS3P_a161_initTestPhaDisconnIn "EPAS3P_a161_initTestPhaDisconnInfo";
+BA_ "Confidence" SG_ 914 EPAS3P_a162_initTestHSDFetInfo 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a163_initTestGateDrvrInfo 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a164_initTestDCSInfo 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a165_epbStatusMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a166_epbStatusCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a167_epbStatusCsError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a168_torsionBarTorqueQfDe 2;
+BA_ "SystemSignalLongSymbol" SG_ 914 EPAS3P_a168_torsionBarTorqueQfDe "EPAS3P_a168_torsionBarTorqueQfDegraded";
+BA_ "Confidence" SG_ 914 EPAS3P_a169_difMia 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a170_difCntError 2;
+BA_ "Confidence" SG_ 914 EPAS3P_a171_difCsError 2;
 BA_ "Confidence" SG_ 977 EPAS3P_appliedAngleOffset 0;
 BA_ "Confidence" SG_ 977 EPAS3P_calculatedAngleOffset 0;
 BA_ "Confidence" SG_ 977 EPAS3P_resyncStatus 0;
@@ -2340,6 +2975,8 @@ BA_ "GenSigSNA" SG_ 794 VCRIGHT_occupantClassification "7";
 BA_ "Confidence" SG_ 794 VCRIGHT_occupantClassificationQF 0;
 BA_ "Confidence" SG_ 794 VCRIGHT_classificationEnabled 0;
 BA_ "Confidence" SG_ 794 VCRIGHT_classificationEnabledQF 0;
+BA_ "Confidence" SG_ 794 VCRIGHT_3RowRightABStatus 0;
+BA_ "GenSigSNA" SG_ 794 VCRIGHT_3RowRightABStatus "2";
 BA_ "Confidence" SG_ 794 VCRIGHT_restraintStatusCounter 0;
 BA_ "Confidence" SG_ 794 VCRIGHT_restraintStatusChecksum 0;
 VAL_ 526 DAS_autonomyBehavior 3 "SNA" 2 "DRIVERLESS_NO_TAKEOVER" 1 "DRIVERLESS_TAKEOVER" 0 "DRIVER" ;
@@ -2472,6 +3109,7 @@ VAL_ 1270 DI_pedalAssistCurveSelectForSX 15 "PEDAL_ASSIST_CURVE_15" 12 "PEDAL_AS
 VAL_ 1270 DI_longitudinalControlStack 7 "VELOCITY_PROFILE_CONTROL_SUPPRESS_CANCEL" 6 "DIRECT_TORQUE_CONTROL" 5 "DIRECT_PEDAL_CONTROL" 4 "AEB_CONTROL" 3 "VELOCITY_PROFILE_CONTROL" 2 "LONC_TORQUE_PROFILER" 1 "LEGACY_CRUISE" 0 "REQUEST_SNA" ;
 VAL_ 1270 DI_regenBlendingState 3 "BLEND_FRICTION_ONLY" 2 "BLEND_ACTIVE" 1 "BLEND_STANDBY" 0 "BLEND_UNAVAILABLE" ;
 VAL_ 822 DI_sysDrivePowerRated 511 "SNA" ;
+VAL_ 822 DI_performancePackage 7 "SNA" 6 "PERFORMANCE_2022" 5 "BASE_PLUS_2022" 4 "BASE_2022" 3 "BASE_PLUS" 2 "BASE_2024" 1 "PERFORMANCE" 0 "BASE" ;
 VAL_ 822 DI_sysRegenPowerRated 255 "SNA" ;
 VAL_ 599 DI_locSpeedEst 4095 "SNA" ;
 VAL_ 599 DI_uiSpeed 511 "DI_UI_SPEED_SNA" ;
@@ -2496,6 +3134,20 @@ VAL_ 615 DI_relativeTireTreadDepth -32 "SNA" ;
 VAL_ 615 DI_tireFitment 3 "FITMENT_SNA" 1 "FITMENT_STAGGERED" 0 "FITMENT_SQUARE" ;
 VAL_ 615 DI_massConfidence 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;
 VAL_ 615 DI_massConfidenceRLS 1 "MASS_CONFIDED" 0 "MASS_NOT_CONFIDED" ;
+VAL_ 1426 EPAS3P_alertID 171 "a171_difCsError" 170 "a170_difCntError" 169 "a169_difMia" 168 "a168_torsionBarTorqueQfDegraded" 167 "a167_epbStatusCsError" 166 "a166_epbStatusCntError" 165 "a165_epbStatusMia" 164 "a164_initTestDCSInfo" 163 "a163_initTestGateDrvrInfo" 162 "a162_initTestHSDFetInfo" 161 "a161_initTestPhaDisconnInfo" 160 "a160_latentFaultTestResult" 159 "a159_pmState2CsError" 158 "a158_pmState2CntError" 157 "a157_pmState2Mia" 156 "a156_angleSensorDivergence" 155 "a155_backupEacActive" 154 "a154_assistTorqueDisabled" 153 "a153_dcsInitOffset" 152 "a152_dcsDiagReg" 151 "a151_dcsCboot" 150 "a150_currentSensOffsetDetect" 149 "a149_currentSensPathSwitch" 148 "a148_vMaxAssist" 147 "a147_backupVehSpeed" 146 "a146_diSpdCsError" 145 "a145_diSpdCntError" 144 "a144_diSpdMia" 137 "a137_piCtrlCounter85" 136 "a136_piCtrlCounter50" 135 "a135_piCtrlCounter25" 134 "a134_motFeedFwdCounter85" 133 "a133_motFeedFwdCounter50" 132 "a132_motFeedFwdCounter25" 131 "a131_phaseFeedbackError" 130 "a130_sasOffsetNotCal" 129 "a129_combEcu1StatFail" 128 "a128_apsCsError" 127 "a127_apsCntError" 126 "a126_apsMia" 125 "a125_trqSensTrimOutRange" 124 "a124_tempSensStuckInRange" 123 "a123_combEcu2StatFail" 122 "a122_olpActive" 121 "a121_pvtEcuStatCrcError" 120 "a120_pvtEcuStatCntError" 119 "a119_pvtEcuStatMia" 118 "a118_privateBusOff" 117 "a117_ecuStatCrcError" 116 "a116_ecuStatCntError" 115 "a115_ecuStatMia" 114 "a114_gtwConfigMia" 113 "a113_sasStatusError" 112 "a112_sasCsError" 111 "a111_sasCntError" 110 "a110_sasMia" 109 "a109_uiTuneReqCsError" 108 "a108_uiTuneReqCntError" 107 "a107_uiTuneReqMia" 106 "a106_vcFrontTempMia" 105 "a105_vcFrontCsError" 104 "a104_vcFrontCntError" 103 "a103_vcFrontMia" 102 "a102_diCsError" 101 "a101_diCntError" 100 "a100_diMia" 99 "a099_yawRateStatus" 98 "a098_rcmCsError" 97 "a097_rcmCntError" 96 "a096_rcmMia" 95 "a095_espWsStatus" 94 "a094_espWrCsError" 93 "a093_espWrCntError" 92 "a092_espWrMia" 91 "a091_espWsCsError" 90 "a090_espWsCntError" 89 "a089_espWsMia" 88 "a088_dasCsError" 87 "a087_dasCntError" 86 "a086_dasMia" 85 "a085_canBusOff" 84 "a084_eacCancelled" 83 "a083_crcMismatch" 82 "a082_polarityCalError" 81 "a081_coggCompError" 80 "a080_ecuInitArbError" 79 "a079_backupCurrentPlaus" 78 "a078_phaseDisconnectError" 77 "a077_highSideFetError" 76 "a076_tempSensOutofRange" 75 "a075_fspPwrCut" 74 "a074_overHeatProtect" 73 "a073_motParEstError" 72 "a072_motFeedFwdError" 71 "a071_vehSpdCorrError" 70 "a070_hodCorrError" 69 "a069_eacCorrError" 68 "a068_hystCorrError" 67 "a067_yawDampCorrError" 66 "a066_returnCorrError" 65 "a065_trqTarCorrError" 64 "a064_phaseCompCorrError" 63 "a063_dampCorrError" 62 "a062_assistCorrError" 61 "a061_bridgeUv" 60 "a060_battBridgeDiff" 59 "a059_battOvReduced" 58 "a058_battOv" 57 "a057_battUvReduced" 56 "a056_battUv" 55 "a055_floatPointError" 54 "a054_memoryProtectError" 53 "a053_extWatchdogError" 52 "a052_intWatchdogError" 51 "a051_mcuSupError" 50 "a050_mcuSmuError" 49 "a049_piCtrlError" 48 "a048_motPosCalError" 47 "a047_motPosCorrError" 46 "a046_motPos2tempError" 45 "a045_motPos2LogicError" 44 "a044_motPos2MagnetMia" 43 "a043_motPos2Uv" 42 "a042_motPos2ParityError" 41 "a041_motPos1tempError" 40 "a040_motPos1LogicError" 39 "a039_motPos1MagnetMia" 38 "a038_motPos1Uv" 37 "a037_motPos1ParityError" 36 "a036_vbbSupplyOv" 35 "a035_vbbSupplyUv" 34 "a034_vRegError" 33 "a033_vRegOutputOv" 32 "a032_vRegOutputUv" 31 "a031_abnormalShutdown" 30 "a030_phaseWbootUv" 29 "a029_phaseVbootUv" 28 "a028_phaseUbootUv" 27 "a027_phaseWlowOv" 26 "a026_phaseWhighOv" 25 "a025_phaseVlowOv" 24 "a024_phaseVhighOv" 23 "a023_phaseUlowOv" 22 "a022_phaseUhighOv" 21 "a021_phaseWlowUv" 20 "a020_phaseWhighUv" 19 "a019_phaseVlowUv" 18 "a018_phaseVhighUv" 17 "a017_phaseUlowUv" 16 "a016_phaseUhighUv" 15 "a015_gateDriveEeprom" 14 "a014_gateDriveTxError" 13 "a013_gateDriveError" 12 "a012_currentSensCalError" 11 "a011_currentSensError" 10 "a010_trqSensCalError" 9 "a009_sentDiff" 8 "a008_trqSens2Eeprom" 7 "a007_trqSens2Supply" 6 "a006_sent2Error" 5 "a005_sent2Mia" 4 "a004_trqSens1Eeprom" 3 "a003_trqSens1Supply" 2 "a002_sent1Error" 1 "a001_sent1Mia" 0 "ALERT_DO_NOT_USE_ZERO" ;
+VAL_ 1426 EPAS3P_alertState 1 "SET" 0 "CLEARED" ;
+VAL_ 1426 EPAS3P_a147_transitionReason 2 "MIA" 1 "WSS_FAILURE" 0 "DATA_INTEGRITY" ;
+VAL_ 1426 EPAS3P_a160_currentSensorStatus 2 "STATUS_UNKNOWN" 1 "PROBABLE_FAILURE" 0 "NO_ISSUE" ;
+VAL_ 1426 EPAS3P_a160_gateDriverStatus 2 "STATUS_UNKNOWN" 1 "PROBABLE_FAILURE" 0 "NO_ISSUE" ;
+VAL_ 1426 EPAS3P_a160_highSideDisconnectFe 2 "STATUS_UNKNOWN" 1 "PROBABLE_FAILURE" 0 "NO_ISSUE" ;
+VAL_ 1426 EPAS3P_a160_phaseDisconnectFetSt 2 "STATUS_UNKNOWN" 1 "PROBABLE_FAILURE" 0 "NO_ISSUE" ;
+VAL_ 1426 EPAS3P_a160_inverterFetStatus 2 "STATUS_UNKNOWN" 1 "PROBABLE_FAILURE" 0 "NO_ISSUE" ;
+VAL_ 1426 EPAS3P_a160_hsdFetFailShortTest 2 "NOT_RAN" 1 "FAIL" 0 "PASS" ;
+VAL_ 1426 EPAS3P_a160_phaDisconnFailOpenTe 2 "NOT_RAN" 1 "FAIL" 0 "PASS" ;
+VAL_ 1426 EPAS3P_a160_phaDisconnFailShortT 2 "NOT_RAN" 1 "FAIL" 0 "PASS" ;
+VAL_ 1426 EPAS3P_a160_invFetInitTest 2 "NOT_RAN" 1 "FAIL" 0 "PASS" ;
+VAL_ 1426 EPAS3P_a160_gateDrvrInitTest 2 "NOT_RAN" 1 "FAIL" 0 "PASS" ;
+VAL_ 914 EPAS3P_matrixIndex 2 "AlertMatrix2" 1 "AlertMatrix1" 0 "AlertMatrix0" ;
 VAL_ 977 EPAS3P_resyncStatus 1 "RESYNC_COMPLETE" 0 "RESYNC_PENDING" ;
 VAL_ 817 EPAS3P_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;
 VAL_ 817 EPAS3P_infoBuildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
@@ -2633,3 +3285,4 @@ VAL_ 794 VCRIGHT_occupantClassification 7 "SEAT_OCCUPANT_CLASSIFICATON_SNA" 6 "S
 VAL_ 794 VCRIGHT_occupantClassificationQF 1 "SEAT_OCCUPANT_CLASSIFICATON_NOT_FAULTED" 0 "SEAT_OCCUPANT_CLASSIFICATON_FAULTED" ;
 VAL_ 794 VCRIGHT_classificationEnabled 1 "VCRIGHT_CLASSIFICATION_SOURCE" 0 "OCS1P_CLASSIFICATION_SOURCE" ;
 VAL_ 794 VCRIGHT_classificationEnabledQF 1 "CLASSIFICATION_ENABLED_NOT_FAULTED" 0 "CLASSIFICATION_ENABLED_FAULTED" ;
+VAL_ 794 VCRIGHT_3RowRightABStatus 2 "AIRBAG_STATE_SNA" 1 "AIRBAG_SUPPRESS" 0 "AIRBAG_ALLOW" ;

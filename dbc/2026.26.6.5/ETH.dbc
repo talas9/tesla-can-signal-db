@@ -69512,11 +69512,11 @@ CM_ SG_ 659 UI_selfParkTune "Touchscreen user interface computer: self park tune
 CM_ SG_ 659 UI_chassisControlCounter "Touchscreen user interface computer: chassis control counter";
 CM_ SG_ 659 UI_chassisControlChecksum "Touchscreen user interface computer: chassis control checksum";
 CM_ BO_ 531 "Touchscreen user interface computer message: cruise control";
-CM_ SG_ 531 UI_cruiseSpeedCommand "User command to change the cruise set speed.";
-CM_ SG_ 531 UI_smartSummonRequest "Touchscreen user interface computer: smart summon request";
-CM_ SG_ 531 UI_autonomySummonRequest "Autonomy summon request from mobile app; raw 7 = signal not available (SNA)";
-CM_ SG_ 531 UI_cruiseControlCounter "Touchscreen user interface computer: cruise control counter";
-CM_ SG_ 531 UI_cruiseControlChecksum "Touchscreen user interface computer: cruise control checksum";
+CM_ SG_ 531 UI_cruiseSpeedCommand "User command to change the cruise set speed; not carried on CAN";
+CM_ SG_ 531 UI_smartSummonRequest "Touchscreen user interface computer: smart summon request; not carried on CAN";
+CM_ SG_ 531 UI_autonomySummonRequest "Autonomy summon request from mobile app; raw 7 = signal not available (SNA); not carried on CAN";
+CM_ SG_ 531 UI_cruiseControlCounter "Touchscreen user interface computer: cruise control counter; not carried on CAN";
+CM_ SG_ 531 UI_cruiseControlChecksum "Touchscreen user interface computer: cruise control checksum; not carried on CAN";
 CM_ BO_ 664 "Touchscreen user interface computer message: csa offramp curvature";
 CM_ SG_ 664 UI_csaOfframpCurvC2 "Touchscreen user interface computer: csa offramp curv C2";
 CM_ SG_ 664 UI_csaOfframpCurvC3 "Touchscreen user interface computer: csa offramp curv C3";
@@ -80256,8 +80256,8 @@ CM_ SG_ 1802 VCLEFT_leftBrakeTailLightCu_0001 "State representing validity of th
 CM_ SG_ 1802 VCLEFT_leftRearTurnLightCurrent "Current sensed by the left rear turn signal HSD (high side driver); raw 511 = signal not available (SNA)";
 CM_ SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "State representing validity of the left rear turn signal HSD (high side driver) current sense; raw 0 = signal not available (SNA)";
 CM_ SG_ 1802 VCLEFT_phoneTemperatureFL "Temperature of front left wireless phone charger (if installed); raw 128 = signal not available (SNA)";
-CM_ SG_ 1802 VCLEFT_phoneTemperatureFR "Temperature of front right wireless phone charger (if installed); raw 128 = signal not available (SNA)";
-CM_ SG_ 1802 VCLEFT_canAuthResyncDurationMs "Left body controller: can auth resync duration ms";
+CM_ SG_ 1802 VCLEFT_phoneTemperatureFR "Temperature of front right wireless phone charger (if installed); raw 128 = signal not available (SNA); not carried on CAN";
+CM_ SG_ 1802 VCLEFT_canAuthResyncDurationMs "Left body controller: can auth resync duration ms; not carried on CAN";
 CM_ BO_ 649 "Left body controller message: logging10 hz";
 CM_ SG_ 649 VCLEFT_logging10HzIndex "Left body controller: logging10 hz index";
 CM_ SG_ 649 VCLEFT_hvacBlowerRs "Left body controller: hvac blower rs; raw 255 = signal not available (SNA)";

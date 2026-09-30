@@ -112,7 +112,7 @@ CM_ "Tesla Bayberry CAN bus database; bus bus1 (inferred PARTY); firmware 2026.2
 CM_ BU_ DAS "Driver assistance computer";
 CM_ BU_ DIF "Front drive inverter";
 CM_ BU_ VCLEFT "Left body controller";
-CM_ BO_ 584 "Driver assistance computer message: autonomy ui control";
+CM_ BO_ 584 "Driver assistance computer message: autonomy ui control; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 584 DAS_autonomyUiControlChecksum "Driver assistance computer: autonomy ui control checksum";
 CM_ SG_ 584 DAS_autonomyUiControlCounter "Driver assistance computer: autonomy ui control counter";
 CM_ SG_ 584 DAS_rideState "Driver assistance computer: ride state; raw 0 = signal not available (SNA)";
@@ -121,7 +121,7 @@ CM_ SG_ 584 DAS_rideHailingActive "Driver assistance computer: ride hailing acti
 CM_ SG_ 584 DAS_autonomyCriticalMode "Driver assistance computer: autonomy critical mode";
 CM_ SG_ 584 DAS_micFocusRequest "Driver assistance computer: mic focus request";
 CM_ SG_ 584 DAS_autonomyUiBehavior "Driver assistance computer: autonomy ui behavior; raw 0 = signal not available (SNA)";
-CM_ BO_ 1622 "Front drive inverter message: info";
+CM_ BO_ 1622 "Front drive inverter message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1622 DIF_infoIndex "Front drive inverter: info index";
 CM_ SG_ 1622 DIF_buildType "Front drive inverter: build type";
 CM_ SG_ 1622 DIF_buildConfigurationId "Front drive inverter: build configuration id";
@@ -150,7 +150,7 @@ CM_ SG_ 1622 DIF_refRotorFlux "Front drive inverter: ref rotor flux";
 CM_ SG_ 1622 DIF_refRotorOffset "Front drive inverter: ref rotor offset; raw 2048 = signal not available (SNA)";
 CM_ SG_ 1622 DIF_speedWearTotal "Front drive inverter: speed wear total; raw 255 = signal not available (SNA)";
 CM_ SG_ 1622 DIF_torqueWearTotal "Front drive inverter: torque wear total; raw 255 = signal not available (SNA)";
-CM_ BO_ 258 "Left body controller message: door status";
+CM_ BO_ 258 "Left body controller message: door status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 258 VCLEFT_doorClosureStatusFront "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
 CM_ SG_ 258 VCLEFT_doorClosureStatusRear "Status of the door from a closures perspective; raw 0 = signal not available (SNA)";
 CM_ SG_ 258 VCLEFT_frontLatchSwitch "State of front left door latch switch representing door open/closed. 0 is open and 1 is closed";

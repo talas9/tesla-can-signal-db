@@ -7,9 +7,10 @@ for firmware **2026.26.6.5** and **2025.20.8**.
 Provenance is stated as firmware version (and vehicle model) only.
 
 **Current state.** The CAN DBC files are `dbc/<model>/<firmware>/<BUS>.dbc`,
-one per CAN bus (`VEH`, `CH`, `PARTY`), with the real on-bus CAN ids. In
-2026.26.6.5, 492 of 582 messages have a known CAN id. The other 90 are kept
-only in the Ethernet-side files and are listed below as not yet mapped.
+one per CAN bus (`VEH`, `CH`, `PARTY`), with the real on-bus CAN ids, built
+from each model's own gateway id map. In 2026.26.6.5, 492 of 582 messages have
+a known CAN id on Model 3 and 511 on Model Y (514 across both). The rest are
+kept only in the Ethernet-side files and are listed below as not yet mapped.
 
 ## Repository structure
 
@@ -18,7 +19,9 @@ only in the Ethernet-side files and are listed below as not yet mapped.
   - `dbc/<firmware>/ETH.dbc` - every message under its Ethernet-side id (not CAN ids; see below)
 - `data/<firmware>/signals.{csv,json}` - signal definitions per firmware
 - `data/<firmware>/messages.csv` - frame length and cycle time per message
-- `data/<firmware>/id-map.csv` - Ethernet-side id to (bus, CAN id) map
+- `data/<firmware>/id-map.csv` - Ethernet-side id to (bus, CAN id) map per model
+- `data/can-frame-lengths.csv` - frame lengths observed on recorded vehicle buses
+- `data/can-flagged.csv` - on-bus ids whose frames do not follow the layout
 - `data/<firmware>/signal-meta.csv` - units, value tables, SNA codes, per-model assignment
 - `tools/build.py` - PII / disclosure gates and shared helpers
 - `tools/export_dbc.py` - DBC exporter and validator (Python API + CLI)
@@ -34,10 +37,10 @@ Tesla Model 3 / Model Y CAN bus DBC files with decoded signals for firmware
 
 ```
 dbc/
-  AllModels/<firmware>/{VEH,CH,PARTY}.dbc      every signal of the firmware, per CAN bus
-  AllModels/<firmware>/ETH.dbc                 messages with no known CAN route
-  Model3/<firmware>/<BUS>.dbc                  signals with Model 3 evidence
-  ModelY/<firmware>/<BUS>.dbc                  signals with Model Y evidence
+  Model3/<firmware>/{VEH,CH,PARTY}.dbc         Model 3: every message its gateway routes
+  ModelY/<firmware>/{VEH,CH,PARTY}.dbc         Model Y: every message its gateway routes
+  AllModels/<firmware>/{VEH,CH,PARTY}.dbc      union of Model 3 and Model Y
+  <model>/<firmware>/ETH.dbc                   messages with no known CAN route
   Bayberry/<firmware>/<BUS>.dbc                product codename, model not confirmed
   GoldenSnitch/<firmware>/<BUS>.dbc            product codename, model not confirmed
   <firmware>/ETH.dbc                           every message, Ethernet-side ids (see below)
@@ -54,11 +57,11 @@ bus files under its on-bus CAN id. A frame read from a bus uses the layout of
 its Ethernet-side message; a frame the gateway sends onto a bus has `GTW` as
 its transmitter, and its comment says so.
 
-**Firmware coverage of the id map.** The CAN id map is for Model 3 firmware
-2026.26.6.5. For 2025.20.8 it is reused only where the message name and its
-full bit layout are identical; the remaining 2025.20.8 messages are
-Ethernet-side only until a map for that firmware exists. A Model Y map will
-follow.
+**Firmware coverage of the id map.** The CAN id maps are for firmware
+2026.26.6.5 (Model 3 and Model Y). There is no 2025.20.8 map yet, so for
+2025.20.8 the 2026.26.6.5 map is reused only where the message name and its
+full bit layout are identical. The remaining 2025.20.8 messages stay
+Ethernet-side only until a map for that firmware exists.
 
 **Ethernet-side ids.** Inside the car, messages also travel on an internal
 Ethernet link under their own message ids, which often differ from the CAN
@@ -66,11 +69,26 @@ ids. Two kinds of file use those ids and must not be used on a CAN bus:
 `<model>/<firmware>/ETH.dbc` holds the messages with no known CAN route, and
 `dbc/<firmware>/ETH.dbc` (the former `ALL.dbc`) holds every message.
 
-**Models.** `AllModels` is the complete set: load it when you want every
-signal the firmware defines. A model folder holds only the signals that have
-per-model evidence for that product (plus the multiplexer switches they need),
-so it is a curated subset, not a replacement. Bayberry and GoldenSnitch are
-product codenames kept as-is because the model they map to is not confirmed.
+**Models.** `Model3` and `ModelY` are built from each model's own gateway id
+map and hold every message that model's gateway routes, with all its signals.
+Load the file for your car and bus, for example
+`Model3/2026.26.6.5/VEH.dbc`. `AllModels` is the union of both; no CAN id
+maps to a different message between the two models. `Bayberry` and
+`GoldenSnitch` are product codenames whose model is not confirmed. Their
+folders hold only the signals with per-product evidence, keyed with the
+union map.
+
+**Frame lengths.** On a CAN bus a frame can be shorter than the
+Ethernet-side layout. When a frame length has been observed on a recorded
+vehicle bus, the bus file uses it (`AllModels`: the longest observed).
+Signals past that length are left out of the bus file and marked "not
+carried on CAN" in `dbc/<firmware>/ETH.dbc`. Messages without an observed
+length keep the layout length, and their comment says so. Observations exist
+for the VEH bus so far.
+
+**Flagged.** VEH 0x213 (`UI_cruiseControl`) is a 2-byte frame from a
+different sender whose counter never steps, so the Ethernet-side layout is not
+asserted there; it is left out of the VEH files.
 
 ### What is in each file
 
@@ -98,15 +116,15 @@ Generated by `tools/export_dbc.py`; `--check` fails if it is stale.
 <!-- coverage:begin (generated by tools/export_dbc.py) -->
 | Model | Firmware | Bus | Messages | Signals | Enums | Validated | Plausible | Layout-only | Contradicted |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|
-| Model 3 / Model Y | 2026.26.6.5 | [CH](dbc/AllModels/2026.26.6.5/CH.dbc) | 127 | 9131 | 1128 | 951 | 1007 | 7173 | 0 |
-| Model 3 / Model Y | 2026.26.6.5 | [PARTY](dbc/AllModels/2026.26.6.5/PARTY.dbc) | 49 | 792 | 307 | 548 | 68 | 176 | 0 |
-| Model 3 / Model Y | 2026.26.6.5 | [VEH](dbc/AllModels/2026.26.6.5/VEH.dbc) | 330 | 24297 | 4457 | 5320 | 5320 | 13657 | 0 |
-| Model 3 / Model Y | 2026.26.6.5 | [ETH](dbc/AllModels/2026.26.6.5/ETH.dbc) | 90 | 8001 | 1886 | 897 | 1849 | 5255 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [CH](dbc/AllModels/2026.26.6.5/CH.dbc) | 137 | 10365 | 1257 | 959 | 1145 | 8261 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [PARTY](dbc/AllModels/2026.26.6.5/PARTY.dbc) | 52 | 1350 | 324 | 561 | 85 | 704 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [VEH](dbc/AllModels/2026.26.6.5/VEH.dbc) | 338 | 25657 | 4630 | 5374 | 5609 | 14674 | 0 |
+| Model 3 / Model Y | 2026.26.6.5 | [ETH](dbc/AllModels/2026.26.6.5/ETH.dbc) | 68 | 4842 | 1564 | 818 | 1405 | 2619 | 0 |
 | Model 3 / Model Y | 2026.26.6.5 | [ETH-side ids, all messages](dbc/2026.26.6.5/ETH.dbc) | 582 | 41912 | 7667 | 7583 | 8181 | 26148 | 0 |
-| Model 3 / Model Y | 2025.20.8 | [CH](dbc/AllModels/2025.20.8/CH.dbc) | 87 | 2126 | 471 | 571 | 229 | 1326 | 0 |
-| Model 3 / Model Y | 2025.20.8 | [PARTY](dbc/AllModels/2025.20.8/PARTY.dbc) | 22 | 255 | 129 | 252 | 3 | 0 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [CH](dbc/AllModels/2025.20.8/CH.dbc) | 90 | 2407 | 474 | 579 | 232 | 1596 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [PARTY](dbc/AllModels/2025.20.8/PARTY.dbc) | 23 | 525 | 130 | 252 | 4 | 269 | 0 |
 | Model 3 / Model Y | 2025.20.8 | [VEH](dbc/AllModels/2025.20.8/VEH.dbc) | 146 | 2645 | 805 | 1931 | 195 | 519 | 0 |
-| Model 3 / Model Y | 2025.20.8 | [ETH](dbc/AllModels/2025.20.8/ETH.dbc) | 274 | 28349 | 4863 | 3233 | 6396 | 18720 | 0 |
+| Model 3 / Model Y | 2025.20.8 | [ETH](dbc/AllModels/2025.20.8/ETH.dbc) | 270 | 27798 | 4859 | 3225 | 6392 | 18181 | 0 |
 | Model 3 / Model Y | 2025.20.8 | [ETH-side ids, all messages](dbc/2025.20.8/ETH.dbc) | 522 | 33269 | 6225 | 5934 | 6799 | 20536 | 0 |
 | Bayberry | 2026.26.6.5 | [CH](dbc/Bayberry/2026.26.6.5/CH.dbc) | 4 | 27 | 19 | 27 | 0 | 0 | 0 |
 | Bayberry | 2026.26.6.5 | [PARTY](dbc/Bayberry/2026.26.6.5/PARTY.dbc) | 3 | 61 | 24 | 60 | 1 | 0 | 0 |
@@ -117,22 +135,22 @@ Generated by `tools/export_dbc.py`; `--check` fails if it is stale.
 | GoldenSnitch | 2026.26.6.5 | [CH](dbc/GoldenSnitch/2026.26.6.5/CH.dbc) | 2 | 8 | 7 | 8 | 0 | 0 | 0 |
 | GoldenSnitch | 2026.26.6.5 | [VEH](dbc/GoldenSnitch/2026.26.6.5/VEH.dbc) | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 | GoldenSnitch | 2025.20.8 | [ETH](dbc/GoldenSnitch/2025.20.8/ETH.dbc) | 1 | 1 | 0 | 0 | 1 | 0 | 0 |
-| Model 3 | 2026.26.6.5 | [CH](dbc/Model3/2026.26.6.5/CH.dbc) | 74 | 976 | 556 | 943 | 30 | 3 | 0 |
-| Model 3 | 2026.26.6.5 | [PARTY](dbc/Model3/2026.26.6.5/PARTY.dbc) | 47 | 589 | 291 | 546 | 37 | 6 | 0 |
-| Model 3 | 2026.26.6.5 | [VEH](dbc/Model3/2026.26.6.5/VEH.dbc) | 243 | 5260 | 2151 | 5140 | 114 | 6 | 0 |
-| Model 3 | 2026.26.6.5 | [ETH](dbc/Model3/2026.26.6.5/ETH.dbc) | 34 | 694 | 383 | 664 | 26 | 4 | 0 |
-| Model 3 | 2025.20.8 | [CH](dbc/Model3/2025.20.8/CH.dbc) | 51 | 581 | 337 | 565 | 15 | 1 | 0 |
+| Model 3 | 2026.26.6.5 | [CH](dbc/Model3/2026.26.6.5/CH.dbc) | 127 | 9131 | 1128 | 951 | 1007 | 7173 | 0 |
+| Model 3 | 2026.26.6.5 | [PARTY](dbc/Model3/2026.26.6.5/PARTY.dbc) | 49 | 792 | 307 | 548 | 68 | 176 | 0 |
+| Model 3 | 2026.26.6.5 | [VEH](dbc/Model3/2026.26.6.5/VEH.dbc) | 329 | 24290 | 4454 | 5316 | 5320 | 13654 | 0 |
+| Model 3 | 2026.26.6.5 | [ETH](dbc/Model3/2026.26.6.5/ETH.dbc) | 90 | 8001 | 1886 | 897 | 1849 | 5255 | 0 |
+| Model 3 | 2025.20.8 | [CH](dbc/Model3/2025.20.8/CH.dbc) | 87 | 2126 | 471 | 571 | 229 | 1326 | 0 |
 | Model 3 | 2025.20.8 | [PARTY](dbc/Model3/2025.20.8/PARTY.dbc) | 22 | 255 | 129 | 252 | 3 | 0 | 0 |
-| Model 3 | 2025.20.8 | [VEH](dbc/Model3/2025.20.8/VEH.dbc) | 117 | 1969 | 710 | 1915 | 48 | 6 | 0 |
-| Model 3 | 2025.20.8 | [ETH](dbc/Model3/2025.20.8/ETH.dbc) | 159 | 3415 | 1548 | 2930 | 419 | 66 | 0 |
-| Model Y | 2026.26.6.5 | [CH](dbc/ModelY/2026.26.6.5/CH.dbc) | 10 | 119 | 70 | 119 | 0 | 0 | 0 |
-| Model Y | 2026.26.6.5 | [PARTY](dbc/ModelY/2026.26.6.5/PARTY.dbc) | 8 | 115 | 55 | 114 | 1 | 0 | 0 |
-| Model Y | 2026.26.6.5 | [VEH](dbc/ModelY/2026.26.6.5/VEH.dbc) | 37 | 952 | 434 | 932 | 19 | 1 | 0 |
-| Model Y | 2026.26.6.5 | [ETH](dbc/ModelY/2026.26.6.5/ETH.dbc) | 7 | 83 | 28 | 75 | 6 | 2 | 0 |
-| Model Y | 2025.20.8 | [CH](dbc/ModelY/2025.20.8/CH.dbc) | 6 | 70 | 53 | 70 | 0 | 0 | 0 |
-| Model Y | 2025.20.8 | [PARTY](dbc/ModelY/2025.20.8/PARTY.dbc) | 2 | 30 | 17 | 30 | 0 | 0 | 0 |
-| Model Y | 2025.20.8 | [VEH](dbc/ModelY/2025.20.8/VEH.dbc) | 12 | 156 | 60 | 148 | 7 | 1 | 0 |
-| Model Y | 2025.20.8 | [ETH](dbc/ModelY/2025.20.8/ETH.dbc) | 34 | 557 | 250 | 496 | 55 | 6 | 0 |
+| Model 3 | 2025.20.8 | [VEH](dbc/Model3/2025.20.8/VEH.dbc) | 146 | 2645 | 805 | 1931 | 195 | 519 | 0 |
+| Model 3 | 2025.20.8 | [ETH](dbc/Model3/2025.20.8/ETH.dbc) | 274 | 28349 | 4863 | 3233 | 6396 | 18720 | 0 |
+| Model Y | 2026.26.6.5 | [CH](dbc/ModelY/2026.26.6.5/CH.dbc) | 134 | 9273 | 1206 | 946 | 1061 | 7266 | 0 |
+| Model Y | 2026.26.6.5 | [PARTY](dbc/ModelY/2026.26.6.5/PARTY.dbc) | 52 | 1350 | 324 | 561 | 85 | 704 | 0 |
+| Model Y | 2026.26.6.5 | [VEH](dbc/ModelY/2026.26.6.5/VEH.dbc) | 338 | 25639 | 4626 | 5368 | 5606 | 14665 | 0 |
+| Model Y | 2026.26.6.5 | [ETH](dbc/ModelY/2026.26.6.5/ETH.dbc) | 71 | 5934 | 1615 | 831 | 1489 | 3614 | 0 |
+| Model Y | 2025.20.8 | [CH](dbc/ModelY/2025.20.8/CH.dbc) | 90 | 2407 | 474 | 579 | 232 | 1596 | 0 |
+| Model Y | 2025.20.8 | [PARTY](dbc/ModelY/2025.20.8/PARTY.dbc) | 23 | 525 | 130 | 252 | 4 | 269 | 0 |
+| Model Y | 2025.20.8 | [VEH](dbc/ModelY/2025.20.8/VEH.dbc) | 146 | 2645 | 805 | 1931 | 195 | 519 | 0 |
+| Model Y | 2025.20.8 | [ETH](dbc/ModelY/2025.20.8/ETH.dbc) | 270 | 27798 | 4859 | 3225 | 6392 | 18181 | 0 |
 <!-- coverage:end -->
 
 ### Check against recorded vehicle logs
@@ -147,15 +165,17 @@ Two recorded vehicle-bus (VEH) captures were decoded with cantools:
 | DBC | Log A frames decoded | Log A ids in DBC | Log A ids decoded | Log B frames decoded | Log B ids in DBC | Log B ids decoded |
 |---|---:|---:|---:|---:|---:|---:|
 | Before: `dbc/2026.26.6.5/ETH.dbc` (Ethernet-side ids) | 55.1% | 179 / 243 (73.7%) | 127 | 61.3% | 120 / 161 | 85 |
-| After: `AllModels/2026.26.6.5/VEH.dbc` | **70.8%** | 157 / 243 (64.6%) | **155** | **76.4%** | 107 / 161 | **99** |
-| After: `AllModels/2025.20.8/VEH.dbc` (reduced id map, see above) | 13.9% | 61 / 243 | 61 | 17.5% | 43 / 161 | 41 |
+| After: `Model3/2026.26.6.5/VEH.dbc` | **70.8%** | 156 / 243 (64.2%) | **156** | 76.4% | 106 / 161 | 100 |
+| After: `ModelY/2026.26.6.5/VEH.dbc` | 70.7% | 156 / 243 | 154 | **77.4%** | 106 / 161 | **106** |
+| After: `Model3/2025.20.8/VEH.dbc` (reduced id map, see above) | 13.9% | 61 / 243 | 61 | 17.5% | 43 / 161 | 41 |
 
-The Ethernet-side file finds more ids but is often wrong about them. Of its
-179 Log A id matches, only 140 are the same message the CAN id map assigns;
-12 decode a different message, and 27 are ids with no CAN mapping at all. The
-CAN-id file decodes more frames and more ids correctly.
+Log A is a Model 3, so `Model3/.../VEH.dbc` is its file: every id it
+contains decodes. The Ethernet-side file finds more ids but is often wrong
+about them. Of its 179 Log A id matches, only 139 are the same message the
+CAN id map assigns; 12 decode a different message, and 28 are ids with no CAN
+mapping.
 
-Anchor checks on Log A with `AllModels/2026.26.6.5/VEH.dbc`:
+Anchor checks on Log A with `Model3/2026.26.6.5/VEH.dbc`:
 
 | Anchor | Result |
 |---|---|
@@ -167,18 +187,18 @@ Anchor checks on Log A with `AllModels/2026.26.6.5/VEH.dbc`:
 
 ### Not yet mapped
 
-- Messages with no known CAN id (2026.26.6.5, 90; Ethernet-side files only):
-  `ADSP_alertLog`, `ADSP_alertMatrix1`, `ADSP_alertMatrix2`, `APSB_alertLog`, `APSB_eacMonitor`, `APSB_powerStateInputs`, `APSB_state`, `APSB_status`, `APSB_warningMatrix0`, `APSB_warningMatrix1`, `APSB_warningMatrix2`, `APSB_warningMatrix3`, `APSB_warningMatrix4`, `BB_status`, `CMP_HVStatus`, `DAS_object`, `DAS_positioningEngineStatus`, `DAS_telemetryRadar`, `DPB_alertLog`, `DPB_alertMatrix`, `EPASTP_alertLog`, `EPASTP_alertMatrix`, `EPASTS_alertLog`, `EPASTS_alertMatrix`, `GTW_ECall`, `GTW_adc4`, `GTW_alertLog`, `GTW_alertMatrix`, `GTW_autopilotOverride`, `GTW_canStatus`, `GTW_carConfig`, `GTW_diagSession`, `GTW_ethNm`, `GTW_gearControl`, `GTW_hrl`, `GTW_hrlExternalEvent`, `GTW_info`, `GTW_mismatchFault`, `GTW_status`, `GTW_updateStatus`, `GTW_vehNm`, `IDB_alertLog`, `IDB_alertMatrix`, `IDB_info`, `OCS1P_alertLog`, `OCS1P_alertMatrix`, `OCS1P_info`, `OCS1P_status`, `PTC_feedbackStatus`, `RCM_alertLog`, `RCM_alertMatrix`, `RCU_alertLog`, `RCU_alertMatrix`, `RCU_info`, `TCU2_SleepConfig`, `TCU2_alertLog`, `TCU2_alertMatrix1`, `TCU2_log`, `TCU_SleepConfig`, `TCU_alertLog`, `TCU_alertMatrix1`, `TCU_log`, `UIS_log`, `UI_airbagCutoffStatus`, `UI_alertLog`, `UI_alertMatrix1`, `UI_alertMatrix2`, `UI_alertMatrix3`, `UI_alertMatrix4`, `UI_alertMatrix5`, `UI_energyConsumptionInfo`, `UI_gearSliderInfo`, `UI_seatControl`, `UI_stalklessControl`, `UI_status3`, `UI_systemMonitor`, `UI_tripPlannerInfo`, `UI_tripPlanning2`, `UI_tripPlanning3`, `UI_tripPlanning4`, `UI_tripPlanning5`, `VCLEFT_logging10Hz`, `VCSEAT2L_alertLog`, `VCSEAT2L_alertMatrix`, `VCSEAT2L_seatStatus`, `VCSEAT2L_seatStatus2`, `VCSEAT2R_alertLog`, `VCSEAT2R_alertMatrix`, `VCSEAT2R_seatStatus`, `VCSEAT2R_seatStatus2`.
+- Model 3 messages with no known CAN id (2026.26.6.5, 90; Ethernet-side
+  files only): `ADSP_alertLog`, `ADSP_alertMatrix1`, `ADSP_alertMatrix2`, `APSB_alertLog`, `APSB_eacMonitor`, `APSB_powerStateInputs`, `APSB_state`, `APSB_status`, `APSB_warningMatrix0`, `APSB_warningMatrix1`, `APSB_warningMatrix2`, `APSB_warningMatrix3`, `APSB_warningMatrix4`, `BB_status`, `CMP_HVStatus`, `DAS_object`, `DAS_positioningEngineStatus`, `DAS_telemetryRadar`, `DPB_alertLog`, `DPB_alertMatrix`, `EPASTP_alertLog`, `EPASTP_alertMatrix`, `EPASTS_alertLog`, `EPASTS_alertMatrix`, `GTW_ECall`, `GTW_adc4`, `GTW_alertLog`, `GTW_alertMatrix`, `GTW_autopilotOverride`, `GTW_canStatus`, `GTW_carConfig`, `GTW_diagSession`, `GTW_ethNm`, `GTW_gearControl`, `GTW_hrl`, `GTW_hrlExternalEvent`, `GTW_info`, `GTW_mismatchFault`, `GTW_status`, `GTW_updateStatus`, `GTW_vehNm`, `IDB_alertLog`, `IDB_alertMatrix`, `IDB_info`, `OCS1P_alertLog`, `OCS1P_alertMatrix`, `OCS1P_info`, `OCS1P_status`, `PTC_feedbackStatus`, `RCM_alertLog`, `RCM_alertMatrix`, `RCU_alertLog`, `RCU_alertMatrix`, `RCU_info`, `TCU2_SleepConfig`, `TCU2_alertLog`, `TCU2_alertMatrix1`, `TCU2_log`, `TCU_SleepConfig`, `TCU_alertLog`, `TCU_alertMatrix1`, `TCU_log`, `UIS_log`, `UI_airbagCutoffStatus`, `UI_alertLog`, `UI_alertMatrix1`, `UI_alertMatrix2`, `UI_alertMatrix3`, `UI_alertMatrix4`, `UI_alertMatrix5`, `UI_energyConsumptionInfo`, `UI_gearSliderInfo`, `UI_seatControl`, `UI_stalklessControl`, `UI_status3`, `UI_systemMonitor`, `UI_tripPlannerInfo`, `UI_tripPlanning2`, `UI_tripPlanning3`, `UI_tripPlanning4`, `UI_tripPlanning5`, `VCLEFT_logging10Hz`, `VCSEAT2L_alertLog`, `VCSEAT2L_alertMatrix`, `VCSEAT2L_seatStatus`, `VCSEAT2L_seatStatus2`, `VCSEAT2R_alertLog`, `VCSEAT2R_alertMatrix`, `VCSEAT2R_seatStatus`, `VCSEAT2R_seatStatus2`.
 - Three Ethernet-side ids have no mapping: 0x111, 0x112, 0x113 (right body
   controller wake logging).
-- Log A ids that are mapped to a CAN id but have no signal layout yet: 0x232 0x234 0x242 0x24A 0x407 0x553 0x682 0x72A 0x797.
+- Log A ids that are mapped to a CAN id but not decoded by the VEH file: 0x213 (flagged, see above) 0x232 0x234 0x242 0x24A 0x407 0x553 0x682 0x72A 0x797.
 - Log A ids with no known Ethernet-side counterpart (77): 0x102 0x103 0x113 0x1F8 0x1FA 0x20E 0x22B 0x25B 0x27D 0x286 0x289 0x2A1 0x2AA 0x2BD 0x2BF 0x2EC 0x311 0x318 0x31A 0x323 0x33D 0x348 0x35F 0x361 0x362 0x364 0x382 0x38B 0x39B 0x3A3 0x3AE 0x3CC 0x3D3 0x3ED 0x3FA 0x400 0x405 0x409 0x40A 0x414 0x419 0x41D 0x420 0x421 0x422 0x428 0x42E 0x448 0x452 0x458 0x45B 0x49D 0x509 0x528 0x52F 0x552 0x55A 0x666 0x6C8 0x6E8 0x708 0x724 0x726 0x727 0x748 0x752 0x77D 0x782 0x788 0x789 0x78A 0x798 0x7A8 0x7B8 0x7DD 0x7F4 0x7FF.
 
 ### Load with cantools (Python)
 
 ```python
 import cantools
-db = cantools.database.load_file('dbc/AllModels/2026.26.6.5/VEH.dbc', strict=True)
+db = cantools.database.load_file('dbc/Model3/2026.26.6.5/VEH.dbc', strict=True)
 msg = db.get_message_by_name('BMS_status')
 print(msg.frame_id, [s.name for s in msg.signals])
 print(db.decode_message(msg.frame_id, bytes(msg.length)))
@@ -188,7 +208,7 @@ print(db.decode_message(msg.frame_id, bytes(msg.length)))
 
 ```python
 import can, cantools
-db = cantools.database.load_file('dbc/AllModels/2026.26.6.5/VEH.dbc')
+db = cantools.database.load_file('dbc/Model3/2026.26.6.5/VEH.dbc')
 with can.Bus(interface='socketcan', channel='can0') as bus:
     for frame in bus:
         try:

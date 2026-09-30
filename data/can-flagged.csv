@@ -1,0 +1,2 @@
+bus,can_id,message,reason
+VEH,531,UI_cruiseControl,2-byte frame from a different sender; its counter never steps

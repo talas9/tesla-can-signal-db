@@ -81,7 +81,7 @@ CM_ "Tesla Bayberry CAN bus database; bus CH (chassis CAN); firmware 2026.26.6.5
 CM_ BU_ APP "Driver assistance computer (primary)";
 CM_ BU_ DAS "Driver assistance computer";
 CM_ BU_ PARK "Parking assist sensors";
-CM_ BO_ 605 "Driver assistance computer (primary) message: traffic control";
+CM_ BO_ 605 "Driver assistance computer (primary) message: traffic control; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 605 APP_tcFeatureState "The feature level state of stopping for traffic controls";
 CM_ SG_ 605 APP_tcStateMachine "The traffic control state machine's internal control state.";
 CM_ SG_ 605 APP_tcControlSource "The input data source for the traffic control object";
@@ -96,7 +96,7 @@ CM_ SG_ 605 APP_tcVisionLight "Whether or not the traffic light has a vision mea
 CM_ SG_ 605 APP_tcVisionSign "Whether or not the traffic sign has a vision measurement.";
 CM_ SG_ 605 APP_tcVisionRoadMarking "Whether or not the road marking has a vision measurement.";
 CM_ SG_ 605 APP_tcVisionLine "Whether or not the traffic control line has a vision measurement.";
-CM_ BO_ 859 "Driver assistance computer (primary) message: vision ocs status";
+CM_ BO_ 859 "Driver assistance computer (primary) message: vision ocs status; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 859 APP_visionOcsStatusChecksum "Driver assistance computer (primary): vision ocs status checksum";
 CM_ SG_ 859 APP_visionOcsStateRaw "Reports classification state raw signal for front passenger from interior camera.";
 CM_ SG_ 859 APP_visionOcsEmptyProbRaw "Driver assistance computer (primary): vision ocs empty prob raw; raw 255 = signal not available (SNA)";
@@ -104,9 +104,9 @@ CM_ SG_ 859 APP_visionOcsChildProbRaw "Driver assistance computer (primary): vis
 CM_ SG_ 859 APP_visionOcsAdultProbRaw "Driver assistance computer (primary): vision ocs adult prob raw; raw 255 = signal not available (SNA)";
 CM_ SG_ 859 APP_visionOcsFrontPasClsVisionSt "Reports classification state of front passenger seat after Bayesian filter.";
 CM_ SG_ 859 APP_visionOcsStatusCounter "Driver assistance computer (primary): vision ocs status counter";
-CM_ BO_ 401 "Driver assistance computer message: autonomy debug info";
+CM_ BO_ 401 "Driver assistance computer message: autonomy debug info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 401 DAS_autonomyUnavailableReason "Reports the reason for Autonomy being unavailable";
-CM_ BO_ 846 "Parking assist sensors message: pas front middle";
+CM_ BO_ 846 "Parking assist sensors message: pas front middle; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 846 PARK_frontLeftMiddleRawDistData "Zone defined as -38 degrees -> +12 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA)";
 CM_ SG_ 846 PARK_frontMiddleRawDistData "Zone defined as -12 degrees to +12 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA)";
 CM_ SG_ 846 PARK_frontRightMiddleRawDistData "Zone defined +12 degrees to +38 degreees, distance to object in units of centimeters; raw 255 = signal not available (SNA)";

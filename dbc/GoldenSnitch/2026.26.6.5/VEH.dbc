@@ -44,7 +44,7 @@ BO_TX_BU_ 955 : GTW;
 
 CM_ "Tesla GoldenSnitch CAN bus database; bus VEH (vehicle CAN); firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
 CM_ BU_ GTW "Gateway";
-CM_ BO_ 955 "Touchscreen user interface computer message: power; forwarded onto this bus by the gateway";
+CM_ BO_ 955 "Touchscreen user interface computer message: power; forwarded onto this bus by the gateway; frame length observed on a vehicle bus";
 CM_ SG_ 955 UI_dSocAlertEnable "Set when the BMS_a117_SW_Delta_SOC_Weak_Short alert for the BMS should have a functional response";
 BA_DEF_ "BusType" STRING;
 BA_DEF_ "DBName" STRING;
