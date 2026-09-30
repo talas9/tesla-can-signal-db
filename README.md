@@ -1,3 +1,5 @@
+First cut: frame ids in dbc/<fw>/ALL.dbc are internal ids; per-bus files with real CAN ids are coming.
+
 # Tesla CAN Signal Database
 
 Tesla Model 3 / Model Y CAN bus signal database and DBC files: decoded CAN
