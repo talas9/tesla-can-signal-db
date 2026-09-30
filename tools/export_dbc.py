@@ -1300,7 +1300,7 @@ def _readme_with_coverage(readme_text, reports):
 ANCHORS = [
     # (bus file, CAN id, expected message or None, Ethernet-side id or None)
     ('VEH', 0x352, 'BMS_energyStatus', 0x2B2),
-    ('VEH', 0x72A, 'BMS_serialNumber', 0x7FA),  # no signal layout yet -> skipped
+    ('VEH', 0x72A, 'BMS_serialNumber', 0x7FA),
     ('VEH', 0x5F3, 'UI_odo', 0x3F3),
     ('CH', 0x111, 'RCM_inertial2', 0x116),
 ]

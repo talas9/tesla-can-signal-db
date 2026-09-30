@@ -1137,6 +1137,23 @@ BO_ 674 BMS_rippleRequest: 7 BMS
  SG_ BMS_acRippleCurrentAmplitudeRequ : 40|10@1+ (1,0) [0|1023] "A" Vector__XXX
  SG_ BMS_acRippleRequest : 50|3@1+ (1,0) [0|7] "" Vector__XXX
 
+BO_ 1834 BMS_serialNumber: 8 BMS
+ SG_ BMS_serialNumberPage M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte01 m0 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte02 m0 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte03 m0 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte04 m0 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte05 m0 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte06 m0 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte07 m0 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte08 m1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte09 m1 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte10 m1 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte11 m1 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte12 m1 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte13 m1 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialNumberByte14 m1 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
 BO_ 658 BMS_socStatus: 8 BMS
  SG_ BMS_socMin : 0|10@1+ (0.1,0) [0|102.2] "%" Vector__XXX
  SG_ BMS_socUI : 10|10@1+ (0.1,0) [0|100] "%" Vector__XXX
@@ -25003,6 +25020,7 @@ BO_TX_BU_ 914 : BMS;
 BO_TX_BU_ 1810 : BMS;
 BO_TX_BU_ 594 : BMS;
 BO_TX_BU_ 674 : BMS;
+BO_TX_BU_ 1834 : BMS;
 BO_TX_BU_ 658 : BMS;
 BO_TX_BU_ 1170 : BMS;
 BO_TX_BU_ 530 : BMS;
@@ -26441,6 +26459,22 @@ CM_ SG_ 674 BMS_acRippleMinVoltageLimit "Reports the minimum voltage limit when 
 CM_ SG_ 674 BMS_acRippleFrequencyRequest "Transmits the Battery Management System (BMS) AC ripple frequency request to the Electric Vehicle Supply Equipment (EVSE); raw 1023 = signal not available (SNA)";
 CM_ SG_ 674 BMS_acRippleCurrentAmplitudeRequ "Transmits the Battery Management System (BMS) AC ripple current amplitude request to the Electric Vehicle Supply Equipment (EVSE).";
 CM_ SG_ 674 BMS_acRippleRequest "High-voltage battery management system: ac ripple request";
+CM_ BO_ 1834 "High-voltage battery management system message: serial number; frame length observed on a vehicle bus";
+CM_ SG_ 1834 BMS_serialNumberPage "Page index of the pack serial number text (page 0 = characters 1-7, page 1 = characters 8-14)";
+CM_ SG_ 1834 BMS_packSerialNumberByte01 "Pack serial number, character 1 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte02 "Pack serial number, character 2 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte03 "Pack serial number, character 3 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte04 "Pack serial number, character 4 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte05 "Pack serial number, character 5 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte06 "Pack serial number, character 6 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte07 "Pack serial number, character 7 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte08 "Pack serial number, character 8 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte09 "Pack serial number, character 9 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte10 "Pack serial number, character 10 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte11 "Pack serial number, character 11 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte12 "Pack serial number, character 12 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte13 "Pack serial number, character 13 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialNumberByte14 "Pack serial number, character 14 (ASCII)";
 CM_ BO_ 658 "High-voltage battery management system message: soc status; frame length observed on a vehicle bus";
 CM_ SG_ 658 BMS_socMin "BMS State Of Charge (SOC). This is the minimum brick SOC.";
 CM_ SG_ 658 BMS_socUI "BMS State Of Energy (SOE) for the UI. This is ideal discharge energy from present state / ideal discharge energy from full.";
@@ -50118,6 +50152,9 @@ BA_ "VFrameFormat" BO_ 594 0;
 BA_ "GenMsgCycleTime" BO_ 674 1000;
 BA_ "GenMsgSendType" BO_ 674 0;
 BA_ "VFrameFormat" BO_ 674 0;
+BA_ "GenMsgCycleTime" BO_ 1834 0;
+BA_ "GenMsgSendType" BO_ 1834 8;
+BA_ "VFrameFormat" BO_ 1834 0;
 BA_ "GenMsgCycleTime" BO_ 658 100;
 BA_ "GenMsgSendType" BO_ 658 0;
 BA_ "VFrameFormat" BO_ 658 0;
@@ -52350,6 +52387,21 @@ BA_ "GenSigSNA" SG_ 674 BMS_acRippleFrequencyRequest "1023";
 BA_ "Confidence" SG_ 674 BMS_acRippleCurrentAmplitudeRequ 0;
 BA_ "SystemSignalLongSymbol" SG_ 674 BMS_acRippleCurrentAmplitudeRequ "BMS_acRippleCurrentAmplitudeRequest";
 BA_ "Confidence" SG_ 674 BMS_acRippleRequest 0;
+BA_ "Confidence" SG_ 1834 BMS_serialNumberPage 1;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte01 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte02 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte03 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte04 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte05 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte06 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte07 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte08 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte09 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte10 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte11 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte12 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte13 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte14 0;
 BA_ "Confidence" SG_ 658 BMS_socMin 0;
 BA_ "Confidence" SG_ 658 BMS_socUI 0;
 BA_ "Confidence" SG_ 658 BMS_socMax 0;
