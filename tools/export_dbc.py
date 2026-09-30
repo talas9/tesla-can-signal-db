@@ -12,9 +12,9 @@ Library API (no hard-coded paths; every path is an argument)
         Reads <fw_dir>/signals.csv plus, when present, messages.csv
         (message,length,cycle_ms,routes with routes = BUS:can_id:native|gateway
         joined by ';'), signal-meta.csv (message,signal,unit,enum_values,sna,
-        models,cross_checked[,confidence]) and log-verdicts.csv (fw,signal,message,eth_id,
-        can_id,bus,verdict,logs_seen,frames,in_range_pct,evidence; only
-        fw/message/signal/verdict are used, evidence is never copied).
+        models,cross_checked[,confidence]) and validation.csv (fw,message,signal,verdict,
+        frames,in_range_pct; only fw/message/signal/verdict are used; no evidence
+        text or log names are stored).
 
     export(signal_rows, firmware, out_dir, routing=None, msg_meta=None,
            signal_meta=None, verdicts=None)  -> {'files': [report, ...]}
@@ -322,7 +322,13 @@ def normalise_rows(rows, signal_meta=None, verdicts=None):
             sig['confidence_hint'] = meta['confidence']
         v = verdicts.get((msg, name))
         if v in VERDICT_OVERRIDES:
-            sig['confidence_hint'] = v
+            # A log verdict upgrades or contradicts; 'plausible' on logs never
+            # demotes a layout tier earned from two independent definitions.
+            if v == 'plausible' and (sig['confidence_hint'] == 'validated' or (
+                    not sig['confidence_hint'] and sig['cross_checked'])):
+                pass
+            else:
+                sig['confidence_hint'] = v
         signals.append(sig)
     return signals, dropped
 
@@ -1249,7 +1255,7 @@ def load_inputs(fwdir):
     sp = fwdir / 'signal-meta.csv'
     if sp.exists():
         kw['signal_meta'] = {(r['message'], r['signal']): r for r in _read_csv(sp)}
-    vp = fwdir / 'log-verdicts.csv'
+    vp = fwdir / 'validation.csv'
     if vp.exists():
         kw['verdicts'] = {}
         for r in _read_csv(vp):
