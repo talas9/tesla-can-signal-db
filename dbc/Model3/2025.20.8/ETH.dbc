@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ADSP APB APP APS APSB BB BMS CC CMP CP DAS DI DIF DIR DPB EPAS3P EPAS3S EPASTP EPASTS EPBL EPBR ESP GTW HVP IBST ICR IDB OCS1P PCS PM PMF PMR PTC RCM RCM2 RCU SCCM SDCR TAS TCU TRCM UI UIS UMC USM VC VCFRONT VCLEFT VCRIGHT VCSEC
+BU_: ADSP APB APP APS APSB BB BMS CC CMP CMPD CP DAS DI DIF DIR DPB EPAS3P EPAS3S EPASTP EPASTS EPBL EPBR ESP GTW HVP IBST ICR IDB OCS1P ODIN PARK PCS PLG PM PMF PMR PTC RADC RCM RCM2 RCU SCCM SDCR TAS TCU TPMS TRCM UDS UI UIS UMC USM VC VCFRONT VCLEFT VCRIGHT VCSEC
 
 
 BO_ 1360 ADSP_alertLog: 8 ADSP
@@ -1397,6 +1397,10 @@ BO_ 1040 APP_cameraStatus: 2 APP
  SG_ APP_cameraBlockedRightPillar : 13|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ APP_cameraBlockedRightRepeater : 14|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ APP_cameraBlockedBackup : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1177 APP_cameraTemperatures: 8 APP
+ SG_ APP_rRepeaterCameraTemperature : 24|8@1+ (1,-60) [-60|195] "C" Vector__XXX
+ SG_ APP_lRepeaterCameraTemperature : 32|8@1+ (1,-60) [-60|195] "C" Vector__XXX
 
 BO_ 603 APP_environment: 1 APP
  SG_ APP_environmentRainy : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -2763,6 +2767,10 @@ BO_ 1138 BMS_chargeInfo: 8 BMS
  SG_ BMS_timeToFinishHeatForCharge : 45|7@1+ (5,0) [0|600] "min" Vector__XXX
  SG_ BMS_diNodeModelTemp : 52|11@1+ (0.1,-50) [-50|154.6] "degC" Vector__XXX
 
+BO_ 562 BMS_contactorRequest: 8 BMS
+ SG_ BMS_internalHvilSenseV : 16|16@1+ (0.001,0) [0|65.534] "V" Vector__XXX
+ SG_ BMS_hvilCoverVSense : 32|16@1+ (0.001,0) [0|65.534] "V" Vector__XXX
+
 BO_ 2029 BMS_debugInfo_10Hz: 8 BMS
  SG_ BMS_10HzDebug_Id M : 0|6@1+ (1,0) [0|63] "" Vector__XXX
  SG_ BMS_activeCoolCellTargetT m33 : 6|9@1+ (0.25,-25) [-25|100] "DegC" Vector__XXX
@@ -2786,6 +2794,8 @@ BO_ 884 BMS_log1: 8 BMS
  SG_ BMS_dcChargePowerLimit m9 : 20|12@1- (1,0) [-2048|2047] "kW" Vector__XXX
  SG_ BMS_acChargePowerRequest m9 : 32|16@1+ (0.001,0) [0|65.535] "kW" Vector__XXX
  SG_ BMS_maxExtIsoFcLinkV m9 : 48|13@1+ (0.134293735027,0) [0|1099.99998361] "V" Vector__XXX
+ SG_ BMS_minModeledPackTemp m10 : 8|11@1+ (0.1,-50) [-50|154.7] "C" Vector__XXX
+ SG_ BMS_maxModeledPackTemp m10 : 19|11@1+ (0.1,-50) [-50|154.7] "C" Vector__XXX
  SG_ BMS_socByDeltaVEnabled m15 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ BMS_socByDvMaxSocLimit m15 : 9|10@1+ (0.1,0) [0|102.2] "%" Vector__XXX
  SG_ BMS_socByDvVoltageChangeOverAh m15 : 19|9@1+ (0.002,0) [0|1] "V" Vector__XXX
@@ -2827,6 +2837,13 @@ BO_ 946 BMS_log2: 8 BMS
  SG_ BMS_temperatureCondition m21 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ BMS_thmGradientSlope m21 : 44|10@1- (0.01,0) [-5.12|5.11] "C/min" Vector__XXX
  SG_ BMS_thmGradient m21 : 56|8@1+ (0.1,0) [0|25.5] "C" Vector__XXX
+ SG_ BMS_epochTimeEstimate m29 : 8|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+ SG_ BMS_histogramStartTimeIrrational m30 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramDischargeThroughput m30 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramChargeThroughputIrr m30 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramTotalTimeIrrational m30 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramStorageDataIsLow m30 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_lifeModelOutputsAreTrustwort m31 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ BMS_dSocNormalizedMin m33 : 8|12@1+ (0.0030517578125,-12.4969482422) [-12.4969482422|-0.003051757825] "%" Vector__XXX
  SG_ BMS_dSocNormalizedFiltMin m33 : 20|12@1+ (0.0030517578125,-12.4969482422) [-12.4969482422|-0.003051757825] "%" Vector__XXX
  SG_ BMS_dSocMinAlpha m33 : 32|12@1+ (0.0030517578125,-12.4969482422) [-12.4969482422|-0.003051757825] "%" Vector__XXX
@@ -2853,6 +2870,7 @@ BO_ 946 BMS_log2: 8 BMS
  SG_ BMS_lifeModelMinCac m65 : 36|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_restingPointCacAvg m65 : 48|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_cacEstimationSource m65 : 60|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ BMS_packCalibrationBirthDateBinn m67 : 26|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ BMS_synchronizedCacMaxRaw m71 : 8|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_synchronizedCacMinRaw m71 : 20|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_largestSyncCacErrorStartSoc m71 : 32|10@1+ (0.1,0) [0|102.2] "%" Vector__XXX
@@ -2956,6 +2974,9 @@ BO_ 2028 BMS_thermalStatus2: 7 BMS
  SG_ BMS_cellTempTargetMode : 48|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ BMS_requestDischarge : 52|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1554 BMS_udsResponse: 8 BMS
+ SG_ BMS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 754 BMS_vehNm: 2 BMS
  SG_ BMS_nmGoingToSleep : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ BMS_nmWakeUpBus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -2973,11 +2994,17 @@ BO_ 797 CC_chgStatus2: 8 CC
  SG_ CC_chgStatus2Index M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ CC_buttonState m0 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1559 CMPD_udsResponse: 8 CMPD
+ SG_ CMPD_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 551 CMP_HVStatus: 8 CMP
  SG_ CMP_inputHVVoltage : 0|16@1+ (0.1,0) [0|6553.4] "V" Vector__XXX
  SG_ CMP_inputLVVoltage : 16|8@1+ (0.1,0) [0|25.5] "V" Vector__XXX
  SG_ CMP_inputHVCurrent : 24|16@1+ (0.1,0) [0|6553.4] "A" Vector__XXX
  SG_ CMP_inputHVPower : 40|16@1+ (1,0) [0|65534] "W" Vector__XXX
+
+BO_ 1555 CMP_udsResponse: 8 CMP
+ SG_ CMP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1294 CP_alertLog: 8 CP
  SG_ CP_alertID M : 0|15@1+ (1,0) [0|32767] "" Vector__XXX
@@ -3592,6 +3619,9 @@ BO_ 893 CP_thermalStatus: 8 CP
  SG_ CP_pinTemperature2 m1 : 16|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
  SG_ CP_pinTemperature3 m1 : 24|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
 
+BO_ 1566 CP_udsResponse: 8 CP
+ SG_ CP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 583 DAS_autopilotDebug: 8 DAS
  SG_ DAS_roadEstimator : 0|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ DAS_arbiterBehavior : 2|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -3726,6 +3756,9 @@ BO_ 1548 DAS_telemetryRadar: 8 DAS
  SG_ DAS_TR_Obj00_MovingState m0 : 46|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ DAS_TR_Obj00_Dz m0 : 48|6@1+ (0.25,-5) [-5|10.75] "m" Vector__XXX
  SG_ DAS_TR_Obj00_Exist m0 : 56|5@1+ (3.125,0) [0|96.875] "%" Vector__XXX
+
+BO_ 1625 DAS_udsResponse: 8 DAS
+ SG_ DAS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1318 DIF_alertLog: 8 DIF
  SG_ DIF_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -4565,6 +4598,9 @@ BO_ 390 DIF_torque: 8 DIF
  SG_ DIF_axleTorqueQF : 56|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ DIF_axlePowerCalcQF : 58|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1557 DIF_udsResponse: 8 DIF
+ SG_ DIF_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1445 DIR_alertLog: 8 DIR
  SG_ DIR_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ DIR_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -5403,6 +5439,9 @@ BO_ 264 DIR_torque: 8 DIR
  SG_ DIR_axleSpeed : 40|16@1- (0.1,0) [-2750|2750] "RPM" Vector__XXX
  SG_ DIR_axleTorqueQF : 56|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ DIR_axlePowerCalcQF : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1558 DIR_udsResponse: 8 DIR
+ SG_ DIR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1319 DI_alertLog: 8 DI
  SG_ DI_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -6688,6 +6727,9 @@ BO_ 883 EPAS3P_sysStatus: 8 EPAS3P
  SG_ EPAS3P_eacStatus : 53|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ EPAS3P_sysStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1592 EPAS3P_udsResponseCH: 8 EPAS3P
+ SG_ EPAS3P_udsResponseDataCH : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1425 EPAS3S_alertLog: 8 EPAS3S
  SG_ EPAS3S_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ EPAS3S_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -6882,6 +6924,9 @@ BO_ 882 EPAS3S_sysStatus: 8 EPAS3S
  SG_ EPAS3S_tireIDActive : 52|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ EPAS3S_eacStatus : 53|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ EPAS3S_sysStatusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1848 EPAS3S_udsResponse: 8 EPAS3S
+ SG_ EPAS3S_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1427 EPASTP_alertLog: 8 EPASTP
  SG_ EPASTP_alertID M : 0|9@1+ (1,0) [0|511] "" Vector__XXX
@@ -8816,6 +8861,10 @@ BO_ 681 EPBL_status: 8 EPBL
  SG_ EPBL_statusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ EPBL_statusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1573 EPBL_udsResponse: 8 EPBL
+ SG_ EPBL_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ EPBL_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
 BO_ 1448 EPBR_alertLog: 8 EPBR
  SG_ EPBR_alertID M : 0|9@1+ (1,0) [0|511] "" Vector__XXX
  SG_ EPBR_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -9655,6 +9704,10 @@ BO_ 744 EPBR_status: 8 EPBR
  SG_ EPBR_statusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ EPBR_statusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1575 EPBR_udsResponse: 8 EPBR
+ SG_ EPBR_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ EPBR_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
 BO_ 981 ESP_alertMatrix: 8 ESP
  SG_ ESP_matrixIndex M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ ESP_a001_ecuGenericFault m0 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -10035,6 +10088,15 @@ BO_ 981 ESP_alertMatrix: 8 ESP
  SG_ ESP_a376_PM_locStateChecksum m6 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ ESP_a377_PM_locStateDLC m6 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ ESP_a378_PM_locStateTimeout m6 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1621 ESP_udsResponse: 8 ESP
+ SG_ ESP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 373 ESP_wheelSpeeds: 8 ESP
+ SG_ ESP_wheelSpeedFrL : 0|13@1+ (0.042,0) [0|343.98] "km/h" Vector__XXX
+ SG_ ESP_wheelSpeedFrR : 13|13@1+ (0.042,0) [0|343.98] "km/h" Vector__XXX
+ SG_ ESP_wheelSpeedReL : 26|13@1+ (0.042,0) [0|343.98] "km/h" Vector__XXX
+ SG_ ESP_wheelSpeedReR : 39|13@1+ (0.042,0) [0|343.98] "km/h" Vector__XXX
 
 BO_ 888 GTW_ECall: 1 GTW
  SG_ GTW_GTW_SOS_ECALL_RQST : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -10603,6 +10665,9 @@ BO_ 2047 GTW_carConfig: 8 GTW
  SG_ GTW_interiorCameraType m8 : 39|2@1+ (1,0) [0|2] "" Vector__XXX
  SG_ GTW_frontFasciaCameraType m8 : 41|2@1+ (1,0) [0|3] "" Vector__XXX
 
+BO_ 792 GTW_carState: 8 GTW
+ SG_ GTW_factoryGated : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 1638 GTW_diagSession: 4 GTW
  SG_ GTW_diagRemainingSeconds : 0|16@1+ (1,0) [0|65535] "seconds" Vector__XXX
  SG_ GTW_diagSessionActive : 16|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -10617,6 +10682,36 @@ BO_ 1080 GTW_ethNm: 2 GTW
  SG_ GTW_vehBusAsleep : 2|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ GTW_ethHeartBeatCounter : 4|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ GTW_ethWakeUpReason : 8|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1376 GTW_factoryEcuPresent: 4 GTW
+ SG_ GTW_OCS1Ppresent : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PCSpresent : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_HVPpresent : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_BMSpresent : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CPpresent : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_RCMpresent : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_SCCMpresent : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCSECpresent : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPAS3Ppresent : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPBLpresent : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPBRpresent : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_ESPpresent : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_IBSTpresent : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARKpresent : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_RADCpresent : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_TPMSpresent : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCFRONTpresent : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCLEFTpresent : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCRIGHTpresent : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPAS3Spresent : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CMPpresent : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_DASpresent : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PTCpresent : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_SWCpresent : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PMRpresent : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PMFpresent : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_DIRpresent : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_DIFpresent : 28|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1656 GTW_gearControl: 7 GTW
  SG_ GTW_gearControlChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -11081,6 +11176,14 @@ BO_ 1962 HVP_debugMessage: 8 HVP
  SG_ HVP_battery12V m5 : 36|12@1+ (0.1,0) [0|30] "V" Vector__XXX
  SG_ HVP_shuntRefVoltageDbg m5 : 48|16@1- (0.001,0) [-32.768|32.767] "V" Vector__XXX
 
+BO_ 1666 HVP_hvpFaults: 8 HVP
+ SG_ HVP_packContactorHwFault : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVP_fcContactorHwFault : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVP_hvilStatus : 30|2@1+ (1,0) [0|2] "" Vector__XXX
+
+BO_ 1553 HVP_udsResponse: 8 HVP
+ SG_ HVP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 861 IBST_alertMatrix: 8 IBST
  SG_ IBST_matrixIndex M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ IBST_a001_microSupplyError m0 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -11319,6 +11422,9 @@ BO_ 861 IBST_alertMatrix: 8 IBST
  SG_ IBST_a234_LiPSOutOfRangeHigh m3 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ IBST_a235_LiPSOutOfRangeLow m3 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1629 IBST_udsResponse: 8 IBST
+ SG_ IBST_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1208 ICR_alertLog: 8 ICR
  SG_ ICR_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ ICR_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -11444,6 +11550,9 @@ BO_ 2023 ICR_status: 5 ICR
  SG_ ICR_intrusionStatus : 32|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ ICR_booted : 38|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ ICR_rdMapDumpCompleted : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1624 ICR_udsResponse: 8 ICR
+ SG_ ICR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1470 IDB_alertLog: 8 IDB
  SG_ IDB_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -11806,6 +11915,22 @@ BO_ 771 OCS1P_status: 8 OCS1P
  SG_ OCS1P_classificationHeldCap : 51|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ OCS1P_statusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ OCS1P_statusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1619 OCS1P_udsResponse: 8 OCS1P
+ SG_ OCS1P_udsResponseData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1152 ODIN_IsoTpPipeVCSEC: 8 ODIN
+ SG_ ODIN_IsoTpPipeVCSEC0 : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC1 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC2 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC3 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC4 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC5 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC6 : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC7 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1630 PARK_udsResponse: 8 PARK
+ SG_ PARK_udsResponseData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1060 PCS_alertLog: 8 PCS
  SG_ PCS_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
@@ -12379,6 +12504,12 @@ BO_ 708 PCS_logging: 8 PCS
  SG_ PCS_processorDieIdX m26 : 40|12@1+ (1,0) [0|4095] "" Vector__XXX
  SG_ PCS_processorDieIdY m26 : 52|12@1+ (1,0) [0|4095] "" Vector__XXX
 
+BO_ 1577 PCS_udsResponse: 8 PCS
+ SG_ PCS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1635 PLG_udsResponse: 8 PLG
+ SG_ PLG_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1317 PMF_alertLog: 8 PMF
  SG_ PMF_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
  SG_ PMF_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -12624,6 +12755,12 @@ BO_ 2022 PMF_alertMatrix2: 8 PMF
  SG_ PMF_a097_lowFlowAlmostTripped : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ PMF_a100_diTraceInfo1 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ PMF_a121_unintendedReset2 : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 469 PMF_state4: 8 PMF
+ SG_ PMF_hvilStatus : 37|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1620 PMF_udsResponse: 8 PMF
+ SG_ PMF_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1446 PMR_alertLog: 8 PMR
  SG_ PMR_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
@@ -12890,6 +13027,12 @@ BO_ 928 PMR_alertMatrix2: 8 PMR
  SG_ PMR_a100_diTraceInfo1 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ PMR_a101_hwVoltageMonitorTrip : 36|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ PMR_a121_unintendedReset2 : 56|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 472 PMR_state4: 8 PMR
+ SG_ PMR_hvilStatus : 37|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1556 PMR_udsResponse: 8 PMR
+ SG_ PMR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1444 PM_alertLog: 8 PM
  SG_ PM_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
@@ -13305,6 +13448,9 @@ BO_ 463 PM_systemState: 8 PM
  SG_ PM_systemStateCounter : 53|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ PM_systemStateChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1600 PM_udsResponse: 8 PM
+ SG_ PM_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 519 PTC_feedbackStatus: 8 PTC
  SG_ PTC_leftFlagFault : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ PTC_rightFlagFault : 1|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -13320,6 +13466,12 @@ BO_ 519 PTC_feedbackStatus: 8 PTC
  SG_ PTC_tliErrorCount : 56|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ PTC_tliEvent : 60|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ PTC_tliSource : 61|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1750 PTC_udsResponse: 8 PTC
+ SG_ PTC_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1665 RADC_udsResponse: 8 RADC
+ SG_ RADC_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1249 RCM2_alertLog: 8 RCM2
  SG_ RCM2_alertID M : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
@@ -16274,6 +16426,9 @@ BO_ 881 RCM_alertMatrix: 8 RCM
  SG_ RCM_a117_imuVerticalAcceleration m1 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ RCM_a118_imuInPlaneAcceleration m1 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1617 RCM_udsResponse: 8 RCM
+ SG_ RCM_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1471 RCU_alertLog: 8 RCU
  SG_ RCU_alertID M : 0|6@1+ (1,0) [0|63] "" Vector__XXX
  SG_ RCU_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -16566,6 +16721,16 @@ BO_ 1344 SCCM_alertLog: 8 SCCM
  SG_ SCCM_a126_turnIndicatorZMagnitud m126 : 40|8@1+ (1,0) [0|255] "mT" Vector__XXX
  SG_ SCCM_a126_turnIndicatorResultant m126 : 48|8@1+ (1,0) [0|255] "mT" Vector__XXX
 
+BO_ 1680 SCCM_udsResponse: 8 SCCM
+ SG_ SCCM_functionalResponseData_0 : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_1 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_2 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_3 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_4 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_5 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_6 : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_7 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
 BO_ 1531 SDCR_alertLog: 8 SDCR
  SG_ SDCR_alertID M : 0|6@1+ (1,0) [0|63] "" Vector__XXX
  SG_ SDCR_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -16691,6 +16856,9 @@ BO_ 1531 SDCR_alertLog: 8 SDCR
  SG_ SDCR_a029_lvState m29 : 18|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ SDCR_a034_Ia m34 : 16|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
  SG_ SDCR_a034_Ib m34 : 32|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
+
+BO_ 1787 SDCR_udsResponse: 8 SDCR
+ SG_ SDCR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1835 TAS_alertLog: 8 TAS
  SG_ TAS_alertID M : 0|9@1+ (1,0) [0|511] "" Vector__XXX
@@ -17064,6 +17232,9 @@ BO_ 852 TAS_alertMatrix: 8 TAS
  SG_ TAS_a332_levelingThresholds1 m5 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ TAS_a333_levelingThresholds2 m5 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1627 TAS_udsResponse: 8 TAS
+ SG_ TAS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1410 TCU_alertLog: 8 TCU
  SG_ TCU_alertID M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ TCU_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -17105,6 +17276,9 @@ BO_ 1408 TCU_status: 8 TCU
  SG_ TCU_wakeUpReason m0 : 32|32@1+ (1,0) [0|4294967294] "" Vector__XXX
  SG_ TCU_tcuCmdId m1 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ TCU_goingToSleep m2 : 32|32@1+ (1,0) [0|4294967294] "" Vector__XXX
+
+BO_ 1631 TPMS_udsResponse: 8 TPMS
+ SG_ TPMS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1298 TRCM_alertLog: 8 TRCM
  SG_ TRCM_alertID M : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
@@ -17994,6 +18168,150 @@ BO_ 2030 TRCM_alertMatrix: 8 TRCM
  SG_ TRCM_a630_loop29AsicStartupDiagn m10 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ TRCM_a631_loop30AsicStartupDiagn m10 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ TRCM_a632_loop31AsicStartupDiagn m10 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1641 UDS_KOSTIAsccmRequest: 8 UDS
+ SG_ UDS_KOSTIAsccmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1538 UDS_bmsRequest: 8 UDS
+ SG_ UDS_bmsRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1579 UDS_ccRequest: 8 UDS
+ SG_ UDS_ccRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1539 UDS_cmpRequest: 8 UDS
+ SG_ UDS_cmpRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1543 UDS_cmpdRequest: 8 UDS
+ SG_ UDS_cmpdRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1550 UDS_cpRequest: 8 UDS
+ SG_ UDS_cpRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1609 UDS_dasRequest: 8 UDS
+ SG_ UDS_dasRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1589 UDS_diRequest: 8 UDS
+ SG_ UDS_diRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1541 UDS_difRequest: 8 UDS
+ SG_ UDS_difRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1542 UDS_dirRequest: 8 UDS
+ SG_ UDS_dirRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1584 UDS_epas3pRequest: 8 UDS
+ SG_ UDS_epas3pRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1840 UDS_epas3sRequest: 8 UDS
+ SG_ UDS_epas3sRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1572 UDS_epblRequest: 8 UDS
+ SG_ UDS_epblRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_epblRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1574 UDS_epbrRequest: 8 UDS
+ SG_ UDS_epbrRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_epbrRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1605 UDS_espRequest: 8 UDS
+ SG_ UDS_espRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 2015 UDS_functionalRequest: 8 UDS
+ SG_ UDS_functionalRequestData_0 : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_1 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_2 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_3 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_4 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_5 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_6 : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_7 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 2014 UDS_functionalRequest_CH: 8 UDS
+ SG_ UDS_functionalRequestDataCH : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1552 UDS_hvpRequest: 8 UDS
+ SG_ UDS_hvpRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1613 UDS_ibstRequest: 8 UDS
+ SG_ UDS_ibstRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1560 UDS_icrRequest: 8 UDS
+ SG_ UDS_icrRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1603 UDS_ocs1pRequest: 8 UDS
+ SG_ UDS_ocs1pRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1614 UDS_parkRequest: 8 UDS
+ SG_ UDS_parkRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1576 UDS_pcsRequest: 8 UDS
+ SG_ UDS_pcsRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1634 UDS_plgRequest: 8 UDS
+ SG_ UDS_plgRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1568 UDS_pmRequest: 8 UDS
+ SG_ UDS_pmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1604 UDS_pmfRequest: 8 UDS
+ SG_ UDS_pmfRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1540 UDS_pmrRequest: 8 UDS
+ SG_ UDS_pmrRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1734 UDS_ptcRequest: 8 UDS
+ SG_ UDS_ptcRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1649 UDS_radcRequest: 8 UDS
+ SG_ UDS_radcRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1601 UDS_rcmRequest: 8 UDS
+ SG_ UDS_rcmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1664 UDS_sccmRequest: 8 UDS
+ SG_ UDS_sccmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1723 UDS_sdcrRequest: 8 UDS
+ SG_ UDS_sdcrRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1611 UDS_tasRequest: 8 UDS
+ SG_ UDS_tasRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1551 UDS_thcRequest: 8 UDS
+ SG_ UDS_thcRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_thcRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1615 UDS_tpmsRequest: 8 UDS
+ SG_ UDS_tpmsRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1578 UDS_vcbatt1Request: 8 UDS
+ SG_ UDS_vcbatt1RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1588 UDS_vcbatt2Request: 8 UDS
+ SG_ UDS_vcbatt2RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1636 UDS_vcbattRequest: 8 UDS
+ SG_ UDS_vcbattRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1580 UDS_vcfront1Request: 8 UDS
+ SG_ UDS_vcfront1RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1582 UDS_vcfront2Request: 8 UDS
+ SG_ UDS_vcfront2RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1536 UDS_vcfrontRequest: 8 UDS
+ SG_ UDS_vcfrontRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1570 UDS_vcleftRequest: 8 UDS
+ SG_ UDS_vcleftRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_vcleftRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1544 UDS_vcrightRequest: 8 UDS
+ SG_ UDS_vcrightRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_vcrightRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1546 UDS_vcsecRequest: 8 UDS
+ SG_ UDS_vcsecRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1056 UIS_log: 8 UIS
  SG_ UIS_logMux M : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
@@ -20309,6 +20627,7 @@ BO_ 545 VCFRONT_LVPowerState: 8 VCFRONT
  SG_ VCFRONT_LVShuttingDown : 51|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_LVPowerStateCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCFRONT_LVPowerStateChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCFRONT_dirLVRequest m0 : 34|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCFRONT_cpLVRequest m1 : 8|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCFRONT_epasLVState m1 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCFRONT_hvcLVRequest m1 : 12|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -23543,6 +23862,9 @@ BO_ 737 VCFRONT_status: 8 VCFRONT
  SG_ VCFRONT_activeLouverState m5 : 51|5@1+ (1,0) [0|31] "" Vector__XXX
  SG_ VCFRONT_windshieldCameraHeaterPo m5 : 56|6@1+ (2.5,0) [0|155] "W" Vector__XXX
 
+BO_ 1537 VCFRONT_udsResponse: 8 VCFRONT
+ SG_ VCFRONT_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 929 VCFRONT_vehicleStatus: 8 VCFRONT
  SG_ VCFRONT_vehicleStatusMuxIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_vehicleStatusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
@@ -25698,6 +26020,10 @@ BO_ 657 VCLEFT_thermalLogging1Hz: 8 VCLEFT
  SG_ VCLEFT_hvacBlowerArbResult m1 : 43|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCLEFT_hvacBlowerArbCurrent m1 : 48|8@1+ (0.1,0) [0|25.5] "A" Vector__XXX
  SG_ VCLEFT_hvacBlowerTorqueIndexFilt m1 : 56|7@1+ (1,0) [0|127] "%" Vector__XXX
+
+BO_ 1571 VCLEFT_udsResponse: 8 VCLEFT
+ SG_ VCLEFT_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ VCLEFT_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 1114 VCRIGHT_AP_hvacState10Hz: 8 VCRIGHT
  SG_ VCRIGHT_AP_hvacState10HzIndex M : 0|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -27892,6 +28218,9 @@ BO_ 835 VCRIGHT_status: 8 VCRIGHT
 
 BO_ 963 VCRIGHT_switchStatus: 8 VCRIGHT
  SG_ VCRIGHT_switchStatusIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontBuckleSwitch m0 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_rearCenterBuckleSwitch m0 : 44|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_rearRightBuckleSwitch m0 : 46|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCRIGHT_trunkExtReleasePressedPe m1 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCRIGHT_frontSeatTrackBack m1 : 2|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_frontSeatTrackForward m1 : 4|2@1+ (1,0) [1|3] "" Vector__XXX
@@ -27913,6 +28242,20 @@ BO_ 963 VCRIGHT_switchStatus: 8 VCRIGHT
  SG_ VCRIGHT_frontSeatALR m1 : 52|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_frontSeatResistiveOccupa m1 : 54|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_2RowSeatReclineSwitchpac m1 : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1545 VCRIGHT_udsResponse: 8 VCRIGHT
+ SG_ VCRIGHT_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ VCRIGHT_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 953 VCSEC_IsoTpPipeODIN: 8 VCSEC
+ SG_ VCSEC_IsoTpPipeODIN0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 537 VCSEC_TPMSData: 7 VCSEC
  SG_ VCSEC_TPMSDataIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -28847,6 +29190,9 @@ BO_ 1817 VCSEC_debug100ms: 8 VCSEC
  SG_ VCSEC_NISessionStateRearRight2 m9 : 53|5@1+ (1,0) [0|31] "" Vector__XXX
  SG_ VCSEC_NISessionStateRear2 m9 : 58|5@1+ (1,0) [0|31] "" Vector__XXX
 
+BO_ 2008 VCSEC_udsResponse: 8 VCSEC
+ SG_ VCSEC_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1655 VC_LVBMS_statusHigh: 8 VC
  SG_ VC_lvbmsStatusHighIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VC_LVBMS_packCurrent m0 : 3|22@1+ (0.001,-2000) [-2000|2194.302] "A" Vector__XXX
@@ -28942,6 +29288,7 @@ BO_TX_BU_ 909 : APP;
 BO_TX_BU_ 1513 : APP;
 BO_TX_BU_ 2046 : APP;
 BO_TX_BU_ 1040 : APP;
+BO_TX_BU_ 1177 : APP;
 BO_TX_BU_ 603 : APP;
 BO_TX_BU_ 601 : APP;
 BO_TX_BU_ 1081 : APP;
@@ -28958,6 +29305,7 @@ BO_TX_BU_ 943 : BB;
 BO_TX_BU_ 1343 : BMS;
 BO_TX_BU_ 800 : BMS;
 BO_TX_BU_ 1138 : BMS;
+BO_TX_BU_ 562 : BMS;
 BO_TX_BU_ 2029 : BMS;
 BO_TX_BU_ 306 : BMS;
 BO_TX_BU_ 884 : BMS;
@@ -28969,10 +29317,13 @@ BO_TX_BU_ 658 : BMS;
 BO_TX_BU_ 530 : BMS;
 BO_TX_BU_ 786 : BMS;
 BO_TX_BU_ 2028 : BMS;
+BO_TX_BU_ 1554 : BMS;
 BO_TX_BU_ 754 : BMS;
 BO_TX_BU_ 810 : BMS;
 BO_TX_BU_ 797 : CC;
+BO_TX_BU_ 1559 : CMPD;
 BO_TX_BU_ 551 : CMP;
+BO_TX_BU_ 1555 : CMP;
 BO_TX_BU_ 1294 : CP;
 BO_TX_BU_ 798 : CP;
 BO_TX_BU_ 1085 : CP;
@@ -28982,10 +29333,12 @@ BO_TX_BU_ 1885 : CP;
 BO_TX_BU_ 2042 : CP;
 BO_TX_BU_ 528 : CP;
 BO_TX_BU_ 893 : CP;
+BO_TX_BU_ 1566 : CP;
 BO_TX_BU_ 583 : DAS;
 BO_TX_BU_ 2041 : DAS;
 BO_TX_BU_ 777 : DAS;
 BO_TX_BU_ 1548 : DAS;
+BO_TX_BU_ 1625 : DAS;
 BO_TX_BU_ 1318 : DIF;
 BO_TX_BU_ 854 : DIF;
 BO_TX_BU_ 855 : DIF;
@@ -28997,6 +29350,7 @@ BO_TX_BU_ 421 : DIF;
 BO_TX_BU_ 725 : DIF;
 BO_TX_BU_ 886 : DIF;
 BO_TX_BU_ 390 : DIF;
+BO_TX_BU_ 1557 : DIF;
 BO_TX_BU_ 1445 : DIR;
 BO_TX_BU_ 935 : DIR;
 BO_TX_BU_ 949 : DIR;
@@ -29008,6 +29362,7 @@ BO_TX_BU_ 2039 : DIR;
 BO_TX_BU_ 598 : DIR;
 BO_TX_BU_ 789 : DIR;
 BO_TX_BU_ 264 : DIR;
+BO_TX_BU_ 1558 : DIR;
 BO_TX_BU_ 1319 : DI;
 BO_TX_BU_ 871 : DI;
 BO_TX_BU_ 872 : DI;
@@ -29027,9 +29382,11 @@ BO_TX_BU_ 999 : DPB;
 BO_TX_BU_ 1426 : EPAS3P;
 BO_TX_BU_ 2036 : EPAS3P;
 BO_TX_BU_ 883 : EPAS3P;
+BO_TX_BU_ 1592 : EPAS3P;
 BO_TX_BU_ 1425 : EPAS3S;
 BO_TX_BU_ 913 : EPAS3S;
 BO_TX_BU_ 882 : EPAS3S;
+BO_TX_BU_ 1848 : EPAS3S;
 BO_TX_BU_ 1427 : EPASTP;
 BO_TX_BU_ 919 : EPASTP;
 BO_TX_BU_ 1428 : EPASTS;
@@ -29037,11 +29394,15 @@ BO_TX_BU_ 920 : EPASTS;
 BO_TX_BU_ 1480 : EPBL;
 BO_TX_BU_ 968 : EPBL;
 BO_TX_BU_ 681 : EPBL;
+BO_TX_BU_ 1573 : EPBL;
 BO_TX_BU_ 1448 : EPBR;
 BO_TX_BU_ 1000 : EPBR;
 BO_TX_BU_ 742 : EPBR;
 BO_TX_BU_ 744 : EPBR;
+BO_TX_BU_ 1575 : EPBR;
 BO_TX_BU_ 981 : ESP;
+BO_TX_BU_ 1621 : ESP;
+BO_TX_BU_ 373 : ESP;
 BO_TX_BU_ 888 : GTW;
 BO_TX_BU_ 282 : GTW;
 BO_TX_BU_ 1384 : GTW;
@@ -29049,8 +29410,10 @@ BO_TX_BU_ 62 : GTW;
 BO_TX_BU_ 838 : GTW;
 BO_TX_BU_ 904 : GTW;
 BO_TX_BU_ 2047 : GTW;
+BO_TX_BU_ 792 : GTW;
 BO_TX_BU_ 1638 : GTW;
 BO_TX_BU_ 1080 : GTW;
+BO_TX_BU_ 1376 : GTW;
 BO_TX_BU_ 1656 : GTW;
 BO_TX_BU_ 2033 : GTW;
 BO_TX_BU_ 60 : GTW;
@@ -29062,13 +29425,17 @@ BO_TX_BU_ 1290 : HVP;
 BO_TX_BU_ 938 : HVP;
 BO_TX_BU_ 522 : HVP;
 BO_TX_BU_ 1962 : HVP;
+BO_TX_BU_ 1666 : HVP;
+BO_TX_BU_ 1553 : HVP;
 BO_TX_BU_ 861 : IBST;
+BO_TX_BU_ 1629 : IBST;
 BO_TX_BU_ 1208 : ICR;
 BO_TX_BU_ 2026 : ICR;
 BO_TX_BU_ 760 : ICR;
 BO_TX_BU_ 2025 : ICR;
 BO_TX_BU_ 670 : ICR;
 BO_TX_BU_ 2023 : ICR;
+BO_TX_BU_ 1624 : ICR;
 BO_TX_BU_ 1470 : IDB;
 BO_TX_BU_ 983 : IDB;
 BO_TX_BU_ 828 : IDB;
@@ -29076,39 +29443,100 @@ BO_TX_BU_ 1429 : OCS1P;
 BO_TX_BU_ 767 : OCS1P;
 BO_TX_BU_ 766 : OCS1P;
 BO_TX_BU_ 771 : OCS1P;
+BO_TX_BU_ 1619 : OCS1P;
+BO_TX_BU_ 1152 : ODIN;
+BO_TX_BU_ 1630 : PARK;
 BO_TX_BU_ 1060 : PCS;
 BO_TX_BU_ 932 : PCS;
 BO_TX_BU_ 516 : PCS;
 BO_TX_BU_ 548 : PCS;
 BO_TX_BU_ 708 : PCS;
+BO_TX_BU_ 1577 : PCS;
+BO_TX_BU_ 1635 : PLG;
 BO_TX_BU_ 1317 : PMF;
 BO_TX_BU_ 772 : PMF;
 BO_TX_BU_ 2022 : PMF;
+BO_TX_BU_ 469 : PMF;
+BO_TX_BU_ 1620 : PMF;
 BO_TX_BU_ 1446 : PMR;
 BO_TX_BU_ 902 : PMR;
 BO_TX_BU_ 928 : PMR;
+BO_TX_BU_ 472 : PMR;
+BO_TX_BU_ 1556 : PMR;
 BO_TX_BU_ 1444 : PM;
 BO_TX_BU_ 900 : PM;
 BO_TX_BU_ 896 : PM;
 BO_TX_BU_ 463 : PM;
+BO_TX_BU_ 1600 : PM;
 BO_TX_BU_ 519 : PTC;
+BO_TX_BU_ 1750 : PTC;
+BO_TX_BU_ 1665 : RADC;
 BO_TX_BU_ 1249 : RCM2;
 BO_TX_BU_ 1009 : RCM2;
 BO_TX_BU_ 1297 : RCM;
 BO_TX_BU_ 881 : RCM;
+BO_TX_BU_ 1617 : RCM;
 BO_TX_BU_ 1471 : RCU;
 BO_TX_BU_ 998 : RCU;
 BO_TX_BU_ 831 : RCU;
 BO_TX_BU_ 1344 : SCCM;
+BO_TX_BU_ 1680 : SCCM;
 BO_TX_BU_ 1531 : SDCR;
+BO_TX_BU_ 1787 : SDCR;
 BO_TX_BU_ 1835 : TAS;
 BO_TX_BU_ 852 : TAS;
+BO_TX_BU_ 1627 : TAS;
 BO_TX_BU_ 1410 : TCU;
 BO_TX_BU_ 1472 : TCU;
 BO_TX_BU_ 1409 : TCU;
 BO_TX_BU_ 1408 : TCU;
+BO_TX_BU_ 1631 : TPMS;
 BO_TX_BU_ 1298 : TRCM;
 BO_TX_BU_ 2030 : TRCM;
+BO_TX_BU_ 1641 : UDS;
+BO_TX_BU_ 1538 : UDS;
+BO_TX_BU_ 1579 : UDS;
+BO_TX_BU_ 1539 : UDS;
+BO_TX_BU_ 1543 : UDS;
+BO_TX_BU_ 1550 : UDS;
+BO_TX_BU_ 1609 : UDS;
+BO_TX_BU_ 1589 : UDS;
+BO_TX_BU_ 1541 : UDS;
+BO_TX_BU_ 1542 : UDS;
+BO_TX_BU_ 1584 : UDS;
+BO_TX_BU_ 1840 : UDS;
+BO_TX_BU_ 1572 : UDS;
+BO_TX_BU_ 1574 : UDS;
+BO_TX_BU_ 1605 : UDS;
+BO_TX_BU_ 2015 : UDS;
+BO_TX_BU_ 2014 : UDS;
+BO_TX_BU_ 1552 : UDS;
+BO_TX_BU_ 1613 : UDS;
+BO_TX_BU_ 1560 : UDS;
+BO_TX_BU_ 1603 : UDS;
+BO_TX_BU_ 1614 : UDS;
+BO_TX_BU_ 1576 : UDS;
+BO_TX_BU_ 1634 : UDS;
+BO_TX_BU_ 1568 : UDS;
+BO_TX_BU_ 1604 : UDS;
+BO_TX_BU_ 1540 : UDS;
+BO_TX_BU_ 1734 : UDS;
+BO_TX_BU_ 1649 : UDS;
+BO_TX_BU_ 1601 : UDS;
+BO_TX_BU_ 1664 : UDS;
+BO_TX_BU_ 1723 : UDS;
+BO_TX_BU_ 1611 : UDS;
+BO_TX_BU_ 1551 : UDS;
+BO_TX_BU_ 1615 : UDS;
+BO_TX_BU_ 1578 : UDS;
+BO_TX_BU_ 1588 : UDS;
+BO_TX_BU_ 1636 : UDS;
+BO_TX_BU_ 1580 : UDS;
+BO_TX_BU_ 1582 : UDS;
+BO_TX_BU_ 1536 : UDS;
+BO_TX_BU_ 1570 : UDS;
+BO_TX_BU_ 1544 : UDS;
+BO_TX_BU_ 1546 : UDS;
 BO_TX_BU_ 1056 : UIS;
 BO_TX_BU_ 979 : UI;
 BO_TX_BU_ 1523 : UI;
@@ -29159,6 +29587,7 @@ BO_TX_BU_ 705 : VCFRONT;
 BO_TX_BU_ 897 : VCFRONT;
 BO_TX_BU_ 513 : VCFRONT;
 BO_TX_BU_ 737 : VCFRONT;
+BO_TX_BU_ 1537 : VCFRONT;
 BO_TX_BU_ 929 : VCFRONT;
 BO_TX_BU_ 2013 : VCLEFT;
 BO_TX_BU_ 864 : VCLEFT;
@@ -29179,6 +29608,7 @@ BO_TX_BU_ 930 : VCLEFT;
 BO_TX_BU_ 962 : VCLEFT;
 BO_TX_BU_ 656 : VCLEFT;
 BO_TX_BU_ 657 : VCLEFT;
+BO_TX_BU_ 1571 : VCLEFT;
 BO_TX_BU_ 1114 : VCRIGHT;
 BO_TX_BU_ 549 : VCRIGHT;
 BO_TX_BU_ 2011 : VCRIGHT;
@@ -29197,6 +29627,8 @@ BO_TX_BU_ 1251 : VCRIGHT;
 BO_TX_BU_ 739 : VCRIGHT;
 BO_TX_BU_ 835 : VCRIGHT;
 BO_TX_BU_ 963 : VCRIGHT;
+BO_TX_BU_ 1545 : VCRIGHT;
+BO_TX_BU_ 953 : VCSEC;
 BO_TX_BU_ 537 : VCSEC;
 BO_TX_BU_ 570 : VCSEC;
 BO_TX_BU_ 1067 : VCSEC;
@@ -29204,6 +29636,7 @@ BO_TX_BU_ 761 : VCSEC;
 BO_TX_BU_ 1328 : VCSEC;
 BO_TX_BU_ 1017 : VCSEC;
 BO_TX_BU_ 1817 : VCSEC;
+BO_TX_BU_ 2008 : VCSEC;
 BO_TX_BU_ 1655 : VC;
 BO_TX_BU_ 1816 : VC;
 BO_TX_BU_ 1089 : VC;
@@ -29219,6 +29652,7 @@ CM_ BU_ BB "BB ECU";
 CM_ BU_ BMS "High-voltage battery management system";
 CM_ BU_ CC "Charge cable controller";
 CM_ BU_ CMP "A/C compressor";
+CM_ BU_ CMPD "CMPD ECU";
 CM_ BU_ CP "Charge port controller";
 CM_ BU_ DAS "Driver assistance computer";
 CM_ BU_ DI "Drive inverter";
@@ -29238,11 +29672,15 @@ CM_ BU_ IBST "Electric brake booster";
 CM_ BU_ ICR "ICR ECU";
 CM_ BU_ IDB "IDB ECU";
 CM_ BU_ OCS1P "Occupant classification system";
+CM_ BU_ ODIN "External diagnostic tester";
+CM_ BU_ PARK "Parking assist sensors";
 CM_ BU_ PCS "Power conversion system (on-board charger and DC-DC converter)";
+CM_ BU_ PLG "PLG ECU";
 CM_ BU_ PM "PM ECU";
 CM_ BU_ PMF "PMF ECU";
 CM_ BU_ PMR "PMR ECU";
 CM_ BU_ PTC "Cabin heater";
+CM_ BU_ RADC "Radar";
 CM_ BU_ RCM "Restraint control module";
 CM_ BU_ RCM2 "RCM2 ECU";
 CM_ BU_ RCU "RCU ECU";
@@ -29250,7 +29688,9 @@ CM_ BU_ SCCM "Steering column control module";
 CM_ BU_ SDCR "SDCR ECU";
 CM_ BU_ TAS "Air suspension controller";
 CM_ BU_ TCU "TCU ECU";
+CM_ BU_ TPMS "Tire pressure monitoring";
 CM_ BU_ TRCM "TRCM ECU";
+CM_ BU_ UDS "UDS ECU";
 CM_ BU_ UI "Touchscreen user interface computer";
 CM_ BU_ UIS "UIS ECU";
 CM_ BU_ UMC "UMC ECU";
@@ -30613,6 +31053,9 @@ CM_ SG_ 1040 APP_cameraBlockedLeftRepeater "Indicates that a blockage was detect
 CM_ SG_ 1040 APP_cameraBlockedRightPillar "Indicates that a blockage was detected by the right pillar camera.";
 CM_ SG_ 1040 APP_cameraBlockedRightRepeater "Indicates that a blockage was detected by the right repeater camera.";
 CM_ SG_ 1040 APP_cameraBlockedBackup "Indicates that a blockage was detected by the backup camera.";
+CM_ BO_ 1177 "Driver assistance computer (primary) message: camera temperatures";
+CM_ SG_ 1177 APP_rRepeaterCameraTemperature "Driver assistance computer (primary): r repeater camera temperature";
+CM_ SG_ 1177 APP_lRepeaterCameraTemperature "Driver assistance computer (primary): l repeater camera temperature";
 CM_ BO_ 603 "Driver assistance computer (primary) message: environment";
 CM_ SG_ 603 APP_environmentRainy "Driver assistance computer (primary): environment rainy";
 CM_ SG_ 603 APP_environmentSnowy "Driver assistance computer (primary): environment snowy";
@@ -31962,6 +32405,9 @@ CM_ SG_ 1138 BMS_vehicleChargeDcCurrentLimit "Charge current target after all ag
 CM_ SG_ 1138 BMS_chargeCurrentLimitMode "BMS charging current limiting factor";
 CM_ SG_ 1138 BMS_timeToFinishHeatForCharge "High-voltage battery management system: time to finish heat for charge; raw 127 = signal not available (SNA)";
 CM_ SG_ 1138 BMS_diNodeModelTemp "High-voltage battery management system: di node model temp; raw 2047 = signal not available (SNA)";
+CM_ BO_ 562 "High-voltage battery management system message: contactor request";
+CM_ SG_ 562 BMS_internalHvilSenseV "High-voltage battery management system: internal hvil sense v";
+CM_ SG_ 562 BMS_hvilCoverVSense "High-voltage battery management system: hvil cover v sense";
 CM_ BO_ 2029 "High-voltage battery management system message: debug info 10 hz";
 CM_ SG_ 2029 BMS_10HzDebug_Id "High-voltage battery management system: 10 hz debug id";
 CM_ SG_ 2029 BMS_activeCoolCellTargetT "High-voltage battery management system: active cool cell target t";
@@ -31983,6 +32429,8 @@ CM_ SG_ 884 BMS_dcChargeVoltageLimit "The vehicle's charge voltage limit on a DC
 CM_ SG_ 884 BMS_dcChargePowerLimit "Max power limit for pack during DC charging";
 CM_ SG_ 884 BMS_acChargePowerRequest "High-voltage battery management system: ac charge power request";
 CM_ SG_ 884 BMS_maxExtIsoFcLinkV "The max voltage read on the FC link during the external isolation check";
+CM_ SG_ 884 BMS_minModeledPackTemp "High-voltage battery management system: min modeled pack temp";
+CM_ SG_ 884 BMS_maxModeledPackTemp "High-voltage battery management system: max modeled pack temp";
 CM_ SG_ 884 BMS_socByDeltaVEnabled "High-voltage battery management system: soc by delta v enabled";
 CM_ SG_ 884 BMS_socByDvMaxSocLimit "High-voltage battery management system: soc by dv max soc limit";
 CM_ SG_ 884 BMS_socByDvVoltageChangeOverAh "High-voltage battery management system: soc by dv voltage change over ah";
@@ -32023,6 +32471,13 @@ CM_ SG_ 946 BMS_dynamicEnergyBuffer "BMS estimate of energy error based on SOC m
 CM_ SG_ 946 BMS_temperatureCondition "High-voltage battery management system: temperature condition";
 CM_ SG_ 946 BMS_thmGradientSlope "High-voltage battery management system: thm gradient slope";
 CM_ SG_ 946 BMS_thmGradient "High-voltage battery management system: thm gradient";
+CM_ SG_ 946 BMS_epochTimeEstimate "High-voltage battery management system: epoch time estimate";
+CM_ SG_ 946 BMS_histogramStartTimeIrrational "High-voltage battery management system: histogram start time irrational";
+CM_ SG_ 946 BMS_histogramDischargeThroughput "High-voltage battery management system: histogram discharge throughput irrational";
+CM_ SG_ 946 BMS_histogramChargeThroughputIrr "High-voltage battery management system: histogram charge throughput irrational";
+CM_ SG_ 946 BMS_histogramTotalTimeIrrational "High-voltage battery management system: histogram total time irrational";
+CM_ SG_ 946 BMS_histogramStorageDataIsLow "High-voltage battery management system: histogram storage data is low";
+CM_ SG_ 946 BMS_lifeModelOutputsAreTrustwort "High-voltage battery management system: life model outputs are trustworthy";
 CM_ SG_ 946 BMS_dSocNormalizedMin "High-voltage battery management system: d soc normalized min; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_dSocNormalizedFiltMin "High-voltage battery management system: d soc normalized filt min; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_dSocMinAlpha "minimum calculated alpha value across all bricks and all dSOC calculations; raw 4095 = signal not available (SNA)";
@@ -32049,6 +32504,7 @@ CM_ SG_ 946 BMS_lifeModelMinCacBrickId "High-voltage battery management system: 
 CM_ SG_ 946 BMS_lifeModelMinCac "High-voltage battery management system: life model min cac; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_restingPointCacAvg "High-voltage battery management system: resting point cac avg; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_cacEstimationSource "High-voltage battery management system: cac estimation source";
+CM_ SG_ 946 BMS_packCalibrationBirthDateBinn "High-voltage battery management system: pack calibration birth date binned";
 CM_ SG_ 946 BMS_synchronizedCacMaxRaw "High-voltage battery management system: synchronized cac max raw; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_synchronizedCacMinRaw "High-voltage battery management system: synchronized cac min raw; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_largestSyncCacErrorStartSoc "Start SOC for CAC update from the brick with the highest synchronized CAC error";
@@ -32144,6 +32600,8 @@ CM_ SG_ 2028 BMS_activeCoolCellReferenceT "Desired cell temperature reference wh
 CM_ SG_ 2028 BMS_activeHeatCellTargetT "Desired cell temperature which feeds as an input to the active heating target temperature, before any additional controls calculations";
 CM_ SG_ 2028 BMS_cellTempTargetMode "Operating mode of the thermal controls for the Battery Management System (BMS)";
 CM_ SG_ 2028 BMS_requestDischarge "Flag identifying when the Battery Management System (BMS) is requesting the battery pack to be discharged";
+CM_ BO_ 1554 "High-voltage battery management system message: uds response";
+CM_ SG_ 1554 BMS_udsResponseData "High-voltage battery management system: uds response data";
 CM_ BO_ 754 "High-voltage battery management system message: veh nm";
 CM_ SG_ 754 BMS_nmGoingToSleep "High-voltage battery management system: nm going to sleep";
 CM_ SG_ 754 BMS_nmWakeUpBus "High-voltage battery management system: nm wake up bus";
@@ -32158,11 +32616,15 @@ CM_ SG_ 810 BMS_vehicleNotificationsChecksum "High-voltage battery management sy
 CM_ BO_ 797 "Charge cable controller message: chg status2";
 CM_ SG_ 797 CC_chgStatus2Index "Charge cable controller: chg status2 index";
 CM_ SG_ 797 CC_buttonState "Charge cable controller: button state";
+CM_ BO_ 1559 "CMPD ECU message: uds response";
+CM_ SG_ 1559 CMPD_udsResponseData "CMPD ECU: uds response data";
 CM_ BO_ 551 "A/C compressor message: HV status";
 CM_ SG_ 551 CMP_inputHVVoltage "Compressor high voltage input voltage";
 CM_ SG_ 551 CMP_inputLVVoltage "A/C compressor: input LV voltage";
 CM_ SG_ 551 CMP_inputHVCurrent "A/C compressor: input HV current";
 CM_ SG_ 551 CMP_inputHVPower "Compressor high voltage input power";
+CM_ BO_ 1555 "A/C compressor message: uds response";
+CM_ SG_ 1555 CMP_udsResponseData "A/C compressor: uds response data";
 CM_ BO_ 1294 "Charge port controller message: alert log";
 CM_ SG_ 1294 CP_alertID "Charge port controller: alert ID";
 CM_ SG_ 1294 CP_alertType "Charge port controller: alert type";
@@ -32767,6 +33229,8 @@ CM_ SG_ 893 CP_thermalStatusSelect "Charge port controller: thermal status selec
 CM_ SG_ 893 CP_pinTemperature1 "Sensed temperature of the charge port inlet pins";
 CM_ SG_ 893 CP_pinTemperature2 "Sensed temperature of the charge port inlet pins";
 CM_ SG_ 893 CP_pinTemperature3 "Sensed temperature of the charge port inlet pins";
+CM_ BO_ 1566 "Charge port controller message: uds response";
+CM_ SG_ 1566 CP_udsResponseData "Charge port controller: uds response data";
 CM_ BO_ 583 "Driver assistance computer message: autopilot debug";
 CM_ SG_ 583 DAS_roadEstimator "Driver assistance computer: road estimator";
 CM_ SG_ 583 DAS_arbiterBehavior "Which behavior task the arbiter has selected and sent to the controller";
@@ -32898,6 +33362,8 @@ CM_ SG_ 1548 DAS_TR_Obj00_Length "Driver assistance computer: TR obj00 length";
 CM_ SG_ 1548 DAS_TR_Obj00_MovingState "Driver assistance computer: TR obj00 moving state";
 CM_ SG_ 1548 DAS_TR_Obj00_Dz "Driver assistance computer: TR obj00 dz";
 CM_ SG_ 1548 DAS_TR_Obj00_Exist "Driver assistance computer: TR obj00 exist";
+CM_ BO_ 1625 "Driver assistance computer message: uds response";
+CM_ SG_ 1625 DAS_udsResponseData "Driver assistance computer: uds response data";
 CM_ BO_ 1318 "Front drive inverter message: alert log";
 CM_ SG_ 1318 DIF_alertID "Front drive inverter: alert ID";
 CM_ SG_ 1318 DIF_alertState "Front drive inverter: alert state";
@@ -33725,6 +34191,8 @@ CM_ SG_ 390 DIF_torqueActual "Actual torque the drive unit is controlling to ref
 CM_ SG_ 390 DIF_axleSpeed "Drive Inverter motor speed normalized at axle level; raw 32768 = signal not available (SNA)";
 CM_ SG_ 390 DIF_axleTorqueQF "Front drive inverter: axle torque QF";
 CM_ SG_ 390 DIF_axlePowerCalcQF "Front drive inverter: axle power calc QF";
+CM_ BO_ 1557 "Front drive inverter message: uds response";
+CM_ SG_ 1557 DIF_udsResponseData "Front drive inverter: uds response data";
 CM_ BO_ 1445 "Rear drive inverter message: alert log";
 CM_ SG_ 1445 DIR_alertID "Rear drive inverter: alert ID";
 CM_ SG_ 1445 DIR_alertState "Rear drive inverter: alert state";
@@ -34553,6 +35021,8 @@ CM_ SG_ 264 DIR_torqueActual "Actual torque the drive unit is controlling to ref
 CM_ SG_ 264 DIR_axleSpeed "Drive Inverter motor speed normalized at axle level; raw 32768 = signal not available (SNA)";
 CM_ SG_ 264 DIR_axleTorqueQF "Rear drive inverter: axle torque QF";
 CM_ SG_ 264 DIR_axlePowerCalcQF "Rear drive inverter: axle power calc QF";
+CM_ BO_ 1558 "Rear drive inverter message: uds response";
+CM_ SG_ 1558 DIR_udsResponseData "Rear drive inverter: uds response data";
 CM_ BO_ 1319 "Drive inverter message: alert log";
 CM_ SG_ 1319 DI_alertID "Drive inverter: alert ID";
 CM_ SG_ 1319 DI_alertState "Drive inverter: alert state";
@@ -35818,6 +36288,8 @@ CM_ SG_ 883 EPAS3P_sysStatusCounter "Electric power steering (primary): sys stat
 CM_ SG_ 883 EPAS3P_tireIDActive "Electric power steering (primary): tire ID active";
 CM_ SG_ 883 EPAS3P_eacStatus "Electric power steering (primary): eac status";
 CM_ SG_ 883 EPAS3P_sysStatusChecksum "Electric power steering (primary): sys status checksum";
+CM_ BO_ 1592 "Electric power steering (primary) message: uds response CH";
+CM_ SG_ 1592 EPAS3P_udsResponseDataCH "Electric power steering (primary): uds response data CH";
 CM_ BO_ 1425 "Electric power steering (secondary) message: alert log";
 CM_ SG_ 1425 EPAS3S_alertID "Electric power steering (secondary): alert ID";
 CM_ SG_ 1425 EPAS3S_alertState "Electric power steering (secondary): alert state";
@@ -36010,6 +36482,8 @@ CM_ SG_ 882 EPAS3S_sysStatusCounter "Electric power steering (secondary): sys st
 CM_ SG_ 882 EPAS3S_tireIDActive "Electric power steering (secondary): tire ID active";
 CM_ SG_ 882 EPAS3S_eacStatus "Electric power steering (secondary): eac status";
 CM_ SG_ 882 EPAS3S_sysStatusChecksum "Electric power steering (secondary): sys status checksum";
+CM_ BO_ 1848 "Electric power steering (secondary) message: uds response";
+CM_ SG_ 1848 EPAS3S_udsResponseData "Electric power steering (secondary): uds response data";
 CM_ BO_ 1427 "EPASTP ECU message: alert log";
 CM_ SG_ 1427 EPASTP_alertID "EPASTP ECU: alert ID";
 CM_ SG_ 1427 EPASTP_alertState "EPASTP ECU: alert state";
@@ -37936,6 +38410,9 @@ CM_ SG_ 681 EPBL_bothDisconnected "Left electric parking brake: both disconnecte
 CM_ SG_ 681 EPBL_blockDrive "Left electric parking brake: block drive";
 CM_ SG_ 681 EPBL_statusCounter "Left electric parking brake: status counter";
 CM_ SG_ 681 EPBL_statusChecksum "Left electric parking brake: status checksum";
+CM_ BO_ 1573 "Left electric parking brake message: uds response";
+CM_ SG_ 1573 EPBL_udsResponseData_H "Left electric parking brake: uds response data h";
+CM_ SG_ 1573 EPBL_udsResponseData_L "Left electric parking brake: uds response data l";
 CM_ BO_ 1448 "Right electric parking brake message: alert log";
 CM_ SG_ 1448 EPBR_alertID "Right electric parking brake: alert ID";
 CM_ SG_ 1448 EPBR_alertState "Right electric parking brake: alert state";
@@ -38771,6 +39248,9 @@ CM_ SG_ 744 EPBR_bothDisconnected "Right electric parking brake: both disconnect
 CM_ SG_ 744 EPBR_blockDrive "Right electric parking brake: block drive";
 CM_ SG_ 744 EPBR_statusCounter "Right electric parking brake: status counter";
 CM_ SG_ 744 EPBR_statusChecksum "Right electric parking brake: status checksum";
+CM_ BO_ 1575 "Right electric parking brake message: uds response";
+CM_ SG_ 1575 EPBR_udsResponseData_H "Right electric parking brake: uds response data h";
+CM_ SG_ 1575 EPBR_udsResponseData_L "Right electric parking brake: uds response data l";
 CM_ BO_ 981 "Electronic stability control message: alert matrix";
 CM_ SG_ 981 ESP_matrixIndex "Electronic stability control: matrix index";
 CM_ SG_ 981 ESP_a001_ecuGenericFault "Electronic stability control: a001 ecu generic fault";
@@ -39151,6 +39631,13 @@ CM_ SG_ 981 ESP_a375_PM_locStateCounter "Electronic stability control: a375 PM l
 CM_ SG_ 981 ESP_a376_PM_locStateChecksum "Electronic stability control: a376 PM loc state checksum";
 CM_ SG_ 981 ESP_a377_PM_locStateDLC "Electronic stability control: a377 PM loc state DLC";
 CM_ SG_ 981 ESP_a378_PM_locStateTimeout "Electronic stability control: a378 PM loc state timeout";
+CM_ BO_ 1621 "Electronic stability control message: uds response";
+CM_ SG_ 1621 ESP_udsResponseData "Electronic stability control: uds response data";
+CM_ BO_ 373 "Electronic stability control message: wheel speeds";
+CM_ SG_ 373 ESP_wheelSpeedFrL "Electronic stability control: wheel speed fr l";
+CM_ SG_ 373 ESP_wheelSpeedFrR "Electronic stability control: wheel speed fr r";
+CM_ SG_ 373 ESP_wheelSpeedReL "Electronic stability control: wheel speed re l";
+CM_ SG_ 373 ESP_wheelSpeedReR "Electronic stability control: wheel speed re r";
 CM_ BO_ 888 "Gateway message: e call";
 CM_ SG_ 888 GTW_GTW_SOS_ECALL_RQST "State of the GTW-SOS-ECALL-RQST pin";
 CM_ SG_ 888 GTW_LTE_ECALL_LOCK "State of the LTE-ECALL-LOCK pin";
@@ -39711,6 +40198,8 @@ CM_ SG_ 2047 GTW_occupancyDetectionSourceRequ "Gateway: occupancy detection sour
 CM_ SG_ 2047 GTW_rduCableType "Indicates type of rear drive unit cable installed on vehicle.";
 CM_ SG_ 2047 GTW_interiorCameraType "Gateway: interior camera type";
 CM_ SG_ 2047 GTW_frontFasciaCameraType "Reports type of forward facing fascia camera installed.";
+CM_ BO_ 792 "Gateway message: car state";
+CM_ SG_ 792 GTW_factoryGated "Gateway: factory gated";
 CM_ BO_ 1638 "Gateway message: diag session";
 CM_ SG_ 1638 GTW_diagRemainingSeconds "Seconds remaining for the diagnostics session";
 CM_ SG_ 1638 GTW_diagSessionActive "UDS Session Active";
@@ -39724,6 +40213,35 @@ CM_ SG_ 1080 GTW_ethWakeUpBus "Gateway: eth wake up bus";
 CM_ SG_ 1080 GTW_vehBusAsleep "VEH bus sleep state";
 CM_ SG_ 1080 GTW_ethHeartBeatCounter "Gateway: eth heart beat counter";
 CM_ SG_ 1080 GTW_ethWakeUpReason "Tracks the cause of why the gateway wakes up the ethernet bus";
+CM_ BO_ 1376 "Gateway message: factory ecu present";
+CM_ SG_ 1376 GTW_OCS1Ppresent "Gateway: OCS1 ppresent";
+CM_ SG_ 1376 GTW_PCSpresent "Gateway: PC spresent";
+CM_ SG_ 1376 GTW_HVPpresent "Gateway: HV ppresent";
+CM_ SG_ 1376 GTW_BMSpresent "Gateway: BM spresent";
+CM_ SG_ 1376 GTW_CPpresent "Gateway: c ppresent";
+CM_ SG_ 1376 GTW_RCMpresent "Gateway: RC mpresent";
+CM_ SG_ 1376 GTW_SCCMpresent "Gateway: SCC mpresent";
+CM_ SG_ 1376 GTW_VCSECpresent "Gateway: VCSE cpresent";
+CM_ SG_ 1376 GTW_EPAS3Ppresent "Gateway: EPAS3 ppresent";
+CM_ SG_ 1376 GTW_EPBLpresent "Gateway: EPB lpresent";
+CM_ SG_ 1376 GTW_EPBRpresent "Gateway: EPB rpresent";
+CM_ SG_ 1376 GTW_ESPpresent "Gateway: ES ppresent";
+CM_ SG_ 1376 GTW_IBSTpresent "Gateway: IBS tpresent";
+CM_ SG_ 1376 GTW_PARKpresent "Gateway: PAR kpresent";
+CM_ SG_ 1376 GTW_RADCpresent "Gateway: RAD cpresent";
+CM_ SG_ 1376 GTW_TPMSpresent "Gateway: TPM spresent";
+CM_ SG_ 1376 GTW_VCFRONTpresent "Gateway: VCFRON tpresent";
+CM_ SG_ 1376 GTW_VCLEFTpresent "Gateway: VCLEF tpresent";
+CM_ SG_ 1376 GTW_VCRIGHTpresent "Gateway: VCRIGH tpresent";
+CM_ SG_ 1376 GTW_EPAS3Spresent "Gateway: EPAS3 spresent";
+CM_ SG_ 1376 GTW_CMPpresent "Gateway: CM ppresent";
+CM_ SG_ 1376 GTW_DASpresent "Gateway: DA spresent";
+CM_ SG_ 1376 GTW_PTCpresent "Gateway: PT cpresent";
+CM_ SG_ 1376 GTW_SWCpresent "Gateway: SW cpresent";
+CM_ SG_ 1376 GTW_PMRpresent "Gateway: PM rpresent";
+CM_ SG_ 1376 GTW_PMFpresent "Gateway: PM fpresent";
+CM_ SG_ 1376 GTW_DIRpresent "Gateway: DI rpresent";
+CM_ SG_ 1376 GTW_DIFpresent "Gateway: DI fpresent";
 CM_ BO_ 1656 "Gateway message: gear control";
 CM_ SG_ 1656 GTW_gearControlChecksum "Gateway: gear control checksum";
 CM_ SG_ 1656 GTW_gearControlCounter "Gateway: gear control counter";
@@ -40176,6 +40694,12 @@ CM_ SG_ 1962 HVP_fcLinkPositiveV "High-voltage processor (pack contactor and iso
 CM_ SG_ 1962 HVP_packContCoilCurrent "High-voltage processor (pack contactor and isolation controller): pack cont coil current";
 CM_ SG_ 1962 HVP_battery12V "Monitored voltage sense of 12V battery";
 CM_ SG_ 1962 HVP_shuntRefVoltageDbg "High-voltage processor (pack contactor and isolation controller): shunt ref voltage dbg";
+CM_ BO_ 1666 "High-voltage processor (pack contactor and isolation controller) message: hvp faults";
+CM_ SG_ 1666 HVP_packContactorHwFault "High-voltage processor (pack contactor and isolation controller): pack contactor hw fault";
+CM_ SG_ 1666 HVP_fcContactorHwFault "High-voltage processor (pack contactor and isolation controller): fc contactor hw fault";
+CM_ SG_ 1666 HVP_hvilStatus "High-voltage processor (pack contactor and isolation controller): hvil status";
+CM_ BO_ 1553 "High-voltage processor (pack contactor and isolation controller) message: uds response";
+CM_ SG_ 1553 HVP_udsResponseData "High-voltage processor (pack contactor and isolation controller): uds response data";
 CM_ BO_ 861 "Electric brake booster message: alert matrix";
 CM_ SG_ 861 IBST_matrixIndex "Electric brake booster: matrix index";
 CM_ SG_ 861 IBST_a001_microSupplyError "Electric brake booster: a001 micro supply error";
@@ -40413,6 +40937,8 @@ CM_ SG_ 861 IBST_a232_PostAssemblyRoutineFai "Electric brake booster: a232 post 
 CM_ SG_ 861 IBST_a233_ReferenceRunAbortByECU "Electric brake booster: a233 reference run abort by ECU reset";
 CM_ SG_ 861 IBST_a234_LiPSOutOfRangeHigh "Electric brake booster: a234 li PS out of range high";
 CM_ SG_ 861 IBST_a235_LiPSOutOfRangeLow "Electric brake booster: a235 li PS out of range low";
+CM_ BO_ 1629 "Electric brake booster message: uds response";
+CM_ SG_ 1629 IBST_udsResponseData "Electric brake booster: uds response data";
 CM_ BO_ 1208 "ICR ECU message: alert log";
 CM_ SG_ 1208 ICR_alertID "ICR ECU: alert ID";
 CM_ SG_ 1208 ICR_alertState "ICR ECU: alert state";
@@ -40533,6 +41059,8 @@ CM_ SG_ 2023 ICR_l2HeapUsage "ICR ECU: l2 heap usage";
 CM_ SG_ 2023 ICR_intrusionStatus "ICR ECU: intrusion status";
 CM_ SG_ 2023 ICR_booted "Indicates if ICR has rebooted";
 CM_ SG_ 2023 ICR_rdMapDumpCompleted "ICR ECU: rd map dump completed";
+CM_ BO_ 1624 "ICR ECU message: uds response";
+CM_ SG_ 1624 ICR_udsResponseData "ICR ECU: uds response data";
 CM_ BO_ 1470 "IDB ECU message: alert log";
 CM_ SG_ 1470 IDB_alertID "IDB ECU: alert ID";
 CM_ SG_ 1470 IDB_alertState "IDB ECU: alert state";
@@ -40888,6 +41416,19 @@ CM_ SG_ 771 OCS1P_seatbackStableCap "Occupant classification system: seatback st
 CM_ SG_ 771 OCS1P_classificationHeldCap "Occupant classification system: classification held cap";
 CM_ SG_ 771 OCS1P_statusCounter "Occupant classification system: status counter";
 CM_ SG_ 771 OCS1P_statusChecksum "Occupant classification system: status checksum";
+CM_ BO_ 1619 "Occupant classification system message: uds response";
+CM_ SG_ 1619 OCS1P_udsResponseData "Occupant classification system: uds response data";
+CM_ BO_ 1152 "External diagnostic tester message: iso tp pipe VCSEC";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC0 "External diagnostic tester: iso tp pipe VCSEC0";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC1 "External diagnostic tester: iso tp pipe VCSEC1";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC2 "External diagnostic tester: iso tp pipe VCSEC2";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC3 "External diagnostic tester: iso tp pipe VCSEC3";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC4 "External diagnostic tester: iso tp pipe VCSEC4";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC5 "External diagnostic tester: iso tp pipe VCSEC5";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC6 "External diagnostic tester: iso tp pipe VCSEC6";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC7 "External diagnostic tester: iso tp pipe VCSEC7";
+CM_ BO_ 1630 "Parking assist sensors message: uds response";
+CM_ SG_ 1630 PARK_udsResponseData "Parking assist sensors: uds response data";
 CM_ BO_ 1060 "Power conversion system (on-board charger and DC-DC converter) message: alert log";
 CM_ SG_ 1060 PCS_alertID "Power conversion system (on-board charger and DC-DC converter): alert ID";
 CM_ SG_ 1060 PCS_alertSet "Power conversion system (on-board charger and DC-DC converter): alert set";
@@ -41455,6 +41996,10 @@ CM_ SG_ 708 PCS_processorDieIdLot "Power conversion system (on-board charger and
 CM_ SG_ 708 PCS_processorDieIdWafer "Power conversion system (on-board charger and DC-DC converter): processor die id wafer";
 CM_ SG_ 708 PCS_processorDieIdX "Power conversion system (on-board charger and DC-DC converter): processor die id x";
 CM_ SG_ 708 PCS_processorDieIdY "Power conversion system (on-board charger and DC-DC converter): processor die id y";
+CM_ BO_ 1577 "Power conversion system (on-board charger and DC-DC converter) message: uds response";
+CM_ SG_ 1577 PCS_udsResponseData "Power conversion system (on-board charger and DC-DC converter): uds response data";
+CM_ BO_ 1635 "PLG ECU message: uds response";
+CM_ SG_ 1635 PLG_udsResponseData "PLG ECU: uds response data";
 CM_ BO_ 1317 "PMF ECU message: alert log";
 CM_ SG_ 1317 PMF_alertID "PMF ECU: alert ID";
 CM_ SG_ 1317 PMF_alertState "PMF ECU: alert state";
@@ -41698,6 +42243,10 @@ CM_ SG_ 2022 PMF_a096_safetyICDebug "PMF ECU: a096 safety IC debug";
 CM_ SG_ 2022 PMF_a097_lowFlowAlmostTripped "PMF ECU: a097 low flow almost tripped";
 CM_ SG_ 2022 PMF_a100_diTraceInfo1 "PMF ECU: a100 di trace info1";
 CM_ SG_ 2022 PMF_a121_unintendedReset2 "PMF ECU: a121 unintended reset2";
+CM_ BO_ 469 "PMF ECU message: state4";
+CM_ SG_ 469 PMF_hvilStatus "PMF ECU: hvil status";
+CM_ BO_ 1620 "PMF ECU message: uds response";
+CM_ SG_ 1620 PMF_udsResponseData "PMF ECU: uds response data";
 CM_ BO_ 1446 "PMR ECU message: alert log";
 CM_ SG_ 1446 PMR_alertID "PMR ECU: alert ID";
 CM_ SG_ 1446 PMR_alertState "PMR ECU: alert state";
@@ -41961,6 +42510,10 @@ CM_ SG_ 928 PMR_a097_lowFlowAlmostTripped "PMR ECU: a097 low flow almost tripped
 CM_ SG_ 928 PMR_a100_diTraceInfo1 "PMR ECU: a100 di trace info1";
 CM_ SG_ 928 PMR_a101_hwVoltageMonitorTrip "PMR ECU: a101 hw voltage monitor trip";
 CM_ SG_ 928 PMR_a121_unintendedReset2 "PMR ECU: a121 unintended reset2";
+CM_ BO_ 472 "PMR ECU message: state4";
+CM_ SG_ 472 PMR_hvilStatus "PMR ECU: hvil status";
+CM_ BO_ 1556 "PMR ECU message: uds response";
+CM_ SG_ 1556 PMR_udsResponseData "PMR ECU: uds response data";
 CM_ BO_ 1444 "PM ECU message: alert log";
 CM_ SG_ 1444 PM_alertID "PM ECU: alert ID";
 CM_ SG_ 1444 PM_alertState "PM ECU: alert state";
@@ -42371,6 +42924,8 @@ CM_ SG_ 463 PM_sysNumUnitsSna "PM ECU: sys num units sna";
 CM_ SG_ 463 PM_sysElecPowerVeryLow "PM ECU: sys elec power very low";
 CM_ SG_ 463 PM_systemStateCounter "PM ECU: system state counter";
 CM_ SG_ 463 PM_systemStateChecksum "PM ECU: system state checksum";
+CM_ BO_ 1600 "PM ECU message: uds response";
+CM_ SG_ 1600 PM_udsResponseData "PM ECU: uds response data";
 CM_ BO_ 519 "Cabin heater message: feedback status";
 CM_ SG_ 519 PTC_leftFlagFault "Heater left bank fault indication flag";
 CM_ SG_ 519 PTC_rightFlagFault "Heater right bank fault indication flag";
@@ -42386,6 +42941,10 @@ CM_ SG_ 519 PTC_rightTempEstOutlet "Cabin heater: right temp est outlet";
 CM_ SG_ 519 PTC_tliErrorCount "Heater top level interrupt error count";
 CM_ SG_ 519 PTC_tliEvent "Indicator of heater top level interrupt event";
 CM_ SG_ 519 PTC_tliSource "Heater top level interrupt event source";
+CM_ BO_ 1750 "Cabin heater message: uds response";
+CM_ SG_ 1750 PTC_udsResponseData "Cabin heater: uds response data";
+CM_ BO_ 1665 "Radar message: uds response";
+CM_ SG_ 1665 RADC_udsResponseData "Radar: uds response data";
 CM_ BO_ 1249 "RCM2 ECU message: alert log";
 CM_ SG_ 1249 RCM2_alertID "RCM2 ECU: alert ID";
 CM_ SG_ 1249 RCM2_alertState "RCM2 ECU: alert state";
@@ -45335,6 +45894,8 @@ CM_ SG_ 881 RCM_a115_imuLinearAcceleration "Restraint control module: a115 imu l
 CM_ SG_ 881 RCM_a116_imuLateralAcceleration "Restraint control module: a116 imu lateral acceleration";
 CM_ SG_ 881 RCM_a117_imuVerticalAcceleration "Restraint control module: a117 imu vertical acceleration";
 CM_ SG_ 881 RCM_a118_imuInPlaneAcceleration "Restraint control module: a118 imu in plane acceleration";
+CM_ BO_ 1617 "Restraint control module message: uds response";
+CM_ SG_ 1617 RCM_udsResponseData "Restraint control module: uds response data";
 CM_ BO_ 1471 "RCU ECU message: alert log";
 CM_ SG_ 1471 RCU_alertID "RCU ECU: alert ID";
 CM_ SG_ 1471 RCU_alertState "RCU ECU: alert state";
@@ -45623,6 +46184,15 @@ CM_ SG_ 1344 SCCM_a126_turnIndicatorXMagnitud "Steering column control module: a
 CM_ SG_ 1344 SCCM_a126_turnIndicatorYMagnitud "Steering column control module: a126 turn indicator y magnitude";
 CM_ SG_ 1344 SCCM_a126_turnIndicatorZMagnitud "Steering column control module: a126 turn indicator z magnitude";
 CM_ SG_ 1344 SCCM_a126_turnIndicatorResultant "Steering column control module: a126 turn indicator resultant magnitude";
+CM_ BO_ 1680 "Steering column control module message: uds response";
+CM_ SG_ 1680 SCCM_functionalResponseData_0 "Steering column control module: functional response data 0";
+CM_ SG_ 1680 SCCM_functionalResponseData_1 "Steering column control module: functional response data 1";
+CM_ SG_ 1680 SCCM_functionalResponseData_2 "Steering column control module: functional response data 2";
+CM_ SG_ 1680 SCCM_functionalResponseData_3 "Steering column control module: functional response data 3";
+CM_ SG_ 1680 SCCM_functionalResponseData_4 "Steering column control module: functional response data 4";
+CM_ SG_ 1680 SCCM_functionalResponseData_5 "Steering column control module: functional response data 5";
+CM_ SG_ 1680 SCCM_functionalResponseData_6 "Steering column control module: functional response data 6";
+CM_ SG_ 1680 SCCM_functionalResponseData_7 "Steering column control module: functional response data 7";
 CM_ BO_ 1531 "SDCR ECU message: alert log";
 CM_ SG_ 1531 SDCR_alertID "SDCR ECU: alert ID";
 CM_ SG_ 1531 SDCR_alertState "SDCR ECU: alert state";
@@ -45748,6 +46318,8 @@ CM_ SG_ 1531 SDCR_a029_canCommsMissing "SDCR ECU: a029 can comms missing";
 CM_ SG_ 1531 SDCR_a029_lvState "SDCR ECU: a029 lv state";
 CM_ SG_ 1531 SDCR_a034_Ia "SDCR ECU: a034 ia";
 CM_ SG_ 1531 SDCR_a034_Ib "SDCR ECU: a034 ib";
+CM_ BO_ 1787 "SDCR ECU message: uds response";
+CM_ SG_ 1787 SDCR_udsResponseData "SDCR ECU: uds response data";
 CM_ BO_ 1835 "Air suspension controller message: alert log";
 CM_ SG_ 1835 TAS_alertID "Air suspension controller: alert ID";
 CM_ SG_ 1835 TAS_alertState "Air suspension controller: alert state";
@@ -46118,6 +46690,8 @@ CM_ SG_ 852 TAS_a321_speedBumpAttributes1 "Air suspension controller: a321 speed
 CM_ SG_ 852 TAS_a322_speedBumpAttributes2 "Air suspension controller: a322 speed bump attributes2";
 CM_ SG_ 852 TAS_a332_levelingThresholds1 "Air suspension controller: a332 leveling thresholds1";
 CM_ SG_ 852 TAS_a333_levelingThresholds2 "Air suspension controller: a333 leveling thresholds2";
+CM_ BO_ 1627 "Air suspension controller message: uds response";
+CM_ SG_ 1627 TAS_udsResponseData "Air suspension controller: uds response data";
 CM_ BO_ 1410 "TCU ECU message: alert log";
 CM_ SG_ 1410 TCU_alertID "TCU ECU: alert ID";
 CM_ SG_ 1410 TCU_alertState "TCU ECU: alert state";
@@ -46156,6 +46730,8 @@ CM_ SG_ 1408 TCU_statusMux "TCU ECU: status mux";
 CM_ SG_ 1408 TCU_wakeUpReason "TCU ECU: wake up reason; raw 4294967295 = signal not available (SNA)";
 CM_ SG_ 1408 TCU_tcuCmdId "TCU ECU: tcu cmd id";
 CM_ SG_ 1408 TCU_goingToSleep "TCU ECU: going to sleep; raw 4294967295 = signal not available (SNA)";
+CM_ BO_ 1631 "Tire pressure monitoring message: uds response";
+CM_ SG_ 1631 TPMS_udsResponseData "Tire pressure monitoring: uds response data";
 CM_ BO_ 1298 "TRCM ECU message: alert log";
 CM_ SG_ 1298 TRCM_alertID "TRCM ECU: alert ID";
 CM_ SG_ 1298 TRCM_alertState "TRCM ECU: alert state";
@@ -47043,6 +47619,106 @@ CM_ SG_ 2030 TRCM_a629_loop28AsicStartupDiagn "TRCM ECU: a629 loop28 asic startu
 CM_ SG_ 2030 TRCM_a630_loop29AsicStartupDiagn "TRCM ECU: a630 loop29 asic startup diagnostic failure";
 CM_ SG_ 2030 TRCM_a631_loop30AsicStartupDiagn "TRCM ECU: a631 loop30 asic startup diagnostic failure";
 CM_ SG_ 2030 TRCM_a632_loop31AsicStartupDiagn "TRCM ECU: a632 loop31 asic startup diagnostic failure";
+CM_ BO_ 1641 "UDS ECU message: KOSTI asccm request";
+CM_ SG_ 1641 UDS_KOSTIAsccmRequestData "UDS ECU: KOSTI asccm request data";
+CM_ BO_ 1538 "UDS ECU message: bms request";
+CM_ SG_ 1538 UDS_bmsRequestData "UDS ECU: bms request data";
+CM_ BO_ 1579 "UDS ECU message: cc request";
+CM_ SG_ 1579 UDS_ccRequestData "UDS ECU: cc request data";
+CM_ BO_ 1539 "UDS ECU message: cmp request";
+CM_ SG_ 1539 UDS_cmpRequestData "UDS ECU: cmp request data";
+CM_ BO_ 1543 "UDS ECU message: cmpd request";
+CM_ SG_ 1543 UDS_cmpdRequestData "UDS ECU: cmpd request data";
+CM_ BO_ 1550 "UDS ECU message: cp request";
+CM_ SG_ 1550 UDS_cpRequestData "UDS ECU: cp request data";
+CM_ BO_ 1609 "UDS ECU message: das request";
+CM_ SG_ 1609 UDS_dasRequestData "UDS ECU: das request data";
+CM_ BO_ 1589 "UDS ECU message: di request";
+CM_ SG_ 1589 UDS_diRequestData "UDS ECU: di request data";
+CM_ BO_ 1541 "UDS ECU message: dif request";
+CM_ SG_ 1541 UDS_difRequestData "UDS ECU: dif request data";
+CM_ BO_ 1542 "UDS ECU message: dir request";
+CM_ SG_ 1542 UDS_dirRequestData "UDS ECU: dir request data";
+CM_ BO_ 1584 "UDS ECU message: epas3p request";
+CM_ SG_ 1584 UDS_epas3pRequestData "UDS ECU: epas3p request data";
+CM_ BO_ 1840 "UDS ECU message: epas3s request";
+CM_ SG_ 1840 UDS_epas3sRequestData "UDS ECU: epas3s request data";
+CM_ BO_ 1572 "UDS ECU message: epbl request";
+CM_ SG_ 1572 UDS_epblRequestData_H "UDS ECU: epbl request data h";
+CM_ SG_ 1572 UDS_epblRequestData_L "UDS ECU: epbl request data l";
+CM_ BO_ 1574 "UDS ECU message: epbr request";
+CM_ SG_ 1574 UDS_epbrRequestData_H "UDS ECU: epbr request data h";
+CM_ SG_ 1574 UDS_epbrRequestData_L "UDS ECU: epbr request data l";
+CM_ BO_ 1605 "UDS ECU message: esp request";
+CM_ SG_ 1605 UDS_espRequestData "UDS ECU: esp request data";
+CM_ BO_ 2015 "UDS ECU message: functional request";
+CM_ SG_ 2015 UDS_functionalRequestData_0 "UDS ECU: functional request data 0";
+CM_ SG_ 2015 UDS_functionalRequestData_1 "UDS ECU: functional request data 1";
+CM_ SG_ 2015 UDS_functionalRequestData_2 "UDS ECU: functional request data 2";
+CM_ SG_ 2015 UDS_functionalRequestData_3 "UDS ECU: functional request data 3";
+CM_ SG_ 2015 UDS_functionalRequestData_4 "UDS ECU: functional request data 4";
+CM_ SG_ 2015 UDS_functionalRequestData_5 "UDS ECU: functional request data 5";
+CM_ SG_ 2015 UDS_functionalRequestData_6 "UDS ECU: functional request data 6";
+CM_ SG_ 2015 UDS_functionalRequestData_7 "UDS ECU: functional request data 7";
+CM_ BO_ 2014 "UDS ECU message: functional request CH";
+CM_ SG_ 2014 UDS_functionalRequestDataCH "UDS ECU: functional request data CH";
+CM_ BO_ 1552 "UDS ECU message: hvp request";
+CM_ SG_ 1552 UDS_hvpRequestData "UDS ECU: hvp request data";
+CM_ BO_ 1613 "UDS ECU message: ibst request";
+CM_ SG_ 1613 UDS_ibstRequestData "UDS ECU: ibst request data";
+CM_ BO_ 1560 "UDS ECU message: icr request";
+CM_ SG_ 1560 UDS_icrRequestData "UDS ECU: icr request data";
+CM_ BO_ 1603 "UDS ECU message: ocs1p request";
+CM_ SG_ 1603 UDS_ocs1pRequestData "UDS ECU: ocs1p request data";
+CM_ BO_ 1614 "UDS ECU message: park request";
+CM_ SG_ 1614 UDS_parkRequestData "UDS ECU: park request data";
+CM_ BO_ 1576 "UDS ECU message: pcs request";
+CM_ SG_ 1576 UDS_pcsRequestData "UDS ECU: pcs request data";
+CM_ BO_ 1634 "UDS ECU message: plg request";
+CM_ SG_ 1634 UDS_plgRequestData "UDS ECU: plg request data";
+CM_ BO_ 1568 "UDS ECU message: pm request";
+CM_ SG_ 1568 UDS_pmRequestData "UDS ECU: pm request data";
+CM_ BO_ 1604 "UDS ECU message: pmf request";
+CM_ SG_ 1604 UDS_pmfRequestData "UDS ECU: pmf request data";
+CM_ BO_ 1540 "UDS ECU message: pmr request";
+CM_ SG_ 1540 UDS_pmrRequestData "UDS ECU: pmr request data";
+CM_ BO_ 1734 "UDS ECU message: ptc request";
+CM_ SG_ 1734 UDS_ptcRequestData "UDS ECU: ptc request data";
+CM_ BO_ 1649 "UDS ECU message: radc request";
+CM_ SG_ 1649 UDS_radcRequestData "UDS ECU: radc request data";
+CM_ BO_ 1601 "UDS ECU message: rcm request";
+CM_ SG_ 1601 UDS_rcmRequestData "UDS ECU: rcm request data";
+CM_ BO_ 1664 "UDS ECU message: sccm request";
+CM_ SG_ 1664 UDS_sccmRequestData "UDS ECU: sccm request data";
+CM_ BO_ 1723 "UDS ECU message: sdcr request";
+CM_ SG_ 1723 UDS_sdcrRequestData "UDS ECU: sdcr request data";
+CM_ BO_ 1611 "UDS ECU message: tas request";
+CM_ SG_ 1611 UDS_tasRequestData "UDS ECU: tas request data";
+CM_ BO_ 1551 "UDS ECU message: thc request";
+CM_ SG_ 1551 UDS_thcRequestData_H "UDS ECU: thc request data h";
+CM_ SG_ 1551 UDS_thcRequestData_L "UDS ECU: thc request data l";
+CM_ BO_ 1615 "UDS ECU message: tpms request";
+CM_ SG_ 1615 UDS_tpmsRequestData "UDS ECU: tpms request data";
+CM_ BO_ 1578 "UDS ECU message: vcbatt1 request";
+CM_ SG_ 1578 UDS_vcbatt1RequestData "UDS ECU: vcbatt1 request data";
+CM_ BO_ 1588 "UDS ECU message: vcbatt2 request";
+CM_ SG_ 1588 UDS_vcbatt2RequestData "UDS ECU: vcbatt2 request data";
+CM_ BO_ 1636 "UDS ECU message: vcbatt request";
+CM_ SG_ 1636 UDS_vcbattRequestData "UDS ECU: vcbatt request data";
+CM_ BO_ 1580 "UDS ECU message: vcfront1 request";
+CM_ SG_ 1580 UDS_vcfront1RequestData "UDS ECU: vcfront1 request data";
+CM_ BO_ 1582 "UDS ECU message: vcfront2 request";
+CM_ SG_ 1582 UDS_vcfront2RequestData "UDS ECU: vcfront2 request data";
+CM_ BO_ 1536 "UDS ECU message: vcfront request";
+CM_ SG_ 1536 UDS_vcfrontRequestData "UDS ECU: vcfront request data";
+CM_ BO_ 1570 "UDS ECU message: vcleft request";
+CM_ SG_ 1570 UDS_vcleftRequestData_H "UDS ECU: vcleft request data h";
+CM_ SG_ 1570 UDS_vcleftRequestData_L "UDS ECU: vcleft request data l";
+CM_ BO_ 1544 "UDS ECU message: vcright request";
+CM_ SG_ 1544 UDS_vcrightRequestData_H "UDS ECU: vcright request data h";
+CM_ SG_ 1544 UDS_vcrightRequestData_L "UDS ECU: vcright request data l";
+CM_ BO_ 1546 "UDS ECU message: vcsec request";
+CM_ SG_ 1546 UDS_vcsecRequestData "UDS ECU: vcsec request data";
 CM_ BO_ 1056 "UIS ECU message: log";
 CM_ SG_ 1056 UIS_logMux "UIS ECU: log mux";
 CM_ SG_ 1056 UIS_zramWriteTicks "UIS ECU: zram write ticks";
@@ -49317,6 +49993,7 @@ CM_ SG_ 545 VCFRONT_inAccessoryPlus "Front body controller: in accessory plus";
 CM_ SG_ 545 VCFRONT_LVShuttingDown "Front body controller: LV shutting down";
 CM_ SG_ 545 VCFRONT_LVPowerStateCounter "Front body controller: LV power state counter";
 CM_ SG_ 545 VCFRONT_LVPowerStateChecksum "Front body controller: LV power state checksum";
+CM_ SG_ 545 VCFRONT_dirLVRequest "Front body controller: dir LV request";
 CM_ SG_ 545 VCFRONT_cpLVRequest "Front body controller: cp LV request";
 CM_ SG_ 545 VCFRONT_epasLVState "Front body controller: epas LV state";
 CM_ SG_ 545 VCFRONT_hvcLVRequest "Front body controller: hvc LV request";
@@ -52541,6 +53218,8 @@ CM_ SG_ 737 VCFRONT_maxHeatingPowerRightCC "Front body controller: max heating p
 CM_ SG_ 737 VCFRONT_activeLouverOpenPos "The actual position for the active louver";
 CM_ SG_ 737 VCFRONT_activeLouverState "State of the active louver circuit";
 CM_ SG_ 737 VCFRONT_windshieldCameraHeaterPo "Front body controller: windshield camera heater power; raw 63 = signal not available (SNA)";
+CM_ BO_ 1537 "Front body controller message: uds response";
+CM_ SG_ 1537 VCFRONT_udsResponseData "Front body controller: uds response data";
 CM_ BO_ 929 "Front body controller message: vehicle status";
 CM_ SG_ 929 VCFRONT_vehicleStatusMuxIndex "Front body controller: vehicle status mux index";
 CM_ SG_ 929 VCFRONT_vehicleStatusCounter "Front body controller: vehicle status counter";
@@ -54677,6 +55356,9 @@ CM_ SG_ 657 VCLEFT_hvacBlowerArbState "Left body controller: hvac blower arb sta
 CM_ SG_ 657 VCLEFT_hvacBlowerArbResult "Left body controller: hvac blower arb result";
 CM_ SG_ 657 VCLEFT_hvacBlowerArbCurrent "Left body controller: hvac blower arb current";
 CM_ SG_ 657 VCLEFT_hvacBlowerTorqueIndexFilt "Left body controller: hvac blower torque index filtered";
+CM_ BO_ 1571 "Left body controller message: uds response";
+CM_ SG_ 1571 VCLEFT_udsResponseData_H "Left body controller: uds response data h";
+CM_ SG_ 1571 VCLEFT_udsResponseData_L "Left body controller: uds response data l";
 CM_ BO_ 1114 "Right body controller message: AP hvac state10 hz";
 CM_ SG_ 1114 VCRIGHT_AP_hvacState10HzIndex "Right body controller: AP hvac state10 hz index";
 CM_ SG_ 1114 VCRIGHT_AP_autoDefogAvailable "Right body controller: AP auto defog available";
@@ -56853,6 +57535,9 @@ CM_ SG_ 835 VCRIGHT_isSteeringWheelHeaterReq "Right body controller: is steering
 CM_ SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "Right body controller: steering wheel heater DC tgt; raw 127 = signal not available (SNA)";
 CM_ BO_ 963 "Right body controller message: switch status";
 CM_ SG_ 963 VCRIGHT_switchStatusIndex "Right body controller: switch status index";
+CM_ SG_ 963 VCRIGHT_frontBuckleSwitch "Right body controller: front buckle switch";
+CM_ SG_ 963 VCRIGHT_rearCenterBuckleSwitch "Right body controller: rear center buckle switch";
+CM_ SG_ 963 VCRIGHT_rearRightBuckleSwitch "Right body controller: rear right buckle switch";
 CM_ SG_ 963 VCRIGHT_trunkExtReleasePressedPe "Right body controller: trunk ext release pressed persist";
 CM_ SG_ 963 VCRIGHT_frontSeatTrackBack "Right body controller: front seat track back; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_frontSeatTrackForward "Right body controller: front seat track forward; raw 0 = signal not available (SNA)";
@@ -56874,6 +57559,18 @@ CM_ SG_ 963 VCRIGHT_gloveboxLightCurrent "Current through the glovebox LED";
 CM_ SG_ 963 VCRIGHT_frontSeatALR "Front right seat automatic locking retractor switch; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_frontSeatResistiveOccupa "Front right seat occupancy status; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_2RowSeatReclineSwitchpac "State of the right second row powered recline adjustment switchpack";
+CM_ BO_ 1545 "Right body controller message: uds response";
+CM_ SG_ 1545 VCRIGHT_udsResponseData_H "Right body controller: uds response data h";
+CM_ SG_ 1545 VCRIGHT_udsResponseData_L "Right body controller: uds response data l";
+CM_ BO_ 953 "Vehicle security controller message";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN0 "Vehicle security controller: iso tp pipe ODIN0";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN1 "Vehicle security controller: iso tp pipe ODIN1";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN2 "Vehicle security controller: iso tp pipe ODIN2";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN3 "Vehicle security controller: iso tp pipe ODIN3";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN4 "Vehicle security controller: iso tp pipe ODIN4";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN5 "Vehicle security controller: iso tp pipe ODIN5";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN6 "Vehicle security controller: iso tp pipe ODIN6";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN7 "Vehicle security controller: iso tp pipe ODIN7";
 CM_ BO_ 537 "Vehicle security controller message: TPMS data";
 CM_ SG_ 537 VCSEC_TPMSDataIndex "Vehicle security controller: TPMS data index";
 CM_ SG_ 537 VCSEC_TPMSCapabilityPressureInAd "Vehicle security controller: TPMS capability pressure in adv0";
@@ -57800,6 +58497,8 @@ CM_ SG_ 1817 VCSEC_NISessionStateRight2 "Vehicle security controller: NI session
 CM_ SG_ 1817 VCSEC_NISessionStateRearLeft2 "Vehicle security controller: NI session state rear left2";
 CM_ SG_ 1817 VCSEC_NISessionStateRearRight2 "Vehicle security controller: NI session state rear right2";
 CM_ SG_ 1817 VCSEC_NISessionStateRear2 "Vehicle security controller: NI session state rear2";
+CM_ BO_ 2008 "Vehicle security controller message: uds response";
+CM_ SG_ 2008 VCSEC_udsResponseData "Vehicle security controller: uds response data";
 CM_ BO_ 1655 "VC ECU message: LVBMS status high";
 CM_ SG_ 1655 VC_lvbmsStatusHighIndex "VC ECU: lvbms status high index";
 CM_ SG_ 1655 VC_LVBMS_packCurrent "Electrical current into the low voltage battery; raw 4194303 = signal not available (SNA)";
@@ -57932,6 +58631,7 @@ BA_ "ECU" BU_ BB "BB";
 BA_ "ECU" BU_ BMS "BMS";
 BA_ "ECU" BU_ CC "CC";
 BA_ "ECU" BU_ CMP "CMP";
+BA_ "ECU" BU_ CMPD "CMPD";
 BA_ "ECU" BU_ CP "CP";
 BA_ "ECU" BU_ DAS "DAS";
 BA_ "ECU" BU_ DI "DI";
@@ -57951,11 +58651,15 @@ BA_ "ECU" BU_ IBST "IBST";
 BA_ "ECU" BU_ ICR "ICR";
 BA_ "ECU" BU_ IDB "IDB";
 BA_ "ECU" BU_ OCS1P "OCS1P";
+BA_ "ECU" BU_ ODIN "ODIN";
+BA_ "ECU" BU_ PARK "PARK";
 BA_ "ECU" BU_ PCS "PCS";
+BA_ "ECU" BU_ PLG "PLG";
 BA_ "ECU" BU_ PM "PM";
 BA_ "ECU" BU_ PMF "PMF";
 BA_ "ECU" BU_ PMR "PMR";
 BA_ "ECU" BU_ PTC "PTC";
+BA_ "ECU" BU_ RADC "RADC";
 BA_ "ECU" BU_ RCM "RCM";
 BA_ "ECU" BU_ RCM2 "RCM2";
 BA_ "ECU" BU_ RCU "RCU";
@@ -57963,7 +58667,9 @@ BA_ "ECU" BU_ SCCM "SCCM";
 BA_ "ECU" BU_ SDCR "SDCR";
 BA_ "ECU" BU_ TAS "TAS";
 BA_ "ECU" BU_ TCU "TCU";
+BA_ "ECU" BU_ TPMS "TPMS";
 BA_ "ECU" BU_ TRCM "TRCM";
+BA_ "ECU" BU_ UDS "UDS";
 BA_ "ECU" BU_ UI "UI";
 BA_ "ECU" BU_ UIS "UIS";
 BA_ "ECU" BU_ UMC "UMC";
@@ -58000,6 +58706,9 @@ BA_ "VFrameFormat" BO_ 2046 0;
 BA_ "GenMsgCycleTime" BO_ 1040 500;
 BA_ "GenMsgSendType" BO_ 1040 0;
 BA_ "VFrameFormat" BO_ 1040 0;
+BA_ "GenMsgCycleTime" BO_ 1177 1000;
+BA_ "GenMsgSendType" BO_ 1177 0;
+BA_ "VFrameFormat" BO_ 1177 0;
 BA_ "GenMsgCycleTime" BO_ 603 1000;
 BA_ "GenMsgSendType" BO_ 603 0;
 BA_ "VFrameFormat" BO_ 603 0;
@@ -58048,6 +58757,9 @@ BA_ "VFrameFormat" BO_ 800 0;
 BA_ "GenMsgCycleTime" BO_ 1138 1000;
 BA_ "GenMsgSendType" BO_ 1138 0;
 BA_ "VFrameFormat" BO_ 1138 0;
+BA_ "GenMsgCycleTime" BO_ 562 100;
+BA_ "GenMsgSendType" BO_ 562 0;
+BA_ "VFrameFormat" BO_ 562 0;
 BA_ "GenMsgCycleTime" BO_ 2029 100;
 BA_ "GenMsgSendType" BO_ 2029 0;
 BA_ "VFrameFormat" BO_ 2029 0;
@@ -58081,6 +58793,9 @@ BA_ "VFrameFormat" BO_ 786 0;
 BA_ "GenMsgCycleTime" BO_ 2028 1000;
 BA_ "GenMsgSendType" BO_ 2028 0;
 BA_ "VFrameFormat" BO_ 2028 0;
+BA_ "GenMsgCycleTime" BO_ 1554 0;
+BA_ "GenMsgSendType" BO_ 1554 8;
+BA_ "VFrameFormat" BO_ 1554 0;
 BA_ "GenMsgCycleTime" BO_ 754 100;
 BA_ "GenMsgSendType" BO_ 754 0;
 BA_ "VFrameFormat" BO_ 754 0;
@@ -58090,9 +58805,15 @@ BA_ "VFrameFormat" BO_ 810 0;
 BA_ "GenMsgCycleTime" BO_ 797 100;
 BA_ "GenMsgSendType" BO_ 797 0;
 BA_ "VFrameFormat" BO_ 797 0;
+BA_ "GenMsgCycleTime" BO_ 1559 0;
+BA_ "GenMsgSendType" BO_ 1559 8;
+BA_ "VFrameFormat" BO_ 1559 0;
 BA_ "GenMsgCycleTime" BO_ 551 100;
 BA_ "GenMsgSendType" BO_ 551 0;
 BA_ "VFrameFormat" BO_ 551 0;
+BA_ "GenMsgCycleTime" BO_ 1555 0;
+BA_ "GenMsgSendType" BO_ 1555 8;
+BA_ "VFrameFormat" BO_ 1555 0;
 BA_ "GenMsgCycleTime" BO_ 1294 0;
 BA_ "GenMsgSendType" BO_ 1294 8;
 BA_ "VFrameFormat" BO_ 1294 0;
@@ -58120,6 +58841,9 @@ BA_ "VFrameFormat" BO_ 528 0;
 BA_ "GenMsgCycleTime" BO_ 893 1000;
 BA_ "GenMsgSendType" BO_ 893 0;
 BA_ "VFrameFormat" BO_ 893 0;
+BA_ "GenMsgCycleTime" BO_ 1566 0;
+BA_ "GenMsgSendType" BO_ 1566 8;
+BA_ "VFrameFormat" BO_ 1566 0;
 BA_ "GenMsgCycleTime" BO_ 583 100;
 BA_ "GenMsgSendType" BO_ 583 0;
 BA_ "VFrameFormat" BO_ 583 0;
@@ -58132,6 +58856,9 @@ BA_ "VFrameFormat" BO_ 777 0;
 BA_ "GenMsgCycleTime" BO_ 1548 5;
 BA_ "GenMsgSendType" BO_ 1548 0;
 BA_ "VFrameFormat" BO_ 1548 0;
+BA_ "GenMsgCycleTime" BO_ 1625 0;
+BA_ "GenMsgSendType" BO_ 1625 8;
+BA_ "VFrameFormat" BO_ 1625 0;
 BA_ "GenMsgCycleTime" BO_ 1318 0;
 BA_ "GenMsgSendType" BO_ 1318 8;
 BA_ "VFrameFormat" BO_ 1318 0;
@@ -58165,6 +58892,9 @@ BA_ "VFrameFormat" BO_ 886 0;
 BA_ "GenMsgCycleTime" BO_ 390 100;
 BA_ "GenMsgSendType" BO_ 390 0;
 BA_ "VFrameFormat" BO_ 390 0;
+BA_ "GenMsgCycleTime" BO_ 1557 0;
+BA_ "GenMsgSendType" BO_ 1557 8;
+BA_ "VFrameFormat" BO_ 1557 0;
 BA_ "GenMsgCycleTime" BO_ 1445 0;
 BA_ "GenMsgSendType" BO_ 1445 8;
 BA_ "VFrameFormat" BO_ 1445 0;
@@ -58198,6 +58928,9 @@ BA_ "VFrameFormat" BO_ 789 0;
 BA_ "GenMsgCycleTime" BO_ 264 10;
 BA_ "GenMsgSendType" BO_ 264 0;
 BA_ "VFrameFormat" BO_ 264 0;
+BA_ "GenMsgCycleTime" BO_ 1558 0;
+BA_ "GenMsgSendType" BO_ 1558 8;
+BA_ "VFrameFormat" BO_ 1558 0;
 BA_ "GenMsgCycleTime" BO_ 1319 0;
 BA_ "GenMsgSendType" BO_ 1319 8;
 BA_ "VFrameFormat" BO_ 1319 0;
@@ -58255,6 +58988,9 @@ BA_ "VFrameFormat" BO_ 2036 0;
 BA_ "GenMsgCycleTime" BO_ 883 10;
 BA_ "GenMsgSendType" BO_ 883 0;
 BA_ "VFrameFormat" BO_ 883 0;
+BA_ "GenMsgCycleTime" BO_ 1592 0;
+BA_ "GenMsgSendType" BO_ 1592 8;
+BA_ "VFrameFormat" BO_ 1592 0;
 BA_ "GenMsgCycleTime" BO_ 1425 0;
 BA_ "GenMsgSendType" BO_ 1425 8;
 BA_ "VFrameFormat" BO_ 1425 0;
@@ -58264,6 +59000,9 @@ BA_ "VFrameFormat" BO_ 913 0;
 BA_ "GenMsgCycleTime" BO_ 882 10;
 BA_ "GenMsgSendType" BO_ 882 0;
 BA_ "VFrameFormat" BO_ 882 0;
+BA_ "GenMsgCycleTime" BO_ 1848 0;
+BA_ "GenMsgSendType" BO_ 1848 8;
+BA_ "VFrameFormat" BO_ 1848 0;
 BA_ "GenMsgCycleTime" BO_ 1427 0;
 BA_ "GenMsgSendType" BO_ 1427 8;
 BA_ "VFrameFormat" BO_ 1427 0;
@@ -58285,6 +59024,9 @@ BA_ "VFrameFormat" BO_ 968 0;
 BA_ "GenMsgCycleTime" BO_ 681 100;
 BA_ "GenMsgSendType" BO_ 681 0;
 BA_ "VFrameFormat" BO_ 681 0;
+BA_ "GenMsgCycleTime" BO_ 1573 0;
+BA_ "GenMsgSendType" BO_ 1573 8;
+BA_ "VFrameFormat" BO_ 1573 0;
 BA_ "GenMsgCycleTime" BO_ 1448 0;
 BA_ "GenMsgSendType" BO_ 1448 8;
 BA_ "VFrameFormat" BO_ 1448 0;
@@ -58297,9 +59039,18 @@ BA_ "VFrameFormat" BO_ 742 0;
 BA_ "GenMsgCycleTime" BO_ 744 100;
 BA_ "GenMsgSendType" BO_ 744 0;
 BA_ "VFrameFormat" BO_ 744 0;
+BA_ "GenMsgCycleTime" BO_ 1575 0;
+BA_ "GenMsgSendType" BO_ 1575 8;
+BA_ "VFrameFormat" BO_ 1575 0;
 BA_ "GenMsgCycleTime" BO_ 981 1000;
 BA_ "GenMsgSendType" BO_ 981 0;
 BA_ "VFrameFormat" BO_ 981 0;
+BA_ "GenMsgCycleTime" BO_ 1621 100;
+BA_ "GenMsgSendType" BO_ 1621 0;
+BA_ "VFrameFormat" BO_ 1621 0;
+BA_ "GenMsgCycleTime" BO_ 373 20;
+BA_ "GenMsgSendType" BO_ 373 0;
+BA_ "VFrameFormat" BO_ 373 0;
 BA_ "GenMsgCycleTime" BO_ 888 1000;
 BA_ "GenMsgSendType" BO_ 888 0;
 BA_ "VFrameFormat" BO_ 888 0;
@@ -58321,12 +59072,18 @@ BA_ "VFrameFormat" BO_ 904 0;
 BA_ "GenMsgCycleTime" BO_ 2047 100;
 BA_ "GenMsgSendType" BO_ 2047 0;
 BA_ "VFrameFormat" BO_ 2047 0;
+BA_ "GenMsgCycleTime" BO_ 792 100;
+BA_ "GenMsgSendType" BO_ 792 0;
+BA_ "VFrameFormat" BO_ 792 0;
 BA_ "GenMsgCycleTime" BO_ 1638 250;
 BA_ "GenMsgSendType" BO_ 1638 0;
 BA_ "VFrameFormat" BO_ 1638 0;
 BA_ "GenMsgCycleTime" BO_ 1080 100;
 BA_ "GenMsgSendType" BO_ 1080 0;
 BA_ "VFrameFormat" BO_ 1080 0;
+BA_ "GenMsgCycleTime" BO_ 1376 1000;
+BA_ "GenMsgSendType" BO_ 1376 0;
+BA_ "VFrameFormat" BO_ 1376 0;
 BA_ "GenMsgCycleTime" BO_ 1656 100;
 BA_ "GenMsgSendType" BO_ 1656 0;
 BA_ "VFrameFormat" BO_ 1656 0;
@@ -58360,9 +59117,18 @@ BA_ "VFrameFormat" BO_ 522 0;
 BA_ "GenMsgCycleTime" BO_ 1962 1000;
 BA_ "GenMsgSendType" BO_ 1962 0;
 BA_ "VFrameFormat" BO_ 1962 0;
+BA_ "GenMsgCycleTime" BO_ 1666 100;
+BA_ "GenMsgSendType" BO_ 1666 0;
+BA_ "VFrameFormat" BO_ 1666 0;
+BA_ "GenMsgCycleTime" BO_ 1553 0;
+BA_ "GenMsgSendType" BO_ 1553 8;
+BA_ "VFrameFormat" BO_ 1553 0;
 BA_ "GenMsgCycleTime" BO_ 861 1000;
 BA_ "GenMsgSendType" BO_ 861 0;
 BA_ "VFrameFormat" BO_ 861 0;
+BA_ "GenMsgCycleTime" BO_ 1629 0;
+BA_ "GenMsgSendType" BO_ 1629 8;
+BA_ "VFrameFormat" BO_ 1629 0;
 BA_ "GenMsgCycleTime" BO_ 1208 0;
 BA_ "GenMsgSendType" BO_ 1208 8;
 BA_ "VFrameFormat" BO_ 1208 0;
@@ -58381,6 +59147,9 @@ BA_ "VFrameFormat" BO_ 670 0;
 BA_ "GenMsgCycleTime" BO_ 2023 100;
 BA_ "GenMsgSendType" BO_ 2023 0;
 BA_ "VFrameFormat" BO_ 2023 0;
+BA_ "GenMsgCycleTime" BO_ 1624 0;
+BA_ "GenMsgSendType" BO_ 1624 8;
+BA_ "VFrameFormat" BO_ 1624 0;
 BA_ "GenMsgCycleTime" BO_ 1470 0;
 BA_ "GenMsgSendType" BO_ 1470 8;
 BA_ "VFrameFormat" BO_ 1470 0;
@@ -58402,6 +59171,15 @@ BA_ "VFrameFormat" BO_ 766 0;
 BA_ "GenMsgCycleTime" BO_ 771 500;
 BA_ "GenMsgSendType" BO_ 771 0;
 BA_ "VFrameFormat" BO_ 771 0;
+BA_ "GenMsgCycleTime" BO_ 1619 0;
+BA_ "GenMsgSendType" BO_ 1619 8;
+BA_ "VFrameFormat" BO_ 1619 0;
+BA_ "GenMsgCycleTime" BO_ 1152 0;
+BA_ "GenMsgSendType" BO_ 1152 8;
+BA_ "VFrameFormat" BO_ 1152 0;
+BA_ "GenMsgCycleTime" BO_ 1630 0;
+BA_ "GenMsgSendType" BO_ 1630 8;
+BA_ "VFrameFormat" BO_ 1630 0;
 BA_ "GenMsgCycleTime" BO_ 1060 0;
 BA_ "GenMsgSendType" BO_ 1060 8;
 BA_ "VFrameFormat" BO_ 1060 0;
@@ -58417,6 +59195,12 @@ BA_ "VFrameFormat" BO_ 548 0;
 BA_ "GenMsgCycleTime" BO_ 708 1000;
 BA_ "GenMsgSendType" BO_ 708 0;
 BA_ "VFrameFormat" BO_ 708 0;
+BA_ "GenMsgCycleTime" BO_ 1577 0;
+BA_ "GenMsgSendType" BO_ 1577 8;
+BA_ "VFrameFormat" BO_ 1577 0;
+BA_ "GenMsgCycleTime" BO_ 1635 0;
+BA_ "GenMsgSendType" BO_ 1635 8;
+BA_ "VFrameFormat" BO_ 1635 0;
 BA_ "GenMsgCycleTime" BO_ 1317 0;
 BA_ "GenMsgSendType" BO_ 1317 8;
 BA_ "VFrameFormat" BO_ 1317 0;
@@ -58426,6 +59210,12 @@ BA_ "VFrameFormat" BO_ 772 0;
 BA_ "GenMsgCycleTime" BO_ 2022 1000;
 BA_ "GenMsgSendType" BO_ 2022 0;
 BA_ "VFrameFormat" BO_ 2022 0;
+BA_ "GenMsgCycleTime" BO_ 469 10;
+BA_ "GenMsgSendType" BO_ 469 0;
+BA_ "VFrameFormat" BO_ 469 0;
+BA_ "GenMsgCycleTime" BO_ 1620 0;
+BA_ "GenMsgSendType" BO_ 1620 8;
+BA_ "VFrameFormat" BO_ 1620 0;
 BA_ "GenMsgCycleTime" BO_ 1446 0;
 BA_ "GenMsgSendType" BO_ 1446 8;
 BA_ "VFrameFormat" BO_ 1446 0;
@@ -58435,6 +59225,12 @@ BA_ "VFrameFormat" BO_ 902 0;
 BA_ "GenMsgCycleTime" BO_ 928 1000;
 BA_ "GenMsgSendType" BO_ 928 0;
 BA_ "VFrameFormat" BO_ 928 0;
+BA_ "GenMsgCycleTime" BO_ 472 10;
+BA_ "GenMsgSendType" BO_ 472 0;
+BA_ "VFrameFormat" BO_ 472 0;
+BA_ "GenMsgCycleTime" BO_ 1556 0;
+BA_ "GenMsgSendType" BO_ 1556 8;
+BA_ "VFrameFormat" BO_ 1556 0;
 BA_ "GenMsgCycleTime" BO_ 1444 0;
 BA_ "GenMsgSendType" BO_ 1444 8;
 BA_ "VFrameFormat" BO_ 1444 0;
@@ -58447,9 +59243,18 @@ BA_ "VFrameFormat" BO_ 896 0;
 BA_ "GenMsgCycleTime" BO_ 463 10;
 BA_ "GenMsgSendType" BO_ 463 0;
 BA_ "VFrameFormat" BO_ 463 0;
+BA_ "GenMsgCycleTime" BO_ 1600 0;
+BA_ "GenMsgSendType" BO_ 1600 8;
+BA_ "VFrameFormat" BO_ 1600 0;
 BA_ "GenMsgCycleTime" BO_ 519 100;
 BA_ "GenMsgSendType" BO_ 519 0;
 BA_ "VFrameFormat" BO_ 519 0;
+BA_ "GenMsgCycleTime" BO_ 1750 0;
+BA_ "GenMsgSendType" BO_ 1750 8;
+BA_ "VFrameFormat" BO_ 1750 0;
+BA_ "GenMsgCycleTime" BO_ 1665 0;
+BA_ "GenMsgSendType" BO_ 1665 8;
+BA_ "VFrameFormat" BO_ 1665 0;
 BA_ "GenMsgCycleTime" BO_ 1249 0;
 BA_ "GenMsgSendType" BO_ 1249 8;
 BA_ "VFrameFormat" BO_ 1249 0;
@@ -58462,6 +59267,9 @@ BA_ "VFrameFormat" BO_ 1297 0;
 BA_ "GenMsgCycleTime" BO_ 881 1000;
 BA_ "GenMsgSendType" BO_ 881 0;
 BA_ "VFrameFormat" BO_ 881 0;
+BA_ "GenMsgCycleTime" BO_ 1617 0;
+BA_ "GenMsgSendType" BO_ 1617 8;
+BA_ "VFrameFormat" BO_ 1617 0;
 BA_ "GenMsgCycleTime" BO_ 1471 0;
 BA_ "GenMsgSendType" BO_ 1471 8;
 BA_ "VFrameFormat" BO_ 1471 0;
@@ -58474,15 +59282,24 @@ BA_ "VFrameFormat" BO_ 831 0;
 BA_ "GenMsgCycleTime" BO_ 1344 0;
 BA_ "GenMsgSendType" BO_ 1344 8;
 BA_ "VFrameFormat" BO_ 1344 0;
+BA_ "GenMsgCycleTime" BO_ 1680 0;
+BA_ "GenMsgSendType" BO_ 1680 8;
+BA_ "VFrameFormat" BO_ 1680 0;
 BA_ "GenMsgCycleTime" BO_ 1531 0;
 BA_ "GenMsgSendType" BO_ 1531 8;
 BA_ "VFrameFormat" BO_ 1531 0;
+BA_ "GenMsgCycleTime" BO_ 1787 0;
+BA_ "GenMsgSendType" BO_ 1787 8;
+BA_ "VFrameFormat" BO_ 1787 0;
 BA_ "GenMsgCycleTime" BO_ 1835 0;
 BA_ "GenMsgSendType" BO_ 1835 8;
 BA_ "VFrameFormat" BO_ 1835 0;
 BA_ "GenMsgCycleTime" BO_ 852 100;
 BA_ "GenMsgSendType" BO_ 852 0;
 BA_ "VFrameFormat" BO_ 852 0;
+BA_ "GenMsgCycleTime" BO_ 1627 0;
+BA_ "GenMsgSendType" BO_ 1627 8;
+BA_ "VFrameFormat" BO_ 1627 0;
 BA_ "GenMsgCycleTime" BO_ 1410 0;
 BA_ "GenMsgSendType" BO_ 1410 8;
 BA_ "VFrameFormat" BO_ 1410 0;
@@ -58495,12 +59312,147 @@ BA_ "VFrameFormat" BO_ 1409 0;
 BA_ "GenMsgCycleTime" BO_ 1408 1000;
 BA_ "GenMsgSendType" BO_ 1408 0;
 BA_ "VFrameFormat" BO_ 1408 0;
+BA_ "GenMsgCycleTime" BO_ 1631 0;
+BA_ "GenMsgSendType" BO_ 1631 8;
+BA_ "VFrameFormat" BO_ 1631 0;
 BA_ "GenMsgCycleTime" BO_ 1298 0;
 BA_ "GenMsgSendType" BO_ 1298 8;
 BA_ "VFrameFormat" BO_ 1298 0;
 BA_ "GenMsgCycleTime" BO_ 2030 100;
 BA_ "GenMsgSendType" BO_ 2030 0;
 BA_ "VFrameFormat" BO_ 2030 0;
+BA_ "GenMsgCycleTime" BO_ 1641 0;
+BA_ "GenMsgSendType" BO_ 1641 8;
+BA_ "VFrameFormat" BO_ 1641 0;
+BA_ "GenMsgCycleTime" BO_ 1538 0;
+BA_ "GenMsgSendType" BO_ 1538 8;
+BA_ "VFrameFormat" BO_ 1538 0;
+BA_ "GenMsgCycleTime" BO_ 1579 0;
+BA_ "GenMsgSendType" BO_ 1579 8;
+BA_ "VFrameFormat" BO_ 1579 0;
+BA_ "GenMsgCycleTime" BO_ 1539 0;
+BA_ "GenMsgSendType" BO_ 1539 8;
+BA_ "VFrameFormat" BO_ 1539 0;
+BA_ "GenMsgCycleTime" BO_ 1543 0;
+BA_ "GenMsgSendType" BO_ 1543 8;
+BA_ "VFrameFormat" BO_ 1543 0;
+BA_ "GenMsgCycleTime" BO_ 1550 0;
+BA_ "GenMsgSendType" BO_ 1550 8;
+BA_ "VFrameFormat" BO_ 1550 0;
+BA_ "GenMsgCycleTime" BO_ 1609 0;
+BA_ "GenMsgSendType" BO_ 1609 8;
+BA_ "VFrameFormat" BO_ 1609 0;
+BA_ "GenMsgCycleTime" BO_ 1589 0;
+BA_ "GenMsgSendType" BO_ 1589 8;
+BA_ "VFrameFormat" BO_ 1589 0;
+BA_ "GenMsgCycleTime" BO_ 1541 0;
+BA_ "GenMsgSendType" BO_ 1541 8;
+BA_ "VFrameFormat" BO_ 1541 0;
+BA_ "GenMsgCycleTime" BO_ 1542 0;
+BA_ "GenMsgSendType" BO_ 1542 8;
+BA_ "VFrameFormat" BO_ 1542 0;
+BA_ "GenMsgCycleTime" BO_ 1584 0;
+BA_ "GenMsgSendType" BO_ 1584 8;
+BA_ "VFrameFormat" BO_ 1584 0;
+BA_ "GenMsgCycleTime" BO_ 1840 0;
+BA_ "GenMsgSendType" BO_ 1840 8;
+BA_ "VFrameFormat" BO_ 1840 0;
+BA_ "GenMsgCycleTime" BO_ 1572 0;
+BA_ "GenMsgSendType" BO_ 1572 8;
+BA_ "VFrameFormat" BO_ 1572 0;
+BA_ "GenMsgCycleTime" BO_ 1574 0;
+BA_ "GenMsgSendType" BO_ 1574 8;
+BA_ "VFrameFormat" BO_ 1574 0;
+BA_ "GenMsgCycleTime" BO_ 1605 0;
+BA_ "GenMsgSendType" BO_ 1605 8;
+BA_ "VFrameFormat" BO_ 1605 0;
+BA_ "GenMsgCycleTime" BO_ 2015 0;
+BA_ "GenMsgSendType" BO_ 2015 8;
+BA_ "VFrameFormat" BO_ 2015 0;
+BA_ "GenMsgCycleTime" BO_ 2014 0;
+BA_ "GenMsgSendType" BO_ 2014 8;
+BA_ "VFrameFormat" BO_ 2014 0;
+BA_ "GenMsgCycleTime" BO_ 1552 0;
+BA_ "GenMsgSendType" BO_ 1552 8;
+BA_ "VFrameFormat" BO_ 1552 0;
+BA_ "GenMsgCycleTime" BO_ 1613 0;
+BA_ "GenMsgSendType" BO_ 1613 8;
+BA_ "VFrameFormat" BO_ 1613 0;
+BA_ "GenMsgCycleTime" BO_ 1560 0;
+BA_ "GenMsgSendType" BO_ 1560 8;
+BA_ "VFrameFormat" BO_ 1560 0;
+BA_ "GenMsgCycleTime" BO_ 1603 0;
+BA_ "GenMsgSendType" BO_ 1603 8;
+BA_ "VFrameFormat" BO_ 1603 0;
+BA_ "GenMsgCycleTime" BO_ 1614 0;
+BA_ "GenMsgSendType" BO_ 1614 8;
+BA_ "VFrameFormat" BO_ 1614 0;
+BA_ "GenMsgCycleTime" BO_ 1576 0;
+BA_ "GenMsgSendType" BO_ 1576 8;
+BA_ "VFrameFormat" BO_ 1576 0;
+BA_ "GenMsgCycleTime" BO_ 1634 0;
+BA_ "GenMsgSendType" BO_ 1634 8;
+BA_ "VFrameFormat" BO_ 1634 0;
+BA_ "GenMsgCycleTime" BO_ 1568 0;
+BA_ "GenMsgSendType" BO_ 1568 8;
+BA_ "VFrameFormat" BO_ 1568 0;
+BA_ "GenMsgCycleTime" BO_ 1604 0;
+BA_ "GenMsgSendType" BO_ 1604 8;
+BA_ "VFrameFormat" BO_ 1604 0;
+BA_ "GenMsgCycleTime" BO_ 1540 0;
+BA_ "GenMsgSendType" BO_ 1540 8;
+BA_ "VFrameFormat" BO_ 1540 0;
+BA_ "GenMsgCycleTime" BO_ 1734 0;
+BA_ "GenMsgSendType" BO_ 1734 8;
+BA_ "VFrameFormat" BO_ 1734 0;
+BA_ "GenMsgCycleTime" BO_ 1649 0;
+BA_ "GenMsgSendType" BO_ 1649 8;
+BA_ "VFrameFormat" BO_ 1649 0;
+BA_ "GenMsgCycleTime" BO_ 1601 0;
+BA_ "GenMsgSendType" BO_ 1601 8;
+BA_ "VFrameFormat" BO_ 1601 0;
+BA_ "GenMsgCycleTime" BO_ 1664 0;
+BA_ "GenMsgSendType" BO_ 1664 8;
+BA_ "VFrameFormat" BO_ 1664 0;
+BA_ "GenMsgCycleTime" BO_ 1723 0;
+BA_ "GenMsgSendType" BO_ 1723 8;
+BA_ "VFrameFormat" BO_ 1723 0;
+BA_ "GenMsgCycleTime" BO_ 1611 0;
+BA_ "GenMsgSendType" BO_ 1611 8;
+BA_ "VFrameFormat" BO_ 1611 0;
+BA_ "GenMsgCycleTime" BO_ 1551 0;
+BA_ "GenMsgSendType" BO_ 1551 8;
+BA_ "VFrameFormat" BO_ 1551 0;
+BA_ "GenMsgCycleTime" BO_ 1615 0;
+BA_ "GenMsgSendType" BO_ 1615 8;
+BA_ "VFrameFormat" BO_ 1615 0;
+BA_ "GenMsgCycleTime" BO_ 1578 0;
+BA_ "GenMsgSendType" BO_ 1578 8;
+BA_ "VFrameFormat" BO_ 1578 0;
+BA_ "GenMsgCycleTime" BO_ 1588 0;
+BA_ "GenMsgSendType" BO_ 1588 8;
+BA_ "VFrameFormat" BO_ 1588 0;
+BA_ "GenMsgCycleTime" BO_ 1636 0;
+BA_ "GenMsgSendType" BO_ 1636 8;
+BA_ "VFrameFormat" BO_ 1636 0;
+BA_ "GenMsgCycleTime" BO_ 1580 0;
+BA_ "GenMsgSendType" BO_ 1580 8;
+BA_ "VFrameFormat" BO_ 1580 0;
+BA_ "GenMsgCycleTime" BO_ 1582 0;
+BA_ "GenMsgSendType" BO_ 1582 8;
+BA_ "VFrameFormat" BO_ 1582 0;
+BA_ "GenMsgCycleTime" BO_ 1536 0;
+BA_ "GenMsgSendType" BO_ 1536 8;
+BA_ "VFrameFormat" BO_ 1536 0;
+BA_ "GenMsgCycleTime" BO_ 1570 0;
+BA_ "GenMsgSendType" BO_ 1570 8;
+BA_ "VFrameFormat" BO_ 1570 0;
+BA_ "GenMsgCycleTime" BO_ 1544 0;
+BA_ "GenMsgSendType" BO_ 1544 8;
+BA_ "VFrameFormat" BO_ 1544 0;
+BA_ "GenMsgCycleTime" BO_ 1546 0;
+BA_ "GenMsgSendType" BO_ 1546 8;
+BA_ "VFrameFormat" BO_ 1546 0;
 BA_ "GenMsgCycleTime" BO_ 1056 0;
 BA_ "GenMsgSendType" BO_ 1056 8;
 BA_ "VFrameFormat" BO_ 1056 0;
@@ -58651,6 +59603,9 @@ BA_ "VFrameFormat" BO_ 513 0;
 BA_ "GenMsgCycleTime" BO_ 737 14;
 BA_ "GenMsgSendType" BO_ 737 0;
 BA_ "VFrameFormat" BO_ 737 0;
+BA_ "GenMsgCycleTime" BO_ 1537 0;
+BA_ "GenMsgSendType" BO_ 1537 8;
+BA_ "VFrameFormat" BO_ 1537 0;
 BA_ "GenMsgCycleTime" BO_ 929 50;
 BA_ "GenMsgSendType" BO_ 929 0;
 BA_ "VFrameFormat" BO_ 929 0;
@@ -58711,6 +59666,9 @@ BA_ "VFrameFormat" BO_ 656 0;
 BA_ "GenMsgCycleTime" BO_ 657 500;
 BA_ "GenMsgSendType" BO_ 657 0;
 BA_ "VFrameFormat" BO_ 657 0;
+BA_ "GenMsgCycleTime" BO_ 1571 0;
+BA_ "GenMsgSendType" BO_ 1571 8;
+BA_ "VFrameFormat" BO_ 1571 0;
 BA_ "GenMsgCycleTime" BO_ 1114 50;
 BA_ "GenMsgSendType" BO_ 1114 0;
 BA_ "VFrameFormat" BO_ 1114 0;
@@ -58765,6 +59723,12 @@ BA_ "VFrameFormat" BO_ 835 0;
 BA_ "GenMsgCycleTime" BO_ 963 100;
 BA_ "GenMsgSendType" BO_ 963 0;
 BA_ "VFrameFormat" BO_ 963 0;
+BA_ "GenMsgCycleTime" BO_ 1545 0;
+BA_ "GenMsgSendType" BO_ 1545 8;
+BA_ "VFrameFormat" BO_ 1545 0;
+BA_ "GenMsgCycleTime" BO_ 953 0;
+BA_ "GenMsgSendType" BO_ 953 8;
+BA_ "VFrameFormat" BO_ 953 0;
 BA_ "GenMsgCycleTime" BO_ 537 100;
 BA_ "GenMsgSendType" BO_ 537 0;
 BA_ "VFrameFormat" BO_ 537 0;
@@ -58786,6 +59750,9 @@ BA_ "VFrameFormat" BO_ 1017 0;
 BA_ "GenMsgCycleTime" BO_ 1817 50;
 BA_ "GenMsgSendType" BO_ 1817 0;
 BA_ "VFrameFormat" BO_ 1817 0;
+BA_ "GenMsgCycleTime" BO_ 2008 0;
+BA_ "GenMsgSendType" BO_ 2008 8;
+BA_ "VFrameFormat" BO_ 2008 0;
 BA_ "GenMsgCycleTime" BO_ 1655 33;
 BA_ "GenMsgSendType" BO_ 1655 0;
 BA_ "VFrameFormat" BO_ 1655 0;
@@ -60285,6 +61252,8 @@ BA_ "Confidence" SG_ 1040 APP_cameraBlockedLeftRepeater 0;
 BA_ "Confidence" SG_ 1040 APP_cameraBlockedRightPillar 0;
 BA_ "Confidence" SG_ 1040 APP_cameraBlockedRightRepeater 0;
 BA_ "Confidence" SG_ 1040 APP_cameraBlockedBackup 0;
+BA_ "Confidence" SG_ 1177 APP_rRepeaterCameraTemperature 1;
+BA_ "Confidence" SG_ 1177 APP_lRepeaterCameraTemperature 1;
 BA_ "Confidence" SG_ 603 APP_environmentRainy 0;
 BA_ "Confidence" SG_ 603 APP_environmentSnowy 0;
 BA_ "Confidence" SG_ 601 APP_watchdogState 0;
@@ -61743,6 +62712,8 @@ BA_ "Confidence" SG_ 1138 BMS_timeToFinishHeatForCharge 1;
 BA_ "GenSigSNA" SG_ 1138 BMS_timeToFinishHeatForCharge "127";
 BA_ "Confidence" SG_ 1138 BMS_diNodeModelTemp 1;
 BA_ "GenSigSNA" SG_ 1138 BMS_diNodeModelTemp "2047";
+BA_ "Confidence" SG_ 562 BMS_internalHvilSenseV 1;
+BA_ "Confidence" SG_ 562 BMS_hvilCoverVSense 1;
 BA_ "Confidence" SG_ 2029 BMS_10HzDebug_Id 1;
 BA_ "Confidence" SG_ 2029 BMS_activeCoolCellTargetT 1;
 BA_ "Confidence" SG_ 2029 BMS_passiveCoolCellTargetT 1;
@@ -61764,6 +62735,8 @@ BA_ "Confidence" SG_ 884 BMS_dcChargeVoltageLimit 0;
 BA_ "Confidence" SG_ 884 BMS_dcChargePowerLimit 0;
 BA_ "Confidence" SG_ 884 BMS_acChargePowerRequest 1;
 BA_ "Confidence" SG_ 884 BMS_maxExtIsoFcLinkV 0;
+BA_ "Confidence" SG_ 884 BMS_minModeledPackTemp 1;
+BA_ "Confidence" SG_ 884 BMS_maxModeledPackTemp 1;
 BA_ "Confidence" SG_ 884 BMS_socByDeltaVEnabled 0;
 BA_ "Confidence" SG_ 884 BMS_socByDvMaxSocLimit 0;
 BA_ "Confidence" SG_ 884 BMS_socByDvVoltageChangeOverAh 0;
@@ -61810,6 +62783,16 @@ BA_ "GenSigSNA" SG_ 946 BMS_dynamicEnergyBuffer "1023";
 BA_ "Confidence" SG_ 946 BMS_temperatureCondition 0;
 BA_ "Confidence" SG_ 946 BMS_thmGradientSlope 0;
 BA_ "Confidence" SG_ 946 BMS_thmGradient 0;
+BA_ "Confidence" SG_ 946 BMS_epochTimeEstimate 1;
+BA_ "Confidence" SG_ 946 BMS_histogramStartTimeIrrational 1;
+BA_ "Confidence" SG_ 946 BMS_histogramDischargeThroughput 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_histogramDischargeThroughput "BMS_histogramDischargeThroughputIrrational";
+BA_ "Confidence" SG_ 946 BMS_histogramChargeThroughputIrr 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_histogramChargeThroughputIrr "BMS_histogramChargeThroughputIrrational";
+BA_ "Confidence" SG_ 946 BMS_histogramTotalTimeIrrational 1;
+BA_ "Confidence" SG_ 946 BMS_histogramStorageDataIsLow 1;
+BA_ "Confidence" SG_ 946 BMS_lifeModelOutputsAreTrustwort 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_lifeModelOutputsAreTrustwort "BMS_lifeModelOutputsAreTrustworthy";
 BA_ "Confidence" SG_ 946 BMS_dSocNormalizedMin 0;
 BA_ "GenSigSNA" SG_ 946 BMS_dSocNormalizedMin "4095";
 BA_ "Confidence" SG_ 946 BMS_dSocNormalizedFiltMin 0;
@@ -61862,6 +62845,8 @@ BA_ "GenSigSNA" SG_ 946 BMS_lifeModelMinCac "4095";
 BA_ "Confidence" SG_ 946 BMS_restingPointCacAvg 0;
 BA_ "GenSigSNA" SG_ 946 BMS_restingPointCacAvg "4095";
 BA_ "Confidence" SG_ 946 BMS_cacEstimationSource 0;
+BA_ "Confidence" SG_ 946 BMS_packCalibrationBirthDateBinn 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_packCalibrationBirthDateBinn "BMS_packCalibrationBirthDateBinned";
 BA_ "Confidence" SG_ 946 BMS_synchronizedCacMaxRaw 0;
 BA_ "GenSigSNA" SG_ 946 BMS_synchronizedCacMaxRaw "4095";
 BA_ "Confidence" SG_ 946 BMS_synchronizedCacMinRaw 0;
@@ -61978,6 +62963,7 @@ BA_ "Confidence" SG_ 2028 BMS_activeCoolCellReferenceT 1;
 BA_ "Confidence" SG_ 2028 BMS_activeHeatCellTargetT 1;
 BA_ "Confidence" SG_ 2028 BMS_cellTempTargetMode 1;
 BA_ "Confidence" SG_ 2028 BMS_requestDischarge 1;
+BA_ "Confidence" SG_ 1554 BMS_udsResponseData 1;
 BA_ "Confidence" SG_ 754 BMS_nmGoingToSleep 0;
 BA_ "Confidence" SG_ 754 BMS_nmWakeUpBus 0;
 BA_ "Confidence" SG_ 754 BMS_hvsBusAsleep 0;
@@ -61991,10 +62977,12 @@ BA_ "GenSigSNA" SG_ 810 BMS_isolationResistance "1023";
 BA_ "Confidence" SG_ 810 BMS_vehicleNotificationsChecksum 0;
 BA_ "Confidence" SG_ 797 CC_chgStatus2Index 1;
 BA_ "Confidence" SG_ 797 CC_buttonState 0;
+BA_ "Confidence" SG_ 1559 CMPD_udsResponseData 1;
 BA_ "Confidence" SG_ 551 CMP_inputHVVoltage 0;
 BA_ "Confidence" SG_ 551 CMP_inputLVVoltage 0;
 BA_ "Confidence" SG_ 551 CMP_inputHVCurrent 0;
 BA_ "Confidence" SG_ 551 CMP_inputHVPower 0;
+BA_ "Confidence" SG_ 1555 CMP_udsResponseData 1;
 BA_ "Confidence" SG_ 1294 CP_alertID 1;
 BA_ "Confidence" SG_ 1294 CP_alertType 1;
 BA_ "Confidence" SG_ 1294 CP_a004_proximityV 1;
@@ -62673,6 +63661,7 @@ BA_ "Confidence" SG_ 893 CP_thermalStatusSelect 1;
 BA_ "Confidence" SG_ 893 CP_pinTemperature1 0;
 BA_ "Confidence" SG_ 893 CP_pinTemperature2 0;
 BA_ "Confidence" SG_ 893 CP_pinTemperature3 0;
+BA_ "Confidence" SG_ 1566 CP_udsResponseData 1;
 BA_ "Confidence" SG_ 583 DAS_roadEstimator 0;
 BA_ "Confidence" SG_ 583 DAS_arbiterBehavior 0;
 BA_ "Confidence" SG_ 583 DAS_mapAvailability 0;
@@ -62826,6 +63815,7 @@ BA_ "Confidence" SG_ 1548 DAS_TR_Obj00_Length 0;
 BA_ "Confidence" SG_ 1548 DAS_TR_Obj00_MovingState 0;
 BA_ "Confidence" SG_ 1548 DAS_TR_Obj00_Dz 0;
 BA_ "Confidence" SG_ 1548 DAS_TR_Obj00_Exist 0;
+BA_ "Confidence" SG_ 1625 DAS_udsResponseData 1;
 BA_ "Confidence" SG_ 1318 DIF_alertID 1;
 BA_ "Confidence" SG_ 1318 DIF_alertState 1;
 BA_ "Confidence" SG_ 1318 DIF_a001_thermalWarning_H 2;
@@ -63685,6 +64675,7 @@ BA_ "Confidence" SG_ 390 DIF_axleSpeed 0;
 BA_ "GenSigSNA" SG_ 390 DIF_axleSpeed "32768";
 BA_ "Confidence" SG_ 390 DIF_axleTorqueQF 0;
 BA_ "Confidence" SG_ 390 DIF_axlePowerCalcQF 0;
+BA_ "Confidence" SG_ 1557 DIF_udsResponseData 1;
 BA_ "Confidence" SG_ 1445 DIR_alertID 1;
 BA_ "Confidence" SG_ 1445 DIR_alertState 1;
 BA_ "Confidence" SG_ 1445 DIR_a001_thermalWarning_H 2;
@@ -64546,6 +65537,7 @@ BA_ "Confidence" SG_ 264 DIR_axleSpeed 0;
 BA_ "GenSigSNA" SG_ 264 DIR_axleSpeed "32768";
 BA_ "Confidence" SG_ 264 DIR_axleTorqueQF 0;
 BA_ "Confidence" SG_ 264 DIR_axlePowerCalcQF 0;
+BA_ "Confidence" SG_ 1558 DIR_udsResponseData 1;
 BA_ "Confidence" SG_ 1319 DI_alertID 1;
 BA_ "Confidence" SG_ 1319 DI_alertState 1;
 BA_ "Confidence" SG_ 1319 DI_a004_unavailableReason 1;
@@ -65913,6 +66905,7 @@ BA_ "Confidence" SG_ 883 EPAS3P_sysStatusCounter 2;
 BA_ "Confidence" SG_ 883 EPAS3P_tireIDActive 2;
 BA_ "Confidence" SG_ 883 EPAS3P_eacStatus 1;
 BA_ "Confidence" SG_ 883 EPAS3P_sysStatusChecksum 2;
+BA_ "Confidence" SG_ 1592 EPAS3P_udsResponseDataCH 1;
 BA_ "Confidence" SG_ 1425 EPAS3S_alertID 1;
 BA_ "Confidence" SG_ 1425 EPAS3S_alertState 1;
 BA_ "Confidence" SG_ 1425 EPAS3S_a147_transitionReason 1;
@@ -66110,6 +67103,7 @@ BA_ "Confidence" SG_ 882 EPAS3S_sysStatusCounter 2;
 BA_ "Confidence" SG_ 882 EPAS3S_tireIDActive 2;
 BA_ "Confidence" SG_ 882 EPAS3S_eacStatus 1;
 BA_ "Confidence" SG_ 882 EPAS3S_sysStatusChecksum 2;
+BA_ "Confidence" SG_ 1848 EPAS3S_udsResponseData 1;
 BA_ "Confidence" SG_ 1427 EPASTP_alertID 1;
 BA_ "Confidence" SG_ 1427 EPASTP_alertState 1;
 BA_ "Confidence" SG_ 1427 EPASTP_a001_debugInfo 2;
@@ -68306,6 +69300,8 @@ BA_ "Confidence" SG_ 681 EPBL_bothDisconnected 0;
 BA_ "Confidence" SG_ 681 EPBL_blockDrive 0;
 BA_ "Confidence" SG_ 681 EPBL_statusCounter 0;
 BA_ "Confidence" SG_ 681 EPBL_statusChecksum 0;
+BA_ "Confidence" SG_ 1573 EPBL_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1573 EPBL_udsResponseData_L 1;
 BA_ "Confidence" SG_ 1448 EPBR_alertID 1;
 BA_ "Confidence" SG_ 1448 EPBR_alertState 1;
 BA_ "Confidence" SG_ 1448 EPBR_a001_InternalWatchdog 2;
@@ -69177,6 +70173,8 @@ BA_ "Confidence" SG_ 744 EPBR_bothDisconnected 0;
 BA_ "Confidence" SG_ 744 EPBR_blockDrive 0;
 BA_ "Confidence" SG_ 744 EPBR_statusCounter 0;
 BA_ "Confidence" SG_ 744 EPBR_statusChecksum 0;
+BA_ "Confidence" SG_ 1575 EPBR_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1575 EPBR_udsResponseData_L 1;
 BA_ "Confidence" SG_ 981 ESP_matrixIndex 1;
 BA_ "Confidence" SG_ 981 ESP_a001_ecuGenericFault 2;
 BA_ "Confidence" SG_ 981 ESP_a002_valvesGenericFault 2;
@@ -69590,6 +70588,11 @@ BA_ "Confidence" SG_ 981 ESP_a375_PM_locStateCounter 2;
 BA_ "Confidence" SG_ 981 ESP_a376_PM_locStateChecksum 2;
 BA_ "Confidence" SG_ 981 ESP_a377_PM_locStateDLC 2;
 BA_ "Confidence" SG_ 981 ESP_a378_PM_locStateTimeout 2;
+BA_ "Confidence" SG_ 1621 ESP_udsResponseData 1;
+BA_ "Confidence" SG_ 373 ESP_wheelSpeedFrL 1;
+BA_ "Confidence" SG_ 373 ESP_wheelSpeedFrR 1;
+BA_ "Confidence" SG_ 373 ESP_wheelSpeedReL 1;
+BA_ "Confidence" SG_ 373 ESP_wheelSpeedReR 1;
 BA_ "Confidence" SG_ 888 GTW_GTW_SOS_ECALL_RQST 0;
 BA_ "Confidence" SG_ 888 GTW_LTE_ECALL_LOCK 0;
 BA_ "Confidence" SG_ 282 GTW_BKP_BATT_MON 1;
@@ -70176,6 +71179,7 @@ BA_ "SystemSignalLongSymbol" SG_ 2047 GTW_occupancyDetectionSourceRequ "GTW_occu
 BA_ "Confidence" SG_ 2047 GTW_rduCableType 0;
 BA_ "Confidence" SG_ 2047 GTW_interiorCameraType 0;
 BA_ "Confidence" SG_ 2047 GTW_frontFasciaCameraType 0;
+BA_ "Confidence" SG_ 792 GTW_factoryGated 1;
 BA_ "Confidence" SG_ 1638 GTW_diagRemainingSeconds 0;
 BA_ "Confidence" SG_ 1638 GTW_diagSessionActive 0;
 BA_ "Confidence" SG_ 1638 GTW_diagLevel 0;
@@ -70187,6 +71191,34 @@ BA_ "Confidence" SG_ 1080 GTW_ethWakeUpBus 0;
 BA_ "Confidence" SG_ 1080 GTW_vehBusAsleep 0;
 BA_ "Confidence" SG_ 1080 GTW_ethHeartBeatCounter 0;
 BA_ "Confidence" SG_ 1080 GTW_ethWakeUpReason 1;
+BA_ "Confidence" SG_ 1376 GTW_OCS1Ppresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PCSpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_HVPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_BMSpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_CPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_RCMpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_SCCMpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCSECpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPAS3Ppresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPBLpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPBRpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_ESPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_IBSTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PARKpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_RADCpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_TPMSpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCFRONTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCLEFTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCRIGHTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPAS3Spresent 1;
+BA_ "Confidence" SG_ 1376 GTW_CMPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_DASpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PTCpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_SWCpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PMRpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PMFpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_DIRpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_DIFpresent 1;
 BA_ "Confidence" SG_ 1656 GTW_gearControlChecksum 0;
 BA_ "Confidence" SG_ 1656 GTW_gearControlCounter 0;
 BA_ "Confidence" SG_ 1656 GTW_gearShiftRequest 0;
@@ -70680,6 +71712,10 @@ BA_ "Confidence" SG_ 1962 HVP_fcLinkPositiveV 1;
 BA_ "Confidence" SG_ 1962 HVP_packContCoilCurrent 0;
 BA_ "Confidence" SG_ 1962 HVP_battery12V 0;
 BA_ "Confidence" SG_ 1962 HVP_shuntRefVoltageDbg 1;
+BA_ "Confidence" SG_ 1666 HVP_packContactorHwFault 1;
+BA_ "Confidence" SG_ 1666 HVP_fcContactorHwFault 1;
+BA_ "Confidence" SG_ 1666 HVP_hvilStatus 1;
+BA_ "Confidence" SG_ 1553 HVP_udsResponseData 1;
 BA_ "Confidence" SG_ 861 IBST_matrixIndex 1;
 BA_ "Confidence" SG_ 861 IBST_a001_microSupplyError 2;
 BA_ "Confidence" SG_ 861 IBST_a002_HWBISTError 2;
@@ -70953,6 +71989,7 @@ BA_ "Confidence" SG_ 861 IBST_a233_ReferenceRunAbortByECU 2;
 BA_ "SystemSignalLongSymbol" SG_ 861 IBST_a233_ReferenceRunAbortByECU "IBST_a233_ReferenceRunAbortByECUReset";
 BA_ "Confidence" SG_ 861 IBST_a234_LiPSOutOfRangeHigh 2;
 BA_ "Confidence" SG_ 861 IBST_a235_LiPSOutOfRangeLow 2;
+BA_ "Confidence" SG_ 1629 IBST_udsResponseData 1;
 BA_ "Confidence" SG_ 1208 ICR_alertID 1;
 BA_ "Confidence" SG_ 1208 ICR_alertState 1;
 BA_ "Confidence" SG_ 1208 ICR_a001_watchdogTaskAppDPM 2;
@@ -71092,6 +72129,7 @@ BA_ "Confidence" SG_ 2023 ICR_l2HeapUsage 1;
 BA_ "Confidence" SG_ 2023 ICR_intrusionStatus 1;
 BA_ "Confidence" SG_ 2023 ICR_booted 1;
 BA_ "Confidence" SG_ 2023 ICR_rdMapDumpCompleted 2;
+BA_ "Confidence" SG_ 1624 ICR_udsResponseData 1;
 BA_ "Confidence" SG_ 1470 IDB_alertID 1;
 BA_ "Confidence" SG_ 1470 IDB_alertState 1;
 BA_ "Confidence" SG_ 1470 IDB_a014_wheelSpeedSensorFreq 1;
@@ -71500,6 +72538,16 @@ BA_ "Confidence" SG_ 771 OCS1P_seatbackStableCap 0;
 BA_ "Confidence" SG_ 771 OCS1P_classificationHeldCap 0;
 BA_ "Confidence" SG_ 771 OCS1P_statusCounter 0;
 BA_ "Confidence" SG_ 771 OCS1P_statusChecksum 0;
+BA_ "Confidence" SG_ 1619 OCS1P_udsResponseData 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC0 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC1 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC2 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC3 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC4 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC5 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC6 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC7 1;
+BA_ "Confidence" SG_ 1630 PARK_udsResponseData 1;
 BA_ "Confidence" SG_ 1060 PCS_alertID 1;
 BA_ "Confidence" SG_ 1060 PCS_alertSet 1;
 BA_ "Confidence" SG_ 1060 PCS_alertSource 1;
@@ -72109,6 +73157,8 @@ BA_ "Confidence" SG_ 708 PCS_processorDieIdLot 0;
 BA_ "Confidence" SG_ 708 PCS_processorDieIdWafer 0;
 BA_ "Confidence" SG_ 708 PCS_processorDieIdX 0;
 BA_ "Confidence" SG_ 708 PCS_processorDieIdY 0;
+BA_ "Confidence" SG_ 1577 PCS_udsResponseData 1;
+BA_ "Confidence" SG_ 1635 PLG_udsResponseData 1;
 BA_ "Confidence" SG_ 1317 PMF_alertID 1;
 BA_ "Confidence" SG_ 1317 PMF_alertState 1;
 BA_ "Confidence" SG_ 1317 PMF_a001_w0 2;
@@ -72364,6 +73414,8 @@ BA_ "Confidence" SG_ 2022 PMF_a096_safetyICDebug 2;
 BA_ "Confidence" SG_ 2022 PMF_a097_lowFlowAlmostTripped 2;
 BA_ "Confidence" SG_ 2022 PMF_a100_diTraceInfo1 2;
 BA_ "Confidence" SG_ 2022 PMF_a121_unintendedReset2 2;
+BA_ "Confidence" SG_ 469 PMF_hvilStatus 1;
+BA_ "Confidence" SG_ 1620 PMF_udsResponseData 1;
 BA_ "Confidence" SG_ 1446 PMR_alertID 1;
 BA_ "Confidence" SG_ 1446 PMR_alertState 1;
 BA_ "Confidence" SG_ 1446 PMR_a001_w0 2;
@@ -72639,6 +73691,8 @@ BA_ "Confidence" SG_ 928 PMR_a097_lowFlowAlmostTripped 2;
 BA_ "Confidence" SG_ 928 PMR_a100_diTraceInfo1 2;
 BA_ "Confidence" SG_ 928 PMR_a101_hwVoltageMonitorTrip 2;
 BA_ "Confidence" SG_ 928 PMR_a121_unintendedReset2 2;
+BA_ "Confidence" SG_ 472 PMR_hvilStatus 1;
+BA_ "Confidence" SG_ 1556 PMR_udsResponseData 1;
 BA_ "Confidence" SG_ 1444 PM_alertID 1;
 BA_ "Confidence" SG_ 1444 PM_alertState 1;
 BA_ "Confidence" SG_ 1444 PM_a001_w0 2;
@@ -73087,6 +74141,7 @@ BA_ "Confidence" SG_ 463 PM_sysNumUnitsSna 2;
 BA_ "Confidence" SG_ 463 PM_sysElecPowerVeryLow 2;
 BA_ "Confidence" SG_ 463 PM_systemStateCounter 2;
 BA_ "Confidence" SG_ 463 PM_systemStateChecksum 2;
+BA_ "Confidence" SG_ 1600 PM_udsResponseData 1;
 BA_ "Confidence" SG_ 519 PTC_leftFlagFault 0;
 BA_ "Confidence" SG_ 519 PTC_rightFlagFault 0;
 BA_ "Confidence" SG_ 519 PTC_leftPowerDerating 0;
@@ -73101,6 +74156,8 @@ BA_ "Confidence" SG_ 519 PTC_rightTempEstOutlet 0;
 BA_ "Confidence" SG_ 519 PTC_tliErrorCount 0;
 BA_ "Confidence" SG_ 519 PTC_tliEvent 0;
 BA_ "Confidence" SG_ 519 PTC_tliSource 0;
+BA_ "Confidence" SG_ 1750 PTC_udsResponseData 1;
+BA_ "Confidence" SG_ 1665 RADC_udsResponseData 1;
 BA_ "Confidence" SG_ 1249 RCM2_alertID 1;
 BA_ "Confidence" SG_ 1249 RCM2_alertState 1;
 BA_ "Confidence" SG_ 1249 RCM2_eventArmStatus 1;
@@ -76412,6 +77469,7 @@ BA_ "Confidence" SG_ 881 RCM_a115_imuLinearAcceleration 2;
 BA_ "Confidence" SG_ 881 RCM_a116_imuLateralAcceleration 2;
 BA_ "Confidence" SG_ 881 RCM_a117_imuVerticalAcceleration 2;
 BA_ "Confidence" SG_ 881 RCM_a118_imuInPlaneAcceleration 2;
+BA_ "Confidence" SG_ 1617 RCM_udsResponseData 1;
 BA_ "Confidence" SG_ 1471 RCU_alertID 1;
 BA_ "Confidence" SG_ 1471 RCU_alertState 1;
 BA_ "Confidence" SG_ 1471 RCU_a010_sensorPowerSupply 1;
@@ -76717,6 +77775,14 @@ BA_ "Confidence" SG_ 1344 SCCM_a126_turnIndicatorZMagnitud 1;
 BA_ "SystemSignalLongSymbol" SG_ 1344 SCCM_a126_turnIndicatorZMagnitud "SCCM_a126_turnIndicatorZMagnitude";
 BA_ "Confidence" SG_ 1344 SCCM_a126_turnIndicatorResultant 1;
 BA_ "SystemSignalLongSymbol" SG_ 1344 SCCM_a126_turnIndicatorResultant "SCCM_a126_turnIndicatorResultantMagnitude";
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_0 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_1 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_2 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_3 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_4 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_5 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_6 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_7 1;
 BA_ "Confidence" SG_ 1531 SDCR_alertID 1;
 BA_ "Confidence" SG_ 1531 SDCR_alertState 1;
 BA_ "Confidence" SG_ 1531 SDCR_a001_pyroSenseV 1;
@@ -76859,6 +77925,7 @@ BA_ "Confidence" SG_ 1531 SDCR_a029_canCommsMissing 2;
 BA_ "Confidence" SG_ 1531 SDCR_a029_lvState 1;
 BA_ "Confidence" SG_ 1531 SDCR_a034_Ia 1;
 BA_ "Confidence" SG_ 1531 SDCR_a034_Ib 1;
+BA_ "Confidence" SG_ 1787 SDCR_udsResponseData 1;
 BA_ "Confidence" SG_ 1835 TAS_alertID 1;
 BA_ "Confidence" SG_ 1835 TAS_alertState 1;
 BA_ "Confidence" SG_ 1835 TAS_a001_InternalWatchdog 2;
@@ -77248,6 +78315,7 @@ BA_ "Confidence" SG_ 852 TAS_a321_speedBumpAttributes1 2;
 BA_ "Confidence" SG_ 852 TAS_a322_speedBumpAttributes2 2;
 BA_ "Confidence" SG_ 852 TAS_a332_levelingThresholds1 2;
 BA_ "Confidence" SG_ 852 TAS_a333_levelingThresholds2 2;
+BA_ "Confidence" SG_ 1627 TAS_udsResponseData 1;
 BA_ "Confidence" SG_ 1410 TCU_alertID 1;
 BA_ "Confidence" SG_ 1410 TCU_alertState 1;
 BA_ "Confidence" SG_ 1410 TCU_w001_FailCode 2;
@@ -77285,6 +78353,7 @@ BA_ "GenSigSNA" SG_ 1408 TCU_wakeUpReason "4294967295";
 BA_ "Confidence" SG_ 1408 TCU_tcuCmdId 2;
 BA_ "Confidence" SG_ 1408 TCU_goingToSleep 1;
 BA_ "GenSigSNA" SG_ 1408 TCU_goingToSleep "4294967295";
+BA_ "Confidence" SG_ 1631 TPMS_udsResponseData 1;
 BA_ "Confidence" SG_ 1298 TRCM_alertID 1;
 BA_ "Confidence" SG_ 1298 TRCM_alertState 1;
 BA_ "Confidence" SG_ 1298 TRCM_a015_NVMMMemOverflow 2;
@@ -78442,6 +79511,62 @@ BA_ "Confidence" SG_ 2030 TRCM_a631_loop30AsicStartupDiagn 2;
 BA_ "SystemSignalLongSymbol" SG_ 2030 TRCM_a631_loop30AsicStartupDiagn "TRCM_a631_loop30AsicStartupDiagnosticFailure";
 BA_ "Confidence" SG_ 2030 TRCM_a632_loop31AsicStartupDiagn 2;
 BA_ "SystemSignalLongSymbol" SG_ 2030 TRCM_a632_loop31AsicStartupDiagn "TRCM_a632_loop31AsicStartupDiagnosticFailure";
+BA_ "Confidence" SG_ 1641 UDS_KOSTIAsccmRequestData 1;
+BA_ "Confidence" SG_ 1538 UDS_bmsRequestData 1;
+BA_ "Confidence" SG_ 1579 UDS_ccRequestData 1;
+BA_ "Confidence" SG_ 1539 UDS_cmpRequestData 1;
+BA_ "Confidence" SG_ 1543 UDS_cmpdRequestData 1;
+BA_ "Confidence" SG_ 1550 UDS_cpRequestData 1;
+BA_ "Confidence" SG_ 1609 UDS_dasRequestData 1;
+BA_ "Confidence" SG_ 1589 UDS_diRequestData 1;
+BA_ "Confidence" SG_ 1541 UDS_difRequestData 1;
+BA_ "Confidence" SG_ 1542 UDS_dirRequestData 1;
+BA_ "Confidence" SG_ 1584 UDS_epas3pRequestData 1;
+BA_ "Confidence" SG_ 1840 UDS_epas3sRequestData 1;
+BA_ "Confidence" SG_ 1572 UDS_epblRequestData_H 1;
+BA_ "Confidence" SG_ 1572 UDS_epblRequestData_L 1;
+BA_ "Confidence" SG_ 1574 UDS_epbrRequestData_H 1;
+BA_ "Confidence" SG_ 1574 UDS_epbrRequestData_L 1;
+BA_ "Confidence" SG_ 1605 UDS_espRequestData 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_0 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_1 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_2 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_3 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_4 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_5 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_6 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_7 1;
+BA_ "Confidence" SG_ 2014 UDS_functionalRequestDataCH 1;
+BA_ "Confidence" SG_ 1552 UDS_hvpRequestData 1;
+BA_ "Confidence" SG_ 1613 UDS_ibstRequestData 1;
+BA_ "Confidence" SG_ 1560 UDS_icrRequestData 1;
+BA_ "Confidence" SG_ 1603 UDS_ocs1pRequestData 1;
+BA_ "Confidence" SG_ 1614 UDS_parkRequestData 1;
+BA_ "Confidence" SG_ 1576 UDS_pcsRequestData 1;
+BA_ "Confidence" SG_ 1634 UDS_plgRequestData 1;
+BA_ "Confidence" SG_ 1568 UDS_pmRequestData 1;
+BA_ "Confidence" SG_ 1604 UDS_pmfRequestData 1;
+BA_ "Confidence" SG_ 1540 UDS_pmrRequestData 1;
+BA_ "Confidence" SG_ 1734 UDS_ptcRequestData 1;
+BA_ "Confidence" SG_ 1649 UDS_radcRequestData 1;
+BA_ "Confidence" SG_ 1601 UDS_rcmRequestData 1;
+BA_ "Confidence" SG_ 1664 UDS_sccmRequestData 1;
+BA_ "Confidence" SG_ 1723 UDS_sdcrRequestData 1;
+BA_ "Confidence" SG_ 1611 UDS_tasRequestData 1;
+BA_ "Confidence" SG_ 1551 UDS_thcRequestData_H 1;
+BA_ "Confidence" SG_ 1551 UDS_thcRequestData_L 1;
+BA_ "Confidence" SG_ 1615 UDS_tpmsRequestData 1;
+BA_ "Confidence" SG_ 1578 UDS_vcbatt1RequestData 1;
+BA_ "Confidence" SG_ 1588 UDS_vcbatt2RequestData 1;
+BA_ "Confidence" SG_ 1636 UDS_vcbattRequestData 1;
+BA_ "Confidence" SG_ 1580 UDS_vcfront1RequestData 1;
+BA_ "Confidence" SG_ 1582 UDS_vcfront2RequestData 1;
+BA_ "Confidence" SG_ 1536 UDS_vcfrontRequestData 1;
+BA_ "Confidence" SG_ 1570 UDS_vcleftRequestData_H 1;
+BA_ "Confidence" SG_ 1570 UDS_vcleftRequestData_L 1;
+BA_ "Confidence" SG_ 1544 UDS_vcrightRequestData_H 1;
+BA_ "Confidence" SG_ 1544 UDS_vcrightRequestData_L 1;
+BA_ "Confidence" SG_ 1546 UDS_vcsecRequestData 1;
 BA_ "Confidence" SG_ 1056 UIS_logMux 1;
 BA_ "Confidence" SG_ 1056 UIS_zramWriteTicks 2;
 BA_ "Confidence" SG_ 1056 UIS_zramWriteIO 2;
@@ -80966,6 +82091,7 @@ BA_ "Confidence" SG_ 545 VCFRONT_inAccessoryPlus 0;
 BA_ "Confidence" SG_ 545 VCFRONT_LVShuttingDown 0;
 BA_ "Confidence" SG_ 545 VCFRONT_LVPowerStateCounter 0;
 BA_ "Confidence" SG_ 545 VCFRONT_LVPowerStateChecksum 0;
+BA_ "Confidence" SG_ 545 VCFRONT_dirLVRequest 1;
 BA_ "Confidence" SG_ 545 VCFRONT_cpLVRequest 0;
 BA_ "Confidence" SG_ 545 VCFRONT_epasLVState 0;
 BA_ "Confidence" SG_ 545 VCFRONT_hvcLVRequest 0;
@@ -84952,6 +86078,7 @@ BA_ "Confidence" SG_ 737 VCFRONT_activeLouverState 0;
 BA_ "Confidence" SG_ 737 VCFRONT_windshieldCameraHeaterPo 0;
 BA_ "GenSigSNA" SG_ 737 VCFRONT_windshieldCameraHeaterPo "63";
 BA_ "SystemSignalLongSymbol" SG_ 737 VCFRONT_windshieldCameraHeaterPo "VCFRONT_windshieldCameraHeaterPower";
+BA_ "Confidence" SG_ 1537 VCFRONT_udsResponseData 1;
 BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusMuxIndex 1;
 BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusCounter 0;
 BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusChecksum 0;
@@ -87500,6 +88627,8 @@ BA_ "Confidence" SG_ 657 VCLEFT_hvacBlowerArbResult 1;
 BA_ "Confidence" SG_ 657 VCLEFT_hvacBlowerArbCurrent 1;
 BA_ "Confidence" SG_ 657 VCLEFT_hvacBlowerTorqueIndexFilt 1;
 BA_ "SystemSignalLongSymbol" SG_ 657 VCLEFT_hvacBlowerTorqueIndexFilt "VCLEFT_hvacBlowerTorqueIndexFiltered";
+BA_ "Confidence" SG_ 1571 VCLEFT_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1571 VCLEFT_udsResponseData_L 1;
 BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacState10HzIndex 1;
 BA_ "Confidence" SG_ 1114 VCRIGHT_AP_autoDefogAvailable 0;
 BA_ "Confidence" SG_ 1114 VCRIGHT_AP_hvacFlashFoggingDetec 0;
@@ -90150,6 +91279,9 @@ BA_ "Confidence" SG_ 835 VCRIGHT_isSteeringWheelHeaterReq 0;
 BA_ "Confidence" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt 0;
 BA_ "GenSigSNA" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "127";
 BA_ "Confidence" SG_ 963 VCRIGHT_switchStatusIndex 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_frontBuckleSwitch 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_rearCenterBuckleSwitch 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_rearRightBuckleSwitch 1;
 BA_ "Confidence" SG_ 963 VCRIGHT_trunkExtReleasePressedPe 0;
 BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_trunkExtReleasePressedPe "VCRIGHT_trunkExtReleasePressedPersist";
 BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatTrackBack 0;
@@ -90189,6 +91321,16 @@ BA_ "GenSigSNA" SG_ 963 VCRIGHT_frontSeatResistiveOccupa "0";
 BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_frontSeatResistiveOccupa "VCRIGHT_frontSeatResistiveOccupancy";
 BA_ "Confidence" SG_ 963 VCRIGHT_2RowSeatReclineSwitchpac 0;
 BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_2RowSeatReclineSwitchpac "VCRIGHT_2RowSeatReclineSwitchpackState";
+BA_ "Confidence" SG_ 1545 VCRIGHT_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1545 VCRIGHT_udsResponseData_L 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN0 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN1 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN2 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN3 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN4 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN5 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN6 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN7 1;
 BA_ "Confidence" SG_ 537 VCSEC_TPMSDataIndex 1;
 BA_ "Confidence" SG_ 537 VCSEC_TPMSCapabilityPressureInAd 0;
 BA_ "SystemSignalLongSymbol" SG_ 537 VCSEC_TPMSCapabilityPressureInAd "VCSEC_TPMSCapabilityPressureInAdv0";
@@ -91321,6 +92463,7 @@ BA_ "Confidence" SG_ 1817 VCSEC_NISessionStateRight2 0;
 BA_ "Confidence" SG_ 1817 VCSEC_NISessionStateRearLeft2 0;
 BA_ "Confidence" SG_ 1817 VCSEC_NISessionStateRearRight2 0;
 BA_ "Confidence" SG_ 1817 VCSEC_NISessionStateRear2 0;
+BA_ "Confidence" SG_ 2008 VCSEC_udsResponseData 1;
 BA_ "Confidence" SG_ 1655 VC_lvbmsStatusHighIndex 1;
 BA_ "Confidence" SG_ 1655 VC_LVBMS_packCurrent 0;
 BA_ "GenSigSNA" SG_ 1655 VC_LVBMS_packCurrent "4194303";
@@ -91744,6 +92887,8 @@ VAL_ 2046 APP_backupCamExtPitchCal 511 "SNA" ;
 VAL_ 2046 APP_backupCamExtYawCal 511 "SNA" ;
 VAL_ 2046 APP_backupCalibTime 127 "SNA" ;
 VAL_ 2046 APP_backupCalibProgress 127 "SNA" ;
+VAL_ 1177 APP_rRepeaterCameraTemperature 255 "SNA" ;
+VAL_ 1177 APP_lRepeaterCameraTemperature 255 "SNA" ;
 VAL_ 601 APP_watchdogState 7 "AP_WDOG_STATE_SNA" 4 "AP_WDOG_STATE_SHUTTING_DOWN" 3 "AP_WDOG_STATE_HEALTHY" 2 "AP_WDOG_STATE_CRITICAL" 1 "AP_WDOG_STATE_DEGRADED" 0 "AP_WDOG_STATE_UNKNOWN" ;
 VAL_ 601 APP_fusedState 3 "APP_FUSE_SNA" 2 "APP_FUSE_FUSED" 1 "APP_FUSE_UNFUSED" 0 "APP_FUSE_UNKNOWN" ;
 VAL_ 601 APP_factorySummonStatus 8 "FACTORY_SUMMON_END_OF_ROUTE" 7 "FACTORY_SUMMON_UNAVAILABLE_HEADING_NOT_INITIALIZED" 6 "FACTORY_SUMMON_UNAVAILABLE_VEHICLE_SPEED_INVALID" 5 "FACTORY_SUMMON_UNAVAILABLE_NO_GPS" 4 "FACTORY_SUMMON_UNAVAILABLE_GOAL_TOO_FAR" 3 "FACTORY_SUMMON_UNAVAILABLE_NO_QR_INSTRUCTION" 2 "FACTORY_SUMMON_AVAILABLE" 1 "FACTORY_SUMMON_ACTIVE" 0 "FACTORY_SUMMON_SNA" ;
@@ -91919,6 +93064,8 @@ VAL_ 800 BMS_matrixIndex 3 "AlertMatrix3" 2 "AlertMatrix2" 1 "AlertMatrix1" 0 "A
 VAL_ 1138 BMS_chargeCurrentLimitMode 20 "CHG_LIMIT_RIPPLE_HEAT_ACTIVE" 19 "CHG_LIMIT_NEAR_HWOT_LIMIT" 18 "CHG_LIMIT_LIMP_MODE" 17 "CHG_LIMIT_MISSING_CELL" 16 "CHG_LIMIT_CAC_IMBALANCE" 15 "CHG_LIMIT_PCS_IMPLICIT" 14 "CHG_LIMIT_EVSE_IMPLICIT" 13 "CHG_LIMIT_RAMP_UP_PHASE" 12 "CHG_LIMIT_HVAC_COOLING" 11 "CHG_LIMIT_HV_CHAIN" 10 "CHG_LIMIT_CONFIG" 9 "CHG_LIMIT_TETHERING" 8 "CHG_LIMIT_LEAKY_BUCKET" 7 "CHG_LIMIT_BRICK_VOLTAGE_REG" 6 "CHG_LIMIT_BRICK_TEMP_TOO_COLD" 5 "CHG_LIMIT_BRICK_TEMP_TOO_HOT" 4 "CHG_LIMIT_BRICK_TEMP_OPTIMAL_CELL_PROFILE" 3 "CHG_LIMIT_CP" 2 "CHG_LIMIT_PCS" 1 "CHG_LIMIT_EVSE" 0 "CHG_LIMIT_NONE" ;
 VAL_ 1138 BMS_timeToFinishHeatForCharge 127 "SNA" 126 "CALCULATING" ;
 VAL_ 1138 BMS_diNodeModelTemp 2047 "SNA" ;
+VAL_ 562 BMS_internalHvilSenseV 65535 "SNA" ;
+VAL_ 562 BMS_hvilCoverVSense 65535 "SNA" ;
 VAL_ 2029 BMS_10HzDebug_Id 34 "AGED_SOC_OCV" 33 "THM_TARGETS" 32 "SOC_AND_OCV" 31 "DRIVE_LIMITS" 30 "STANDBY_SUPPLY" 29 "SLEEP_WAKE" 28 "POWER_PREDICTION_3" 27 "POWER_PREDICTION_2" 26 "POWER_PREDICTION_1" 25 "ADC_FLOOD" 24 "ADC_MISC" 23 "ADC_DCLINK" 22 "ADC_CP" 21 "ADC_VREF" 20 "WAKE_TIMERS" 19 "CAC_3" 18 "CAC_2" 17 "CAC_1" 16 "HYST" 15 "PACK_VOLTAGES" 14 "THM_MODEL_DATA_11" 13 "THM_MODEL_DATA_10" 12 "THM_MODEL_DATA_9" 3 "SOC_RESTING" 2 "ISOLATION" 1 "AHR_COUNTER" 0 "STATE" ;
 VAL_ 306 BMS_packCurrent -32768 "SNA" ;
 VAL_ 306 BMS_currentUnfiltered -32768 "SNA" ;
@@ -92916,6 +94063,10 @@ VAL_ 744 EPBR_uiParkAvailable 2 "EPB_AVAIL_REAPPLIED" 1 "EPB_AVAIL_AVAILABLE" 0 
 VAL_ 744 EPBR_brakeDiscWipeRequest 3 "EPB_BRAKEDISCWIPE_REQUEST_SNA" 2 "EPB_BRAKEDISCWIPE_REQUEST_STRONG" 1 "EPB_BRAKEDISCWIPE_REQUEST_LIGHT" 0 "EPB_BRAKEDISCWIPE_REQUEST_NONE" ;
 VAL_ 744 EPBR_uiWinchModeLvStatus 3 "EPB_LV_OK" 2 "EPB_LV_BLOCKED_TIMER_RUNNING" 1 "EPB_LV_BLOCKED_INPUT_VOLTAGE_LOW" 0 "EPB_LV_BLOCKED_BATTERY" ;
 VAL_ 981 ESP_matrixIndex 6 "AlertMatrix6" 5 "AlertMatrix5" 4 "AlertMatrix4" 3 "AlertMatrix3" 2 "AlertMatrix2" 1 "AlertMatrix1" 0 "AlertMatrix0" ;
+VAL_ 373 ESP_wheelSpeedFrL 8191 "SNA" ;
+VAL_ 373 ESP_wheelSpeedFrR 8191 "SNA" ;
+VAL_ 373 ESP_wheelSpeedReL 8191 "SNA" ;
+VAL_ 373 ESP_wheelSpeedReR 8191 "SNA" ;
 VAL_ 282 GTW_BKP_BATT_MON 4095 "SNA" ;
 VAL_ 282 GTW_BKP_BATT_NTC_P 4095 "SNA" ;
 VAL_ 282 GTW_ECALL_GPS_ANT_BIAS 4095 "SNA" ;
@@ -93171,6 +94322,7 @@ VAL_ 522 HVP_hvilDiag 14 "SNA" 13 "PM_OPEN_FAULT" 12 "DI_OPEN_FAULT" 11 "PM_STAT
 VAL_ 522 HVP_fcLinkAllowedToEnergize 2 "FC_LINK_ENERGY_DC" 1 "FC_LINK_ENERGY_AC" 0 "FC_LINK_ENERGY_NONE" ;
 VAL_ 1962 HVP_debugMessageMultiplexer 12 "Mux12" 11 "Mux11" 10 "Mux10" 9 "Mux9" 8 "Mux8" 7 "Mux7" 6 "Mux6" 5 "Mux5" 4 "Mux4" 3 "Mux3" 2 "Mux2" 1 "Mux1" 0 "Mux0" ;
 VAL_ 1962 HVP_ecuLogUploadRequest 3 "REQUEST_PRIORITY_3" 2 "REQUEST_PRIORITY_2" 1 "REQUEST_PRIORITY_1" 0 "REQUEST_PRIORITY_NONE" ;
+VAL_ 1666 HVP_hvilStatus 2 "FAULT" 1 "OK" 0 "UNKNOWN" ;
 VAL_ 861 IBST_matrixIndex 3 "AlertMatrix3" 2 "AlertMatrix2" 1 "AlertMatrix1" 0 "AlertMatrix0" ;
 VAL_ 1208 ICR_alertID 142 "a142_ModeOverrideActive" 141 "a141_RequiresReplacement" 140 "a140_OccupancyExceptionEncountered" 139 "a139_AbnormalBlockageDetected" 138 "a138_DriverSideMismatch" 137 "a137_radarBlocked" 136 "a136_radarHighTemperature" 135 "a135_radarTxBallBreak" 134 "a134_radarPgood" 133 "a133_radarBlocked" 64 "a064_busSleepReqTimeout" 63 "a063_SwitchFault" 62 "a062_XCPWasConnected" 61 "a061_XCPConnected" 60 "a060_engineeringBuild" 59 "a059_inputResistanceHigh" 58 "a058_inputRHighSyncDebug" 46 "a046_Task1000msError" 45 "a045_Task100msError" 44 "a044_Task10msError" 43 "a043_Task1msError" 42 "a042_HighStackUsage" 41 "a041_HighCPULoad" 31 "a031_UDSActive" 30 "a030_ECULogUploadRequest" 29 "a029_CoreDump" 22 "a022_TaskInitError" 21 "a021_TaskSchedulerError" 16 "a016_NVMMRecordError" 15 "a015_NVMMError" 13 "a013_AlertManagerFault" 12 "a012_CPUReset" 6 "a006_CANTX_cyclicError" 5 "a005_CANTXError" 3 "a003_SWAssertion" 2 "a002_PowerLossReset" 1 "a001_WatchdogReset" 0 "ALERT_DO_NOT_USE_ZERO" ;
 VAL_ 1208 ICR_alertState 1 "SET" 0 "CLEARED" ;
@@ -93453,6 +94605,7 @@ VAL_ 1317 PMF_a084_firewallId 17 "HSM_SLV" 16 "R5SS1_CORE1_AHB_MST" 15 "R5SS1_CO
 VAL_ 1317 PMF_a084_privId 10 "CPSW" 9 "ICSSM" 7 "R5FSS1_1" 6 "R5FSS1_0" 5 "R5FSS0_1" 4 "R5FSS0_0" 1 "M4FSS0_0" ;
 VAL_ 1317 PMF_a084_faultType 6 "SUPER_READ" 5 "SUPER_WRITE" 4 "SUPER_EXE" 3 "USER_READ" 2 "USER_WRITE" 1 "USER_EXE" 0 "NO_FAULT" ;
 VAL_ 1317 PMF_a092_pllClockSource 2 "INTOSC1" 1 "XTAL" 0 "INTOSC2" ;
+VAL_ 469 PMF_hvilStatus 3 "SNA" 2 "CLOSED" 1 "OPEN" 0 "DISABLED" ;
 VAL_ 1446 PMR_alertID 121 "a121_unintendedReset2" 101 "a101_hwVoltageMonitorTrip" 100 "a100_diTraceInfo1" 97 "a097_lowFlowAlmostTripped" 96 "a096_safetyICDebug" 95 "a095_safetyICFault" 94 "a094_safetyICWarn" 92 "a092_xtalOscillator" 86 "a086_exceptionUndefinedInstruction" 84 "a084_exceptionMpuFirewall" 83 "a083_ahbWriteError" 82 "a082_exceptionDataAbort2" 81 "a081_exceptionDataAbort" 80 "a080_exceptionPrefetchAbort" 64 "a064_torqueIntervention" 62 "a062_eccError" 61 "a061_DIPMVersionMismatch" 58 "a058_measuredHvilCurrentFrozen" 57 "a057_canDataBusB" 56 "a056_canHardwareBusB" 55 "a055_resolver" 54 "a054_uiMIA" 53 "a053_vcfrontMIA" 45 "a045_motorMovementDetected" 42 "a042_gtwMIA" 40 "a040_pmMIA" 39 "a039_disMIA" 37 "a037_hvpMIA" 36 "a036_preWatchdog" 35 "a035_udsTransactionInitiated" 34 "a034_trqCrossCheck" 33 "a033_selfTest" 32 "a032_registerConfigError" 31 "a031_highStackUsage" 28 "a028_torqueCmdError" 27 "a027_torqueEstimationOutOfBounds" 26 "a026_diHeartBeatMIA" 25 "a025_unintendedReset" 19 "a019_statorTempIrrational" 18 "a018_encoderIrrational" 17 "a017_brakeMIA" 13 "a013_canHardwareBusA" 12 "a012_canDataBusA" 11 "a011_phaseCurrentIrrational" 10 "a010_diMIA" 8 "a008_memoryError" 6 "a006_underTorqueCheck" 5 "a005_torqueInNeutralOrPark" 4 "a004_excessiveDecelTorque" 3 "a003_excessiveReversalTorque" 2 "a002_excessiveAccelTorque" 1 "a001_absoluteTorque" 0 "ALERT_DO_NOT_USE_ZERO" ;
 VAL_ 1446 PMR_alertState 1 "SET" 0 "CLEARED" ;
 VAL_ 1446 PMR_a002_torqueMeasured -4096 "SNA" ;
@@ -93485,6 +94638,7 @@ VAL_ 1446 PMR_a084_firewallId 17 "HSM_SLV" 16 "R5SS1_CORE1_AHB_MST" 15 "R5SS1_CO
 VAL_ 1446 PMR_a084_privId 10 "CPSW" 9 "ICSSM" 7 "R5FSS1_1" 6 "R5FSS1_0" 5 "R5FSS0_1" 4 "R5FSS0_0" 1 "M4FSS0_0" ;
 VAL_ 1446 PMR_a084_faultType 6 "SUPER_READ" 5 "SUPER_WRITE" 4 "SUPER_EXE" 3 "USER_READ" 2 "USER_WRITE" 1 "USER_EXE" 0 "NO_FAULT" ;
 VAL_ 1446 PMR_a092_pllClockSource 2 "INTOSC1" 1 "XTAL" 0 "INTOSC2" ;
+VAL_ 472 PMR_hvilStatus 3 "SNA" 2 "CLOSED" 1 "OPEN" 0 "DISABLED" ;
 VAL_ 1444 PM_alertID 121 "a121_unintendedReset2" 120 "a120_indirectTPMSFaulted" 117 "a117_indirectTPMSHardWarningRearRight" 116 "a116_indirectTPMSHardWarningRearLeft" 115 "a115_indirectTPMSHardWarningFrontRight" 114 "a114_indirectTPMSHardWarningFrontLeft" 113 "a113_indirectTPMSSoftWarningRearRight" 112 "a112_indirectTPMSSoftWarningRearLeft" 111 "a111_indirectTPMSSoftWarningFrontRight" 110 "a110_indirectTPMSSoftWarningFrontLeft" 100 "a100_diTraceInfo1" 99 "a099_ITPMSCalibrated" 98 "a098_ITPMSTriggerDebug" 96 "a096_ITPMSConvergedGNSSAbsRadiusTimes" 95 "a095_ITPMSTimeoutGNSSConvergence" 93 "a093_accelPedalSupply" 92 "a092_xtalOscillator" 87 "a087_canHardwareBusLIPC" 86 "a086_exceptionUndefinedInstruction" 85 "a085_dpbMIA" 84 "a084_exceptionMpuFirewall" 83 "a083_ahbWriteError" 82 "a082_exceptionDataAbort2" 81 "a081_exceptionDataAbort" 80 "a080_exceptionPrefetchAbort" 79 "a079_rcuMIA" 78 "a078_canHardwareBusE" 77 "a077_canDataBusE" 76 "a076_canHardwareBusD" 75 "a075_canDataBusD" 74 "a074_canHardwareBusC" 73 "a073_canDataBusC" 72 "a072_brakeTorqueCommandInterface" 71 "a071_baseBrakingMonitor" 70 "a070_brakeTorqueSplitMonitorTrip" 69 "a069_brakeMonitorsUnhealthy" 68 "a068_brakePedalMonitor" 67 "a067_pmrMIA" 66 "a066_pmfMIA" 64 "a064_torqueIntervention" 63 "a063_torqueCommandInhibit" 62 "a062_eccError" 61 "a061_DIPMVersionMismatch" 60 "a060_onePedalDrivingInhibit" 59 "a059_ptcMIA" 58 "a058_cmpMIA" 57 "a057_canDataBusB" 56 "a056_canHardwareBusB" 55 "a055_accelPedalSyncWarn" 54 "a054_uiMIA" 53 "a053_vcfrontMIA" 52 "a052_stbCtrlDrvrDecelCflct" 51 "a051_unintDecelStbCtrl" 50 "a050_excessiveStbCtrlTrq" 49 "a049_stbCtrlInWrongDir" 48 "a048_stabilityControlInhibit" 47 "a047_inconsAutoparkState" 46 "a046_inconsVehicleHoldState" 45 "a045_regenBackfillIntervention" 44 "a044_ebrIntervention" 43 "a043_inconsistentConfig" 42 "a042_gtwMIA" 41 "a041_dasMIA" 40 "a040_latLinkLooseBoltDetectedDebug" 39 "a039_disMIA" 38 "a038_inconsistentTorqueSign" 36 "a036_preWatchdog" 35 "a035_udsTransactionInitiated" 34 "a034_trqCrossCheck" 33 "a033_appMIA" 32 "a032_registerConfigError" 31 "a031_highStackUsage" 30 "a030_inconsistentAebState" 29 "a029_cruiseRollback" 28 "a028_torqueCmdError" 26 "a026_diHeartBeatMIA" 25 "a025_unintendedReset" 24 "a024_brakeIrrational" 23 "a023_cruiseInhibit" 22 "a022_dirMIA" 21 "a021_difMIA" 19 "a019_vehicleSpeedQFDiagnostic" 17 "a017_brakeMIA" 16 "a016_bbMIA" 15 "a015_shifterMIA" 14 "a014_accelPedalError" 13 "a013_canHardwareBusA" 12 "a012_canDataBusA" 11 "a011_systemHvilNotClosed" 10 "a010_diMIA" 9 "a009_espMIA" 8 "a008_memoryError" 7 "a007_ibstMIA" 6 "a006_inconsistentDIGear" 5 "a005_torqueInNeutralOrPark" 4 "a004_excessiveDecelTorque" 3 "a003_excessiveReversalTorque" 2 "a002_excessiveAccelTorque" 1 "a001_absoluteTorque" 0 "ALERT_DO_NOT_USE_ZERO" ;
 VAL_ 1444 PM_alertState 1 "SET" 0 "CLEARED" ;
 VAL_ 1444 PM_a002_torqueMeasured -4096 "SNA" ;
@@ -94876,6 +96030,7 @@ VAL_ 2017 VCFRONT_LVPowerSecondsToSafeHarb 65535 "INDEFINITE" ;
 VAL_ 2016 VCFRONT_LVHealthDebugIndex 1 "FRONT_CHECK_RESULTS_1" 0 "UNHEALTHY_REASONS" ;
 VAL_ 545 VCFRONT_LVPowerStateIndex 1 "Mux1" 0 "Mux0" ;
 VAL_ 545 VCFRONT_vehiclePowerState 3 "VEHICLE_POWER_STATE_DRIVE" 2 "VEHICLE_POWER_STATE_ACCESSORY" 1 "VEHICLE_POWER_STATE_CONDITIONING" 0 "VEHICLE_POWER_STATE_OFF" ;
+VAL_ 545 VCFRONT_dirLVRequest 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
 VAL_ 545 VCFRONT_cpLVRequest 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
 VAL_ 545 VCFRONT_epasLVState 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
 VAL_ 545 VCFRONT_hvcLVRequest 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
@@ -96118,6 +97273,9 @@ VAL_ 835 VCRIGHT_rearDefrostState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNA
 VAL_ 835 VCRIGHT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
 VAL_ 835 VCRIGHT_steeringWheelHeaterDCTgt 127 "SNA" ;
 VAL_ 963 VCRIGHT_switchStatusIndex 1 "1" 0 "0" ;
+VAL_ 963 VCRIGHT_frontBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
+VAL_ 963 VCRIGHT_rearCenterBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
+VAL_ 963 VCRIGHT_rearRightBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatTrackBack 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatTrackForward 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatTiltDown 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;

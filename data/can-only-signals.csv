@@ -1,0 +1,26 @@
+models,bus,can_id,length,cycle_ms,message,signal,mux_signal,mux_value,start,length_bits,little_endian,signed,scale,offset,unit,description,min,max,enum_values,confidence
+Model3;ModelY,VEH,792,8,100,SystemTimeUTC,UTC_year,,,0,8,1,0,1,2000,,UTC date: year,2000,2255,,validated
+Model3;ModelY,VEH,792,8,100,SystemTimeUTC,UTC_month,,,8,8,1,0,1,0,,UTC date: month,1,12,,validated
+Model3;ModelY,VEH,792,8,100,SystemTimeUTC,UTC_seconds,,,16,8,1,0,1,0,s,UTC time: seconds,0,59,,validated
+Model3;ModelY,VEH,792,8,100,SystemTimeUTC,UTC_hour,,,24,8,1,0,1,0,h,UTC time: hour,0,23,,validated
+Model3;ModelY,VEH,792,8,100,SystemTimeUTC,UTC_day,,,32,8,1,0,1,0,,UTC date: day of month,1,31,,validated
+Model3;ModelY,VEH,792,8,100,SystemTimeUTC,UTC_minutes,,,40,8,1,0,1,0,min,UTC time: minutes,0,59,,validated
+Model3;ModelY,VEH,1320,4,1000,UnixTimeSeconds,UnixTimeSeconds,,,7,32,0,0,1,0,s,"Vehicle clock, seconds since 1970-01-01 UTC",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_muxID,,,0,8,1,0,1,0,,"Page index of the vehicle identification number text (16 = characters 1-3, 17 = characters 4-10, 18 = characters 11-17)",,,"{""16"":""VIN_PAGE_1"",""17"":""VIN_PAGE_2"",""18"":""VIN_PAGE_3""}",validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char01,VIN_muxID,16,40,8,1,0,1,0,,"Vehicle identification number, character 1 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char02,VIN_muxID,16,48,8,1,0,1,0,,"Vehicle identification number, character 2 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char03,VIN_muxID,16,56,8,1,0,1,0,,"Vehicle identification number, character 3 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char04,VIN_muxID,17,8,8,1,0,1,0,,"Vehicle identification number, character 4 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char05,VIN_muxID,17,16,8,1,0,1,0,,"Vehicle identification number, character 5 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char06,VIN_muxID,17,24,8,1,0,1,0,,"Vehicle identification number, character 6 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char07,VIN_muxID,17,32,8,1,0,1,0,,"Vehicle identification number, character 7 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char08,VIN_muxID,17,40,8,1,0,1,0,,"Vehicle identification number, character 8 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char09,VIN_muxID,17,48,8,1,0,1,0,,"Vehicle identification number, character 9 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char10,VIN_muxID,17,56,8,1,0,1,0,,"Vehicle identification number, character 10 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char11,VIN_muxID,18,8,8,1,0,1,0,,"Vehicle identification number, character 11 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char12,VIN_muxID,18,16,8,1,0,1,0,,"Vehicle identification number, character 12 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char13,VIN_muxID,18,24,8,1,0,1,0,,"Vehicle identification number, character 13 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char14,VIN_muxID,18,32,8,1,0,1,0,,"Vehicle identification number, character 14 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char15,VIN_muxID,18,40,8,1,0,1,0,,"Vehicle identification number, character 15 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char16,VIN_muxID,18,48,8,1,0,1,0,,"Vehicle identification number, character 16 (ASCII)",,,,validated
+Model3;ModelY,VEH,1029,8,1000,VINbroadcast,VIN_char17,VIN_muxID,18,56,8,1,0,1,0,,"Vehicle identification number, character 17 (ASCII)",,,,validated

@@ -269,6 +269,7 @@ APP_lRepeatCamExtYawCal,APP,APP_camCalibrationStatus,0x7FE,APP_cameraPosition,6,
 APP_lRepeatCameraLUX,APP,APP_cameraLux,0x3FA,,,24,8,1,0,0.5,0,lux^0.5,,0,127,
 APP_lRepeatDashCamFeedGood,APP,APP_dashCamStatus,0x413,,,8,1,1,0,1,0,,Indicates if the left repeater dash cam stream is healthy.,,,
 APP_lRepeatDashCamFrameRate,APP,APP_dashCamStatus,0x413,,,9,7,1,0,1,0,,The left repeater dash cam frame rate.,0,127,
+APP_lRepeaterCameraTemperature,APP,APP_cameraTemperatures,0x499,,,32,8,1,0,1,-60,C,,-60,195,"{""255"":""SNA""}"
 APP_mainCalibProgress,APP,APP_camCalibrationStatus,0x7FE,APP_cameraPosition,1,33,7,1,0,1,0,percent,The percent progress of the main camera calibration.,0,100,
 APP_mainCalibTime,APP,APP_camCalibrationStatus,0x7FE,APP_cameraPosition,1,26,7,1,0,1,0,min,,0,127,
 APP_mainCalibrated,APP,APP_camCalibrationStatus,0x7FE,APP_cameraPosition,1,40,1,1,0,1,0,,Whether or not the main camera is calibrated.,,,
@@ -317,6 +318,7 @@ APP_rRepeatCamExtYawCal,APP,APP_camCalibrationStatus,0x7FE,APP_cameraPosition,7,
 APP_rRepeatCameraLUX,APP,APP_cameraLux,0x3FA,,,32,8,1,0,0.5,0,lux^0.5,,0,127,
 APP_rRepeatDashCamFeedGood,APP,APP_dashCamStatus,0x413,,,16,1,1,0,1,0,,Indicates if the right repeater dash cam stream is healthy.,,,
 APP_rRepeatDashCamFrameRate,APP,APP_dashCamStatus,0x413,,,17,7,1,0,1,0,,The right repeater dash cam frame rate.,0,127,
+APP_rRepeaterCameraTemperature,APP,APP_cameraTemperatures,0x499,,,24,8,1,0,1,-60,C,,-60,195,"{""255"":""SNA""}"
 APP_rearLeftMiddleParkAssist,APP,APP_rearParkAssistData,0x38B,,,8,8,1,0,1,0,cm,,0,255,
 APP_rearLeftParkAssist,APP,APP_rearParkAssistData,0x38B,,,0,8,1,0,1,0,cm,,0,255,
 APP_rearMiddleParkAssist,APP,APP_rearParkAssistData,0x38B,,,16,8,1,0,1,0,cm,,0,255,
@@ -5091,6 +5093,7 @@ BMS_energyWalkMaxVehiclePower,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,
 BMS_energyWalkMinSoc,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,13,35,10,1,0,0.1,0,%,,0,102.3,
 BMS_energyWalkTimeoutCounter,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,83,16,8,1,0,1,0,,,0,255,
 BMS_enoughEnergyForConvenienceFeatures,BMS Battery computer,BMS_socStatus,0x292,,,40,1,1,0,1,0,,Flag to indicate if there is enough energy for user facing features that are function of the UI discharge limit,,,
+BMS_epochTimeEstimate,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,29,8,32,1,0,1,0,s,,0,4294967295,
 BMS_estimatedCapacitySohEnergy,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,79,41,11,1,0,0.1,0,KWh,Energy estimate using filtered brick capacities at maximum SOC using SOH retention test conditions,0,204.7,
 BMS_expectedEnergyRemaining,BMS Battery computer,BMS_energyStatus,0x2B2,BMS_energyStatusMultiplexer,1,32,16,1,0,0.02,0,kWh,,0,1310.68,
 BMS_extDcPrechargeVoltageLimit,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,4,20,12,1,0,0.146502256393,0,V,,0,599.92675781,
@@ -5102,6 +5105,11 @@ BMS_fullChargeComplete,BMS Battery computer,BMS_energyStatus,0x2B2,BMS_energySta
 BMS_gridFollowDesired,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,14,63,1,1,0,1,0,,,,,
 BMS_gridFormDesired,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,14,62,1,1,0,1,0,,,,,
 BMS_hardwareId,BMS Battery computer,BMS_info,0x300,BMS_infoIndex,10,32,16,1,0,1,0,,,0,65535,
+BMS_histogramChargeThroughputIrrational,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,30,59,1,1,0,1,0,,,0,1,
+BMS_histogramDischargeThroughputIrrational,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,30,58,1,1,0,1,0,,,0,1,
+BMS_histogramStartTimeIrrational,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,30,57,1,1,0,1,0,,,0,1,
+BMS_histogramStorageDataIsLow,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,30,61,1,1,0,1,0,,,0,1,
+BMS_histogramTotalTimeIrrational,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,30,60,1,1,0,1,0,,,0,1,
 BMS_hotCellTempLimit,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,1,20,9,1,0,0.25,-25,DegC,Maximum temperature at which the pack will allow limp mode levels of current,-25,100,
 BMS_hotStagnationLimit,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,1,11,9,1,0,0.25,-25,DegC,Maximum temperature at which we allow the pack to be used for heat-energy storage,-25,100,
 BMS_hvChain_iLimit,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,18,9,14,1,0,0.2,0,A,,0,3275,
@@ -5110,6 +5118,7 @@ BMS_hvChain_limitingStateTemperature,BMS Battery computer,BMS_log2,0x3B2,BMS_log
 BMS_hvChain_useLeakyBucket,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,18,8,1,1,0,1,0,,Is the leaky bucket being used - an indicator of the HV Chain Model health,,,
 BMS_hvState,BMS Battery computer,BMS_status,0x212,,,61,3,1,0,1,0,,BMS high voltage state,,,"{""0"":""HV_DOWN"",""1"":""HV_COMING_UP"",""2"":""HV_GOING_DOWN"",""3"":""HV_UP_FOR_DRIVE"",""4"":""HV_UP_FOR_CHARGE"",""5"":""HV_UP_FOR_DC_CHARGE"",""6"":""HV_UP""}"
 BMS_hvacPowerRequest,BMS Battery computer,BMS_status,0x212,,,0,1,1,0,1,0,,,,,
+BMS_hvilCoverVSense,BMS Battery computer,BMS_contactorRequest,0x232,,,32,16,1,0,0.001,0,V,,0,65.534,"{""65535"":""SNA""}"
 BMS_hvsBusAsleep,BMS Battery computer,BMS_vehNm,0x2F2,,,2,1,1,0,1,0,,HVS bus reported as off,,,
 BMS_i2tDeratingEnabled,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,1,29,1,1,0,1,0,,,,,
 BMS_idealEnergyFloor,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,21,21,10,1,0,0.1,0,KWh,Ideal energy estimate based on the min bounded SOC that accounts for accumulated shunt error,0,102.2,
@@ -5120,6 +5129,7 @@ BMS_inletActiveCoolTargetT,BMS Battery computer,BMS_thermalStatus,0x312,BMS_ther
 BMS_inletActiveHeatTargetT,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,0,20,9,1,0,0.25,-25,DegC,Calculated active heating temperature target at the inlet,-25,100,
 BMS_inletPassiveTargetT,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,0,11,9,1,0,0.25,-25,DegC,Calculated passive temperature target at the inlet,-25,100,
 BMS_instantChargePowerCapability,BMS Battery computer,BMS_socStatus,0x292,,,48,16,1,0,0.05,0,kW,Indicates the instantaneous charge power capability of the high voltage battery.,0,3276.75,
+BMS_internalHvilSenseV,BMS Battery computer,BMS_contactorRequest,0x232,,,16,16,1,0,0.001,0,V,,0,65.534,"{""65535"":""SNA""}"
 BMS_isolationResistance,BMS Battery computer,BMS_vehicleNotifications,0x32A,,,6,10,1,0,10,0,kOhm,Resistance between HV bus and chassis.,0,10000,
 BMS_kwhAcChargeTotalModule1,BMS Battery computer,BMS_kwhCountersMultiplexed,0x3F2,BMS_kwhCounter_Id,5,8,28,1,0,0.001,0,KWh,Total energy-gained kWh count during AC charge for module number (1 indexed),0,268435.455,
 BMS_kwhAcChargeTotalModule2,BMS Battery computer,BMS_kwhCountersMultiplexed,0x3F2,BMS_kwhCounter_Id,7,8,28,1,0,0.001,0,KWh,Total energy-gained kWh count during AC charge for module number (1 indexed),0,268435.455,
@@ -5162,6 +5172,8 @@ BMS_lifeModelMinCacBrickId,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,65,
 BMS_lifeModelNoCurrentStorageCapacityLoss,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,54,7,9,1,0,0.1,0,%,,0,51,
 BMS_lifeModelOutputsAreTrustworthy,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,31,57,1,1,0,1,0,,,,,
 BMS_lifeModelShortDcr,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,54,16,8,1,0,0.01,0,mOhm,,0,2.54,
+BMS_lifeModelSpreadMaxOffset,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,60,18,10,1,1,0.1,0,Ah,,-51.1,51.1,"{""-512"":""SNA""}"
+BMS_lifeModelSpreadMinOffset,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,60,8,10,1,1,0.1,0,Ah,,-51.1,51.1,"{""-512"":""SNA""}"
 BMS_lifeModelStorageCapacityLoss,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,54,37,9,1,0,0.1,0,%,,0,51,
 BMS_lifeModelStorageLossPackAge,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,80,24,14,1,0,1,0,days,,0,16382,
 BMS_lifeModelThroughputCapacityLoss,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,54,46,9,1,0,0.1,0,%,,0,51,
@@ -5179,10 +5191,12 @@ BMS_maxDischargeCurrent,BMS Battery computer,BMS_driveLimits,0x2D2,,,48,14,1,0,0
 BMS_maxDischargePower,BMS Battery computer,BMS_powerAvailable,0x252,,,16,16,1,0,0.013,0,kW,Calculated max discharge power possible based on max discharge current and sum of loaded voltages,0,850,
 BMS_maxExtIsoFcLinkV,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,5,48,13,1,0,0.134293735027,0,V,The max voltage read on the FC link during the external isolation check,0,1100,
 BMS_maxModelThermistorTempDelta,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,91,30,10,1,1,0.1,0,C,,-51.2,51.1,
+BMS_maxModeledPackTemp,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,6,19,11,1,0,0.1,-50,C,,-50,154.7,
 BMS_maxPackTemperature,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,0,43,11,1,0,0.1,-40,DegC,Maximum pack temperature for consumption by external entities,-40,164.7,
 BMS_maxRegenPower,BMS Battery computer,BMS_powerAvailable,0x252,,,0,16,1,0,0.01,0,kW,Calculated max regen power,0,655.35,
 BMS_maxStationaryHeatPower,BMS Battery computer,BMS_powerAvailable,0x252,,,32,10,1,0,0.01,0,kW,Maximum heating power the DI can produce when in stationary heating mode,0,10.23,
 BMS_minBusVoltage,BMS Battery computer,BMS_driveLimits,0x2D2,,,0,16,1,0,0.02,0,V,Calculated min bus voltage limit,0,1200,
+BMS_minModeledPackTemp,BMS Battery computer,BMS_log1,0x374,BMS_log1MuxId,6,8,11,1,0,0.1,-50,C,,-50,154.7,
 BMS_minPackTempForChargeToStart,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,91,56,7,1,0,0.5,-40,C,,-40,23.5,
 BMS_minPackTemperature,BMS Battery computer,BMS_thermalStatus,0x312,BMS_thermalStatusMultiplexer,0,32,10,1,0,0.2,-40,DegC,Minimum pack temperature for consumption by external entities,-40,164.6,
 BMS_moduleType,BMS Battery computer,BMS_packConfig,0x392,BMS_packConfigMultiplexer,1,8,3,1,0,1,0,,,,,"{""0"":""BMS_MOD_TYPE_UNKNOWN"",""1"":""BMS_MOD_TYPE_1"",""2"":""BMS_MOD_TYPE_2"",""3"":""BMS_MOD_TYPE_3"",""4"":""BMS_MOD_TYPE_4"",""5"":""BMS_MOD_TYPE_5""}"
@@ -5202,24 +5216,26 @@ BMS_numOfBricks,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,89,43,8,1,0,1,
 BMS_numOfThermistors,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,89,38,5,1,0,1,0,,Measures the number of thermistors in the battery pack for temperature monitoring.,0,31,
 BMS_okToShipByAir,BMS Battery computer,BMS_status,0x212,,,37,1,1,0,1,0,,,,,
 BMS_okToShipByLand,BMS Battery computer,BMS_status,0x212,,,38,1,1,0,1,0,,,,,
+BMS_packCalibrationBirthDateBinned,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,67,26,32,1,0,1,0,,,0,4294967295,
 BMS_packConfigMultiplexer,BMS Battery computer,BMS_packConfig,0x392,,,0,8,1,0,1,0,,,,,
 BMS_packCurrent,BMS Battery computer,BMS_hvBusStatus,0x132,,,16,16,1,1,0.1,0,A,Current measured at the HV contactors of the HV battery.,-3276.7,3276.7,
 BMS_packMass,BMS Battery computer,BMS_packConfig,0x392,BMS_packConfigMultiplexer,1,16,8,1,0,1,300,kg,,342,540,
 BMS_packRestTime,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,21,9,12,1,0,0.0175824183971,0,Hours,Minimum resting time of all bricks,0,71.99,
-BMS_packSerialNumberByte01,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,8,8,1,0,1,0,,"Pack serial number, character 1 (ASCII)",,,
-BMS_packSerialNumberByte02,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,16,8,1,0,1,0,,"Pack serial number, character 2 (ASCII)",,,
-BMS_packSerialNumberByte03,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,24,8,1,0,1,0,,"Pack serial number, character 3 (ASCII)",,,
-BMS_packSerialNumberByte04,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,32,8,1,0,1,0,,"Pack serial number, character 4 (ASCII)",,,
-BMS_packSerialNumberByte05,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,40,8,1,0,1,0,,"Pack serial number, character 5 (ASCII)",,,
-BMS_packSerialNumberByte06,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,48,8,1,0,1,0,,"Pack serial number, character 6 (ASCII)",,,
-BMS_packSerialNumberByte07,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,0,56,8,1,0,1,0,,"Pack serial number, character 7 (ASCII)",,,
-BMS_packSerialNumberByte08,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,8,8,1,0,1,0,,"Pack serial number, character 8 (ASCII)",,,
-BMS_packSerialNumberByte09,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,16,8,1,0,1,0,,"Pack serial number, character 9 (ASCII)",,,
-BMS_packSerialNumberByte10,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,24,8,1,0,1,0,,"Pack serial number, character 10 (ASCII)",,,
-BMS_packSerialNumberByte11,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,32,8,1,0,1,0,,"Pack serial number, character 11 (ASCII)",,,
-BMS_packSerialNumberByte12,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,40,8,1,0,1,0,,"Pack serial number, character 12 (ASCII)",,,
-BMS_packSerialNumberByte13,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,48,8,1,0,1,0,,"Pack serial number, character 13 (ASCII)",,,
-BMS_packSerialNumberByte14,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberPage,1,56,8,1,0,1,0,,"Pack serial number, character 14 (ASCII)",,,
+BMS_packSerialBirthDateBinned,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,2,8,32,1,0,1,0,,,0,4294967295,
+BMS_packSerialNumberByte01,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,8,8,1,0,1,0,,"Pack serial number, character 1 (ASCII)",,,
+BMS_packSerialNumberByte02,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,16,8,1,0,1,0,,"Pack serial number, character 2 (ASCII)",,,
+BMS_packSerialNumberByte03,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,24,8,1,0,1,0,,"Pack serial number, character 3 (ASCII)",,,
+BMS_packSerialNumberByte04,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,32,8,1,0,1,0,,"Pack serial number, character 4 (ASCII)",,,
+BMS_packSerialNumberByte05,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,40,8,1,0,1,0,,"Pack serial number, character 5 (ASCII)",,,
+BMS_packSerialNumberByte06,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,48,8,1,0,1,0,,"Pack serial number, character 6 (ASCII)",,,
+BMS_packSerialNumberByte07,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,0,56,8,1,0,1,0,,"Pack serial number, character 7 (ASCII)",,,
+BMS_packSerialNumberByte08,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,8,8,1,0,1,0,,"Pack serial number, character 8 (ASCII)",,,
+BMS_packSerialNumberByte09,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,16,8,1,0,1,0,,"Pack serial number, character 9 (ASCII)",,,
+BMS_packSerialNumberByte10,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,24,8,1,0,1,0,,"Pack serial number, character 10 (ASCII)",,,
+BMS_packSerialNumberByte11,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,32,8,1,0,1,0,,"Pack serial number, character 11 (ASCII)",,,
+BMS_packSerialNumberByte12,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,40,8,1,0,1,0,,"Pack serial number, character 12 (ASCII)",,,
+BMS_packSerialNumberByte13,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,48,8,1,0,1,0,,"Pack serial number, character 13 (ASCII)",,,
+BMS_packSerialNumberByte14,BMS Battery computer,BMS_serialNumber,0x7FA,BMS_serialNumberMultiplexer,1,56,8,1,0,1,0,,"Pack serial number, character 14 (ASCII)",,,
 BMS_packTemperature1,BMS Battery computer,BMS_packTemperatureMeasurements,0x712,BMS_packTemperatureMultiplexer,0,16,16,1,1,0.01,0,C,Measured temperature of location within the pack,-327.68,327.67,
 BMS_packTemperature10,BMS Battery computer,BMS_packTemperatureMeasurements,0x712,BMS_packTemperatureMultiplexer,3,16,16,1,1,0.01,0,C,Measured temperature of location within the pack,-327.68,327.67,
 BMS_packTemperature11,BMS Battery computer,BMS_packTemperatureMeasurements,0x712,BMS_packTemperatureMultiplexer,3,32,16,1,1,0.01,0,C,Measured temperature of location within the pack,-327.68,327.67,
@@ -5291,7 +5307,7 @@ BMS_rubberBandingEnabled,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,71,54
 BMS_runtimeSocConfigNvramValid,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,71,52,1,1,0,1,0,,,,,
 BMS_runtimeSocCorrectionsEnabled,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,71,53,1,1,0,1,0,,,,,
 BMS_runtimeSocMinTempForModel,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,71,56,6,1,0,0.5,0,DegC,,0,20,
-BMS_serialNumberPage,BMS Battery computer,BMS_serialNumber,0x7FA,,,0,8,1,0,1,0,,"Page index of the pack serial number text (page 0 = characters 1-7, page 1 = characters 8-14)",,,
+BMS_serialNumberMultiplexer,BMS Battery computer,BMS_serialNumber,0x7FA,,,0,2,1,0,1,0,,,0,2,"{""0"":""BMS_SERIAL_MUX0"",""1"":""BMS_SERIAL_MUX1"",""2"":""BMS_SERIAL_MUX2""}"
 BMS_smStateRequest,BMS Battery computer,BMS_status,0x212,,,57,4,1,0,1,0,,BMS high level state request,,,"{""0"":""BMS_STANDBY"",""1"":""BMS_DRIVE"",""2"":""BMS_SUPPORT"",""3"":""BMS_CHARGE"",""4"":""BMS_FEIM"",""5"":""BMS_CLEAR_FAULT"",""6"":""BMS_FAULT"",""7"":""BMS_WELD"",""8"":""BMS_TEST"",""9"":""BMS_SNA"",""10"":""BMS_DIAG""}"
 BMS_socAvg,BMS Battery computer,BMS_socStatus,0x292,,,30,10,1,0,0.1,0,%,BMS State Of Charge (SOC). This is the average of all the brick SOCs,0,102.2,
 BMS_socByDeltaVEnabled,BMS Battery computer,BMS_log2,0x3B2,BMS_log2MuxId,90,8,1,1,0,1,0,,,,,
@@ -5335,6 +5351,7 @@ BMS_timeSinceSohUpdate,BMS Battery computer,BMS_stateOfHealth,0x492,,,16,12,1,0,
 BMS_timeToFinishHeatForCharge,BMS Battery computer,BMS_chargeInfo,0x472,,,40,7,1,0,5,0,min,,0,600,
 BMS_timeToTripPlanChargingTarget,BMS Battery computer,BMS_chargeInfo,0x472,,,48,11,1,0,1,0,min,,0,2046,
 BMS_totalHvPowerBudget,BMS Battery computer,BMS_powerAvailable,0x252,,,43,9,1,0,0.1,0,kW,Maximum total power that the High Voltage (HV) battery and Electric Vehicle Supply Equipment (EVSE) (if present) can safely produce,0,51.1,
+BMS_udsResponseData,BMS Battery computer,BMS_udsResponse,0x612,,,7,64,0,0,1,0,,,0,18446744073709551616,
 BMS_updateAllowed,BMS Battery computer,BMS_status,0x212,,,4,1,1,0,1,0,,,,,
 BMS_usageId,BMS Battery computer,BMS_info,0x300,BMS_infoIndex,11,32,16,1,0,1,0,,BMS' assigned usage ID,0,65535,
 BMS_useChargeTimeEstimate,BMS Battery computer,BMS_chargeInfo,0x472,,,59,1,1,0,1,0,,,,,
@@ -5517,6 +5534,7 @@ CMPD_ready,CMPD,CMPD_state,0x2A8,,,63,1,1,0,1,0,,Indicates the compressor is rea
 CMPD_speedDuty,CMPD,CMPD_state,0x2A8,,,11,10,1,0,0.1,0,%,Reports compressor speed duty cycle percentage.,0,100,
 CMPD_speedRPM,CMPD,CMPD_state,0x2A8,,,0,11,1,0,10,0,RPM,Reports compressor speed.,0,20000,
 CMPD_state,CMPD,CMPD_state,0x2A8,,,56,4,1,0,1,0,,Reports compressor operational state.,,,"{""0"":""CMPD_STATE_INIT"",""1"":""CMPD_STATE_RUNNING"",""2"":""CMPD_STATE_STANDBY"",""3"":""CMPD_STATE_FAULT"",""4"":""CMPD_STATE_IDLE"",""15"":""CMPD_STATE_SNA""}"
+CMPD_udsResponseData,CMPD,CMPD_udsResponse,0x617,,,7,64,0,0,1,0,,,0,18446744073709551616,
 CMPD_wasteHeatState,CMPD,CMPD_state,0x2A8,,,60,2,1,0,1,0,,Reports compressor waste heat recovery state.,,,"{""0"":""CMPD_WASTE_HEAT_STATE_OFF"",""1"":""CMPD_WASTE_HEAT_STATE_ACTIVE"",""2"":""CMPD_WASTE_HEAT_STATE_NOT_AVAILABLE"",""3"":""CMPD_WASTE_HEAT_STATE_UNUSED""}"
 CMP_infoAppCrc,CMP,CMP_info,0x363,CMP_infoIndex,13,32,32,1,0,1,0,,,,,
 CMP_infoAssemblyId,CMP,CMP_info,0x363,CMP_infoIndex,11,24,8,1,0,1,0,,,0,255,
@@ -5535,6 +5553,7 @@ CMP_inputHVCurrent,CMP,CMP_HVStatus,0x227,,,24,16,1,0,0.1,0,A,,0,6553.4,
 CMP_inputHVPower,CMP,CMP_HVStatus,0x227,,,40,16,1,0,1,0,W,Compressor high voltage input power,0,65534,
 CMP_inputHVVoltage,CMP,CMP_HVStatus,0x227,,,0,16,1,0,0.1,0,V,Compressor high voltage input voltage,0,6553.4,
 CMP_inputLVVoltage,CMP,CMP_HVStatus,0x227,,,16,8,1,0,0.1,0,V,,0,25.5,
+CMP_udsResponseData,CMP,CMP_udsResponse,0x613,,,7,64,0,0,1,0,,,0,18446744073709551616,
 CP_5vSwV,CP,CP_loggingSlow,0x7F9,CP_loggingSlowSelect,4,4,8,1,0,0.02745098,0,V,,0,7,
 CP_AuthManagerState,CP,CP_status,0x210,,,59,4,1,0,1,0,,,,,"{""0"":""CP_AUTH_MANAGER_STATUS_INIT"",""1"":""CP_AUTH_MANAGER_STATUS_IDLE"",""2"":""CP_AUTH_MANAGER_STATUS_WAITING_FOR_CERTIFICATE"",""3"":""CP_AUTH_MANAGER_STATUS_VERIFYING_CERTIFICATE"",""4"":""CP_AUTH_MANAGER_STATUS_WAITING_FOR_CHALLENGE"",""5"":""CP_AUTH_MANAGER_STATUS_WAITING_FOR_SIGNATURE"",""6"":""CP_AUTH_MANAGER_STATUS_VERIFYING_SIGNATURE"",""7"":""CP_AUTH_MANAGER_STATUS_SUCCESS"",""8"":""CP_AUTH_MANAGER_STATUS_ERROR""}"
 CP_UHF_chipState,CP,CP_loggingSlow,0x7F9,CP_loggingSlowSelect,3,4,3,1,0,1,0,,,0,7,
@@ -6219,6 +6238,7 @@ CP_teslaDcState,CP,CP_evseStatus,0x21D,,,58,4,1,0,1,0,,Reports the state of the 
 CP_teslaSwcanState,CP,CP_evseStatus,0x21D,,,34,4,1,0,1,0,,,,,"{""0"":""TESLA_SWCAN_INACTIVE"",""1"":""TESLA_SWCAN_ACCEPT"",""2"":""TESLA_SWCAN_RECEIVE"",""3"":""TESLA_SWCAN_ESTABLISHED"",""4"":""TESLA_SWCAN_FAULT"",""5"":""TESLA_SWCAN_GO_TO_SLEEP"",""6"":""TESLA_SWCAN_OFFBOARD_UPDATE_IN_PROGRESS"",""7"":""TESLA_SWCAN_V2L_RECEIVE"",""8"":""TESLA_SWCAN_V2L_ESTABLISHED""}"
 CP_thermalStatusSelect,CP,CP_thermalStatus,0x37D,,,0,1,1,0,1,0,,,,,
 CP_type,CP,CP_status,0x210,,,0,2,1,0,1,0,,,,,"{""0"":""CP_TYPE_US_TESLA"",""1"":""CP_TYPE_EURO_IEC"",""2"":""CP_TYPE_GB"",""3"":""CP_TYPE_IEC_CCS""}"
+CP_udsResponseData,CP,CP_udsResponse,0x61E,,,7,64,0,0,1,0,,,0,18446744073709551616,
 CP_usageId,CP,CP_info,0x53E,CP_infoIndex,11,32,16,1,0,1,0,,,0,65535,
 CP_userEvseModelType,CP,CP_status,0x210,,,40,4,1,0,1,0,,Reports the type of Electric Vehicle Supply Equipment (EVSE) model to display to the user.,,,"{""0"":""EVSE_MODEL_NO_CHARGER"",""1"":""EVSE_MODEL_GENERIC_CHARGER"",""2"":""EVSE_MODEL_GENERIC_FAST_CHARGER"",""3"":""EVSE_MODEL_SUPERCHARGER"",""4"":""EVSE_MODEL_SUPERCHARGER_V4"",""5"":""EVSE_MODEL_TESLA_UMC"",""6"":""EVSE_MODEL_TESLA_WC"",""7"":""EVSE_MODEL_V2L_UMC3"",""8"":""EVSE_MODEL_V2H_UWC"",""9"":""EVSE_MODEL_URBAN_CHARGER_V2"",""10"":""EVSE_MODEL_V2L_ADAPTER""}"
 CP_userPowershareStatus,CP,CP_gridFormControl,0x2DD,,,35,3,1,0,1,0,,,,,"{""0"":""POWERSHARE_INACTIVE"",""1"":""POWERSHARE_HANDSHAKING"",""2"":""POWERSHARE_INITIALIZING"",""3"":""POWERSHARE_ENABLED"",""4"":""POWERSHARE_ENABLED_RECONNECTING_SOON"",""5"":""POWERSHARE_STOPPED""}"
@@ -6570,6 +6590,7 @@ DAS_sw230_sensor9Blocked,DAS,DAS_alertLog,0x5B9,DAS_alertID,230,24,1,1,0,1,0,,,,
 DAS_trafficAwareSetSpeedInUse,DAS,DAS_visualDebug,0x24A,,,53,1,1,0,1,0,,Indicates that autopilot is using cruise set speed based on flow of traffic,,,
 DAS_turnIndicatorRequest,DAS,DAS_bodyControls,0x3E9,,,8,3,1,0,1,0,,Reports Driver Assistance System (DAS) request to body controls to turn on/off the left or right turn indicator.,,,"{""0"":""DAS_TURN_INDICATOR_NONE"",""1"":""DAS_TURN_INDICATOR_LEFT"",""2"":""DAS_TURN_INDICATOR_RIGHT"",""3"":""DAS_TURN_INDICATOR_CANCEL"",""4"":""DAS_TURN_INDICATOR_DEFER""}"
 DAS_turnIndicatorRequestReason,DAS,DAS_bodyControls,0x3E9,,,33,5,1,0,1,0,,Reports the reason that Driver Assistance System (DAS) is requesting a change to the turn indicator state from body controls.,,,"{""0"":""DAS_NONE"",""1"":""DAS_ACTIVE_NAV_LANE_CHANGE"",""2"":""DAS_ACTIVE_SPEED_LANE_CHANGE"",""3"":""DAS_ACTIVE_FORK"",""4"":""DAS_CANCEL_LANE_CHANGE"",""5"":""DAS_CANCEL_FORK"",""6"":""DAS_ACTIVE_MERGE"",""7"":""DAS_CANCEL_MERGE"",""8"":""DAS_ACTIVE_COMMANDED_LANE_CHANGE"",""9"":""DAS_ACTIVE_INTERSECTION"",""10"":""DAS_CANCEL_INTERSECTION"",""11"":""DAS_ACTIVE_SUMMMON"",""12"":""DAS_CANCEL_SUMMMON"",""13"":""DAS_ACTIVE_AUTO_PARK"",""14"":""DAS_CANCEL_AUTO_PARK"",""15"":""DAS_CANCEL_MANUAL_BLINKER"",""17"":""DAS_ACTIVE_STATIC_OBJECT_LANE_CHANGE"",""18"":""DAS_ACTIVE_INCORRECT_ROAD_SIDE_LANE_CHANGE"",""19"":""DAS_ACTIVE_EXIT_PASSING_LANE_LANE_CHANGE"",""20"":""DAS_ACTIVE_EXIT_RIGHT_LANE_LANE_CHANGE"",""21"":""DAS_ACTIVE_AWAY_FROM_MERGE_LANE_CHANGE"",""22"":""DAS_ACTIVE_STAY_OUT_OF_RIGHTMOST_LANE_LANE_CHANGE"",""23"":""DAS_ACTIVE_INFEASIBLE_KINEMATICS_LANE_CHANGE"",""24"":""DAS_ACTIVE_SIMULTANEOUS_LANE_CHANGE_AVOIDANCE""}"
+DAS_udsResponseData,DAS,DAS_udsResponse,0x659,,,7,64,0,0,1,0,,,0,18446744073709551616,
 DAS_ulcConfirmationRequestActive,DAS,DAS_bodyControls,0x3E9,,,28,1,1,0,1,0,,,,,
 DAS_ulcInProgress,DAS,DAS_visualDebug,0x24A,,,52,1,1,0,1,0,,Reports active lane changes that were not commanded.,,,"{""0"":""ULC_INACTIVE"",""1"":""ULC_ACTIVE""}"
 DAS_ulcType,DAS,DAS_visualDebug,0x24A,,,58,2,1,0,1,0,,"Reports the underlying reason for the uncommanded lane change, whether for speed or route.",,,"{""0"":""ULC_TYPE_NONE"",""1"":""ULC_TYPE_NAV"",""2"":""ULC_TYPE_SPEED""}"
@@ -7653,6 +7674,7 @@ DIF_torqueChecksum,DIF,DIF_torque,0x186,,,0,8,1,0,1,0,,,0,255,
 DIF_torqueCommand,DIF,DIF_torque,0x186,,,12,13,1,1,2,0,Nm,"Torque commanded to the drive unit, referred to the axle/wheel",-7500,7500,
 DIF_torqueCounter,DIF,DIF_torque,0x186,,,8,4,1,0,1,0,,,0,15,
 DIF_torqueWearTotal,DIF,DIF_info,0x656,DIF_infoIndex,36,24,8,1,0,0.02,0,1,,0,5.08,
+DIF_udsResponseData,DIF,DIF_udsResponse,0x615,,,7,64,0,0,1,0,,,0,18446744073709551616,
 DIF_usageId,DIF,DIF_info,0x656,DIF_infoIndex,11,32,16,1,0,1,0,,,0,65535,
 DIF_vBat,DIF,DIF_hvStatus,0x27A,,,34,10,1,0,1,0,V,Reports the battery voltage measured by the Drive Inverter's local Analog to Digital Converter (ADC).,0,1023,
 DIF_vBatQF,DIF,DIF_hvStatus,0x27A,,,44,1,1,0,1,0,,,,,"{""0"":""NOT_QUALIFIED"",""1"":""QUALIFIED""}"
@@ -8554,6 +8576,7 @@ DIR_torqueChecksum,DIR,DIR_torque,0x108,,,0,8,1,0,1,0,,,0,255,
 DIR_torqueCommand,DIR,DIR_torque,0x108,,,12,13,1,1,2,0,Nm,"Torque commanded to the drive unit, referred to the axle/wheel",-7500,7500,
 DIR_torqueCounter,DIR,DIR_torque,0x108,,,8,4,1,0,1,0,,,0,15,
 DIR_torqueWearTotal,DIR,DIR_info,0x335,DIR_infoIndex,36,24,8,1,0,0.02,0,1,,0,5.08,
+DIR_udsResponseData,DIR,DIR_udsResponse,0x616,,,7,64,0,0,1,0,,,0,18446744073709551616,
 DIR_usageId,DIR,DIR_info,0x335,DIR_infoIndex,11,32,16,1,0,1,0,,,0,65535,
 DIR_vBat,DIR,DIR_hvStatus,0x279,,,34,10,1,0,1,0,V,Reports the battery voltage measured by the Drive Inverter's local Analog to Digital Converter (ADC).,0,1023,
 DIR_vBatQF,DIR,DIR_hvStatus,0x279,,,44,1,1,0,1,0,,,,,"{""0"":""NOT_QUALIFIED"",""1"":""QUALIFIED""}"
@@ -10019,6 +10042,7 @@ EPAS3P_steeringReduced,EPAS3P,EPAS3P_sysStatus,0x373,,,3,1,1,0,1,0,,,,,"{""0"":"
 EPAS3P_sysStatusChecksum,EPAS3P,EPAS3P_sysStatus,0x373,,,56,8,1,0,1,0,,,0,255,
 EPAS3P_sysStatusCounter,EPAS3P,EPAS3P_sysStatus,0x373,,,48,4,1,0,1,0,,,0,15,
 EPAS3P_torsionBarTorque,EPAS3P,EPAS3P_sysStatus,0x373,,,19,12,0,0,0.01,-20.5,Nm,The measurement of the steering wheel torque input. If the value is positive the steering wheel torque is applied in the clockwise direction.,-20.5,20.45,
+EPAS3P_udsResponseDataCH,EPAS3P,EPAS3P_udsResponseCH,0x638,,,7,64,0,0,1,0,,,0,18446744073709551616,
 EPAS3S_a001_sent1Mia,EPAS3S,EPAS3S_alertMatrix,0x391,EPAS3S_matrixIndex,0,4,1,1,0,1,0,,,,,
 EPAS3S_a002_sent1Error,EPAS3S,EPAS3S_alertMatrix,0x391,EPAS3S_matrixIndex,0,5,1,1,0,1,0,,,,,
 EPAS3S_a003_trqSens1Supply,EPAS3S,EPAS3S_alertMatrix,0x391,EPAS3S_matrixIndex,0,6,1,1,0,1,0,,,,,
@@ -10246,6 +10270,7 @@ EPAS3S_steeringReduced,EPAS3S,EPAS3S_sysStatus,0x372,,,3,1,1,0,1,0,,,,,"{""0"":"
 EPAS3S_sysStatusChecksum,EPAS3S,EPAS3S_sysStatus,0x372,,,56,8,1,0,1,0,,,0,255,
 EPAS3S_sysStatusCounter,EPAS3S,EPAS3S_sysStatus,0x372,,,48,4,1,0,1,0,,,0,15,
 EPAS3S_torsionBarTorque,EPAS3S,EPAS3S_sysStatus,0x372,,,19,12,0,0,0.01,-20.5,Nm,The measurement of the steering wheel torque input. If the value is positive the steering wheel torque is applied in the clockwise direction.,-20.5,20.45,
+EPAS3S_udsResponseData,EPAS3S,EPAS3S_udsResponse,0x738,,,7,64,0,0,1,0,,,0,18446744073709551616,
 EPASTP_a001_adcCalibrationOrInitFail,EPASTP,EPASTP_alertMatrix,0x397,EPASTP_matrixIndex,0,4,1,1,0,1,0,,,,,
 EPASTP_a001_debugInfo,EPASTP,EPASTP_alertLog,0x593,EPASTP_alertID,1,16,48,1,0,1,0,,,,,
 EPASTP_a002_adcMuxErr,EPASTP,EPASTP_alertMatrix,0x397,EPASTP_matrixIndex,0,5,1,1,0,1,0,,,,,
@@ -12194,6 +12219,8 @@ EPBL_systemCdpAvailable,EPBL,EPBL_status,0x2A9,,,8,1,1,0,1,0,,,,,
 EPBL_systemStatus,EPBL,EPBL_status,0x2A9,,,0,4,1,0,1,0,,Coordinated state representing the vehicle level parking brake state.,,,"{""0"":""EPB_VEHICLE_STATUS_UNKNOWN"",""1"":""EPB_VEHICLE_STATUS_RELEASED"",""2"":""EPB_VEHICLE_STATUS_PARKED"",""3"":""EPB_VEHICLE_STATUS_DYNAMIC"",""4"":""EPB_VEHICLE_STATUS_PARKING"",""5"":""EPB_VEHICLE_STATUS_RELEASING"",""6"":""EPB_VEHICLE_STATUS_FAULT"",""7"":""EPB_VEHICLE_STATUS_FAULT_SECURE"",""8"":""EPB_VEHICLE_STATUS_MISMATCH""}"
 EPBL_telltale,EPBL,EPBL_status,0x2A9,,,12,3,1,0,1,0,,Controls the telltale illumination on the instrument cluster.,,,"{""0"":""EPB_TELLTALE_LAMP_OFF"",""1"":""EPB_TELLTALE_LAMP_RED_PARKED"",""2"":""EPB_TELLTALE_LAMP_RED_ON"",""3"":""EPB_TELLTALE_LAMP_AMBER_ON"",""4"":""EPB_TELLTALE_LAMP_RED_FLASH"",""7"":""EPB_TELLTALE_SNA""}"
 EPBL_telltaleLocal,EPBL,EPBL_internalStatus,0x288,,,39,3,1,0,1,0,,,,,"{""0"":""EPB_TELLTALE_LAMP_OFF"",""1"":""EPB_TELLTALE_LAMP_RED_PARKED"",""2"":""EPB_TELLTALE_LAMP_RED_ON"",""3"":""EPB_TELLTALE_LAMP_AMBER_ON"",""4"":""EPB_TELLTALE_LAMP_RED_FLASH"",""7"":""EPB_TELLTALE_SNA""}"
+EPBL_udsResponseData_H,EPBL,EPBL_udsResponse,0x625,,,7,32,0,0,1,0,,,0,4294967295,
+EPBL_udsResponseData_L,EPBL,EPBL_udsResponse,0x625,,,39,32,0,0,1,0,,,0,4294967295,
 EPBL_uiParkAvailable,EPBL,EPBL_status,0x2A9,,,28,2,1,0,1,0,,Reports the expected availability and appearance of the park button on User Interface (UI) safety panel.,,,"{""0"":""EPB_AVAIL_NOT_AVAILABLE"",""1"":""EPB_AVAIL_AVAILABLE"",""2"":""EPB_AVAIL_REAPPLIED""}"
 EPBL_uiWinchModeLvStatus,EPBL,EPBL_status,0x2A9,,,33,2,1,0,1,0,,Reports the expected availability and appearance of Low Voltage (LV) system status on UI winch mode panel.,,,"{""0"":""EPB_LV_BLOCKED_BATTERY"",""1"":""EPB_LV_BLOCKED_INPUT_VOLTAGE_LOW"",""2"":""EPB_LV_BLOCKED_TIMER_RUNNING"",""3"":""EPB_LV_OK""}"
 EPBL_uiWinchModeMiscBlocking,EPBL,EPBL_status,0x2A9,,,22,1,1,0,1,0,,Reports the expected appearance of system error message on User Interface (UI) winch mode panel.,,,
@@ -13060,6 +13087,8 @@ EPBR_systemCdpAvailable,EPBR,EPBR_status,0x2E8,,,8,1,1,0,1,0,,,,,
 EPBR_systemStatus,EPBR,EPBR_status,0x2E8,,,0,4,1,0,1,0,,Coordinated state representing the vehicle level parking brake state.,,,"{""0"":""EPB_VEHICLE_STATUS_UNKNOWN"",""1"":""EPB_VEHICLE_STATUS_RELEASED"",""2"":""EPB_VEHICLE_STATUS_PARKED"",""3"":""EPB_VEHICLE_STATUS_DYNAMIC"",""4"":""EPB_VEHICLE_STATUS_PARKING"",""5"":""EPB_VEHICLE_STATUS_RELEASING"",""6"":""EPB_VEHICLE_STATUS_FAULT"",""7"":""EPB_VEHICLE_STATUS_FAULT_SECURE"",""8"":""EPB_VEHICLE_STATUS_MISMATCH""}"
 EPBR_telltale,EPBR,EPBR_status,0x2E8,,,12,3,1,0,1,0,,Controls the telltale illumination on the instrument cluster.,,,"{""0"":""EPB_TELLTALE_LAMP_OFF"",""1"":""EPB_TELLTALE_LAMP_RED_PARKED"",""2"":""EPB_TELLTALE_LAMP_RED_ON"",""3"":""EPB_TELLTALE_LAMP_AMBER_ON"",""4"":""EPB_TELLTALE_LAMP_RED_FLASH"",""7"":""EPB_TELLTALE_SNA""}"
 EPBR_telltaleLocal,EPBR,EPBR_internalStatus,0x228,,,39,3,1,0,1,0,,,,,"{""0"":""EPB_TELLTALE_LAMP_OFF"",""1"":""EPB_TELLTALE_LAMP_RED_PARKED"",""2"":""EPB_TELLTALE_LAMP_RED_ON"",""3"":""EPB_TELLTALE_LAMP_AMBER_ON"",""4"":""EPB_TELLTALE_LAMP_RED_FLASH"",""7"":""EPB_TELLTALE_SNA""}"
+EPBR_udsResponseData_H,EPBR,EPBR_udsResponse,0x627,,,7,32,0,0,1,0,,,0,4294967295,
+EPBR_udsResponseData_L,EPBR,EPBR_udsResponse,0x627,,,39,32,0,0,1,0,,,0,4294967295,
 EPBR_uiParkAvailable,EPBR,EPBR_status,0x2E8,,,28,2,1,0,1,0,,Reports the expected availability and appearance of the park button on User Interface (UI) safety panel.,,,"{""0"":""EPB_AVAIL_NOT_AVAILABLE"",""1"":""EPB_AVAIL_AVAILABLE"",""2"":""EPB_AVAIL_REAPPLIED""}"
 EPBR_uiWinchModeLvStatus,EPBR,EPBR_status,0x2E8,,,33,2,1,0,1,0,,Reports the expected availability and appearance of Low Voltage (LV) system status on UI winch mode panel.,,,"{""0"":""EPB_LV_BLOCKED_BATTERY"",""1"":""EPB_LV_BLOCKED_INPUT_VOLTAGE_LOW"",""2"":""EPB_LV_BLOCKED_TIMER_RUNNING"",""3"":""EPB_LV_OK""}"
 EPBR_uiWinchModeMiscBlocking,EPBR,EPBR_status,0x2E8,,,22,1,1,0,1,0,,Reports the expected appearance of system error message on User Interface (UI) winch mode panel.,,,
@@ -13527,9 +13556,14 @@ ESP_stabilityControlSts2,ESP Stability control,ESP_status,0x145,,,14,2,1,0,1,0,,
 ESP_statusChecksum,ESP Stability control,ESP_status,0x145,,,0,8,1,0,1,0,,,0,255,
 ESP_statusCounter,ESP Stability control,ESP_status,0x145,,,8,4,1,0,1,0,,,0,15,
 ESP_steeringAngleQF,ESP Stability control,ESP_status,0x145,,,27,1,1,0,1,0,,,,,"{""0"":""UNDEFINABLE_ACCURACY"",""1"":""IN_SPEC""}"
+ESP_udsResponseData,ESP Stability control,ESP_udsResponse,0x655,,,7,64,0,0,1,0,,,0,18446744073709551616,
 ESP_vehFlashMode,ESP Stability control,ESP_info,0x328,ESP_infoIndex,10,24,1,1,0,1,0,,,,,"{""0"":""Production_Mode"",""1"":""Development_Mode""}"
 ESP_vehicleStandstill,ESP Stability control,ESP_party3,0x4D4,,,13,1,1,0,1,0,,Indicates that the vehicle is completely stationary.,,,"{""0"":""NOT_STANDSTILL"",""1"":""STANDSTILL""}"
 ESP_vehicleStandstillQF,ESP Stability control,ESP_party3,0x4D4,,,14,2,1,0,1,0,,Qualifier of ESP_vehicleStandstill.,,,"{""0"":""STANDSTILL_NOT_INIT"",""1"":""STANDSTILL_NORMAL"",""2"":""STANDSTILL_FAULTED""}"
+ESP_wheelSpeedFrL,ESP Stability control,ESP_wheelSpeeds,0x175,,,0,13,1,0,0.042,0,km/h,,0,343.98,"{""8191"":""SNA""}"
+ESP_wheelSpeedFrR,ESP Stability control,ESP_wheelSpeeds,0x175,,,13,13,1,0,0.042,0,km/h,,0,343.98,"{""8191"":""SNA""}"
+ESP_wheelSpeedReL,ESP Stability control,ESP_wheelSpeeds,0x175,,,26,13,1,0,0.042,0,km/h,,0,343.98,"{""8191"":""SNA""}"
+ESP_wheelSpeedReR,ESP Stability control,ESP_wheelSpeeds,0x175,,,39,13,1,0,0.042,0,km/h,,0,343.98,"{""8191"":""SNA""}"
 ESP_yawRateQF,ESP Stability control,ESP_status,0x145,,,26,1,1,0,1,0,,,,,"{""0"":""UNDEFINABLE_ACCURACY"",""1"":""IN_SPEC""}"
 EVSE_isoTpToVehData,EVSE,EVSE_isoTpToVeh,0x67E,,,0,64,1,0,1,0,,,0,18446744073709551616,
 EVSE_v2xHandshakeStart,EVSE,CC_chgStatus2,0x31D,CC_chgStatus2Index,0,12,1,1,0,1,0,,,,,
@@ -13773,23 +13807,34 @@ GTW_BLEEPLEFTmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFault
 GTW_BLEEPREARmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,20,1,1,0,1,0,,Reports the Bluetooth Low Energy End Point Rear (BLEEPREAR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_BLEEPRIGHTmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,21,1,1,0,1,0,,Reports the Bluetooth Low Energy End Point Right (BLEEPRIGHT) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_BMSmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,16,1,1,0,1,0,,Reports the high voltage Battery Management System (BMS) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_BMSpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,3,1,1,0,1,0,,,0,1,
 GTW_CBCmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,22,1,1,0,1,0,,Reports the Cabin Blower Controller (CBC) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_CH_canBusActivity,GTW Gateway,GTW_canStatus,0x388,,,2,1,1,0,1,0,,Active if any frame detected on the bus,,,
 GTW_CH_faultConfinement,GTW Gateway,GTW_canStatus,0x388,,,13,2,1,0,1,0,,Fault confinement as per CAN spec,,,"{""0"":""ERROR_ACTIVE"",""1"":""ERROR_PASSIVE"",""2"":""BUS_OFF""}"
 GTW_CH_rxWarning,GTW Gateway,GTW_canStatus,0x388,,,8,1,1,0,1,0,,,,,
 GTW_CH_txWarning,GTW Gateway,GTW_canStatus,0x388,,,5,1,1,0,1,0,,,,,
 GTW_CMPmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,23,1,1,0,1,0,,Reports the air conditioning compressor (CMP) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_CMPpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,20,1,1,0,1,0,,,0,1,
 GTW_CPmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,24,1,1,0,1,0,,Reports the Charge Port (CP) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_CPpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,4,1,1,0,1,0,,,0,1,
+GTW_DASpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,21,1,1,0,1,0,,,0,1,
 GTW_DIFmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,25,1,1,0,1,0,,Reports the front drive inverter (DIF) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_DIFpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,28,1,1,0,1,0,,,0,1,
 GTW_DIRmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,26,1,1,0,1,0,,Reports the rear drive inverter (DIR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_DIRpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,27,1,1,0,1,0,,,0,1,
 GTW_ECALL_GPS_ANT_BIAS,GTW Gateway,GTW_adc4,0x11A,,,31,12,0,0,1,0,mV,,0,4094,
 GTW_ECALL_MIC_DIAG,GTW Gateway,GTW_adc4,0x11A,,,35,12,0,0,1,0,mV,ECALL_MIC_DIAG voltage,0,4094,
 GTW_EPAS3PmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,27,1,1,0,1,0,,Reports the primary Electronic Power Assisted Steering (EPAS3P) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_EPAS3Ppresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,8,1,1,0,1,0,,,0,1,
 GTW_EPAS3SmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,28,1,1,0,1,0,,Reports the secondary Electronic Power Assisted Steering (EPAS3S) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_EPAS3Spresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,19,1,1,0,1,0,,,0,1,
 GTW_EPBLmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,29,1,1,0,1,0,,Reports the left Electronic Park Brake (EPBL) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_EPBLpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,9,1,1,0,1,0,,,0,1,
 GTW_EPBRmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,30,1,1,0,1,0,,Reports the right Electronic Park Brake (EPBR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_EPBRpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,10,1,1,0,1,0,,,0,1,
 GTW_ESPCALmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,31,1,1,0,1,0,,Reports the Electronic Stability Program Calibration (ESPCAL) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_ESPmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,32,1,1,0,1,0,,Reports the Electronic Stability Program (ESP) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_ESPpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,11,1,1,0,1,0,,,0,1,
 GTW_GTW_SOS_ECALL_RQST,GTW Gateway,GTW_ECall,0x378,,,0,1,1,0,1,0,,State of the GTW-SOS-ECALL-RQST pin,,,
 GTW_GTWmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,15,1,1,0,1,0,,Reports the Gateway (GTW) running a firmware version that does not match the rest of the vehicle,,,
 GTW_HCM3LmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,33,1,1,0,1,0,,Reports the left LED matrix Headlamp Control Module (HCM3L) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
@@ -13797,36 +13842,53 @@ GTW_HCM3RmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultInde
 GTW_HCMLmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,35,1,1,0,1,0,,Reports the left Headlamp Control Module (HCML) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_HCMRmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,36,1,1,0,1,0,,Reports the right Headlamp Control Module (HCMR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_HVPmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,37,1,1,0,1,0,,Reports the High Voltage Processor (HVP) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_HVPpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,2,1,1,0,1,0,,,0,1,
 GTW_IBSTCALmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,38,1,1,0,1,0,,"Reports the electromechanical brake booster calibration, or iBooster Calibration (IBSTCAL), electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle",,,
 GTW_IBSTmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,39,1,1,0,1,0,,"Reports the electromechanical brake booster, or iBooster (IBST), electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle",,,
+GTW_IBSTpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,12,1,1,0,1,0,,,0,1,
 GTW_LTE_ECALL_LOCK,GTW Gateway,GTW_ECall,0x378,,,1,1,1,0,1,0,,State of the LTE-ECALL-LOCK pin,,,
 GTW_LVBMSmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,40,1,1,0,1,0,,Reports the Low Voltage Battery Management System (LVBMS) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_OCS1PmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,41,1,1,0,1,0,,Reports the Occupancy Classification System - 1st Row Passenger (OCS1P) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_OCS1Ppresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,0,1,1,0,1,0,,,0,1,
 GTW_OPCFmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,42,1,1,0,1,0,,Reports the front Oil Pump Controller (OPCF) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_OPCRmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,43,1,1,0,1,0,,Reports the rear Oil Pump Controller (OPCR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_OTAKeepAwake,GTW Gateway,GTW_vehNm,0x458,,,49,1,1,0,1,0,,Signals that the vehicle buses should remain awake for an ongoing OTA update,,,
 GTW_PARKmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,44,1,1,0,1,0,,Reports the Park Assist (PARK) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_PARKpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,13,1,1,0,1,0,,,0,1,
 GTW_PARTY_canBusActivity,GTW Gateway,GTW_canStatus,0x388,,,1,1,1,0,1,0,,Active if any frame detected on the bus,,,
 GTW_PARTY_faultConfinement,GTW Gateway,GTW_canStatus,0x388,,,11,2,1,0,1,0,,Fault confinement as per CAN spec,,,"{""0"":""ERROR_ACTIVE"",""1"":""ERROR_PASSIVE"",""2"":""BUS_OFF""}"
 GTW_PARTY_rxWarning,GTW Gateway,GTW_canStatus,0x388,,,7,1,1,0,1,0,,,,,
 GTW_PARTY_txWarning,GTW Gateway,GTW_canStatus,0x388,,,4,1,1,0,1,0,,,,,
 GTW_PCSCPU2mismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,45,1,1,0,1,0,,Reports the Power Conversion System AC charging core (PCSCPU2) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_PCSmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,46,1,1,0,1,0,,Reports the Power Conversion System (PCS) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_PCSpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,1,1,1,0,1,0,,,0,1,
 GTW_PMFmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,47,1,1,0,1,0,,Reports the front Pedal Monitor (PMF) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_PMFpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,26,1,1,0,1,0,,,0,1,
 GTW_PMRmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,48,1,1,0,1,0,,Reports the rear Pedal Monitor (PMR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_PMRpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,25,1,1,0,1,0,,,0,1,
 GTW_PMmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,60,1,1,0,1,0,,Reports the Pedal Monitor (PM) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_PTCmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,49,1,1,0,1,0,,Reports the Positive Temperature Coefficient (PTC) heater electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_PTCpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,22,1,1,0,1,0,,,0,1,
+GTW_RADCpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,14,1,1,0,1,0,,,0,1,
 GTW_RCMCALmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,50,1,1,0,1,0,,Reports the Restraint Control Module Calibration (RCMCAL) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_RCMmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,51,1,1,0,1,0,,Reports the Restraint Control Module (RCM) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_RCMpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,5,1,1,0,1,0,,,0,1,
 GTW_SCCMmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,52,1,1,0,1,0,,Reports the Steering Column Control Module (SCCM) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_SCCMpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,6,1,1,0,1,0,,,0,1,
 GTW_SDCRmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,53,1,1,0,1,0,,Reports the Secondary Disconnect Controller (SDCR) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
 GTW_SOS_ECALL_nRQST_BUF,GTW Gateway,GTW_adc4,0x11A,,,55,12,0,0,1,0,mV,SOS_ECALL_nRQST_BUF voltage,0,4094,
 GTW_SWCmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,54,1,1,0,1,0,,Reports the Steering Wheel Controller (SWC) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_SWCpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,23,1,1,0,1,0,,,0,1,
 GTW_THSmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,55,1,1,0,1,0,,Reports the Temperature Humidity Sensor (THS) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_TPMSpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,15,1,1,0,1,0,,,0,1,
 GTW_VCFRONTmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,56,1,1,0,1,0,,Reports the front vehicle controller (VCFRONT) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_VCFRONTpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,16,1,1,0,1,0,,,0,1,
 GTW_VCLEFTmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,57,1,1,0,1,0,,Reports the left vehicle controller (VCLEFT) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_VCLEFTpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,17,1,1,0,1,0,,,0,1,
 GTW_VCRIGHTmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,58,1,1,0,1,0,,Reports the right vehicle controller (VCRIGHT) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_VCRIGHTpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,18,1,1,0,1,0,,,0,1,
 GTW_VCSECmismatchFault,GTW Gateway,GTW_mismatchFault,0x55A,GTW_mismatchFaultIndex,1,59,1,1,0,1,0,,Reports the vehicle security controller (VCSEC) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle,,,
+GTW_VCSECpresent,GTW Gateway,GTW_factoryEcuPresent,0x560,,,7,1,1,0,1,0,,,0,1,
 GTW_VEH_canBusActivity,GTW Gateway,GTW_canStatus,0x388,,,0,1,1,0,1,0,,Active if any frame detected on the bus,,,
 GTW_VEH_faultConfinement,GTW Gateway,GTW_canStatus,0x388,,,9,2,1,0,1,0,,Fault confinement as per CAN spec,,,"{""0"":""ERROR_ACTIVE"",""1"":""ERROR_PASSIVE"",""2"":""BUS_OFF""}"
 GTW_VEH_rxWarning,GTW Gateway,GTW_canStatus,0x388,,,6,1,1,0,1,0,,,,,
@@ -14054,6 +14116,7 @@ GTW_ethernetTunerType,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,4
 GTW_exteriorColor,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,2,48,5,1,0,1,0,,,,,"{""0"":""RED_MULTICOAT"",""1"":""SOLID_BLACK"",""2"":""SILVER_METALLIC"",""3"":""MIDNIGHT_SILVER"",""5"":""DEEP_BLUE"",""6"":""PEARL_WHITE"",""7"":""MIDNIGHT_CHERRY_RED"",""8"":""ABYSS_BLUE"",""9"":""QUICKSILVER"",""10"":""ULTRA_RED"",""11"":""STEALTH_GREY"",""13"":""FROST_BLUE"",""14"":""GLACIER_BLUE"",""15"":""DIAMOND_BLACK"",""16"":""SILKROAD_SILVER"",""17"":""MARINE_BLUE"",""20"":""COASTAL_BLUE""}"
 GTW_exteriorMicrophoneType,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,9,63,1,1,0,1,0,,,,,"{""0"":""NONE"",""1"":""TWO_EXT_MICS""}"
 GTW_exteriorTrimType,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,2,8,1,1,0,1,0,,,,,"{""0"":""STANDARD_CHROME"",""1"":""SATIN_BLACK""}"
+GTW_factoryGated,GTW Gateway,GTW_carState,0x318,,,48,1,1,0,1,0,,,0,1,
 GTW_fasciaHarnessCleanPointType,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,9,31,2,1,0,1,0,,,,,"{""0"":""UNKOWN"",""1"":""PRE_CLEANPOINT"",""2"":""POST_CLEANPOINT""}"
 GTW_fasciaType,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,7,9,4,1,0,1,0,,,,,"{""0"":""ORIGINAL"",""3"":""BASE_BAYBERRY"",""4"":""PERFORMANCE_BAYBERRY"",""8"":""E41_BAYBERRY""}"
 GTW_forwardRadarHw,GTW Gateway,GTW_carConfig,0x7FF,GTW_carConfigMultiplexer,4,46,2,1,0,1,0,,,0,2,
@@ -14743,6 +14806,7 @@ HVP_fcContNegativeState,HVP High Voltage Processor,HVP_contactorState,0x20A,,,12
 HVP_fcContPositiveAuxOpen,HVP High Voltage Processor,HVP_contactorState,0x20A,,,6,1,1,0,1,0,,,,,
 HVP_fcContPositiveState,HVP High Voltage Processor,HVP_contactorState,0x20A,,,16,3,1,0,1,0,,Current state of the positive FC contactor,,,"{""0"":""CONTACTOR_STATE_SNA"",""1"":""CONTACTOR_STATE_OPEN"",""2"":""CONTACTOR_STATE_PRECHARGE"",""3"":""CONTACTOR_STATE_BLOCKED"",""4"":""CONTACTOR_STATE_PULLED_IN"",""5"":""CONTACTOR_STATE_OPENING"",""6"":""CONTACTOR_STATE_ECONOMIZED"",""7"":""CONTACTOR_STATE_WELDED""}"
 HVP_fcContVoltage,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debugMessageMultiplexer,4,16,12,1,0,0.1,0,V,,0,30,
+HVP_fcContactorHwFault,HVP High Voltage Processor,HVP_hvpFaults,0x682,,,13,1,1,0,1,0,,,0,1,
 HVP_fcContactorSetState,HVP High Voltage Processor,HVP_contactorState,0x20A,,,19,4,1,0,1,0,,The current state of the fast charge contactors,,,"{""0"":""CONTACTOR_SET_STATE_SNA"",""1"":""CONTACTOR_SET_STATE_OPEN"",""2"":""CONTACTOR_SET_STATE_CLOSING"",""3"":""CONTACTOR_SET_STATE_BLOCKED"",""4"":""CONTACTOR_SET_STATE_OPENING"",""5"":""CONTACTOR_SET_STATE_CLOSED"",""6"":""CONTACTOR_SET_STATE_PARTIAL_WELD"",""7"":""CONTACTOR_SET_STATE_WELDED"",""8"":""CONTACTOR_SET_STATE_POSITIVE_CLOSED"",""9"":""CONTACTOR_SET_STATE_NEGATIVE_CLOSED""}"
 HVP_fcCtrsClosingAllowed,HVP High Voltage Processor,HVP_contactorState,0x20A,,,29,1,1,0,1,0,,Flag indicating closure allowance of FC contactors,,,
 HVP_fcCtrsOpenNowRequested,HVP High Voltage Processor,HVP_contactorState,0x20A,,,27,1,1,0,1,0,,Flag indicated immediate-opening request of FC contactors,,,
@@ -14760,6 +14824,7 @@ HVP_hvilCalType,HVP High Voltage Processor,HVP_log1hz,0x77A,HVP_log1HzIndex,1,3,
 HVP_hvilDiag,HVP High Voltage Processor,HVP_contactorState,0x20A,,,40,4,1,0,1,0,,"Diagnostic status of HVIL circuit, including specific FAULT types",,,"{""0"":""UNKNOWN"",""1"":""OK"",""2"":""CURRENT_SOURCE_OR_GROUND_LEAK_FAULT"",""3"":""INTERNAL_OPEN_FAULT"",""4"":""VEHICLE_OPEN_FAULT"",""5"":""PENTHOUSE_LID_OPEN_FAULT"",""6"":""UNKNOWN_LOCATION_OPEN_FAULT"",""7"":""VEHICLE_NODE_FAULT"",""8"":""NO_12V_SUPPLY"",""9"":""VEHICLE_OR_PENTHOUSE_LID_OPEN_FAULT"",""10"":""DI_STATUS_MISSING_FAULT"",""11"":""PM_STATUS_MISSING_FAULT"",""12"":""DI_OPEN_FAULT"",""13"":""PM_OPEN_FAULT""}"
 HVP_hvilInVoltage,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debugMessageMultiplexer,4,28,12,1,0,0.1,0,V,Measured HVIL input voltage,0,30,
 HVP_hvilOutVoltage,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debugMessageMultiplexer,4,40,12,1,0,0.1,0,V,Measured HVIL output voltage,0,30,
+HVP_hvilStatus,HVP High Voltage Processor,HVP_hvpFaults,0x682,,,30,2,1,0,1,0,,,0,2,"{""0"":""UNKNOWN"",""1"":""OK"",""2"":""FAULT""}"
 HVP_infoIndex,HVP High Voltage Processor,HVP_info,0x7ED,,,0,8,1,0,1,0,,,,,
 HVP_log1HzIndex,HVP High Voltage Processor,HVP_log1hz,0x77A,,,0,3,1,0,1,0,,,,,
 HVP_matrixIndex,HVP High Voltage Processor,HVP_alertMatrix,0x3AA,,,0,4,1,0,1,0,,,,,
@@ -14767,6 +14832,7 @@ HVP_packContCoilCurrent,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_de
 HVP_packContNegativeState,HVP High Voltage Processor,HVP_contactorState,0x20A,,,0,3,1,0,1,0,,,,,"{""0"":""CONTACTOR_STATE_SNA"",""1"":""CONTACTOR_STATE_OPEN"",""2"":""CONTACTOR_STATE_PRECHARGE"",""3"":""CONTACTOR_STATE_BLOCKED"",""4"":""CONTACTOR_STATE_PULLED_IN"",""5"":""CONTACTOR_STATE_OPENING"",""6"":""CONTACTOR_STATE_ECONOMIZED"",""7"":""CONTACTOR_STATE_WELDED""}"
 HVP_packContPositiveState,HVP High Voltage Processor,HVP_contactorState,0x20A,,,3,3,1,0,1,0,,Current state of positive pack contactor,,,"{""0"":""CONTACTOR_STATE_SNA"",""1"":""CONTACTOR_STATE_OPEN"",""2"":""CONTACTOR_STATE_PRECHARGE"",""3"":""CONTACTOR_STATE_BLOCKED"",""4"":""CONTACTOR_STATE_PULLED_IN"",""5"":""CONTACTOR_STATE_OPENING"",""6"":""CONTACTOR_STATE_ECONOMIZED"",""7"":""CONTACTOR_STATE_WELDED""}"
 HVP_packContVoltage,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debugMessageMultiplexer,2,4,12,1,0,0.1,0,V,,0,30,
+HVP_packContactorHwFault,HVP High Voltage Processor,HVP_hvpFaults,0x682,,,12,1,1,0,1,0,,,0,1,
 HVP_packContactorSetState,HVP High Voltage Processor,HVP_contactorState,0x20A,,,8,4,1,0,1,0,,The current state of the pack contactors,,,"{""0"":""CONTACTOR_SET_STATE_SNA"",""1"":""CONTACTOR_SET_STATE_OPEN"",""2"":""CONTACTOR_SET_STATE_CLOSING"",""3"":""CONTACTOR_SET_STATE_BLOCKED"",""4"":""CONTACTOR_SET_STATE_OPENING"",""5"":""CONTACTOR_SET_STATE_CLOSED"",""6"":""CONTACTOR_SET_STATE_PARTIAL_WELD"",""7"":""CONTACTOR_SET_STATE_WELDED"",""8"":""CONTACTOR_SET_STATE_POSITIVE_CLOSED"",""9"":""CONTACTOR_SET_STATE_NEGATIVE_CLOSED""}"
 HVP_packCtrsClosingAllowed,HVP High Voltage Processor,HVP_contactorState,0x20A,,,35,1,1,0,1,0,,Flag indicating closure allowance of pack contactors,,,
 HVP_packCtrsOpenNowRequested,HVP High Voltage Processor,HVP_contactorState,0x20A,,,33,1,1,0,1,0,,Flag indicating immediate-opening request of pack contactors,,,
@@ -14796,6 +14862,7 @@ HVP_shuntSetTCRCoeffB,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debu
 HVP_shuntSetTCRCoeffC,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debugMessageMultiplexer,2,62,1,1,0,1,0,,,,,
 HVP_shuntSetTCRCoeffD,HVP High Voltage Processor,HVP_debugMessage,0x7AA,HVP_debugMessageMultiplexer,2,63,1,1,0,1,0,,,,,
 HVP_subUsageId,HVP High Voltage Processor,HVP_info,0x7ED,HVP_infoIndex,11,48,16,1,0,1,0,,HVP's assigned subusage ID,0,65535,
+HVP_udsResponseData,HVP High Voltage Processor,HVP_udsResponse,0x611,,,7,64,0,0,1,0,,,0,18446744073709551616,
 HVP_usageId,HVP High Voltage Processor,HVP_info,0x7ED,HVP_infoIndex,11,32,16,1,0,1,0,,HVP's assigned usage ID,0,65535,
 HVP_w001_WatchdogReset,HVP High Voltage Processor,HVP_alertMatrix,0x3AA,HVP_matrixIndex,0,4,1,1,0,1,0,,,,,
 HVP_w002_UnusedAlert2,HVP High Voltage Processor,HVP_alertMatrix,0x3AA,HVP_matrixIndex,0,5,1,1,0,1,0,,,,,
@@ -15142,6 +15209,7 @@ IBST_matrixIndex,IBST,IBST_alertMatrix,0x35D,,,0,4,1,0,1,0,,,,,
 IBST_sInputRodDriver,IBST,IBST_status,0x39D,,,21,12,1,0,0.015625,-5,mm,IBST estimated input rod stroke,-5,47,
 IBST_statusChecksum,IBST,IBST_status,0x39D,,,0,8,1,0,1,0,,,0,255,
 IBST_statusCounter,IBST,IBST_status,0x39D,,,8,4,1,0,1,0,,,0,15,
+IBST_udsResponseData,IBST,IBST_udsResponse,0x65D,,,7,64,0,0,1,0,,,0,18446744073709551616,
 ICR_a001_InternalWatchdog,ICR,ICR_alertLog,0x4B8,ICR_alertID,1,29,1,1,0,1,0,,,,,
 ICR_a001_WatchdogReset,ICR,ICR_alertMatrix,0x7EC,ICR_matrixIndex,0,4,1,1,0,1,0,,,,,
 ICR_a001_watchdogRTOSAppRun10MS,ICR,ICR_alertLog,0x4B8,ICR_alertID,1,27,1,1,0,1,0,,,,,
@@ -15274,6 +15342,7 @@ ICR_occupancyChecksum,ICR,ICR_occupancy,0x7EB,,,32,8,1,0,1,0,,,0,255,
 ICR_occupancyCounter,ICR,ICR_occupancy,0x7EB,,,28,4,1,0,1,0,,,0,15,
 ICR_rdMapDumpCompleted,ICR,ICR_status,0x7E9,,,7,1,1,0,1,0,,,,,
 ICR_sensorMode,ICR,ICR_status,0x7E9,,,0,4,1,0,1,0,,,,,"{""0"":""ICR_SENSOR_MODE_SENSOR_STOPPED"",""1"":""ICR_SENSOR_MODE_INTRUSTION"",""2"":""ICR_SENSOR_MODE_END_OF_LINE_TEST"",""3"":""ICR_SENSOR_INTERFACE_MODE_CW"",""4"":""ICR_SENSOR_INTERFACE_MODE_CALIBRATION"",""5"":""ICR_SENSOR_INTERFACE_MODE_HPM_TEST"",""6"":""ICR_SENSOR_INTERFACE_MODE_OCCUPANCY_DETECTION"",""7"":""ICR_SENSOR_INTERFACE_MODE_LPM_TEST"",""15"":""ICR_SENSOR_INTERFACE_MODE_ERROR""}"
+ICR_udsResponseData,ICR,ICR_udsResponse,0x658,,,7,64,0,0,1,0,,,0,18446744073709551616,
 ICR_userPresenceFilt,ICR,ICR_nonLocalizedOccupancy,0x29B,,,38,2,1,0,1,0,,Detection status of User Presence Detection feature,,,"{""0"":""SBRStatus_SEAT_UNOCCUPIED"",""1"":""SBRStatus_SEAT_OCCUPIED"",""2"":""SBRStatus_SEAT_FAULTED"",""3"":""SBRStatus_SEAT_SNA""}"
 ICR_userPresenceFunctionality,ICR,ICR_nonLocalizedOccupancy,0x29B,,,26,2,1,0,1,0,,,,,"{""0"":""CHILD_PRESENCE_DISABLED"",""1"":""CHILD_PRESENCE_ENABLED"",""2"":""CHILD_PRESENCE_SNA""}"
 ICR_userPresenceMLOutput,ICR,ICR_nonLocalizedOccupancy,0x29B,,,28,8,1,0,0.004,0,points,,0,1.016,
@@ -15821,6 +15890,7 @@ OCS1P_seatbackStableCap,OCS1P,OCS1P_status,0x303,,,50,1,1,0,1,0,,,,,
 OCS1P_statusChecksum,OCS1P,OCS1P_status,0x303,,,56,8,1,0,1,0,,,0,255,
 OCS1P_statusCounter,OCS1P,OCS1P_status,0x303,,,52,4,1,0,1,0,,,0,15,
 OCS1P_triggerSnapshot,OCS1P,OCS1P_status,0x303,,,11,5,1,0,1,0,,,,,"{""0"":""REASON_NONE"",""1"":""REASON_MISMATCH"",""2"":""REASON_REBASELINED"",""3"":""REASON_SANDWICH_LOW"",""4"":""REASON_SENSOR_OPEN"",""5"":""REASON_SENSOR_LOW_SHORT"",""6"":""REASON_ENTRY_TRIGGERED"",""7"":""REASON_ENTRY_FAILED"",""8"":""REASON_ENTRY_REBASELINED"",""9"":""REASON_EXIT_TRIGGERED"",""10"":""REASON_EXIT_FAILED"",""11"":""REASON_EXIT_REBASELINED"",""12"":""REASON_EMPTY_CONFIDENT_REBASELINED"",""13"":""REASON_EMPTY_CONFIDENT_EXITED"",""14"":""REASON_MISSED_ENTRY_EVENT"",""15"":""REASON_MISSED_EXIT_EVENT"",""16"":""REASON_BORDERLINE_CLASSIFICATION"",""17"":""REASON_LARGE_REBASELINE"",""18"":""REASON_SWITCHED_TO_HCB"",""19"":""REASON_LCB_TOO_HIGH""}"
+OCS1P_udsResponseData,OCS1P,OCS1P_udsResponse,0x653,,,0,64,1,0,1,0,,,0,18446744073709551616,
 OCS1P_w015_NVMMAlert,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,0,18,1,1,0,1,0,,,,,
 OCS1P_w121_sandwichOpen,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,2,4,1,1,0,1,0,,,,,
 OCS1P_w122_sandwichLow,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,2,5,1,1,0,1,0,,,,,
@@ -15855,6 +15925,14 @@ OCS1P_w153_rbExit1Exited,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,2,36,1,
 OCS1P_w154_rbExit2Exited1,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,2,37,1,1,0,1,0,,,,,
 OCS1P_w155_rbExit2Exited2,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,2,38,1,1,0,1,0,,,,,
 OCS1P_w156_seatbeltReminderUnavailable,OCS1P,OCS1P_alertMatrix,0x2FF,OCS1P_matrixIndex,2,39,1,1,0,1,0,,,,,
+ODIN_IsoTpPipeVCSEC0,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,7,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC1,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,15,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC2,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,23,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC3,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,31,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC4,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,39,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC5,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,47,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC6,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,55,8,0,0,1,0,,,0,255,
+ODIN_IsoTpPipeVCSEC7,ODIN,ODIN_IsoTpPipeVCSEC,0x480,,,63,8,0,0,1,0,,,0,255,
 PARK_a001_s1_overTemp,PARK,PARK_warningMatrix,0x37E,PARK_matrixIndex,0,4,1,1,0,1,0,,,,,
 PARK_a002_s1_internalFail,PARK,PARK_warningMatrix,0x37E,PARK_matrixIndex,0,5,1,1,0,1,0,,,,,
 PARK_a003_s1_linCommError,PARK,PARK_warningMatrix,0x37E,PARK_matrixIndex,0,6,1,1,0,1,0,,,,,
@@ -16356,6 +16434,7 @@ PARK_systemDtcPresent,PARK,PARK_status,0x31F,,,4,2,1,0,1,0,,Boolean indicating w
 PARK_systemStatusFront,PARK,PARK_sensorStatusFront,0x32E,,,24,2,1,0,1,0,,,,,"{""0"":""DISABLED"",""1"":""ENABLED"",""2"":""UNUSED""}"
 PARK_systemStatusRear,PARK,PARK_sensorStatusRear,0x33E,,,24,2,1,0,1,0,,,,,"{""0"":""DISABLED"",""1"":""ENABLED"",""2"":""UNUSED""}"
 PARK_tireFitment,PARK,PARK_status2,0x30E,,,19,2,1,0,1,0,,,,,"{""0"":""SQUARE"",""1"":""STAGGERED"",""2"":""NOT_USED""}"
+PARK_udsResponseData,PARK,PARK_udsResponse,0x65E,,,0,64,1,0,1,0,,,0,18446744073709551616,
 PCS2_a001_watchdogAlarmed,PCS2,PCS2_alertMatrix,0x3E4,PCS2_matrixIndex,0,4,1,1,0,1,0,,,,,
 PCS2_a002_canRationality,PCS2,PCS2_alertMatrix,0x3E4,PCS2_matrixIndex,0,5,1,1,0,1,0,,,,,
 PCS2_a003_assertionCode,PCS2,PCS2_alertLog,0x444,PCS2_alertID,3,16,2,1,0,1,0,,,,,
@@ -17674,7 +17753,9 @@ PCS_processorDieIdWafer,PCS Charger / DC-DC,PCS_logging,0x2C4,PCS_logMessageSele
 PCS_processorDieIdX,PCS Charger / DC-DC,PCS_logging,0x2C4,PCS_logMessageSelect,25,40,12,1,0,1,0,,,0,4095,
 PCS_processorDieIdY,PCS Charger / DC-DC,PCS_logging,0x2C4,PCS_logMessageSelect,25,52,12,1,0,1,0,,,0,4095,
 PCS_subUsageId,PCS Charger / DC-DC,PCS_info,0x3C4,PCS_infoIndex,11,48,16,1,0,1,0,,Sub-usage ID portion of component hardware ID as reported by application,0,65535,
+PCS_udsResponseData,PCS Charger / DC-DC,PCS_udsResponse,0x629,,,7,64,0,0,1,0,,,0,18446744073709551616,
 PCS_usageId,PCS Charger / DC-DC,PCS_info,0x3C4,PCS_infoIndex,11,32,16,1,0,1,0,,Usage ID portion of component hardware ID as reported by application,0,65535,
+PLG_udsResponseData,PLG,PLG_udsResponse,0x663,,,7,64,0,0,1,0,,,0,18446744073709551616,
 PMF_a001_absoluteTorque,PMF,PMF_alertMatrix,0x304,PMF_matrixIndex,0,4,1,1,0,1,0,,,,,
 PMF_a001_w0,PMF,PMF_alertLog,0x525,PMF_alertID,1,16,16,1,0,1,0,,,,,
 PMF_a001_w1,PMF,PMF_alertLog,0x525,PMF_alertID,1,32,16,1,0,1,0,,,,,
@@ -17958,6 +18039,7 @@ PMF_processorDieIdX,PMF,PMF_mfgData,0x524,,,32,12,1,0,1,0,,,0,4095,
 PMF_processorDieIdY,PMF,PMF_mfgData,0x524,,,44,12,1,0,1,0,,,0,4095,
 PMF_subUsageId,PMF,PMF_info,0x316,PMF_infoIndex,11,48,16,1,0,1,0,,,0,65535,
 PMF_udsProtocolVersion,PMF,PMF_info,0x316,PMF_infoIndex,20,8,8,1,0,1,0,,,0,255,
+PMF_udsResponseData,PMF,PMF_udsResponse,0x654,,,7,64,0,0,1,0,,,0,18446744073709551616,
 PMF_usageId,PMF,PMF_info,0x316,PMF_infoIndex,11,32,16,1,0,1,0,,,0,65535,
 PMR_a001_absoluteTorque,PMR,PMR_alertMatrix,0x386,PMR_matrixIndex,0,4,1,1,0,1,0,,,,,
 PMR_a001_w0,PMR,PMR_alertLog,0x5A6,PMR_alertID,1,16,16,1,0,1,0,,,,,
@@ -18263,6 +18345,7 @@ PMR_processorDieIdX,PMR,PMR_mfgData,0x7E7,,,32,12,1,0,1,0,,,0,4095,
 PMR_processorDieIdY,PMR,PMR_mfgData,0x7E7,,,44,12,1,0,1,0,,,0,4095,
 PMR_subUsageId,PMR,PMR_info,0x6D4,PMR_infoIndex,11,48,16,1,0,1,0,,,0,65535,
 PMR_udsProtocolVersion,PMR,PMR_info,0x6D4,PMR_infoIndex,20,8,8,1,0,1,0,,,0,255,
+PMR_udsResponseData,PMR,PMR_udsResponse,0x614,,,7,64,0,0,1,0,,,0,18446744073709551616,
 PMR_usageId,PMR,PMR_info,0x6D4,PMR_infoIndex,11,32,16,1,0,1,0,,,0,65535,
 PM_VDCA_TCSlipTargetMod_RA_Fwd,PM,PM_vdcDebug,0x7F6,PM_vdcDebugSelector,5,8,6,1,1,0.1,0,m/s,,-3,3,
 PM_VDCA_TCSlipTargetMod_RA_Rwd,PM,PM_vdcDebug,0x7F6,PM_vdcDebugSelector,5,16,6,1,1,0.1,0,m/s,,-3,3,
@@ -18727,6 +18810,7 @@ PM_shiftState,PM,PM_locState,0x1E5,,,1,3,1,0,1,0,,,,,"{""0"":""DI_GEAR_INVALID""
 PM_stationaryMode,PM,PM_locState,0x1E5,,,15,1,1,0,1,0,,,,,
 PM_subUsageId,PM,PM_info,0x7E6,PM_infoIndex,11,48,16,1,0,1,0,,,0,65535,
 PM_torqueCmdState,PM,PM_locState,0x1E5,,,9,4,1,0,1,0,,,,,"{""0"":""TorqueCmd_SNA"",""6"":""TorqueCmd_Valid"",""8"":""TorqueCmd_Invalid""}"
+PM_udsResponseData,PM,PM_udsResponse,0x640,,,7,64,0,0,1,0,,,0,18446744073709551616,
 PM_unparkAllowed,PM,PM_locState,0x1E5,,,14,1,1,0,1,0,,,,,
 PM_usageId,PM,PM_info,0x7E6,PM_infoIndex,11,32,16,1,0,1,0,,,0,65535,
 PM_vdcDebugSelector,PM,PM_vdcDebug,0x7F6,,,0,6,1,0,1,0,,,,,
@@ -18765,6 +18849,7 @@ PTC_tempPCB,PTC,PTC_sensorStatus,0x7E5,,,24,8,1,0,1,-40,degC,Heater printed circ
 PTC_tliErrorCount,PTC,PTC_feedbackStatus,0x207,,,56,4,1,0,1,0,,Heater top level interrupt error count,0,15,
 PTC_tliEvent,PTC,PTC_feedbackStatus,0x207,,,60,1,1,0,1,0,,Indicator of heater top level interrupt event,,,
 PTC_tliSource,PTC,PTC_feedbackStatus,0x207,,,61,3,1,0,1,0,,Heater top level interrupt event source,,,"{""0"":""NO_ERROR"",""1"":""IGBT_DRIVER"",""2"":""12_VOLTS"",""3"":""OCP"",""4"":""HV_OVER_VOLTAGE""}"
+PTC_udsResponseData,PTC,PTC_udsResponse,0x6D6,,,7,64,0,0,1,0,,,0,18446744073709551616,
 PTC_voltageHV,PTC,PTC_sensorStatus,0x7E5,,,32,10,1,0,0.5,0,V,Heater high voltage input voltage,0,511.5,
 RADC_a001_can1BusOff,RADC,RADC_alertMatrix0,0x502,,,1,1,1,0,1,0,,,,,
 RADC_a002_ecuAdcErrType,RADC,RADC_alertLog,0x555,RADC_alertID,2,16,8,1,0,1,0,,,,,
@@ -18924,6 +19009,7 @@ RADC_infoPcbaID,RADC,RADC_info,0x531,RADC_infoIndex,11,16,8,1,0,1,0,,,0,255,
 RADC_infoPlatformType,RADC,RADC_info,0x531,RADC_infoIndex,19,8,8,1,0,1,0,,,0,255,
 RADC_infoSubUsageID,RADC,RADC_info,0x531,RADC_infoIndex,11,48,16,1,0,1,0,,,0,65535,
 RADC_infoUsageID,RADC,RADC_info,0x531,RADC_infoIndex,11,32,16,1,0,1,0,,,0,65535,
+RADC_udsResponseData,RADC,RADC_udsResponse,0x681,,,7,64,0,0,1,0,,,0,18446744073709551616,
 RCM2_a000_crashDetected,RCM2,RCM2_alertMatrix,0x3F1,RCM2_matrixIndex,0,4,1,1,0,1,0,,,,,
 RCM2_a000_crashDetectedFront,RCM2,RCM2_alertLog,0x4E1,RCM2_alertID,0,16,1,1,0,1,0,,,,,
 RCM2_a000_crashDetectedHVpyro,RCM2,RCM2_alertLog,0x4E1,RCM2_alertID,0,24,1,1,0,1,0,,,,,
@@ -21929,6 +22015,7 @@ RCM_seatTrackPositionDrvr,RCM,RCM_status,0x211,,,24,2,1,0,1,0,,Driver seat track
 RCM_seatTrackPositionPass,RCM,RCM_status,0x211,,,26,2,1,0,1,0,,Passenger seat track position status,,,"{""0"":""RCM_SEAT_POSITION_NEAR"",""1"":""RCM_SEAT_POSITION_FAR"",""2"":""RCM_SEAT_POSITION_FAULTED""}"
 RCM_statusChecksum,RCM,RCM_status,0x211,,,0,8,1,0,1,0,,,0,255,
 RCM_statusCounter,RCM,RCM_status,0x211,,,8,4,1,0,1,0,,,0,15,
+RCM_udsResponseData,RCM,RCM_udsResponse,0x651,,,7,64,0,0,1,0,,,0,18446744073709551616,
 RCM_verticalAccel,RCM,RCM_inertial2,0x116,,,32,16,1,1,0.00125,0,m/s^2,Offset compensated vertical acceleration measured by the airbag ECU. ISO axis convention (positive up),-40.9575,39.2,
 RCM_verticalAccelQF,RCM,RCM_inertial2,0x116,,,50,1,1,0,1,0,,,,,"{""0"":""FAULTED"",""1"":""NOT_FAULTED""}"
 RCM_vinLearnFlag,RCM,RCM_status,0x211,,,22,2,1,0,1,0,,Reports whether the Vehicle Identification Number has been learned.,,,"{""0"":""RCM_VIN_NOT_STORED"",""1"":""RCM_VIN_STORED"",""2"":""RCM_VIN_STORED_MISMATCH""}"
@@ -22266,6 +22353,14 @@ SCCM_a126_turnIndicatorZMagnitude,SCCM,SCCM_alertLog,0x540,SCCM_alertID,126,40,8
 SCCM_a126_turnIndicatorZVectorOutOfRange,SCCM,SCCM_alertLog,0x540,SCCM_alertID,126,18,1,1,0,1,0,,,,,
 SCCM_alertID,SCCM,SCCM_alertLog,0x540,,,0,15,1,0,1,0,,,,,
 SCCM_alertState,SCCM,SCCM_alertLog,0x540,,,15,1,1,0,1,0,,,,,
+SCCM_functionalResponseData_0,SCCM,SCCM_udsResponse,0x690,,,7,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_1,SCCM,SCCM_udsResponse,0x690,,,15,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_2,SCCM,SCCM_udsResponse,0x690,,,23,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_3,SCCM,SCCM_udsResponse,0x690,,,31,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_4,SCCM,SCCM_udsResponse,0x690,,,39,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_5,SCCM,SCCM_udsResponse,0x690,,,47,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_6,SCCM,SCCM_udsResponse,0x690,,,55,8,0,0,1,0,,,0,255,
+SCCM_functionalResponseData_7,SCCM,SCCM_udsResponse,0x690,,,63,8,0,0,1,0,,,0,255,
 SCCM_highBeamStalkStatus,SCCM,SCCM_leftStalk,0x249,,,12,2,1,0,1,0,,Active state of high beam push/pull stalk position,,,"{""0"":""IDLE"",""1"":""PULL"",""2"":""PUSH""}"
 SCCM_infoAppCrc,SCCM,SCCM_info,0x330,SCCM_infoIndex,13,39,32,0,0,1,0,,,,,
 SCCM_infoAppSvnHash,SCCM,SCCM_info,0x330,SCCM_infoIndex,17,8,56,1,0,1,0,,,0,72057594037927936,
@@ -22624,6 +22719,7 @@ SDCR_infoPcbaId,SDCR,SDCR_info,0x63D,SDCR_infoIndex,11,8,8,1,0,1,0,,,0,255,
 SDCR_infoSubUsageId,SDCR,SDCR_info,0x63D,SDCR_infoIndex,11,40,16,1,0,1,0,,,0,65535,
 SDCR_infoUsageId,SDCR,SDCR_info,0x63D,SDCR_infoIndex,11,31,16,0,0,1,0,,,0,65535,
 SDCR_matrixIndex,SDCR,SDCR_alertMatrix,0x5BB,,,0,4,1,0,1,0,,,,,
+SDCR_udsResponseData,SDCR,SDCR_udsResponse,0x6FB,,,7,64,0,0,1,0,,,0,18446744073709551616,
 TAS_FDUTorqueCorruptionScale,TAS,TAS_dampingStates,0x576,,,42,4,1,0,0.075,0,-,,0,1.125,
 TAS_a001_InternalWatchdog,TAS,TAS_alertLog,0x72B,TAS_alertID,1,16,1,1,0,1,0,,,,,
 TAS_a001_WatchdogReset,TAS,TAS_alertMatrix,0x354,TAS_matrixIndex,0,4,1,1,0,1,0,,,,,
@@ -23109,6 +23205,7 @@ TAS_stepProtectRL,TAS,TAS_dampingStates,0x576,,,38,2,1,0,1,0,,,,,"{""0"":""TAS_A
 TAS_stepProtectRR,TAS,TAS_dampingStates,0x576,,,40,2,1,0,1,0,,,,,"{""0"":""TAS_ACTION_DISABLED"",""1"":""TAS_ACTION_STANDBY"",""2"":""TAS_ACTION_ARMED"",""3"":""TAS_ACTION_ACTIVE""}"
 TAS_targetLevel,TAS,TAS_states,0x20D,,,36,3,1,0,1,0,,Indicates target ride height.,,,"{""0"":""TAS_VERY_HIGH"",""1"":""TAS_HIGH"",""2"":""TAS_STANDARD"",""3"":""TAS_LOW"",""4"":""TAS_VERY_LOW""}"
 TAS_twistDetected,TAS,TAS_states,0x20D,,,31,1,1,0,1,0,,TAS has detected large amount of twist.,,,
+TAS_udsResponseData,TAS,TAS_udsResponse,0x65B,,,7,64,0,0,1,0,,,0,18446744073709551616,
 TAS_uiControlChecksum,TAS,TAS_uiControl,0x21A,,,32,8,1,0,1,0,,,0,255,
 TAS_uiControlCounter,TAS,TAS_uiControl,0x21A,,,28,4,1,0,1,0,,,0,15,
 TAS_uiHeightFL,TAS,TAS_uiAdaptiveActivity0,0x199,,,40,6,1,0,4,-128,mm,,-128,124,
@@ -23320,6 +23417,7 @@ TPMS_temperatureFL,TPMS,TPMS_data,0x322,,,8,8,1,0,1,-40,degC,front left tire tem
 TPMS_temperatureFR,TPMS,TPMS_data,0x322,,,24,8,1,0,1,-40,degC,front right tire temperature,-40,215,
 TPMS_temperatureRL,TPMS,TPMS_data,0x322,,,40,8,1,0,1,-40,degC,rear left tire temperature,-40,215,
 TPMS_temperatureRR,TPMS,TPMS_data,0x322,,,56,8,1,0,1,-40,degC,rear right tire temperature,-40,215,
+TPMS_udsResponseData,TPMS,TPMS_udsResponse,0x65F,,,7,64,0,0,1,0,,,0,18446744073709551616,
 TPMS_vehicleSpeedFail,TPMS,TPMS_StatusC,0x36F,,,45,1,1,0,1,0,,,,,
 TPMS_wheelPulseMissing,TPMS,TPMS_StatusC,0x36F,,,44,1,1,0,1,0,,,,,
 TRCM_a001_airbagsDisabled,TRCM,TRCM_alertMatrix,0x7EE,TRCM_matrixIndex,0,4,1,1,0,1,0,,,,,
@@ -24414,6 +24512,62 @@ TRCM_infoPcbaId,TRCM,TRCM_info,0x7E3,TRCM_infoIndex,11,8,8,1,0,1,0,,,0,255,
 TRCM_infoSubUsageId,TRCM,TRCM_info,0x7E3,TRCM_infoIndex,11,40,16,1,0,1,0,,,0,65535,
 TRCM_infoUsageId,TRCM,TRCM_info,0x7E3,TRCM_infoIndex,11,24,16,1,0,1,0,,,0,65535,
 TRCM_matrixIndex,TRCM,TRCM_alertMatrix,0x7EE,,,0,4,1,0,1,0,,,,,
+UDS_KOSTIAsccmRequestData,UDS,UDS_KOSTIAsccmRequest,0x669,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_bmsRequestData,UDS,UDS_bmsRequest,0x602,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_ccRequestData,UDS,UDS_ccRequest,0x62B,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_cmpRequestData,UDS,UDS_cmpRequest,0x603,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_cmpdRequestData,UDS,UDS_cmpdRequest,0x607,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_cpRequestData,UDS,UDS_cpRequest,0x60E,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_dasRequestData,UDS,UDS_dasRequest,0x649,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_diRequestData,UDS,UDS_diRequest,0x635,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_difRequestData,UDS,UDS_difRequest,0x605,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_dirRequestData,UDS,UDS_dirRequest,0x606,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_epas3pRequestData,UDS,UDS_epas3pRequest,0x630,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_epas3sRequestData,UDS,UDS_epas3sRequest,0x730,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_epblRequestData_H,UDS,UDS_epblRequest,0x624,,,7,32,0,0,1,0,,,0,4294967295,
+UDS_epblRequestData_L,UDS,UDS_epblRequest,0x624,,,39,32,0,0,1,0,,,0,4294967295,
+UDS_epbrRequestData_H,UDS,UDS_epbrRequest,0x626,,,7,32,0,0,1,0,,,0,4294967295,
+UDS_epbrRequestData_L,UDS,UDS_epbrRequest,0x626,,,39,32,0,0,1,0,,,0,4294967295,
+UDS_espRequestData,UDS,UDS_espRequest,0x645,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_functionalRequestDataCH,UDS,UDS_functionalRequest_CH,0x7DE,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_functionalRequestData_0,UDS,UDS_functionalRequest,0x7DF,,,7,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_1,UDS,UDS_functionalRequest,0x7DF,,,15,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_2,UDS,UDS_functionalRequest,0x7DF,,,23,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_3,UDS,UDS_functionalRequest,0x7DF,,,31,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_4,UDS,UDS_functionalRequest,0x7DF,,,39,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_5,UDS,UDS_functionalRequest,0x7DF,,,47,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_6,UDS,UDS_functionalRequest,0x7DF,,,55,8,0,0,1,0,,,0,255,
+UDS_functionalRequestData_7,UDS,UDS_functionalRequest,0x7DF,,,63,8,0,0,1,0,,,0,255,
+UDS_hvpRequestData,UDS,UDS_hvpRequest,0x610,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_ibstRequestData,UDS,UDS_ibstRequest,0x64D,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_icrRequestData,UDS,UDS_icrRequest,0x618,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_ocs1pRequestData,UDS,UDS_ocs1pRequest,0x643,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_parkRequestData,UDS,UDS_parkRequest,0x64E,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_pcsRequestData,UDS,UDS_pcsRequest,0x628,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_plgRequestData,UDS,UDS_plgRequest,0x662,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_pmRequestData,UDS,UDS_pmRequest,0x620,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_pmfRequestData,UDS,UDS_pmfRequest,0x644,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_pmrRequestData,UDS,UDS_pmrRequest,0x604,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_ptcRequestData,UDS,UDS_ptcRequest,0x6C6,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_radcRequestData,UDS,UDS_radcRequest,0x671,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_rcmRequestData,UDS,UDS_rcmRequest,0x641,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_sccmRequestData,UDS,UDS_sccmRequest,0x680,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_sdcrRequestData,UDS,UDS_sdcrRequest,0x6BB,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_tasRequestData,UDS,UDS_tasRequest,0x64B,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_thcRequestData_H,UDS,UDS_thcRequest,0x60F,,,7,32,0,0,1,0,,,0,4294967295,
+UDS_thcRequestData_L,UDS,UDS_thcRequest,0x60F,,,39,32,0,0,1,0,,,0,4294967295,
+UDS_tpmsRequestData,UDS,UDS_tpmsRequest,0x64F,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcbatt1RequestData,UDS,UDS_vcbatt1Request,0x62A,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcbatt2RequestData,UDS,UDS_vcbatt2Request,0x634,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcbattRequestData,UDS,UDS_vcbattRequest,0x664,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcfront1RequestData,UDS,UDS_vcfront1Request,0x62C,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcfront2RequestData,UDS,UDS_vcfront2Request,0x62E,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcfrontRequestData,UDS,UDS_vcfrontRequest,0x600,,,7,64,0,0,1,0,,,0,18446744073709551616,
+UDS_vcleftRequestData_H,UDS,UDS_vcleftRequest,0x622,,,7,32,0,0,1,0,,,0,4294967295,
+UDS_vcleftRequestData_L,UDS,UDS_vcleftRequest,0x622,,,39,32,0,0,1,0,,,0,4294967295,
+UDS_vcrightRequestData_H,UDS,UDS_vcrightRequest,0x608,,,7,32,0,0,1,0,,,0,4294967295,
+UDS_vcrightRequestData_L,UDS,UDS_vcrightRequest,0x608,,,39,32,0,0,1,0,,,0,4294967295,
+UDS_vcsecRequestData,UDS,UDS_vcsecRequest,0x60A,,,7,64,0,0,1,0,,,0,18446744073709551616,
 UIS_CamViewerServiceEnabled,UIS,UIS_log,0x420,UIS_logMux,451,32,32,1,0,1,0,,Reports whether the cam-viewer service is enabled.,0,4294967295,
 UIS_activeAppView,UIS,UIS_log,0x420,UIS_logMux,450,32,32,1,0,1,0,,Shows the currently displayed app,,,"{""0"":""UNKNOWN"",""1"":""NONE"",""2"":""DEVELOPMENT"",""3"":""XM"",""4"":""COLORIZER"",""5"":""CONTROLS"",""6"":""2048"",""7"":""CARWASH"",""8"":""CALICO"",""9"":""PURPLE"",""10"":""NAV"",""11"":""TEARDROP"",""12"":""LIME"",""13"":""SERVICE_APPS"",""14"":""TESLATARI"",""15"":""COBALT"",""16"":""MAMBU"",""17"":""THEATERVIEW"",""18"":""CARBONADO"",""19"":""DASHCAM"",""20"":""TOPAZ"",""21"":""CERULEAN"",""22"":""TUTORIAL"",""23"":""ENERGY"",""24"":""PHONE"",""25"":""TOYBOX"",""26"":""CALENDAR"",""27"":""WEB"",""28"":""ENTERTAINMENT"",""29"":""MEDIA"",""30"":""CHARGE"",""31"":""CAMERA"",""32"":""SPOTIFY"",""33"":""RADIO"",""34"":""STREAMING"",""35"":""CARAOKE"",""36"":""TUNEIN"",""37"":""TIDAL"",""38"":""THEATER"",""39"":""USB"",""40"":""SONIC"",""41"":""RELEASE_NOTES"",""42"":""QQMUSIC"",""43"":""OWNERS_MANUAL"",""44"":""NETEASE"",""45"":""CHESS"",""46"":""BLUETOOTH"",""47"":""XIMALAYA"",""48"":""ARCADE"",""49"":""SKETCH_PAD"",""50"":""BACKGAMMON"",""51"":""NAV_MEDIA"",""52"":""MESSAGES"",""53"":""CADMIUM"",""54"":""MINI_PROGRAMS"",""55"":""ZOOM"",""56"":""APPLE_MUSIC"",""57"":""ONBOARDING_MANUAL"",""58"":""APPLE_PODCASTS"",""59"":""AUDIBLE"",""60"":""AMAZON_MUSIC"",""61"":""ONLINE_RADIO"",""62"":""YUNTING"",""63"":""YOUTUBE_MUSIC"",""64"":""KUGOU"",""65"":""CARAOKE_WEB"",""66"":""HICAR"",""67"":""SODA_MUSIC""}"
 UIS_amdSocPkgPower,UIS,UIS_log,0x420,UIS_logMux,449,32,32,1,0,1,0,,,,,
@@ -28732,6 +28886,7 @@ VCBATT1_startPCSOVShutdownSelfTest,VCBATT1,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVS
 VCBATT1_startVCBattBridgeEFuseASICSelfTest,VCBATT1,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVSelfTestsIndex,1,18,1,1,0,1,0,,,,,
 VCBATT1_startVCFrontBridgeEFuseASICSelfTest,VCBATT1,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVSelfTestsIndex,1,23,1,1,0,1,0,,,,,
 VCBATT1_totalLVLoadCurrent,VCBATT1,VCBATT1_LVBMS_statusHigh,0x742,VCBATT1_lvbmsStatusHighIndex,2,8,14,1,1,0.1,0,A,Total LV load current of the vehicle.,-200,400,
+VCBATT1_udsResponseData,VCBATT1,VCBATT1_udsResponse,0x60D,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCBATT1_undervoltageSelfTestFaultInjectionReady,VCBATT1,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVSelfTestsIndex,1,55,1,1,0,1,0,,,,,
 VCBATT1_uvProtectionState,VCBATT1,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVSelfTestsIndex,1,51,4,1,0,1,0,,,,,"{""0"":""VC_UV_STATE_IDLE"",""1"":""VC_UV_STATE_SELF_TEST_SETUP"",""2"":""VC_UV_STATE_SELF_TEST_TURN_ON_LOADS"",""3"":""VC_UV_STATE_SELF_TEST_LOADS_ON"",""4"":""VC_UV_STATE_SELF_TEST_LOADS_GOING_DOWN"",""5"":""VC_UV_STATE_SELF_TEST_LOADS_GOING_DOWN_COMPLETE"",""6"":""VC_UV_STATE_SELF_TEST_CHECK_STUCK_OFF"",""7"":""VC_UV_STATE_SELF_TEST_CHECK_STUCK_OFF_COMPLETE"",""8"":""VC_UV_STATE_SELF_TEST_CHECK_STUCK_ON"",""9"":""VC_UV_STATE_SELF_TEST_CLEAN_UP"",""10"":""VC_UV_STATE_ARMED"",""11"":""VC_UV_STATE_TRIPPED"",""12"":""VC_UV_STATE_DELIBERATELY_TRIPPED""}"
 VCBATT1_vcbattBridgeEFuseASICSelfTestResult,VCBATT1,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVSelfTestsIndex,1,45,2,1,0,1,0,,Self-Test Result.,,,"{""0"":""VC_SELF_TEST_RESULT_INVALID"",""1"":""VC_SELF_TEST_RESULT_FAILED"",""2"":""VC_SELF_TEST_RESULT_PASSED""}"
@@ -29107,6 +29262,7 @@ VCBATT2_hibernationStateDBG,VCBATT2,VCBATT2_logging10Hz,0x577,,,32,3,1,0,1,0,,,,
 VCBATT2_matrixIndex,VCBATT2,VCBATT2_alertMatrix,0x3CF,,,0,4,1,0,1,0,,,,,
 VCBATT2_nmKeepAwakeReasonDBG,VCBATT2,VCBATT2_logging10Hz,0x577,,,11,4,1,0,1,0,,,,,"{""0"":""VCBATT_KEEPAWAKE_REASON_NONE_SNA"",""1"":""VCBATT_KEEPAWAKE_REASON_12V_SUPPORT_REQUIRED"",""2"":""VCBATT_KEEPAWAKE_REASON_UDS_ACTIVE"",""3"":""VCBATT_KEEPAWAKE_REASON_LVBMS_PACK_TEMPERATURE_LOW"",""4"":""VCBATT_KEEPAWAKE_REASON_HIBERNATION_RECOVERY"",""5"":""VCBATT_KEEPAWAKE_REASON_EXTERIOR_LIGHTS_ON"",""6"":""VCBATT_KEEPAWAKE_REASON_SLEEP_BYPASS_NOT_SUPPORTING"",""7"":""VCBATT_KEEPAWAKE_REASON_FRUNK_LIGHT"",""8"":""VCBATT_KEEPAWAKE_REASON_FRUNK_ACCESS_POST"",""9"":""VCBATT_KEEPAWAKE_REASON_CLOSURE_LATCH"",""10"":""VCBATT_KEEPAWAKE_REASON_HEADLAMP_CALIBRATION"",""11"":""VCBATT_KEEPAWAKE_REASON_HW_PROT_SELF_TESTS"",""12"":""VCBATT_KEEPAWAKE_REASON_CLOSURE_SWITCH"",""13"":""VCBATT_KEEPAWAKE_REASON_PERSIST_ACC_PORT_POWER"",""15"":""VCBATT_KEEPAWAKE_REASON_MULTIPLE""}"
 VCBATT2_nmWakeUpReasonDBG,VCBATT2,VCBATT2_logging10Hz,0x577,,,5,6,1,0,1,0,,,,,"{""0"":""VCBATT_WAKEUP_REASON_NONE"",""1"":""VCBATT_WAKEUP_REASON_RESET"",""2"":""VCBATT_WAKEUP_REASON_POWER_ON_RESET"",""3"":""VCBATT_WAKEUP_REASON_HIGH_SLEEP_CURRENT"",""4"":""VCBATT_WAKEUP_REASON_12V_SUPPORT_REQUIRED"",""5"":""VCBATT_WAKEUP_REASON_CAN"",""6"":""VCBATT_WAKEUP_REASON_LIN"",""7"":""VCBATT_WAKEUP_REASON_TRUNK_EXTERIOR_SWITCH"",""8"":""VCBATT_WAKEUP_REASON_FRUNK_ACCESS_POST"",""9"":""VCBATT_WAKEUP_REASON_FRUNK_ACCESS_POST_MONITOR"",""10"":""VCBATT_WAKEUP_REASON_FRUNK_LATCH_SWITCH"",""11"":""VCBATT_WAKEUP_REASON_IPC_CAN"",""12"":""VCBATT_WAKEUP_REASON_VEH_CAN"",""13"":""VCBATT_WAKEUP_REASON_PARTY_BDY_CAN"",""14"":""VCBATT_WAKEUP_REASON_FRUNK_EMERGENCY_RELEASE"",""15"":""VCBATT_WAKEUP_REASON_LVBMB"",""16"":""VCBATT_WAKEUP_REASON_AUTOPILOT_EFUSE"",""17"":""VCBATT_WAKEUP_REASON_VCLEFT_EFUSE"",""18"":""VCBATT_WAKEUP_REASON_EPAS_EFUSE"",""19"":""VCBATT_WAKEUP_REASON_HW_PROT_SELF_TESTS"",""20"":""VCBATT_WAKEUP_REASON_LIN_3"",""21"":""VCBATT_WAKEUP_REASON_FRONTPRIV"",""22"":""VCBATT_WAKEUP_REASON_PERSIST_ACC_PORT_POWER"",""23"":""VCBATT_WAKEUP_REASON_LV_BATTERY_CAPACITY_TEST"",""24"":""VCBATT_WAKEUP_REASON_LV_BATTERY_IMPEDANCE_TEST"",""32"":""VCBATT_WAKEUP_REASON_UNKNOWN""}"
+VCBATT2_udsResponseData,VCBATT2,VCBATT2_udsResponse,0x61F,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCBATT2_vehiclePowerStateDBG,VCBATT2,VCBATT2_logging10Hz,0x577,,,0,5,1,0,1,0,,,,,"{""0"":""VEHICLE_POWER_STATE_DBG_INIT"",""1"":""VEHICLE_POWER_STATE_DBG_LOW_POWER_AWAKE"",""2"":""VEHICLE_POWER_STATE_DBG_CONDITIONING"",""3"":""VEHICLE_POWER_STATE_DBG_ACCESSORY"",""4"":""VEHICLE_POWER_STATE_DBG_ACCESSORY_PLUS"",""5"":""VEHICLE_POWER_STATE_DBG_DRIVE"",""6"":""VEHICLE_POWER_STATE_DBG_OTA"",""7"":""VEHICLE_POWER_STATE_DBG_WAIT_FOR_HIGH_POWER"",""8"":""VEHICLE_POWER_STATE_DBG_TURN_ON_LV"",""9"":""VEHICLE_POWER_STATE_DBG_SYSTEM_CHECKS"",""10"":""VEHICLE_POWER_STATE_DBG_LV_ON"",""11"":""VEHICLE_POWER_STATE_DBG_JUMP_START"",""12"":""VEHICLE_POWER_STATE_DBG_LV_SHUTDOWN"",""13"":""VEHICLE_POWER_STATE_DBG_GO_QUIET"",""14"":""VEHICLE_POWER_STATE_DBG_SLEEP_SHUTDOWN"",""15"":""VEHICLE_POWER_STATE_DBG_LOW_POWER_STANDBY"",""16"":""VEHICLE_POWER_STATE_DBG_RESET""}"
 VCBATT_12vStatusForDrive,VCBATT,VCBATT_LVHealth,0x3B1,,,38,2,1,0,1,0,,,,,"{""0"":""NOT_READY_FOR_DRIVE_12V"",""1"":""READY_FOR_DRIVE_12V"",""2"":""EXIT_DRIVE_REQUESTED_12V""}"
 VCBATT_LVBatteryCannotSupportVehicle,VCBATT,VCBATT_pcsInterface,0x442,VCBATT_pcsInterfaceMuxIndex,0,47,1,1,0,1,0,,,,,
@@ -29129,6 +29285,7 @@ VCBATT_pcsLVMaxVoltageLimit,VCBATT,VCBATT_pcsInterface,0x442,VCBATT_pcsInterface
 VCBATT_pcsLVMinVoltageLimit,VCBATT,VCBATT_pcsInterface,0x442,VCBATT_pcsInterfaceMuxIndex,0,13,13,1,0,0.01,0,V,,0,65.535,
 VCBATT_pcsLVVoltageTarget,VCBATT,VCBATT_pcsInterface,0x442,VCBATT_pcsInterfaceMuxIndex,0,0,13,1,0,0.01,0,V,,0,65.535,
 VCBATT_pcsResistanceFiltered,VCBATT,VCBATT_pcsInterface,0x442,VCBATT_pcsInterfaceMuxIndex,1,0,16,1,0,0.01,0,mOhm,,0,655.34,
+VCBATT_udsResponseData,VCBATT,VCBATT_udsResponse,0x633,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCCC_infoAppCrc,VCCC,VCCC_info,0x7CA,VCCC_infoIndex,13,8,32,1,0,1,0,,,,,
 VCCC_infoAppGitHash,VCCC,VCCC_info,0x7CA,VCCC_infoIndex,17,8,56,1,0,1,0,,,0,72057594037927936,
 VCCC_infoAssemblyId,VCCC,VCCC_info,0x7CA,VCCC_infoIndex,11,16,8,1,0,1,0,,,0,255,
@@ -29584,6 +29741,7 @@ VCFRONT1_rightControllerEFuseState,VCFRONT1,VCFRONT1_eFuseDebugStatus,0x403,VCFR
 VCFRONT1_rightControllerEFuseTemperature,VCFRONT1,VCFRONT1_eFuseDebugStatus,0x403,VCFRONT1_eFuseDebugStatusIndex,1,32,8,1,0,1,-40,degC,,-40,150,
 VCFRONT1_rightControllerEFuseType,VCFRONT1,VCFRONT1_eFuseDebugStatus,0x403,VCFRONT1_eFuseDebugStatusIndex,1,53,2,1,0,1,0,,Reports the type of the right controller eFuse.,,,"{""0"":""UNKNOWN"",""1"":""VNF1048"",""2"":""VNF1248""}"
 VCFRONT1_rightControllerEFuseVoltage,VCFRONT1,VCFRONT1_eFuseDebugStatus,0x403,VCFRONT1_eFuseDebugStatusIndex,1,24,8,1,0,0.07,0,V,,0,17.85,
+VCFRONT1_udsResponseData,VCFRONT1,VCFRONT1_udsResponse,0x62D,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCFRONT2_a001_InternalWatchdog,VCFRONT2,VCFRONT2_alertLog,0x547,VCFRONT2_alertID,1,16,1,1,0,1,0,,,,,
 VCFRONT2_a001_WatchdogReset,VCFRONT2,VCFRONT2_alertMatrix,0x342,VCFRONT2_matrixIndex,0,4,1,1,0,1,0,,,,,
 VCFRONT2_a002_PowerLossReset,VCFRONT2,VCFRONT2_alertMatrix,0x342,VCFRONT2_matrixIndex,0,5,1,1,0,1,0,,,,,
@@ -30305,6 +30463,7 @@ VCFRONT2_d658_radiatorFanCircuitIssue,VCFRONT2,VCFRONT2_alertMatrix,0x342,VCFRON
 VCFRONT2_d659_radiatorFanCommLost,VCFRONT2,VCFRONT2_alertMatrix,0x342,VCFRONT2_matrixIndex,10,62,1,1,0,1,0,,,,,
 VCFRONT2_d660_coolantValveCircuitIssue,VCFRONT2,VCFRONT2_alertMatrix,0x342,VCFRONT2_matrixIndex,10,63,1,1,0,1,0,,,,,
 VCFRONT2_matrixIndex,VCFRONT2,VCFRONT2_alertMatrix,0x342,,,0,4,1,0,1,0,,,,,
+VCFRONT2_udsResponseData,VCFRONT2,VCFRONT2_udsResponse,0x62F,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCFRONT_12VARailStable,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,5,1,1,0,1,0,,,,,
 VCFRONT_12VAStable,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,5,1,1,0,1,0,,,,,
 VCFRONT_12VBRailStable,VCFRONT Front body controller,VCFRONT_status,0x2E1,VCFRONT_statusIndex,3,6,1,1,0,1,0,,,,,
@@ -33424,6 +33583,8 @@ VCFRONT_das1OkToUseHighPower,VCFRONT Front body controller,VCFRONT_okToUseHighPo
 VCFRONT_das2OkToUseHighPower,VCFRONT Front body controller,VCFRONT_okToUseHighPower,0x2D1,,,3,1,1,0,1,0,,,,,
 VCFRONT_dcr12VMilliOhms,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,0,16,8,1,0,1,0,mOhm,,0,255,
 VCFRONT_diPowerOnState,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,0,10,3,1,0,1,0,,,,,"{""0"":""DI_POWERED_OFF"",""1"":""DI_POWERED_ON_FOR_SUMMON"",""2"":""DI_POWERED_ON_FOR_STATIONARY_HEAT"",""3"":""DI_POWERED_ON_FOR_DRIVE"",""4"":""DI_POWER_GOING_DOWN"",""5"":""DI_POWERED_ON_FOR_WINCH""}"
+VCFRONT_difLVState,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,0,36,2,1,0,1,0,,,0,3,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
+VCFRONT_dirLVRequest,VCFRONT Front body controller,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,0,34,2,1,0,1,0,,,0,3,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
 VCFRONT_dischargePressureLimit,VCFRONT Front body controller,VCFRONT_logging1Hz,0x381,VCFRONT_logging1HzIndex,16,37,7,1,0,0.25,0,bar,,0,26,
 VCFRONT_dischargedIBSAmpHours,VCFRONT Front body controller,VCFRONT_eFuseDebugStatus,0x2F1,VCFRONT_eFuseDebugStatusIndex,17,24,16,1,0,1,0,Ah,,0,65535,
 VCFRONT_driverBuckleStatus,VCFRONT Front body controller,VCFRONT_vehicleStatus,0x3A1,VCFRONT_vehicleStatusMuxIndex,0,30,1,1,0,1,0,,,,,"{""0"":""UNBUCKLED"",""1"":""BUCKLED""}"
@@ -33847,6 +34008,7 @@ VCFRONT_turnIndicatorControlType,VCFRONT Front body controller,VCFRONT_status,0x
 VCFRONT_turnIndicatorStalk,VCFRONT Front body controller,VCFRONT_lighting,0x3F5,,,40,2,1,0,1,0,,,,,"{""0"":""SIMULATED_LATCHING_STALK_IDLE"",""1"":""SIMULATED_LATCHING_STALK_LEFT"",""2"":""SIMULATED_LATCHING_STALK_RIGHT"",""3"":""SIMULATED_LATCHING_STALK_SNA""}"
 VCFRONT_turnSignalLeftStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,,,22,2,1,0,1,0,,State of the left front turn signal light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
 VCFRONT_turnSignalRightStatus,VCFRONT Front body controller,VCFRONT_lightStatus,0x3F6,,,24,2,1,0,1,0,,State of the right front turn signal light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
+VCFRONT_udsResponseData,VCFRONT Front body controller,VCFRONT_udsResponse,0x601,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCFRONT_uiHighPower,VCFRONT Front body controller,VCFRONT_partyDebug,0x104,,,2,1,1,0,1,0,,,,,
 VCFRONT_userEnergyLossSinceCharge,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,3,8,14,1,0,0.01,0,kWh,Energy loss due to user interaction since last charge,0,163.83,
 VCFRONT_userEnergyLossSinceDrive,VCFRONT Front body controller,VCFRONT_parkedEnergyLoss,0x3BD,VCFRONT_energyLossIndex,1,8,14,1,0,0.01,0,kWh,Energy loss due to user interaction since last drive,0,163.83,
@@ -36273,6 +36435,8 @@ VCLEFT_trailerAuxCurrent,VCLEFT Left body controller,VCLEFT_status,0x3A2,VCLEFT_
 VCLEFT_trailerBrakeControllerCurrent,VCLEFT Left body controller,VCLEFT_status,0x3A2,VCLEFT_statusIndex,2,38,8,1,0,0.1,0,A,Value of the trailer brake controller HSD (high side driver) current sense.,0,25.5,
 VCLEFT_trailerDetected,VCLEFT Left body controller,VCLEFT_lightStatus,0x3E2,,,46,2,1,0,1,0,,Trailer light detection status,,,"{""0"":""TRAILER_LIGHT_DETECTION_SNA"",""1"":""TRAILER_LIGHT_DETECTION_FAULT"",""2"":""TRAILER_LIGHT_DETECTION_DETECTED"",""3"":""TRAILER_LIGHT_DETECTION_NOT_DETECTED""}"
 VCLEFT_turnSignalStatus,VCLEFT Left body controller,VCLEFT_lightStatus,0x3E2,,,4,2,1,0,1,0,,Status of rear left turn signal light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
+VCLEFT_udsResponseData_H,VCLEFT Left body controller,VCLEFT_udsResponse,0x623,,,7,32,0,0,1,0,,,0,4294967295,
+VCLEFT_udsResponseData_L,VCLEFT Left body controller,VCLEFT_udsResponse,0x623,,,39,32,0,0,1,0,,,0,4294967295,
 VCLEFT_vbatProt,VCLEFT Left body controller,VCLEFT_status,0x3A2,VCLEFT_statusIndex,0,23,12,1,0,0.005443676,0,V,,0,22.29185362131,
 VCLEFT_vcusbLinSchedule,VCLEFT Left body controller,VCLEFT_thermalLogging10Hz,0x290,VCLEFT_thermalLogging10HzIndex,3,55,2,1,0,1,0,,,,,"{""0"":""VCUSB_LIN_SCHEDULE_OFF"",""1"":""VCUSB_LIN_SCHEDULE_COMMAND_AND_RESPONSE"",""2"":""VCUSB_LIN_SCHEDULE_DIAGNOSTIC"",""3"":""VCUSB_LIN_SCHEDULE_COUNT""}"
 VCLEFT_windowCalibratedLF,VCLEFT Left body controller,VCLEFT_windowStatus,0x2C2,VCLEFT_windowStatusIndex,0,32,1,1,0,1,0,,Calibration status of left front window motor,,,
@@ -38356,6 +38520,7 @@ VCRIGHT_floorAirflowBlocked,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2
 VCRIGHT_foggingControllerResetReason,VCRIGHT Right body controller,VCRIGHT_hvacStatus,0x243,VCRIGHT_hvacStatusIndex,5,9,15,1,0,1,0,,,0,32767,
 VCRIGHT_foggingMonitorRuntime,VCRIGHT Right body controller,VCRIGHT_logging0point1Hz,0x70B,VCRIGHT_logging0point1HzIndex,9,4,12,1,0,10,0,Hours,Total runtime of the overnight camera fogging monitor,0,40950,
 VCRIGHT_frontBuckleStatus,VCRIGHT Right body controller,VCRIGHT_restraintStatus,0x31A,,,3,2,1,0,1,0,,Status of front right seatbelt buckle,,,"{""0"":""SEAT_BELT_BUCKLE_STATUS_UNLATCHED"",""1"":""SEAT_BELT_BUCKLE_STATUS_LATCHED"",""2"":""SEAT_BELT_BUCKLE_STATUS_FAULTED"",""3"":""SEAT_BELT_BUCKLE_NOT_CONFIGURED""}"
+VCRIGHT_frontBuckleSwitch,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,VCRIGHT_switchStatusIndex,0,40,2,1,0,1,0,,,0,3,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
 VCRIGHT_frontHandlePWM,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,VCRIGHT_switchStatusIndex,1,32,7,1,0,1,0,%,,0,100,
 VCRIGHT_frontHandlePulled,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,,,10,1,1,0,1,0,,,,,
 VCRIGHT_frontHandlePulledPersist,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,,,30,1,1,0,1,0,,,,,
@@ -38726,6 +38891,7 @@ VCRIGHT_rearCSeatHeatPowered,VCRIGHT Right body controller,VCRIGHT_seatStatus2,0
 VCRIGHT_rearCSeatHeatTmp,VCRIGHT Right body controller,VCRIGHT_seatStatus2,0x2E3,VCRIGHT_seatStatus2Index,2,24,12,1,1,0.05,0,degC,,-40,80,
 VCRIGHT_rearCSeatHeatTmpTarget,VCRIGHT Right body controller,VCRIGHT_seatStatus2,0x2E3,VCRIGHT_seatStatus2Index,2,36,8,1,1,0.5,0,degC,,0,60,
 VCRIGHT_rearCenterBuckleStatus,VCRIGHT Right body controller,VCRIGHT_restraintStatus,0x31A,,,5,2,1,0,1,0,,,,,"{""0"":""SEAT_BELT_BUCKLE_STATUS_UNLATCHED"",""1"":""SEAT_BELT_BUCKLE_STATUS_LATCHED"",""2"":""SEAT_BELT_BUCKLE_STATUS_FAULTED"",""3"":""SEAT_BELT_BUCKLE_NOT_CONFIGURED""}"
+VCRIGHT_rearCenterBuckleSwitch,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,VCRIGHT_switchStatusIndex,0,44,2,1,0,1,0,,,0,3,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
 VCRIGHT_rearDefrostCurrent,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,10,26,5,1,0,2,0,A,,0,62,
 VCRIGHT_rearDefrostState,VCRIGHT Right body controller,VCRIGHT_status,0x343,,,11,3,1,0,1,0,,,,,"{""0"":""HEATER_STATE_SNA"",""1"":""HEATER_STATE_ON"",""2"":""HEATER_STATE_OFF"",""3"":""HEATER_STATE_OFF_UNAVAILABLE"",""4"":""HEATER_STATE_FAULT""}"
 VCRIGHT_rearFogLightStatus,VCRIGHT Right body controller,VCRIGHT_lightStatus,0x3E3,,,8,2,1,0,1,0,,The desired on/off state of the rear fog light source(s),,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
@@ -38753,6 +38919,7 @@ VCRIGHT_rearRSeatHeatTmp,VCRIGHT Right body controller,VCRIGHT_seatStatus2,0x2E3
 VCRIGHT_rearRSeatHeatTmpTarget,VCRIGHT Right body controller,VCRIGHT_seatStatus2,0x2E3,VCRIGHT_seatStatus2Index,3,36,8,1,1,0.5,0,degC,,0,60,
 VCRIGHT_rearRelActuatorSwitch,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,,,13,1,1,0,1,0,,State of rear right door latch switch representing latch arm/unarmed. Disarms while door handle is pulled,,,
 VCRIGHT_rearRightBuckleStatus,VCRIGHT Right body controller,VCRIGHT_restraintStatus,0x31A,,,8,2,1,0,1,0,,,,,"{""0"":""SEAT_BELT_BUCKLE_STATUS_UNLATCHED"",""1"":""SEAT_BELT_BUCKLE_STATUS_LATCHED"",""2"":""SEAT_BELT_BUCKLE_STATUS_FAULTED"",""3"":""SEAT_BELT_BUCKLE_NOT_CONFIGURED""}"
+VCRIGHT_rearRightBuckleSwitch,VCRIGHT Right body controller,VCRIGHT_switchStatus,0x3C3,VCRIGHT_switchStatusIndex,0,46,2,1,0,1,0,,,0,3,"{""0"":""SWITCH_SNA"",""1"":""SWITCH_OFF"",""2"":""SWITCH_ON"",""3"":""SWITCH_FAULT""}"
 VCRIGHT_rearRightOccupancyStatus,VCRIGHT Right body controller,VCRIGHT_restraintStatus,0x31A,,,10,2,1,0,1,0,,,,,"{""0"":""SEAT_UNOCCUPIED"",""1"":""SEAT_OCCUPIED"",""2"":""SEAT_OCCUPANCY_FAULTED"",""3"":""SEAT_NOT_CONFIGURED""}"
 VCRIGHT_refrigDistCommanded,VCRIGHT Right body controller,VCRIGHT_hvacStatus,0x243,VCRIGHT_hvacStatusIndex,2,48,1,1,0,1,0,,The HVAC system has set its settings to run the refrigerant distribution routine,,,
 VCRIGHT_restraintStatusChecksum,VCRIGHT Right body controller,VCRIGHT_restraintStatus,0x31A,,,56,8,1,0,1,0,,,0,255,
@@ -38842,6 +39009,8 @@ VCRIGHT_trunkLatchStatus,VCRIGHT Right body controller,VCRIGHT_doorStatus,0x103,
 VCRIGHT_tunerLVState,VCRIGHT Right body controller,VCRIGHT_LVPowerState,0x225,,,8,2,1,0,1,0,,,,,"{""0"":""LV_OFF"",""1"":""LV_ON"",""2"":""LV_GOING_DOWN"",""3"":""LV_FAULT""}"
 VCRIGHT_turnSignalStatus,VCRIGHT Right body controller,VCRIGHT_lightStatus,0x3E3,,,4,2,1,0,1,0,,Status of rear right turn signal light source,,,"{""0"":""LIGHT_OFF"",""1"":""LIGHT_ON"",""2"":""LIGHT_FAULT"",""3"":""LIGHT_SNA""}"
 VCRIGHT_turnTailStopLightCurrent,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,10,35,4,1,0,0.1,0,A,"Reports the electrical current of the right rear turn indicator, right rear tail light, or right rear brake light",0,1.5,
+VCRIGHT_udsResponseData_H,VCRIGHT Right body controller,VCRIGHT_udsResponse,0x609,,,7,32,0,0,1,0,,,0,4294967295,
+VCRIGHT_udsResponseData_L,VCRIGHT Right body controller,VCRIGHT_udsResponse,0x609,,,39,32,0,0,1,0,,,0,4294967295,
 VCRIGHT_upperModeDrvActuatorState,VCRIGHT Right body controller,VCRIGHT_logging10Hz,0x263,VCRIGHT_logging10HzIndex,2,60,4,1,0,1,0,,Reports the HVAC actuator state,,,"{""0"":""HVAC_ACTUATOR_BRUSHED_STATE_INIT"",""1"":""HVAC_ACTUATOR_BRUSHED_STATE_POSITIVE_RUN"",""2"":""HVAC_ACTUATOR_BRUSHED_STATE_POSITIVE_STALL"",""3"":""HVAC_ACTUATOR_BRUSHED_STATE_NEGATIVE_RUN"",""4"":""HVAC_ACTUATOR_BRUSHED_STATE_NEGATIVE_STALL"",""5"":""HVAC_ACTUATOR_BRUSHED_STATE_RUNNING"",""6"":""HVAC_ACTUATOR_BRUSHED_STATE_BRAKING"",""7"":""HVAC_ACTUATOR_BRUSHED_STATE_FAULT"",""8"":""HVAC_ACTUATOR_BRUSHED_STATE_CONTROL_DISABLED"",""9"":""HVAC_ACTUATOR_BRUSHED_STATE_POSITIVE_BACKOFF"",""10"":""HVAC_ACTUATOR_BRUSHED_STATE_NEGATIVE_BACKOFF"",""11"":""HVAC_ACTUATOR_BRUSHED_STATE_RUNNING_OVERSHOOT""}"
 VCRIGHT_vbatFusedCurrent,VCRIGHT Right body controller,VCRIGHT_logging1Hz,0x2B3,VCRIGHT_logging1HzIndex,11,41,4,1,0,0.1,0,A,,0,1.4,
 VCRIGHT_vbatProt,VCRIGHT Right body controller,VCRIGHT_status,0x343,,,28,12,1,0,0.005443676,0,V,Input voltage monitor to controller,0,22.29185362131,
@@ -40632,6 +40801,14 @@ VCSEC_Device9WhitelistActiveTime,VCSEC,VCSEC_DeviceStatus,0x359,VCSEC_DeviceStat
 VCSEC_DeviceStatusIndex,VCSEC,VCSEC_DeviceStatus,0x359,,,0,7,1,0,1,0,,,,,
 VCSEC_ECUConfigCRC32,VCSEC,VCSEC_ecuConfig,0x720,,,0,32,1,0,1,0,,,,,
 VCSEC_IDRequested,VCSEC,VCSEC_authentication,0x339,,,7,1,1,0,1,0,,,,,
+VCSEC_IsoTpPipeODIN0,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,0,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN1,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,8,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN2,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,16,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN3,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,24,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN4,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,32,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN5,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,40,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN6,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,48,8,1,0,1,0,,,0,255,
+VCSEC_IsoTpPipeODIN7,VCSEC,VCSEC_IsoTpPipeODIN,0x3B9,,,56,8,1,0,1,0,,,0,255,
 VCSEC_IsoTpRemoteUI0,VCSEC,VCSEC_IsoTpPipeRemoteUI,0x1DA,,,0,8,1,0,1,0,,,,,
 VCSEC_IsoTpRemoteUI1,VCSEC,VCSEC_IsoTpPipeRemoteUI,0x1DA,,,8,8,1,0,1,0,,,,,
 VCSEC_IsoTpRemoteUI2,VCSEC,VCSEC_IsoTpPipeRemoteUI,0x1DA,,,16,8,1,0,1,0,,,,,
@@ -41769,6 +41946,7 @@ VCSEC_thermalDetectState,VCSEC,VCSEC_debug100ms,0x719,VCSEC_debug100msIndex,0,53
 VCSEC_thresholdOffsetVersion,VCSEC,VCSEC_debug100ms,0x719,VCSEC_debug100msIndex,0,8,3,1,0,1,0,,,0,7,
 VCSEC_trunkLockStatus,VCSEC,VCSEC_authentication,0x339,,,23,1,1,0,1,0,,Lock status of the trunk.,,,"{""0"":""CLOSURE_UNLOCKED"",""1"":""CLOSURE_LOCKED""}"
 VCSEC_trunkOpenSuggestionResponse,VCSEC,VCSEC_additionalAuthInfo,0x2F9,VCSEC_AdditionalAuthInfoIndex,5,40,3,1,0,1,0,,,,,"{""0"":""SUGGESTIONS_RESPONSE_UNKNOWN"",""1"":""SUGGESTIONS_RESPONSE_ACCEPTED_BY_USER"",""2"":""SUGGESTIONS_RESPONSE_REJECTED_BY_USER"",""3"":""SUGGESTIONS_RESPONSE_CLEARED_BY_USER"",""4"":""SUGGESTIONS_RESPONSE_TIMEOUT_CLEARED"",""5"":""SUGGESTIONS_RESPONSE_FAIL_TO_SETUP"",""6"":""SUGGESTIONS_RESPONSE_CLOSURE_SUGGESTION_DISABLED""}"
+VCSEC_udsResponseData,VCSEC,VCSEC_udsResponse,0x72A,,,7,64,0,0,1,0,,,0,18446744073709551616,
 VCSEC_usingModifiedMACAddress,VCSEC,VCSEC_authentication,0x339,,,40,1,1,0,1,0,,,,,
 VCSEC_vehicleLockStatus,VCSEC,VCSEC_authentication,0x339,,,12,4,1,0,1,0,,Lock status of the vehicle.,,,"{""0"":""LOCK_STATUS_SNA"",""1"":""LOCK_STATUS_ACTIVE_NFC_UNLOCKED"",""2"":""LOCK_STATUS_ACTIVE_NFC_LOCKED"",""3"":""LOCK_STATUS_PASSIVE_SELECTIVE_UNLOCKED"",""4"":""LOCK_STATUS_PASSIVE_BLE_UNLOCKED"",""5"":""LOCK_STATUS_PASSIVE_BLE_LOCKED"",""6"":""LOCK_STATUS_ACTIVE_SELECTIVE_UNLOCKED"",""7"":""LOCK_STATUS_ACTIVE_BLE_UNLOCKED"",""8"":""LOCK_STATUS_ACTIVE_BLE_LOCKED"",""9"":""LOCK_STATUS_ACTIVE_UI_UNLOCKED"",""10"":""LOCK_STATUS_ACTIVE_UI_LOCKED"",""11"":""LOCK_STATUS_ACTIVE_REMOTE_UNLOCKED"",""12"":""LOCK_STATUS_ACTIVE_REMOTE_LOCKED"",""13"":""LOCK_STATUS_CRASH_UNLOCKED"",""14"":""LOCK_STATUS_PASSIVE_INTERNAL_UNLOCKED"",""15"":""LOCK_STATUS_PASSIVE_INTERNAL_LOCKED""}"
 VCSEC_walkAwayLockKeyState,VCSEC,VCSEC_debug100ms,0x719,VCSEC_debug100msIndex,0,5,2,1,0,1,0,,Walk away lock key state of the vehicle,,,"{""0"":""SECURITY_WALKAWAYLOCKING_KEY_STATE_IDLE"",""1"":""SECURITY_WALKAWAYLOCKING_KEY_STATE_AWAITING_KEY_LEAVING"",""2"":""SECURITY_WALKAWAYLOCKING_KEY_WAIT_FOR_NO_KEYS_PRESENT"",""3"":""SECURITY_WALKAWAYLOCKING_NO_KEYS_PRESENT""}"
@@ -41905,6 +42083,11 @@ VC_infoHCMRBuildConfigId,VC,HCMR_info,0x7BC,VC_hcmrInfoIndex,0,8,16,1,0,1,0,,HCM
 VC_infoHCMRPcbaId,VC,HCMR_info,0x7BC,VC_hcmrInfoIndex,1,24,16,1,0,1,0,,HCM Diagnostic Field.,0,65535,
 VC_infoHCMRUsageId,VC,HCMR_info,0x7BC,VC_hcmrInfoIndex,1,40,16,1,0,1,0,,HCM Diagnostic Field.,0,65535,
 VC_infoWiperAppCRC,VC,VCFRONT_info,0x301,VCFRONT_infoIndex,31,32,32,1,0,1,0,,,,,
+VC_leftHeadlampAimedHorizontalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,4,26,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
+VC_leftHeadlampAimedVerticalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,4,6,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
+VC_leftHeadlampAimingState,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,3,51,3,1,0,1,0,,,0,7,"{""0"":""HEADLAMP_AIMING_STATE_IDLE"",""1"":""HEADLAMP_AIMING_STATE_CALIBRATING"",""2"":""HEADLAMP_AIMING_STATE_AIMING"",""3"":""HEADLAMP_AIMING_STATE_POST_AIMING_CALIBRATION"",""7"":""HEADLAMP_AIMING_STATE_RESERVED""}"
+VC_leftHeadlampCurrentHorizontalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,3,16,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
+VC_leftHeadlampCurrentVerticalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,3,6,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
 VC_leftHeadlampHealth,VC,VCFRONT_lightStatus,0x3F6,,,36,3,1,0,1,0,,Signal to report whether the left headlamp is powered and communicating,,,"{""0"":""SMART_LIGHT_HEALTH_OFF"",""1"":""SMART_LIGHT_HEALTH_WAIT"",""2"":""SMART_LIGHT_HEALTH_TIMEOUT"",""3"":""SMART_LIGHT_HEALTH_OK"",""4"":""SMART_LIGHT_HEALTH_COMMS_OK_NO_LIGHT"",""5"":""SMART_LIGHT_HEALTH_NOT_CONFIGURED"",""6"":""SMART_LIGHT_HEALTH_UPDATING"",""7"":""SMART_LIGHT_HEALTH_RESERVED""}"
 VC_leftHeadlampLMMVariant,VC,HCML_info,0x672,VC_hcmlInfoIndex,0,24,2,1,0,1,0,,Reports the detected left headlamp LED Matrix Manager (LMM) variant.,,,"{""0"":""LMM_VARIANT_SNA"",""1"":""LMM_VARIANT_NOT_LMM4_OR_UNKNOWN"",""2"":""LMM_VARIANT_LMM4""}"
 VC_lvBatteryDischargeRequest,VC,VC_pcsInterface,0x441,VC_pcsInterfaceMuxIndex,1,42,1,1,0,1,0,,,,,
@@ -41925,6 +42108,11 @@ VC_pcsManagementMuxIndex,VC,VC_pcsManagement,0x443,,,12,1,1,0,1,0,,,,,
 VC_pcsResistanceFiltered,VC,VC_pcsInterface,0x441,VC_pcsInterfaceMuxIndex,1,0,16,1,0,0.01,0,mOhm,,0,655.34,
 VC_persistAccPortPowerState,VC,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,1,41,3,1,0,1,0,,,,,"{""0"":""STATE_KEEP_AWAKE_DISARMED"",""1"":""STATE_KEEP_AWAKE_ARMED"",""2"":""STATE_KEEP_AWAKE_ACTIVE"",""3"":""STATE_KEEP_AWAKE_ALLOW_SLEEP"",""4"":""STATE_KEEP_AWAKE_OVERRIDDEN_NOTIFY_USER""}"
 VC_persistAccPowerRequestOverridden,VC,VCFRONT_LVPowerState,0x221,VCFRONT_LVPowerStateIndex,1,39,1,1,0,1,0,,,,,
+VC_rightHeadlampAimedHorizontalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,4,36,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
+VC_rightHeadlampAimedVerticalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,4,16,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
+VC_rightHeadlampAimingState,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,3,56,3,1,0,1,0,,,0,7,"{""0"":""HEADLAMP_AIMING_STATE_IDLE"",""1"":""HEADLAMP_AIMING_STATE_CALIBRATING"",""2"":""HEADLAMP_AIMING_STATE_AIMING"",""3"":""HEADLAMP_AIMING_STATE_POST_AIMING_CALIBRATION"",""7"":""HEADLAMP_AIMING_STATE_RESERVED""}"
+VC_rightHeadlampCurrentHorizontalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,3,36,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
+VC_rightHeadlampCurrentVerticalPosition,VC,VCFRONT_logging0point1Hz,0x709,VCFRONT_logging0point1HzIndex,3,26,10,1,0,1,0,Steps,,0,1022,"{""1022"":""INVALID_POSITION"",""1023"":""SNA""}"
 VC_rightHeadlampHealth,VC,VCFRONT_lightStatus,0x3F6,,,33,3,1,0,1,0,,Signal to report whether the right headlamp is powered and communicating,,,"{""0"":""SMART_LIGHT_HEALTH_OFF"",""1"":""SMART_LIGHT_HEALTH_WAIT"",""2"":""SMART_LIGHT_HEALTH_TIMEOUT"",""3"":""SMART_LIGHT_HEALTH_OK"",""4"":""SMART_LIGHT_HEALTH_COMMS_OK_NO_LIGHT"",""5"":""SMART_LIGHT_HEALTH_NOT_CONFIGURED"",""6"":""SMART_LIGHT_HEALTH_UPDATING"",""7"":""SMART_LIGHT_HEALTH_RESERVED""}"
 VC_rightHeadlampLMMVariant,VC,HCMR_info,0x7BC,VC_hcmrInfoIndex,0,24,2,1,0,1,0,,Reports the detected right headlamp LED Matrix Manager (LMM) variant.,,,"{""0"":""LMM_VARIANT_SNA"",""1"":""LMM_VARIANT_NOT_LMM4_OR_UNKNOWN"",""2"":""LMM_VARIANT_LMM4""}"
 VC_selfTestsRunningMode,VC,VCBATT1_LVSelfTests,0x45F,VCBATT1_LVSelfTestsIndex,1,56,3,1,0,1,0,,,,,"{""0"":""NORMAL"",""1"":""FACTORY_NORMAL"",""2"":""FACTORY_REDUCED"",""3"":""REDUCED"",""4"":""DISABLED""}"

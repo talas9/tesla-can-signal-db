@@ -12,7 +12,7 @@ Library API (no hard-coded paths; every path is an argument)
         Reads <fw_dir>/signals.csv plus, when present, messages.csv
         (message,length,cycle_ms,routes with routes = BUS:can_id:native|gateway
         joined by ';'), signal-meta.csv (message,signal,unit,enum_values,sna,
-        models,cross_checked) and log-verdicts.csv (fw,signal,message,eth_id,
+        models,cross_checked[,confidence]) and log-verdicts.csv (fw,signal,message,eth_id,
         can_id,bus,verdict,logs_seen,frames,in_range_pct,evidence; only
         fw/message/signal/verdict are used, evidence is never copied).
 
@@ -172,7 +172,10 @@ def node_of(name):
 
 
 def node_label(node):
-    return NODE_NAMES.get(node, '%s ECU' % node)
+    label = NODE_NAMES.get(node, '%s ECU' % node)
+    # node names are vehicle identifiers, but comments are prose and must pass
+    # the source-disclosure gate
+    return 'External diagnostic tester' if gated(label) else label
 
 
 def motorola_bits(start, length):
@@ -315,6 +318,8 @@ def normalise_rows(rows, signal_meta=None, verdicts=None):
             if not re.match(r'^[A-Za-z][A-Za-z0-9]*$', m):
                 raise ExportError('%s: bad model name %r' % (name, m))
         sig['cross_checked'] = (meta.get('cross_checked') or '0') == '1'
+        if not sig['confidence_hint'] and (meta.get('confidence') or '') in CONFIDENCE:
+            sig['confidence_hint'] = meta['confidence']
         v = verdicts.get((msg, name))
         if v in VERDICT_OVERRIDES:
             sig['confidence_hint'] = v
@@ -693,7 +698,7 @@ def _fit_frame(part, dlc):
 
 
 def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_meta=None, verdicts=None,
-           model_routing=None, frame_lengths=None, flagged=None):
+           model_routing=None, frame_lengths=None, flagged=None, can_only_messages=None):
     """Write the DBC + JSON files of one firmware under out_dir; return a report.
 
     Writes <out_dir>/<firmware>/ETH.{dbc,json}: every message under its
@@ -713,6 +718,9 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
                    A bus file uses the observed length (AllModels: the longest
                    observed); signals past it are left out ("not carried on
                    CAN"). Without an observation the layout length is kept.
+    can_only_messages: names of messages that exist only on a CAN bus (no
+                   Ethernet-side id); they appear only in the bus files their
+                   routes name, never in ETH files.
     flagged:       {(bus, can_id): reason} - on-bus ids whose frames do not
                    follow the Ethernet-side layout; left out of that bus file.
     msg_meta:      {message: {'length': int, 'cycle_ms': int}}.
@@ -727,9 +735,11 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
     model_routing = model_routing or {}
     frame_lengths = frame_lengths or {}
     flagged = flagged or {}
+    can_only = set(can_only_messages or ())
     signals, dropped = normalise_rows(signal_rows, signal_meta, verdicts)
+    eth_signals = [x for x in signals if x['message'] not in can_only]
     if routing is None:
-        return {'files': [_emit(out_dir, '%s/ETH' % firmware, signals, dropped, firmware, 'AllModels', 'ETH',
+        return {'files': [_emit(out_dir, '%s/ETH' % firmware, eth_signals, dropped, firmware, 'AllModels', 'ETH',
                                 msg_meta)], 'unresolved': []}
     _check_routing(routing)
     for r in model_routing.values():
@@ -743,6 +753,8 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
         """-> {bus: (signals, meta, dropped)} for one model."""
         buses = {}
         for x in subset:
+            if x['message'] in can_only and not rt.get(x['message']):
+                continue
             for bus, can_id, how in sorted(rt.get(x['message']) or [('ETH', None, 'native')]):
                 buses.setdefault(bus, {})[x['message']] = (can_id, how)
         out = {}
@@ -794,7 +806,7 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
     for x in signals:
         routed = [r for r in routing.get(x['message']) or () if r[0] != 'ETH']
         x['not_on_can'] = bool(routed) and (x['message'], x['name']) not in on_can
-    reports = [_emit(out_dir, '%s/ETH' % firmware, signals, dropped, firmware, 'AllModels', 'ETH', msg_meta)]
+    reports = [_emit(out_dir, '%s/ETH' % firmware, eth_signals, dropped, firmware, 'AllModels', 'ETH', msg_meta)]
     plans = [('AllModels', all_plan)]
     for model in sorted(model_routing):
         plans.append((model, plan(model, signals, model_routing[model], frame_lengths.get(model, {}))))
@@ -809,7 +821,7 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
             reports.append(_emit(out_dir, '%s/%s/%s' % (model, firmware, bus), keep, base_drop + bus_dropped,
                                  firmware, model, bus, meta))
     unresolved = {}
-    for x in signals:
+    for x in eth_signals:
         if not [r for r in routing.get(x['message']) or () if r[0] != 'ETH']:
             u = unresolved.setdefault(x['message'], [x['msg_id'], 0])
             u[1] += 1
@@ -1179,7 +1191,8 @@ def load_inputs(fwdir):
                 kw['routing'][r['message']] = routes
     ip = fwdir / 'id-map.csv'
     if ip.exists():
-        per_model = load_id_map(ip, kw['signal_rows'], fwdir.name)
+        kw['idmap_dropped'] = []
+        per_model = load_id_map(ip, kw['signal_rows'], fwdir.name, kw['idmap_dropped'])
         kw['routing'] = union_routing(per_model)
         kw['model_routing'] = {m: rt for m, rt in per_model.items() if m}
     fl = fwdir.parent / 'can-frame-lengths.csv'
@@ -1193,6 +1206,36 @@ def load_inputs(fwdir):
             if dlc not in FD_SIZES:
                 raise ExportError('%s: bad dlc %d' % (fl, dlc))
             kw['frame_lengths'].setdefault(r['model'], {})[(r['bus'], parse_int(r['can_id'], 'frame length can_id'))] = dlc
+    cp = fwdir.parent / 'can-only-signals.csv'
+    if cp.exists():
+        kw.setdefault('routing', {})
+        kw.setdefault('model_routing', {})
+        kw.setdefault('msg_meta', {})
+        kw.setdefault('signal_meta', {})
+        kw['can_only_messages'] = set()
+        known = {r['message'] for r in kw['signal_rows']}
+        for r in _read_csv(cp):
+            for c in ('models', 'bus', 'can_id', 'length', 'cycle_ms', 'message', 'signal', 'length_bits'):
+                if c not in r:
+                    raise ExportError('%s: missing column %s' % (cp, c))
+            msg = r['message']
+            if msg in known:
+                raise ExportError('%s: %s also has an Ethernet-side layout' % (cp, msg))
+            can_id = parse_int(r['can_id'], '%s can_id' % cp)
+            row = dict(r, eth_id=str(can_id), length=r['length_bits'])
+            kw['signal_rows'].append(row)
+            kw['can_only_messages'].add(msg)
+            route = (r['bus'], can_id, 'native')
+            for model in filter(None, r['models'].split(';')):
+                rt = kw['model_routing'].setdefault(model, {}).setdefault(msg, [])
+                if route not in rt:
+                    rt.append(route)
+            if route not in kw['routing'].setdefault(msg, []):
+                kw['routing'][msg].append(route)
+            kw['msg_meta'][msg] = {'length': parse_int(r['length'], msg + '.length'),
+                                   'cycle_ms': parse_int(r['cycle_ms'] or '0', msg + '.cycle_ms'),
+                                   'transmitter': 'Vector__XXX'}
+            kw['signal_meta'][(msg, r['signal'])] = {'confidence': r.get('confidence', '')}
     fp = fwdir.parent / 'can-flagged.csv'
     if fp.exists():
         kw['flagged'] = {}
@@ -1216,11 +1259,13 @@ def load_inputs(fwdir):
     return kw
 
 
-def load_id_map(path, signal_rows, firmware=None):
+def load_id_map(path, signal_rows, firmware=None, dropped=None):
     """Load a pluggable internal-id -> CAN-bus id map into export()'s routing.
 
     CSV columns: eth_id, bus, can_id (required); fw, model, message, how
     (optional). Returns {model: routing}; rows without a model go under ''.
+    Rows whose eth_id has no signal in signal_rows cannot be exported; each is
+    appended to `dropped` (if given) so callers can report it - never silent.
     eth_id/can_id may be decimal or 0x-hex; bus is an upper-case bus name
     (VEH, CH, PARTY, ...); how is 'native' (default) or 'gateway'. Rows whose
     fw differs from firmware are skipped. eth_id is joined to message names
@@ -1243,6 +1288,11 @@ def load_id_map(path, signal_rows, firmware=None):
         routing = per_model.setdefault(model, {})
         eth = parse_int(r['eth_id'], '%s eth_id' % path)
         if eth not in by_eth:
+            if dropped is not None:
+                dropped.append({'firmware': firmware or r.get('fw', ''), 'model': (r.get('model') or '').strip(),
+                                'eth_id': eth, 'bus': r['bus'].strip(),
+                                'can_id': parse_int(r['can_id'], '%s can_id' % path),
+                                'message': (r.get('message') or '').strip()})
             continue
         msg = by_eth[eth]
         if r.get('message') and r['message'].strip() and r['message'].strip() != msg:
@@ -1274,13 +1324,16 @@ def _build_all(repo, out_dir, id_map=None, unresolved=None):
         if fwdir.is_dir() and (fwdir / 'signals.csv').exists():
             kw = load_inputs(fwdir)
             if id_map:
-                per_model = load_id_map(id_map, kw['signal_rows'], fwdir.name)
+                kw['idmap_dropped'] = []
+                per_model = load_id_map(id_map, kw['signal_rows'], fwdir.name, kw['idmap_dropped'])
                 kw['routing'] = union_routing(per_model)
                 kw['model_routing'] = {m: rt for m, rt in per_model.items() if m}
+            idmap_dropped = kw.pop('idmap_dropped', [])
             res = export(out_dir=out_dir, **kw)
             reports += res['files']
             if unresolved is not None:
                 unresolved += res.get('unresolved', [])
+                unresolved += [dict(d, kind='idmap') for d in idmap_dropped]
     return reports
 
 
@@ -1398,10 +1451,16 @@ def main(argv=None):
             print('%-36s msgs=%d sigs=%d enums=%d validated=%d plausible=%d layout-only=%d contradicted=%d dropped=%d %s' % (
                 r['file'], r['messages'], r['signals'], r['enums'], r['validated'], r['plausible'],
                 r['layout_only'], r['contradicted'], r['dropped'], r['dropped_reasons']))
-        for u in unresolved:
+        msgs_u = [u for u in unresolved if u.get('kind') != 'idmap']
+        rows_u = [u for u in unresolved if u.get('kind') == 'idmap']
+        for u in msgs_u:
             print('UNRESOLVED (no CAN-bus id): %s %s eth_id=%d signals=%d' % (
                 u['firmware'], u['message'], u['eth_id'], u['signals']))
-        print('UNRESOLVED total: %d messages, %d signals' % (len(unresolved), sum(u['signals'] for u in unresolved)))
+        for u in rows_u:
+            print('IDMAP ROW WITHOUT LAYOUT (not exported): %s %s eth_id=0x%X -> %s 0x%X %s' % (
+                u['firmware'], u['model'] or '-', u['eth_id'], u['bus'], u['can_id'], u['message'] or '(unnamed)'))
+        print('UNRESOLVED total: %d messages, %d signals; id-map rows without layout: %d' % (
+            len(msgs_u), sum(u['signals'] for u in msgs_u), len(rows_u)))
         for d in diffs:
             print('DETERMINISM: ' + d)
         for e in errors[:200]:

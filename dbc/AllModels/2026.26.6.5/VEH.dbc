@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: APP BMS CC CMP CMPD CP DAS DI DIF DIR EPBL EPBR EVSE FC GTW HCML HCMR HVP ICR PCS PCS2 PM PMF PMR PTC SCCM SCM SCS SDCR TAS UMC V2G VC VCBATT VCBATT0 VCBATT1 VCBATT2 VCFRONT VCFRONT1 VCFRONT2 VCLEFT VCRIGHT VCSEAT2L VCSEAT2R VCSEC
+BU_: APP BMS CC CMP CMPD CP DAS DI DIF DIR EPBL EPBR EVSE FC GTW HCML HCMR HVP ICR PCS PCS2 PLG PM PMF PMR PTC SCCM SCM SCS SDCR TAS UMC V2G VC VCBATT VCBATT0 VCBATT1 VCBATT2 VCFRONT VCFRONT1 VCFRONT2 VCLEFT VCRIGHT VCSEAT2L VCSEAT2R VCSEC
 
 
 BO_ 1951 ADSP_audioVisualizer: 1 GTW
@@ -848,6 +848,10 @@ BO_ 1138 BMS_chargeInfo: 8 BMS
  SG_ BMS_timeToTripPlanChargingTarget : 48|11@1+ (1,0) [0|2046] "min" Vector__XXX
  SG_ BMS_useChargeTimeEstimate : 59|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 562 BMS_contactorRequest: 8 BMS
+ SG_ BMS_internalHvilSenseV : 16|16@1+ (0.001,0) [0|65.534] "V" Vector__XXX
+ SG_ BMS_hvilCoverVSense : 32|16@1+ (0.001,0) [0|65.534] "V" Vector__XXX
+
 BO_ 722 BMS_driveLimits: 8 BMS
  SG_ BMS_minBusVoltage : 0|16@1+ (0.02,0) [0|1200] "V" Vector__XXX
  SG_ BMS_maxBusVoltage : 16|16@1+ (0.02,0) [0|1200] "V" Vector__XXX
@@ -929,6 +933,8 @@ BO_ 882 BMS_log1: 8 BMS
  SG_ BMS_dcChargePowerLimit m5 : 20|12@1- (1,0) [-2048|2047] "kW" Vector__XXX
  SG_ BMS_acRealPowerRequest m5 : 32|16@1- (0.002,0) [-40|40] "kW" Vector__XXX
  SG_ BMS_maxExtIsoFcLinkV m5 : 48|13@1+ (0.134293735027,0) [0|1099.99998361] "V" Vector__XXX
+ SG_ BMS_minModeledPackTemp m6 : 8|11@1+ (0.1,-50) [-50|154.7] "C" Vector__XXX
+ SG_ BMS_maxModeledPackTemp m6 : 19|11@1+ (0.1,-50) [-50|154.7] "C" Vector__XXX
  SG_ BMS_energyMaxPredictedBrickTemp m13 : 8|8@1+ (1,-50) [-50|205] "C" Vector__XXX
  SG_ BMS_energyTempGradientAtMaxTemp m13 : 16|9@1+ (0.1,0) [0|51.1] "C" Vector__XXX
  SG_ BMS_energyWalkMaxSoc m13 : 25|10@1+ (0.1,0) [0|102.3] "%" Vector__XXX
@@ -983,6 +989,12 @@ BO_ 946 BMS_log2: 8 BMS
  SG_ BMS_temperatureCondition m21 : 43|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ BMS_thmGradientSlope m21 : 44|10@1- (0.01,0) [-5.12|5.11] "C/min" Vector__XXX
  SG_ BMS_thmGradient m21 : 56|8@1+ (0.1,0) [0|25.5] "C" Vector__XXX
+ SG_ BMS_epochTimeEstimate m29 : 8|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+ SG_ BMS_histogramStartTimeIrrational m30 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramDischargeThroughput m30 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramChargeThroughputIrr m30 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramTotalTimeIrrational m30 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BMS_histogramStorageDataIsLow m30 : 61|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ BMS_tempVsSocTotalChgEnergy m31 : 7|25@1+ (0.000149011611938,0) [0|4999.99985097] "wh/wh" Vector__XXX
  SG_ BMS_powerVsVoltageTotalChgEnergy m31 : 32|25@1+ (0.000149011611938,0) [0|4999.99985097] "wh/wh" Vector__XXX
  SG_ BMS_lifeModelOutputsAreTrustwort m31 : 57|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1007,6 +1019,8 @@ BO_ 946 BMS_log2: 8 BMS
  SG_ BMS_nominalEnergyRemainingBuffer m56 : 24|16@1+ (0.02,0) [0|1310.68] "kWh" Vector__XXX
  SG_ BMS_idealEnergyRemainingBuffered m56 : 40|16@1+ (0.02,0) [0|1310.68] "kWh" Vector__XXX
  SG_ BMS_largestSynchronizedCacErrorP m56 : 56|8@1+ (0.1,0) [0|25.4] "%" Vector__XXX
+ SG_ BMS_lifeModelSpreadMinOffset m60 : 8|10@1- (0.1,0) [-51.1|51.1] "Ah" Vector__XXX
+ SG_ BMS_lifeModelSpreadMaxOffset m60 : 18|10@1- (0.1,0) [-51.1|51.1] "Ah" Vector__XXX
  SG_ BMS_largestCacSpreadErrorLower m64 : 8|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_lifeModelAverageCac m64 : 20|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_lifeModelCacBrick1 m64 : 32|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
@@ -1018,6 +1032,7 @@ BO_ 946 BMS_log2: 8 BMS
  SG_ BMS_lifeModelMinCac m65 : 36|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_restingPointCacAvg m65 : 48|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_cacEstimationSource m65 : 60|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ BMS_packCalibrationBirthDateBinn m67 : 26|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ BMS_synchronizedCacMaxRaw m71 : 8|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_synchronizedCacMinRaw m71 : 20|12@1+ (0.1,0) [0|409.4] "Ah" Vector__XXX
  SG_ BMS_largestSyncCacErrorStartSoc m71 : 32|10@1+ (0.1,0) [0|102.2] "%" Vector__XXX
@@ -1138,7 +1153,7 @@ BO_ 674 BMS_rippleRequest: 7 BMS
  SG_ BMS_acRippleRequest : 50|3@1+ (1,0) [0|7] "" Vector__XXX
 
 BO_ 1834 BMS_serialNumber: 8 BMS
- SG_ BMS_serialNumberPage M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_serialNumberMultiplexer M : 0|2@1+ (1,0) [0|2] "" Vector__XXX
  SG_ BMS_packSerialNumberByte01 m0 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ BMS_packSerialNumberByte02 m0 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ BMS_packSerialNumberByte03 m0 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -1153,6 +1168,7 @@ BO_ 1834 BMS_serialNumber: 8 BMS
  SG_ BMS_packSerialNumberByte12 m1 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ BMS_packSerialNumberByte13 m1 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ BMS_packSerialNumberByte14 m1 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ BMS_packSerialBirthDateBinned m2 : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 658 BMS_socStatus: 8 BMS
  SG_ BMS_socMin : 0|10@1+ (0.1,0) [0|102.2] "%" Vector__XXX
@@ -1214,6 +1230,9 @@ BO_ 786 BMS_thermalStatus: 8 BMS
  SG_ BMS_activeCoolCellReferenceT m1 : 32|9@1+ (0.25,-25) [-25|100] "DegC" Vector__XXX
  SG_ BMS_activeHeatCellTargetT m1 : 41|9@1+ (0.25,-25) [-25|100] "DegC" Vector__XXX
  SG_ BMS_powerDissipation m1 : 50|10@1+ (0.02,0) [0|20] "kW" Vector__XXX
+
+BO_ 1554 BMS_udsResponse: 8 BMS
+ SG_ BMS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1071 BMS_v2xInfo: 7 BMS
  SG_ BMS_v2xSoe : 0|16@1+ (0.002,0) [0|100] "%" Vector__XXX
@@ -1420,6 +1439,9 @@ BO_ 679 CMPD_state: 8 CMPD
  SG_ CMPD_powerLimitTooLowToStart : 62|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CMPD_ready : 63|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1559 CMPD_udsResponse: 8 CMPD
+ SG_ CMPD_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 867 CMP_info: 8 CMP
  SG_ CMP_infoIndex M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ CMP_infoBuildType m10 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -1434,6 +1456,9 @@ BO_ 867 CMP_info: 8 CMP
  SG_ CMP_infoAppCrc m13 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ CMP_infoBootUdsProtoVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ CMP_infoBootCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1555 CMP_udsResponse: 8 CMP
+ SG_ CMP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1767 CP_IsoTpPipeToPncd: 8 CP
  SG_ CP_isoTpToPncdData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
@@ -2150,6 +2175,9 @@ BO_ 893 CP_thermalStatus: 8 CP
  SG_ CP_pinTemperature3 m1 : 24|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
  SG_ CP_pinTemperature4 m1 : 32|8@1+ (0.8039216,-55) [-55|149.99] "C" Vector__XXX
  SG_ CP_pinTemp4Velocity m1 : 40|10@1- (0.15748,0) [-80.47228|80.3148] "C/min" Vector__XXX
+
+BO_ 1566 CP_udsResponse: 8 CP
+ SG_ CP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1001 DAS_bodyControls: 8 DAS
  SG_ DAS_headlightRequest : 0|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -3003,6 +3031,9 @@ BO_ 1367 DIF_thermalControl: 5 DIF
  SG_ DIF_oilFlowReq : 24|8@1+ (0.1,0) [0|25.4] "LPM" Vector__XXX
  SG_ DIF_criticalFlowReq : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DIF_burnInStatus : 33|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1557 DIF_udsResponse: 8 DIF
+ SG_ DIF_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1445 DIR_alertLog: 8 DIR
  SG_ DIR_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -3891,6 +3922,9 @@ BO_ 1495 DIR_thermalControl: 5 DIR
  SG_ DIR_oilFlowReq : 24|8@1+ (0.1,0) [0|25.4] "LPM" Vector__XXX
  SG_ DIR_criticalFlowReq : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DIR_burnInStatus : 33|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1558 DIR_udsResponse: 8 DIR
+ SG_ DIR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1319 DI_alertLog: 8 DI
  SG_ DI_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -5514,6 +5548,10 @@ BO_ 680 EPBL_status: 8 EPBL
  SG_ EPBL_statusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ EPBL_statusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1573 EPBL_udsResponse: 8 EPBL
+ SG_ EPBL_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ EPBL_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
 BO_ 1448 EPBR_alertLog: 8 EPBR
  SG_ EPBR_alertID M : 0|9@1+ (1,0) [0|511] "" Vector__XXX
  SG_ EPBR_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -6392,6 +6430,10 @@ BO_ 744 EPBR_status: 8 EPBR
  SG_ EPBR_statusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ EPBR_statusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1575 EPBR_udsResponse: 8 EPBR
+ SG_ EPBR_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ EPBR_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
 BO_ 1662 EVSE_isoTpToVeh: 8 EVSE
  SG_ EVSE_isoTpToVehData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
@@ -6995,6 +7037,11 @@ BO_ 1962 HVP_debugMessage: 8 HVP
  SG_ HVP_battery12V m5 : 36|12@1+ (0.1,0) [0|30] "V" Vector__XXX
  SG_ HVP_fcLinkPositiveV m5 : 48|16@1- (0.1,0) [-550|550] "V" Vector__XXX
 
+BO_ 1666 HVP_hvpFaults: 8 HVP
+ SG_ HVP_packContactorHwFault : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVP_fcContactorHwFault : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HVP_hvilStatus : 30|2@1+ (1,0) [0|2] "" Vector__XXX
+
 BO_ 554 HVP_hvsControl: 4 HVP
  SG_ HVP_dcLinkVoltageRequest : 0|16@1- (0.1,0) [-550|550] "V" Vector__XXX
  SG_ HVP_pcsControlRequest : 16|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -7034,6 +7081,9 @@ BO_ 1914 HVP_log1hz: 8 HVP
  SG_ HVP_energyReserveMin m1 : 16|16@1- (0.001,0) [-32.768|32.767] "V" Vector__XXX
  SG_ HVP_energyReserveMax m1 : 32|16@1- (0.001,0) [-32.768|32.767] "V" Vector__XXX
  SG_ HVP_energyReserveAvg m1 : 48|16@1- (0.001,0) [-32.768|32.767] "V" Vector__XXX
+
+BO_ 1553 HVP_udsResponse: 8 HVP
+ SG_ HVP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1208 ICR_alertLog: 8 ICR
  SG_ ICR_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -7184,6 +7234,9 @@ BO_ 664 ICR_status: 4 ICR
  SG_ ICR_l2HeapUsage : 14|7@1+ (1,0) [0|127] "PCT" Vector__XXX
  SG_ ICR_intrusionStatus : 21|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ ICR_blockageScaledMLOutput : 23|8@1+ (0.004,0) [0|1.02] "points" Vector__XXX
+
+BO_ 1624 ICR_udsResponse: 8 ICR
+ SG_ ICR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1012 LS_lightShow: 8 GTW
  SG_ LS_lightShowIndex M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
@@ -7405,6 +7458,16 @@ BO_ 1012 LS_lightShow: 8 GTW
  SG_ LS_offroadLightBar3 m24 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ LS_offroadLightBar4 m24 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ LS_offroadLightBar5 m24 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1152 ODIN_IsoTpPipeVCSEC: 8 GTW
+ SG_ ODIN_IsoTpPipeVCSEC0 : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC1 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC2 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC3 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC4 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC5 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC6 : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ ODIN_IsoTpPipeVCSEC7 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 1092 PCS2_alertLog: 8 PCS2
  SG_ PCS2_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -8751,6 +8814,12 @@ BO_ 676 PCS_thermalStatus: 8 PCS
  SG_ PCS_ambientTemp : 44|11@1- (0.1,40) [-62.4|142.3] "C" Vector__XXX
  SG_ PCS_dcdcBusbarTemp : 55|9@1+ (0.2935421,0) [0|149.706471] "C" Vector__XXX
 
+BO_ 1577 PCS_udsResponse: 8 PCS
+ SG_ PCS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1635 PLG_udsResponse: 8 PLG
+ SG_ PLG_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1317 PMF_alertLog: 8 PMF
  SG_ PMF_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
  SG_ PMF_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -9036,6 +9105,9 @@ BO_ 790 PMF_info: 8 PMF
  SG_ PMF_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ PMF_udsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ PMF_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1620 PMF_udsResponse: 8 PMF
+ SG_ PMF_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1446 PMR_alertLog: 8 PMR
  SG_ PMR_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
@@ -9343,6 +9415,9 @@ BO_ 1748 PMR_info: 8 PMR
  SG_ PMR_platformTyp m19 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ PMR_udsProtocolVersion m20 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ PMR_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1556 PMR_udsResponse: 8 PMR
+ SG_ PMR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1444 PM_alertLog: 8 PM
  SG_ PM_alertID M : 0|7@1+ (1,0) [0|127] "" Vector__XXX
@@ -9785,6 +9860,9 @@ BO_ 485 PM_locState: 8 PM
  SG_ PM_locStateCounter : 53|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ PM_locStateChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1600 PM_udsResponse: 8 PM
+ SG_ PM_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1766 PNCD_IsoTpPipeToCp: 8 GTW
  SG_ PNCD_isoTpToCpData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
@@ -9811,6 +9889,9 @@ BO_ 647 PTC_sensorStatus: 8 PTC
  SG_ PTC_voltageHV : 32|10@1+ (0.5,0) [0|511.5] "V" Vector__XXX
  SG_ PTC_leftCurrentHV : 48|8@1+ (0.2,0) [0|50] "A" Vector__XXX
  SG_ PTC_rightCurrentHV : 56|8@1+ (0.2,0) [0|50] "A" Vector__XXX
+
+BO_ 1750 PTC_udsResponse: 8 PTC
+ SG_ PTC_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1344 SCCM_alertLog: 8 SCCM
  SG_ SCCM_alertID M : 0|15@1+ (1,0) [0|32767] "" Vector__XXX
@@ -10099,6 +10180,16 @@ BO_ 297 SCCM_steeringAngleSensor: 8 SCCM
  SG_ SCCM_steeringAngleSensorReservd1 : 46|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ SCCM_steeringAngleSensorReservd2 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ SCCM_steeringAngleSensorReservd3 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1680 SCCM_udsResponse: 8 SCCM
+ SG_ SCCM_functionalResponseData_0 : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_1 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_2 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_3 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_4 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_5 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_6 : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ SCCM_functionalResponseData_7 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 1356 SCM_alertLog: 8 SCM
  SG_ SCM_alertID M : 0|15@1+ (1,0) [0|32767] "" Vector__XXX
@@ -10434,6 +10525,17 @@ BO_ 1597 SDCR_info: 8 SDCR
  SG_ SDCR_infoSubUsageId m11 : 40|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ SDCR_infoAppCrc m13 : 15|32@0+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ SDCR_infoBootGitHash m18 : 8|56@1+ (1,0) [0|7.20575940379e+16] "" Vector__XXX
+
+BO_ 1787 SDCR_udsResponse: 8 SDCR
+ SG_ SDCR_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 792 SystemTimeUTC: 8 Vector__XXX
+ SG_ UTC_year : 0|8@1+ (1,2000) [2000|2255] "" Vector__XXX
+ SG_ UTC_month : 8|8@1+ (1,0) [1|12] "" Vector__XXX
+ SG_ UTC_seconds : 16|8@1+ (1,0) [0|59] "s" Vector__XXX
+ SG_ UTC_hour : 24|8@1+ (1,0) [0|23] "h" Vector__XXX
+ SG_ UTC_day : 32|8@1+ (1,0) [1|31] "" Vector__XXX
+ SG_ UTC_minutes : 40|8@1+ (1,0) [0|59] "min" Vector__XXX
 
 BO_ 1291 TAS_alertLog: 8 TAS
  SG_ TAS_alertID M : 0|9@1+ (1,0) [0|511] "" Vector__XXX
@@ -10902,6 +11004,9 @@ BO_ 525 TAS_states: 8 TAS
  SG_ TAS_statesCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ TAS_statesChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 1627 TAS_udsResponse: 8 TAS
+ SG_ TAS_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 409 TAS_uiAdaptiveActivity0: 8 TAS
  SG_ TAS_adaptiveActivityFL_C : 0|5@1+ (0.04,0) [0|1] "-" Vector__XXX
  SG_ TAS_adaptiveActivityFL_R : 5|5@1+ (0.04,0) [0|1] "-" Vector__XXX
@@ -10946,6 +11051,113 @@ BO_ 538 TAS_uiControl: 5 TAS
  SG_ TAS_restrictLevelingShowroom : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ TAS_uiControlCounter : 28|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ TAS_uiControlChecksum : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1641 UDS_KOSTIAsccmRequest: 8 GTW
+ SG_ UDS_KOSTIAsccmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1538 UDS_bmsRequest: 8 GTW
+ SG_ UDS_bmsRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1579 UDS_ccRequest: 8 GTW
+ SG_ UDS_ccRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1539 UDS_cmpRequest: 8 GTW
+ SG_ UDS_cmpRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1543 UDS_cmpdRequest: 8 GTW
+ SG_ UDS_cmpdRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1550 UDS_cpRequest: 8 GTW
+ SG_ UDS_cpRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1589 UDS_diRequest: 8 GTW
+ SG_ UDS_diRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1541 UDS_difRequest: 8 GTW
+ SG_ UDS_difRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1542 UDS_dirRequest: 8 GTW
+ SG_ UDS_dirRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1572 UDS_epblRequest: 8 GTW
+ SG_ UDS_epblRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_epblRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1574 UDS_epbrRequest: 8 GTW
+ SG_ UDS_epbrRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_epbrRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 2015 UDS_functionalRequest: 8 GTW
+ SG_ UDS_functionalRequestData_0 : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_1 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_2 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_3 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_4 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_5 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_6 : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ UDS_functionalRequestData_7 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1552 UDS_hvpRequest: 8 GTW
+ SG_ UDS_hvpRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1560 UDS_icrRequest: 8 GTW
+ SG_ UDS_icrRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1576 UDS_pcsRequest: 8 GTW
+ SG_ UDS_pcsRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1634 UDS_plgRequest: 8 GTW
+ SG_ UDS_plgRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1568 UDS_pmRequest: 8 GTW
+ SG_ UDS_pmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1604 UDS_pmfRequest: 8 GTW
+ SG_ UDS_pmfRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1540 UDS_pmrRequest: 8 GTW
+ SG_ UDS_pmrRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1734 UDS_ptcRequest: 8 GTW
+ SG_ UDS_ptcRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1664 UDS_sccmRequest: 8 GTW
+ SG_ UDS_sccmRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1723 UDS_sdcrRequest: 8 GTW
+ SG_ UDS_sdcrRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1611 UDS_tasRequest: 8 GTW
+ SG_ UDS_tasRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1548 UDS_vcbatt1Request: 8 GTW
+ SG_ UDS_vcbatt1RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1562 UDS_vcbatt2Request: 8 GTW
+ SG_ UDS_vcbatt2RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1633 UDS_vcbattRequest: 8 GTW
+ SG_ UDS_vcbattRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1580 UDS_vcfront1Request: 8 GTW
+ SG_ UDS_vcfront1RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1582 UDS_vcfront2Request: 8 GTW
+ SG_ UDS_vcfront2RequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1536 UDS_vcfrontRequest: 8 GTW
+ SG_ UDS_vcfrontRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1570 UDS_vcleftRequest: 8 GTW
+ SG_ UDS_vcleftRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_vcleftRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1544 UDS_vcrightRequest: 8 GTW
+ SG_ UDS_vcrightRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_vcrightRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1546 UDS_vcsecRequest: 8 GTW
+ SG_ UDS_vcsecRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1154 UI_IsoTpPipeRemoteVCSEC: 8 GTW
  SG_ UI_IsoTpRemoteVCSEC0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -11864,6 +12076,9 @@ BO_ 1285 UMC_smartAdapterInfo: 8 UMC
  SG_ SA_partNumRev m31 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ SA_currentLimit m31 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ SA_l1Voltage m31 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1320 UnixTimeSeconds: 4 Vector__XXX
+ SG_ UnixTimeSeconds : 7|32@0+ (1,0) [0|4294967295] "s" Vector__XXX
 
 BO_ 1949 V2G_evseLogData: 8 V2G
  SG_ V2G_evseLogDataSelect M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
@@ -13122,6 +13337,9 @@ BO_ 1030 VCBATT1_eFuseDebugStatus: 7 VCBATT1
  SG_ VCBATT1_autopilot1EFuseOCThresho m3 : 48|5@1+ (1,0) [0|31] "" Vector__XXX
  SG_ VCBATT1_autopilot1EFuseType m3 : 53|2@1+ (1,0) [0|3] "" Vector__XXX
 
+BO_ 1549 VCBATT1_udsResponse: 8 VCBATT1
+ SG_ VCBATT1_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1358 VCBATT2_alertLog: 8 VCBATT2
  SG_ VCBATT2_alertID M : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
  SG_ VCBATT2_alertState : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -13500,6 +13718,9 @@ BO_ 1399 VCBATT2_logging10Hz: 5 VCBATT2
  SG_ VCBATT2_LIN_bus_1_busErrorCount : 24|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ VCBATT2_hibernationStateDBG : 32|3@1+ (1,0) [0|7] "" Vector__XXX
 
+BO_ 1563 VCBATT2_udsResponse: 8 VCBATT2
+ SG_ VCBATT2_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 945 VCBATT_LVHealth: 5 VCBATT
  SG_ VCBATT_LVHealthChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ VCBATT_LVHealthCounter : 8|4@1+ (1,0) [0|15] "" Vector__XXX
@@ -13524,6 +13745,9 @@ BO_ 1090 VCBATT_pcsInterface: 8 VCBATT
  SG_ VCBATT_defaultPcsLVVoltageTarget m1 : 28|13@1+ (0.01,0) [0|65.535] "V" Vector__XXX
  SG_ VCBATT_lvHwProtSelfTestActive m1 : 41|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCBATT_lvBatteryDischargeRequest m1 : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1569 VCBATT_udsResponse: 8 VCBATT
+ SG_ VCBATT_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1335 VCFRONT1_alertLog: 8 VCFRONT1
  SG_ VCFRONT1_alertID M : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
@@ -13971,6 +14195,9 @@ BO_ 1027 VCFRONT1_eFuseDebugStatus: 7 VCFRONT1
  SG_ VCFRONT1_autopilot2EFuseHardShor m3 : 44|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCFRONT1_autopilot2EFuseOCThresh m3 : 48|5@1+ (1,0) [0|31] "" Vector__XXX
  SG_ VCFRONT1_autopilot2EFuseType m3 : 53|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1581 VCFRONT1_udsResponse: 8 VCFRONT1
+ SG_ VCFRONT1_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1351 VCFRONT2_alertLog: 8 VCFRONT2
  SG_ VCFRONT2_alertID M : 0|10@1+ (1,0) [0|1023] "" Vector__XXX
@@ -14697,6 +14924,9 @@ BO_ 834 VCFRONT2_alertMatrix: 8 VCFRONT2
  SG_ VCFRONT2_a697_leftHeadlampNotAim m11 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT2_a702_dynamicHeadlightLe m11 : 45|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1583 VCFRONT2_udsResponse: 8 VCFRONT2
+ SG_ VCFRONT2_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 609 VCFRONT_12VBatteryStatus: 8 VCFRONT
  SG_ VCFRONT_12VBatteryStatusIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCFRONT_good12VforUpdate : 46|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -14792,6 +15022,8 @@ BO_ 545 VCFRONT_LVPowerState: 8 VCFRONT
  SG_ VCFRONT_LVShuttingDown : 51|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_LVPowerStateCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VCFRONT_LVPowerStateChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCFRONT_dirLVRequest m0 : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCFRONT_difLVState m0 : 36|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCFRONT_cpLVRequest m1 : 8|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCFRONT_epasLVState m1 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCFRONT_hvcLVRequest m1 : 12|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -17853,6 +18085,16 @@ BO_ 1013 VCFRONT_lighting: 8 VCFRONT
 
 BO_ 1801 VCFRONT_logging0point1Hz: 8 VCFRONT
  SG_ VCFRONT_logging0point1HzIndex M : 0|6@1+ (1,0) [0|63] "" Vector__XXX
+ SG_ VC_leftHeadlampCurrentVerticalPo m3 : 6|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_leftHeadlampCurrentHorizontal m3 : 16|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_rightHeadlampCurrentVerticalP m3 : 26|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_rightHeadlampCurrentHorizonta m3 : 36|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_leftHeadlampAimingState m3 : 51|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VC_rightHeadlampAimingState m3 : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VC_leftHeadlampAimedVerticalPosi m4 : 6|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_rightHeadlampAimedVerticalPos m4 : 16|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_leftHeadlampAimedHorizontalPo m4 : 26|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
+ SG_ VC_rightHeadlampAimedHorizontalP m4 : 36|10@1+ (1,0) [0|1022] "Steps" Vector__XXX
  SG_ VC_hcmlFactoryOfOrigin m26 : 6|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VC_hcmlHellaPartNumberStatus m26 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VC_hcmlHellaPartNumber m26 : 9|32@1+ (1,0) [0|4294967295] "-" Vector__XXX
@@ -18311,6 +18553,9 @@ BO_ 1349 VCFRONT_systemStatus: 8 VCFRONT
  SG_ VCFRONT_loadShedPCSLeakyBktCtDBG m2 : 44|6@1+ (100,0) [0|6300] "mV" Vector__XXX
  SG_ VCFRONT_loadShedUI m2 : 50|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCFRONT_loadShedAutoPilot m2 : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1537 VCFRONT_udsResponse: 8 VCFRONT
+ SG_ VCFRONT_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 929 VCFRONT_vehicleStatus: 8 VCFRONT
  SG_ VCFRONT_vehicleStatusMuxIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -20720,6 +20965,10 @@ BO_ 386 VCLEFT_thermalStatus: 8 VCLEFT
  SG_ VCLEFT_hvac2RLeftVerticalPositio : 40|8@1+ (0.4,0) [0|100] "%" Vector__XXX
  SG_ VCLEFT_hvac2RRightLateralPositio : 48|8@1+ (0.4,0) [0|100] "%" Vector__XXX
  SG_ VCLEFT_hvac2RRightVerticalPositi : 56|8@1+ (0.4,0) [0|100] "%" Vector__XXX
+
+BO_ 1571 VCLEFT_udsResponse: 8 VCLEFT
+ SG_ VCLEFT_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ VCLEFT_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 706 VCLEFT_windowStatus: 8 VCLEFT
  SG_ VCLEFT_windowStatusIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -23247,6 +23496,9 @@ BO_ 835 VCRIGHT_status: 8 VCRIGHT
 
 BO_ 963 VCRIGHT_switchStatus: 8 VCRIGHT
  SG_ VCRIGHT_switchStatusIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_frontBuckleSwitch m0 : 40|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_rearCenterBuckleSwitch m0 : 44|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_rearRightBuckleSwitch m0 : 46|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ VCRIGHT_trunkExtReleasePressedPe m1 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ VCRIGHT_frontSeatTrackBack m1 : 2|2@1+ (1,0) [1|3] "" Vector__XXX
  SG_ VCRIGHT_frontSeatTrackForward m1 : 4|2@1+ (1,0) [1|3] "" Vector__XXX
@@ -23285,6 +23537,10 @@ BO_ 899 VCRIGHT_thsStatus: 8 VCRIGHT
  SG_ VCRIGHT_thsSolarLoadVisible : 43|10@1+ (2,0) [0|2044] "W/m2" Vector__XXX
  SG_ VCRIGHT_estimatedThsSolarLoad : 53|10@1+ (1,0) [0|1022] "W/m2" Vector__XXX
  SG_ VCRIGHT_hvacFastLoggingEnabled : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1545 VCRIGHT_udsResponse: 8 VCRIGHT
+ SG_ VCRIGHT_udsResponseData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ VCRIGHT_udsResponseData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 1059 VCRIGHT_vehNm: 7 VCRIGHT
  SG_ VCRIGHT_nmGoingToSleep : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -25159,6 +25415,16 @@ BO_ 857 VCSEC_DeviceStatus: 8 VCSEC
  SG_ VCSEC_Device19ManufacturerHashBi m119 : 8|24@1+ (1,0) [0|16777215] "" Vector__XXX
  SG_ VCSEC_Device19BuildNumberHashBit m119 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
+BO_ 953 VCSEC_IsoTpPipeODIN: 8 VCSEC
+ SG_ VCSEC_IsoTpPipeODIN0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCSEC_IsoTpPipeODIN7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
 BO_ 474 VCSEC_IsoTpPipeRemoteUI: 8 VCSEC
  SG_ VCSEC_IsoTpRemoteUI0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ VCSEC_IsoTpRemoteUI1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -26269,6 +26535,9 @@ BO_ 281 VCSEC_requests2: 4 VCSEC
  SG_ VCSEC_mobileToAPRequest : 23|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCSEC_riderKeyPresent : 26|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 1547 VCSEC_udsResponse: 8 VCSEC
+ SG_ VCSEC_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
 BO_ 1850 VC_LVBMS_brickMeasurements: 8 VC
  SG_ VC_LVBMS_brickMeasurementsMultip M : 0|6@1+ (1,0) [0|63] "" Vector__XXX
  SG_ VC_LVBMS_brickVoltage1 m0 : 8|13@1+ (0.001,0) [0|6.535] "V" Vector__XXX
@@ -26386,6 +26655,26 @@ BO_ 1107 VEH_billing: 4 GTW
 BO_ 1651 VEH_isoTpToEvse: 8 GTW
  SG_ VEH_isoTpToEvseData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
+BO_ 1029 VINbroadcast: 8 Vector__XXX
+ SG_ VIN_muxID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char01 m16 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char02 m16 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char03 m16 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char04 m17 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char05 m17 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char06 m17 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char07 m17 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char08 m17 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char09 m17 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char10 m17 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char11 m18 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char12 m18 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char13 m18 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char14 m18 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char15 m18 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char16 m18 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VIN_char17 m18 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
 BO_TX_BU_ 1951 : GTW;
 BO_TX_BU_ 909 : APP;
 BO_TX_BU_ 1343 : BMS;
@@ -26393,6 +26682,7 @@ BO_TX_BU_ 800 : BMS;
 BO_TX_BU_ 818 : BMS;
 BO_TX_BU_ 1025 : BMS;
 BO_TX_BU_ 1138 : BMS;
+BO_TX_BU_ 562 : BMS;
 BO_TX_BU_ 722 : BMS;
 BO_TX_BU_ 850 : BMS;
 BO_TX_BU_ 306 : BMS;
@@ -26410,6 +26700,7 @@ BO_TX_BU_ 658 : BMS;
 BO_TX_BU_ 1170 : BMS;
 BO_TX_BU_ 530 : BMS;
 BO_TX_BU_ 786 : BMS;
+BO_TX_BU_ 1554 : BMS;
 BO_TX_BU_ 1071 : BMS;
 BO_TX_BU_ 754 : BMS;
 BO_TX_BU_ 810 : BMS;
@@ -26420,7 +26711,9 @@ BO_TX_BU_ 797 : CC;
 BO_TX_BU_ 812 : CC;
 BO_TX_BU_ 870 : CMPD;
 BO_TX_BU_ 679 : CMPD;
+BO_TX_BU_ 1559 : CMPD;
 BO_TX_BU_ 867 : CMP;
+BO_TX_BU_ 1555 : CMP;
 BO_TX_BU_ 1767 : CP;
 BO_TX_BU_ 1294 : CP;
 BO_TX_BU_ 798 : CP;
@@ -26433,6 +26726,7 @@ BO_TX_BU_ 1885 : CP;
 BO_TX_BU_ 989 : CP;
 BO_TX_BU_ 605 : CP;
 BO_TX_BU_ 893 : CP;
+BO_TX_BU_ 1566 : CP;
 BO_TX_BU_ 1001 : DAS;
 BO_TX_BU_ 1318 : DIF;
 BO_TX_BU_ 854 : DIF;
@@ -26440,6 +26734,7 @@ BO_TX_BU_ 634 : DIF;
 BO_TX_BU_ 741 : DIF;
 BO_TX_BU_ 886 : DIF;
 BO_TX_BU_ 1367 : DIF;
+BO_TX_BU_ 1557 : DIF;
 BO_TX_BU_ 1445 : DIR;
 BO_TX_BU_ 935 : DIR;
 BO_TX_BU_ 2005 : DIR;
@@ -26449,6 +26744,7 @@ BO_TX_BU_ 917 : DIR;
 BO_TX_BU_ 614 : DIR;
 BO_TX_BU_ 789 : DIR;
 BO_TX_BU_ 1495 : DIR;
+BO_TX_BU_ 1558 : DIR;
 BO_TX_BU_ 1319 : DI;
 BO_TX_BU_ 871 : DI;
 BO_TX_BU_ 694 : DI;
@@ -26465,12 +26761,14 @@ BO_TX_BU_ 1992 : EPBL;
 BO_TX_BU_ 648 : EPBL;
 BO_TX_BU_ 743 : EPBL;
 BO_TX_BU_ 680 : EPBL;
+BO_TX_BU_ 1573 : EPBL;
 BO_TX_BU_ 1448 : EPBR;
 BO_TX_BU_ 1000 : EPBR;
 BO_TX_BU_ 2024 : EPBR;
 BO_TX_BU_ 552 : EPBR;
 BO_TX_BU_ 742 : EPBR;
 BO_TX_BU_ 744 : EPBR;
+BO_TX_BU_ 1575 : EPBR;
 BO_TX_BU_ 1662 : EVSE;
 BO_TX_BU_ 1322 : FC;
 BO_TX_BU_ 895 : FC;
@@ -26494,9 +26792,11 @@ BO_TX_BU_ 1290 : HVP;
 BO_TX_BU_ 938 : HVP;
 BO_TX_BU_ 522 : HVP;
 BO_TX_BU_ 1962 : HVP;
+BO_TX_BU_ 1666 : HVP;
 BO_TX_BU_ 554 : HVP;
 BO_TX_BU_ 784 : HVP;
 BO_TX_BU_ 1914 : HVP;
+BO_TX_BU_ 1553 : HVP;
 BO_TX_BU_ 1208 : ICR;
 BO_TX_BU_ 952 : ICR;
 BO_TX_BU_ 941 : ICR;
@@ -26504,7 +26804,9 @@ BO_TX_BU_ 667 : ICR;
 BO_TX_BU_ 536 : ICR;
 BO_TX_BU_ 670 : ICR;
 BO_TX_BU_ 664 : ICR;
+BO_TX_BU_ 1624 : ICR;
 BO_TX_BU_ 1012 : GTW;
+BO_TX_BU_ 1152 : GTW;
 BO_TX_BU_ 1092 : PCS2;
 BO_TX_BU_ 996 : PCS2;
 BO_TX_BU_ 740 : PCS2;
@@ -26518,25 +26820,32 @@ BO_TX_BU_ 548 : PCS;
 BO_TX_BU_ 964 : PCS;
 BO_TX_BU_ 708 : PCS;
 BO_TX_BU_ 676 : PCS;
+BO_TX_BU_ 1577 : PCS;
+BO_TX_BU_ 1635 : PLG;
 BO_TX_BU_ 1317 : PMF;
 BO_TX_BU_ 772 : PMF;
 BO_TX_BU_ 790 : PMF;
+BO_TX_BU_ 1620 : PMF;
 BO_TX_BU_ 1446 : PMR;
 BO_TX_BU_ 902 : PMR;
 BO_TX_BU_ 1748 : PMR;
+BO_TX_BU_ 1556 : PMR;
 BO_TX_BU_ 1444 : PM;
 BO_TX_BU_ 900 : PM;
 BO_TX_BU_ 1551 : PM;
 BO_TX_BU_ 485 : PM;
+BO_TX_BU_ 1600 : PM;
 BO_TX_BU_ 1766 : GTW;
 BO_TX_BU_ 837 : PTC;
 BO_TX_BU_ 647 : PTC;
+BO_TX_BU_ 1750 : PTC;
 BO_TX_BU_ 1344 : SCCM;
 BO_TX_BU_ 1359 : SCCM;
 BO_TX_BU_ 816 : SCCM;
 BO_TX_BU_ 585 : SCCM;
 BO_TX_BU_ 553 : SCCM;
 BO_TX_BU_ 297 : SCCM;
+BO_TX_BU_ 1680 : SCCM;
 BO_TX_BU_ 1356 : SCM;
 BO_TX_BU_ 815 : SCM;
 BO_TX_BU_ 1355 : SCM;
@@ -26546,15 +26855,49 @@ BO_TX_BU_ 880 : SCS;
 BO_TX_BU_ 1531 : SDCR;
 BO_TX_BU_ 1467 : SDCR;
 BO_TX_BU_ 1597 : SDCR;
+BO_TX_BU_ 1787 : SDCR;
 BO_TX_BU_ 1291 : TAS;
 BO_TX_BU_ 852 : TAS;
 BO_TX_BU_ 523 : TAS;
 BO_TX_BU_ 1398 : TAS;
 BO_TX_BU_ 1357 : TAS;
 BO_TX_BU_ 525 : TAS;
+BO_TX_BU_ 1627 : TAS;
 BO_TX_BU_ 409 : TAS;
 BO_TX_BU_ 410 : TAS;
 BO_TX_BU_ 538 : TAS;
+BO_TX_BU_ 1641 : GTW;
+BO_TX_BU_ 1538 : GTW;
+BO_TX_BU_ 1579 : GTW;
+BO_TX_BU_ 1539 : GTW;
+BO_TX_BU_ 1543 : GTW;
+BO_TX_BU_ 1550 : GTW;
+BO_TX_BU_ 1589 : GTW;
+BO_TX_BU_ 1541 : GTW;
+BO_TX_BU_ 1542 : GTW;
+BO_TX_BU_ 1572 : GTW;
+BO_TX_BU_ 1574 : GTW;
+BO_TX_BU_ 2015 : GTW;
+BO_TX_BU_ 1552 : GTW;
+BO_TX_BU_ 1560 : GTW;
+BO_TX_BU_ 1576 : GTW;
+BO_TX_BU_ 1634 : GTW;
+BO_TX_BU_ 1568 : GTW;
+BO_TX_BU_ 1604 : GTW;
+BO_TX_BU_ 1540 : GTW;
+BO_TX_BU_ 1734 : GTW;
+BO_TX_BU_ 1664 : GTW;
+BO_TX_BU_ 1723 : GTW;
+BO_TX_BU_ 1611 : GTW;
+BO_TX_BU_ 1548 : GTW;
+BO_TX_BU_ 1562 : GTW;
+BO_TX_BU_ 1633 : GTW;
+BO_TX_BU_ 1580 : GTW;
+BO_TX_BU_ 1582 : GTW;
+BO_TX_BU_ 1536 : GTW;
+BO_TX_BU_ 1570 : GTW;
+BO_TX_BU_ 1544 : GTW;
+BO_TX_BU_ 1546 : GTW;
 BO_TX_BU_ 1154 : GTW;
 BO_TX_BU_ 1153 : GTW;
 BO_TX_BU_ 1657 : GTW;
@@ -26609,16 +26952,21 @@ BO_TX_BU_ 1119 : VCBATT1;
 BO_TX_BU_ 1339 : VCBATT1;
 BO_TX_BU_ 974 : VCBATT1;
 BO_TX_BU_ 1030 : VCBATT1;
+BO_TX_BU_ 1549 : VCBATT1;
 BO_TX_BU_ 1358 : VCBATT2;
 BO_TX_BU_ 975 : VCBATT2;
 BO_TX_BU_ 1399 : VCBATT2;
+BO_TX_BU_ 1563 : VCBATT2;
 BO_TX_BU_ 945 : VCBATT;
 BO_TX_BU_ 1090 : VCBATT;
+BO_TX_BU_ 1569 : VCBATT;
 BO_TX_BU_ 1335 : VCFRONT1;
 BO_TX_BU_ 833 : VCFRONT1;
 BO_TX_BU_ 1027 : VCFRONT1;
+BO_TX_BU_ 1581 : VCFRONT1;
 BO_TX_BU_ 1351 : VCFRONT2;
 BO_TX_BU_ 834 : VCFRONT2;
+BO_TX_BU_ 1583 : VCFRONT2;
 BO_TX_BU_ 609 : VCFRONT;
 BO_TX_BU_ 1847 : VCFRONT;
 BO_TX_BU_ 1140 : VCFRONT;
@@ -26642,6 +26990,7 @@ BO_TX_BU_ 957 : VCFRONT;
 BO_TX_BU_ 801 : VCFRONT;
 BO_TX_BU_ 737 : VCFRONT;
 BO_TX_BU_ 1349 : VCFRONT;
+BO_TX_BU_ 1537 : VCFRONT;
 BO_TX_BU_ 929 : VCFRONT;
 BO_TX_BU_ 507 : VCLEFT;
 BO_TX_BU_ 1373 : VCLEFT;
@@ -26666,6 +27015,7 @@ BO_TX_BU_ 962 : VCLEFT;
 BO_TX_BU_ 656 : VCLEFT;
 BO_TX_BU_ 657 : VCLEFT;
 BO_TX_BU_ 386 : VCLEFT;
+BO_TX_BU_ 1571 : VCLEFT;
 BO_TX_BU_ 706 : VCLEFT;
 BO_TX_BU_ 1114 : VCRIGHT;
 BO_TX_BU_ 549 : VCRIGHT;
@@ -26689,6 +27039,7 @@ BO_TX_BU_ 739 : VCRIGHT;
 BO_TX_BU_ 835 : VCRIGHT;
 BO_TX_BU_ 963 : VCRIGHT;
 BO_TX_BU_ 899 : VCRIGHT;
+BO_TX_BU_ 1545 : VCRIGHT;
 BO_TX_BU_ 1059 : VCRIGHT;
 BO_TX_BU_ 707 : VCRIGHT;
 BO_TX_BU_ 1375 : VCSEAT2L;
@@ -26702,6 +27053,7 @@ BO_TX_BU_ 746 : VCSEAT2R;
 BO_TX_BU_ 969 : VCSEC;
 BO_TX_BU_ 607 : VCSEC;
 BO_TX_BU_ 857 : VCSEC;
+BO_TX_BU_ 953 : VCSEC;
 BO_TX_BU_ 474 : VCSEC;
 BO_TX_BU_ 473 : VCSEC;
 BO_TX_BU_ 1066 : VCSEC;
@@ -26718,6 +27070,7 @@ BO_TX_BU_ 1824 : VCSEC;
 BO_TX_BU_ 793 : VCSEC;
 BO_TX_BU_ 505 : VCSEC;
 BO_TX_BU_ 281 : VCSEC;
+BO_TX_BU_ 1547 : VCSEC;
 BO_TX_BU_ 1850 : VC;
 BO_TX_BU_ 1655 : VC;
 BO_TX_BU_ 1816 : VC;
@@ -26749,6 +27102,7 @@ CM_ BU_ HVP "High-voltage processor (pack contactor and isolation controller)";
 CM_ BU_ ICR "ICR ECU";
 CM_ BU_ PCS "Power conversion system (on-board charger and DC-DC converter)";
 CM_ BU_ PCS2 "PCS2 ECU";
+CM_ BU_ PLG "PLG ECU";
 CM_ BU_ PM "PM ECU";
 CM_ BU_ PMF "PMF ECU";
 CM_ BU_ PMR "PMR ECU";
@@ -27578,6 +27932,9 @@ CM_ SG_ 1138 BMS_chargeCurrentLimitMode "BMS charging current limiting factor";
 CM_ SG_ 1138 BMS_timeToFinishHeatForCharge "High-voltage battery management system: time to finish heat for charge; raw 127 = signal not available (SNA)";
 CM_ SG_ 1138 BMS_timeToTripPlanChargingTarget "High-voltage battery management system: time to trip plan charging target; raw 2047 = signal not available (SNA)";
 CM_ SG_ 1138 BMS_useChargeTimeEstimate "High-voltage battery management system: use charge time estimate";
+CM_ BO_ 562 "High-voltage battery management system message: contactor request; frame length observed on a vehicle bus";
+CM_ SG_ 562 BMS_internalHvilSenseV "High-voltage battery management system: internal hvil sense v";
+CM_ SG_ 562 BMS_hvilCoverVSense "High-voltage battery management system: hvil cover v sense";
 CM_ BO_ 722 "High-voltage battery management system message: drive limits; frame length observed on a vehicle bus";
 CM_ SG_ 722 BMS_minBusVoltage "Calculated min bus voltage limit";
 CM_ SG_ 722 BMS_maxBusVoltage "Calculated max bus voltage limit for the pack";
@@ -27653,6 +28010,8 @@ CM_ SG_ 882 BMS_dcChargeVoltageLimit "The vehicle's charge voltage limit on a DC
 CM_ SG_ 882 BMS_dcChargePowerLimit "Max power limit for pack during DC charging";
 CM_ SG_ 882 BMS_acRealPowerRequest "Reports the instantaneous real AC power command during active power transfer.";
 CM_ SG_ 882 BMS_maxExtIsoFcLinkV "The max voltage read on the FC link during the external isolation check";
+CM_ SG_ 882 BMS_minModeledPackTemp "High-voltage battery management system: min modeled pack temp";
+CM_ SG_ 882 BMS_maxModeledPackTemp "High-voltage battery management system: max modeled pack temp";
 CM_ SG_ 882 BMS_energyMaxPredictedBrickTemp "High-voltage battery management system: energy max predicted brick temp";
 CM_ SG_ 882 BMS_energyTempGradientAtMaxTemp "High-voltage battery management system: energy temp gradient at max temp";
 CM_ SG_ 882 BMS_energyWalkMaxSoc "High-voltage battery management system: energy walk max soc";
@@ -27706,6 +28065,12 @@ CM_ SG_ 946 BMS_dynamicEnergyBuffer "BMS estimate of energy error based on SOC m
 CM_ SG_ 946 BMS_temperatureCondition "High-voltage battery management system: temperature condition";
 CM_ SG_ 946 BMS_thmGradientSlope "High-voltage battery management system: thm gradient slope";
 CM_ SG_ 946 BMS_thmGradient "High-voltage battery management system: thm gradient";
+CM_ SG_ 946 BMS_epochTimeEstimate "High-voltage battery management system: epoch time estimate";
+CM_ SG_ 946 BMS_histogramStartTimeIrrational "High-voltage battery management system: histogram start time irrational";
+CM_ SG_ 946 BMS_histogramDischargeThroughput "High-voltage battery management system: histogram discharge throughput irrational";
+CM_ SG_ 946 BMS_histogramChargeThroughputIrr "High-voltage battery management system: histogram charge throughput irrational";
+CM_ SG_ 946 BMS_histogramTotalTimeIrrational "High-voltage battery management system: histogram total time irrational";
+CM_ SG_ 946 BMS_histogramStorageDataIsLow "High-voltage battery management system: histogram storage data is low";
 CM_ SG_ 946 BMS_tempVsSocTotalChgEnergy "High-voltage battery management system: temp vs soc total chg energy";
 CM_ SG_ 946 BMS_powerVsVoltageTotalChgEnergy "High-voltage battery management system: power vs voltage total chg energy";
 CM_ SG_ 946 BMS_lifeModelOutputsAreTrustwort "High-voltage battery management system: life model outputs are trustworthy";
@@ -27730,6 +28095,8 @@ CM_ SG_ 946 BMS_nominalFullPackEnergyRaw "Non-latched version of BMS_nominalEner
 CM_ SG_ 946 BMS_nominalEnergyRemainingBuffer "Buffered version of BMS_nominalEnergyRemaining; raw 65535 = signal not available (SNA)";
 CM_ SG_ 946 BMS_idealEnergyRemainingBuffered "Buffered version of BMS_idealEnergyRemaining; raw 65535 = signal not available (SNA)";
 CM_ SG_ 946 BMS_largestSynchronizedCacErrorP "High-voltage battery management system: largest synchronized cac error pct; raw 255 = signal not available (SNA)";
+CM_ SG_ 946 BMS_lifeModelSpreadMinOffset "High-voltage battery management system: life model spread min offset";
+CM_ SG_ 946 BMS_lifeModelSpreadMaxOffset "High-voltage battery management system: life model spread max offset";
 CM_ SG_ 946 BMS_largestCacSpreadErrorLower "High-voltage battery management system: largest cac spread error lower; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_lifeModelAverageCac "High-voltage battery management system: life model average cac; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_lifeModelCacBrick1 "High-voltage battery management system: life model cac brick1; raw 4095 = signal not available (SNA)";
@@ -27741,6 +28108,7 @@ CM_ SG_ 946 BMS_lifeModelMinCacBrickId "High-voltage battery management system: 
 CM_ SG_ 946 BMS_lifeModelMinCac "High-voltage battery management system: life model min cac; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_restingPointCacAvg "High-voltage battery management system: resting point cac avg; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_cacEstimationSource "High-voltage battery management system: cac estimation source";
+CM_ SG_ 946 BMS_packCalibrationBirthDateBinn "High-voltage battery management system: pack calibration birth date binned";
 CM_ SG_ 946 BMS_synchronizedCacMaxRaw "High-voltage battery management system: synchronized cac max raw; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_synchronizedCacMinRaw "High-voltage battery management system: synchronized cac min raw; raw 4095 = signal not available (SNA)";
 CM_ SG_ 946 BMS_largestSyncCacErrorStartSoc "Start SOC for CAC update from the brick with the highest synchronized CAC error";
@@ -27856,7 +28224,7 @@ CM_ SG_ 674 BMS_acRippleFrequencyRequest "Transmits the Battery Management Syste
 CM_ SG_ 674 BMS_acRippleCurrentAmplitudeRequ "Transmits the Battery Management System (BMS) AC ripple current amplitude request to the Electric Vehicle Supply Equipment (EVSE).";
 CM_ SG_ 674 BMS_acRippleRequest "High-voltage battery management system: ac ripple request";
 CM_ BO_ 1834 "High-voltage battery management system message: serial number; frame length observed on a vehicle bus";
-CM_ SG_ 1834 BMS_serialNumberPage "Page index of the pack serial number text (page 0 = characters 1-7, page 1 = characters 8-14)";
+CM_ SG_ 1834 BMS_serialNumberMultiplexer "High-voltage battery management system: serial number multiplexer";
 CM_ SG_ 1834 BMS_packSerialNumberByte01 "Pack serial number, character 1 (ASCII)";
 CM_ SG_ 1834 BMS_packSerialNumberByte02 "Pack serial number, character 2 (ASCII)";
 CM_ SG_ 1834 BMS_packSerialNumberByte03 "Pack serial number, character 3 (ASCII)";
@@ -27871,6 +28239,7 @@ CM_ SG_ 1834 BMS_packSerialNumberByte11 "Pack serial number, character 11 (ASCII
 CM_ SG_ 1834 BMS_packSerialNumberByte12 "Pack serial number, character 12 (ASCII)";
 CM_ SG_ 1834 BMS_packSerialNumberByte13 "Pack serial number, character 13 (ASCII)";
 CM_ SG_ 1834 BMS_packSerialNumberByte14 "Pack serial number, character 14 (ASCII)";
+CM_ SG_ 1834 BMS_packSerialBirthDateBinned "High-voltage battery management system: pack serial birth date binned";
 CM_ BO_ 658 "High-voltage battery management system message: soc status; frame length observed on a vehicle bus";
 CM_ SG_ 658 BMS_socMin "BMS State Of Charge (SOC). This is the minimum brick SOC.";
 CM_ SG_ 658 BMS_socUI "BMS State Of Energy (SOE) for the UI. This is ideal discharge energy from present state / ideal discharge energy from full.";
@@ -27928,6 +28297,8 @@ CM_ SG_ 786 BMS_i2tDeratingEnabled "High-voltage battery management system: i2t 
 CM_ SG_ 786 BMS_activeCoolCellReferenceT "Desired cell temperature reference which composes the temperature trajectory portion of the active cooling target temperature controls";
 CM_ SG_ 786 BMS_activeHeatCellTargetT "Desired cell temperature which feeds as an input to the active heating target temperature, before any additional controls calculations";
 CM_ SG_ 786 BMS_powerDissipation "High-voltage battery management system: power dissipation";
+CM_ BO_ 1554 "High-voltage battery management system message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1554 BMS_udsResponseData "High-voltage battery management system: uds response data";
 CM_ BO_ 1071 "High-voltage battery management system message: v2x info; frame length observed on a vehicle bus";
 CM_ SG_ 1071 BMS_v2xSoe "High-voltage battery management system: v2x soe; raw 65535 = signal not available (SNA)";
 CM_ SG_ 1071 BMS_v2xFullEnergy "High-voltage battery management system: v2x full energy; raw 4095 = signal not available (SNA)";
@@ -28123,6 +28494,8 @@ CM_ SG_ 679 CMPD_state "Reports compressor operational state; raw 15 = signal no
 CM_ SG_ 679 CMPD_wasteHeatState "Reports compressor waste heat recovery state.";
 CM_ SG_ 679 CMPD_powerLimitTooLowToStart "Indicates the compressor power limit is too low to start the compressor.";
 CM_ SG_ 679 CMPD_ready "Indicates the compressor is ready to start.";
+CM_ BO_ 1559 "CMPD ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1559 CMPD_udsResponseData "CMPD ECU: uds response data";
 CM_ BO_ 867 "A/C compressor message: info; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 867 CMP_infoIndex "A/C compressor: info index";
 CM_ SG_ 867 CMP_infoBuildType "A/C compressor: info build type";
@@ -28137,6 +28510,8 @@ CM_ SG_ 867 CMP_infoPlatformType "A/C compressor: info platform type";
 CM_ SG_ 867 CMP_infoAppCrc "A/C compressor: info app crc";
 CM_ SG_ 867 CMP_infoBootUdsProtoVersion "A/C compressor: info boot uds proto version";
 CM_ SG_ 867 CMP_infoBootCrc "A/C compressor: info boot crc";
+CM_ BO_ 1555 "A/C compressor message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1555 CMP_udsResponseData "A/C compressor: uds response data";
 CM_ BO_ 1767 "Charge port controller message: iso tp pipe to pncd; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1767 CP_isoTpToPncdData "Charge port controller: iso tp to pncd data";
 CM_ BO_ 1294 "Charge port controller message: alert log; frame length from the layout, not yet observed on a vehicle bus";
@@ -28841,6 +29216,8 @@ CM_ SG_ 893 CP_pinTemperature2 "Sensed temperature of the charge port inlet pins
 CM_ SG_ 893 CP_pinTemperature3 "Sensed temperature of the charge port inlet pins";
 CM_ SG_ 893 CP_pinTemperature4 "Sensed temperature of the charge port inlet pins";
 CM_ SG_ 893 CP_pinTemp4Velocity "Instantaneous temperature velocity (over 1 minute) of Charge Port's temperature 4; raw 511 = signal not available (SNA)";
+CM_ BO_ 1566 "Charge port controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1566 CP_udsResponseData "Charge port controller: uds response data";
 CM_ BO_ 1001 "Driver assistance computer message: body controls; frame length observed on a vehicle bus";
 CM_ SG_ 1001 DAS_headlightRequest "The DAS request to the body controls ecu to turn on headlights.";
 CM_ SG_ 1001 DAS_hazardLightRequest "The command from DAS to body controls to turn on the hazard lights; raw 3 = signal not available (SNA)";
@@ -29687,6 +30064,8 @@ CM_ SG_ 1367 DIF_coolantFlowReq "Coolant flow requested";
 CM_ SG_ 1367 DIF_oilFlowReq "Front drive inverter: oil flow req; raw 255 = signal not available (SNA)";
 CM_ SG_ 1367 DIF_criticalFlowReq "Front drive inverter: critical flow req";
 CM_ SG_ 1367 DIF_burnInStatus "Front drive inverter: burn in status";
+CM_ BO_ 1557 "Front drive inverter message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1557 DIF_udsResponseData "Front drive inverter: uds response data";
 CM_ BO_ 1445 "Rear drive inverter message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1445 DIR_alertID "Rear drive inverter: alert ID";
 CM_ SG_ 1445 DIR_alertState "Rear drive inverter: alert state";
@@ -30566,6 +30945,8 @@ CM_ SG_ 1495 DIR_coolantFlowReq "Coolant flow requested";
 CM_ SG_ 1495 DIR_oilFlowReq "Rear drive inverter: oil flow req; raw 255 = signal not available (SNA)";
 CM_ SG_ 1495 DIR_criticalFlowReq "Rear drive inverter: critical flow req";
 CM_ SG_ 1495 DIR_burnInStatus "Rear drive inverter: burn in status";
+CM_ BO_ 1558 "Rear drive inverter message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1558 DIR_udsResponseData "Rear drive inverter: uds response data";
 CM_ BO_ 1319 "Drive inverter message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1319 DI_alertID "Drive inverter: alert ID";
 CM_ SG_ 1319 DI_alertState "Drive inverter: alert state";
@@ -32172,6 +32553,9 @@ CM_ SG_ 680 EPBL_bothDisconnected "Left electric parking brake: both disconnecte
 CM_ SG_ 680 EPBL_blockDrive "Left electric parking brake: block drive";
 CM_ SG_ 680 EPBL_statusCounter "Left electric parking brake: status counter";
 CM_ SG_ 680 EPBL_statusChecksum "Left electric parking brake: status checksum";
+CM_ BO_ 1573 "Left electric parking brake message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1573 EPBL_udsResponseData_H "Left electric parking brake: uds response data h";
+CM_ SG_ 1573 EPBL_udsResponseData_L "Left electric parking brake: uds response data l";
 CM_ BO_ 1448 "Right electric parking brake message: alert log; frame length observed on a vehicle bus";
 CM_ SG_ 1448 EPBR_alertID "Right electric parking brake: alert ID";
 CM_ SG_ 1448 EPBR_alertState "Right electric parking brake: alert state";
@@ -33044,6 +33428,9 @@ CM_ SG_ 744 EPBR_bothDisconnected "Right electric parking brake: both disconnect
 CM_ SG_ 744 EPBR_blockDrive "Right electric parking brake: block drive";
 CM_ SG_ 744 EPBR_statusCounter "Right electric parking brake: status counter";
 CM_ SG_ 744 EPBR_statusChecksum "Right electric parking brake: status checksum";
+CM_ BO_ 1575 "Right electric parking brake message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1575 EPBR_udsResponseData_H "Right electric parking brake: uds response data h";
+CM_ SG_ 1575 EPBR_udsResponseData_L "Right electric parking brake: uds response data l";
 CM_ BO_ 1662 "EVSE ECU message: iso tp to veh; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1662 EVSE_isoTpToVehData "EVSE ECU: iso tp to veh data";
 CM_ BO_ 1322 "FC ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
@@ -33624,6 +34011,10 @@ CM_ SG_ 1962 HVP_passivePyroRefVoltageMin "High-voltage processor (pack contacto
 CM_ SG_ 1962 HVP_packContCoilCurrent "High-voltage processor (pack contactor and isolation controller): pack cont coil current";
 CM_ SG_ 1962 HVP_battery12V "Monitored voltage sense of 12V battery";
 CM_ SG_ 1962 HVP_fcLinkPositiveV "High-voltage processor (pack contactor and isolation controller): fc link positive v";
+CM_ BO_ 1666 "High-voltage processor (pack contactor and isolation controller) message: hvp faults; frame length observed on a vehicle bus";
+CM_ SG_ 1666 HVP_packContactorHwFault "High-voltage processor (pack contactor and isolation controller): pack contactor hw fault";
+CM_ SG_ 1666 HVP_fcContactorHwFault "High-voltage processor (pack contactor and isolation controller): fc contactor hw fault";
+CM_ SG_ 1666 HVP_hvilStatus "High-voltage processor (pack contactor and isolation controller): hvil status";
 CM_ BO_ 554 "High-voltage processor (pack contactor and isolation controller) message: hvs control; frame length observed on a vehicle bus";
 CM_ SG_ 554 HVP_dcLinkVoltageRequest "High-voltage processor (pack contactor and isolation controller): dc link voltage request";
 CM_ SG_ 554 HVP_pcsControlRequest "The operating state that the HVP would like the PCS to be in";
@@ -33661,6 +34052,8 @@ CM_ SG_ 1914 HVP_shuntAsicChipWaferNumber "High-voltage processor (pack contacto
 CM_ SG_ 1914 HVP_energyReserveMin "a lowest energy reserve value measured over sliding window";
 CM_ SG_ 1914 HVP_energyReserveMax "a highest energy reserve value measured over sliding window";
 CM_ SG_ 1914 HVP_energyReserveAvg "an average energy reserve value measured over sliding window";
+CM_ BO_ 1553 "High-voltage processor (pack contactor and isolation controller) message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1553 HVP_udsResponseData "High-voltage processor (pack contactor and isolation controller): uds response data";
 CM_ BO_ 1208 "ICR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1208 ICR_alertID "ICR ECU: alert ID";
 CM_ SG_ 1208 ICR_alertState "ICR ECU: alert state";
@@ -33804,6 +34197,8 @@ CM_ SG_ 664 ICR_algoVersion "ICR ECU: algo version";
 CM_ SG_ 664 ICR_l2HeapUsage "ICR ECU: l2 heap usage";
 CM_ SG_ 664 ICR_intrusionStatus "ICR ECU: intrusion status";
 CM_ SG_ 664 ICR_blockageScaledMLOutput "Indicates a scaled blockage ML Output";
+CM_ BO_ 1624 "ICR ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1624 ICR_udsResponseData "ICR ECU: uds response data";
 CM_ BO_ 1012 "LS ECU message: light show; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1012 LS_lightShowIndex "LS ECU: light show index";
 CM_ SG_ 1012 LS_lightLeftRampedChannel1Reques "LS ECU: light left ramped channel1 request";
@@ -34024,6 +34419,15 @@ CM_ SG_ 1012 LS_offroadLightBar2 "LS ECU: offroad light bar2";
 CM_ SG_ 1012 LS_offroadLightBar3 "LS ECU: offroad light bar3";
 CM_ SG_ 1012 LS_offroadLightBar4 "LS ECU: offroad light bar4";
 CM_ SG_ 1012 LS_offroadLightBar5 "LS ECU: offroad light bar5";
+CM_ BO_ 1152 "External diagnostic tester message: iso tp pipe VCSEC; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC0 "External diagnostic tester: iso tp pipe VCSEC0";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC1 "External diagnostic tester: iso tp pipe VCSEC1";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC2 "External diagnostic tester: iso tp pipe VCSEC2";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC3 "External diagnostic tester: iso tp pipe VCSEC3";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC4 "External diagnostic tester: iso tp pipe VCSEC4";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC5 "External diagnostic tester: iso tp pipe VCSEC5";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC6 "External diagnostic tester: iso tp pipe VCSEC6";
+CM_ SG_ 1152 ODIN_IsoTpPipeVCSEC7 "External diagnostic tester: iso tp pipe VCSEC7";
 CM_ BO_ 1092 "PCS2 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1092 PCS2_alertID "PCS2 ECU: alert ID";
 CM_ SG_ 1092 PCS2_alertSet "PCS2 ECU: alert set";
@@ -35356,6 +35760,10 @@ CM_ SG_ 676 PCS_chgPhCTemp "Sensed temperature of AC charger phase C; raw 1025 =
 CM_ SG_ 676 PCS_dcdcTemp "Sensed temperature of DCDC; raw 1025 = signal not available (SNA)";
 CM_ SG_ 676 PCS_ambientTemp "Ambient temperature sensed by the PCS; raw 1025 = signal not available (SNA)";
 CM_ SG_ 676 PCS_dcdcBusbarTemp "Sensed temperature of DCDC busbar; raw 511 = signal not available (SNA)";
+CM_ BO_ 1577 "Power conversion system (on-board charger and DC-DC converter) message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1577 PCS_udsResponseData "Power conversion system (on-board charger and DC-DC converter): uds response data";
+CM_ BO_ 1635 "PLG ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1635 PLG_udsResponseData "PLG ECU: uds response data";
 CM_ BO_ 1317 "PMF ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1317 PMF_alertID "PMF ECU: alert ID";
 CM_ SG_ 1317 PMF_alertState "PMF ECU: alert state";
@@ -35639,6 +36047,8 @@ CM_ SG_ 790 PMF_bootGitHash "PMF ECU: boot git hash";
 CM_ SG_ 790 PMF_platformTyp "PMF ECU: platform typ";
 CM_ SG_ 790 PMF_udsProtocolVersion "PMF ECU: uds protocol version";
 CM_ SG_ 790 PMF_bootloaderCrc "PMF ECU: bootloader crc";
+CM_ BO_ 1620 "PMF ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1620 PMF_udsResponseData "PMF ECU: uds response data";
 CM_ BO_ 1446 "PMR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1446 PMR_alertID "PMR ECU: alert ID";
 CM_ SG_ 1446 PMR_alertState "PMR ECU: alert state";
@@ -35943,6 +36353,8 @@ CM_ SG_ 1748 PMR_bootGitHash "PMR ECU: boot git hash";
 CM_ SG_ 1748 PMR_platformTyp "PMR ECU: platform typ";
 CM_ SG_ 1748 PMR_udsProtocolVersion "PMR ECU: uds protocol version";
 CM_ SG_ 1748 PMR_bootloaderCrc "PMR ECU: bootloader crc";
+CM_ BO_ 1556 "PMR ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1556 PMR_udsResponseData "PMR ECU: uds response data";
 CM_ BO_ 1444 "PM ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1444 PM_alertID "PM ECU: alert ID";
 CM_ SG_ 1444 PM_alertState "PM ECU: alert state";
@@ -36380,6 +36792,8 @@ CM_ SG_ 485 PM_latentFaultCheckIntResponse "PM ECU: latent fault check int respo
 CM_ SG_ 485 PM_hvilSystemStatus "HVIL system status; raw 3 = signal not available (SNA)";
 CM_ SG_ 485 PM_locStateCounter "PM ECU: loc state counter";
 CM_ SG_ 485 PM_locStateChecksum "PM ECU: loc state checksum";
+CM_ BO_ 1600 "PM ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1600 PM_udsResponseData "PM ECU: uds response data";
 CM_ BO_ 1766 "PNCD ECU message: iso tp pipe to cp; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1766 PNCD_isoTpToCpData "PNCD ECU: iso tp to cp data";
 CM_ BO_ 837 "Cabin heater message: info; frame length from the layout, not yet observed on a vehicle bus";
@@ -36404,6 +36818,8 @@ CM_ SG_ 647 PTC_tempPCB "Heater printed circuit board temperature";
 CM_ SG_ 647 PTC_voltageHV "Heater high voltage input voltage";
 CM_ SG_ 647 PTC_leftCurrentHV "Cabin heater: left current HV";
 CM_ SG_ 647 PTC_rightCurrentHV "Cabin heater: right current HV";
+CM_ BO_ 1750 "Cabin heater message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1750 PTC_udsResponseData "Cabin heater: uds response data";
 CM_ BO_ 1344 "Steering column control module message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1344 SCCM_alertID "Steering column control module: alert ID";
 CM_ SG_ 1344 SCCM_alertState "Steering column control module: alert state";
@@ -36686,6 +37102,15 @@ CM_ SG_ 297 SCCM_steeringAngleSpeed "Speed of steering angle rotation";
 CM_ SG_ 297 SCCM_steeringAngleSensorReservd1 "Steering column control module: steering angle sensor reservd1";
 CM_ SG_ 297 SCCM_steeringAngleSensorReservd2 "Steering column control module: steering angle sensor reservd2";
 CM_ SG_ 297 SCCM_steeringAngleSensorReservd3 "Steering column control module: steering angle sensor reservd3";
+CM_ BO_ 1680 "Steering column control module message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1680 SCCM_functionalResponseData_0 "Steering column control module: functional response data 0";
+CM_ SG_ 1680 SCCM_functionalResponseData_1 "Steering column control module: functional response data 1";
+CM_ SG_ 1680 SCCM_functionalResponseData_2 "Steering column control module: functional response data 2";
+CM_ SG_ 1680 SCCM_functionalResponseData_3 "Steering column control module: functional response data 3";
+CM_ SG_ 1680 SCCM_functionalResponseData_4 "Steering column control module: functional response data 4";
+CM_ SG_ 1680 SCCM_functionalResponseData_5 "Steering column control module: functional response data 5";
+CM_ SG_ 1680 SCCM_functionalResponseData_6 "Steering column control module: functional response data 6";
+CM_ SG_ 1680 SCCM_functionalResponseData_7 "Steering column control module: functional response data 7";
 CM_ BO_ 1356 "SCM ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1356 SCM_alertID "SCM ECU: alert ID";
 CM_ SG_ 1356 SCM_alertType "SCM ECU: alert type";
@@ -37012,6 +37437,15 @@ CM_ SG_ 1597 SDCR_infoUsageId "SDCR ECU: info usage id";
 CM_ SG_ 1597 SDCR_infoSubUsageId "SDCR ECU: info sub usage id";
 CM_ SG_ 1597 SDCR_infoAppCrc "SDCR ECU: info app crc";
 CM_ SG_ 1597 SDCR_infoBootGitHash "SDCR ECU: info boot git hash";
+CM_ BO_ 1787 "SDCR ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1787 SDCR_udsResponseData "SDCR ECU: uds response data";
+CM_ BO_ 792 "Vector__XXX ECU message: system time UTC; frame length observed on a vehicle bus";
+CM_ SG_ 792 UTC_year "UTC date: year";
+CM_ SG_ 792 UTC_month "UTC date: month";
+CM_ SG_ 792 UTC_seconds "UTC time: seconds";
+CM_ SG_ 792 UTC_hour "UTC time: hour";
+CM_ SG_ 792 UTC_day "UTC date: day of month";
+CM_ SG_ 792 UTC_minutes "UTC time: minutes";
 CM_ BO_ 1291 "Air suspension controller message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1291 TAS_alertID "Air suspension controller: alert ID";
 CM_ SG_ 1291 TAS_alertState "Air suspension controller: alert state";
@@ -37473,6 +37907,8 @@ CM_ SG_ 525 TAS_jackMode "Indicates the status of Jack mode.";
 CM_ SG_ 525 TAS_reduceVehicleSpeedRequest "Air suspension controller: reduce vehicle speed request";
 CM_ SG_ 525 TAS_statesCounter "Air suspension controller: states counter";
 CM_ SG_ 525 TAS_statesChecksum "Air suspension controller: states checksum";
+CM_ BO_ 1627 "Air suspension controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1627 TAS_udsResponseData "Air suspension controller: uds response data";
 CM_ BO_ 409 "Air suspension controller message: ui adaptive activity0; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 409 TAS_adaptiveActivityFL_C "Air suspension controller: adaptive activity FL c; raw 31 = signal not available (SNA)";
 CM_ SG_ 409 TAS_adaptiveActivityFL_R "Air suspension controller: adaptive activity FL r; raw 31 = signal not available (SNA)";
@@ -37515,6 +37951,81 @@ CM_ SG_ 538 TAS_restrictLevelingTransport "Air suspension controller: restrict l
 CM_ SG_ 538 TAS_restrictLevelingShowroom "Indication that up and down leveling are restricted while showroom mode is active.";
 CM_ SG_ 538 TAS_uiControlCounter "Air suspension controller: ui control counter";
 CM_ SG_ 538 TAS_uiControlChecksum "Air suspension controller: ui control checksum";
+CM_ BO_ 1641 "UDS ECU message: KOSTI asccm request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1641 UDS_KOSTIAsccmRequestData "UDS ECU: KOSTI asccm request data";
+CM_ BO_ 1538 "UDS ECU message: bms request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1538 UDS_bmsRequestData "UDS ECU: bms request data";
+CM_ BO_ 1579 "UDS ECU message: cc request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1579 UDS_ccRequestData "UDS ECU: cc request data";
+CM_ BO_ 1539 "UDS ECU message: cmp request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1539 UDS_cmpRequestData "UDS ECU: cmp request data";
+CM_ BO_ 1543 "UDS ECU message: cmpd request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1543 UDS_cmpdRequestData "UDS ECU: cmpd request data";
+CM_ BO_ 1550 "UDS ECU message: cp request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1550 UDS_cpRequestData "UDS ECU: cp request data";
+CM_ BO_ 1589 "UDS ECU message: di request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1589 UDS_diRequestData "UDS ECU: di request data";
+CM_ BO_ 1541 "UDS ECU message: dif request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1541 UDS_difRequestData "UDS ECU: dif request data";
+CM_ BO_ 1542 "UDS ECU message: dir request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1542 UDS_dirRequestData "UDS ECU: dir request data";
+CM_ BO_ 1572 "UDS ECU message: epbl request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1572 UDS_epblRequestData_H "UDS ECU: epbl request data h";
+CM_ SG_ 1572 UDS_epblRequestData_L "UDS ECU: epbl request data l";
+CM_ BO_ 1574 "UDS ECU message: epbr request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1574 UDS_epbrRequestData_H "UDS ECU: epbr request data h";
+CM_ SG_ 1574 UDS_epbrRequestData_L "UDS ECU: epbr request data l";
+CM_ BO_ 2015 "UDS ECU message: functional request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 2015 UDS_functionalRequestData_0 "UDS ECU: functional request data 0";
+CM_ SG_ 2015 UDS_functionalRequestData_1 "UDS ECU: functional request data 1";
+CM_ SG_ 2015 UDS_functionalRequestData_2 "UDS ECU: functional request data 2";
+CM_ SG_ 2015 UDS_functionalRequestData_3 "UDS ECU: functional request data 3";
+CM_ SG_ 2015 UDS_functionalRequestData_4 "UDS ECU: functional request data 4";
+CM_ SG_ 2015 UDS_functionalRequestData_5 "UDS ECU: functional request data 5";
+CM_ SG_ 2015 UDS_functionalRequestData_6 "UDS ECU: functional request data 6";
+CM_ SG_ 2015 UDS_functionalRequestData_7 "UDS ECU: functional request data 7";
+CM_ BO_ 1552 "UDS ECU message: hvp request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1552 UDS_hvpRequestData "UDS ECU: hvp request data";
+CM_ BO_ 1560 "UDS ECU message: icr request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1560 UDS_icrRequestData "UDS ECU: icr request data";
+CM_ BO_ 1576 "UDS ECU message: pcs request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1576 UDS_pcsRequestData "UDS ECU: pcs request data";
+CM_ BO_ 1634 "UDS ECU message: plg request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1634 UDS_plgRequestData "UDS ECU: plg request data";
+CM_ BO_ 1568 "UDS ECU message: pm request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1568 UDS_pmRequestData "UDS ECU: pm request data";
+CM_ BO_ 1604 "UDS ECU message: pmf request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1604 UDS_pmfRequestData "UDS ECU: pmf request data";
+CM_ BO_ 1540 "UDS ECU message: pmr request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1540 UDS_pmrRequestData "UDS ECU: pmr request data";
+CM_ BO_ 1734 "UDS ECU message: ptc request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1734 UDS_ptcRequestData "UDS ECU: ptc request data";
+CM_ BO_ 1664 "UDS ECU message: sccm request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1664 UDS_sccmRequestData "UDS ECU: sccm request data";
+CM_ BO_ 1723 "UDS ECU message: sdcr request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1723 UDS_sdcrRequestData "UDS ECU: sdcr request data";
+CM_ BO_ 1611 "UDS ECU message: tas request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1611 UDS_tasRequestData "UDS ECU: tas request data";
+CM_ BO_ 1548 "UDS ECU message: vcbatt1 request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1548 UDS_vcbatt1RequestData "UDS ECU: vcbatt1 request data";
+CM_ BO_ 1562 "UDS ECU message: vcbatt2 request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1562 UDS_vcbatt2RequestData "UDS ECU: vcbatt2 request data";
+CM_ BO_ 1633 "UDS ECU message: vcbatt request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1633 UDS_vcbattRequestData "UDS ECU: vcbatt request data";
+CM_ BO_ 1580 "UDS ECU message: vcfront1 request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1580 UDS_vcfront1RequestData "UDS ECU: vcfront1 request data";
+CM_ BO_ 1582 "UDS ECU message: vcfront2 request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1582 UDS_vcfront2RequestData "UDS ECU: vcfront2 request data";
+CM_ BO_ 1536 "UDS ECU message: vcfront request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1536 UDS_vcfrontRequestData "UDS ECU: vcfront request data";
+CM_ BO_ 1570 "UDS ECU message: vcleft request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1570 UDS_vcleftRequestData_H "UDS ECU: vcleft request data h";
+CM_ SG_ 1570 UDS_vcleftRequestData_L "UDS ECU: vcleft request data l";
+CM_ BO_ 1544 "UDS ECU message: vcright request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1544 UDS_vcrightRequestData_H "UDS ECU: vcright request data h";
+CM_ SG_ 1544 UDS_vcrightRequestData_L "UDS ECU: vcright request data l";
+CM_ BO_ 1546 "UDS ECU message: vcsec request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1546 UDS_vcsecRequestData "UDS ECU: vcsec request data";
 CM_ BO_ 1154 "Touchscreen user interface computer message: iso tp pipe remote VCSEC; forwarded onto this bus by the gateway; frame length observed on a vehicle bus";
 CM_ SG_ 1154 UI_IsoTpRemoteVCSEC0 "Touchscreen user interface computer: iso tp remote VCSEC0";
 CM_ SG_ 1154 UI_IsoTpRemoteVCSEC1 "Touchscreen user interface computer: iso tp remote VCSEC1";
@@ -38387,6 +38898,8 @@ CM_ SG_ 1285 SA_partNumInt "Reports the smart adapter part number integer repres
 CM_ SG_ 1285 SA_partNumRev "Reports the smart adapter part number revision.";
 CM_ SG_ 1285 SA_currentLimit "Reports the smart adapter current limit from Electrically Erasable Programmable Read-Only Memory (EEPROM).";
 CM_ SG_ 1285 SA_l1Voltage "Reports the smart adapter nominal voltage request from Electrically Erasable Programmable Read-Only Memory (EEPROM).";
+CM_ BO_ 1320 "Vector__XXX ECU message: unix time seconds; frame length observed on a vehicle bus";
+CM_ SG_ 1320 UnixTimeSeconds "Vehicle clock, seconds since 1970-01-01 UTC";
 CM_ BO_ 1949 "V2G ECU message: evse log data; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1949 V2G_evseLogDataSelect "V2G ECU: evse log data select";
 CM_ SG_ 1949 V2G_chgParamRes_respCode "Charge parameter response code reported by CCS DC charger";
@@ -39636,6 +40149,8 @@ CM_ SG_ 1030 VCBATT1_autopilot1EFuseManagerSt "VCBATT1 ECU: autopilot1 e fuse ma
 CM_ SG_ 1030 VCBATT1_autopilot1EFuseHardShort "VCBATT1 ECU: autopilot1 e fuse hard short threshold";
 CM_ SG_ 1030 VCBATT1_autopilot1EFuseOCThresho "VCBATT1 ECU: autopilot1 e fuse OC threshold";
 CM_ SG_ 1030 VCBATT1_autopilot1EFuseType "Reports the type of the autopilot1 eFuse.";
+CM_ BO_ 1549 "VCBATT1 ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1549 VCBATT1_udsResponseData "VCBATT1 ECU: uds response data";
 CM_ BO_ 1358 "VCBATT2 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1358 VCBATT2_alertID "VCBATT2 ECU: alert ID";
 CM_ SG_ 1358 VCBATT2_alertState "VCBATT2 ECU: alert state";
@@ -40011,6 +40526,8 @@ CM_ SG_ 1399 VCBATT2_nmKeepAwakeReasonDBG "VCBATT2 ECU: nm keep awake reason DBG
 CM_ SG_ 1399 VCBATT2_LIN_bus_0_busErrorCount "LIN bus 0 (Thermal) HW bus error count";
 CM_ SG_ 1399 VCBATT2_LIN_bus_1_busErrorCount "LIN bus 1 (Homelink/Headlamp) HW bus error count";
 CM_ SG_ 1399 VCBATT2_hibernationStateDBG "VCBATT2 ECU: hibernation state DBG";
+CM_ BO_ 1563 "VCBATT2 ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1563 VCBATT2_udsResponseData "VCBATT2 ECU: uds response data";
 CM_ BO_ 945 "VCBATT ECU message: LV health; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 945 VCBATT_LVHealthChecksum "VCBATT ECU: LV health checksum";
 CM_ SG_ 945 VCBATT_LVHealthCounter "VCBATT ECU: LV health counter";
@@ -40034,6 +40551,8 @@ CM_ SG_ 1090 VCBATT_pcsLVMaxDchrgCurrentLimit "VCBATT ECU: pcs LV max dchrg curr
 CM_ SG_ 1090 VCBATT_defaultPcsLVVoltageTarget "VCBATT ECU: default pcs LV voltage target";
 CM_ SG_ 1090 VCBATT_lvHwProtSelfTestActive "Reports whether Low Voltage (LV) Hardware (HW) protection self-tests are running or about to run due to a retry.";
 CM_ SG_ 1090 VCBATT_lvBatteryDischargeRequest "VCBATT ECU: lv battery discharge request";
+CM_ BO_ 1569 "VCBATT ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1569 VCBATT_udsResponseData "VCBATT ECU: uds response data";
 CM_ BO_ 1335 "VCFRONT1 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1335 VCFRONT1_alertID "VCFRONT1 ECU: alert ID";
 CM_ SG_ 1335 VCFRONT1_alertState "VCFRONT1 ECU: alert state";
@@ -40478,6 +40997,8 @@ CM_ SG_ 1027 VCFRONT1_autopilot2EFuseManagerS "VCFRONT1 ECU: autopilot2 e fuse m
 CM_ SG_ 1027 VCFRONT1_autopilot2EFuseHardShor "VCFRONT1 ECU: autopilot2 e fuse hard short threshold";
 CM_ SG_ 1027 VCFRONT1_autopilot2EFuseOCThresh "VCFRONT1 ECU: autopilot2 e fuse OC threshold";
 CM_ SG_ 1027 VCFRONT1_autopilot2EFuseType "Reports the type of the autopilot2 eFuse.";
+CM_ BO_ 1581 "VCFRONT1 ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1581 VCFRONT1_udsResponseData "VCFRONT1 ECU: uds response data";
 CM_ BO_ 1351 "VCFRONT2 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1351 VCFRONT2_alertID "VCFRONT2 ECU: alert ID";
 CM_ SG_ 1351 VCFRONT2_alertState "VCFRONT2 ECU: alert state";
@@ -41201,6 +41722,8 @@ CM_ SG_ 834 VCFRONT2_a667_leftHeadlampRegion "VCFRONT2 ECU: a667 left headlamp r
 CM_ SG_ 834 VCFRONT2_a669_thermalHVPowerBudg "VCFRONT2 ECU: a669 thermal HV power budget active";
 CM_ SG_ 834 VCFRONT2_a697_leftHeadlampNotAim "VCFRONT2 ECU: a697 left headlamp not aimed";
 CM_ SG_ 834 VCFRONT2_a702_dynamicHeadlightLe "VCFRONT2 ECU: a702 dynamic headlight leveling unavailable";
+CM_ BO_ 1583 "VCFRONT2 ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1583 VCFRONT2_udsResponseData "VCFRONT2 ECU: uds response data";
 CM_ BO_ 609 "Front body controller message: 12 v battery status; frame length observed on a vehicle bus";
 CM_ SG_ 609 VCFRONT_12VBatteryStatusIndex "Front body controller: 12 v battery status index";
 CM_ SG_ 609 VCFRONT_good12VforUpdate "Indicates the Low Voltage (LV) battery health as it pertains to permitting an Over-The-Air (OTA) update.";
@@ -41292,6 +41815,8 @@ CM_ SG_ 545 VCFRONT_inAccessoryPlus "Front body controller: in accessory plus";
 CM_ SG_ 545 VCFRONT_LVShuttingDown "Front body controller: LV shutting down";
 CM_ SG_ 545 VCFRONT_LVPowerStateCounter "Front body controller: LV power state counter";
 CM_ SG_ 545 VCFRONT_LVPowerStateChecksum "Front body controller: LV power state checksum";
+CM_ SG_ 545 VCFRONT_dirLVRequest "Front body controller: dir LV request";
+CM_ SG_ 545 VCFRONT_difLVState "Front body controller: dif LV state";
 CM_ SG_ 545 VCFRONT_cpLVRequest "Front body controller: cp LV request";
 CM_ SG_ 545 VCFRONT_epasLVState "Front body controller: epas LV state";
 CM_ SG_ 545 VCFRONT_hvcLVRequest "Front body controller: hvc LV request";
@@ -44343,6 +44868,16 @@ CM_ SG_ 1013 VCFRONT_indicatorLeftInternal "Front body controller: indicator lef
 CM_ SG_ 1013 VCFRONT_indicatorRightInternal "Front body controller: indicator right internal";
 CM_ BO_ 1801 "Front body controller message: logging0point1 hz; frame length observed on a vehicle bus";
 CM_ SG_ 1801 VCFRONT_logging0point1HzIndex "Front body controller: logging0point1 hz index";
+CM_ SG_ 1801 VC_leftHeadlampCurrentVerticalPo "Front body controller: left headlamp current vertical position";
+CM_ SG_ 1801 VC_leftHeadlampCurrentHorizontal "Front body controller: left headlamp current horizontal position";
+CM_ SG_ 1801 VC_rightHeadlampCurrentVerticalP "Front body controller: right headlamp current vertical position";
+CM_ SG_ 1801 VC_rightHeadlampCurrentHorizonta "Front body controller: right headlamp current horizontal position";
+CM_ SG_ 1801 VC_leftHeadlampAimingState "Front body controller: left headlamp aiming state";
+CM_ SG_ 1801 VC_rightHeadlampAimingState "Front body controller: right headlamp aiming state";
+CM_ SG_ 1801 VC_leftHeadlampAimedVerticalPosi "Front body controller: left headlamp aimed vertical position";
+CM_ SG_ 1801 VC_rightHeadlampAimedVerticalPos "Front body controller: right headlamp aimed vertical position";
+CM_ SG_ 1801 VC_leftHeadlampAimedHorizontalPo "Front body controller: left headlamp aimed horizontal position";
+CM_ SG_ 1801 VC_rightHeadlampAimedHorizontalP "Front body controller: right headlamp aimed horizontal position";
 CM_ SG_ 1801 VC_hcmlFactoryOfOrigin "Tier 1 supplier (Hella) factory of origin of the left headlamp";
 CM_ SG_ 1801 VC_hcmlHellaPartNumberStatus "Front body controller: hcml hella part number status";
 CM_ SG_ 1801 VC_hcmlHellaPartNumber "Value of the Hella Part Number written into EEPROM in the left headlamp";
@@ -44793,6 +45328,8 @@ CM_ SG_ 1349 VCFRONT_loadShedBackStopBktCntDB "Front body controller: load shed 
 CM_ SG_ 1349 VCFRONT_loadShedPCSLeakyBktCtDBG "Front body controller: load shed PCS leaky bkt ct DBG";
 CM_ SG_ 1349 VCFRONT_loadShedUI "Front body controller: load shed UI";
 CM_ SG_ 1349 VCFRONT_loadShedAutoPilot "Front body controller: load shed auto pilot";
+CM_ BO_ 1537 "Front body controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1537 VCFRONT_udsResponseData "Front body controller: uds response data";
 CM_ BO_ 929 "Front body controller message: vehicle status; frame length observed on a vehicle bus";
 CM_ SG_ 929 VCFRONT_vehicleStatusMuxIndex "Front body controller: vehicle status mux index";
 CM_ SG_ 929 VCFRONT_vehicleStatusCounter "Front body controller: vehicle status counter";
@@ -47178,6 +47715,9 @@ CM_ SG_ 386 VCLEFT_hvac2RLeftLateralPosition "Left body controller: hvac2 r left
 CM_ SG_ 386 VCLEFT_hvac2RLeftVerticalPositio "Left body controller: hvac2 r left vertical position";
 CM_ SG_ 386 VCLEFT_hvac2RRightLateralPositio "Left body controller: hvac2 r right lateral position";
 CM_ SG_ 386 VCLEFT_hvac2RRightVerticalPositi "Left body controller: hvac2 r right vertical position";
+CM_ BO_ 1571 "Left body controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1571 VCLEFT_udsResponseData_H "Left body controller: uds response data h";
+CM_ SG_ 1571 VCLEFT_udsResponseData_L "Left body controller: uds response data l";
 CM_ BO_ 706 "Left body controller message: window status; frame length observed on a vehicle bus";
 CM_ SG_ 706 VCLEFT_windowStatusIndex "Left body controller: window status index";
 CM_ SG_ 706 VCLEFT_windowStateLF "Status of left front window motor";
@@ -49683,6 +50223,9 @@ CM_ SG_ 835 VCRIGHT_isSteeringWheelHeaterReq "Right body controller: is steering
 CM_ SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "Right body controller: steering wheel heater DC tgt; raw 127 = signal not available (SNA)";
 CM_ BO_ 963 "Right body controller message: switch status; frame length observed on a vehicle bus";
 CM_ SG_ 963 VCRIGHT_switchStatusIndex "Right body controller: switch status index";
+CM_ SG_ 963 VCRIGHT_frontBuckleSwitch "Right body controller: front buckle switch";
+CM_ SG_ 963 VCRIGHT_rearCenterBuckleSwitch "Right body controller: rear center buckle switch";
+CM_ SG_ 963 VCRIGHT_rearRightBuckleSwitch "Right body controller: rear right buckle switch";
 CM_ SG_ 963 VCRIGHT_trunkExtReleasePressedPe "Right body controller: trunk ext release pressed persist";
 CM_ SG_ 963 VCRIGHT_frontSeatTrackBack "Right body controller: front seat track back; raw 0 = signal not available (SNA)";
 CM_ SG_ 963 VCRIGHT_frontSeatTrackForward "Right body controller: front seat track forward; raw 0 = signal not available (SNA)";
@@ -49720,6 +50263,9 @@ CM_ SG_ 899 VCRIGHT_thsSolarLoadInfrared "Solar power hitting the vehicle in the
 CM_ SG_ 899 VCRIGHT_thsSolarLoadVisible "Solar power hitting the vehicle in the visible spectrum; raw 1023 = signal not available (SNA)";
 CM_ SG_ 899 VCRIGHT_estimatedThsSolarLoad "Right body controller: estimated ths solar load; raw 1023 = signal not available (SNA)";
 CM_ SG_ 899 VCRIGHT_hvacFastLoggingEnabled "Right body controller: hvac fast logging enabled";
+CM_ BO_ 1545 "Right body controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1545 VCRIGHT_udsResponseData_H "Right body controller: uds response data h";
+CM_ SG_ 1545 VCRIGHT_udsResponseData_L "Right body controller: uds response data l";
 CM_ BO_ 1059 "Right body controller message: veh nm; frame length observed on a vehicle bus";
 CM_ SG_ 1059 VCRIGHT_nmGoingToSleep "Right body controller: nm going to sleep";
 CM_ SG_ 1059 VCRIGHT_nmWakeUpBus "Right body controller: nm wake up bus";
@@ -51580,6 +52126,15 @@ CM_ SG_ 857 VCSEC_Device19SHA1 "SHA1 of the public key of the device";
 CM_ SG_ 857 VCSEC_Device19Permissions "Vehicle security controller: device19 permissions";
 CM_ SG_ 857 VCSEC_Device19ManufacturerHashBi "Vehicle security controller: device19 manufacturer hash bits";
 CM_ SG_ 857 VCSEC_Device19BuildNumberHashBit "Vehicle security controller: device19 build number hash bits";
+CM_ BO_ 953 "Vehicle security controller message; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN0 "Vehicle security controller: iso tp pipe ODIN0";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN1 "Vehicle security controller: iso tp pipe ODIN1";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN2 "Vehicle security controller: iso tp pipe ODIN2";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN3 "Vehicle security controller: iso tp pipe ODIN3";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN4 "Vehicle security controller: iso tp pipe ODIN4";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN5 "Vehicle security controller: iso tp pipe ODIN5";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN6 "Vehicle security controller: iso tp pipe ODIN6";
+CM_ SG_ 953 VCSEC_IsoTpPipeODIN7 "Vehicle security controller: iso tp pipe ODIN7";
 CM_ BO_ 474 "Vehicle security controller message: iso tp pipe remote UI; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 474 VCSEC_IsoTpRemoteUI0 "Vehicle security controller: iso tp remote UI0";
 CM_ SG_ 474 VCSEC_IsoTpRemoteUI1 "Vehicle security controller: iso tp remote UI1";
@@ -52674,6 +53229,8 @@ CM_ SG_ 281 VCSEC_recoveryModeRequested "Vehicle security controller: recovery m
 CM_ SG_ 281 VCSEC_infotainmentResetRequested "Vehicle security controller: infotainment reset requested";
 CM_ SG_ 281 VCSEC_mobileToAPRequest "Vehicle security controller: mobile to AP request";
 CM_ SG_ 281 VCSEC_riderKeyPresent "Vehicle security controller: rider key present";
+CM_ BO_ 1547 "Vehicle security controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
+CM_ SG_ 1547 VCSEC_udsResponseData "Vehicle security controller: uds response data";
 CM_ BO_ 1850 "VC ECU message: LVBMS brick measurements; frame length observed on a vehicle bus";
 CM_ SG_ 1850 VC_LVBMS_brickMeasurementsMultip "VC ECU: LVBMS brick measurements multiplexer";
 CM_ SG_ 1850 VC_LVBMS_brickVoltage1 "Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA)";
@@ -52784,6 +53341,25 @@ CM_ BO_ 1107 "VEH ECU message: billing; forwarded onto this bus by the gateway; 
 CM_ SG_ 1107 VEH_pricebookId "VEH ECU: pricebook id";
 CM_ BO_ 1651 "VEH ECU message: iso tp to evse; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1651 VEH_isoTpToEvseData "VEH ECU: iso tp to evse data";
+CM_ BO_ 1029 "Vector__XXX ECU message: VI nbroadcast; frame length observed on a vehicle bus";
+CM_ SG_ 1029 VIN_muxID "Page index of the vehicle identification number text (16 = characters 1-3, 17 = characters 4-10, 18 = characters 11-17)";
+CM_ SG_ 1029 VIN_char01 "Vehicle identification number, character 1 (ASCII)";
+CM_ SG_ 1029 VIN_char02 "Vehicle identification number, character 2 (ASCII)";
+CM_ SG_ 1029 VIN_char03 "Vehicle identification number, character 3 (ASCII)";
+CM_ SG_ 1029 VIN_char04 "Vehicle identification number, character 4 (ASCII)";
+CM_ SG_ 1029 VIN_char05 "Vehicle identification number, character 5 (ASCII)";
+CM_ SG_ 1029 VIN_char06 "Vehicle identification number, character 6 (ASCII)";
+CM_ SG_ 1029 VIN_char07 "Vehicle identification number, character 7 (ASCII)";
+CM_ SG_ 1029 VIN_char08 "Vehicle identification number, character 8 (ASCII)";
+CM_ SG_ 1029 VIN_char09 "Vehicle identification number, character 9 (ASCII)";
+CM_ SG_ 1029 VIN_char10 "Vehicle identification number, character 10 (ASCII)";
+CM_ SG_ 1029 VIN_char11 "Vehicle identification number, character 11 (ASCII)";
+CM_ SG_ 1029 VIN_char12 "Vehicle identification number, character 12 (ASCII)";
+CM_ SG_ 1029 VIN_char13 "Vehicle identification number, character 13 (ASCII)";
+CM_ SG_ 1029 VIN_char14 "Vehicle identification number, character 14 (ASCII)";
+CM_ SG_ 1029 VIN_char15 "Vehicle identification number, character 15 (ASCII)";
+CM_ SG_ 1029 VIN_char16 "Vehicle identification number, character 16 (ASCII)";
+CM_ SG_ 1029 VIN_char17 "Vehicle identification number, character 17 (ASCII)";
 BA_DEF_ "BusType" STRING;
 BA_DEF_ "DBName" STRING;
 BA_DEF_ "Baudrate" INT 0 1000000;
@@ -52845,6 +53421,7 @@ BA_ "ECU" BU_ HVP "HVP";
 BA_ "ECU" BU_ ICR "ICR";
 BA_ "ECU" BU_ PCS "PCS";
 BA_ "ECU" BU_ PCS2 "PCS2";
+BA_ "ECU" BU_ PLG "PLG";
 BA_ "ECU" BU_ PM "PM";
 BA_ "ECU" BU_ PMF "PMF";
 BA_ "ECU" BU_ PMR "PMR";
@@ -52890,6 +53467,9 @@ BA_ "VFrameFormat" BO_ 1025 0;
 BA_ "GenMsgCycleTime" BO_ 1138 1000;
 BA_ "GenMsgSendType" BO_ 1138 0;
 BA_ "VFrameFormat" BO_ 1138 0;
+BA_ "GenMsgCycleTime" BO_ 562 1000;
+BA_ "GenMsgSendType" BO_ 562 0;
+BA_ "VFrameFormat" BO_ 562 0;
 BA_ "GenMsgCycleTime" BO_ 722 100;
 BA_ "GenMsgSendType" BO_ 722 0;
 BA_ "VFrameFormat" BO_ 722 0;
@@ -52941,6 +53521,9 @@ BA_ "VFrameFormat" BO_ 530 0;
 BA_ "GenMsgCycleTime" BO_ 786 1000;
 BA_ "GenMsgSendType" BO_ 786 0;
 BA_ "VFrameFormat" BO_ 786 0;
+BA_ "GenMsgCycleTime" BO_ 1554 0;
+BA_ "GenMsgSendType" BO_ 1554 8;
+BA_ "VFrameFormat" BO_ 1554 0;
 BA_ "GenMsgCycleTime" BO_ 1071 1000;
 BA_ "GenMsgSendType" BO_ 1071 0;
 BA_ "VFrameFormat" BO_ 1071 0;
@@ -52971,9 +53554,15 @@ BA_ "VFrameFormat" BO_ 870 0;
 BA_ "GenMsgCycleTime" BO_ 679 100;
 BA_ "GenMsgSendType" BO_ 679 0;
 BA_ "VFrameFormat" BO_ 679 0;
+BA_ "GenMsgCycleTime" BO_ 1559 0;
+BA_ "GenMsgSendType" BO_ 1559 8;
+BA_ "VFrameFormat" BO_ 1559 0;
 BA_ "GenMsgCycleTime" BO_ 867 1000;
 BA_ "GenMsgSendType" BO_ 867 0;
 BA_ "VFrameFormat" BO_ 867 0;
+BA_ "GenMsgCycleTime" BO_ 1555 0;
+BA_ "GenMsgSendType" BO_ 1555 8;
+BA_ "VFrameFormat" BO_ 1555 0;
 BA_ "GenMsgCycleTime" BO_ 1767 0;
 BA_ "GenMsgSendType" BO_ 1767 8;
 BA_ "VFrameFormat" BO_ 1767 0;
@@ -53010,6 +53599,9 @@ BA_ "VFrameFormat" BO_ 605 0;
 BA_ "GenMsgCycleTime" BO_ 893 1000;
 BA_ "GenMsgSendType" BO_ 893 0;
 BA_ "VFrameFormat" BO_ 893 0;
+BA_ "GenMsgCycleTime" BO_ 1566 0;
+BA_ "GenMsgSendType" BO_ 1566 8;
+BA_ "VFrameFormat" BO_ 1566 0;
 BA_ "GenMsgCycleTime" BO_ 1001 500;
 BA_ "GenMsgSendType" BO_ 1001 0;
 BA_ "VFrameFormat" BO_ 1001 0;
@@ -53031,6 +53623,9 @@ BA_ "VFrameFormat" BO_ 886 0;
 BA_ "GenMsgCycleTime" BO_ 1367 1000;
 BA_ "GenMsgSendType" BO_ 1367 0;
 BA_ "VFrameFormat" BO_ 1367 0;
+BA_ "GenMsgCycleTime" BO_ 1557 0;
+BA_ "GenMsgSendType" BO_ 1557 8;
+BA_ "VFrameFormat" BO_ 1557 0;
 BA_ "GenMsgCycleTime" BO_ 1445 0;
 BA_ "GenMsgSendType" BO_ 1445 8;
 BA_ "VFrameFormat" BO_ 1445 0;
@@ -53058,6 +53653,9 @@ BA_ "VFrameFormat" BO_ 789 0;
 BA_ "GenMsgCycleTime" BO_ 1495 1000;
 BA_ "GenMsgSendType" BO_ 1495 0;
 BA_ "VFrameFormat" BO_ 1495 0;
+BA_ "GenMsgCycleTime" BO_ 1558 0;
+BA_ "GenMsgSendType" BO_ 1558 8;
+BA_ "VFrameFormat" BO_ 1558 0;
 BA_ "GenMsgCycleTime" BO_ 1319 0;
 BA_ "GenMsgSendType" BO_ 1319 8;
 BA_ "VFrameFormat" BO_ 1319 0;
@@ -53106,6 +53704,9 @@ BA_ "VFrameFormat" BO_ 743 0;
 BA_ "GenMsgCycleTime" BO_ 680 100;
 BA_ "GenMsgSendType" BO_ 680 0;
 BA_ "VFrameFormat" BO_ 680 0;
+BA_ "GenMsgCycleTime" BO_ 1573 0;
+BA_ "GenMsgSendType" BO_ 1573 8;
+BA_ "VFrameFormat" BO_ 1573 0;
 BA_ "GenMsgCycleTime" BO_ 1448 0;
 BA_ "GenMsgSendType" BO_ 1448 8;
 BA_ "VFrameFormat" BO_ 1448 0;
@@ -53124,6 +53725,9 @@ BA_ "VFrameFormat" BO_ 742 0;
 BA_ "GenMsgCycleTime" BO_ 744 100;
 BA_ "GenMsgSendType" BO_ 744 0;
 BA_ "VFrameFormat" BO_ 744 0;
+BA_ "GenMsgCycleTime" BO_ 1575 0;
+BA_ "GenMsgSendType" BO_ 1575 8;
+BA_ "VFrameFormat" BO_ 1575 0;
 BA_ "GenMsgCycleTime" BO_ 1662 0;
 BA_ "GenMsgSendType" BO_ 1662 8;
 BA_ "VFrameFormat" BO_ 1662 0;
@@ -53193,6 +53797,9 @@ BA_ "VFrameFormat" BO_ 522 0;
 BA_ "GenMsgCycleTime" BO_ 1962 1000;
 BA_ "GenMsgSendType" BO_ 1962 0;
 BA_ "VFrameFormat" BO_ 1962 0;
+BA_ "GenMsgCycleTime" BO_ 1666 100;
+BA_ "GenMsgSendType" BO_ 1666 0;
+BA_ "VFrameFormat" BO_ 1666 0;
 BA_ "GenMsgCycleTime" BO_ 554 100;
 BA_ "GenMsgSendType" BO_ 554 0;
 BA_ "VFrameFormat" BO_ 554 0;
@@ -53202,6 +53809,9 @@ BA_ "VFrameFormat" BO_ 784 0;
 BA_ "GenMsgCycleTime" BO_ 1914 1000;
 BA_ "GenMsgSendType" BO_ 1914 0;
 BA_ "VFrameFormat" BO_ 1914 0;
+BA_ "GenMsgCycleTime" BO_ 1553 0;
+BA_ "GenMsgSendType" BO_ 1553 8;
+BA_ "VFrameFormat" BO_ 1553 0;
 BA_ "GenMsgCycleTime" BO_ 1208 0;
 BA_ "GenMsgSendType" BO_ 1208 8;
 BA_ "VFrameFormat" BO_ 1208 0;
@@ -53223,9 +53833,15 @@ BA_ "VFrameFormat" BO_ 670 0;
 BA_ "GenMsgCycleTime" BO_ 664 100;
 BA_ "GenMsgSendType" BO_ 664 0;
 BA_ "VFrameFormat" BO_ 664 0;
+BA_ "GenMsgCycleTime" BO_ 1624 0;
+BA_ "GenMsgSendType" BO_ 1624 8;
+BA_ "VFrameFormat" BO_ 1624 0;
 BA_ "GenMsgCycleTime" BO_ 1012 0;
 BA_ "GenMsgSendType" BO_ 1012 8;
 BA_ "VFrameFormat" BO_ 1012 0;
+BA_ "GenMsgCycleTime" BO_ 1152 0;
+BA_ "GenMsgSendType" BO_ 1152 8;
+BA_ "VFrameFormat" BO_ 1152 0;
 BA_ "GenMsgCycleTime" BO_ 1092 0;
 BA_ "GenMsgSendType" BO_ 1092 8;
 BA_ "VFrameFormat" BO_ 1092 0;
@@ -53265,6 +53881,12 @@ BA_ "VFrameFormat" BO_ 708 0;
 BA_ "GenMsgCycleTime" BO_ 676 1000;
 BA_ "GenMsgSendType" BO_ 676 0;
 BA_ "VFrameFormat" BO_ 676 0;
+BA_ "GenMsgCycleTime" BO_ 1577 0;
+BA_ "GenMsgSendType" BO_ 1577 8;
+BA_ "VFrameFormat" BO_ 1577 0;
+BA_ "GenMsgCycleTime" BO_ 1635 0;
+BA_ "GenMsgSendType" BO_ 1635 8;
+BA_ "VFrameFormat" BO_ 1635 0;
 BA_ "GenMsgCycleTime" BO_ 1317 0;
 BA_ "GenMsgSendType" BO_ 1317 8;
 BA_ "VFrameFormat" BO_ 1317 0;
@@ -53274,6 +53896,9 @@ BA_ "VFrameFormat" BO_ 772 0;
 BA_ "GenMsgCycleTime" BO_ 790 1000;
 BA_ "GenMsgSendType" BO_ 790 0;
 BA_ "VFrameFormat" BO_ 790 0;
+BA_ "GenMsgCycleTime" BO_ 1620 0;
+BA_ "GenMsgSendType" BO_ 1620 8;
+BA_ "VFrameFormat" BO_ 1620 0;
 BA_ "GenMsgCycleTime" BO_ 1446 0;
 BA_ "GenMsgSendType" BO_ 1446 8;
 BA_ "VFrameFormat" BO_ 1446 0;
@@ -53283,6 +53908,9 @@ BA_ "VFrameFormat" BO_ 902 0;
 BA_ "GenMsgCycleTime" BO_ 1748 1000;
 BA_ "GenMsgSendType" BO_ 1748 0;
 BA_ "VFrameFormat" BO_ 1748 0;
+BA_ "GenMsgCycleTime" BO_ 1556 0;
+BA_ "GenMsgSendType" BO_ 1556 8;
+BA_ "VFrameFormat" BO_ 1556 0;
 BA_ "GenMsgCycleTime" BO_ 1444 0;
 BA_ "GenMsgSendType" BO_ 1444 8;
 BA_ "VFrameFormat" BO_ 1444 0;
@@ -53295,6 +53923,9 @@ BA_ "VFrameFormat" BO_ 1551 0;
 BA_ "GenMsgCycleTime" BO_ 485 10;
 BA_ "GenMsgSendType" BO_ 485 0;
 BA_ "VFrameFormat" BO_ 485 0;
+BA_ "GenMsgCycleTime" BO_ 1600 0;
+BA_ "GenMsgSendType" BO_ 1600 8;
+BA_ "VFrameFormat" BO_ 1600 0;
 BA_ "GenMsgCycleTime" BO_ 1766 0;
 BA_ "GenMsgSendType" BO_ 1766 8;
 BA_ "VFrameFormat" BO_ 1766 0;
@@ -53304,6 +53935,9 @@ BA_ "VFrameFormat" BO_ 837 0;
 BA_ "GenMsgCycleTime" BO_ 647 100;
 BA_ "GenMsgSendType" BO_ 647 0;
 BA_ "VFrameFormat" BO_ 647 0;
+BA_ "GenMsgCycleTime" BO_ 1750 0;
+BA_ "GenMsgSendType" BO_ 1750 8;
+BA_ "VFrameFormat" BO_ 1750 0;
 BA_ "GenMsgCycleTime" BO_ 1344 0;
 BA_ "GenMsgSendType" BO_ 1344 8;
 BA_ "VFrameFormat" BO_ 1344 0;
@@ -53322,6 +53956,9 @@ BA_ "VFrameFormat" BO_ 553 0;
 BA_ "GenMsgCycleTime" BO_ 297 10;
 BA_ "GenMsgSendType" BO_ 297 0;
 BA_ "VFrameFormat" BO_ 297 0;
+BA_ "GenMsgCycleTime" BO_ 1680 0;
+BA_ "GenMsgSendType" BO_ 1680 8;
+BA_ "VFrameFormat" BO_ 1680 0;
 BA_ "GenMsgCycleTime" BO_ 1356 0;
 BA_ "GenMsgSendType" BO_ 1356 8;
 BA_ "VFrameFormat" BO_ 1356 0;
@@ -53349,6 +53986,12 @@ BA_ "VFrameFormat" BO_ 1467 0;
 BA_ "GenMsgCycleTime" BO_ 1597 1000;
 BA_ "GenMsgSendType" BO_ 1597 0;
 BA_ "VFrameFormat" BO_ 1597 0;
+BA_ "GenMsgCycleTime" BO_ 1787 0;
+BA_ "GenMsgSendType" BO_ 1787 8;
+BA_ "VFrameFormat" BO_ 1787 0;
+BA_ "GenMsgCycleTime" BO_ 792 100;
+BA_ "GenMsgSendType" BO_ 792 0;
+BA_ "VFrameFormat" BO_ 792 0;
 BA_ "GenMsgCycleTime" BO_ 1291 0;
 BA_ "GenMsgSendType" BO_ 1291 8;
 BA_ "VFrameFormat" BO_ 1291 0;
@@ -53367,6 +54010,9 @@ BA_ "VFrameFormat" BO_ 1357 0;
 BA_ "GenMsgCycleTime" BO_ 525 100;
 BA_ "GenMsgSendType" BO_ 525 0;
 BA_ "VFrameFormat" BO_ 525 0;
+BA_ "GenMsgCycleTime" BO_ 1627 0;
+BA_ "GenMsgSendType" BO_ 1627 8;
+BA_ "VFrameFormat" BO_ 1627 0;
 BA_ "GenMsgCycleTime" BO_ 409 50;
 BA_ "GenMsgSendType" BO_ 409 0;
 BA_ "VFrameFormat" BO_ 409 0;
@@ -53376,6 +54022,102 @@ BA_ "VFrameFormat" BO_ 410 0;
 BA_ "GenMsgCycleTime" BO_ 538 100;
 BA_ "GenMsgSendType" BO_ 538 0;
 BA_ "VFrameFormat" BO_ 538 0;
+BA_ "GenMsgCycleTime" BO_ 1641 0;
+BA_ "GenMsgSendType" BO_ 1641 8;
+BA_ "VFrameFormat" BO_ 1641 0;
+BA_ "GenMsgCycleTime" BO_ 1538 0;
+BA_ "GenMsgSendType" BO_ 1538 8;
+BA_ "VFrameFormat" BO_ 1538 0;
+BA_ "GenMsgCycleTime" BO_ 1579 0;
+BA_ "GenMsgSendType" BO_ 1579 8;
+BA_ "VFrameFormat" BO_ 1579 0;
+BA_ "GenMsgCycleTime" BO_ 1539 0;
+BA_ "GenMsgSendType" BO_ 1539 8;
+BA_ "VFrameFormat" BO_ 1539 0;
+BA_ "GenMsgCycleTime" BO_ 1543 0;
+BA_ "GenMsgSendType" BO_ 1543 8;
+BA_ "VFrameFormat" BO_ 1543 0;
+BA_ "GenMsgCycleTime" BO_ 1550 0;
+BA_ "GenMsgSendType" BO_ 1550 8;
+BA_ "VFrameFormat" BO_ 1550 0;
+BA_ "GenMsgCycleTime" BO_ 1589 0;
+BA_ "GenMsgSendType" BO_ 1589 8;
+BA_ "VFrameFormat" BO_ 1589 0;
+BA_ "GenMsgCycleTime" BO_ 1541 0;
+BA_ "GenMsgSendType" BO_ 1541 8;
+BA_ "VFrameFormat" BO_ 1541 0;
+BA_ "GenMsgCycleTime" BO_ 1542 0;
+BA_ "GenMsgSendType" BO_ 1542 8;
+BA_ "VFrameFormat" BO_ 1542 0;
+BA_ "GenMsgCycleTime" BO_ 1572 0;
+BA_ "GenMsgSendType" BO_ 1572 8;
+BA_ "VFrameFormat" BO_ 1572 0;
+BA_ "GenMsgCycleTime" BO_ 1574 0;
+BA_ "GenMsgSendType" BO_ 1574 8;
+BA_ "VFrameFormat" BO_ 1574 0;
+BA_ "GenMsgCycleTime" BO_ 2015 0;
+BA_ "GenMsgSendType" BO_ 2015 8;
+BA_ "VFrameFormat" BO_ 2015 0;
+BA_ "GenMsgCycleTime" BO_ 1552 0;
+BA_ "GenMsgSendType" BO_ 1552 8;
+BA_ "VFrameFormat" BO_ 1552 0;
+BA_ "GenMsgCycleTime" BO_ 1560 0;
+BA_ "GenMsgSendType" BO_ 1560 8;
+BA_ "VFrameFormat" BO_ 1560 0;
+BA_ "GenMsgCycleTime" BO_ 1576 0;
+BA_ "GenMsgSendType" BO_ 1576 8;
+BA_ "VFrameFormat" BO_ 1576 0;
+BA_ "GenMsgCycleTime" BO_ 1634 0;
+BA_ "GenMsgSendType" BO_ 1634 8;
+BA_ "VFrameFormat" BO_ 1634 0;
+BA_ "GenMsgCycleTime" BO_ 1568 0;
+BA_ "GenMsgSendType" BO_ 1568 8;
+BA_ "VFrameFormat" BO_ 1568 0;
+BA_ "GenMsgCycleTime" BO_ 1604 0;
+BA_ "GenMsgSendType" BO_ 1604 8;
+BA_ "VFrameFormat" BO_ 1604 0;
+BA_ "GenMsgCycleTime" BO_ 1540 0;
+BA_ "GenMsgSendType" BO_ 1540 8;
+BA_ "VFrameFormat" BO_ 1540 0;
+BA_ "GenMsgCycleTime" BO_ 1734 0;
+BA_ "GenMsgSendType" BO_ 1734 8;
+BA_ "VFrameFormat" BO_ 1734 0;
+BA_ "GenMsgCycleTime" BO_ 1664 0;
+BA_ "GenMsgSendType" BO_ 1664 8;
+BA_ "VFrameFormat" BO_ 1664 0;
+BA_ "GenMsgCycleTime" BO_ 1723 0;
+BA_ "GenMsgSendType" BO_ 1723 8;
+BA_ "VFrameFormat" BO_ 1723 0;
+BA_ "GenMsgCycleTime" BO_ 1611 0;
+BA_ "GenMsgSendType" BO_ 1611 8;
+BA_ "VFrameFormat" BO_ 1611 0;
+BA_ "GenMsgCycleTime" BO_ 1548 0;
+BA_ "GenMsgSendType" BO_ 1548 8;
+BA_ "VFrameFormat" BO_ 1548 0;
+BA_ "GenMsgCycleTime" BO_ 1562 0;
+BA_ "GenMsgSendType" BO_ 1562 8;
+BA_ "VFrameFormat" BO_ 1562 0;
+BA_ "GenMsgCycleTime" BO_ 1633 0;
+BA_ "GenMsgSendType" BO_ 1633 8;
+BA_ "VFrameFormat" BO_ 1633 0;
+BA_ "GenMsgCycleTime" BO_ 1580 0;
+BA_ "GenMsgSendType" BO_ 1580 8;
+BA_ "VFrameFormat" BO_ 1580 0;
+BA_ "GenMsgCycleTime" BO_ 1582 0;
+BA_ "GenMsgSendType" BO_ 1582 8;
+BA_ "VFrameFormat" BO_ 1582 0;
+BA_ "GenMsgCycleTime" BO_ 1536 0;
+BA_ "GenMsgSendType" BO_ 1536 8;
+BA_ "VFrameFormat" BO_ 1536 0;
+BA_ "GenMsgCycleTime" BO_ 1570 0;
+BA_ "GenMsgSendType" BO_ 1570 8;
+BA_ "VFrameFormat" BO_ 1570 0;
+BA_ "GenMsgCycleTime" BO_ 1544 0;
+BA_ "GenMsgSendType" BO_ 1544 8;
+BA_ "VFrameFormat" BO_ 1544 0;
+BA_ "GenMsgCycleTime" BO_ 1546 0;
+BA_ "GenMsgSendType" BO_ 1546 8;
+BA_ "VFrameFormat" BO_ 1546 0;
 BA_ "GenMsgCycleTime" BO_ 1154 0;
 BA_ "GenMsgSendType" BO_ 1154 8;
 BA_ "VFrameFormat" BO_ 1154 0;
@@ -53514,6 +54256,9 @@ BA_ "VFrameFormat" BO_ 824 0;
 BA_ "GenMsgCycleTime" BO_ 1285 100;
 BA_ "GenMsgSendType" BO_ 1285 0;
 BA_ "VFrameFormat" BO_ 1285 0;
+BA_ "GenMsgCycleTime" BO_ 1320 1000;
+BA_ "GenMsgSendType" BO_ 1320 0;
+BA_ "VFrameFormat" BO_ 1320 0;
 BA_ "GenMsgCycleTime" BO_ 1949 0;
 BA_ "GenMsgSendType" BO_ 1949 8;
 BA_ "VFrameFormat" BO_ 1949 0;
@@ -53538,6 +54283,9 @@ BA_ "VFrameFormat" BO_ 974 0;
 BA_ "GenMsgCycleTime" BO_ 1030 200;
 BA_ "GenMsgSendType" BO_ 1030 0;
 BA_ "VFrameFormat" BO_ 1030 0;
+BA_ "GenMsgCycleTime" BO_ 1549 0;
+BA_ "GenMsgSendType" BO_ 1549 8;
+BA_ "VFrameFormat" BO_ 1549 0;
 BA_ "GenMsgCycleTime" BO_ 1358 0;
 BA_ "GenMsgSendType" BO_ 1358 8;
 BA_ "VFrameFormat" BO_ 1358 0;
@@ -53547,12 +54295,18 @@ BA_ "VFrameFormat" BO_ 975 0;
 BA_ "GenMsgCycleTime" BO_ 1399 100;
 BA_ "GenMsgSendType" BO_ 1399 0;
 BA_ "VFrameFormat" BO_ 1399 0;
+BA_ "GenMsgCycleTime" BO_ 1563 0;
+BA_ "GenMsgSendType" BO_ 1563 8;
+BA_ "VFrameFormat" BO_ 1563 0;
 BA_ "GenMsgCycleTime" BO_ 945 100;
 BA_ "GenMsgSendType" BO_ 945 0;
 BA_ "VFrameFormat" BO_ 945 0;
 BA_ "GenMsgCycleTime" BO_ 1090 50;
 BA_ "GenMsgSendType" BO_ 1090 0;
 BA_ "VFrameFormat" BO_ 1090 0;
+BA_ "GenMsgCycleTime" BO_ 1569 0;
+BA_ "GenMsgSendType" BO_ 1569 8;
+BA_ "VFrameFormat" BO_ 1569 0;
 BA_ "GenMsgCycleTime" BO_ 1335 0;
 BA_ "GenMsgSendType" BO_ 1335 8;
 BA_ "VFrameFormat" BO_ 1335 0;
@@ -53562,12 +54316,18 @@ BA_ "VFrameFormat" BO_ 833 0;
 BA_ "GenMsgCycleTime" BO_ 1027 200;
 BA_ "GenMsgSendType" BO_ 1027 0;
 BA_ "VFrameFormat" BO_ 1027 0;
+BA_ "GenMsgCycleTime" BO_ 1581 0;
+BA_ "GenMsgSendType" BO_ 1581 8;
+BA_ "VFrameFormat" BO_ 1581 0;
 BA_ "GenMsgCycleTime" BO_ 1351 0;
 BA_ "GenMsgSendType" BO_ 1351 8;
 BA_ "VFrameFormat" BO_ 1351 0;
 BA_ "GenMsgCycleTime" BO_ 834 100;
 BA_ "GenMsgSendType" BO_ 834 0;
 BA_ "VFrameFormat" BO_ 834 0;
+BA_ "GenMsgCycleTime" BO_ 1583 0;
+BA_ "GenMsgSendType" BO_ 1583 8;
+BA_ "VFrameFormat" BO_ 1583 0;
 BA_ "GenMsgCycleTime" BO_ 609 16;
 BA_ "GenMsgSendType" BO_ 609 0;
 BA_ "VFrameFormat" BO_ 609 0;
@@ -53637,6 +54397,9 @@ BA_ "VFrameFormat" BO_ 737 0;
 BA_ "GenMsgCycleTime" BO_ 1349 33;
 BA_ "GenMsgSendType" BO_ 1349 0;
 BA_ "VFrameFormat" BO_ 1349 0;
+BA_ "GenMsgCycleTime" BO_ 1537 0;
+BA_ "GenMsgSendType" BO_ 1537 8;
+BA_ "VFrameFormat" BO_ 1537 0;
 BA_ "GenMsgCycleTime" BO_ 929 50;
 BA_ "GenMsgSendType" BO_ 929 0;
 BA_ "VFrameFormat" BO_ 929 0;
@@ -53709,6 +54472,9 @@ BA_ "VFrameFormat" BO_ 657 0;
 BA_ "GenMsgCycleTime" BO_ 386 100;
 BA_ "GenMsgSendType" BO_ 386 0;
 BA_ "VFrameFormat" BO_ 386 0;
+BA_ "GenMsgCycleTime" BO_ 1571 0;
+BA_ "GenMsgSendType" BO_ 1571 8;
+BA_ "VFrameFormat" BO_ 1571 0;
 BA_ "GenMsgCycleTime" BO_ 706 100;
 BA_ "GenMsgSendType" BO_ 706 0;
 BA_ "VFrameFormat" BO_ 706 0;
@@ -53778,6 +54544,9 @@ BA_ "VFrameFormat" BO_ 963 0;
 BA_ "GenMsgCycleTime" BO_ 899 100;
 BA_ "GenMsgSendType" BO_ 899 0;
 BA_ "VFrameFormat" BO_ 899 0;
+BA_ "GenMsgCycleTime" BO_ 1545 0;
+BA_ "GenMsgSendType" BO_ 1545 8;
+BA_ "VFrameFormat" BO_ 1545 0;
 BA_ "GenMsgCycleTime" BO_ 1059 100;
 BA_ "GenMsgSendType" BO_ 1059 0;
 BA_ "VFrameFormat" BO_ 1059 0;
@@ -53817,6 +54586,9 @@ BA_ "VFrameFormat" BO_ 607 0;
 BA_ "GenMsgCycleTime" BO_ 857 100;
 BA_ "GenMsgSendType" BO_ 857 0;
 BA_ "VFrameFormat" BO_ 857 0;
+BA_ "GenMsgCycleTime" BO_ 953 0;
+BA_ "GenMsgSendType" BO_ 953 8;
+BA_ "VFrameFormat" BO_ 953 0;
 BA_ "GenMsgCycleTime" BO_ 474 0;
 BA_ "GenMsgSendType" BO_ 474 8;
 BA_ "VFrameFormat" BO_ 474 0;
@@ -53865,6 +54637,9 @@ BA_ "VFrameFormat" BO_ 505 0;
 BA_ "GenMsgCycleTime" BO_ 281 100;
 BA_ "GenMsgSendType" BO_ 281 0;
 BA_ "VFrameFormat" BO_ 281 0;
+BA_ "GenMsgCycleTime" BO_ 1547 0;
+BA_ "GenMsgSendType" BO_ 1547 8;
+BA_ "VFrameFormat" BO_ 1547 0;
 BA_ "GenMsgCycleTime" BO_ 1850 1000;
 BA_ "GenMsgSendType" BO_ 1850 0;
 BA_ "VFrameFormat" BO_ 1850 0;
@@ -53886,6 +54661,9 @@ BA_ "VFrameFormat" BO_ 1107 0;
 BA_ "GenMsgCycleTime" BO_ 1651 0;
 BA_ "GenMsgSendType" BO_ 1651 8;
 BA_ "VFrameFormat" BO_ 1651 0;
+BA_ "GenMsgCycleTime" BO_ 1029 1000;
+BA_ "GenMsgSendType" BO_ 1029 0;
+BA_ "VFrameFormat" BO_ 1029 0;
 BA_ "Confidence" SG_ 1951 ADSP_audioVisualizerBrightness 0;
 BA_ "Confidence" SG_ 909 APP_inTunnel 0;
 BA_ "GenSigSNA" SG_ 909 APP_inTunnel "0";
@@ -54830,6 +55608,8 @@ BA_ "GenSigSNA" SG_ 1138 BMS_timeToFinishHeatForCharge "127";
 BA_ "Confidence" SG_ 1138 BMS_timeToTripPlanChargingTarget 0;
 BA_ "GenSigSNA" SG_ 1138 BMS_timeToTripPlanChargingTarget "2047";
 BA_ "Confidence" SG_ 1138 BMS_useChargeTimeEstimate 0;
+BA_ "Confidence" SG_ 562 BMS_internalHvilSenseV 1;
+BA_ "Confidence" SG_ 562 BMS_hvilCoverVSense 1;
 BA_ "Confidence" SG_ 722 BMS_minBusVoltage 0;
 BA_ "Confidence" SG_ 722 BMS_maxBusVoltage 0;
 BA_ "Confidence" SG_ 722 BMS_maxChargeCurrent 0;
@@ -54909,6 +55689,8 @@ BA_ "Confidence" SG_ 882 BMS_dcChargeVoltageLimit 0;
 BA_ "Confidence" SG_ 882 BMS_dcChargePowerLimit 0;
 BA_ "Confidence" SG_ 882 BMS_acRealPowerRequest 0;
 BA_ "Confidence" SG_ 882 BMS_maxExtIsoFcLinkV 0;
+BA_ "Confidence" SG_ 882 BMS_minModeledPackTemp 1;
+BA_ "Confidence" SG_ 882 BMS_maxModeledPackTemp 1;
 BA_ "Confidence" SG_ 882 BMS_energyMaxPredictedBrickTemp 0;
 BA_ "Confidence" SG_ 882 BMS_energyTempGradientAtMaxTemp 0;
 BA_ "Confidence" SG_ 882 BMS_energyWalkMaxSoc 0;
@@ -54971,6 +55753,14 @@ BA_ "GenSigSNA" SG_ 946 BMS_dynamicEnergyBuffer "1023";
 BA_ "Confidence" SG_ 946 BMS_temperatureCondition 0;
 BA_ "Confidence" SG_ 946 BMS_thmGradientSlope 0;
 BA_ "Confidence" SG_ 946 BMS_thmGradient 0;
+BA_ "Confidence" SG_ 946 BMS_epochTimeEstimate 1;
+BA_ "Confidence" SG_ 946 BMS_histogramStartTimeIrrational 1;
+BA_ "Confidence" SG_ 946 BMS_histogramDischargeThroughput 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_histogramDischargeThroughput "BMS_histogramDischargeThroughputIrrational";
+BA_ "Confidence" SG_ 946 BMS_histogramChargeThroughputIrr 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_histogramChargeThroughputIrr "BMS_histogramChargeThroughputIrrational";
+BA_ "Confidence" SG_ 946 BMS_histogramTotalTimeIrrational 1;
+BA_ "Confidence" SG_ 946 BMS_histogramStorageDataIsLow 1;
 BA_ "Confidence" SG_ 946 BMS_tempVsSocTotalChgEnergy 0;
 BA_ "Confidence" SG_ 946 BMS_powerVsVoltageTotalChgEnergy 0;
 BA_ "Confidence" SG_ 946 BMS_lifeModelOutputsAreTrustwort 0;
@@ -55021,6 +55811,8 @@ BA_ "GenSigSNA" SG_ 946 BMS_idealEnergyRemainingBuffered "65535";
 BA_ "Confidence" SG_ 946 BMS_largestSynchronizedCacErrorP 0;
 BA_ "GenSigSNA" SG_ 946 BMS_largestSynchronizedCacErrorP "255";
 BA_ "SystemSignalLongSymbol" SG_ 946 BMS_largestSynchronizedCacErrorP "BMS_largestSynchronizedCacErrorPct";
+BA_ "Confidence" SG_ 946 BMS_lifeModelSpreadMinOffset 1;
+BA_ "Confidence" SG_ 946 BMS_lifeModelSpreadMaxOffset 1;
 BA_ "Confidence" SG_ 946 BMS_largestCacSpreadErrorLower 0;
 BA_ "GenSigSNA" SG_ 946 BMS_largestCacSpreadErrorLower "4095";
 BA_ "Confidence" SG_ 946 BMS_lifeModelAverageCac 0;
@@ -55042,6 +55834,8 @@ BA_ "GenSigSNA" SG_ 946 BMS_lifeModelMinCac "4095";
 BA_ "Confidence" SG_ 946 BMS_restingPointCacAvg 0;
 BA_ "GenSigSNA" SG_ 946 BMS_restingPointCacAvg "4095";
 BA_ "Confidence" SG_ 946 BMS_cacEstimationSource 0;
+BA_ "Confidence" SG_ 946 BMS_packCalibrationBirthDateBinn 1;
+BA_ "SystemSignalLongSymbol" SG_ 946 BMS_packCalibrationBirthDateBinn "BMS_packCalibrationBirthDateBinned";
 BA_ "Confidence" SG_ 946 BMS_synchronizedCacMaxRaw 0;
 BA_ "GenSigSNA" SG_ 946 BMS_synchronizedCacMaxRaw "4095";
 BA_ "Confidence" SG_ 946 BMS_synchronizedCacMinRaw 0;
@@ -55188,7 +55982,7 @@ BA_ "GenSigSNA" SG_ 674 BMS_acRippleFrequencyRequest "1023";
 BA_ "Confidence" SG_ 674 BMS_acRippleCurrentAmplitudeRequ 0;
 BA_ "SystemSignalLongSymbol" SG_ 674 BMS_acRippleCurrentAmplitudeRequ "BMS_acRippleCurrentAmplitudeRequest";
 BA_ "Confidence" SG_ 674 BMS_acRippleRequest 0;
-BA_ "Confidence" SG_ 1834 BMS_serialNumberPage 1;
+BA_ "Confidence" SG_ 1834 BMS_serialNumberMultiplexer 1;
 BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte01 0;
 BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte02 0;
 BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte03 0;
@@ -55203,6 +55997,7 @@ BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte11 0;
 BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte12 0;
 BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte13 0;
 BA_ "Confidence" SG_ 1834 BMS_packSerialNumberByte14 0;
+BA_ "Confidence" SG_ 1834 BMS_packSerialBirthDateBinned 1;
 BA_ "Confidence" SG_ 658 BMS_socMin 0;
 BA_ "Confidence" SG_ 658 BMS_socUI 0;
 BA_ "Confidence" SG_ 658 BMS_socMax 0;
@@ -55267,6 +56062,7 @@ BA_ "Confidence" SG_ 786 BMS_i2tDeratingEnabled 0;
 BA_ "Confidence" SG_ 786 BMS_activeCoolCellReferenceT 0;
 BA_ "Confidence" SG_ 786 BMS_activeHeatCellTargetT 0;
 BA_ "Confidence" SG_ 786 BMS_powerDissipation 0;
+BA_ "Confidence" SG_ 1554 BMS_udsResponseData 1;
 BA_ "Confidence" SG_ 1071 BMS_v2xSoe 0;
 BA_ "GenSigSNA" SG_ 1071 BMS_v2xSoe "65535";
 BA_ "Confidence" SG_ 1071 BMS_v2xFullEnergy 0;
@@ -55479,6 +56275,7 @@ BA_ "GenSigSNA" SG_ 679 CMPD_state "15";
 BA_ "Confidence" SG_ 679 CMPD_wasteHeatState 0;
 BA_ "Confidence" SG_ 679 CMPD_powerLimitTooLowToStart 0;
 BA_ "Confidence" SG_ 679 CMPD_ready 0;
+BA_ "Confidence" SG_ 1559 CMPD_udsResponseData 1;
 BA_ "Confidence" SG_ 867 CMP_infoIndex 1;
 BA_ "Confidence" SG_ 867 CMP_infoBuildType 0;
 BA_ "Confidence" SG_ 867 CMP_infoBuildConfigId 0;
@@ -55493,6 +56290,7 @@ BA_ "Confidence" SG_ 867 CMP_infoPlatformType 0;
 BA_ "Confidence" SG_ 867 CMP_infoAppCrc 0;
 BA_ "Confidence" SG_ 867 CMP_infoBootUdsProtoVersion 0;
 BA_ "Confidence" SG_ 867 CMP_infoBootCrc 0;
+BA_ "Confidence" SG_ 1555 CMP_udsResponseData 1;
 BA_ "Confidence" SG_ 1767 CP_isoTpToPncdData 2;
 BA_ "Confidence" SG_ 1294 CP_alertID 1;
 BA_ "Confidence" SG_ 1294 CP_alertType 1;
@@ -56285,6 +57083,7 @@ BA_ "Confidence" SG_ 893 CP_pinTemperature3 0;
 BA_ "Confidence" SG_ 893 CP_pinTemperature4 0;
 BA_ "Confidence" SG_ 893 CP_pinTemp4Velocity 0;
 BA_ "GenSigSNA" SG_ 893 CP_pinTemp4Velocity "511";
+BA_ "Confidence" SG_ 1566 CP_udsResponseData 1;
 BA_ "Confidence" SG_ 1001 DAS_headlightRequest 0;
 BA_ "Confidence" SG_ 1001 DAS_hazardLightRequest 0;
 BA_ "GenSigSNA" SG_ 1001 DAS_hazardLightRequest "3";
@@ -57168,6 +57967,7 @@ BA_ "Confidence" SG_ 1367 DIF_oilFlowReq 0;
 BA_ "GenSigSNA" SG_ 1367 DIF_oilFlowReq "255";
 BA_ "Confidence" SG_ 1367 DIF_criticalFlowReq 0;
 BA_ "Confidence" SG_ 1367 DIF_burnInStatus 0;
+BA_ "Confidence" SG_ 1557 DIF_udsResponseData 1;
 BA_ "Confidence" SG_ 1445 DIR_alertID 1;
 BA_ "Confidence" SG_ 1445 DIR_alertState 1;
 BA_ "Confidence" SG_ 1445 DIR_a001_thermalWarning_H 2;
@@ -58102,6 +58902,7 @@ BA_ "Confidence" SG_ 1495 DIR_oilFlowReq 0;
 BA_ "GenSigSNA" SG_ 1495 DIR_oilFlowReq "255";
 BA_ "Confidence" SG_ 1495 DIR_criticalFlowReq 0;
 BA_ "Confidence" SG_ 1495 DIR_burnInStatus 0;
+BA_ "Confidence" SG_ 1558 DIR_udsResponseData 1;
 BA_ "Confidence" SG_ 1319 DI_alertID 1;
 BA_ "Confidence" SG_ 1319 DI_alertState 1;
 BA_ "Confidence" SG_ 1319 DI_a004_unavailableReason 1;
@@ -59809,6 +60610,8 @@ BA_ "Confidence" SG_ 680 EPBL_bothDisconnected 0;
 BA_ "Confidence" SG_ 680 EPBL_blockDrive 0;
 BA_ "Confidence" SG_ 680 EPBL_statusCounter 0;
 BA_ "Confidence" SG_ 680 EPBL_statusChecksum 0;
+BA_ "Confidence" SG_ 1573 EPBL_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1573 EPBL_udsResponseData_L 1;
 BA_ "Confidence" SG_ 1448 EPBR_alertID 1;
 BA_ "Confidence" SG_ 1448 EPBR_alertState 1;
 BA_ "Confidence" SG_ 1448 EPBR_a001_InternalWatchdog 2;
@@ -60709,6 +61512,8 @@ BA_ "Confidence" SG_ 744 EPBR_bothDisconnected 0;
 BA_ "Confidence" SG_ 744 EPBR_blockDrive 0;
 BA_ "Confidence" SG_ 744 EPBR_statusCounter 0;
 BA_ "Confidence" SG_ 744 EPBR_statusChecksum 0;
+BA_ "Confidence" SG_ 1575 EPBR_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1575 EPBR_udsResponseData_L 1;
 BA_ "Confidence" SG_ 1662 EVSE_isoTpToVehData 0;
 BA_ "Confidence" SG_ 1322 FC_alertID 1;
 BA_ "Confidence" SG_ 1322 FC_alertType 1;
@@ -61331,6 +62136,9 @@ BA_ "GenSigSNA" SG_ 1962 HVP_passivePyroRefVoltageMin "1023";
 BA_ "Confidence" SG_ 1962 HVP_packContCoilCurrent 0;
 BA_ "Confidence" SG_ 1962 HVP_battery12V 0;
 BA_ "Confidence" SG_ 1962 HVP_fcLinkPositiveV 0;
+BA_ "Confidence" SG_ 1666 HVP_packContactorHwFault 1;
+BA_ "Confidence" SG_ 1666 HVP_fcContactorHwFault 1;
+BA_ "Confidence" SG_ 1666 HVP_hvilStatus 1;
 BA_ "Confidence" SG_ 554 HVP_dcLinkVoltageRequest 0;
 BA_ "Confidence" SG_ 554 HVP_pcsControlRequest 0;
 BA_ "Confidence" SG_ 554 HVP_pcsChargeHwEnabled 0;
@@ -61367,6 +62175,7 @@ BA_ "Confidence" SG_ 1914 HVP_shuntAsicChipWaferNumber 0;
 BA_ "Confidence" SG_ 1914 HVP_energyReserveMin 0;
 BA_ "Confidence" SG_ 1914 HVP_energyReserveMax 0;
 BA_ "Confidence" SG_ 1914 HVP_energyReserveAvg 0;
+BA_ "Confidence" SG_ 1553 HVP_udsResponseData 1;
 BA_ "Confidence" SG_ 1208 ICR_alertID 1;
 BA_ "Confidence" SG_ 1208 ICR_alertState 1;
 BA_ "Confidence" SG_ 1208 ICR_a001_watchdogTaskAppDPM 2;
@@ -61543,6 +62352,7 @@ BA_ "Confidence" SG_ 664 ICR_algoVersion 0;
 BA_ "Confidence" SG_ 664 ICR_l2HeapUsage 0;
 BA_ "Confidence" SG_ 664 ICR_intrusionStatus 0;
 BA_ "Confidence" SG_ 664 ICR_blockageScaledMLOutput 0;
+BA_ "Confidence" SG_ 1624 ICR_udsResponseData 1;
 BA_ "Confidence" SG_ 1012 LS_lightShowIndex 1;
 BA_ "Confidence" SG_ 1012 LS_lightLeftRampedChannel1Reques 0;
 BA_ "SystemSignalLongSymbol" SG_ 1012 LS_lightLeftRampedChannel1Reques "LS_lightLeftRampedChannel1Request";
@@ -61794,6 +62604,14 @@ BA_ "Confidence" SG_ 1012 LS_offroadLightBar2 0;
 BA_ "Confidence" SG_ 1012 LS_offroadLightBar3 0;
 BA_ "Confidence" SG_ 1012 LS_offroadLightBar4 0;
 BA_ "Confidence" SG_ 1012 LS_offroadLightBar5 0;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC0 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC1 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC2 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC3 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC4 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC5 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC6 1;
+BA_ "Confidence" SG_ 1152 ODIN_IsoTpPipeVCSEC7 1;
 BA_ "Confidence" SG_ 1092 PCS2_alertID 1;
 BA_ "Confidence" SG_ 1092 PCS2_alertSet 1;
 BA_ "Confidence" SG_ 1092 PCS2_alertSource 1;
@@ -63502,6 +64320,8 @@ BA_ "Confidence" SG_ 676 PCS_ambientTemp 0;
 BA_ "GenSigSNA" SG_ 676 PCS_ambientTemp "1025";
 BA_ "Confidence" SG_ 676 PCS_dcdcBusbarTemp 0;
 BA_ "GenSigSNA" SG_ 676 PCS_dcdcBusbarTemp "511";
+BA_ "Confidence" SG_ 1577 PCS_udsResponseData 1;
+BA_ "Confidence" SG_ 1635 PLG_udsResponseData 1;
 BA_ "Confidence" SG_ 1317 PMF_alertID 1;
 BA_ "Confidence" SG_ 1317 PMF_alertState 1;
 BA_ "Confidence" SG_ 1317 PMF_a001_w0 2;
@@ -63798,6 +64618,7 @@ BA_ "Confidence" SG_ 790 PMF_bootGitHash 0;
 BA_ "Confidence" SG_ 790 PMF_platformTyp 0;
 BA_ "Confidence" SG_ 790 PMF_udsProtocolVersion 0;
 BA_ "Confidence" SG_ 790 PMF_bootloaderCrc 0;
+BA_ "Confidence" SG_ 1620 PMF_udsResponseData 1;
 BA_ "Confidence" SG_ 1446 PMR_alertID 1;
 BA_ "Confidence" SG_ 1446 PMR_alertState 1;
 BA_ "Confidence" SG_ 1446 PMR_a001_w0 2;
@@ -64115,6 +64936,7 @@ BA_ "Confidence" SG_ 1748 PMR_bootGitHash 0;
 BA_ "Confidence" SG_ 1748 PMR_platformTyp 0;
 BA_ "Confidence" SG_ 1748 PMR_udsProtocolVersion 0;
 BA_ "Confidence" SG_ 1748 PMR_bootloaderCrc 0;
+BA_ "Confidence" SG_ 1556 PMR_udsResponseData 1;
 BA_ "Confidence" SG_ 1444 PM_alertID 1;
 BA_ "Confidence" SG_ 1444 PM_alertState 1;
 BA_ "Confidence" SG_ 1444 PM_a001_w0 2;
@@ -64596,6 +65418,7 @@ BA_ "Confidence" SG_ 485 PM_hvilSystemStatus 0;
 BA_ "GenSigSNA" SG_ 485 PM_hvilSystemStatus "3";
 BA_ "Confidence" SG_ 485 PM_locStateCounter 0;
 BA_ "Confidence" SG_ 485 PM_locStateChecksum 0;
+BA_ "Confidence" SG_ 1600 PM_udsResponseData 1;
 BA_ "Confidence" SG_ 1766 PNCD_isoTpToCpData 2;
 BA_ "Confidence" SG_ 837 PTC_infoIndex 1;
 BA_ "Confidence" SG_ 837 PTC_infoBuildType 0;
@@ -64618,6 +65441,7 @@ BA_ "Confidence" SG_ 647 PTC_tempPCB 0;
 BA_ "Confidence" SG_ 647 PTC_voltageHV 0;
 BA_ "Confidence" SG_ 647 PTC_leftCurrentHV 0;
 BA_ "Confidence" SG_ 647 PTC_rightCurrentHV 0;
+BA_ "Confidence" SG_ 1750 PTC_udsResponseData 1;
 BA_ "Confidence" SG_ 1344 SCCM_alertID 1;
 BA_ "Confidence" SG_ 1344 SCCM_alertState 1;
 BA_ "Confidence" SG_ 1344 SCCM_a003_debouncePosition 1;
@@ -64924,6 +65748,14 @@ BA_ "Confidence" SG_ 297 SCCM_steeringAngleSpeed 0;
 BA_ "Confidence" SG_ 297 SCCM_steeringAngleSensorReservd1 0;
 BA_ "Confidence" SG_ 297 SCCM_steeringAngleSensorReservd2 0;
 BA_ "Confidence" SG_ 297 SCCM_steeringAngleSensorReservd3 0;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_0 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_1 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_2 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_3 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_4 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_5 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_6 1;
+BA_ "Confidence" SG_ 1680 SCCM_functionalResponseData_7 1;
 BA_ "Confidence" SG_ 1356 SCM_alertID 1;
 BA_ "Confidence" SG_ 1356 SCM_alertType 1;
 BA_ "Confidence" SG_ 1356 SCM_a074_voltageWithRo 2;
@@ -65263,6 +66095,13 @@ BA_ "Confidence" SG_ 1597 SDCR_infoUsageId 2;
 BA_ "Confidence" SG_ 1597 SDCR_infoSubUsageId 0;
 BA_ "Confidence" SG_ 1597 SDCR_infoAppCrc 2;
 BA_ "Confidence" SG_ 1597 SDCR_infoBootGitHash 0;
+BA_ "Confidence" SG_ 1787 SDCR_udsResponseData 1;
+BA_ "Confidence" SG_ 792 UTC_year 0;
+BA_ "Confidence" SG_ 792 UTC_month 0;
+BA_ "Confidence" SG_ 792 UTC_seconds 0;
+BA_ "Confidence" SG_ 792 UTC_hour 0;
+BA_ "Confidence" SG_ 792 UTC_day 0;
+BA_ "Confidence" SG_ 792 UTC_minutes 0;
 BA_ "Confidence" SG_ 1291 TAS_alertID 1;
 BA_ "Confidence" SG_ 1291 TAS_alertState 1;
 BA_ "Confidence" SG_ 1291 TAS_a001_InternalWatchdog 2;
@@ -65779,6 +66618,7 @@ BA_ "Confidence" SG_ 525 TAS_jackMode 0;
 BA_ "Confidence" SG_ 525 TAS_reduceVehicleSpeedRequest 0;
 BA_ "Confidence" SG_ 525 TAS_statesCounter 0;
 BA_ "Confidence" SG_ 525 TAS_statesChecksum 0;
+BA_ "Confidence" SG_ 1627 TAS_udsResponseData 1;
 BA_ "Confidence" SG_ 409 TAS_adaptiveActivityFL_C 0;
 BA_ "GenSigSNA" SG_ 409 TAS_adaptiveActivityFL_C "31";
 BA_ "Confidence" SG_ 409 TAS_adaptiveActivityFL_R 0;
@@ -65835,6 +66675,49 @@ BA_ "Confidence" SG_ 538 TAS_restrictLevelingTransport 0;
 BA_ "Confidence" SG_ 538 TAS_restrictLevelingShowroom 0;
 BA_ "Confidence" SG_ 538 TAS_uiControlCounter 0;
 BA_ "Confidence" SG_ 538 TAS_uiControlChecksum 0;
+BA_ "Confidence" SG_ 1641 UDS_KOSTIAsccmRequestData 1;
+BA_ "Confidence" SG_ 1538 UDS_bmsRequestData 1;
+BA_ "Confidence" SG_ 1579 UDS_ccRequestData 1;
+BA_ "Confidence" SG_ 1539 UDS_cmpRequestData 1;
+BA_ "Confidence" SG_ 1543 UDS_cmpdRequestData 1;
+BA_ "Confidence" SG_ 1550 UDS_cpRequestData 1;
+BA_ "Confidence" SG_ 1589 UDS_diRequestData 1;
+BA_ "Confidence" SG_ 1541 UDS_difRequestData 1;
+BA_ "Confidence" SG_ 1542 UDS_dirRequestData 1;
+BA_ "Confidence" SG_ 1572 UDS_epblRequestData_H 1;
+BA_ "Confidence" SG_ 1572 UDS_epblRequestData_L 1;
+BA_ "Confidence" SG_ 1574 UDS_epbrRequestData_H 1;
+BA_ "Confidence" SG_ 1574 UDS_epbrRequestData_L 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_0 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_1 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_2 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_3 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_4 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_5 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_6 1;
+BA_ "Confidence" SG_ 2015 UDS_functionalRequestData_7 1;
+BA_ "Confidence" SG_ 1552 UDS_hvpRequestData 1;
+BA_ "Confidence" SG_ 1560 UDS_icrRequestData 1;
+BA_ "Confidence" SG_ 1576 UDS_pcsRequestData 1;
+BA_ "Confidence" SG_ 1634 UDS_plgRequestData 1;
+BA_ "Confidence" SG_ 1568 UDS_pmRequestData 1;
+BA_ "Confidence" SG_ 1604 UDS_pmfRequestData 1;
+BA_ "Confidence" SG_ 1540 UDS_pmrRequestData 1;
+BA_ "Confidence" SG_ 1734 UDS_ptcRequestData 1;
+BA_ "Confidence" SG_ 1664 UDS_sccmRequestData 1;
+BA_ "Confidence" SG_ 1723 UDS_sdcrRequestData 1;
+BA_ "Confidence" SG_ 1611 UDS_tasRequestData 1;
+BA_ "Confidence" SG_ 1548 UDS_vcbatt1RequestData 1;
+BA_ "Confidence" SG_ 1562 UDS_vcbatt2RequestData 1;
+BA_ "Confidence" SG_ 1633 UDS_vcbattRequestData 1;
+BA_ "Confidence" SG_ 1580 UDS_vcfront1RequestData 1;
+BA_ "Confidence" SG_ 1582 UDS_vcfront2RequestData 1;
+BA_ "Confidence" SG_ 1536 UDS_vcfrontRequestData 1;
+BA_ "Confidence" SG_ 1570 UDS_vcleftRequestData_H 1;
+BA_ "Confidence" SG_ 1570 UDS_vcleftRequestData_L 1;
+BA_ "Confidence" SG_ 1544 UDS_vcrightRequestData_H 1;
+BA_ "Confidence" SG_ 1544 UDS_vcrightRequestData_L 1;
+BA_ "Confidence" SG_ 1546 UDS_vcsecRequestData 1;
 BA_ "Confidence" SG_ 1154 UI_IsoTpRemoteVCSEC0 2;
 BA_ "Confidence" SG_ 1154 UI_IsoTpRemoteVCSEC1 2;
 BA_ "Confidence" SG_ 1154 UI_IsoTpRemoteVCSEC2 2;
@@ -66871,6 +67754,7 @@ BA_ "Confidence" SG_ 1285 SA_partNumInt 0;
 BA_ "Confidence" SG_ 1285 SA_partNumRev 0;
 BA_ "Confidence" SG_ 1285 SA_currentLimit 0;
 BA_ "Confidence" SG_ 1285 SA_l1Voltage 0;
+BA_ "Confidence" SG_ 1320 UnixTimeSeconds 0;
 BA_ "Confidence" SG_ 1949 V2G_evseLogDataSelect 1;
 BA_ "Confidence" SG_ 1949 V2G_chgParamRes_respCode 0;
 BA_ "Confidence" SG_ 1949 V2G_chgParamRes_finished 0;
@@ -68508,6 +69392,7 @@ BA_ "SystemSignalLongSymbol" SG_ 1030 VCBATT1_autopilot1EFuseHardShort "VCBATT1_
 BA_ "Confidence" SG_ 1030 VCBATT1_autopilot1EFuseOCThresho 0;
 BA_ "SystemSignalLongSymbol" SG_ 1030 VCBATT1_autopilot1EFuseOCThresho "VCBATT1_autopilot1EFuseOCThreshold";
 BA_ "Confidence" SG_ 1030 VCBATT1_autopilot1EFuseType 0;
+BA_ "Confidence" SG_ 1549 VCBATT1_udsResponseData 1;
 BA_ "Confidence" SG_ 1358 VCBATT2_alertID 1;
 BA_ "Confidence" SG_ 1358 VCBATT2_alertState 1;
 BA_ "Confidence" SG_ 1358 VCBATT2_a001_InternalWatchdog 2;
@@ -68998,6 +69883,7 @@ BA_ "GenSigSNA" SG_ 1399 VCBATT2_nmKeepAwakeReasonDBG "0";
 BA_ "Confidence" SG_ 1399 VCBATT2_LIN_bus_0_busErrorCount 0;
 BA_ "Confidence" SG_ 1399 VCBATT2_LIN_bus_1_busErrorCount 0;
 BA_ "Confidence" SG_ 1399 VCBATT2_hibernationStateDBG 0;
+BA_ "Confidence" SG_ 1563 VCBATT2_udsResponseData 1;
 BA_ "Confidence" SG_ 945 VCBATT_LVHealthChecksum 0;
 BA_ "Confidence" SG_ 945 VCBATT_LVHealthCounter 0;
 BA_ "Confidence" SG_ 945 VCBATT_LVHealthStatus 0;
@@ -69022,6 +69908,7 @@ BA_ "Confidence" SG_ 1090 VCBATT_pcsLVMaxDchrgCurrentLimit 0;
 BA_ "Confidence" SG_ 1090 VCBATT_defaultPcsLVVoltageTarget 0;
 BA_ "Confidence" SG_ 1090 VCBATT_lvHwProtSelfTestActive 0;
 BA_ "Confidence" SG_ 1090 VCBATT_lvBatteryDischargeRequest 0;
+BA_ "Confidence" SG_ 1569 VCBATT_udsResponseData 1;
 BA_ "Confidence" SG_ 1335 VCFRONT1_alertID 1;
 BA_ "Confidence" SG_ 1335 VCFRONT1_alertState 1;
 BA_ "Confidence" SG_ 1335 VCFRONT1_a001_InternalWatchdog 2;
@@ -69635,6 +70522,7 @@ BA_ "SystemSignalLongSymbol" SG_ 1027 VCFRONT1_autopilot2EFuseHardShor "VCFRONT1
 BA_ "Confidence" SG_ 1027 VCFRONT1_autopilot2EFuseOCThresh 0;
 BA_ "SystemSignalLongSymbol" SG_ 1027 VCFRONT1_autopilot2EFuseOCThresh "VCFRONT1_autopilot2EFuseOCThreshold";
 BA_ "Confidence" SG_ 1027 VCFRONT1_autopilot2EFuseType 0;
+BA_ "Confidence" SG_ 1581 VCFRONT1_udsResponseData 1;
 BA_ "Confidence" SG_ 1351 VCFRONT2_alertID 1;
 BA_ "Confidence" SG_ 1351 VCFRONT2_alertState 1;
 BA_ "Confidence" SG_ 1351 VCFRONT2_a001_InternalWatchdog 2;
@@ -70614,6 +71502,7 @@ BA_ "Confidence" SG_ 834 VCFRONT2_a697_leftHeadlampNotAim 2;
 BA_ "SystemSignalLongSymbol" SG_ 834 VCFRONT2_a697_leftHeadlampNotAim "VCFRONT2_a697_leftHeadlampNotAimed";
 BA_ "Confidence" SG_ 834 VCFRONT2_a702_dynamicHeadlightLe 2;
 BA_ "SystemSignalLongSymbol" SG_ 834 VCFRONT2_a702_dynamicHeadlightLe "VCFRONT2_a702_dynamicHeadlightLevelingUnavailable";
+BA_ "Confidence" SG_ 1583 VCFRONT2_udsResponseData 1;
 BA_ "Confidence" SG_ 609 VCFRONT_12VBatteryStatusIndex 1;
 BA_ "Confidence" SG_ 609 VCFRONT_good12VforUpdate 0;
 BA_ "Confidence" SG_ 609 VCFRONT_LVLoadRequest 0;
@@ -70736,6 +71625,8 @@ BA_ "Confidence" SG_ 545 VCFRONT_inAccessoryPlus 0;
 BA_ "Confidence" SG_ 545 VCFRONT_LVShuttingDown 0;
 BA_ "Confidence" SG_ 545 VCFRONT_LVPowerStateCounter 0;
 BA_ "Confidence" SG_ 545 VCFRONT_LVPowerStateChecksum 0;
+BA_ "Confidence" SG_ 545 VCFRONT_dirLVRequest 1;
+BA_ "Confidence" SG_ 545 VCFRONT_difLVState 1;
 BA_ "Confidence" SG_ 545 VCFRONT_cpLVRequest 0;
 BA_ "Confidence" SG_ 545 VCFRONT_epasLVState 0;
 BA_ "Confidence" SG_ 545 VCFRONT_hvcLVRequest 0;
@@ -74574,6 +75465,24 @@ BA_ "Confidence" SG_ 1013 VC_fastFlashHazardsActive 0;
 BA_ "Confidence" SG_ 1013 VCFRONT_indicatorLeftInternal 0;
 BA_ "Confidence" SG_ 1013 VCFRONT_indicatorRightInternal 0;
 BA_ "Confidence" SG_ 1801 VCFRONT_logging0point1HzIndex 1;
+BA_ "Confidence" SG_ 1801 VC_leftHeadlampCurrentVerticalPo 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_leftHeadlampCurrentVerticalPo "VC_leftHeadlampCurrentVerticalPosition";
+BA_ "Confidence" SG_ 1801 VC_leftHeadlampCurrentHorizontal 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_leftHeadlampCurrentHorizontal "VC_leftHeadlampCurrentHorizontalPosition";
+BA_ "Confidence" SG_ 1801 VC_rightHeadlampCurrentVerticalP 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_rightHeadlampCurrentVerticalP "VC_rightHeadlampCurrentVerticalPosition";
+BA_ "Confidence" SG_ 1801 VC_rightHeadlampCurrentHorizonta 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_rightHeadlampCurrentHorizonta "VC_rightHeadlampCurrentHorizontalPosition";
+BA_ "Confidence" SG_ 1801 VC_leftHeadlampAimingState 1;
+BA_ "Confidence" SG_ 1801 VC_rightHeadlampAimingState 1;
+BA_ "Confidence" SG_ 1801 VC_leftHeadlampAimedVerticalPosi 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_leftHeadlampAimedVerticalPosi "VC_leftHeadlampAimedVerticalPosition";
+BA_ "Confidence" SG_ 1801 VC_rightHeadlampAimedVerticalPos 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_rightHeadlampAimedVerticalPos "VC_rightHeadlampAimedVerticalPosition";
+BA_ "Confidence" SG_ 1801 VC_leftHeadlampAimedHorizontalPo 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_leftHeadlampAimedHorizontalPo "VC_leftHeadlampAimedHorizontalPosition";
+BA_ "Confidence" SG_ 1801 VC_rightHeadlampAimedHorizontalP 1;
+BA_ "SystemSignalLongSymbol" SG_ 1801 VC_rightHeadlampAimedHorizontalP "VC_rightHeadlampAimedHorizontalPosition";
 BA_ "Confidence" SG_ 1801 VC_hcmlFactoryOfOrigin 0;
 BA_ "Confidence" SG_ 1801 VC_hcmlHellaPartNumberStatus 0;
 BA_ "Confidence" SG_ 1801 VC_hcmlHellaPartNumber 0;
@@ -75134,6 +76043,7 @@ BA_ "SystemSignalLongSymbol" SG_ 1349 VCFRONT_loadShedBackStopBktCntDB "VCFRONT_
 BA_ "Confidence" SG_ 1349 VCFRONT_loadShedPCSLeakyBktCtDBG 0;
 BA_ "Confidence" SG_ 1349 VCFRONT_loadShedUI 0;
 BA_ "Confidence" SG_ 1349 VCFRONT_loadShedAutoPilot 0;
+BA_ "Confidence" SG_ 1537 VCFRONT_udsResponseData 1;
 BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusMuxIndex 1;
 BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusCounter 0;
 BA_ "Confidence" SG_ 929 VCFRONT_vehicleStatusChecksum 0;
@@ -78086,6 +78996,8 @@ BA_ "Confidence" SG_ 386 VCLEFT_hvac2RRightLateralPositio 0;
 BA_ "SystemSignalLongSymbol" SG_ 386 VCLEFT_hvac2RRightLateralPositio "VCLEFT_hvac2RRightLateralPosition";
 BA_ "Confidence" SG_ 386 VCLEFT_hvac2RRightVerticalPositi 0;
 BA_ "SystemSignalLongSymbol" SG_ 386 VCLEFT_hvac2RRightVerticalPositi "VCLEFT_hvac2RRightVerticalPosition";
+BA_ "Confidence" SG_ 1571 VCLEFT_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1571 VCLEFT_udsResponseData_L 1;
 BA_ "Confidence" SG_ 706 VCLEFT_windowStatusIndex 1;
 BA_ "Confidence" SG_ 706 VCLEFT_windowStateLF 0;
 BA_ "Confidence" SG_ 706 VCLEFT_windowTrimClearMoveReques 0;
@@ -81253,6 +82165,9 @@ BA_ "Confidence" SG_ 835 VCRIGHT_isSteeringWheelHeaterReq 0;
 BA_ "Confidence" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt 0;
 BA_ "GenSigSNA" SG_ 835 VCRIGHT_steeringWheelHeaterDCTgt "127";
 BA_ "Confidence" SG_ 963 VCRIGHT_switchStatusIndex 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_frontBuckleSwitch 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_rearCenterBuckleSwitch 1;
+BA_ "Confidence" SG_ 963 VCRIGHT_rearRightBuckleSwitch 1;
 BA_ "Confidence" SG_ 963 VCRIGHT_trunkExtReleasePressedPe 0;
 BA_ "SystemSignalLongSymbol" SG_ 963 VCRIGHT_trunkExtReleasePressedPe "VCRIGHT_trunkExtReleasePressedPersist";
 BA_ "Confidence" SG_ 963 VCRIGHT_frontSeatTrackBack 0;
@@ -81317,6 +82232,8 @@ BA_ "GenSigSNA" SG_ 899 VCRIGHT_thsSolarLoadVisible "1023";
 BA_ "Confidence" SG_ 899 VCRIGHT_estimatedThsSolarLoad 0;
 BA_ "GenSigSNA" SG_ 899 VCRIGHT_estimatedThsSolarLoad "1023";
 BA_ "Confidence" SG_ 899 VCRIGHT_hvacFastLoggingEnabled 0;
+BA_ "Confidence" SG_ 1545 VCRIGHT_udsResponseData_H 1;
+BA_ "Confidence" SG_ 1545 VCRIGHT_udsResponseData_L 1;
 BA_ "Confidence" SG_ 1059 VCRIGHT_nmGoingToSleep 0;
 BA_ "Confidence" SG_ 1059 VCRIGHT_nmWakeUpBus 0;
 BA_ "Confidence" SG_ 1059 VCRIGHT_nmKeepAwakeReason 0;
@@ -83580,6 +84497,14 @@ BA_ "Confidence" SG_ 857 VCSEC_Device19ManufacturerHashBi 0;
 BA_ "SystemSignalLongSymbol" SG_ 857 VCSEC_Device19ManufacturerHashBi "VCSEC_Device19ManufacturerHashBits";
 BA_ "Confidence" SG_ 857 VCSEC_Device19BuildNumberHashBit 0;
 BA_ "SystemSignalLongSymbol" SG_ 857 VCSEC_Device19BuildNumberHashBit "VCSEC_Device19BuildNumberHashBits";
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN0 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN1 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN2 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN3 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN4 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN5 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN6 1;
+BA_ "Confidence" SG_ 953 VCSEC_IsoTpPipeODIN7 1;
 BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI0 2;
 BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI1 2;
 BA_ "Confidence" SG_ 474 VCSEC_IsoTpRemoteUI2 2;
@@ -84935,6 +85860,7 @@ BA_ "Confidence" SG_ 281 VCSEC_recoveryModeRequested 0;
 BA_ "Confidence" SG_ 281 VCSEC_infotainmentResetRequested 0;
 BA_ "Confidence" SG_ 281 VCSEC_mobileToAPRequest 0;
 BA_ "Confidence" SG_ 281 VCSEC_riderKeyPresent 0;
+BA_ "Confidence" SG_ 1547 VCSEC_udsResponseData 1;
 BA_ "Confidence" SG_ 1850 VC_LVBMS_brickMeasurementsMultip 1;
 BA_ "SystemSignalLongSymbol" SG_ 1850 VC_LVBMS_brickMeasurementsMultip "VC_LVBMS_brickMeasurementsMultiplexer";
 BA_ "Confidence" SG_ 1850 VC_LVBMS_brickVoltage1 0;
@@ -85081,6 +86007,24 @@ BA_ "Confidence" SG_ 1091 VC_dcdcLVVoltageTargetMin 0;
 BA_ "Confidence" SG_ 1091 VC_dcdcLVInputPowerLimit 0;
 BA_ "Confidence" SG_ 1107 VEH_pricebookId 2;
 BA_ "Confidence" SG_ 1651 VEH_isoTpToEvseData 2;
+BA_ "Confidence" SG_ 1029 VIN_muxID 0;
+BA_ "Confidence" SG_ 1029 VIN_char01 0;
+BA_ "Confidence" SG_ 1029 VIN_char02 0;
+BA_ "Confidence" SG_ 1029 VIN_char03 0;
+BA_ "Confidence" SG_ 1029 VIN_char04 0;
+BA_ "Confidence" SG_ 1029 VIN_char05 0;
+BA_ "Confidence" SG_ 1029 VIN_char06 0;
+BA_ "Confidence" SG_ 1029 VIN_char07 0;
+BA_ "Confidence" SG_ 1029 VIN_char08 0;
+BA_ "Confidence" SG_ 1029 VIN_char09 0;
+BA_ "Confidence" SG_ 1029 VIN_char10 0;
+BA_ "Confidence" SG_ 1029 VIN_char11 0;
+BA_ "Confidence" SG_ 1029 VIN_char12 0;
+BA_ "Confidence" SG_ 1029 VIN_char13 0;
+BA_ "Confidence" SG_ 1029 VIN_char14 0;
+BA_ "Confidence" SG_ 1029 VIN_char15 0;
+BA_ "Confidence" SG_ 1029 VIN_char16 0;
+BA_ "Confidence" SG_ 1029 VIN_char17 0;
 VAL_ 909 APP_inTunnel 2 "NOT_IN_TUNNEL" 1 "IN_TUNNEL" 0 "IN_TUNNEL_SNA" ;
 VAL_ 909 APP_windshieldHeaterOnReason 8 "WINDSHIELD_HEATER_ON_REASON_WIPERS_ACTIVE" 7 "WINDSHIELD_HEATER_ON_REASON_HVAC_REQUESTED" 6 "WINDSHIELD_HEATER_ON_REASON_OVERRIDE" 5 "WINDSHIELD_HEATER_ON_REASON_OFF" 4 "WINDSHIELD_HEATER_ON_REASON_STARTUP" 3 "WINDSHIELD_HEATER_ON_REASON_CONDENSATION_LIKELY" 2 "WINDSHIELD_HEATER_ON_REASON_OCCLUDED" 1 "WINDSHIELD_HEATER_ON_REASON_DEFROST" 0 "WINDSHIELD_HEATER_ON_REASON_SNA" ;
 VAL_ 909 APP_selfieCameraBlocked 2 "SELFIE_CAMERA_BLOCKED" 1 "SELFIE_CAMERA_NOT_BLOCKED" 0 "SELFIE_CAMERA_BLOCKED_SNA" ;
@@ -85276,6 +86220,8 @@ VAL_ 1138 BMS_userChargeCurrentLimitMode 4 "USR_CHG_LIMIT_EVSE_RELOCATION_RECOMM
 VAL_ 1138 BMS_chargeCurrentLimitMode 20 "CHG_LIMIT_RIPPLE_HEAT_ACTIVE" 19 "CHG_LIMIT_NEAR_HWOT_LIMIT" 18 "CHG_LIMIT_LIMP_MODE" 17 "CHG_LIMIT_MISSING_CELL" 16 "CHG_LIMIT_CAC_IMBALANCE" 15 "CHG_LIMIT_PCS_IMPLICIT" 14 "CHG_LIMIT_EVSE_IMPLICIT" 13 "CHG_LIMIT_RAMP_UP_PHASE" 12 "CHG_LIMIT_HVAC_COOLING" 11 "CHG_LIMIT_HV_CHAIN" 10 "CHG_LIMIT_CONFIG" 9 "CHG_LIMIT_TETHERING" 8 "CHG_LIMIT_LEAKY_BUCKET" 7 "CHG_LIMIT_BRICK_VOLTAGE_REG" 6 "CHG_LIMIT_BRICK_TEMP_TOO_COLD" 5 "CHG_LIMIT_BRICK_TEMP_TOO_HOT" 4 "CHG_LIMIT_BRICK_TEMP_OPTIMAL_CELL_PROFILE" 3 "CHG_LIMIT_CP" 2 "CHG_LIMIT_PCS" 1 "CHG_LIMIT_EVSE" 0 "CHG_LIMIT_NONE" ;
 VAL_ 1138 BMS_timeToFinishHeatForCharge 127 "SNA" 126 "CALCULATING" ;
 VAL_ 1138 BMS_timeToTripPlanChargingTarget 2047 "SNA" ;
+VAL_ 562 BMS_internalHvilSenseV 65535 "SNA" ;
+VAL_ 562 BMS_hvilCoverVSense 65535 "SNA" ;
 VAL_ 850 BMS_energyStatusMultiplexer 2 "Mux2" 1 "Mux1" 0 "Mux0" ;
 VAL_ 850 BMS_nominalFullPackEnergy 65535 "SNA" ;
 VAL_ 850 BMS_nominalEnergyRemaining 65535 "SNA" ;
@@ -85325,6 +86271,8 @@ VAL_ 946 BMS_nominalFullPackEnergyRaw 65535 "SNA" ;
 VAL_ 946 BMS_nominalEnergyRemainingBuffer 65535 "SNA" ;
 VAL_ 946 BMS_idealEnergyRemainingBuffered 65535 "SNA" ;
 VAL_ 946 BMS_largestSynchronizedCacErrorP 255 "SNA" ;
+VAL_ 946 BMS_lifeModelSpreadMinOffset -512 "SNA" ;
+VAL_ 946 BMS_lifeModelSpreadMaxOffset -512 "SNA" ;
 VAL_ 946 BMS_largestCacSpreadErrorLower 4095 "SNA" ;
 VAL_ 946 BMS_lifeModelAverageCac 4095 "SNA" ;
 VAL_ 946 BMS_lifeModelCacBrick1 4095 "SNA" ;
@@ -85383,6 +86331,7 @@ VAL_ 1810 BMS_packTemperatureStatus18 3 "SENSOR_BYPASSED" 2 "SENSOR_NOMINAL" 1 "
 VAL_ 594 BMS_powerLimitsState 1 "POWER_CALCULATED_FOR_DRIVE" 0 "POWER_NOT_CALCULATED_FOR_DRIVE" ;
 VAL_ 674 BMS_acRippleFrequencyRequest 1023 "SNA" ;
 VAL_ 674 BMS_acRippleRequest 4 "RIPPLE_FAULTED" 3 "RIPPLE_ON" 2 "RIPPLE_STANDBY" 1 "RIPPLE_OFF" 0 "RIPPLE_NOT_SUPPORTED" ;
+VAL_ 1834 BMS_serialNumberMultiplexer 2 "BMS_SERIAL_MUX2" 1 "BMS_SERIAL_MUX1" 0 "BMS_SERIAL_MUX0" ;
 VAL_ 658 BMS_instantChargePowerCapability 65535 "SNA" ;
 VAL_ 1170 BMS_sohEnergyPercent 1023 "SNA" ;
 VAL_ 1170 BMS_userFacingSohTestState 5 "CHARGE_REST" 4 "CHARGE" 3 "DISCHARGE_REST" 2 "DISCHARGE" 1 "HEAT_PACK" 0 "NOT_RUNNING" ;
@@ -86364,6 +87313,7 @@ VAL_ 1962 HVP_debugMessageMultiplexer 12 "Mux12" 11 "Mux11" 10 "Mux10" 9 "Mux9" 
 VAL_ 1962 HVP_ecuLogUploadRequest 3 "REQUEST_PRIORITY_3" 2 "REQUEST_PRIORITY_2" 1 "REQUEST_PRIORITY_1" 0 "REQUEST_PRIORITY_NONE" ;
 VAL_ 1962 HVP_passivePyroRefVoltageMax 1023 "SNA" ;
 VAL_ 1962 HVP_passivePyroRefVoltageMin 1023 "SNA" ;
+VAL_ 1666 HVP_hvilStatus 2 "FAULT" 1 "OK" 0 "UNKNOWN" ;
 VAL_ 554 HVP_pcsControlRequest 3 "DISCHARGE" 2 "PRECHARGE" 1 "SUPPORT" 0 "SHUTDOWN" ;
 VAL_ 554 HVP_dcLinkVoltageFiltered -550 "SNA" ;
 VAL_ 784 HVP_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 29 "PACKAGE_SN_1_7" 27 "PACKAGE_PN_15_20" 26 "PACKAGE_PN_8_14" 25 "PACKAGE_PN_1_7" 23 "SUBCOMPONENT2" 22 "VARIANTCRC" 20 "UDS_PROTOCOL_BOOTCRC" 19 "VERSION_DEPRECATED" 18 "BOOTLOADER_GITHASH" 17 "APP_GITHASH" 16 "SUBCOMPONENT" 15 "BOOTLOADER_CRC" 14 "BOOTLOADER_SVN" 13 "APP_CRC" 11 "PCBAID_ASSYID_USAGEID" 10 "BUILD_HWID_COMPONENTID" 9 "DEPRECATED_9" 8 "DEPRECATED_8" 7 "DEPRECATED_7" 6 "DEPRECATED_6" 5 "DEPRECATED_5" 4 "DEPRECATED_4" 3 "DEPRECATED_3" 2 "DEPRECATED_2" 1 "DEPRECATED_1" 0 "DEPRECATED_0" ;
@@ -87631,6 +88581,8 @@ VAL_ 1140 VCFRONT_lockoutStrategy 1 "PARK_STATUS" 0 "POWER_STATE" ;
 VAL_ 1173 VCFRONT_LVHealthDebugIndex 1 "FRONT_CHECK_RESULTS_1" 0 "UNHEALTHY_REASONS" ;
 VAL_ 545 VCFRONT_LVPowerStateIndex 1 "Mux1" 0 "Mux0" ;
 VAL_ 545 VCFRONT_vehiclePowerState 3 "VEHICLE_POWER_STATE_DRIVE" 2 "VEHICLE_POWER_STATE_ACCESSORY" 1 "VEHICLE_POWER_STATE_CONDITIONING" 0 "VEHICLE_POWER_STATE_OFF" ;
+VAL_ 545 VCFRONT_dirLVRequest 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
+VAL_ 545 VCFRONT_difLVState 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
 VAL_ 545 VCFRONT_cpLVRequest 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
 VAL_ 545 VCFRONT_epasLVState 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
 VAL_ 545 VCFRONT_hvcLVRequest 3 "LV_FAULT" 2 "LV_GOING_DOWN" 1 "LV_ON" 0 "LV_OFF" ;
@@ -88105,6 +89057,16 @@ VAL_ 1013 VCFRONT_lightingCustomState 31 "CUSTOM_LIGHTING_STATE_RESERVED" 14 "CU
 VAL_ 1013 VCFRONT_indicatorLeftInternal 2 "TURN_SIGNAL_ACTIVE_HIGH" 1 "TURN_SIGNAL_ACTIVE_LOW" 0 "TURN_SIGNAL_OFF" ;
 VAL_ 1013 VCFRONT_indicatorRightInternal 2 "TURN_SIGNAL_ACTIVE_HIGH" 1 "TURN_SIGNAL_ACTIVE_LOW" 0 "TURN_SIGNAL_OFF" ;
 VAL_ 1801 VCFRONT_logging0point1HzIndex 35 "END" 34 "DYNAMIC_LEVELING_CONTRIBUTORS" 33 "HEADLAMP_OFFSETS_AND_STATUS" 32 "HEADLAMP_LEFT_ECULESS_IO_DIAGNOSTIC_2" 31 "HEADLAMP_RIGHT_ECULESS_IO_DIAGNOSTIC_2" 30 "HEADLAMP_LEFT_ECULESS_IO_DIAGNOSTIC" 29 "HEADLAMP_RIGHT_ECULESS_IO_DIAGNOSTIC" 28 "COMPRESSOR_WEAR_COUNTERS" 27 "HEADLAMP_RIGHT_EEPROM_INFO" 26 "HEADLAMP_LEFT_EEPROM_INFO" 25 "EXV_VALVE_TYPES" 24 "PART_FAILURE_CONFIDENCE_CONTINUED" 23 "PART_FAILURE_CONFIDENCE" 22 "LIGHT_DEBUG" 21 "HEADLAMP_COMM_FAULT_COUNTERS" 20 "HEADLAMP_MIGRATION" 19 "EXV_TOTAL_DISTANCE_COUNTERS_3" 18 "EXV_TOTAL_DISTANCE_COUNTERS_2" 17 "EXV_TOTAL_DISTANCE_COUNTERS_1" 16 "EXV_CCR_COUNTERS_2" 15 "EXV_CCR_COUNTERS_1" 14 "EXV_CCL_COUNTERS_2" 13 "EXV_CCL_COUNTERS_1" 12 "EXV_LCC_COUNTERS_2" 11 "EXV_LCC_COUNTERS_1" 10 "EXV_RECIRC_COUNTERS_2" 9 "EXV_RECIRC_COUNTERS_1" 8 "EXV_EVAPORATOR_COUNTERS_2" 7 "EXV_EVAPORATOR_COUNTERS_1" 6 "EXV_CHILLER_COUNTERS_2" 5 "EXV_CHILLER_COUNTERS_1" 4 "HEADLAMP_AIMED_POSITION" 3 "HEADLAMP_CURRENT_POSITION" 2 "HCMR_LED_TEMPS" 1 "HCML_LED_TEMPS" 0 "LIGHT_CURRENTS" ;
+VAL_ 1801 VC_leftHeadlampCurrentVerticalPo 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_leftHeadlampCurrentHorizontal 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_rightHeadlampCurrentVerticalP 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_rightHeadlampCurrentHorizonta 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_leftHeadlampAimingState 7 "HEADLAMP_AIMING_STATE_RESERVED" 3 "HEADLAMP_AIMING_STATE_POST_AIMING_CALIBRATION" 2 "HEADLAMP_AIMING_STATE_AIMING" 1 "HEADLAMP_AIMING_STATE_CALIBRATING" 0 "HEADLAMP_AIMING_STATE_IDLE" ;
+VAL_ 1801 VC_rightHeadlampAimingState 7 "HEADLAMP_AIMING_STATE_RESERVED" 3 "HEADLAMP_AIMING_STATE_POST_AIMING_CALIBRATION" 2 "HEADLAMP_AIMING_STATE_AIMING" 1 "HEADLAMP_AIMING_STATE_CALIBRATING" 0 "HEADLAMP_AIMING_STATE_IDLE" ;
+VAL_ 1801 VC_leftHeadlampAimedVerticalPosi 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_rightHeadlampAimedVerticalPos 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_leftHeadlampAimedHorizontalPo 1023 "SNA" 1022 "INVALID_POSITION" ;
+VAL_ 1801 VC_rightHeadlampAimedHorizontalP 1023 "SNA" 1022 "INVALID_POSITION" ;
 VAL_ 1801 VC_hcmlFactoryOfOrigin 3 "HELLA_MEXICO" 2 "HELLA_SLOVAKIA" 1 "HELLA_CHINA" 0 "UNKNOWN" ;
 VAL_ 1801 VC_hcmlHellaPartNumberStatus 1 "FAULT" 0 "OK" ;
 VAL_ 1801 VC_hcmlCurrentBinMappingType 2 "BIN_MAP_TYPE_2" 1 "BIN_MAP_TYPE_1" 0 "BIN_MAP_TYPE_UNKNOWN" ;
@@ -89117,6 +90079,9 @@ VAL_ 835 VCRIGHT_rearDefrostState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNA
 VAL_ 835 VCRIGHT_mirrorHeatState 4 "HEATER_STATE_FAULT" 3 "HEATER_STATE_OFF_UNAVAILABLE" 2 "HEATER_STATE_OFF" 1 "HEATER_STATE_ON" 0 "HEATER_STATE_SNA" ;
 VAL_ 835 VCRIGHT_steeringWheelHeaterDCTgt 127 "SNA" ;
 VAL_ 963 VCRIGHT_switchStatusIndex 1 "1" 0 "0" ;
+VAL_ 963 VCRIGHT_frontBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
+VAL_ 963 VCRIGHT_rearCenterBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
+VAL_ 963 VCRIGHT_rearRightBuckleSwitch 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatTrackBack 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatTrackForward 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_frontSeatTiltDown 3 "SWITCH_FAULT" 2 "SWITCH_ON" 1 "SWITCH_OFF" 0 "SWITCH_SNA" ;
@@ -89711,3 +90676,4 @@ VAL_ 1091 VC_pcsManagementMuxIndex 0 "INDEX_0" ;
 VAL_ 1091 VC_dcdcLVVoltageTargetMax 1023 "UNRESTRICTED" ;
 VAL_ 1091 VC_dcdcLVVoltageTargetMin 0 "UNRESTRICTED" ;
 VAL_ 1091 VC_dcdcLVInputPowerLimit 255 "UNRESTRICTED" ;
+VAL_ 1029 VIN_muxID 18 "VIN_PAGE_3" 17 "VIN_PAGE_2" 16 "VIN_PAGE_1" ;

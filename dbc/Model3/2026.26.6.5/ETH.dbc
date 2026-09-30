@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ADSP APSB BB CMP DAS DPB EPASTP EPASTS GTW IDB OCS1P PTC RCM RCU TCU TCU2 UI UIS VCLEFT VCSEAT2L VCSEAT2R
+BU_: ADSP APSB BB CMP DAS DPB EPAS3P EPASTP EPASTS GTW IDB OCS1P PTC RCM RCU TCU TCU2 UDS UI UIS VCLEFT VCSEAT2L VCSEAT2R
 
 
 BO_ 1360 ADSP_alertLog: 8 ADSP
@@ -1632,6 +1632,9 @@ BO_ 999 DPB_alertMatrix: 8 DPB
  SG_ DPB_a335_EMCMain21Counter m5 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DPB_a336_EMCMain21DLC m5 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DPB_a337_EMCMain21Timeout m5 : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1592 EPAS3P_udsResponseCH: 8 EPAS3P
+ SG_ EPAS3P_udsResponseDataCH : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 1427 EPASTP_alertLog: 8 EPASTP
  SG_ EPASTP_alertID M : 0|9@1+ (1,0) [0|511] "" Vector__XXX
@@ -3382,6 +3385,9 @@ BO_ 2047 GTW_carConfig: 8 GTW
  SG_ GTW_roofGlassType m10 : 21|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ GTW_pedalMapNameOverride m10 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 792 GTW_carState: 8 GTW
+ SG_ GTW_factoryGated : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 1638 GTW_diagSession: 4 GTW
  SG_ GTW_diagRemainingSeconds : 0|16@1+ (1,0) [0|65535] "seconds" Vector__XXX
  SG_ GTW_diagSessionActive : 16|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -3396,6 +3402,36 @@ BO_ 1080 GTW_ethNm: 2 GTW
  SG_ GTW_vehBusAsleep : 2|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ GTW_ethHeartBeatCounter : 4|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ GTW_ethWakeUpReason : 8|5@1+ (1,0) [0|31] "" Vector__XXX
+
+BO_ 1376 GTW_factoryEcuPresent: 4 GTW
+ SG_ GTW_OCS1Ppresent : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PCSpresent : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_HVPpresent : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_BMSpresent : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CPpresent : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_RCMpresent : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_SCCMpresent : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCSECpresent : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPAS3Ppresent : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPBLpresent : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPBRpresent : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_ESPpresent : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_IBSTpresent : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PARKpresent : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_RADCpresent : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_TPMSpresent : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCFRONTpresent : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCLEFTpresent : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_VCRIGHTpresent : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_EPAS3Spresent : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_CMPpresent : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_DASpresent : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PTCpresent : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_SWCpresent : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PMRpresent : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_PMFpresent : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_DIRpresent : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_DIFpresent : 28|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1656 GTW_gearControl: 7 GTW
  SG_ GTW_gearControlChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -3892,6 +3928,9 @@ BO_ 771 OCS1P_status: 8 OCS1P
  SG_ OCS1P_classificationHeldCap : 51|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ OCS1P_statusCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ OCS1P_statusChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1619 OCS1P_udsResponse: 8 OCS1P
+ SG_ OCS1P_udsResponseData : 0|64@1+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
 
 BO_ 519 PTC_feedbackStatus: 8 PTC
  SG_ PTC_leftFlagFault : 0|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -5849,6 +5888,13 @@ BO_ 1155 TCU_log: 8 TCU
  SG_ TCU_checkInternetFailCount m28 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ TCU_mdmBand m29 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ TCU_wakeSource m30 : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1603 UDS_ocs1pRequest: 8 UDS
+ SG_ UDS_ocs1pRequestData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 1551 UDS_thcRequest: 8 UDS
+ SG_ UDS_thcRequestData_H : 7|32@0+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ UDS_thcRequestData_L : 39|32@0+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 1056 UIS_log: 8 UIS
  SG_ UIS_logMux M : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
@@ -8237,6 +8283,7 @@ BO_TX_BU_ 781 : DAS;
 BO_TX_BU_ 1548 : DAS;
 BO_TX_BU_ 1237 : DPB;
 BO_TX_BU_ 999 : DPB;
+BO_TX_BU_ 1592 : EPAS3P;
 BO_TX_BU_ 1427 : EPASTP;
 BO_TX_BU_ 919 : EPASTP;
 BO_TX_BU_ 1428 : EPASTS;
@@ -8248,8 +8295,10 @@ BO_TX_BU_ 62 : GTW;
 BO_TX_BU_ 838 : GTW;
 BO_TX_BU_ 904 : GTW;
 BO_TX_BU_ 2047 : GTW;
+BO_TX_BU_ 792 : GTW;
 BO_TX_BU_ 1638 : GTW;
 BO_TX_BU_ 1080 : GTW;
+BO_TX_BU_ 1376 : GTW;
 BO_TX_BU_ 1656 : GTW;
 BO_TX_BU_ 2033 : GTW;
 BO_TX_BU_ 2026 : GTW;
@@ -8265,6 +8314,7 @@ BO_TX_BU_ 1429 : OCS1P;
 BO_TX_BU_ 767 : OCS1P;
 BO_TX_BU_ 766 : OCS1P;
 BO_TX_BU_ 771 : OCS1P;
+BO_TX_BU_ 1619 : OCS1P;
 BO_TX_BU_ 519 : PTC;
 BO_TX_BU_ 1297 : RCM;
 BO_TX_BU_ 881 : RCM;
@@ -8279,6 +8329,8 @@ BO_TX_BU_ 1159 : TCU;
 BO_TX_BU_ 1157 : TCU;
 BO_TX_BU_ 1158 : TCU;
 BO_TX_BU_ 1155 : TCU;
+BO_TX_BU_ 1603 : UDS;
+BO_TX_BU_ 1551 : UDS;
 BO_TX_BU_ 1056 : UIS;
 BO_TX_BU_ 979 : UI;
 BO_TX_BU_ 1523 : UI;
@@ -8316,6 +8368,7 @@ CM_ BU_ BB "BB ECU";
 CM_ BU_ CMP "A/C compressor";
 CM_ BU_ DAS "Driver assistance computer";
 CM_ BU_ DPB "DPB ECU";
+CM_ BU_ EPAS3P "Electric power steering (primary)";
 CM_ BU_ EPASTP "EPASTP ECU";
 CM_ BU_ EPASTS "EPASTS ECU";
 CM_ BU_ GTW "Gateway";
@@ -8326,6 +8379,7 @@ CM_ BU_ RCM "Restraint control module";
 CM_ BU_ RCU "RCU ECU";
 CM_ BU_ TCU "TCU ECU";
 CM_ BU_ TCU2 "TCU2 ECU";
+CM_ BU_ UDS "UDS ECU";
 CM_ BU_ UI "Touchscreen user interface computer";
 CM_ BU_ UIS "UIS ECU";
 CM_ BU_ VCLEFT "Left body controller";
@@ -9908,6 +9962,8 @@ CM_ SG_ 999 DPB_a334_EMCMain21Checksum "DPB ECU: a334 EMC main21 checksum";
 CM_ SG_ 999 DPB_a335_EMCMain21Counter "DPB ECU: a335 EMC main21 counter";
 CM_ SG_ 999 DPB_a336_EMCMain21DLC "DPB ECU: a336 EMC main21 DLC";
 CM_ SG_ 999 DPB_a337_EMCMain21Timeout "DPB ECU: a337 EMC main21 timeout";
+CM_ BO_ 1592 "Electric power steering (primary) message: uds response CH";
+CM_ SG_ 1592 EPAS3P_udsResponseDataCH "Electric power steering (primary): uds response data CH";
 CM_ BO_ 1427 "EPASTP ECU message: alert log";
 CM_ SG_ 1427 EPASTP_alertID "EPASTP ECU: alert ID";
 CM_ SG_ 1427 EPASTP_alertState "EPASTP ECU: alert state";
@@ -11646,6 +11702,8 @@ CM_ SG_ 2047 GTW_exteriorMicrophoneType "Gateway: exterior microphone type";
 CM_ SG_ 2047 GTW_contactorPowerSource "Gateway: contactor power source";
 CM_ SG_ 2047 GTW_roofGlassType "Gateway: roof glass type";
 CM_ SG_ 2047 GTW_pedalMapNameOverride "Gateway: pedal map name override";
+CM_ BO_ 792 "Gateway message: car state";
+CM_ SG_ 792 GTW_factoryGated "Gateway: factory gated";
 CM_ BO_ 1638 "Gateway message: diag session";
 CM_ SG_ 1638 GTW_diagRemainingSeconds "Seconds remaining for the diagnostics session";
 CM_ SG_ 1638 GTW_diagSessionActive "UDS Session Active";
@@ -11659,6 +11717,35 @@ CM_ SG_ 1080 GTW_ethWakeUpBus "Gateway: eth wake up bus";
 CM_ SG_ 1080 GTW_vehBusAsleep "VEH bus sleep state";
 CM_ SG_ 1080 GTW_ethHeartBeatCounter "Gateway: eth heart beat counter";
 CM_ SG_ 1080 GTW_ethWakeUpReason "Tracks the cause of why the gateway wakes up the ethernet bus";
+CM_ BO_ 1376 "Gateway message: factory ecu present";
+CM_ SG_ 1376 GTW_OCS1Ppresent "Gateway: OCS1 ppresent";
+CM_ SG_ 1376 GTW_PCSpresent "Gateway: PC spresent";
+CM_ SG_ 1376 GTW_HVPpresent "Gateway: HV ppresent";
+CM_ SG_ 1376 GTW_BMSpresent "Gateway: BM spresent";
+CM_ SG_ 1376 GTW_CPpresent "Gateway: c ppresent";
+CM_ SG_ 1376 GTW_RCMpresent "Gateway: RC mpresent";
+CM_ SG_ 1376 GTW_SCCMpresent "Gateway: SCC mpresent";
+CM_ SG_ 1376 GTW_VCSECpresent "Gateway: VCSE cpresent";
+CM_ SG_ 1376 GTW_EPAS3Ppresent "Gateway: EPAS3 ppresent";
+CM_ SG_ 1376 GTW_EPBLpresent "Gateway: EPB lpresent";
+CM_ SG_ 1376 GTW_EPBRpresent "Gateway: EPB rpresent";
+CM_ SG_ 1376 GTW_ESPpresent "Gateway: ES ppresent";
+CM_ SG_ 1376 GTW_IBSTpresent "Gateway: IBS tpresent";
+CM_ SG_ 1376 GTW_PARKpresent "Gateway: PAR kpresent";
+CM_ SG_ 1376 GTW_RADCpresent "Gateway: RAD cpresent";
+CM_ SG_ 1376 GTW_TPMSpresent "Gateway: TPM spresent";
+CM_ SG_ 1376 GTW_VCFRONTpresent "Gateway: VCFRON tpresent";
+CM_ SG_ 1376 GTW_VCLEFTpresent "Gateway: VCLEF tpresent";
+CM_ SG_ 1376 GTW_VCRIGHTpresent "Gateway: VCRIGH tpresent";
+CM_ SG_ 1376 GTW_EPAS3Spresent "Gateway: EPAS3 spresent";
+CM_ SG_ 1376 GTW_CMPpresent "Gateway: CM ppresent";
+CM_ SG_ 1376 GTW_DASpresent "Gateway: DA spresent";
+CM_ SG_ 1376 GTW_PTCpresent "Gateway: PT cpresent";
+CM_ SG_ 1376 GTW_SWCpresent "Gateway: SW cpresent";
+CM_ SG_ 1376 GTW_PMRpresent "Gateway: PM rpresent";
+CM_ SG_ 1376 GTW_PMFpresent "Gateway: PM fpresent";
+CM_ SG_ 1376 GTW_DIRpresent "Gateway: DI rpresent";
+CM_ SG_ 1376 GTW_DIFpresent "Gateway: DI fpresent";
 CM_ BO_ 1656 "Gateway message: gear control";
 CM_ SG_ 1656 GTW_gearControlChecksum "Gateway: gear control checksum";
 CM_ SG_ 1656 GTW_gearControlCounter "Gateway: gear control counter";
@@ -12140,6 +12227,8 @@ CM_ SG_ 771 OCS1P_seatbackStableCap "Occupant classification system: seatback st
 CM_ SG_ 771 OCS1P_classificationHeldCap "Occupant classification system: classification held cap";
 CM_ SG_ 771 OCS1P_statusCounter "Occupant classification system: status counter";
 CM_ SG_ 771 OCS1P_statusChecksum "Occupant classification system: status checksum";
+CM_ BO_ 1619 "Occupant classification system message: uds response";
+CM_ SG_ 1619 OCS1P_udsResponseData "Occupant classification system: uds response data";
 CM_ BO_ 519 "Cabin heater message: feedback status";
 CM_ SG_ 519 PTC_leftFlagFault "Heater left bank fault indication flag";
 CM_ SG_ 519 PTC_rightFlagFault "Heater right bank fault indication flag";
@@ -14083,6 +14172,11 @@ CM_ SG_ 1155 TCU_tcuSMState "Reports the state of the Telematics Control Unit (T
 CM_ SG_ 1155 TCU_checkInternetFailCount "Reports the count of unsuccessful cellular connectivity checks.";
 CM_ SG_ 1155 TCU_mdmBand "Indicates the band which the baseband processor is currently attached to the cellular network.";
 CM_ SG_ 1155 TCU_wakeSource "Indicates the source of wake event in the modem.";
+CM_ BO_ 1603 "UDS ECU message: ocs1p request";
+CM_ SG_ 1603 UDS_ocs1pRequestData "UDS ECU: ocs1p request data";
+CM_ BO_ 1551 "UDS ECU message: thc request";
+CM_ SG_ 1551 UDS_thcRequestData_H "UDS ECU: thc request data h";
+CM_ SG_ 1551 UDS_thcRequestData_L "UDS ECU: thc request data l";
 CM_ BO_ 1056 "UIS ECU message: log";
 CM_ SG_ 1056 UIS_logMux "UIS ECU: log mux";
 CM_ SG_ 1056 UIS_zramWriteTicks "UIS ECU: zram write ticks";
@@ -16468,6 +16562,7 @@ BA_ "ECU" BU_ BB "BB";
 BA_ "ECU" BU_ CMP "CMP";
 BA_ "ECU" BU_ DAS "DAS";
 BA_ "ECU" BU_ DPB "DPB";
+BA_ "ECU" BU_ EPAS3P "EPAS3P";
 BA_ "ECU" BU_ EPASTP "EPASTP";
 BA_ "ECU" BU_ EPASTS "EPASTS";
 BA_ "ECU" BU_ GTW "GTW";
@@ -16478,6 +16573,7 @@ BA_ "ECU" BU_ RCM "RCM";
 BA_ "ECU" BU_ RCU "RCU";
 BA_ "ECU" BU_ TCU "TCU";
 BA_ "ECU" BU_ TCU2 "TCU2";
+BA_ "ECU" BU_ UDS "UDS";
 BA_ "ECU" BU_ UI "UI";
 BA_ "ECU" BU_ UIS "UIS";
 BA_ "ECU" BU_ VCLEFT "VCLEFT";
@@ -16543,6 +16639,9 @@ BA_ "VFrameFormat" BO_ 1237 0;
 BA_ "GenMsgCycleTime" BO_ 999 1000;
 BA_ "GenMsgSendType" BO_ 999 0;
 BA_ "VFrameFormat" BO_ 999 0;
+BA_ "GenMsgCycleTime" BO_ 1592 0;
+BA_ "GenMsgSendType" BO_ 1592 8;
+BA_ "VFrameFormat" BO_ 1592 0;
 BA_ "GenMsgCycleTime" BO_ 1427 0;
 BA_ "GenMsgSendType" BO_ 1427 8;
 BA_ "VFrameFormat" BO_ 1427 0;
@@ -16576,12 +16675,18 @@ BA_ "VFrameFormat" BO_ 904 0;
 BA_ "GenMsgCycleTime" BO_ 2047 100;
 BA_ "GenMsgSendType" BO_ 2047 0;
 BA_ "VFrameFormat" BO_ 2047 0;
+BA_ "GenMsgCycleTime" BO_ 792 100;
+BA_ "GenMsgSendType" BO_ 792 0;
+BA_ "VFrameFormat" BO_ 792 0;
 BA_ "GenMsgCycleTime" BO_ 1638 250;
 BA_ "GenMsgSendType" BO_ 1638 0;
 BA_ "VFrameFormat" BO_ 1638 0;
 BA_ "GenMsgCycleTime" BO_ 1080 100;
 BA_ "GenMsgSendType" BO_ 1080 0;
 BA_ "VFrameFormat" BO_ 1080 0;
+BA_ "GenMsgCycleTime" BO_ 1376 1000;
+BA_ "GenMsgSendType" BO_ 1376 0;
+BA_ "VFrameFormat" BO_ 1376 0;
 BA_ "GenMsgCycleTime" BO_ 1656 100;
 BA_ "GenMsgSendType" BO_ 1656 0;
 BA_ "VFrameFormat" BO_ 1656 0;
@@ -16627,6 +16732,9 @@ BA_ "VFrameFormat" BO_ 766 0;
 BA_ "GenMsgCycleTime" BO_ 771 500;
 BA_ "GenMsgSendType" BO_ 771 0;
 BA_ "VFrameFormat" BO_ 771 0;
+BA_ "GenMsgCycleTime" BO_ 1619 0;
+BA_ "GenMsgSendType" BO_ 1619 8;
+BA_ "VFrameFormat" BO_ 1619 0;
 BA_ "GenMsgCycleTime" BO_ 519 100;
 BA_ "GenMsgSendType" BO_ 519 0;
 BA_ "VFrameFormat" BO_ 519 0;
@@ -16669,6 +16777,12 @@ BA_ "VFrameFormat" BO_ 1158 0;
 BA_ "GenMsgCycleTime" BO_ 1155 1000;
 BA_ "GenMsgSendType" BO_ 1155 0;
 BA_ "VFrameFormat" BO_ 1155 0;
+BA_ "GenMsgCycleTime" BO_ 1603 0;
+BA_ "GenMsgSendType" BO_ 1603 8;
+BA_ "VFrameFormat" BO_ 1603 0;
+BA_ "GenMsgCycleTime" BO_ 1551 0;
+BA_ "GenMsgSendType" BO_ 1551 8;
+BA_ "VFrameFormat" BO_ 1551 0;
 BA_ "GenMsgCycleTime" BO_ 1056 0;
 BA_ "GenMsgSendType" BO_ 1056 8;
 BA_ "VFrameFormat" BO_ 1056 0;
@@ -18496,6 +18610,7 @@ BA_ "Confidence" SG_ 999 DPB_a334_EMCMain21Checksum 2;
 BA_ "Confidence" SG_ 999 DPB_a335_EMCMain21Counter 2;
 BA_ "Confidence" SG_ 999 DPB_a336_EMCMain21DLC 2;
 BA_ "Confidence" SG_ 999 DPB_a337_EMCMain21Timeout 2;
+BA_ "Confidence" SG_ 1592 EPAS3P_udsResponseDataCH 1;
 BA_ "Confidence" SG_ 1427 EPASTP_alertID 1;
 BA_ "Confidence" SG_ 1427 EPASTP_alertState 1;
 BA_ "Confidence" SG_ 1427 EPASTP_a001_debugInfo 2;
@@ -20505,6 +20620,7 @@ BA_ "Confidence" SG_ 2047 GTW_exteriorMicrophoneType 0;
 BA_ "Confidence" SG_ 2047 GTW_contactorPowerSource 0;
 BA_ "Confidence" SG_ 2047 GTW_roofGlassType 0;
 BA_ "Confidence" SG_ 2047 GTW_pedalMapNameOverride 0;
+BA_ "Confidence" SG_ 792 GTW_factoryGated 1;
 BA_ "Confidence" SG_ 1638 GTW_diagRemainingSeconds 0;
 BA_ "Confidence" SG_ 1638 GTW_diagSessionActive 0;
 BA_ "Confidence" SG_ 1638 GTW_diagLevel 0;
@@ -20516,6 +20632,34 @@ BA_ "Confidence" SG_ 1080 GTW_ethWakeUpBus 0;
 BA_ "Confidence" SG_ 1080 GTW_vehBusAsleep 0;
 BA_ "Confidence" SG_ 1080 GTW_ethHeartBeatCounter 0;
 BA_ "Confidence" SG_ 1080 GTW_ethWakeUpReason 0;
+BA_ "Confidence" SG_ 1376 GTW_OCS1Ppresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PCSpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_HVPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_BMSpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_CPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_RCMpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_SCCMpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCSECpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPAS3Ppresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPBLpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPBRpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_ESPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_IBSTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PARKpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_RADCpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_TPMSpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCFRONTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCLEFTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_VCRIGHTpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_EPAS3Spresent 1;
+BA_ "Confidence" SG_ 1376 GTW_CMPpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_DASpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PTCpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_SWCpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PMRpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_PMFpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_DIRpresent 1;
+BA_ "Confidence" SG_ 1376 GTW_DIFpresent 1;
 BA_ "Confidence" SG_ 1656 GTW_gearControlChecksum 0;
 BA_ "Confidence" SG_ 1656 GTW_gearControlCounter 0;
 BA_ "Confidence" SG_ 1656 GTW_gearShiftRequest 0;
@@ -21061,6 +21205,7 @@ BA_ "Confidence" SG_ 771 OCS1P_seatbackStableCap 0;
 BA_ "Confidence" SG_ 771 OCS1P_classificationHeldCap 0;
 BA_ "Confidence" SG_ 771 OCS1P_statusCounter 0;
 BA_ "Confidence" SG_ 771 OCS1P_statusChecksum 0;
+BA_ "Confidence" SG_ 1619 OCS1P_udsResponseData 1;
 BA_ "Confidence" SG_ 519 PTC_leftFlagFault 0;
 BA_ "Confidence" SG_ 519 PTC_rightFlagFault 0;
 BA_ "Confidence" SG_ 519 PTC_leftPowerDerating 0;
@@ -23205,6 +23350,9 @@ BA_ "Confidence" SG_ 1155 TCU_tcuSMState 0;
 BA_ "Confidence" SG_ 1155 TCU_checkInternetFailCount 0;
 BA_ "Confidence" SG_ 1155 TCU_mdmBand 0;
 BA_ "Confidence" SG_ 1155 TCU_wakeSource 0;
+BA_ "Confidence" SG_ 1603 UDS_ocs1pRequestData 1;
+BA_ "Confidence" SG_ 1551 UDS_thcRequestData_H 1;
+BA_ "Confidence" SG_ 1551 UDS_thcRequestData_L 1;
 BA_ "Confidence" SG_ 1056 UIS_logMux 1;
 BA_ "Confidence" SG_ 1056 UIS_zramWriteTicks 2;
 BA_ "Confidence" SG_ 1056 UIS_zramWriteIO 2;
