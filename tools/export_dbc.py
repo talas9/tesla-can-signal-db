@@ -897,6 +897,16 @@ def _json_free_text(obj):
             yield from _json_free_text(v)
 
 
+def dbc_free_text(text):
+    """Public: free text of a DBC file that the source-disclosure gate scans."""
+    return _gate_text(text)
+
+
+def json_free_text(text):
+    """Public: free text of a JSON twin that the source-disclosure gate scans."""
+    return '\n'.join(_json_free_text(json.loads(text)))
+
+
 # ----------------------------------------------------------------- CLI
 
 def _build_all(repo, out_dir):

@@ -403935,7 +403935,7 @@
       "scale": "1",
       "offset": "0",
       "unit": "",
-      "description": "QtCar uptime",
+      "description": "Touchscreen UI software uptime",
       "min": "0",
       "max": "4294967295",
       "enum_values": ""
@@ -423163,7 +423163,7 @@
       "scale": "1",
       "offset": "0",
       "unit": "",
-      "description": "Service mode",
+      "description": "Service diagnostics mode active",
       "min": "",
       "max": "",
       "enum_values": "{\"0\":\"SERVICE_MODE_DISABLED\",\"1\":\"SERVICE_MODE_ENABLED\"}"
@@ -423182,7 +423182,7 @@
       "scale": "1",
       "offset": "0",
       "unit": "",
-      "description": "Service mode plus",
+      "description": "Extended service diagnostics mode active",
       "min": "",
       "max": "",
       "enum_values": "{\"0\":\"SERVICE_MODE_PLUS_DISABLED\",\"1\":\"SERVICE_MODE_PLUS_ENABLED\"}"

@@ -430357,7 +430357,7 @@
     },
     {
      "byte_order": "little_endian",
-     "comment": "Signal reported by UIS ECU",
+     "comment": "Touchscreen UI software uptime",
      "confidence": "plausible",
      "dbc_name": "UIS_uiQtCarUptime",
      "is_float": false,
@@ -462867,7 +462867,7 @@
     },
     {
      "byte_order": "little_endian",
-     "comment": "Signal reported by Touchscreen user interface computer",
+     "comment": "Service diagnostics mode active",
      "confidence": "plausible",
      "dbc_name": "UI_serviceMode",
      "is_float": false,
@@ -463070,7 +463070,7 @@
     },
     {
      "byte_order": "little_endian",
-     "comment": "Signal reported by Touchscreen user interface computer",
+     "comment": "Extended service diagnostics mode active",
      "confidence": "plausible",
      "dbc_name": "UI_serviceModePlus",
      "is_float": false,

@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """
-Build Tesla CAN signal database from MCU layouts and Service Mode Plus catalogue.
-Merges signal definitions, units, descriptions, and enum mappings.
-Includes PII scanning to prevent sensitive data from being committed.
+Tesla CAN signal database: shared helpers and the repository gates.
+
+    python3 tools/build.py            # run the gates (same as --check)
+    python3 tools/build.py --check    # PII + source-disclosure gates over
+                                      # data/, dbc/, README.md, INDEX.md
+    python3 tools/build.py --fix      # rewrite gate-failing descriptions in
+                                      # data/<fw>/signals.{csv,json}, then gate
+
+Exit status 0 = clean. Signal/message names and value-table labels are the
+vehicle's own identifiers and are not rewritten; the source-disclosure gate
+applies to free text (descriptions, comments, docs).
 """
 
 import csv
 import json
 import sys
 import re
-import tempfile
 import os
 from pathlib import Path
 
@@ -72,185 +79,156 @@ def scan_pii(content):
     return findings
 
 
-def load_service_mode_catalogue(catalogue_path):
-    """Load Service Mode Plus catalogue and index by signal name."""
-    catalogue = {}
-    with open(catalogue_path, 'r', encoding='utf-8', errors='replace') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            signal_name = row.get('signal', '').strip()
-            if signal_name:
-                catalogue[signal_name] = {
-                    'unit': row.get('unit', '').strip(),
-                    'description': row.get('description', '').strip(),
-                    'min': row.get('min', '').strip(),
-                    'max': row.get('max', '').strip(),
-                    'enum_values': row.get('enum_values', '').strip(),
-                }
-    return catalogue
+# Source-disclosure gate: published text (DBC comments/attributes, JSON
+# descriptions, README) must carry provenance = firmware version (+ model)
+# only. Any hit here means a description or doc leaks where data came from.
+SOURCE_DISCLOSURE_PATTERNS = [
+    (r'unpacker', 'unpacker'),
+    (r'librar(?:y|ies)', 'library'),
+    (r'service[\s_-]?mode', 'service mode'),
+    (r'service-ui', 'service-ui'),
+    (r'opt/diag', 'opt/diag'),
+    (r'catalog', 'catalogue'),
+    (r'\bodin\b', 'odin'),
+    (r'\bDEJ\b', 'DEJ'),
+    (r'qt[\s_-]?car', 'QtCar'),
+    (r'extracted', 'extracted'),
+    (r'reverse[\s_-]?engineer', 'reverse-engineered'),
+    (r'decompil', 'decompiled'),
+    (r'candb', 'candb'),
+    (r'gateway[\s_-]?decomp', 'gateway decomp'),
+    (r'tool[\s_-]?fox', 'ToolFox'),
+    (r'\btf3', 'tf3'),
+    (r'@\s*0x[0-9a-f]+', 'address @0x'),
+    (r'\btable\s+\d', "'table N' source string"),
+    (r'(?:^|[\s"\'(=])(?:~|\.{1,2})?/(?:[\w.-]+/)+[\w.-]*', 'file path'),
+    (r'\b[\w-]+\.(?:so|py|csv|json|md|dbc|cpp|hpp|qml|bin|elf)\b', 'file name'),
+    (r'/Users/|/home/|/opt/|/var/|/usr/', 'file path'),
+]
+_SOURCE_RE = [(re.compile(p, re.IGNORECASE), label) for p, label in SOURCE_DISCLOSURE_PATTERNS]
 
 
-def build_signals(layouts_path, catalogue):
-    """Build signal list from MCU layouts, enriched with catalogue data."""
-    signals = []
-
-    with open(layouts_path, 'r', encoding='utf-8', errors='replace') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            signal_name = row.get('signal', '').strip()
-            if not signal_name:
-                continue
-
-            # Get enrichment from catalogue
-            cat_data = catalogue.get(signal_name, {})
-
-            signal = {
-                'signal': signal_name,
-                'device': get_device_from_signal(signal_name),
-                'message': row.get('message', '').strip(),
-                'eth_id': row.get('eth_id', '').strip(),
-                'mux_signal': row.get('mux_signal', '').strip(),
-                'mux_value': row.get('mux_value', '').strip(),
-                'start': row.get('start', '').strip(),
-                'length': row.get('len', '').strip(),
-                'little_endian': row.get('little', '').strip(),
-                'signed': row.get('signed', '').strip(),
-                'scale': row.get('scale', '').strip(),
-                'offset': row.get('offset', '').strip(),
-                'unit': cat_data.get('unit', ''),
-                'description': cat_data.get('description', ''),
-                'min': cat_data.get('min', ''),
-                'max': cat_data.get('max', ''),
-                'enum_values': cat_data.get('enum_values', ''),
-            }
-            signals.append(signal)
-
-    # Sort by signal name for determinism
-    signals.sort(key=lambda x: x['signal'])
-    return signals
+def scan_source_disclosure(text):
+    """Return sorted list of source-disclosure labels found in text (str)."""
+    return sorted({label for rx, label in _SOURCE_RE if rx.search(text)})
 
 
-def write_csv(signals, output_path):
-    """Write signals to CSV file."""
-    if not signals:
-        return
-
-    fieldnames = [
-        'signal', 'device', 'message', 'eth_id', 'mux_signal', 'mux_value',
-        'start', 'length', 'little_endian', 'signed', 'scale', 'offset',
-        'unit', 'description', 'min', 'max', 'enum_values'
-    ]
-
-    with open(output_path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for signal in signals:
-            writer.writerow({k: signal.get(k, '') for k in fieldnames})
+# Deterministic rewrites for descriptions that name internal software
+# components; applied by --fix. Keys are exact phrases (case-sensitive).
+DESCRIPTION_REWRITES = [
+    ('Service mode plus', 'Extended service diagnostics mode active'),
+    ('Service mode', 'Service diagnostics mode active'),
+    ('QtCar uptime', 'Touchscreen UI software uptime'),
+    ('QtCar', 'the touchscreen UI software'),
+]
 
 
-def write_json(signals, output_path):
-    """Write signals to JSON file."""
-    data = {
-        'signals': signals,
-        'metadata': {
-            'count': len(signals),
-            'sorted': True,
-        }
-    }
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+def rewrite_description(text):
+    """Return text with DESCRIPTION_REWRITES applied if it fails the gate."""
+    if not scan_source_disclosure(text):
+        return text
+    for old, new in DESCRIPTION_REWRITES:
+        if text == old:
+            return new
+    for old, new in DESCRIPTION_REWRITES:
+        text = text.replace(old, new)
+    return text
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: build.py <layout1.csv> [<layout2.csv> ...] [--check]")
-        sys.exit(1)
+def fix_data(repo):
+    """Rewrite gate-failing descriptions in data/<fw>/signals.{csv,json}."""
+    changed = 0
+    for fwdir in sorted((repo / 'data').iterdir()):
+        csvp, jsonp = fwdir / 'signals.csv', fwdir / 'signals.json'
+        if not csvp.exists():
+            continue
+        with open(csvp, newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            fields, rows = reader.fieldnames, list(reader)
+        for r in rows:
+            new = rewrite_description(r['description'])
+            if new != r['description']:
+                r['description'] = new
+                changed += 1
+        with open(csvp, 'w', newline='', encoding='utf-8') as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator='\r\n')
+            w.writeheader()
+            w.writerows(rows)
+        if jsonp.exists():
+            with open(jsonp, encoding='utf-8') as f:
+                data = json.load(f)
+            for sig in data['signals']:
+                sig['description'] = rewrite_description(sig.get('description', ''))
+            with open(jsonp, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+    return changed
 
-    # Parse arguments
-    check_mode = '--check' in sys.argv
-    layouts = [arg for arg in sys.argv[1:] if not arg.startswith('--')]
 
-    # Assume service-mode-signals.csv is in same directory as first layout
-    script_dir = Path(__file__).parent
-    repo_root = script_dir.parent
-    data_dir = repo_root / 'data'
-    catalogue_path = data_dir / 'service-mode-signals.csv'
+def _free_text_of_data_file(path):
+    """Description text of a data/ signals file (names are vehicle identifiers)."""
+    if path.suffix == '.csv':
+        with open(path, newline='', encoding='utf-8') as f:
+            return '\n'.join(r.get('description', '') for r in csv.DictReader(f))
+    if path.suffix == '.json':
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        return '\n'.join(s.get('description', '') for s in data.get('signals', []))
+    return path.read_text(encoding='utf-8', errors='replace')
 
-    if not catalogue_path.exists():
-        print(f"Error: {catalogue_path} not found", file=sys.stderr)
-        sys.exit(1)
 
-    # Load catalogue
-    print(f"Loading catalogue from {catalogue_path}...", file=sys.stderr)
-    catalogue = load_service_mode_catalogue(catalogue_path)
-    print(f"Loaded {len(catalogue)} signals from catalogue", file=sys.stderr)
+def run_gates(repo):
+    """PII + source-disclosure gates over the repo's published content.
 
-    # Process each layout file
-    results = {}
-    for layout_path in layouts:
-        layout_file = Path(layout_path)
-        if not layout_file.exists():
-            print(f"Error: {layout_path} not found", file=sys.stderr)
-            sys.exit(1)
+    Returns a list of 'path: finding' strings (empty = clean)."""
+    findings = []
+    targets = []
+    for sub in ('data', 'dbc'):
+        base = repo / sub
+        if base.exists():
+            targets += sorted(p for p in base.rglob('*') if p.is_file())
+    targets += [repo / n for n in ('README.md', 'INDEX.md') if (repo / n).exists()]
+    for p in targets:
+        rel = p.relative_to(repo)
+        raw = p.read_bytes()
+        for label in scan_pii(raw):
+            findings.append('%s: PII: %s' % (rel, label))
+        if rel.parts[0] == 'data':
+            text = _free_text_of_data_file(p)
+            labels = scan_source_disclosure(text)
+        elif rel.parts[0] == 'dbc':
+            # lazy import: export_dbc imports this module
+            from export_dbc import dbc_free_text, json_free_text
+            text = raw.decode('utf-8', errors='replace')
+            text = dbc_free_text(text) if p.suffix == '.dbc' else (
+                json_free_text(text) if p.suffix == '.json' else text)
+            labels = scan_source_disclosure(text)
+        else:
+            # docs name files legitimately (e.g. ALL.dbc, signals.csv)
+            labels = [l for l in scan_source_disclosure(raw.decode('utf-8', errors='replace'))
+                      if l != 'file name']
+        for label in labels:
+            findings.append('%s: source disclosure: %s' % (rel, label))
+    return findings
 
-        print(f"Processing {layout_file.name}...", file=sys.stderr)
-        signals = build_signals(layout_path, catalogue)
-        print(f"  Generated {len(signals)} signals", file=sys.stderr)
 
-        # Count enriched signals
-        enriched = sum(1 for s in signals if s.get('unit') or s.get('description'))
-        print(f"  Enriched with unit/description: {enriched}", file=sys.stderr)
-
-        results[layout_file.stem] = signals
-
-    # Determine output directory
-    if check_mode:
-        output_root = Path(tempfile.mkdtemp(prefix='signaldb_check_'))
-        print(f"Check mode: writing to {output_root}", file=sys.stderr)
-    else:
-        output_root = data_dir
-
-    # Write outputs
-    for firmware, signals in results.items():
-        firmware_dir = output_root / firmware
-        firmware_dir.mkdir(parents=True, exist_ok=True)
-
-        csv_path = firmware_dir / 'signals.csv'
-        json_path = firmware_dir / 'signals.json'
-
-        write_csv(signals, csv_path)
-        write_json(signals, json_path)
-        print(f"Wrote {csv_path}", file=sys.stderr)
-        print(f"Wrote {json_path}", file=sys.stderr)
-
-    # PII scan
-    print("\nScanning for PII...", file=sys.stderr)
-    all_pii = {}
-    for root, dirs, files in os.walk(output_root):
-        for fname in files:
-            if fname.endswith(('.csv', '.json')):
-                fpath = Path(root) / fname
-                with open(fpath, 'rb') as f:
-                    content = f.read()
-                findings = scan_pii(content)
-                if findings:
-                    all_pii[str(fpath)] = findings
-
-    if all_pii:
-        print("ERROR: PII found in output:", file=sys.stderr)
-        for fpath, findings in all_pii.items():
-            print(f"  {fpath}: {', '.join(findings)}", file=sys.stderr)
-        sys.exit(1)
-    else:
-        print("PII scan: OK", file=sys.stderr)
-
-    if check_mode:
-        print(f"\nCheck mode: built to {output_root}", file=sys.stderr)
-        # In a real check, we'd diff against the working directory
-        print("SUCCESS: Check mode complete", file=sys.stderr)
-    else:
-        print("\nBuild complete", file=sys.stderr)
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    unknown = [a for a in argv if a not in ('--check', '--fix')]
+    if unknown:
+        print('usage: build.py [--check | --fix]', file=sys.stderr)
+        return 2
+    repo = Path(__file__).resolve().parent.parent
+    if '--fix' in argv:
+        print('rewrote %d descriptions' % fix_data(repo), file=sys.stderr)
+    findings = run_gates(repo)
+    for f in findings:
+        print('GATE: ' + f, file=sys.stderr)
+    if findings:
+        print('GATES FAILED: %d findings' % len(findings), file=sys.stderr)
+        return 1
+    print('GATES OK: PII + source disclosure clean (data/, dbc/, README.md, INDEX.md)', file=sys.stderr)
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

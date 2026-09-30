@@ -1,116 +1,130 @@
 # Tesla CAN Signal Database
 
-A comprehensive database of Tesla vehicle CAN signal layouts, units, descriptions, and enumerations extracted from firmware unpacker outputs and vehicle diagnostics catalogues.
+Tesla Model 3 / Model Y CAN bus signal database and DBC files: decoded CAN
+messages and signals (bit layout, byte order, scaling, units, value tables)
+for firmware **2026.26.6.5** and **2025.20.8**.
 
-## Overview
+Provenance is stated as firmware version (and vehicle model) only.
 
-This repository contains signal definitions for Tesla Model 3/Y CAN buses across multiple firmware versions:
-- **2026.26.6.5**: Latest firmware release vehicle-interface library unpacker
-- **2025.20.8**: Previous firmware release vehicle-interface library unpacker
+## Repository structure
 
-Data is organized by firmware version, with each including signal name, message ID, position, scaling information, and human-readable descriptions where available.
+- `dbc/` - Vector DBC files (+ JSON twins) generated from `data/`
+  - `dbc/<firmware>/ALL.dbc` - every decoded message of that firmware in one file
+- `data/<firmware>/signals.{csv,json}` - signal definitions per firmware
+- `tools/build.py` - PII / disclosure gates and shared helpers
+- `tools/export_dbc.py` - DBC exporter and validator
+- `INDEX.md` - device and signal summary by firmware
+- `NOTICE.md` - rights and publication notice
 
-## Repository Structure
+## DBC files
 
-- `README.md` - This file
-- `INDEX.md` - Device and signal summary by firmware
-- `NOTICE.md` - Rights and publication notice
-- `data/` - Signal definitions by firmware version
-  - `2026.26.6.5/signals.{csv,json}` - 2026.26.6.5 firmware signals
-  - `2025.20.8/signals.{csv,json}` - 2025.20.8 firmware signals
-  - `service-mode-signals.csv` - Service Mode Plus signal catalogue (source data)
-  - `mcu-layouts-*.csv` - Raw firmware unpacker outputs (source data)
-- `tools/` - Build and maintenance scripts
-  - `build.py` - Regenerate signal databases from source files
+**Status: v1 first cut.** One `ALL.dbc` per firmware. The per-model / per-bus
+split (`dbc/<model>/<firmware>/<BUS>.dbc`) and the full attribute set
+(cycle times, SNA values, confidence from cross-checks) follow in the next
+update.
 
-## Signal Data Format
+What is in each file:
 
-Each signal record includes:
-- **signal**: Canonical signal name
-- **device**: Device/ECU abbreviation with full name
-- **message**: CAN message ID
-- **eth_id**: Ethernet/CAN message identifier (hex)
-- **mux_signal/mux_value**: Multiplexing information (if applicable)
-- **start/length**: Bit position and width in message
-- **little_endian/signed**: Encoding details
-- **scale/offset**: Raw to physical value conversion
-- **unit**: Physical unit (V, A, °C, rpm, etc.) when known
-- **description**: Human-readable signal description
-- **min/max**: Expected value ranges
-- **enum_values**: Named enumeration map for discrete signals
+- every message with its frame length (8 bytes, or the CAN FD length when a
+  layout extends past 8 bytes; such files set `BusType "CAN FD"`)
+- every signal with start bit, length, byte order (`@1` Intel / `@0` Motorola,
+  standard DBC sawtooth numbering), sign, factor, offset, min/max and unit
+  (ASCII units, e.g. `degC`)
+- multiplexed messages (`M` switch, `mN` pages)
+- `VAL_` value tables for enumerated signals
+- a one-line plain-language `CM_` comment for the network, every node,
+  message and signal
+- attributes: `BusType`, `DBName`, `Baudrate`, `Manufacturer`,
+  `FirmwareVersion`, `VehicleModel`, `GenMsgCycleTime`, `GenMsgSendType`,
+  `VFrameFormat`, `GenSigSNA`, `Confidence` (per signal) and
+  `SystemSignalLongSymbol` for signal names longer than the 32-character DBC
+  limit (the DBC identifier is shortened; tools such as cantools restore the
+  full name from the attribute)
 
-## Data Quality
+Frame ids in `ALL.dbc` are the vehicle's internal message ids. Messages that
+are re-numbered when they are routed onto a physical CAN bus will carry the
+on-bus id in the per-bus files of the next update.
 
-- **Status**: v0 - Raw extraction, not yet validated against live CAN logs
-- **Enrichment**: ~10% of signals include units and descriptions from diagnostic catalogues; remainder have layout/scaling only
-- **Coverage**: All signals extracted from firmware; cross-check with vehicle data in progress
+### Load with cantools (Python)
 
-See [CONFIDENCE_LEGEND](#confidence-legend) for how to interpret each field's reliability.
-
-## Usage
-
-### Load from CSV
 ```python
-import csv
-with open('data/2026.26.6.5/signals.csv') as f:
-    signals = csv.DictReader(f)
-    for sig in signals:
-        print(f"{sig['signal']}: {sig['description']} [{sig['unit']}]")
+import cantools
+db = cantools.database.load_file('dbc/2026.26.6.5/ALL.dbc', strict=True)
+msg = db.get_message_by_name('BMS_status')
+print(msg.frame_id, [s.name for s in msg.signals])
+print(db.decode_message(msg.frame_id, bytes(msg.length)))
 ```
 
-### Load from JSON
+### Load with python-can + cantools (live bus)
+
 ```python
-import json
-with open('data/2026.26.6.5/signals.json') as f:
-    data = json.load(f)
-    for sig in data['signals']:
-        print(f"{sig['signal']}: {sig['description']}")
+import can, cantools
+db = cantools.database.load_file('dbc/2026.26.6.5/ALL.dbc')
+with can.Bus(interface='socketcan', channel='can0') as bus:
+    for frame in bus:
+        try:
+            print(db.decode_message(frame.arbitration_id, frame.data))
+        except KeyError:
+            pass
 ```
 
-## Building from Source
+### SavvyCAN
 
-The database is regenerated from two source files:
-1. **MCU layouts** (from vehicle-interface library unpacker): raw signal positions and scaling
-2. **Service Mode Plus catalogue**: enriched descriptions, units, and enumerations
+`File > Load DBC File` (or the DBC manager, `Ctrl+D`), pick the `.dbc`, then
+use *Frame Info* or the *Signal Viewer* on a capture.
 
-Rebuild the database:
+### Vector CANoe / CANalyzer
+
+Add the `.dbc` to the database list of the CAN channel in the simulation or
+measurement setup, or open it directly in the Vector database editor. Long signal names are
+restored from `SystemSignalLongSymbol`.
+
+### Kayak
+
+Kayak reads Kayak Bus Description (`.kcd`) files. Convert with
+`cantools convert dbc/2026.26.6.5/ALL.dbc ALL.kcd`.
+
+## Signal data format (`data/<firmware>/signals.csv`)
+
+- **signal**: canonical signal name
+- **device**: ECU abbreviation with full name
+- **message**: message name
+- **eth_id**: internal message id (hex)
+- **mux_signal/mux_value**: multiplexing (if applicable)
+- **start/length**: bit position and width (DBC convention)
+- **little_endian/signed**: encoding details
+- **scale/offset**: raw to physical value conversion
+- **unit**: physical unit when known
+- **description**: human-readable description when known
+- **min/max**: expected value range when known
+- **enum_values**: named value map for discrete signals (JSON)
+
+## Regenerate and validate
+
 ```bash
-python3 tools/build.py data/mcu-layouts-2026.26.6.5.csv data/mcu-layouts-2025.20.8.csv
+python3 tools/export_dbc.py            # regenerate dbc/ from data/
+python3 tools/export_dbc.py --check    # regenerate to a temp dir and diff,
+                                       # cantools strict load + round trip,
+                                       # PII and disclosure gates
 ```
 
-Validate output without writing:
-```bash
-python3 tools/build.py data/mcu-layouts-2026.26.6.5.csv data/mcu-layouts-2025.20.8.csv --check
-```
+`python3 tools/build.py` runs the PII and disclosure gates on their own
+(no arguments needed; exit 0 = clean).
 
-The build process:
-- Reads all signals from MCU layout files
-- Joins with Service Mode Plus catalogue by exact signal name
-- Extracts device names from signal prefixes
-- Outputs to both CSV and JSON formats
-- Validates against PII patterns (no VINs, MACs, local paths, emails)
+`--check` needs `cantools` (and optionally `canmatrix`) installed in a
+virtual environment.
 
-## Confidence Legend
+## Confidence
 
-| Level | Meaning | Field Examples |
-|-------|---------|-----------------|
-| High | Extracted from firmware; validated against multiple sources | message, eth_id, start, length, scale, offset |
-| Medium | From diagnostic catalogue with some gaps | description, enum_values |
-| Low | Derived or inferred; may have errors | device (prefix-based), min/max (ranges) |
-| Unverified | Empty in v0; awaiting live validation | actual signal ranges in running vehicles |
+Each DBC signal carries a `Confidence` attribute:
 
-## Roadmap
-
-- [ ] Validate signals against live CAN logs from Model 3/Y vehicles
-- [ ] Export as DBC (Vector CAN database format)
-- [ ] Add per-device and per-bus summary files
-- [ ] Extend coverage to other vehicle models
+| Value | Meaning |
+|---|---|
+| validated | bit layout confirmed by two independent definitions |
+| plausible | layout plus unit, value table or description |
+| layout-only | bit layout and scaling only |
 
 ## Contact
 
-This is a private research repository. Contact the owner for questions about publication, use, or contributions.
-
----
-
-**Version**: v0 (raw extraction)  
-**Last Updated**: 2026-09-30
+This is a private research repository. Contact the owner for questions about
+publication, use, or contributions.

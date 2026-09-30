@@ -21258,7 +21258,7 @@ UIS_uiFramesOver200Ms,UIS,UIS_log,0x420,UIS_logMux,31,32,32,1,0,1,0,,,,,
 UIS_uiMaxFrametime,UIS,UIS_log,0x420,UIS_logMux,30,32,32,1,0,1,0,,,,,
 UIS_uiMeanFPS,UIS,UIS_log,0x420,UIS_logMux,29,32,32,1,0,1,0,,UI mean frames per second over a 60s period,0,4294967295,
 UIS_uiQtCarSwapUsage,UIS,UIS_log,0x420,UIS_logMux,28,32,32,1,0,1,0,,,,,
-UIS_uiQtCarUptime,UIS,UIS_log,0x420,UIS_logMux,27,32,32,1,0,1,0,,QtCar uptime,0,4294967295,
+UIS_uiQtCarUptime,UIS,UIS_log,0x420,UIS_logMux,27,32,32,1,0,1,0,,Touchscreen UI software uptime,0,4294967295,
 UIS_valetMode,UIS,UIS_log,0x420,UIS_logMux,26,32,32,1,0,1,0,,UI Valet Mode state,0,1,
 UIS_valhallaserverCPUUsage,UIS,UIS_log,0x420,UIS_logMux,25,32,32,1,0,1,0,,,,,
 UIS_valhallaserverMemUsage,UIS,UIS_log,0x420,UIS_logMux,24,32,32,1,0,1,0,,,,,
@@ -22270,8 +22270,8 @@ UI_selfParkState,UI Touchscreen,UI_status2,0x3DF,,,48,8,1,0,1,0,,Reports the aut
 UI_selfParkTune,UI Touchscreen,UI_chassisControl,0x293,,,48,4,1,0,1,0,,,,,
 UI_sentryModeCameraDetection,UI Touchscreen,UI_status2,0x3DF,,,58,1,1,0,1,0,,,,,
 UI_sentryModeState,UI Touchscreen,UI_status2,0x3DF,,,34,3,1,0,1,0,,,,,
-UI_serviceMode,UI Touchscreen,UI_vehicleModes,0x284,,,3,1,1,0,1,0,,Service mode,,,"{""0"":""SERVICE_MODE_DISABLED"",""1"":""SERVICE_MODE_ENABLED""}"
-UI_serviceModePlus,UI Touchscreen,UI_vehicleModes,0x284,,,36,1,1,0,1,0,,Service mode plus,,,"{""0"":""SERVICE_MODE_PLUS_DISABLED"",""1"":""SERVICE_MODE_PLUS_ENABLED""}"
+UI_serviceMode,UI Touchscreen,UI_vehicleModes,0x284,,,3,1,1,0,1,0,,Service diagnostics mode active,,,"{""0"":""SERVICE_MODE_DISABLED"",""1"":""SERVICE_MODE_ENABLED""}"
+UI_serviceModePlus,UI Touchscreen,UI_vehicleModes,0x284,,,36,1,1,0,1,0,,Extended service diagnostics mode active,,,"{""0"":""SERVICE_MODE_PLUS_DISABLED"",""1"":""SERVICE_MODE_PLUS_ENABLED""}"
 UI_setRCPFront,UI Touchscreen,UI_tpmsRCPsetting,0x3B8,,,16,8,1,0,0.025,0,,,,,
 UI_setRCPRear,UI Touchscreen,UI_tpmsRCPsetting,0x3B8,,,24,8,1,0,0.025,0,,,,,
 UI_shortHornRequest,UI Touchscreen,UI_vehicleControl3,0x274,,,17,1,1,0,1,0,,,,,

@@ -64,4 +64,4 @@
 - Device names are inferred from signal name prefixes where not explicitly known
 - Signal counts by device are approximate due to prefix-based classification
 - Some signals may belong to multiple devices or be broadcast/gateway messages
-- Enrichment percentages indicate what fraction have units and descriptions from Service Mode Plus catalogue
+- Enrichment percentages indicate what fraction have units and descriptions
