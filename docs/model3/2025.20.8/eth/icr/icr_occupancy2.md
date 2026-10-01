@@ -37,7 +37,7 @@ Tesla Model 3 CAN bus signals in `ICR_occupancy2`: start bit and length, byte or
 | `ICR_classification1LMLOutput` | ICR ECU: classification1 LML output; raw 255 = signal not available (SNA) | 25\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | plausible |
 | `ICR_classification1RMLOutput` | ICR ECU: classification1 RML output; raw 255 = signal not available (SNA) | 33\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | plausible |
 | `ICR_occupancy2Counter` | ICR ECU: occupancy2 counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
-| `ICR_occupancy2Checksum` | ICR ECU: occupancy2 checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `ICR_occupancy2Checksum` | ICR ECU: occupancy2 checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VC_pcsInterface`: start bit and length, byte o
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VC_pcsInterfaceMuxIndex` | selector | VC ECU: pcs interface mux index | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
+| `VC_pcsInterfaceMuxIndex` | selector | VC ECU: pcs interface mux index | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | validated |
 | `VC_pcsInterfaceCounter` |  | VC ECU: pcs interface counter | 50\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `VC_pcsInterfaceChecksum` |  | VC ECU: pcs interface checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `VC_pcsLVVoltageTarget` | page 0 | VC ECU: pcs LV voltage target | 0\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | validated |

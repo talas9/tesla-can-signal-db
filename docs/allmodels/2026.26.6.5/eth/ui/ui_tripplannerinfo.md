@@ -29,8 +29,8 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_tripPlannerInfo`: start bit and l
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_fwHeatOnNavArrivalSOE` | Energy percentages shown in the UI | 0\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 100 |  | validated |
-| `UI_voyagerHeatOnNavArrivalSOE` | Energy percentages shown in the UI | 16\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 100 |  | validated |
+| `UI_fwHeatOnNavArrivalSOE` | Energy percentages shown in the UI | 0\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 100 |  | plausible |
+| `UI_voyagerHeatOnNavArrivalSOE` | Energy percentages shown in the UI | 16\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 100 |  | plausible |
 | `UI_usingVoyagerPreconditioning` | Touchscreen user interface computer: using voyager preconditioning | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 
 ## Download the DBC file

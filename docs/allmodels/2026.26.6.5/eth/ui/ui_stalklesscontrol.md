@@ -32,18 +32,18 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_stalklessControl`: start bit and 
 | `UI_stalklessControlCounter` | Touchscreen user interface computer: stalkless control counter | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
 | `UI_stalklessControlChecksum` | Touchscreen user interface computer: stalkless control checksum | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 | `UI_gearStripSuppressCounter` | Touchscreen user interface computer: gear strip suppress counter | 16\|10 | little-endian | unsigned | 1 | 0 |  | 0 to 1023 |  | layout-only |
-| `UI_gearRequest` | UI gear request from UI; raw 0 = signal not available (SNA) | 26\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `GEAR_REQUEST_IDLE_SNA`<br>1 = `GEAR_REQUEST_PARK`<br>2 = `GEAR_REQUEST_REVERSE`<br>3 = `GEAR_REQUEST_NEUTRAL`<br>4 = `GEAR_REQUEST_DRIVE` | validated |
+| `UI_gearRequest` | UI gear request from UI; raw 0 = signal not available (SNA) | 26\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `GEAR_REQUEST_IDLE_SNA`<br>1 = `GEAR_REQUEST_PARK`<br>2 = `GEAR_REQUEST_REVERSE`<br>3 = `GEAR_REQUEST_NEUTRAL`<br>4 = `GEAR_REQUEST_DRIVE` | plausible |
 | `UI_autopilotRequest` | Touchscreen user interface computer: autopilot request | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `IDLE`<br>1 = `PRESSED` | plausible |
-| `UI_gearStripShowing` | UI communicating to GTW that the gear strip is visible on the screen as part of a handshake | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_gearStripShowing` | UI communicating to GTW that the gear strip is visible on the screen as part of a handshake | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_gearStripLocation` | Touchscreen user interface computer: gear strip location | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LEFT`<br>1 = `RIGHT` | plausible |
 | `UI_parkButtonShowing` | Touchscreen user interface computer: park button showing | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_neutralButtonShowing` | Touchscreen user interface computer: neutral button showing | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `UI_gearStripForceShow` | UI request to GTW to show the gear strip | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_gearStripForceShow` | UI request to GTW to show the gear strip | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_neutralButtonDrawerForceShow` | Touchscreen user interface computer: neutral button drawer force show | 35\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `UI_autoParkAvailable` | UI communicating to GTW that the autpark functionality is available | 36\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_autoParkAvailable` | UI communicating to GTW that the autpark functionality is available | 36\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_autoParkShowing` | Touchscreen user interface computer: auto park showing | 37\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `UI_gearStripSuppressActive` | UI communicating to GTW that the gear strip should not be shown | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_gearNeutralPressed` | Neutral button is being pressed | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_gearStripSuppressActive` | UI communicating to GTW that the gear strip should not be shown | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_gearNeutralPressed` | Neutral button is being pressed | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file
 

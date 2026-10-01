@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `FC_status3`: start bit and length, byte order,
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `FC_status3DataSelect` | selector | FC ECU: status3 data select | 0\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 | 0 = `Mux0`<br>1 = `Mux1` | plausible |
+| `FC_status3DataSelect` | selector | FC ECU: status3 data select | 0\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 | 0 = `Mux0`<br>1 = `Mux1` | validated |
 | `FC_status3DummySig` |  | FC ECU: status3 dummy sig | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `FC_class` | page 0 | FC ECU: class; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `FC_CLASS_SNA`<br>1 = `FC_CLASS_SUPERCHARGER`<br>2 = `FC_CLASS_URBANCHARGER` | validated |
 | `FC_brand` | page 0 | Fast charger brand; raw 0 = signal not available (SNA) | 16\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `SNA`<br>1 = `TESLA` | validated |

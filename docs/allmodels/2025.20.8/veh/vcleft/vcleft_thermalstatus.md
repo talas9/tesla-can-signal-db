@@ -29,14 +29,14 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_thermalStatus`: start bit and
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_hvac2RLeftLateralStatus` | Left body controller: hvac2 r left lateral status | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `VCLEFT_hvac2RLeftVerticalStatus` | Left body controller: hvac2 r left vertical status | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `VCLEFT_hvac2RRightLateralStatus` | Left body controller: hvac2 r right lateral status | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `VCLEFT_hvac2RRightVerticalStatus` | Left body controller: hvac2 r right vertical status | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `VCLEFT_hvac2RLeftLateralPosition` | Left body controller: hvac2 r left lateral position | 32\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |
-| `VCLEFT_hvac2RLeftVerticalPosition` | Left body controller: hvac2 r left vertical position | 40\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |
-| `VCLEFT_hvac2RRightLateralPosition` | Left body controller: hvac2 r right lateral position | 48\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |
-| `VCLEFT_hvac2RRightVerticalPosition` | Left body controller: hvac2 r right vertical position | 56\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |
+| `VCLEFT_hvac2RLeftLateralStatus` | Left body controller: hvac2 r left lateral status | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCLEFT_hvac2RLeftVerticalStatus` | Left body controller: hvac2 r left vertical status | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCLEFT_hvac2RRightLateralStatus` | Left body controller: hvac2 r right lateral status | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCLEFT_hvac2RRightVerticalStatus` | Left body controller: hvac2 r right vertical status | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCLEFT_hvac2RLeftLateralPosition` | Left body controller: hvac2 r left lateral position | 32\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | plausible |
+| `VCLEFT_hvac2RLeftVerticalPosition` | Left body controller: hvac2 r left vertical position | 40\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | plausible |
+| `VCLEFT_hvac2RRightLateralPosition` | Left body controller: hvac2 r right lateral position | 48\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | plausible |
+| `VCLEFT_hvac2RRightVerticalPosition` | Left body controller: hvac2 r right vertical position | 56\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | plausible |
 
 ## Download the DBC file
 

@@ -30,17 +30,17 @@ Tesla Model Y CAN bus signals in `DAS_info`: start bit and length, byte order, s
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `DAS_infoIndex` | selector | Driver assistance computer: info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `DEPRECATED_0`<br>1 = `DEPRECATED_1`<br>2 = `DEPRECATED_2`<br>3 = `DEPRECATED_3`<br>4 = `DEPRECATED_4`<br>5 = `DEPRECATED_5`<br>6 = `DEPRECATED_6`<br>7 = `DEPRECATED_7`<br>8 = `DEPRECATED_8`<br>9 = `DEPRECATED_9`<br>10 = `BUILD_HWID_COMPONENTID`<br>11 = `PCBAID_ASSYID_USAGEID`<br>13 = `APP_CRC`<br>14 = `BOOTLOADER_SVN`<br>15 = `BOOTLOADER_CRC`<br>16 = `EYEQ_BOOT`<br>17 = `APP_GITHASH`<br>18 = `BOOTLOADER_GITHASH`<br>19 = `VERSION_DEPRECATED`<br>20 = `UDS_PROTOCOL_BOOTCRC`<br>23 = `EYEQ_APP`<br>24 = `EYEQ_FFS`<br>255 = `END` | plausible |
-| `DAS_infoBuildType` | page 10 | Driver assistance computer: info build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | validated |
-| `DAS_infoBuildConfigID` | page 10 | Driver assistance computer: info build config ID | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DAS_infoHardwareID` | page 10 | Driver assistance computer: info hardware ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DAS_infoComponentID` | page 10 | Driver assistance computer: info component ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DAS_infoPcbaID` | page 11 | Driver assistance computer: info pcba ID | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DAS_infoAssemblyID` | page 11 | Driver assistance computer: info assembly ID | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DAS_infoUsageID` | page 11 | Driver assistance computer: info usage ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DAS_infoSubUsageID` | page 11 | Driver assistance computer: info sub usage ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DAS_infoApplicationCRC` | page 13 | Driver assistance computer: info application CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `DAS_infoAppGitHashBytes` | page 17 | Driver assistance computer: info app git hash bytes | 8\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | validated |
-| `DAS_infoBootGitHashBytes` | page 18 | Driver assistance computer: info boot git hash bytes | 8\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | validated |
+| `DAS_infoBuildType` | page 10 | Driver assistance computer: info build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | plausible |
+| `DAS_infoBuildConfigID` | page 10 | Driver assistance computer: info build config ID | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DAS_infoHardwareID` | page 10 | Driver assistance computer: info hardware ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DAS_infoComponentID` | page 10 | Driver assistance computer: info component ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DAS_infoPcbaID` | page 11 | Driver assistance computer: info pcba ID | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DAS_infoAssemblyID` | page 11 | Driver assistance computer: info assembly ID | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DAS_infoUsageID` | page 11 | Driver assistance computer: info usage ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DAS_infoSubUsageID` | page 11 | Driver assistance computer: info sub usage ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DAS_infoApplicationCRC` | page 13 | Driver assistance computer: info application CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `DAS_infoAppGitHashBytes` | page 17 | Driver assistance computer: info app git hash bytes | 8\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | layout-only |
+| `DAS_infoBootGitHashBytes` | page 18 | Driver assistance computer: info boot git hash bytes | 8\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | layout-only |
 
 ## Multiplexing
 

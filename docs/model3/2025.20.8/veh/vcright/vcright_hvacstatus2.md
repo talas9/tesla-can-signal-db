@@ -29,15 +29,15 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_hvacStatus2`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_hvacSeat1RLCushionFanTrgt` | Right body controller: hvac seat1 RL cushion fan trgt | 0\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvacSeat1RLBackrestFanTrgt` | Right body controller: hvac seat1 RL backrest fan trgt | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvacSeat1RRCushionFanTrgt` | Right body controller: hvac seat1 RR cushion fan trgt | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvacSeat1RRBackrestFanTrgt` | Right body controller: hvac seat1 RR backrest fan trgt | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvac2RActuatorsEnable` | Right body controller: hvac2 r actuators enable | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_hvac2RLeftLateralTarget` | Right body controller: hvac2 r left lateral target | 33\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvac2RLeftVerticalTarget` | Right body controller: hvac2 r left vertical target | 40\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvac2RRightLateralTarget` | Right body controller: hvac2 r right lateral target | 48\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_hvac2RRightVerticalTarget` | Right body controller: hvac2 r right vertical target | 57\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
+| `VCRIGHT_hvacSeat1RLCushionFanTrgt` | Right body controller: hvac seat1 RL cushion fan trgt | 0\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvacSeat1RLBackrestFanTrgt` | Right body controller: hvac seat1 RL backrest fan trgt | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvacSeat1RRCushionFanTrgt` | Right body controller: hvac seat1 RR cushion fan trgt | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvacSeat1RRBackrestFanTrgt` | Right body controller: hvac seat1 RR backrest fan trgt | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvac2RActuatorsEnable` | Right body controller: hvac2 r actuators enable | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `VCRIGHT_hvac2RLeftLateralTarget` | Right body controller: hvac2 r left lateral target | 33\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvac2RLeftVerticalTarget` | Right body controller: hvac2 r left vertical target | 40\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvac2RRightLateralTarget` | Right body controller: hvac2 r right lateral target | 48\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_hvac2RRightVerticalTarget` | Right body controller: hvac2 r right vertical target | 57\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
 
 ## Download the DBC file
 

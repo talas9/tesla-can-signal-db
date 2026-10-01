@@ -30,23 +30,23 @@ Tesla Model Y CAN bus signals in `CC_logData`: start bit and length, byte order,
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `CC_logIndex` | selector | Charge cable controller: log index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2`<br>3 = `Mux3`<br>4 = `Mux4`<br>10 = `Mux10`<br>11 = `Mux11`<br>12 = `Mux12`<br>13 = `Mux13` | plausible |
-| `CC_activeConnectorID` | page 0 | Site identifier of active charge connector | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 255 = `SNA` | validated |
-| `CC_temperature1` | page 0 | Charge cable vehicle connector temperature | 16\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | validated |
-| `CC_temperature2` | page 0 | Charge cable vehicle connector temperature | 24\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | validated |
-| `CC_temperature3` | page 0 | Charge cable vehicle connector temperature | 32\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | validated |
-| `CC_contactor1Closed` | page 0 | State of contactor 1 in wall connector | 40\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CC_CONTACTOR_OPEN`<br>1 = `CC_CONTACTOR_CLOSED`<br>3 = `CC_CONTACTOR_SNA` | validated |
-| `CC_contactor2Closed` | page 0 | State of contactor 1 in wall connector | 42\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CC_CONTACTOR_OPEN`<br>1 = `CC_CONTACTOR_CLOSED`<br>3 = `CC_CONTACTOR_SNA` | validated |
-| `CC_temperature4` | page 0 | Charge cable vehicle connector temperature | 44\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | validated |
-| `CC_conn1Current` | page 1 | AC current on connector 1 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | validated |
-| `CC_conn2Current` | page 2 | AC current on connector 2 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | validated |
-| `CC_conn3Current` | page 3 | AC current on connector 3 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | validated |
-| `CC_conn4Current` | page 4 | AC current on connector 4 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | validated |
-| `CC_lifetimei2t` | page 10 | Charge cable controller: lifetimei2t | 32\|32 | little-endian | unsigned | 0.1 | 0 | A2h | 0 to 429496729.5 |  | validated |
-| `CC_lifetimeCtrCycles` | page 11 | Charge cable controller: lifetime ctr cycles | 8\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | validated |
-| `CC_lifetimeCtrCyclesLoaded` | page 11 | Charge cable controller: lifetime ctr cycles loaded | 36\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | validated |
-| `CC_lifetimeAlertCount` | page 12 | Charge cable controller: lifetime alert count | 8\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | validated |
-| `CC_lifetimeThermalFoldbacks` | page 12 | Charge cable controller: lifetime thermal foldbacks | 36\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | validated |
-| `CC_lifetimeAvgStartupTemp` | page 13 | Charge cable controller: lifetime avg startup temp | 36\|28 | little-endian | signed | 0.1 | 0 | degC | -13421772.8 to 13421772.7 |  | validated |
+| `CC_activeConnectorID` | page 0 | Site identifier of active charge connector | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 255 = `SNA` | plausible |
+| `CC_temperature1` | page 0 | Charge cable vehicle connector temperature | 16\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | plausible |
+| `CC_temperature2` | page 0 | Charge cable vehicle connector temperature | 24\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | plausible |
+| `CC_temperature3` | page 0 | Charge cable vehicle connector temperature | 32\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | plausible |
+| `CC_contactor1Closed` | page 0 | State of contactor 1 in wall connector | 40\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CC_CONTACTOR_OPEN`<br>1 = `CC_CONTACTOR_CLOSED`<br>3 = `CC_CONTACTOR_SNA` | plausible |
+| `CC_contactor2Closed` | page 0 | State of contactor 1 in wall connector | 42\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CC_CONTACTOR_OPEN`<br>1 = `CC_CONTACTOR_CLOSED`<br>3 = `CC_CONTACTOR_SNA` | plausible |
+| `CC_temperature4` | page 0 | Charge cable vehicle connector temperature | 44\|8 | little-endian | signed | 1 | 88 | DegC | -40 to 215 | 127 = `SNA` | plausible |
+| `CC_conn1Current` | page 1 | AC current on connector 1 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | plausible |
+| `CC_conn2Current` | page 2 | AC current on connector 2 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | plausible |
+| `CC_conn3Current` | page 3 | AC current on connector 3 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | plausible |
+| `CC_conn4Current` | page 4 | AC current on connector 4 in wall charger load sharing group; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | plausible |
+| `CC_lifetimei2t` | page 10 | Charge cable controller: lifetimei2t | 32\|32 | little-endian | unsigned | 0.1 | 0 | A2h | 0 to 429496729.5 |  | plausible |
+| `CC_lifetimeCtrCycles` | page 11 | Charge cable controller: lifetime ctr cycles | 8\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | layout-only |
+| `CC_lifetimeCtrCyclesLoaded` | page 11 | Charge cable controller: lifetime ctr cycles loaded | 36\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | layout-only |
+| `CC_lifetimeAlertCount` | page 12 | Charge cable controller: lifetime alert count | 8\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | layout-only |
+| `CC_lifetimeThermalFoldbacks` | page 12 | Charge cable controller: lifetime thermal foldbacks | 36\|28 | little-endian | unsigned | 1 | 0 |  | 0 to 268435455 |  | layout-only |
+| `CC_lifetimeAvgStartupTemp` | page 13 | Charge cable controller: lifetime avg startup temp | 36\|28 | little-endian | signed | 0.1 | 0 | degC | -13421772.8 to 13421772.7 |  | plausible |
 
 ## Multiplexing
 

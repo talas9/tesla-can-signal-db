@@ -30,9 +30,9 @@ Tesla Model Y CAN bus signals in `CP_thermalStatus`: start bit and length, byte 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `CP_thermalStatusSelect` | selector | Charge port controller: thermal status select | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
-| `CP_pinTemperature1` | page 1 | Sensed temperature of the charge port inlet pins | 8\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | validated |
-| `CP_pinTemperature2` | page 1 | Sensed temperature of the charge port inlet pins | 16\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | validated |
-| `CP_pinTemperature3` | page 1 | Sensed temperature of the charge port inlet pins | 24\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | validated |
+| `CP_pinTemperature1` | page 1 | Sensed temperature of the charge port inlet pins | 8\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | plausible |
+| `CP_pinTemperature2` | page 1 | Sensed temperature of the charge port inlet pins | 16\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | plausible |
+| `CP_pinTemperature3` | page 1 | Sensed temperature of the charge port inlet pins | 24\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | plausible |
 
 ## Multiplexing
 

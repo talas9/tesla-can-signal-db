@@ -29,12 +29,12 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_estimatedBrakeTemp`: start bit an
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_estimatedBrakeTempChecksum` | Drive inverter: estimated brake temp checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_estimatedBrakeTempCounter` | Drive inverter: estimated brake temp counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `DI_brakeFLTemp` | Drive inverter: brake FL temp; raw 1023 = signal not available (SNA) | 12\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | validated |
-| `DI_brakeFRTemp` | Drive inverter: brake FR temp; raw 1023 = signal not available (SNA) | 22\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | validated |
-| `DI_brakeRLTemp` | Drive inverter: brake RL temp; raw 1023 = signal not available (SNA) | 32\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | validated |
-| `DI_brakeRRTemp` | Drive inverter: brake RR temp; raw 1023 = signal not available (SNA) | 42\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | validated |
+| `DI_estimatedBrakeTempChecksum` | Drive inverter: estimated brake temp checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_estimatedBrakeTempCounter` | Drive inverter: estimated brake temp counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `DI_brakeFLTemp` | Drive inverter: brake FL temp; raw 1023 = signal not available (SNA) | 12\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | plausible |
+| `DI_brakeFRTemp` | Drive inverter: brake FR temp; raw 1023 = signal not available (SNA) | 22\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | plausible |
+| `DI_brakeRLTemp` | Drive inverter: brake RL temp; raw 1023 = signal not available (SNA) | 32\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | plausible |
+| `DI_brakeRRTemp` | Drive inverter: brake RR temp; raw 1023 = signal not available (SNA) | 42\|10 | little-endian | unsigned | 1 | -40 | DegC | -40 to 982 | 1023 = `SNA` | plausible |
 
 ## Download the DBC file
 

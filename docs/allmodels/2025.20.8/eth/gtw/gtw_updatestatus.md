@@ -30,7 +30,7 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_updateStatus`: start bit and len
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `GTW_i2cUpdateActive` | Gateway: i2c update active | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `GTW_ecuUpdateStarted` | Reports whether Electronic Control Unit (ECU) update phase is active. | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `GTW_ecuUpdateStarted` | Reports whether Electronic Control Unit (ECU) update phase is active. | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `GTW_updateStarted` | Main update in progress bit | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file

@@ -29,11 +29,11 @@ Tesla Model Y CAN bus signals in `GTW_ethNm`: start bit and length, byte order, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `GTW_ethGotoSleep` | ETH bus sleep commanded | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `GTW_ethWakeUpBus` | Gateway: eth wake up bus | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `GTW_vehBusAsleep` | VEH bus sleep state | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `GTW_ethHeartBeatCounter` | Gateway: eth heart beat counter | 4\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `GTW_ethWakeUpReason` | Tracks the cause of why the gateway wakes up the ethernet bus | 8\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `GTW_WAKEUP_REASON_NONE`<br>1 = `GTW_WAKEUP_REASON_RESET`<br>2 = `GTW_WAKEUP_REASON_GSM_RI`<br>3 = `GTW_WAKEUP_REASON_CH_CAN`<br>4 = `GTW_WAKEUP_REASON_ETH_CAN`<br>5 = `GTW_WAKEUP_REASON_VEH_CAN`<br>6 = `GTW_WAKEUP_REASON_VCFRONT`<br>7 = `GTW_WAKEUP_REASON_RTC_ALARM`<br>8 = `GTW_WAKEUP_REASON_UI_SCHEDULED`<br>9 = `GTW_WAKEUP_REASON_PT_CAN`<br>10 = `GTW_WAKEUP_REASON_BDY_CAN`<br>11 = `GTW_WAKEUP_REASON_URGENT_TRANSMIT_ALERT`<br>12 = `GTW_WAKEUP_REASON_DISPLAY_TAP`<br>13 = `GTW_WAKEUP_REASON_LOOP`<br>14 = `GTW_WAKEUP_REASON_VCLEFT`<br>15 = `GTW_WAKEUP_REASON_RCMPRIVATE_CAN`<br>16 = `GTW_WAKEUP_REASON_EGGLEFT_LINK_DOWN`<br>17 = `GTW_WAKEUP_REASON_TCU_TC10_VERSION_CHECK` | validated |
+| `GTW_ethGotoSleep` | ETH bus sleep commanded | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `GTW_ethWakeUpBus` | Gateway: eth wake up bus | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `GTW_vehBusAsleep` | VEH bus sleep state | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `GTW_ethHeartBeatCounter` | Gateway: eth heart beat counter | 4\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `GTW_ethWakeUpReason` | Tracks the cause of why the gateway wakes up the ethernet bus | 8\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `GTW_WAKEUP_REASON_NONE`<br>1 = `GTW_WAKEUP_REASON_RESET`<br>2 = `GTW_WAKEUP_REASON_GSM_RI`<br>3 = `GTW_WAKEUP_REASON_CH_CAN`<br>4 = `GTW_WAKEUP_REASON_ETH_CAN`<br>5 = `GTW_WAKEUP_REASON_VEH_CAN`<br>6 = `GTW_WAKEUP_REASON_VCFRONT`<br>7 = `GTW_WAKEUP_REASON_RTC_ALARM`<br>8 = `GTW_WAKEUP_REASON_UI_SCHEDULED`<br>9 = `GTW_WAKEUP_REASON_PT_CAN`<br>10 = `GTW_WAKEUP_REASON_BDY_CAN`<br>11 = `GTW_WAKEUP_REASON_URGENT_TRANSMIT_ALERT`<br>12 = `GTW_WAKEUP_REASON_DISPLAY_TAP`<br>13 = `GTW_WAKEUP_REASON_LOOP`<br>14 = `GTW_WAKEUP_REASON_VCLEFT`<br>15 = `GTW_WAKEUP_REASON_RCMPRIVATE_CAN`<br>16 = `GTW_WAKEUP_REASON_EGGLEFT_LINK_DOWN`<br>17 = `GTW_WAKEUP_REASON_TCU_TC10_VERSION_CHECK` | plausible |
 
 ## Download the DBC file
 

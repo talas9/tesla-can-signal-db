@@ -30,23 +30,23 @@ Tesla Model 3 CAN bus signals in `FC_serial`: start bit and length, byte order, 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `FC_serialDataSelect` | selector | FC ECU: serial data select | 0\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2` | plausible |
-| `FC_serialChar01` | page 0 | FC ECU: serial char01 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar02` | page 0 | FC ECU: serial char02 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar03` | page 0 | FC ECU: serial char03 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar04` | page 0 | FC ECU: serial char04 | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar05` | page 0 | FC ECU: serial char05 | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar06` | page 0 | FC ECU: serial char06 | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar07` | page 0 | FC ECU: serial char07 | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar08` | page 1 | FC ECU: serial char08 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar09` | page 1 | FC ECU: serial char09 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar10` | page 1 | FC ECU: serial char10 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar11` | page 1 | FC ECU: serial char11 | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar12` | page 1 | FC ECU: serial char12 | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar13` | page 1 | FC ECU: serial char13 | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar14` | page 1 | FC ECU: serial char14 | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar15` | page 2 | FC ECU: serial char15 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar16` | page 2 | FC ECU: serial char16 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `FC_serialChar17` | page 2 | FC ECU: serial char17 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `FC_serialChar01` | page 0 | FC ECU: serial char01 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar02` | page 0 | FC ECU: serial char02 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar03` | page 0 | FC ECU: serial char03 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar04` | page 0 | FC ECU: serial char04 | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar05` | page 0 | FC ECU: serial char05 | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar06` | page 0 | FC ECU: serial char06 | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar07` | page 0 | FC ECU: serial char07 | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar08` | page 1 | FC ECU: serial char08 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar09` | page 1 | FC ECU: serial char09 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar10` | page 1 | FC ECU: serial char10 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar11` | page 1 | FC ECU: serial char11 | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar12` | page 1 | FC ECU: serial char12 | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar13` | page 1 | FC ECU: serial char13 | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar14` | page 1 | FC ECU: serial char14 | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar15` | page 2 | FC ECU: serial char15 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar16` | page 2 | FC ECU: serial char16 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `FC_serialChar17` | page 2 | FC ECU: serial char17 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Multiplexing
 

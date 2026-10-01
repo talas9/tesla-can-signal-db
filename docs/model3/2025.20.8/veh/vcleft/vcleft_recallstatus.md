@@ -29,10 +29,10 @@ Tesla Model 3 CAN bus signals in `VCLEFT_recallStatus`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_systemRecallStatus` | Left body controller: system recall status; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
-| `VCLEFT_seatRecallStatus` | Left body controller: seat recall status; raw 0 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
-| `VCLEFT_columnRecallStatus` | Left body controller: column recall status; raw 0 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
-| `VCLEFT_mirrorRecallStatus` | Recall status for the left side view mirror; raw 0 = signal not available (SNA) | 6\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
+| `VCLEFT_systemRecallStatus` | Left body controller: system recall status; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
+| `VCLEFT_seatRecallStatus` | Left body controller: seat recall status; raw 0 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
+| `VCLEFT_columnRecallStatus` | Left body controller: column recall status; raw 0 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
+| `VCLEFT_mirrorRecallStatus` | Recall status for the left side view mirror; raw 0 = signal not available (SNA) | 6\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
 
 ## Download the DBC file
 

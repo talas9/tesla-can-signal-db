@@ -29,20 +29,20 @@ Tesla Model 3 CAN bus signals in `PTC_feedbackStatus`: start bit and length, byt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PTC_leftFlagFault` | Heater left bank fault indication flag | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `PTC_rightFlagFault` | Heater right bank fault indication flag | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `PTC_leftPowerDerating` | Heater left bank power derating state | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NOT_DERATED`<br>1 = `OVERTEMPERATURE_PCB`<br>2 = `OVERTEMPERATURE_IGBT`<br>3 = `OVERTEMPERATURE_CORE` | validated |
-| `PTC_rightPowerDerating` | Heater right bank power derating state | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NOT_DERATED`<br>1 = `OVERTEMPERATURE_PCB`<br>2 = `OVERTEMPERATURE_IGBT`<br>3 = `OVERTEMPERATURE_CORE` | validated |
-| `PTC_ocpEvent` | Indication that an over current protection event has occurred | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NO_OCP_EVENT`<br>1 = `OCP_EVENT_LEFT_SIDE`<br>2 = `OCP_EVENT_RIGHT_SIDE` | validated |
-| `PTC_leftDutyFeedback` | Current PWM duty cycle applied to left side of PTC heater | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `PTC_rightDutyFeedback` | Current PWM duty cycle applied to right side of PTC heater | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `PTC_leftPowerHV` | Heater left bank power | 24\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | validated |
-| `PTC_rightPowerHV` | Heater right bank power | 32\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | validated |
-| `PTC_leftTempEstOutlet` | Cabin heater: left temp est outlet | 40\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | validated |
-| `PTC_rightTempEstOutlet` | Cabin heater: right temp est outlet | 48\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | validated |
-| `PTC_tliErrorCount` | Heater top level interrupt error count | 56\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `PTC_tliEvent` | Indicator of heater top level interrupt event | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `PTC_tliSource` | Heater top level interrupt event source | 61\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NO_ERROR`<br>1 = `IGBT_DRIVER`<br>2 = `12_VOLTS`<br>3 = `OCP`<br>4 = `HV_OVER_VOLTAGE` | validated |
+| `PTC_leftFlagFault` | Heater left bank fault indication flag | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `PTC_rightFlagFault` | Heater right bank fault indication flag | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `PTC_leftPowerDerating` | Heater left bank power derating state | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NOT_DERATED`<br>1 = `OVERTEMPERATURE_PCB`<br>2 = `OVERTEMPERATURE_IGBT`<br>3 = `OVERTEMPERATURE_CORE` | plausible |
+| `PTC_rightPowerDerating` | Heater right bank power derating state | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NOT_DERATED`<br>1 = `OVERTEMPERATURE_PCB`<br>2 = `OVERTEMPERATURE_IGBT`<br>3 = `OVERTEMPERATURE_CORE` | plausible |
+| `PTC_ocpEvent` | Indication that an over current protection event has occurred | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NO_OCP_EVENT`<br>1 = `OCP_EVENT_LEFT_SIDE`<br>2 = `OCP_EVENT_RIGHT_SIDE` | plausible |
+| `PTC_leftDutyFeedback` | Current PWM duty cycle applied to left side of PTC heater | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `PTC_rightDutyFeedback` | Current PWM duty cycle applied to right side of PTC heater | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `PTC_leftPowerHV` | Heater left bank power | 24\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | plausible |
+| `PTC_rightPowerHV` | Heater right bank power | 32\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | plausible |
+| `PTC_leftTempEstOutlet` | Cabin heater: left temp est outlet | 40\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | plausible |
+| `PTC_rightTempEstOutlet` | Cabin heater: right temp est outlet | 48\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | plausible |
+| `PTC_tliErrorCount` | Heater top level interrupt error count | 56\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `PTC_tliEvent` | Indicator of heater top level interrupt event | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `PTC_tliSource` | Heater top level interrupt event source | 61\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NO_ERROR`<br>1 = `IGBT_DRIVER`<br>2 = `12_VOLTS`<br>3 = `OCP`<br>4 = `HV_OVER_VOLTAGE` | plausible |
 
 ## Download the DBC file
 

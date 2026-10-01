@@ -29,12 +29,12 @@ Tesla Model 3 CAN bus signals in `BMS_powerAvailable`: start bit and length, byt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_maxRegenPower` | Calculated max regen power | 0\|16 | little-endian | unsigned | 0.01 | 0 | kW | 0 to 655.35 |  | validated |
-| `BMS_maxDischargePower` | Calculated max discharge power possible based on max discharge current and sum of loaded voltages | 16\|16 | little-endian | unsigned | 0.013 | 0 | kW | 0 to 850 |  | validated |
-| `BMS_maxStationaryHeatPower` | Maximum heating power the DI can produce when in stationary heating mode | 32\|10 | little-endian | unsigned | 0.01 | 0 | kW | 0 to 10.23 |  | validated |
-| `BMS_powerLimitsState` | High-voltage battery management system: power limits state | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `POWER_NOT_CALCULATED_FOR_DRIVE`<br>1 = `POWER_CALCULATED_FOR_DRIVE` | validated |
+| `BMS_maxRegenPower` | Calculated max regen power | 0\|16 | little-endian | unsigned | 0.01 | 0 | kW | 0 to 655.35 |  | plausible |
+| `BMS_maxDischargePower` | Calculated max discharge power possible based on max discharge current and sum of loaded voltages | 16\|16 | little-endian | unsigned | 0.013 | 0 | kW | 0 to 850 |  | plausible |
+| `BMS_maxStationaryHeatPower` | Maximum heating power the DI can produce when in stationary heating mode | 32\|10 | little-endian | unsigned | 0.01 | 0 | kW | 0 to 10.23 |  | plausible |
+| `BMS_powerLimitsState` | High-voltage battery management system: power limits state | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `POWER_NOT_CALCULATED_FOR_DRIVE`<br>1 = `POWER_CALCULATED_FOR_DRIVE` | plausible |
 | `BMS_notEnoughPowerForHeatPump` | Flag indicating the min pack power is lower than specified threshold to support heating with the heat pump | 43\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `BMS_instantChargePowerCapability` | Indicates the instantaneous charge power capability of the high voltage battery; raw 65535 = signal not available (SNA) | 48\|16 | little-endian | unsigned | 0.05 | 0 | kW | 0 to 3276.7 | 65535 = `SNA` | validated |
+| `BMS_instantChargePowerCapability` | Indicates the instantaneous charge power capability of the high voltage battery; raw 65535 = signal not available (SNA) | 48\|16 | little-endian | unsigned | 0.05 | 0 | kW | 0 to 3276.7 | 65535 = `SNA` | plausible |
 
 ## Download the DBC file
 

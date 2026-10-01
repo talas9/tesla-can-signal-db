@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `UI_weatherDataService`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_weatherSvcTimeSinceLast` | Touchscreen user interface computer: weather svc time since last; raw 127 = signal not available (SNA) | 0\|7 | little-endian | unsigned | 1 | 0 | minutes | 0 to 126 | 127 = `SNA` | plausible |
+| `UI_weatherSvcTimeSinceLast` | Touchscreen user interface computer: weather svc time since last; raw 127 = signal not available (SNA) | 0\|7 | little-endian | unsigned | 1 | 0 | minutes | 0 to 126 | 127 = `SNA` | validated |
 | `UI_weatherSvcWindDir` | Touchscreen user interface computer: weather svc wind dir; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1.5 | 0 | deg | 0 to 381 | 0 = `MIN`<br>240 = `MAX`<br>255 = `SNA` | plausible |
 | `UI_weatherSvcTemperature` | Touchscreen user interface computer: weather svc temperature; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.5 | -40 | degC | -40 to 87 | 0 = `MIN`<br>250 = `MAX`<br>255 = `SNA` | plausible |
 | `UI_weatherSvcHumidity` | Touchscreen user interface computer: weather svc humidity; raw 63 = signal not available (SNA) | 24\|6 | little-endian | unsigned | 1.62 | 0 | % | 0 to 100.44 | 0 = `MIN`<br>62 = `MAX`<br>63 = `SNA` | plausible |

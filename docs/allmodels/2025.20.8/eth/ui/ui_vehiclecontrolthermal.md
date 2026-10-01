@@ -30,8 +30,8 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_vehicleControlThermal`: start bit
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `UI_coolantFlowRequest` | request for coolant flow to MCU in LPM | 0\|5 | little-endian | unsigned | 1 | 0 | LPM | 0 to 25 |  | validated |
-| `UI_inletActiveCoolTarget` | request for coolant temperature at Car Computer inlet | 5\|7 | little-endian | unsigned | 1 | 0 | degC | 0 to 127 |  | validated |
-| `UI_disableHVPTThermalLoads` | Request thermal system to disable active battery heating | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_inletActiveCoolTarget` | request for coolant temperature at Car Computer inlet | 5\|7 | little-endian | unsigned | 1 | 0 | degC | 0 to 127 |  | plausible |
+| `UI_disableHVPTThermalLoads` | Request thermal system to disable active battery heating | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_enableCompLiquidPumpOut` | Touchscreen user interface computer: enable comp liquid pump out | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_enableCOP1HighSHOperation` | Touchscreen user interface computer: enable COP1 high SH operation | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_enableIncreasedEvapRampRate` | Touchscreen user interface computer: enable increased evap ramp rate | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |

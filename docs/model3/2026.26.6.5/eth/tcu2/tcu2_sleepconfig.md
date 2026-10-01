@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `TCU2_SleepConfig`: start bit and length, byte 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `TCU2_tc10Version` | Indicates which version of Open Alliance's TC10 protocol is supported by the modem; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA`<br>1 = `TCU_tc10Version_DRAFT`<br>2 = `TCU_tc10Version_FINAL_1_0` | validated |
+| `TCU2_tc10Version` | Indicates which version of Open Alliance's TC10 protocol is supported by the modem; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA`<br>1 = `TCU_tc10Version_DRAFT`<br>2 = `TCU_tc10Version_FINAL_1_0` | plausible |
 
 ## Download the DBC file
 

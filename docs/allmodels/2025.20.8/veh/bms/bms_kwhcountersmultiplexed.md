@@ -29,27 +29,27 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_kwhCountersMultiplexed`: start b
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_kwhCounter_Id` | selector | High-voltage battery management system: kwh counter id | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2`<br>3 = `MUX3`<br>4 = `MUX4`<br>5 = `MUX5`<br>6 = `MUX6`<br>7 = `MUX7`<br>8 = `MUX8`<br>9 = `MUX9`<br>10 = `MUX10`<br>11 = `MUX11`<br>12 = `MUX12`<br>13 = `MUX13`<br>14 = `END` | plausible |
+| `BMS_kwhCounter_Id` | selector | High-voltage battery management system: kwh counter id | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2`<br>3 = `MUX3`<br>4 = `MUX4`<br>5 = `MUX5`<br>6 = `MUX6`<br>7 = `MUX7`<br>8 = `MUX8`<br>9 = `MUX9`<br>10 = `MUX10`<br>11 = `MUX11`<br>12 = `MUX12`<br>13 = `MUX13`<br>14 = `END` | validated |
 | `BMS_acChargerKwhTotal` | page 0 | Total energy-gained kWh count during AC charge | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
 | `BMS_dcChargerKwhTotal` | page 1 | Total energy-gained kWh count during DC charging | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
-| `BMS_kwhRegenChargeTotal` | page 2 | Total energy-gained kWh count during charging with regen | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
-| `BMS_kwhDriveDischargeTotal` | page 3 | Total energy-lost kWh count during discharging while driving | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
-| `BMS_kwhDischargeTotalModule1` | page 4 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhChargeTotalModule1` | page 4 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhAcChargeTotalModule1` | page 5 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDcChargeTotalModule1` | page 5 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDischargeTotalModule2` | page 6 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhChargeTotalModule2` | page 6 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhAcChargeTotalModule2` | page 7 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDcChargeTotalModule2` | page 7 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDischargeTotalModule3` | page 8 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhChargeTotalModule3` | page 8 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhAcChargeTotalModule3` | page 9 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDcChargeTotalModule3` | page 9 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDischargeTotalModule4` | page 10 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhChargeTotalModule4` | page 10 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhAcChargeTotalModule4` | page 11 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
-| `BMS_kwhDcChargeTotalModule4` | page 11 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | validated |
+| `BMS_kwhRegenChargeTotal` | page 2 | Total energy-gained kWh count during charging with regen | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | plausible |
+| `BMS_kwhDriveDischargeTotal` | page 3 | Total energy-lost kWh count during discharging while driving | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | plausible |
+| `BMS_kwhDischargeTotalModule1` | page 4 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhChargeTotalModule1` | page 4 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhAcChargeTotalModule1` | page 5 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDcChargeTotalModule1` | page 5 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDischargeTotalModule2` | page 6 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhChargeTotalModule2` | page 6 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhAcChargeTotalModule2` | page 7 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDcChargeTotalModule2` | page 7 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDischargeTotalModule3` | page 8 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhChargeTotalModule3` | page 8 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhAcChargeTotalModule3` | page 9 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDcChargeTotalModule3` | page 9 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDischargeTotalModule4` | page 10 | Total energy-lost kWh count during discharging for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhChargeTotalModule4` | page 10 | Total energy-gained kWh count for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhAcChargeTotalModule4` | page 11 | Total energy-gained kWh count during AC charge for module number (1 indexed) | 8\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
+| `BMS_kwhDcChargeTotalModule4` | page 11 | Total energy-gained kWh count during DC charge for module number (1 indexed) | 36\|28 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.455 |  | plausible |
 
 ## Multiplexing
 

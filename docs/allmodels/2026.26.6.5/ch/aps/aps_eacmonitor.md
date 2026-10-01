@@ -29,9 +29,9 @@ Tesla Model 3 / Model Y CAN bus signals in `APS_eacMonitor`: start bit and lengt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APS_eacAllow` | Indicates whether or not the Aurix external angle control (EAC) monitor logic currently allows angle control for Autopilot functions; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `APS_EAC_INHIBIT`<br>1 = `APS_EAC_ALLOW`<br>2 = `APS_EAC_RESERVED`<br>3 = `APS_EAC_SNA` | validated |
-| `APS_eacMonitorCounter` | Driver assistance computer (secondary): eac monitor counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `APS_eacMonitorChecksum` | Driver assistance computer (secondary): eac monitor checksum | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `APS_eacAllow` | Indicates whether or not the Aurix external angle control (EAC) monitor logic currently allows angle control for Autopilot functions; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `APS_EAC_INHIBIT`<br>1 = `APS_EAC_ALLOW`<br>2 = `APS_EAC_RESERVED`<br>3 = `APS_EAC_SNA` | plausible |
+| `APS_eacMonitorCounter` | Driver assistance computer (secondary): eac monitor counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `APS_eacMonitorChecksum` | Driver assistance computer (secondary): eac monitor checksum | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

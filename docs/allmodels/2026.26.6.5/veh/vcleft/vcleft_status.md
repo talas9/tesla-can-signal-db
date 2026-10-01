@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_status`: start bit and length
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_statusIndex` | selector | Left body controller: status index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2` | plausible |
+| `VCLEFT_statusIndex` | selector | Left body controller: status index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2` | validated |
 | `VCLEFT_securityControllerEnable` | page 0 | Left body controller: security controller enable | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_securityControllerVoltage` | page 0 | Voltage of the VCSEC power feed | 6\|5 | little-endian | unsigned | 0.625 | 0 | V | 0 to 19.375 |  | validated |
 | `VCLEFT_consoleDoorAssist` | page 0 | Left body controller: console door assist | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

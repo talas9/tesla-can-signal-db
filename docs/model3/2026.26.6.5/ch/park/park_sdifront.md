@@ -29,14 +29,14 @@ Tesla Model 3 CAN bus signals in `PARK_sdiFront`: start bit and length, byte ord
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PARK_sdiSensor1RawDistData` | Parking assist sensors: sdi sensor1 raw dist data; raw 511 = signal not available (SNA) | 0\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | validated |
-| `PARK_sdiSensor2RawDistData` | Parking assist sensors: sdi sensor2 raw dist data; raw 511 = signal not available (SNA) | 9\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | validated |
-| `PARK_sdiSensor3RawDistData` | Parking assist sensors: sdi sensor3 raw dist data; raw 511 = signal not available (SNA) | 18\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | validated |
-| `PARK_sdiSensor4RawDistData` | Parking assist sensors: sdi sensor4 raw dist data; raw 511 = signal not available (SNA) | 27\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | validated |
-| `PARK_sdiSensor5RawDistData` | Parking assist sensors: sdi sensor5 raw dist data; raw 511 = signal not available (SNA) | 36\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | validated |
-| `PARK_sdiSensor6RawDistData` | Parking assist sensors: sdi sensor6 raw dist data; raw 511 = signal not available (SNA) | 45\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | validated |
-| `PARK_sdiFrontCounter` | Parking assist sensors: sdi front counter | 54\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | validated |
-| `PARK_sdiFrontChecksum` | Parking assist sensors: sdi front checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `PARK_sdiSensor1RawDistData` | Parking assist sensors: sdi sensor1 raw dist data; raw 511 = signal not available (SNA) | 0\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | plausible |
+| `PARK_sdiSensor2RawDistData` | Parking assist sensors: sdi sensor2 raw dist data; raw 511 = signal not available (SNA) | 9\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | plausible |
+| `PARK_sdiSensor3RawDistData` | Parking assist sensors: sdi sensor3 raw dist data; raw 511 = signal not available (SNA) | 18\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | plausible |
+| `PARK_sdiSensor4RawDistData` | Parking assist sensors: sdi sensor4 raw dist data; raw 511 = signal not available (SNA) | 27\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | plausible |
+| `PARK_sdiSensor5RawDistData` | Parking assist sensors: sdi sensor5 raw dist data; raw 511 = signal not available (SNA) | 36\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | plausible |
+| `PARK_sdiSensor6RawDistData` | Parking assist sensors: sdi sensor6 raw dist data; raw 511 = signal not available (SNA) | 45\|9 | little-endian | unsigned | 1 | 0 | cm | 0 to 510 | 0 = `BLOCKED`<br>1 = `NEAR_DETECTION`<br>500 = `NO_OBJECT_DETECTED`<br>511 = `SNA` | plausible |
+| `PARK_sdiFrontCounter` | Parking assist sensors: sdi front counter | 54\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | layout-only |
+| `PARK_sdiFrontChecksum` | Parking assist sensors: sdi front checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

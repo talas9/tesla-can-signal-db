@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCFRONT_logging10Hz`: start bit and length, by
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_logging10HzIndex` | selector | Front body controller: logging10 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `COOLANT_PUMPS_FAN`<br>1 = `THERMAL_FAN_COOLANT_COMP`<br>2 = `COMPRESSOR_REFRIGERANT_LOUVER`<br>3 = `ACTIVE_LOUVER_RADAR`<br>4 = `EXV_TORQUE_COUNT`<br>5 = `END` | plausible |
+| `VCFRONT_logging10HzIndex` | selector | Front body controller: logging10 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `COOLANT_PUMPS_FAN`<br>1 = `THERMAL_FAN_COOLANT_COMP`<br>2 = `COMPRESSOR_REFRIGERANT_LOUVER`<br>3 = `ACTIVE_LOUVER_RADAR`<br>4 = `EXV_TORQUE_COUNT`<br>5 = `END` | validated |
 | `VCFRONT_pumpBatteryOutVoltage` | page 0 | Front body controller: pump battery out voltage | 3\|7 | little-endian | unsigned | 0.2 | 0 | V | 0 to 20 |  | validated |
 | `VCFRONT_pumpPowertrainOutVoltage` | page 0 | Front body controller: pump powertrain out voltage | 10\|7 | little-endian | unsigned | 0.2 | 0 | V | 0 to 20 |  | validated |
 | `VCFRONT_pumpBatteryInitd` | page 0 | Front body controller: pump battery initd | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

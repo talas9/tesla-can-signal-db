@@ -29,12 +29,12 @@ Tesla Model 3 / Model Y CAN bus signals in `DIF_thermalControl`: start bit and l
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DIF_passiveInletTempReq` | Front drive inverter: passive inlet temp req | 0\|8 | little-endian | unsigned | 1 | -40 | DegC | -40 to 215 |  | validated |
-| `DIF_activeInletTempReq` | Front drive inverter: active inlet temp req | 8\|8 | little-endian | unsigned | 1 | -40 | DegC | -40 to 215 |  | validated |
-| `DIF_coolantFlowReq` | Coolant flow requested | 16\|8 | little-endian | unsigned | 0.2 | 0 | LPM | 0 to 50 |  | validated |
-| `DIF_oilFlowReq` | Front drive inverter: oil flow req; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.1 | 0 | LPM | 0 to 25.4 | 255 = `SNA` | validated |
-| `DIF_criticalFlowReq` | Front drive inverter: critical flow req | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `NOT_ACTIVE`<br>1 = `ACTIVE` | validated |
-| `DIF_burnInStatus` | Front drive inverter: burn in status | 33\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `INIT`<br>1 = `NOT_REQUIRED`<br>2 = `UNAVAILABLE`<br>3 = `INCOMPLETE`<br>4 = `ACTIVE`<br>5 = `COMPLETE` | validated |
+| `DIF_passiveInletTempReq` | Front drive inverter: passive inlet temp req | 0\|8 | little-endian | unsigned | 1 | -40 | DegC | -40 to 215 |  | plausible |
+| `DIF_activeInletTempReq` | Front drive inverter: active inlet temp req | 8\|8 | little-endian | unsigned | 1 | -40 | DegC | -40 to 215 |  | plausible |
+| `DIF_coolantFlowReq` | Coolant flow requested | 16\|8 | little-endian | unsigned | 0.2 | 0 | LPM | 0 to 50 |  | plausible |
+| `DIF_oilFlowReq` | Front drive inverter: oil flow req; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.1 | 0 | LPM | 0 to 25.4 | 255 = `SNA` | plausible |
+| `DIF_criticalFlowReq` | Front drive inverter: critical flow req | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `NOT_ACTIVE`<br>1 = `ACTIVE` | plausible |
+| `DIF_burnInStatus` | Front drive inverter: burn in status | 33\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `INIT`<br>1 = `NOT_REQUIRED`<br>2 = `UNAVAILABLE`<br>3 = `INCOMPLETE`<br>4 = `ACTIVE`<br>5 = `COMPLETE` | plausible |
 
 ## Download the DBC file
 

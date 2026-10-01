@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `UI_airbagCutoffStatus`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_airbagCutoffSwState` | Reports the front passenger airbag cutoff switch request; raw 2 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `PASSENGER_AIRBAG_ON`<br>1 = `PASSENGER_AIRBAG_OFF`<br>2 = `SNA` | validated |
+| `UI_airbagCutoffSwState` | Reports the front passenger airbag cutoff switch request; raw 2 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `PASSENGER_AIRBAG_ON`<br>1 = `PASSENGER_AIRBAG_OFF`<br>2 = `SNA` | plausible |
 | `UI_warningIndicatorStatus` | Touchscreen user interface computer: warning indicator status; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `WARNING_LAMP_OFF`<br>1 = `WARNING_LAMP_ON`<br>3 = `SNA` | plausible |
 
 ## Download the DBC file

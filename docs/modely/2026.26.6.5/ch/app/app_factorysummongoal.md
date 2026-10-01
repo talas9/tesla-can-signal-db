@@ -29,9 +29,9 @@ Tesla Model Y CAN bus signals in `APP_factorySummonGoal`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_factoryGoalLatitude` | Driver assistance computer (primary): factory goal latitude | 0\|28 | little-endian | signed | 1.0e-06 | 0 | deg | -134.217728 to 134.217727 |  | validated |
-| `APP_factoryGoalLongitude` | Driver assistance computer (primary): factory goal longitude | 28\|29 | little-endian | signed | 1.0e-06 | 0 | deg | -268.435456 to 268.435454 |  | validated |
-| `APP_factoryGoalSpeed` | Driver assistance computer (primary): factory goal speed | 57\|7 | little-endian | unsigned | 1 | 0 | mph | 0 to 100 |  | validated |
+| `APP_factoryGoalLatitude` | Driver assistance computer (primary): factory goal latitude | 0\|28 | little-endian | signed | 1.0e-06 | 0 | deg | -134.217728 to 134.217727 |  | plausible |
+| `APP_factoryGoalLongitude` | Driver assistance computer (primary): factory goal longitude | 28\|29 | little-endian | signed | 1.0e-06 | 0 | deg | -268.435456 to 268.435454 |  | plausible |
+| `APP_factoryGoalSpeed` | Driver assistance computer (primary): factory goal speed | 57\|7 | little-endian | unsigned | 1 | 0 | mph | 0 to 100 |  | plausible |
 
 ## Download the DBC file
 

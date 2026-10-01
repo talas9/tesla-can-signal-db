@@ -30,22 +30,22 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_parkedEnergyLoss`: start bit
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VCFRONT_energyLossIndex` | selector | Front body controller: energy loss index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `STATUS`<br>1 = `SINCE_LAST_DRIVE`<br>2 = `SINCE_LAST_DRIVE2`<br>3 = `SINCE_LAST_CHARGE`<br>4 = `SINCE_LAST_CHARGE2` | plausible |
-| `VCFRONT_userEnergyLossSinceDrive` | page 1 | Energy loss due to user interaction since last drive | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_preconditioningEnergyLossSinceDrive` | page 1 | Energy loss due to preconditioning since last drive | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_cabinOverheatEnergyLossSinceDrive` | page 1 | Energy loss due to cabin overheat protection since last drive | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_mobileAppEnergyLossSinceDrive` | page 1 | Energy loss due to mobile app interaction since last drive | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_summonStandbyEnergyLossSinceDrive` | page 2 | Energy loss due to summon standby since last drive | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_sentryModeEnergyLossSinceDrive` | page 2 | Energy loss due to sentry mode since last drive | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_backgroundEnergyLossSinceDrive` | page 2 | Energy loss due to background vehicle op since last drive | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_evapDryingEnergyLossSinceDrive` | page 2 | Energy loss due to evap drying since last drive | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_userEnergyLossSinceCharge` | page 3 | Energy loss due to user interaction since last charge | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_preconditioningEnergyLossSinceCharge` | page 3 | Energy loss due to preconditioning since last charge | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_cabinOverheatEnergyLossSinceCharge` | page 3 | Energy loss due to cabin overheat protection since last charge | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_mobileAppEnergyLossSinceCharge` | page 3 | Energy loss due to mobile app interaction since last charge | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_summonStandbyEnergyLossSinceCharge` | page 4 | Energy loss due to summon standby since last charge | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_sentryModeEnergyLossSinceCharge` | page 4 | Energy loss due to sentry mode since last charge | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_backgroundEnergyLossSinceCharge` | page 4 | Energy loss due to background vehicle op since last charge | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
-| `VCFRONT_evapDryingEnergyLossSinceCharge` | page 4 | Energy loss due to evap drying since last charge | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
+| `VCFRONT_userEnergyLossSinceDrive` | page 1 | Energy loss due to user interaction since last drive | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_preconditioningEnergyLossSinceDrive` | page 1 | Energy loss due to preconditioning since last drive | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_cabinOverheatEnergyLossSinceDrive` | page 1 | Energy loss due to cabin overheat protection since last drive | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_mobileAppEnergyLossSinceDrive` | page 1 | Energy loss due to mobile app interaction since last drive | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_summonStandbyEnergyLossSinceDrive` | page 2 | Energy loss due to summon standby since last drive | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_sentryModeEnergyLossSinceDrive` | page 2 | Energy loss due to sentry mode since last drive | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_backgroundEnergyLossSinceDrive` | page 2 | Energy loss due to background vehicle op since last drive | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_evapDryingEnergyLossSinceDrive` | page 2 | Energy loss due to evap drying since last drive | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_userEnergyLossSinceCharge` | page 3 | Energy loss due to user interaction since last charge | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_preconditioningEnergyLossSinceCharge` | page 3 | Energy loss due to preconditioning since last charge | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_cabinOverheatEnergyLossSinceCharge` | page 3 | Energy loss due to cabin overheat protection since last charge | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_mobileAppEnergyLossSinceCharge` | page 3 | Energy loss due to mobile app interaction since last charge | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_summonStandbyEnergyLossSinceCharge` | page 4 | Energy loss due to summon standby since last charge | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_sentryModeEnergyLossSinceCharge` | page 4 | Energy loss due to sentry mode since last charge | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_backgroundEnergyLossSinceCharge` | page 4 | Energy loss due to background vehicle op since last charge | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
+| `VCFRONT_evapDryingEnergyLossSinceCharge` | page 4 | Energy loss due to evap drying since last charge | 50\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | plausible |
 
 ## Multiplexing
 

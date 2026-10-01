@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_windowStatus`: start bit and length, b
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_windowStatusIndex` | selector | Right body controller: window status index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `Mux0`<br>1 = `Mux1` | plausible |
+| `VCRIGHT_windowStatusIndex` | selector | Right body controller: window status index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `Mux0`<br>1 = `Mux1` | validated |
 | `VCRIGHT_windowStateRF` | page 0 | Status of right front window motor | 1\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `WINDOW_STATE_STOPPED`<br>1 = `WINDOW_STATE_MOVING_UP`<br>2 = `WINDOW_STATE_MOVING_DOWN`<br>3 = `WINDOW_STATE_BACKOFF`<br>4 = `WINDOW_STATE_SHORT_DROP`<br>5 = `WINDOW_STATE_SHORT_DROP_REVERSE`<br>6 = `WINDOW_STATE_MOVING_AUTO_UP`<br>7 = `WINDOW_STATE_MOVING_AUTO_DOWN`<br>8 = `WINDOW_STATE_BACKDRIVE`<br>9 = `WINDOW_STATE_SHORT_RISE`<br>10 = `WINDOW_STATE_SHORT_RISE_REVERSE` | validated |
 | `VCRIGHT_windowTrimClearMoveRequest` | page 0 | Reports a request for whether windows should enter or exit trim clear mode. Signal is only valid if Vehicle Controller Left (VCLEFT) is on driver side. | 5\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `WINDOW_TRIM_CLEAR_MOVE_REQUEST_SNA`<br>1 = `WINDOW_TRIM_CLEAR_MOVE_REQUEST_IDLE`<br>2 = `WINDOW_TRIM_CLEAR_MOVE_REQUEST_RESEAL`<br>3 = `WINDOW_TRIM_CLEAR_MOVE_REQUEST_BACKDRIVE` | validated |
 | `VCRIGHT_windowDutyRF` | page 0 | Right body controller: window duty RF | 8\|6 | little-endian | signed | 5 | 0 | % | -100 to 100 |  | validated |

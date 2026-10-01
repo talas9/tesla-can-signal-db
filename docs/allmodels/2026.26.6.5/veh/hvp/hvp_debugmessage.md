@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `HVP_debugMessage`: start bit and len
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `HVP_debugMessageMultiplexer` | selector | High-voltage processor (pack contactor and isolation controller): debug message multiplexer | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2`<br>3 = `Mux3`<br>4 = `Mux4`<br>5 = `Mux5`<br>6 = `Mux6`<br>7 = `Mux7`<br>8 = `Mux8`<br>9 = `Mux9`<br>10 = `Mux10`<br>11 = `Mux11`<br>12 = `Mux12` | plausible |
+| `HVP_debugMessageMultiplexer` | selector | High-voltage processor (pack contactor and isolation controller): debug message multiplexer | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2`<br>3 = `Mux3`<br>4 = `Mux4`<br>5 = `Mux5`<br>6 = `Mux6`<br>7 = `Mux7`<br>8 = `Mux8`<br>9 = `Mux9`<br>10 = `Mux10`<br>11 = `Mux11`<br>12 = `Mux12` | validated |
 | `HVP_ecuLogUploadRequest` | page 1 | High-voltage processor (pack contactor and isolation controller): ecu log upload request | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `REQUEST_PRIORITY_NONE`<br>1 = `REQUEST_PRIORITY_1`<br>2 = `REQUEST_PRIORITY_2`<br>3 = `REQUEST_PRIORITY_3` | validated |
 | `HVP_dcLinkVoltage` | page 1 | The HVP's measurement of the DC link voltage | 8\|16 | little-endian | signed | 0.1 | 0 | V | -3276.8 to 3276.7 |  | validated |
 | `HVP_packVoltage` | page 1 | High-voltage processor (pack contactor and isolation controller): pack voltage | 24\|16 | little-endian | signed | 0.1 | 0 | V | -3276.8 to 3276.7 |  | validated |
@@ -38,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `HVP_debugMessage`: start bit and len
 | `HVP_packContVoltage` | page 2 | High-voltage processor (pack contactor and isolation controller): pack cont voltage | 4\|12 | little-endian | unsigned | 0.1 | 0 | V | 0 to 30 |  | validated |
 | `HVP_packNegativeV` | page 2 | The HVP's common-mode measurement of PACK-HV-SENSE-NEG relative to chassis ground | 16\|16 | little-endian | signed | 0.1 | 0 | V | -550 to 550 |  | validated |
 | `HVP_packPositiveV` | page 2 | The HVP's common-mode measurement of PACK-HV-SENSE-POS relative to chassis ground | 32\|16 | little-endian | signed | 0.1 | 0 | V | -550 to 550 |  | validated |
-| `HVP_pyroAnalog` | page 2 | High-voltage processor (pack contactor and isolation controller): pyro analog | 48\|12 | little-endian | unsigned | 0.1 | 0 | V | 0 to 3 |  | contradicted |
+| `HVP_pyroAnalog` | page 2 | High-voltage processor (pack contactor and isolation controller): pyro analog | 48\|12 | little-endian | unsigned | 0.1 | 0 | V | 0 to 3 |  | validated |
 | `HVP_shuntSetTCRCoeffA` | page 2 | High-voltage processor (pack contactor and isolation controller): shunt set TCR coeff a | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `HVP_shuntSetTCRCoeffB` | page 2 | High-voltage processor (pack contactor and isolation controller): shunt set TCR coeff b | 61\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `HVP_shuntSetTCRCoeffC` | page 2 | High-voltage processor (pack contactor and isolation controller): shunt set TCR coeff c | 62\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

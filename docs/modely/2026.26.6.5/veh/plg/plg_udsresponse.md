@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `PLG_udsResponse`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PLG_udsResponseData` | PLG ECU: uds response data | 7\|64 | big-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | plausible |
+| `PLG_udsResponseData` | PLG ECU: uds response data | 7\|64 | big-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | layout-only |
 
 ## Download the DBC file
 

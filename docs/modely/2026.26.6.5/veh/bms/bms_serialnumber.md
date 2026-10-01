@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `BMS_serialNumber`: start bit and length, byte 
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_serialNumberMultiplexer` | selector | High-voltage battery management system: serial number multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `BMS_SERIAL_MUX0`<br>1 = `BMS_SERIAL_MUX1`<br>2 = `BMS_SERIAL_MUX2` | plausible |
+| `BMS_serialNumberMultiplexer` | selector | High-voltage battery management system: serial number multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `BMS_SERIAL_MUX0`<br>1 = `BMS_SERIAL_MUX1`<br>2 = `BMS_SERIAL_MUX2` | validated |
 | `BMS_packSerialNumberByte01` | page 0 | Pack serial number, character 1 (ASCII) | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `BMS_packSerialNumberByte02` | page 0 | Pack serial number, character 2 (ASCII) | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `BMS_packSerialNumberByte03` | page 0 | Pack serial number, character 3 (ASCII) | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |

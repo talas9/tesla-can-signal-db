@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCLEFT_doorStatus2`: start bit and length, byt
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_doorStatus2Index` | selector | Left body controller: door status2 index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MUX0`<br>1 = `MUX1` | plausible |
+| `VCLEFT_doorStatus2Index` | selector | Left body controller: door status2 index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MUX0`<br>1 = `MUX1` | validated |
 | `VCLEFT_rearLatchRelDuty` |  | Rear left door latch motor duty cycle. Position from firmware; message assignment inferred. | 8\|8 | little-endian | unsigned | 1 | 0 | % | 0 to 255 |  | plausible |
 | `VCLEFT_vehicleInMotion` |  | Position from firmware; message assignment inferred. | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `VCLEFT_frontDoorState` |  | Status of front left door. Position from firmware; message assignment inferred. | 17\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `DOOR_STATE_UNKNOWN`<br>1 = `DOOR_STATE_CLOSED`<br>2 = `DOOR_STATE_WAIT_FOR_SHORT_DROP`<br>3 = `DOOR_STATE_RELEASING_LATCH`<br>4 = `DOOR_STATE_OPEN`<br>5 = `DOOR_STATE_AJAR`<br>6 = `DOOR_STATE_INIT` | plausible |

@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `FC_status2`: start bit and length, byte order,
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `FC_externalIsolationResistance` | Fast charger external isolation resistance; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 40 | 0 | kOhm | 0 to 10160 | 255 = `SNA` | validated |
+| `FC_externalIsolationResistance` | Fast charger external isolation resistance; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 40 | 0 | kOhm | 0 to 10160 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 

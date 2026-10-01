@@ -30,10 +30,10 @@ Tesla Model Y CAN bus signals in `VCLEFT_logging0point1Hz`: start bit and length
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VCLEFT_logging0point1HzIndex` | selector | Left body controller: logging0point1 hz index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MISC`<br>1 = `END` | plausible |
-| `VCLEFT_leftBrakeTailLightCurrent` | page 0 | Current sensed by the left brake tail light HSD (high side driver); raw 511 = signal not available (SNA) | 2\|9 | little-endian | unsigned | 0.005 | 0 | A | 0 to 2.55 | 511 = `SNA` | validated |
-| `VCLEFT_leftBrakeTailLightCurrentSenseState` | page 0 | State representing validity of the left brake tail light HSD (high side driver) current sense; raw 0 = signal not available (SNA) | 11\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `SNA`<br>1 = `STEADY_STATE_OFF`<br>2 = `RISING_EDGE_TRANSIENT`<br>3 = `STEADY_STATE_ON`<br>4 = `FALLING_EDGE_TRANSIENT` | validated |
-| `VCLEFT_leftRearTurnLightCurrent` | page 0 | Current sensed by the left rear turn signal HSD (high side driver); raw 511 = signal not available (SNA) | 14\|9 | little-endian | unsigned | 0.002 | 0 | A | 0 to 1.02 | 511 = `SNA` | validated |
-| `VCLEFT_leftRearTurnLightCurrentSenseState` | page 0 | State representing validity of the left rear turn signal HSD (high side driver) current sense; raw 0 = signal not available (SNA) | 24\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `SNA`<br>1 = `STEADY_STATE_OFF`<br>2 = `RISING_EDGE_TRANSIENT`<br>3 = `STEADY_STATE_ON`<br>4 = `FALLING_EDGE_TRANSIENT` | validated |
+| `VCLEFT_leftBrakeTailLightCurrent` | page 0 | Current sensed by the left brake tail light HSD (high side driver); raw 511 = signal not available (SNA) | 2\|9 | little-endian | unsigned | 0.005 | 0 | A | 0 to 2.55 | 511 = `SNA` | plausible |
+| `VCLEFT_leftBrakeTailLightCurrentSenseState` | page 0 | State representing validity of the left brake tail light HSD (high side driver) current sense; raw 0 = signal not available (SNA) | 11\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `SNA`<br>1 = `STEADY_STATE_OFF`<br>2 = `RISING_EDGE_TRANSIENT`<br>3 = `STEADY_STATE_ON`<br>4 = `FALLING_EDGE_TRANSIENT` | plausible |
+| `VCLEFT_leftRearTurnLightCurrent` | page 0 | Current sensed by the left rear turn signal HSD (high side driver); raw 511 = signal not available (SNA) | 14\|9 | little-endian | unsigned | 0.002 | 0 | A | 0 to 1.02 | 511 = `SNA` | plausible |
+| `VCLEFT_leftRearTurnLightCurrentSenseState` | page 0 | State representing validity of the left rear turn signal HSD (high side driver) current sense; raw 0 = signal not available (SNA) | 24\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `SNA`<br>1 = `STEADY_STATE_OFF`<br>2 = `RISING_EDGE_TRANSIENT`<br>3 = `STEADY_STATE_ON`<br>4 = `FALLING_EDGE_TRANSIENT` | plausible |
 
 ## Multiplexing
 

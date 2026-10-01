@@ -33,7 +33,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_socStatus`: start bit and length
 | `BMS_socUI` | BMS State Of Energy (SOE) for the UI. This is ideal discharge energy from present state / ideal discharge energy from full. | 10\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 100 |  | validated |
 | `BMS_socMax` | BMS State Of Charge (SOC). This is the maximum brick SOC. | 20\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 102.2 |  | validated |
 | `BMS_socAvg` | BMS State Of Charge (SOC). This is the average of all the brick SOCs | 30\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 102.2 |  | validated |
-| `BMS_beginningOfLifePackEnergy` | High-voltage battery management system: beginning of life pack energy; raw 1023 = signal not available (SNA) | 40\|10 | little-endian | unsigned | 0.1 | 0 | KWh | 0 to 102.2 | 1023 = `SNA` | validated |
+| `BMS_beginningOfLifePackEnergy` | High-voltage battery management system: beginning of life pack energy; raw 1023 = signal not available (SNA) | 40\|10 | little-endian | unsigned | 0.1 | 0 | KWh | 0 to 102.2 | 1023 = `SNA` | plausible |
 | `BMS_battTempPct` | High-voltage battery management system: batt temp pct; raw 255 = signal not available (SNA) | 50\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 | 255 = `SNA` | plausible |
 | `BMS_userChargeCurrentLimitMode` | BMS' user-facing reason for charge being either limited or not limited | 58\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `USR_CHG_LIMIT_NONE`<br>1 = `USR_CHG_LIMIT_EVSE`<br>2 = `USR_CHG_LIMIT_BATT_TEMP_LOW`<br>3 = `USR_CHG_LIMIT_HIGH_SOC`<br>4 = `USR_CHG_LIMIT_EVSE_RELOCATION_RECOMMENDED` | plausible |
 

@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `UI_driverProfileRecall`: start bit and length,
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `UI_driverProfileRecallIndex` | selector | Touchscreen user interface computer: driver profile recall index; raw 0 = signal not available (SNA) | 0\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `SNA`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5` | plausible |
+| `UI_driverProfileRecallIndex` | selector | Touchscreen user interface computer: driver profile recall index; raw 0 = signal not available (SNA) | 0\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `SNA`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5` | validated |
 | `UI_driverProfileRecallStop` |  | notifies controller to stop profile recall action | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `UI_frontSeatRecallActive` | page 1 | signals when driver seat presets are being recalled | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `UI_frontSeatTrackPos` | page 1 | Touchscreen user interface computer: front seat track pos | 5\|10 | little-endian | signed | 4 | 0 | mm | -2048 to 2044 |  | plausible |
@@ -46,12 +46,12 @@ Tesla Model 3 CAN bus signals in `UI_driverProfileRecall`: start bit and length,
 | `UI_rightMirrorTiltXPosition` | page 3 | Touchscreen user interface computer: right mirror tilt x position | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5.1 |  | plausible |
 | `UI_rightMirrorTiltYPosition` | page 3 | Touchscreen user interface computer: right mirror tilt y position | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5.1 |  | plausible |
 | `UI_frontSeatThighSupportPos` | page 3 | Touchscreen user interface computer: front seat thigh support pos | 40\|8 | little-endian | signed | 1 | 0 | mm | -128 to 127 |  | plausible |
-| `UI_mirrorRecallActive` | page 4 | Touchscreen user interface computer: mirror recall active | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_mirrorRecallActive` | page 4 | Touchscreen user interface computer: mirror recall active | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `UI_customMirrorDipPositionsSet` | page 4 | Reports whether custom mirror dip positions are set. | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `UI_leftMirrorDipXPosition` | page 4 | signal from ui to command left mirror X dip position | 8\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
 | `UI_leftMirrorDipYPosition` | page 4 | signal from ui to command mirror Y dip position | 16\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `UI_rightMirrorDipXPosition` | page 4 | Touchscreen user interface computer: right mirror dip x position | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5.1 |  | plausible |
-| `UI_rightMirrorDipYPosition` | page 4 | Touchscreen user interface computer: right mirror dip y position | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5.1 |  | plausible |
+| `UI_rightMirrorDipXPosition` | page 4 | Touchscreen user interface computer: right mirror dip x position | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5.1 |  | validated |
+| `UI_rightMirrorDipYPosition` | page 4 | Touchscreen user interface computer: right mirror dip y position | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5.1 |  | validated |
 | `UI_modifyMirrorDipRequest` | page 4 | Reports that a user is trying to modify the mirrors in the dipped position. | 40\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MODIFY_MIRROR_DIP_REQUEST_NONE`<br>1 = `MODIFY_MIRROR_DIP_REQUEST_UNDIPPED`<br>2 = `MODIFY_MIRROR_DIP_REQUEST_DIPPED` | validated |
 
 ## Multiplexing

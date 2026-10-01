@@ -29,15 +29,15 @@ Tesla Model Y CAN bus signals in `UI_tripPlanning`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_tripPlanningActive` | Indicates that there is active route in navigation with a valid energy at destination prediction. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_navToSupercharger` | Navigation destination is a supercharger | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_navFastchargerType` | when navigation is turned on, this enum identifies the type of fastcharger the car is navigating to based on the rated power from sc_locations | 2\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `LOW_POWER`<br>2 = `V2`<br>3 = `V3`<br>4 = `V4` | validated |
-| `UI_battPreconditionOnNavState` | Indicates to battery and thermal systems whether the battery should be actively heated, passively heated, actively cooled, or passively cooled | 5\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `PASSIVE_HEAT`<br>1 = `ACTIVE_HEAT`<br>2 = `PASSIVE_COOL`<br>3 = `ACTIVE_COOL` | validated |
-| `UI_requestActiveBatteryHeating` | Flag to request BMS enable active battery heating | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_battPreconditionOnNavPowerReq` | The preconditioning power that Trip Planner is requesting from the thermal system to use for battery preconditioning (cooling or heating); raw 127 = signal not available (SNA) | 8\|8 | little-endian | signed | 125 | 0 | W | -16000 to 15750 | -126 = `MIN`<br>126 = `MAX`<br>127 = `SNA` | validated |
-| `UI_battPreconditionOnNavTargetT` | The pack temperature that Trip Planner is targeting upon arriving to a fast charger; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.25 | 0 | degC | 0 to 63.5 | 0 = `MIN`<br>254 = `MAX`<br>255 = `SNA` | validated |
+| `UI_tripPlanningActive` | Indicates that there is active route in navigation with a valid energy at destination prediction. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_navToSupercharger` | Navigation destination is a supercharger | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_navFastchargerType` | when navigation is turned on, this enum identifies the type of fastcharger the car is navigating to based on the rated power from sc_locations | 2\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `LOW_POWER`<br>2 = `V2`<br>3 = `V3`<br>4 = `V4` | plausible |
+| `UI_battPreconditionOnNavState` | Indicates to battery and thermal systems whether the battery should be actively heated, passively heated, actively cooled, or passively cooled | 5\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `PASSIVE_HEAT`<br>1 = `ACTIVE_HEAT`<br>2 = `PASSIVE_COOL`<br>3 = `ACTIVE_COOL` | plausible |
+| `UI_requestActiveBatteryHeating` | Flag to request BMS enable active battery heating | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_battPreconditionOnNavPowerReq` | The preconditioning power that Trip Planner is requesting from the thermal system to use for battery preconditioning (cooling or heating); raw 127 = signal not available (SNA) | 8\|8 | little-endian | signed | 125 | 0 | W | -16000 to 15750 | -126 = `MIN`<br>126 = `MAX`<br>127 = `SNA` | plausible |
+| `UI_battPreconditionOnNavTargetT` | The pack temperature that Trip Planner is targeting upon arriving to a fast charger; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.25 | 0 | degC | 0 to 63.5 | 0 = `MIN`<br>254 = `MAX`<br>255 = `SNA` | plausible |
 | `UI_ambientTempAtDestination` | Touchscreen user interface computer: ambient temp at destination; raw 128 = signal not available (SNA) | 32\|8 | little-endian | signed | 0.5 | 0 | degC | -64 to 63.5 | -128 = `SNA` | plausible |
-| `UI_energyAtDestination` | expected energy at destination in kWh for current navigation route; raw 32768 = signal not available (SNA) | 48\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.67 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | validated |
+| `UI_energyAtDestination` | expected energy at destination in kWh for current navigation route; raw 32768 = signal not available (SNA) | 48\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.67 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | plausible |
 
 ## Download the DBC file
 

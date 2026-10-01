@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_cruiseControl`: start bit and len
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_cruiseSpeedCommand` | User command to change the cruise set speed. | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `CRUISE_SPEED_IDLE`<br>1 = `CRUISE_SPEED_INC_SHORT`<br>2 = `CRUISE_SPEED_INC_LONG`<br>3 = `CRUISE_SPEED_DEC_SHORT`<br>4 = `CRUISE_SPEED_DEC_LONG`<br>5 = `CRUISE_SPEED_SNAP`<br>6 = `CRUISE_SPEED_SNAP_SPEEDO` | validated |
+| `UI_cruiseSpeedCommand` | User command to change the cruise set speed. | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `CRUISE_SPEED_IDLE`<br>1 = `CRUISE_SPEED_INC_SHORT`<br>2 = `CRUISE_SPEED_INC_LONG`<br>3 = `CRUISE_SPEED_DEC_SHORT`<br>4 = `CRUISE_SPEED_DEC_LONG`<br>5 = `CRUISE_SPEED_SNAP`<br>6 = `CRUISE_SPEED_SNAP_SPEEDO` | plausible |
 | `UI_smartSummonRequest` | Touchscreen user interface computer: smart summon request | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_cruiseControlCounter` | Touchscreen user interface computer: cruise control counter | 4\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
 | `UI_cruiseControlChecksum` | Touchscreen user interface computer: cruise control checksum | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |

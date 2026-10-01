@@ -30,11 +30,11 @@ Tesla Model 3 CAN bus signals in `HCML_info`: start bit and length, byte order, 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VC_hcmlInfoIndex` | selector | HCML ECU: hcml info index | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `HCML_BUILD_CONFIG_ID_LMM_VARIANT`<br>1 = `HCML_ASSEMBLY_PCBA_USAGE_ID`<br>2 = `ECULESS_IC400_HB_FAULTS`<br>3 = `ECULESS_IC500_LB_FAULTS`<br>4 = `ECULESS_IC600_DRL_TURN_FAULTS`<br>5 = `ECULESS_IC700_SM_FAULTS`<br>6 = `ECULESS_LED_VOLTAGES`<br>7 = `ECULESS_MISC`<br>8 = `END` | plausible |
-| `VC_infoHCMLBuildConfigId` | page 0 | HCM Diagnostic Field. | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `VC_leftHeadlampLMMVariant` | page 0 | Reports the detected left headlamp LED Matrix Manager (LMM) variant; raw 0 = signal not available (SNA) | 24\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `LMM_VARIANT_SNA`<br>1 = `LMM_VARIANT_NOT_LMM4_OR_UNKNOWN`<br>2 = `LMM_VARIANT_LMM4` | validated |
-| `VC_infoHCMLAssemblyId` | page 1 | HCM Diagnostic Field. | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `VC_infoHCMLPcbaId` | page 1 | HCM Diagnostic Field. | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `VC_infoHCMLUsageId` | page 1 | HCM Diagnostic Field. | 40\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
+| `VC_infoHCMLBuildConfigId` | page 0 | HCM Diagnostic Field. | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
+| `VC_leftHeadlampLMMVariant` | page 0 | Reports the detected left headlamp LED Matrix Manager (LMM) variant; raw 0 = signal not available (SNA) | 24\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `LMM_VARIANT_SNA`<br>1 = `LMM_VARIANT_NOT_LMM4_OR_UNKNOWN`<br>2 = `LMM_VARIANT_LMM4` | plausible |
+| `VC_infoHCMLAssemblyId` | page 1 | HCM Diagnostic Field. | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
+| `VC_infoHCMLPcbaId` | page 1 | HCM Diagnostic Field. | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
+| `VC_infoHCMLUsageId` | page 1 | HCM Diagnostic Field. | 40\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
 
 ## Multiplexing
 

@@ -29,8 +29,8 @@ Tesla Model 3 CAN bus signals in `APP_backupDashCamStatus`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_backupDashCamFeedGood` | Indicates if the backup dash cam stream is healthy. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_backupDashCamFrameRate` | The backup dash cam frame rate. | 1\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | validated |
+| `APP_backupDashCamFeedGood` | Indicates if the backup dash cam stream is healthy. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_backupDashCamFrameRate` | The backup dash cam frame rate. | 1\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | plausible |
 
 ## Download the DBC file
 

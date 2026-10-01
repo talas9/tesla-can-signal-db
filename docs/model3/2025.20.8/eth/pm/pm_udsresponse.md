@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `PM_udsResponse`: start bit and length, byte or
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PM_udsResponseData` | PM ECU: uds response data | 7\|64 | big-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | plausible |
+| `PM_udsResponseData` | PM ECU: uds response data | 7\|64 | big-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | layout-only |
 
 ## Download the DBC file
 

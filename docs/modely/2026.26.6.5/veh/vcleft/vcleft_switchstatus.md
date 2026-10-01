@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VCLEFT_switchStatus`: start bit and length, by
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_switchStatusIndex` | selector | Left body controller: switch status index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
+| `VCLEFT_switchStatusIndex` | selector | Left body controller: switch status index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | validated |
 | `VCLEFT_hornSwitchPressed` | page 0 | Left body controller: horn switch pressed | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_hazardButtonPressed` | page 0 | Left body controller: hazard button pressed | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_brakeSwitchPressed` | page 0 | Status of the brake pedal switch | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

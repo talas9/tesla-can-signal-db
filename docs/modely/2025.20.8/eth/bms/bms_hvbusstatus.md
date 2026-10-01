@@ -31,7 +31,7 @@ Tesla Model Y CAN bus signals in `BMS_hvBusStatus`: start bit and length, byte o
 |---|---|---|---|---|---|---|---|---|---|---|
 | `BMS_packVoltage` | Measures voltage on the battery side of the High Voltage (HV) contactors. | 0\|16 | little-endian | unsigned | 0.01 | 0 | V | 0 to 655.35 |  | plausible |
 | `BMS_packCurrent` | Current measured at the HV contactors of the HV battery; raw 32768 = signal not available (SNA) | 16\|16 | little-endian | signed | 0.1 | 0 | A | -3276.7 to 3276.7 | -32768 = `SNA` | validated |
-| `BMS_currentUnfiltered` | Pack current with no filters applied; raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 0.05 | -822 | A | -2460.3 to 816.3 | -32768 = `SNA` | validated |
+| `BMS_currentUnfiltered` | Pack current with no filters applied; raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 0.05 | -822 | A | -2460.3 to 816.3 | -32768 = `SNA` | plausible |
 | `BMS_chgTimeToFull` | Estimated time remaining until charge termination percent will be reached; raw 4095 = signal not available (SNA) | 48\|12 | little-endian | unsigned | 0.01666667 | 0 | Hours | 0 to 68.23334698 | 4095 = `SNA` | plausible |
 
 ## Download the DBC file

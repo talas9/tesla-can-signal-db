@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_gpsTime`: start bit and length, b
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_gpsTime` | Touchscreen user interface computer: gps time | 0\|64 | little-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | plausible |
+| `UI_gpsTime` | Touchscreen user interface computer: gps time | 0\|64 | little-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | validated |
 
 ## Download the DBC file
 

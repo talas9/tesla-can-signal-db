@@ -30,11 +30,11 @@ Tesla Model 3 CAN bus signals in `FC_evseBilling`: start bit and length, byte or
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `FC_evseBillingDataSelect` | selector | FC ECU: evse billing data select | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
-| `FC_evseBillingEnergy` | page 0 | FC ECU: evse billing energy | 4\|20 | little-endian | unsigned | 0.001 | 0 | kWh | 0 to 1048.575 |  | validated |
-| `FC_evseMeterPower` | page 0 | FC ECU: evse meter power | 24\|20 | little-endian | unsigned | 0.001 | 0 | kW | 0 to 1048.575 |  | validated |
-| `FC_evseMeterCurrent` | page 0 | FC ECU: evse meter current | 44\|10 | little-endian | unsigned | 1 | 0 | A | 0 to 1023 |  | validated |
-| `FC_evseMeterVoltage` | page 0 | FC ECU: evse meter voltage | 54\|10 | little-endian | unsigned | 1 | 0 | V | 0 to 1023 |  | validated |
-| `FC_evseMeterFwGitHash` | page 1 | FC ECU: evse meter fw git hash | 4\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | validated |
+| `FC_evseBillingEnergy` | page 0 | FC ECU: evse billing energy | 4\|20 | little-endian | unsigned | 0.001 | 0 | kWh | 0 to 1048.575 |  | plausible |
+| `FC_evseMeterPower` | page 0 | FC ECU: evse meter power | 24\|20 | little-endian | unsigned | 0.001 | 0 | kW | 0 to 1048.575 |  | plausible |
+| `FC_evseMeterCurrent` | page 0 | FC ECU: evse meter current | 44\|10 | little-endian | unsigned | 1 | 0 | A | 0 to 1023 |  | plausible |
+| `FC_evseMeterVoltage` | page 0 | FC ECU: evse meter voltage | 54\|10 | little-endian | unsigned | 1 | 0 | V | 0 to 1023 |  | plausible |
+| `FC_evseMeterFwGitHash` | page 1 | FC ECU: evse meter fw git hash | 4\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | layout-only |
 
 ## Multiplexing
 

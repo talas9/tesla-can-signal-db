@@ -29,10 +29,10 @@ Tesla Model Y CAN bus signals in `HVP_hvsControl`: start bit and length, byte or
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `HVP_dcLinkVoltageRequest` | High-voltage processor (pack contactor and isolation controller): dc link voltage request | 0\|16 | little-endian | signed | 0.1 | 0 | V | -550 to 550 |  | validated |
-| `HVP_pcsControlRequest` | The operating state that the HVP would like the PCS to be in | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SHUTDOWN`<br>1 = `SUPPORT`<br>2 = `PRECHARGE`<br>3 = `DISCHARGE` | validated |
-| `HVP_pcsChargeHwEnabled` | The state of the PCS's charge enable line | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `HVP_pcsDcdcHwEnabled` | The state of the PCS's DCDC enable line | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `HVP_dcLinkVoltageRequest` | High-voltage processor (pack contactor and isolation controller): dc link voltage request | 0\|16 | little-endian | signed | 0.1 | 0 | V | -550 to 550 |  | plausible |
+| `HVP_pcsControlRequest` | The operating state that the HVP would like the PCS to be in | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SHUTDOWN`<br>1 = `SUPPORT`<br>2 = `PRECHARGE`<br>3 = `DISCHARGE` | plausible |
+| `HVP_pcsChargeHwEnabled` | The state of the PCS's charge enable line | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `HVP_pcsDcdcHwEnabled` | The state of the PCS's DCDC enable line | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `HVP_dcLinkVoltageFiltered` | High-voltage processor (pack contactor and isolation controller): dc link voltage filtered; raw 1498 = signal not available (SNA) | 20\|11 | little-endian | signed | 1 | 0 | V | -550 to 550 | -550 = `SNA` | validated |
 
 ## Download the DBC file

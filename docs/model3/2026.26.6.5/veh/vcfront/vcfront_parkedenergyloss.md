@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCFRONT_parkedEnergyLoss`: start bit and lengt
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_energyLossIndex` | selector | Front body controller: energy loss index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `STATUS`<br>1 = `SINCE_LAST_DRIVE`<br>2 = `SINCE_LAST_DRIVE2`<br>3 = `SINCE_LAST_CHARGE`<br>4 = `SINCE_LAST_CHARGE2` | plausible |
+| `VCFRONT_energyLossIndex` | selector | Front body controller: energy loss index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `STATUS`<br>1 = `SINCE_LAST_DRIVE`<br>2 = `SINCE_LAST_DRIVE2`<br>3 = `SINCE_LAST_CHARGE`<br>4 = `SINCE_LAST_CHARGE2` | validated |
 | `VCFRONT_userEnergyLossSinceDrive` | page 1 | Energy loss due to user interaction since last drive | 8\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
 | `VCFRONT_preconditioningEnergyLossSinceDrive` | page 1 | Energy loss due to preconditioning since last drive | 22\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |
 | `VCFRONT_cabinOverheatEnergyLossSinceDrive` | page 1 | Energy loss due to cabin overheat protection since last drive | 36\|14 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 163.83 |  | validated |

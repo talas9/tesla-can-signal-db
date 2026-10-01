@@ -29,12 +29,12 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_limitsHighPower`: start bit and l
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `FC_powerLimit_value` | Instantaneous power charger can deliver. Mantissa portion of extended range version of legacy signal, used with protocol versions 9+. FC_powerLimit = value * 10^exp; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 1 | 0 | *10^exp kW | -32767 to 32767 | -32768 = `SNA` | validated |
-| `FC_currentLimit_value` | FC ECU: current limit value; raw 32768 = signal not available (SNA) | 16\|16 | little-endian | signed | 1 | 0 | *10^exp A | -32767 to 32767 | -32768 = `SNA` | validated |
-| `FC_minVoltageLimit_value` | FC ECU: min voltage limit value; raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 1 | 0 | *10^exp V | -32767 to 32767 | -32768 = `SNA` | validated |
-| `FC_powerLimit_exp` | Instantaneous power charger can deliver. Exponent portion of extended ragne version of legacy signal, used with protocol versions 9+. FC_powerLimit = value * 10^exp. | 48\|3 | little-endian | signed | 1 | 0 |  | -4 to 3 |  | validated |
-| `FC_currentLimit_exp` | FC ECU: current limit exp | 51\|3 | little-endian | signed | 1 | 0 |  | -4 to 3 |  | validated |
-| `FC_minVoltageLimit_exp` | FC ECU: min voltage limit exp | 54\|3 | little-endian | signed | 1 | 0 |  | -4 to 3 |  | validated |
+| `FC_powerLimit_value` | Instantaneous power charger can deliver. Mantissa portion of extended range version of legacy signal, used with protocol versions 9+. FC_powerLimit = value * 10^exp; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 1 | 0 | *10^exp kW | -32767 to 32767 | -32768 = `SNA` | plausible |
+| `FC_currentLimit_value` | FC ECU: current limit value; raw 32768 = signal not available (SNA) | 16\|16 | little-endian | signed | 1 | 0 | *10^exp A | -32767 to 32767 | -32768 = `SNA` | plausible |
+| `FC_minVoltageLimit_value` | FC ECU: min voltage limit value; raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 1 | 0 | *10^exp V | -32767 to 32767 | -32768 = `SNA` | plausible |
+| `FC_powerLimit_exp` | Instantaneous power charger can deliver. Exponent portion of extended ragne version of legacy signal, used with protocol versions 9+. FC_powerLimit = value * 10^exp. | 48\|3 | little-endian | signed | 1 | 0 |  | -4 to 3 |  | plausible |
+| `FC_currentLimit_exp` | FC ECU: current limit exp | 51\|3 | little-endian | signed | 1 | 0 |  | -4 to 3 |  | layout-only |
+| `FC_minVoltageLimit_exp` | FC ECU: min voltage limit exp | 54\|3 | little-endian | signed | 1 | 0 |  | -4 to 3 |  | layout-only |
 
 ## Download the DBC file
 

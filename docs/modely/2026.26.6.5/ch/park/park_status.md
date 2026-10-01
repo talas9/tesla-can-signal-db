@@ -29,14 +29,14 @@ Tesla Model Y CAN bus signals in `PARK_status`: start bit and length, byte order
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PARK_status` | Indicates status of park assist function; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `DISABLED`<br>1 = `ENABLED`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | validated |
-| `PARK_serviceRequest` | Indicates whether or not PARK sensors/ECU require service; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `FAILURE`<br>2 = `UNUSED`<br>3 = `SNA` | validated |
-| `PARK_systemDtcPresent` | Boolean indicating whether or not there is a DTC present; raw 3 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `FALSE`<br>1 = `TRUE`<br>2 = `UNUSED`<br>3 = `SNA` | validated |
-| `PARK_statusCounter` | Parking assist sensors: status counter | 12\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `PARK_statusChecksum` | Parking assist sensors: status checksum | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `PARK_majorVersion` | Parking assist sensors: major version; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_minorVersion` | Parking assist sensors: minor version; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_subMinorVersion` | Parking assist sensors: sub minor version; raw 255 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 254 | 255 = `SNA` | validated |
+| `PARK_status` | Indicates status of park assist function; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `DISABLED`<br>1 = `ENABLED`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | plausible |
+| `PARK_serviceRequest` | Indicates whether or not PARK sensors/ECU require service; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `FAILURE`<br>2 = `UNUSED`<br>3 = `SNA` | plausible |
+| `PARK_systemDtcPresent` | Boolean indicating whether or not there is a DTC present; raw 3 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `FALSE`<br>1 = `TRUE`<br>2 = `UNUSED`<br>3 = `SNA` | plausible |
+| `PARK_statusCounter` | Parking assist sensors: status counter | 12\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `PARK_statusChecksum` | Parking assist sensors: status checksum | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PARK_majorVersion` | Parking assist sensors: major version; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_minorVersion` | Parking assist sensors: minor version; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_subMinorVersion` | Parking assist sensors: sub minor version; raw 255 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 254 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 

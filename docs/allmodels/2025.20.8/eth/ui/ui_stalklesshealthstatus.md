@@ -29,9 +29,9 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_stalklessHealthStatus`: start bit
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_centerDisplayRunning` | is center display running | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_centerDisplayRunning` | is center display running | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_centerDisplaySM` | Touchscreen user interface computer: center display SM | 1\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `START`<br>1 = `UP`<br>2 = `STALLING`<br>3 = `TIMING_OUT`<br>4 = `DOWN` | plausible |
-| `UI_centerDisplayPowerOn` | center display power on | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_centerDisplayPowerOn` | center display power on | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_centerDisplayCrtcOk` | Touchscreen user interface computer: center display crtc ok | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_centerDisplayHardwareOk` | Touchscreen user interface computer: center display hardware ok | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_centerDisplayWindowManagerOk` | Touchscreen user interface computer: center display window manager ok | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

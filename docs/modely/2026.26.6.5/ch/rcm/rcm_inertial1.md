@@ -29,14 +29,14 @@ Tesla Model Y CAN bus signals in `RCM_inertial1`: start bit and length, byte ord
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `RCM_yawRate` | Offset compensated yaw rate measured by the airbag ECU. ISO axis convention (Positive during left turn); raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 0.0001 | 0 | rad/s | -3.2766 to 3.2766 | -32768 = `SNA` | validated |
-| `RCM_pitchRate` | Offset compensated pitch rate measured by the airbag ECU. ISO axis convention (positive when the nose pitches down); raw 16384 = signal not available (SNA) | 16\|15 | little-endian | signed | 0.00025 | 0 | rad/s | -4.096 to 4.09575 | -16384 = `SNA` | validated |
-| `RCM_rollRate` | Offset compensated roll rate measured by the airbag ECU. ISO axis convention (positive during left turn); raw 16384 = signal not available (SNA) | 31\|15 | little-endian | signed | 0.00025 | 0 | rad/s | -4.096 to 4.09575 | -16384 = `SNA` | validated |
-| `RCM_rollRateQF` | Restraint control module: roll rate QF | 46\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INIT`<br>1 = `VALID`<br>2 = `TEMP_INVALID`<br>3 = `FAULTED` | validated |
-| `RCM_yawRateQF` | Restraint control module: yaw rate QF | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | validated |
-| `RCM_pitchRateQF` | Restraint control module: pitch rate QF | 50\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INIT`<br>1 = `VALID`<br>2 = `TEMP_INVALID`<br>3 = `FAULTED` | validated |
-| `RCM_inertial1Counter` | Restraint control module: inertial1 counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `RCM_inertial1Checksum` | Restraint control module: inertial1 checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `RCM_yawRate` | Offset compensated yaw rate measured by the airbag ECU. ISO axis convention (Positive during left turn); raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 0.0001 | 0 | rad/s | -3.2766 to 3.2766 | -32768 = `SNA` | plausible |
+| `RCM_pitchRate` | Offset compensated pitch rate measured by the airbag ECU. ISO axis convention (positive when the nose pitches down); raw 16384 = signal not available (SNA) | 16\|15 | little-endian | signed | 0.00025 | 0 | rad/s | -4.096 to 4.09575 | -16384 = `SNA` | plausible |
+| `RCM_rollRate` | Offset compensated roll rate measured by the airbag ECU. ISO axis convention (positive during left turn); raw 16384 = signal not available (SNA) | 31\|15 | little-endian | signed | 0.00025 | 0 | rad/s | -4.096 to 4.09575 | -16384 = `SNA` | plausible |
+| `RCM_rollRateQF` | Restraint control module: roll rate QF | 46\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INIT`<br>1 = `VALID`<br>2 = `TEMP_INVALID`<br>3 = `FAULTED` | plausible |
+| `RCM_yawRateQF` | Restraint control module: yaw rate QF | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | plausible |
+| `RCM_pitchRateQF` | Restraint control module: pitch rate QF | 50\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INIT`<br>1 = `VALID`<br>2 = `TEMP_INVALID`<br>3 = `FAULTED` | plausible |
+| `RCM_inertial1Counter` | Restraint control module: inertial1 counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `RCM_inertial1Checksum` | Restraint control module: inertial1 checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

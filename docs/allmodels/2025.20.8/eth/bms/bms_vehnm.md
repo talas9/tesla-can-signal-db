@@ -29,11 +29,11 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_vehNm`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_nmGoingToSleep` | High-voltage battery management system: nm going to sleep | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_nmWakeUpBus` | High-voltage battery management system: nm wake up bus | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_hvsBusAsleep` | HVS bus reported as off | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `BMS_nmGoingToSleep` | High-voltage battery management system: nm going to sleep | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `BMS_nmWakeUpBus` | High-voltage battery management system: nm wake up bus | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `BMS_hvsBusAsleep` | HVS bus reported as off | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `BMS_nmKeepAwakeReason` | BMS' determined reason to keep CAN awake; raw 0 = signal not available (SNA) | 4\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `BMS_KEEPAWAKE_REASON_NONE_SNA`<br>1 = `BMS_KEEPAWAKE_REASON_CTRS_CLOSED`<br>2 = `BMS_KEEPAWAKE_REASON_CRITICAL_ALERT`<br>3 = `BMS_KEEPAWAKE_REASON_FC_CTR_CLEANING`<br>4 = `BMS_KEEPAWAKE_REASON_HVP_ACTIVE`<br>5 = `BMS_KEEPAWAKE_REASON_BMS_ACTIVE`<br>6 = `BMS_KEEPAWAKE_REASON_CP_ACTIVE`<br>7 = `BMS_KEEPAWAKE_REASON_PRECONDITIONING` | plausible |
-| `BMS_nmWakeUpReason` | BMS' determined reason to wake up CAN | 8\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `BMS_WAKEUP_REASON_NONE`<br>1 = `BMS_WAKEUP_REASON_CAN_VEH`<br>2 = `BMS_WAKEUP_REASON_CAN_HVS`<br>3 = `BMS_WAKEUP_REASON_WANTTOCHARGE`<br>4 = `BMS_WAKEUP_REASON_CRITICALALERT` | validated |
+| `BMS_nmWakeUpReason` | BMS' determined reason to wake up CAN | 8\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `BMS_WAKEUP_REASON_NONE`<br>1 = `BMS_WAKEUP_REASON_CAN_VEH`<br>2 = `BMS_WAKEUP_REASON_CAN_HVS`<br>3 = `BMS_WAKEUP_REASON_WANTTOCHARGE`<br>4 = `BMS_WAKEUP_REASON_CRITICALALERT` | plausible |
 
 ## Download the DBC file
 

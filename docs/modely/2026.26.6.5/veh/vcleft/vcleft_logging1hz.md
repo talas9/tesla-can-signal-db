@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VCLEFT_logging1Hz`: start bit and length, byte
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_logging1HzIndex` | selector | Left body controller: logging1 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `MISC`<br>1 = `HSD_CURRENTS_1`<br>2 = `HSD_CURRENTS_2`<br>3 = `BODY_CONTROLS_LOGGING`<br>4 = `CURRENT_LOGGING`<br>5 = `END` | plausible |
+| `VCLEFT_logging1HzIndex` | selector | Left body controller: logging1 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `MISC`<br>1 = `HSD_CURRENTS_1`<br>2 = `HSD_CURRENTS_2`<br>3 = `BODY_CONTROLS_LOGGING`<br>4 = `CURRENT_LOGGING`<br>5 = `END` | validated |
 | `VCLEFT_tohcPCBATemperature` | page 0 | Left body controller: tohc PCBA temperature; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `SNA` | validated |
 | `VCLEFT_phoneChargingFL` | page 0 | Charging status of front left wireless phone charger (if installed) | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_phoneChargingFR` | page 0 | Charging status of front right wireless phone charger (if installed) | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

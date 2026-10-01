@@ -29,13 +29,13 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_energyStatus`: start bit and len
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_energyStatusMultiplexer` | selector | High-voltage battery management system: energy status multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2` | plausible |
+| `BMS_energyStatusMultiplexer` | selector | High-voltage battery management system: energy status multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2` | validated |
 | `BMS_nominalFullPackEnergy` | page 0 | Full pack energy based on calculated pack energy from the full pack discharge energy walk; raw 65535 = signal not available (SNA) | 16\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |
 | `BMS_nominalEnergyRemaining` | page 0 | Nominal energy remaining based on calculated pack energy from the nominal discharge energy walk; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |
-| `BMS_idealEnergyRemaining` | page 0 | Ideal energy remaining based on calculated pack energy from ideal discharge energy walk; raw 65535 = signal not available (SNA) | 48\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |
-| `BMS_fullChargeComplete` | page 1 | Indicates BMS is fully charged | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_energyBuffer` | page 1 | Rough indication of confidence in the energy estimation; raw 65535 = signal not available (SNA) | 16\|16 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 655.34 | 65535 = `SNA` | validated |
-| `BMS_expectedEnergyRemaining` | page 1 | High-voltage battery management system: expected energy remaining; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |
+| `BMS_idealEnergyRemaining` | page 0 | Ideal energy remaining based on calculated pack energy from ideal discharge energy walk; raw 65535 = signal not available (SNA) | 48\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | plausible |
+| `BMS_fullChargeComplete` | page 1 | Indicates BMS is fully charged | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `BMS_energyBuffer` | page 1 | Rough indication of confidence in the energy estimation; raw 65535 = signal not available (SNA) | 16\|16 | little-endian | unsigned | 0.01 | 0 | kWh | 0 to 655.34 | 65535 = `SNA` | plausible |
+| `BMS_expectedEnergyRemaining` | page 1 | High-voltage battery management system: expected energy remaining; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | plausible |
 | `BMS_energyToChargeComplete` | page 1 | Calculated energy required to reach charge complete; raw 65535 = signal not available (SNA) | 48\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |
 | `BMS_energyRemainingDisplay` | page 2 | Rubber-banding energy remaining to be used for the UI facing miles remaining display; raw 65535 = signal not available (SNA) | 8\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |
 | `BMS_energyRemainingTDisplay` | page 2 | Rubber-banding energy remaining to be used for the UI facing miles remaining display; raw 65535 = signal not available (SNA) | 24\|16 | little-endian | unsigned | 0.02 | 0 | kWh | 0 to 1310.68 | 65535 = `SNA` | validated |

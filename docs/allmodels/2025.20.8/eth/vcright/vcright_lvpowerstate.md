@@ -29,22 +29,22 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_LVPowerState`: start bit and
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_ptcLVState` | Right body controller: ptc LV state | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_ocsLVState` | Right body controller: ocs LV state | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_premAudioLVState` | Right body controller: prem audio LV state | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_rearOilPumpLVState` | Right body controller: rear oil pump LV state | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_tunerLVState` | Right body controller: tuner LV state | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_hvcLVState` | Right body controller: hvc LV state | 10\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_rcmLVState` | Right body controller: rcm LV state | 12\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_lumbarLVState` | Right body controller: lumbar LV state | 14\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_cntctrPwrState` | Right body controller: cntctr pwr state | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_eFuseLockoutStatus` | Right body controller: e fuse lockout status | 18\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_LOCKOUT_STATUS_IDLE`<br>1 = `EFUSE_LOCKOUT_STATUS_PENDING`<br>2 = `EFUSE_LOCKOUT_STATUS_ACTIVE` | validated |
-| `VCRIGHT_swEnStatus` | Status of the internal switched power rail on the board | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_vehiclePowerStateDBG` | Right body controller: vehicle power state DBG | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VEHICLE_POWER_STATE_OFF`<br>1 = `VEHICLE_POWER_STATE_CONDITIONING`<br>2 = `VEHICLE_POWER_STATE_ACCESSORY`<br>3 = `VEHICLE_POWER_STATE_DRIVE` | validated |
-| `VCRIGHT_parkLVState` | Right body controller: park LV state | 23\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_icrLVState` | Right body controller: icr LV state | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_interiorCameraLedLVState` | Right body controller: interior camera led LV state | 27\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_diLVState` | Right body controller: di LV state | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
+| `VCRIGHT_ptcLVState` | Right body controller: ptc LV state | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_ocsLVState` | Right body controller: ocs LV state | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_premAudioLVState` | Right body controller: prem audio LV state | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_rearOilPumpLVState` | Right body controller: rear oil pump LV state | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_tunerLVState` | Right body controller: tuner LV state | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_hvcLVState` | Right body controller: hvc LV state | 10\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_rcmLVState` | Right body controller: rcm LV state | 12\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_lumbarLVState` | Right body controller: lumbar LV state | 14\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_cntctrPwrState` | Right body controller: cntctr pwr state | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_eFuseLockoutStatus` | Right body controller: e fuse lockout status | 18\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `EFUSE_LOCKOUT_STATUS_IDLE`<br>1 = `EFUSE_LOCKOUT_STATUS_PENDING`<br>2 = `EFUSE_LOCKOUT_STATUS_ACTIVE` | plausible |
+| `VCRIGHT_swEnStatus` | Status of the internal switched power rail on the board | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_vehiclePowerStateDBG` | Right body controller: vehicle power state DBG | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VEHICLE_POWER_STATE_OFF`<br>1 = `VEHICLE_POWER_STATE_CONDITIONING`<br>2 = `VEHICLE_POWER_STATE_ACCESSORY`<br>3 = `VEHICLE_POWER_STATE_DRIVE` | plausible |
+| `VCRIGHT_parkLVState` | Right body controller: park LV state | 23\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_icrLVState` | Right body controller: icr LV state | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_interiorCameraLedLVState` | Right body controller: interior camera led LV state | 27\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
+| `VCRIGHT_diLVState` | Right body controller: di LV state | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
 
 ## Download the DBC file
 

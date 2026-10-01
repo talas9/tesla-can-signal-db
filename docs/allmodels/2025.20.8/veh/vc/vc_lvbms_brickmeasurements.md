@@ -30,18 +30,18 @@ Tesla Model 3 / Model Y CAN bus signals in `VC_LVBMS_brickMeasurements`: start b
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VC_LVBMS_brickMeasurementsMultiplexer` | selector | VC ECU: LVBMS brick measurements multiplexer | 0\|6 | little-endian | unsigned | 1 | 0 |  | 0 to 63 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2` | plausible |
-| `VC_LVBMS_brickVoltage1` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 8\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | validated |
-| `VC_LVBMS_brickVoltage2` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 24\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | validated |
-| `VC_LVBMS_brickVoltage3` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 37\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | validated |
-| `VC_LVBMS_brickVoltage4` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 50\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | validated |
-| `VC_LVBMS_brickBalancingAh1` | page 1 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 8\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | validated |
-| `VC_LVBMS_brickBalancingAh2` | page 1 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 32\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | validated |
-| `VC_LVBMS_brickBalancingState1` | page 1 | VC ECU: LVBMS brick balancing state1 | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | validated |
-| `VC_LVBMS_brickBalancingState2` | page 1 | VC ECU: LVBMS brick balancing state2 | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | validated |
-| `VC_LVBMS_brickBalancingAh3` | page 2 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 8\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | validated |
-| `VC_LVBMS_brickBalancingAh4` | page 2 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 32\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | validated |
-| `VC_LVBMS_brickBalancingState3` | page 2 | VC ECU: LVBMS brick balancing state3 | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | validated |
-| `VC_LVBMS_brickBalancingState4` | page 2 | VC ECU: LVBMS brick balancing state4 | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | validated |
+| `VC_LVBMS_brickVoltage1` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 8\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | plausible |
+| `VC_LVBMS_brickVoltage2` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 24\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | plausible |
+| `VC_LVBMS_brickVoltage3` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 37\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | plausible |
+| `VC_LVBMS_brickVoltage4` | page 0 | Voltage of a low voltage battery brick; raw 8191 = signal not available (SNA) | 50\|13 | little-endian | unsigned | 0.001 | 0 | V | 0 to 6.535 | 8191 = `SNA` | plausible |
+| `VC_LVBMS_brickBalancingAh1` | page 1 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 8\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | plausible |
+| `VC_LVBMS_brickBalancingAh2` | page 1 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 32\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | plausible |
+| `VC_LVBMS_brickBalancingState1` | page 1 | VC ECU: LVBMS brick balancing state1 | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | plausible |
+| `VC_LVBMS_brickBalancingState2` | page 1 | VC ECU: LVBMS brick balancing state2 | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | plausible |
+| `VC_LVBMS_brickBalancingAh3` | page 2 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 8\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | plausible |
+| `VC_LVBMS_brickBalancingAh4` | page 2 | Ah count of a low voltage battery brick; raw 16777215 = signal not available (SNA) | 32\|24 | little-endian | unsigned | 0.001 | 0 | Ah | 0 to 16777.214 | 16777215 = `SNA` | plausible |
+| `VC_LVBMS_brickBalancingState3` | page 2 | VC ECU: LVBMS brick balancing state3 | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | plausible |
+| `VC_LVBMS_brickBalancingState4` | page 2 | VC ECU: LVBMS brick balancing state4 | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `LVBMS_BALANCING_STATE_INACTIVE`<br>1 = `LVBMS_BALANCING_STATE_ACTIVE` | plausible |
 
 ## Multiplexing
 

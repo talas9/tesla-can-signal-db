@@ -29,10 +29,10 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_driveLimits`: start bit and leng
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_minBusVoltage` | Calculated min bus voltage limit | 0\|16 | little-endian | unsigned | 0.02 | 0 | V | 0 to 1200 |  | validated |
-| `BMS_maxBusVoltage` | Calculated max bus voltage limit for the pack | 16\|16 | little-endian | unsigned | 0.02 | 0 | V | 0 to 1200 |  | validated |
-| `BMS_maxChargeCurrent` | Calculated max charge current limit for the pack | 32\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.2 |  | validated |
-| `BMS_maxDischargeCurrent` | Calculated max discharge current limit for the pack | 48\|14 | little-endian | unsigned | 0.15 | 0 | A | 0 to 2455 |  | validated |
+| `BMS_minBusVoltage` | Calculated min bus voltage limit | 0\|16 | little-endian | unsigned | 0.02 | 0 | V | 0 to 1200 |  | plausible |
+| `BMS_maxBusVoltage` | Calculated max bus voltage limit for the pack | 16\|16 | little-endian | unsigned | 0.02 | 0 | V | 0 to 1200 |  | plausible |
+| `BMS_maxChargeCurrent` | Calculated max charge current limit for the pack | 32\|14 | little-endian | unsigned | 0.1 | 0 | A | 0 to 1638.2 |  | plausible |
+| `BMS_maxDischargeCurrent` | Calculated max discharge current limit for the pack | 48\|14 | little-endian | unsigned | 0.15 | 0 | A | 0 to 2455 |  | plausible |
 
 ## Download the DBC file
 

@@ -37,7 +37,7 @@ Tesla Model Y CAN bus signals in `UI_trackModeSettings`: start bit and length, b
 | `UI_trackModeBrakeTemps` | Touchscreen user interface computer: track mode brake temps | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `OFF`<br>1 = `ON` | plausible |
 | `UI_trackDrivePowerAvailability` | Reports power deployment strategy for Track Mode. Ranges from endurance limit to maximum power. | 27\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `TRACK_MODE_POWER_ENDURANCE`<br>1 = `TRACK_MODE_POWER_MIDDLE`<br>2 = `TRACK_MODE_POWER_MAX` | validated |
 | `UI_stabilityModeRequest` | Touchscreen user interface computer: stability mode request | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `NORMAL_REQUEST`<br>1 = `REDUCED_REQUEST` | plausible |
-| `UI_trackModeSettingsCounter` | Touchscreen user interface computer: track mode settings counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `UI_trackModeSettingsCounter` | Touchscreen user interface computer: track mode settings counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `UI_trackModeSettingsChecksum` | Touchscreen user interface computer: track mode settings checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 
 ## Download the DBC file

@@ -50,7 +50,7 @@ Tesla Model 3 CAN bus signals in `UI_vehicleModes`: start bit and length, byte o
 | `UI_lightShowType` | Type of the light show to be run | 42\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `LIGHT_SHOW_TYPE_CUSTOM_USB`<br>1 = `LIGHT_SHOW_TYPE_STANDARD_CAROL_OF_THE_BELLS`<br>2 = `LIGHT_SHOW_TYPE_STANDARD_AULD_LANG_SYNE`<br>3 = `LIGHT_SHOW_TYPE_STANDARD_CNY23`<br>4 = `LIGHT_SHOW_TYPE_STANDARD_THE_ARRIVAL`<br>5 = `LIGHT_SHOW_TYPE_STANDARD_CNY24` | validated |
 | `UI_sohTestRequest` | Touchscreen user interface computer: soh test request | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_upkeepMode` | Reports UI Upkeep Mode state. | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `UI_UPKEEPMODE_DISABLED`<br>1 = `UI_UPKEEPMODE_ENABLED` | validated |
-| `UI_vehicleModesCounter` | Touchscreen user interface computer: vehicle modes counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `UI_vehicleModesCounter` | Touchscreen user interface computer: vehicle modes counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `UI_vehicleModesChecksum` | Touchscreen user interface computer: vehicle modes checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 
 ## Download the DBC file

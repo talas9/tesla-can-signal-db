@@ -29,15 +29,15 @@ Tesla Model Y CAN bus signals in `RCM_collision`: start bit and length, byte ord
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `RCM_collisionChecksum` | Restraint control module: collision checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RCM_collisionCounter` | Restraint control module: collision counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `RCM_collisionRear` | Indicates that a rear collision occurred; raw 3 = signal not available (SNA) | 12\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | validated |
-| `RCM_collisionRight` | Indicates that a right side collision occurred; raw 3 = signal not available (SNA) | 14\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | validated |
-| `RCM_collisionLeft` | Indicates that a left side collision occurred; raw 3 = signal not available (SNA) | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | validated |
-| `RCM_collisionFront` | Indicates that a frontal collision occurred; raw 3 = signal not available (SNA) | 18\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | validated |
-| `RCM_collisionRollover` | Indicates that a rollover has occurred; raw 3 = signal not available (SNA) | 20\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | validated |
-| `RCM_collisionPedPro` | Indicates that a pedestrian impact has occurred; raw 3 = signal not available (SNA) | 22\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | validated |
-| `RCM_collisionSeverity` | Collision severity | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `RCM_COLLISION_SEVERITY_PRETENSIONER`<br>1 = `RCM_COLLISION_SEVERITY_FIRST_STAGE`<br>2 = `RCM_COLLISION_SEVERITY_SECOND_STAGE`<br>3 = `RCM_COLLISION_SEVERITY_PEDPRO_EVENT` | validated |
+| `RCM_collisionChecksum` | Restraint control module: collision checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RCM_collisionCounter` | Restraint control module: collision counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `RCM_collisionRear` | Indicates that a rear collision occurred; raw 3 = signal not available (SNA) | 12\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | plausible |
+| `RCM_collisionRight` | Indicates that a right side collision occurred; raw 3 = signal not available (SNA) | 14\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | plausible |
+| `RCM_collisionLeft` | Indicates that a left side collision occurred; raw 3 = signal not available (SNA) | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | plausible |
+| `RCM_collisionFront` | Indicates that a frontal collision occurred; raw 3 = signal not available (SNA) | 18\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | plausible |
+| `RCM_collisionRollover` | Indicates that a rollover has occurred; raw 3 = signal not available (SNA) | 20\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | plausible |
+| `RCM_collisionPedPro` | Indicates that a pedestrian impact has occurred; raw 3 = signal not available (SNA) | 22\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RCM_COLLISION_EVENT_INACTIVE`<br>1 = `RCM_COLLISION_EVENT_ACTIVE`<br>3 = `RCM_COLLISION_EVENT_SNA` | plausible |
+| `RCM_collisionSeverity` | Collision severity | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `RCM_COLLISION_SEVERITY_PRETENSIONER`<br>1 = `RCM_COLLISION_SEVERITY_FIRST_STAGE`<br>2 = `RCM_COLLISION_SEVERITY_SECOND_STAGE`<br>3 = `RCM_COLLISION_SEVERITY_PEDPRO_EVENT` | plausible |
 
 ## Download the DBC file
 

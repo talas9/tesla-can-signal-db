@@ -30,7 +30,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_info`: start bit and length, byt
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `APP_infoIndex` | selector | Driver assistance computer (primary): info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `AP_BUILD_TYPE`<br>1 = `FW_GITHASH`<br>2 = `AP_GITHASH`<br>3 = `AP_BOOT_COUNT` | plausible |
-| `APP_buildType` | page 0 | Driver assistance computer (primary): build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `AP_BUILDTYPE_SIGNED`<br>1 = `AP_BUILDTYPE_LOCAL`<br>3 = `AP_BUILDTYPE_REPO` | validated |
+| `APP_buildType` | page 0 | Driver assistance computer (primary): build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `AP_BUILDTYPE_SIGNED`<br>1 = `AP_BUILDTYPE_LOCAL`<br>3 = `AP_BUILDTYPE_REPO` | plausible |
 
 ## Multiplexing
 

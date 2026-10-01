@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCLEFT_seatStatus`: start bit and length, byte
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_seatStatusIndex` | selector | Left body controller: seat status index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TRACK`<br>1 = `BACK`<br>2 = `LIFT`<br>3 = `TILT`<br>4 = `LUMBAR`<br>5 = `POSITION`<br>6 = `OFFSETS`<br>7 = `RELATIVE_POSITION` | plausible |
+| `VCLEFT_seatStatusIndex` | selector | Left body controller: seat status index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TRACK`<br>1 = `BACK`<br>2 = `LIFT`<br>3 = `TILT`<br>4 = `LUMBAR`<br>5 = `POSITION`<br>6 = `OFFSETS`<br>7 = `RELATIVE_POSITION` | validated |
 | `VC_AH_1RowLeftSeatMovementHealth` | page 0 | Left body controller: AH 1 row left seat movement health | 5\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `SEAT_MOVEMENT_HEALTH_UNKNOWN`<br>1 = `SEAT_MOVEMENT_HEALTHY`<br>2 = `SEAT_CANNOT_MOVE`<br>3 = `SEAT_IN_NON_USE_POSITION`<br>4 = `SEAT_CALIBRATION_REQUIRED` | validated |
 | `VCLEFT_frontSeatTrackPos` | page 0 | communicates raw encoder count for driver seat track position | 8\|16 | little-endian | signed | 1 | 0 |  | -32768 to 32767 |  | validated |
 | `VCLEFT_frontSeatTrackCurrent` | page 0 | Current drawn by front left seat track motor | 24\|12 | little-endian | signed | 0.01 | 0 | A | -20.48 to 20.47 |  | validated |
@@ -46,7 +46,7 @@ Tesla Model 3 CAN bus signals in `VCLEFT_seatStatus`: start bit and length, byte
 | `VCLEFT_frontSeatBackCalibrated` | page 1 | Left body controller: front seat back calibrated | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_frontSeatBackLog` | page 1 | Left body controller: front seat back log | 52\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_frontSeatBackBridgeSt` | page 1 | Bridge state | 53\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IO_BRIDGE_STATE_DISABLED`<br>1 = `IO_BRIDGE_STATE_ENABLED`<br>2 = `IO_BRIDGE_STATE_BRAKE`<br>3 = `IO_BRIDGE_STATE_COAST` | validated |
-| `VCLEFT_frontSeatBackPercentage` | page 1 | Communicates position of front seat backrest recline as percentage of its total range | 55\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | contradicted |
+| `VCLEFT_frontSeatBackPercentage` | page 1 | Communicates position of front seat backrest recline as percentage of its total range | 55\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
 | `VCLEFT_frontSeatLiftPos` | page 2 | communicates raw encoder count for driver seat lift position | 8\|16 | little-endian | signed | 1 | 0 |  | -32768 to 32767 |  | validated |
 | `VCLEFT_frontSeatLiftCurrent` | page 2 | Current drawn by front left seat lift motor | 24\|12 | little-endian | signed | 0.01 | 0 | A | -20.48 to 20.47 |  | validated |
 | `VCLEFT_frontSeatLiftDuty` | page 2 | Front left seat lift motor duty cycle | 36\|12 | little-endian | signed | 0.1 | 0 | % | -204.8 to 204.7 |  | validated |
@@ -54,7 +54,7 @@ Tesla Model 3 CAN bus signals in `VCLEFT_seatStatus`: start bit and length, byte
 | `VCLEFT_frontSeatLiftCalibrated` | page 2 | Left body controller: front seat lift calibrated | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_frontSeatLiftLog` | page 2 | Left body controller: front seat lift log | 52\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_frontSeatLiftBridgeSt` | page 2 | Bridge state | 53\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IO_BRIDGE_STATE_DISABLED`<br>1 = `IO_BRIDGE_STATE_ENABLED`<br>2 = `IO_BRIDGE_STATE_BRAKE`<br>3 = `IO_BRIDGE_STATE_COAST` | validated |
-| `VCLEFT_frontSeatLiftPercentage` | page 2 | Communicates position of front seat lift as percentage of its total range | 55\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | contradicted |
+| `VCLEFT_frontSeatLiftPercentage` | page 2 | Communicates position of front seat lift as percentage of its total range | 55\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
 | `VCLEFT_frontSeatTiltPos` | page 3 | communicates raw encoder count for driver seat tile position | 8\|16 | little-endian | signed | 1 | 0 |  | -32768 to 32767 |  | validated |
 | `VCLEFT_frontSeatTiltCurrent` | page 3 | Current drawn by front left seat tilt motor | 24\|12 | little-endian | signed | 0.01 | 0 | A | -20.48 to 20.47 |  | validated |
 | `VCLEFT_frontSeatTiltDuty` | page 3 | Front left seat tilt motor duty cycle | 36\|12 | little-endian | signed | 0.1 | 0 | % | -204.8 to 204.7 |  | validated |

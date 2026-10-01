@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVPowerState`: start bit and
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_LVPowerStateIndex` | selector | Front body controller: LV power state index | 0\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `Mux0`<br>1 = `Mux1` | plausible |
+| `VCFRONT_LVPowerStateIndex` | selector | Front body controller: LV power state index | 0\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `Mux0`<br>1 = `Mux1` | validated |
 | `VCFRONT_vehiclePowerState` |  | Front body controller: vehicle power state | 5\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VEHICLE_POWER_STATE_OFF`<br>1 = `VEHICLE_POWER_STATE_CONDITIONING`<br>2 = `VEHICLE_POWER_STATE_ACCESSORY`<br>3 = `VEHICLE_POWER_STATE_DRIVE` | validated |
 | `VCFRONT_inAccessoryPlus` |  | Front body controller: in accessory plus | 50\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCFRONT_LVShuttingDown` |  | Front body controller: LV shutting down | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

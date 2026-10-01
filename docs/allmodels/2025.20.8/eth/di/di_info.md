@@ -30,16 +30,16 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_info`: start bit and length, byte
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `DI_infoIndex` | selector | Drive inverter: info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_DEPRECATED_0`<br>1 = `INFO_DEPRECATED_1`<br>2 = `INFO_DEPRECATED_2`<br>3 = `INFO_DEPRECATED_3`<br>4 = `INFO_DEPRECATED_4`<br>5 = `INFO_DEPRECATED_5`<br>6 = `INFO_DEPRECATED_6`<br>7 = `INFO_DEPRECATED_7`<br>8 = `INFO_DEPRECATED_8`<br>9 = `INFO_DEPRECATED_9`<br>10 = `INFO_BUILD_HWID_COMPONENTID`<br>11 = `INFO_PCBAID_ASSYID_USAGEID`<br>13 = `INFO_APP_CRC`<br>14 = `INFO_BOOTLOADER_SVN`<br>15 = `INFO_BOOTLOADER_CRC`<br>16 = `INFO_SUBCOMPONENT`<br>17 = `INFO_APP_GITHASH`<br>18 = `INFO_BOOTLOADER_GITHASH`<br>19 = `INFO_VERSION_DEPRECATED`<br>20 = `INFO_UDS_PROTOCOL_BOOTCRC`<br>23 = `INFO_SUBCOMPONENT2`<br>31 = `INFO_SUBCOMPONENT_GITHASH`<br>32 = `INFO_SUBCOMPONENT2_GITHASH`<br>33 = `INFO_SUBCOMPONENT_HWID`<br>34 = `INFO_SUBCOMPONENT2_HWID`<br>40 = `TRACKING_DATA_1`<br>41 = `TRACKING_DATA_2`<br>42 = `TRACKING_DATA_3`<br>43 = `TRACKING_DATA_4`<br>44 = `TRACKING_DATA_5`<br>255 = `INFO_END` | plausible |
-| `DI_buildType` | page 10 | Drive inverter: build type | 8\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | validated |
-| `DI_buildConfigurationId` | page 10 | Drive inverter: build configuration id | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DI_hardwareId` | page 10 | Drive inverter: hardware id | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 252 | 252 = `CONFIGURABLE_HWID_PLACEHOLDER` | validated |
-| `DI_componentId` | page 10 | Drive inverter: component id | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DI_pcbaId` | page 11 | Drive inverter: pcba id | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_assemblyId` | page 11 | Drive inverter: assembly id | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_usageId` | page 11 | Drive inverter: usage id | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DI_subUsageId` | page 11 | Drive inverter: sub usage id | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `DI_applicationCrc` | page 13 | Drive inverter: application crc | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `DI_bootGitHash` | page 18 | Drive inverter: boot git hash | 8\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | validated |
+| `DI_buildType` | page 10 | Drive inverter: build type | 8\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | plausible |
+| `DI_buildConfigurationId` | page 10 | Drive inverter: build configuration id | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DI_hardwareId` | page 10 | Drive inverter: hardware id | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 252 | 252 = `CONFIGURABLE_HWID_PLACEHOLDER` | plausible |
+| `DI_componentId` | page 10 | Drive inverter: component id | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DI_pcbaId` | page 11 | Drive inverter: pcba id | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_assemblyId` | page 11 | Drive inverter: assembly id | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_usageId` | page 11 | Drive inverter: usage id | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DI_subUsageId` | page 11 | Drive inverter: sub usage id | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `DI_applicationCrc` | page 13 | Drive inverter: application crc | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `DI_bootGitHash` | page 18 | Drive inverter: boot git hash | 8\|56 | little-endian | unsigned | 1 | 0 |  | 0 to 7.20575940379e+16 |  | layout-only |
 
 ## Multiplexing
 

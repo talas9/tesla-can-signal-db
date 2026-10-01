@@ -29,8 +29,8 @@ Tesla Model 3 / Model Y CAN bus signals in `HVP_hvpFaults`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `HVP_packContactorHwFault` | High-voltage processor (pack contactor and isolation controller): pack contactor hw fault | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `HVP_fcContactorHwFault` | High-voltage processor (pack contactor and isolation controller): fc contactor hw fault | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `HVP_packContactorHwFault` | High-voltage processor (pack contactor and isolation controller): pack contactor hw fault | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `HVP_fcContactorHwFault` | High-voltage processor (pack contactor and isolation controller): fc contactor hw fault | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `HVP_hvilStatus` | High-voltage processor (pack contactor and isolation controller): hvil status | 30\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `UNKNOWN`<br>1 = `OK`<br>2 = `FAULT` | plausible |
 
 ## Download the DBC file

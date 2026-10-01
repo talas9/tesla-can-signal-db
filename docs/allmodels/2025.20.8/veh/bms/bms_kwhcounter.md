@@ -29,8 +29,8 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_kwhCounter`: start bit and lengt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_kwhDischargeTotal` | Total energy-lost kWh count during discharging | 0\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
-| `BMS_kwhChargeTotal` | Total energy-gained kWh count during charging | 32\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
+| `BMS_kwhDischargeTotal` | Total energy-lost kWh count during discharging | 0\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | plausible |
+| `BMS_kwhChargeTotal` | Total energy-gained kWh count during charging | 32\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | plausible |
 
 ## Download the DBC file
 

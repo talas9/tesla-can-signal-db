@@ -55,7 +55,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_chassisControl`: start bit and le
 | `UI_pedalMap_epas` | Touchscreen user interface computer: pedal map epas | 44\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CHILL`<br>1 = `SPORT`<br>2 = `PERFORMANCE` | plausible |
 | `UI_redLightStopSignEnable` | Touchscreen user interface computer: red light stop sign enable; raw 3 = signal not available (SNA) | 46\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `RLSSW_OFF`<br>1 = `RLSSW_ON`<br>3 = `SNA` | plausible |
 | `UI_selfParkTune` | Touchscreen user interface computer: self park tune; raw 15 = signal not available (SNA) | 48\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 14 | 15 = `SNA` | plausible |
-| `UI_chassisControlCounter` | Touchscreen user interface computer: chassis control counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `UI_chassisControlCounter` | Touchscreen user interface computer: chassis control counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `UI_chassisControlChecksum` | Touchscreen user interface computer: chassis control checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 
 ## Download the DBC file

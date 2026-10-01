@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VCRIGHT_seatStatus`: start bit and length, byt
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_seatStatusIndex` | selector | Right body controller: seat status index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TRACK`<br>1 = `BACK`<br>2 = `LIFT`<br>3 = `TILT`<br>4 = `LUMBAR`<br>5 = `POSITION`<br>6 = `OFFSETS`<br>7 = `RELATIVE_POSITION` | plausible |
+| `VCRIGHT_seatStatusIndex` | selector | Right body controller: seat status index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TRACK`<br>1 = `BACK`<br>2 = `LIFT`<br>3 = `TILT`<br>4 = `LUMBAR`<br>5 = `POSITION`<br>6 = `OFFSETS`<br>7 = `RELATIVE_POSITION` | validated |
 | `VC_AH_1RowRightSeatMovementHealth` | page 0 | Right body controller: AH 1 row right seat movement health | 5\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `SEAT_MOVEMENT_HEALTH_UNKNOWN`<br>1 = `SEAT_MOVEMENT_HEALTHY`<br>2 = `SEAT_CANNOT_MOVE`<br>3 = `SEAT_IN_NON_USE_POSITION`<br>4 = `SEAT_CALIBRATION_REQUIRED` | validated |
 | `VCRIGHT_frontSeatTrackPos` | page 0 | Motor encoder value representing front left seat track position | 8\|16 | little-endian | signed | 1 | 0 |  | -32768 to 32767 |  | validated |
 | `VCRIGHT_frontSeatTrackCurrent` | page 0 | Current drawn by front left seat track motor | 24\|12 | little-endian | signed | 0.01 | 0 | A | -20.48 to 20.47 |  | validated |
@@ -62,7 +62,7 @@ Tesla Model Y CAN bus signals in `VCRIGHT_seatStatus`: start bit and length, byt
 | `VCRIGHT_frontSeatTiltCalibrated` | page 3 | Right body controller: front seat tilt calibrated | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCRIGHT_frontSeatTiltLog` | page 3 | Right body controller: front seat tilt log | 52\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCRIGHT_frontSeatTiltBridgeSt` | page 3 | Bridge state | 53\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IO_BRIDGE_STATE_DISABLED`<br>1 = `IO_BRIDGE_STATE_ENABLED`<br>2 = `IO_BRIDGE_STATE_BRAKE`<br>3 = `IO_BRIDGE_STATE_COAST` | validated |
-| `VCRIGHT_frontSeatTiltPercentage` | page 3 | Communicates position of front seat tilt as percentage of its total range | 55\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | contradicted |
+| `VCRIGHT_frontSeatTiltPercentage` | page 3 | Communicates position of front seat tilt as percentage of its total range | 55\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
 | `VCRIGHT_lumbarAState` | page 4 | State of front right seat lumbar bladder A | 3\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `SEAT_STATE_STOPPED`<br>1 = `SEAT_STATE_MOVING_UP`<br>2 = `SEAT_STATE_MOVING_DOWN`<br>3 = `SEAT_STATE_RECALLING`<br>4 = `SEAT_STATE_CALIBRATING`<br>5 = `SEAT_STATE_UNDEFINED` | validated |
 | `VCRIGHT_lumbarBState` | page 4 | State of front right lumbar bladder B | 6\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `SEAT_STATE_STOPPED`<br>1 = `SEAT_STATE_MOVING_UP`<br>2 = `SEAT_STATE_MOVING_DOWN`<br>3 = `SEAT_STATE_RECALLING`<br>4 = `SEAT_STATE_CALIBRATING`<br>5 = `SEAT_STATE_UNDEFINED` | validated |
 | `VCRIGHT_lumbarAPressureHpa` | page 4 | Right body controller: lumbar a pressure hpa | 9\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | validated |

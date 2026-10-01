@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCSEC_alertMatrix`: start bit and length, byte
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCSEC_matrixIndex` | selector | Vehicle security controller: matrix index | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `AlertMatrix0`<br>1 = `AlertMatrix1`<br>2 = `AlertMatrix2`<br>3 = `AlertMatrix3`<br>4 = `AlertMatrix4`<br>5 = `AlertMatrix5`<br>6 = `AlertMatrix6`<br>7 = `AlertMatrix7`<br>8 = `AlertMatrix8` | plausible |
+| `VCSEC_matrixIndex` | selector | Vehicle security controller: matrix index | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `AlertMatrix0`<br>1 = `AlertMatrix1`<br>2 = `AlertMatrix2`<br>3 = `AlertMatrix3`<br>4 = `AlertMatrix4`<br>5 = `AlertMatrix5`<br>6 = `AlertMatrix6`<br>7 = `AlertMatrix7`<br>8 = `AlertMatrix8` | validated |
 | `VCSEC_a001_WatchdogReset` | page 0 | Vehicle security controller: a001 watchdog reset | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `VCSEC_a002_PowerLossReset` | page 0 | Vehicle security controller: a002 power loss reset | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `VCSEC_a003_SWAssertion` | page 0 | Vehicle security controller: a003 SW assertion | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
@@ -160,9 +160,9 @@ Tesla Model 3 CAN bus signals in `VCSEC_alertMatrix`: start bit and length, byte
 | `VCSEC_a198_BPillarNFCReaderMIA` | page 3 | Vehicle security controller: a198 b pillar NFC reader MIA | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `VCSEC_a199_CenterNFCReaderMIA` | page 3 | Vehicle security controller: a199 center NFC reader MIA | 22\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `VCSEC_a200_centerEndpointLostComm` | page 3 | Vehicle security controller: a200 center endpoint lost comm | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `VCSEC_a201_leftEndpointLostComm` | page 3 | Vehicle security controller: a201 left endpoint lost comm | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `VCSEC_a202_rightEndpointLostComm` | page 3 | Vehicle security controller: a202 right endpoint lost comm | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `VCSEC_a203_rearEndpointLostComm` | page 3 | Vehicle security controller: a203 rear endpoint lost comm | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `VCSEC_a201_leftEndpointLostComm` | page 3 | Vehicle security controller: a201 left endpoint lost comm | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCSEC_a202_rightEndpointLostComm` | page 3 | Vehicle security controller: a202 right endpoint lost comm | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCSEC_a203_rearEndpointLostComm` | page 3 | Vehicle security controller: a203 rear endpoint lost comm | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCSEC_a204_SharedSecretsWritten` | page 3 | Vehicle security controller: a204 shared secrets written | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `VCSEC_a205_MTUUpdateNotConfirmed` | page 3 | Vehicle security controller: a205 MTU update not confirmed | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `VCSEC_a206_BLELeftAssertFailure` | page 3 | Vehicle security controller: a206 BLE left assert failure | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

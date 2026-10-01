@@ -29,10 +29,10 @@ Tesla Model Y CAN bus signals in `PMR_mfgData`: start bit and length, byte order
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PMR_processorDieIdLot` | PMR ECU: processor die id lot | 0\|24 | little-endian | unsigned | 1 | 0 |  | 0 to 16777215 |  | validated |
-| `PMR_processorDieIdWafer` | PMR ECU: processor die id wafer | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `PMR_processorDieIdX` | PMR ECU: processor die id x | 32\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | validated |
-| `PMR_processorDieIdY` | PMR ECU: processor die id y | 44\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | validated |
+| `PMR_processorDieIdLot` | PMR ECU: processor die id lot | 0\|24 | little-endian | unsigned | 1 | 0 |  | 0 to 16777215 |  | layout-only |
+| `PMR_processorDieIdWafer` | PMR ECU: processor die id wafer | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMR_processorDieIdX` | PMR ECU: processor die id x | 32\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | layout-only |
+| `PMR_processorDieIdY` | PMR ECU: processor die id y | 44\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | layout-only |
 
 ## Download the DBC file
 

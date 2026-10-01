@@ -29,10 +29,10 @@ Tesla Model 3 CAN bus signals in `TAS_uiAdaptiveActivity1`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `TAS_bodyAccelFL` | Air suspension controller: body accel FL; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | validated |
-| `TAS_bodyAccelFR` | Air suspension controller: body accel FR; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | validated |
-| `TAS_bodyAccelRL` | Air suspension controller: body accel RL; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | validated |
-| `TAS_bodyAccelRR` | Air suspension controller: body accel RR; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | validated |
+| `TAS_bodyAccelFL` | Air suspension controller: body accel FL; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | plausible |
+| `TAS_bodyAccelFR` | Air suspension controller: body accel FR; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | plausible |
+| `TAS_bodyAccelRL` | Air suspension controller: body accel RL; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | plausible |
+| `TAS_bodyAccelRR` | Air suspension controller: body accel RR; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.05 | -5 | g | -5 to 5 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 

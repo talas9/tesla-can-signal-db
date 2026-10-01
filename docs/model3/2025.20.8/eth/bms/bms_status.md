@@ -29,11 +29,11 @@ Tesla Model 3 CAN bus signals in `BMS_status`: start bit and length, byte order,
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_hvacPowerRequest` | High-voltage battery management system: hvac power request | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_notEnoughPowerForDrive` | Flag indicating the min pack power is lower than specified threshold to support drive | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_notEnoughPowerForSupport` | Flag indicating if the system can support a new request for 12V battery support | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_preconditionAllowed` | High-voltage battery management system: precondition allowed | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_updateAllowed` | High-voltage battery management system: update allowed | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `BMS_hvacPowerRequest` | High-voltage battery management system: hvac power request | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `BMS_notEnoughPowerForDrive` | Flag indicating the min pack power is lower than specified threshold to support drive | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `BMS_notEnoughPowerForSupport` | Flag indicating if the system can support a new request for 12V battery support | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `BMS_preconditionAllowed` | High-voltage battery management system: precondition allowed | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `BMS_updateAllowed` | High-voltage battery management system: update allowed | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `BMS_activeHeatingWorthwhile` | Determination by the Battery Management System (BMS) if active heating is worthwhile | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `BMS_cpMiaOnHvs` | Flag indicating that BMS is no longer receiving comms from CP on HVS bus | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `BMS_pcsPwmEnabled` | Reports the state of the PCS_PWM_ENABLE input on the HVBMS, which is derived from the P1-12-DCDC-ENABLE input, which comes from VCFRONT | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
@@ -47,8 +47,8 @@ Tesla Model 3 CAN bus signals in `BMS_status`: start bit and length, byte order,
 | `BMS_okToShipByLand` | High-voltage battery management system: ok to ship by land | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `BMS_chgPowerAvailable` | BMS available charge power; raw 4095 = signal not available (SNA) | 40\|12 | little-endian | unsigned | 0.125 | 0 | kW | 0 to 511.75 | 4095 = `SNA` | plausible |
 | `BMS_chargeRetryCount` | Number of retries remaining to enable charge | 53\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | plausible |
-| `BMS_conditioningRequest` | BMS request to enable conditioning so it can attempt FEIM recovery | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_smStateRequest` | BMS high level state request; raw 9 = signal not available (SNA) | 57\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `BMS_STANDBY`<br>1 = `BMS_DRIVE`<br>2 = `BMS_SUPPORT`<br>3 = `BMS_CHARGE`<br>4 = `BMS_FEIM`<br>5 = `BMS_CLEAR_FAULT`<br>6 = `BMS_FAULT`<br>7 = `BMS_WELD`<br>8 = `BMS_TEST`<br>9 = `BMS_SNA`<br>10 = `BMS_DIAG` | validated |
+| `BMS_conditioningRequest` | BMS request to enable conditioning so it can attempt FEIM recovery | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `BMS_smStateRequest` | BMS high level state request; raw 9 = signal not available (SNA) | 57\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `BMS_STANDBY`<br>1 = `BMS_DRIVE`<br>2 = `BMS_SUPPORT`<br>3 = `BMS_CHARGE`<br>4 = `BMS_FEIM`<br>5 = `BMS_CLEAR_FAULT`<br>6 = `BMS_FAULT`<br>7 = `BMS_WELD`<br>8 = `BMS_TEST`<br>9 = `BMS_SNA`<br>10 = `BMS_DIAG` | plausible |
 | `BMS_hvState` | BMS high voltage state | 61\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `HV_DOWN`<br>1 = `HV_COMING_UP`<br>2 = `HV_GOING_DOWN`<br>3 = `HV_UP_FOR_DRIVE`<br>4 = `HV_UP_FOR_CHARGE`<br>5 = `HV_UP_FOR_DC_CHARGE`<br>6 = `HV_UP` | validated |
 
 ## Download the DBC file

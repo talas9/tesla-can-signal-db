@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `GTW_carState`: start bit and length, byte orde
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `GTW_factoryGated` | Gateway: factory gated | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `GTW_factoryGated` | Gateway: factory gated | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 
 ## Download the DBC file
 

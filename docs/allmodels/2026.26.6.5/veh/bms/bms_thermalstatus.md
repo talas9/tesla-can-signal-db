@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_thermalStatus`: start bit and le
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_thermalStatusMultiplexer` | selector | High-voltage battery management system: thermal status multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `Mux0`<br>1 = `Mux1` | plausible |
+| `BMS_thermalStatusMultiplexer` | selector | High-voltage battery management system: thermal status multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `Mux0`<br>1 = `Mux1` | validated |
 | `BMS_inletActiveCoolTargetT` | page 0 | Calculated active cooling temperature target at the inlet | 2\|9 | little-endian | unsigned | 0.25 | -25 | DegC | -25 to 100 |  | validated |
 | `BMS_inletPassiveTargetT` | page 0 | Calculated passive temperature target at the inlet | 11\|9 | little-endian | unsigned | 0.25 | -25 | DegC | -25 to 100 |  | validated |
 | `BMS_inletActiveHeatTargetT` | page 0 | Calculated active heating temperature target at the inlet | 20\|9 | little-endian | unsigned | 0.25 | -25 | DegC | -25 to 100 |  | validated |

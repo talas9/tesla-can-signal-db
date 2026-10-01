@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_hvacBlowerFeedback`: start bi
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_hvacBlowerFeedbackIndex` | selector | Left body controller: hvac blower feedback index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `HVAC_FEEDBACK_SIGNALS`<br>1 = `END` | plausible |
+| `VCLEFT_hvacBlowerFeedbackIndex` | selector | Left body controller: hvac blower feedback index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `HVAC_FEEDBACK_SIGNALS`<br>1 = `END` | validated |
 | `VCLEFT_hvacBlowerEnabled` | page 0 | Left body controller: hvac blower enabled | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_hvacBlowerOutputDuty` | page 0 | Left body controller: hvac blower output duty; raw 127 = signal not available (SNA) | 3\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 | 127 = `SNA` | validated |
 | `VCLEFT_hvacBlowerRPMTarget` | page 0 | Left body controller: hvac blower RPM target; raw 1023 = signal not available (SNA) | 10\|10 | little-endian | unsigned | 10 | 0 | rpm | 0 to 10000 | 1023 = `SNA` | validated |

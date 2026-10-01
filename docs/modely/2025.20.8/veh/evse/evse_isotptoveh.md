@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `EVSE_isoTpToVeh`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `EVSE_isoTpToVehData` | EVSE ECU: iso tp to veh data | 0\|64 | little-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | validated |
+| `EVSE_isoTpToVehData` | EVSE ECU: iso tp to veh data | 0\|64 | little-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | layout-only |
 
 ## Download the DBC file
 

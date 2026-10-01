@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CMPD_udsResponse`: start bit and len
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `CMPD_udsResponseData` | CMPD ECU: uds response data | 7\|64 | big-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | plausible |
+| `CMPD_udsResponseData` | CMPD ECU: uds response data | 7\|64 | big-endian | unsigned | 1 | 0 |  | 0 to 1.84467440737e+19 |  | layout-only |
 
 ## Download the DBC file
 

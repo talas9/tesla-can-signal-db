@@ -29,10 +29,10 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_vehicleNotifications`: start bit
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_thermalEventSuspected` | Indicates the Battery Management System (BMS) has detected conditions that reflect a possible battery thermal event | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `BMS_vehicleNotificationsCounter` | High-voltage battery management system: vehicle notifications counter | 1\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `BMS_isolationResistance` | Resistance between HV bus and chassis; raw 1023 = signal not available (SNA) | 6\|10 | little-endian | unsigned | 10 | 0 | kOhm | 0 to 10000 | 1023 = `SNA` | validated |
-| `BMS_vehicleNotificationsChecksum` | High-voltage battery management system: vehicle notifications checksum | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `BMS_thermalEventSuspected` | Indicates the Battery Management System (BMS) has detected conditions that reflect a possible battery thermal event | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `BMS_vehicleNotificationsCounter` | High-voltage battery management system: vehicle notifications counter | 1\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `BMS_isolationResistance` | Resistance between HV bus and chassis; raw 1023 = signal not available (SNA) | 6\|10 | little-endian | unsigned | 10 | 0 | kOhm | 0 to 10000 | 1023 = `SNA` | plausible |
+| `BMS_vehicleNotificationsChecksum` | High-voltage battery management system: vehicle notifications checksum | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

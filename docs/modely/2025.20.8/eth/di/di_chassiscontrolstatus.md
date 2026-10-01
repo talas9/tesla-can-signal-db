@@ -29,19 +29,19 @@ Tesla Model Y CAN bus signals in `DI_chassisControlStatus`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_vdcTelltaleFlash` | Request to flash telltale in UI when VDC is active | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
-| `DI_vdcTelltaleOn` | Request to turn telltale ON in UI when VDC is faulted | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
-| `DI_tcTelltaleFlash` | Request to flash telltale in UI when TC is active | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
-| `DI_tcTelltaleOn` | Request to turn telltale ON in UI when TC is faulted | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
-| `DI_tractionControlModeUI` | Drive inverter: traction control mode UI | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TC_NORMAL`<br>1 = `TC_SLIP_START`<br>2 = `TC_DEV_MODE_1`<br>3 = `TC_DEV_MODE_2`<br>4 = `TC_ROLLS_MODE`<br>5 = `TC_DYNO_MODE`<br>6 = `TC_OFFROAD_ASSIST`<br>7 = `TC_SLIPPERY_SURFACE` | validated |
-| `DI_ptcStateGlobalUI` | Drive inverter: ptc state global UI; raw 3 = signal not available (SNA) | 7\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `GLOBAL_PTC_STATE_FAULTED`<br>1 = `GLOBAL_PTC_STATE_BACKUP`<br>2 = `GLOBAL_PTC_STATE_ON`<br>3 = `GLOBAL_PTC_STATE_SNA` | validated |
-| `DI_btcStateUI` | Drive inverter: btc state UI | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `OFF`<br>1 = `ON` | validated |
-| `DI_vehicleHoldTelltaleOn` | Drive inverter: vehicle hold telltale on | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
-| `DI_opdFeedbackReset` | Drive inverter: opd feedback reset | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_opdFeedbackResetPositiveSpeeds` | Drive inverter: opd feedback reset positive speeds | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_slipperySurfaceOnUI` | Drive inverter: slippery surface on UI | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `SLIPPERY_SURFACE_OFF`<br>1 = `SLIPPERY_SURFACE_ON` | validated |
-| `DI_yellowBrakeTelltaleOn` | Request to turn yellow BRAKE telltale ON in UI | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
-| `DI_greenABSTelltaleOn` | Drive inverter: green ABS telltale on | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | validated |
+| `DI_vdcTelltaleFlash` | Request to flash telltale in UI when VDC is active | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
+| `DI_vdcTelltaleOn` | Request to turn telltale ON in UI when VDC is faulted | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
+| `DI_tcTelltaleFlash` | Request to flash telltale in UI when TC is active | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
+| `DI_tcTelltaleOn` | Request to turn telltale ON in UI when TC is faulted | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
+| `DI_tractionControlModeUI` | Drive inverter: traction control mode UI | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TC_NORMAL`<br>1 = `TC_SLIP_START`<br>2 = `TC_DEV_MODE_1`<br>3 = `TC_DEV_MODE_2`<br>4 = `TC_ROLLS_MODE`<br>5 = `TC_DYNO_MODE`<br>6 = `TC_OFFROAD_ASSIST`<br>7 = `TC_SLIPPERY_SURFACE` | plausible |
+| `DI_ptcStateGlobalUI` | Drive inverter: ptc state global UI; raw 3 = signal not available (SNA) | 7\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `GLOBAL_PTC_STATE_FAULTED`<br>1 = `GLOBAL_PTC_STATE_BACKUP`<br>2 = `GLOBAL_PTC_STATE_ON`<br>3 = `GLOBAL_PTC_STATE_SNA` | plausible |
+| `DI_btcStateUI` | Drive inverter: btc state UI | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `OFF`<br>1 = `ON` | plausible |
+| `DI_vehicleHoldTelltaleOn` | Drive inverter: vehicle hold telltale on | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
+| `DI_opdFeedbackReset` | Drive inverter: opd feedback reset | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_opdFeedbackResetPositiveSpeeds` | Drive inverter: opd feedback reset positive speeds | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_slipperySurfaceOnUI` | Drive inverter: slippery surface on UI | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `SLIPPERY_SURFACE_OFF`<br>1 = `SLIPPERY_SURFACE_ON` | plausible |
+| `DI_yellowBrakeTelltaleOn` | Request to turn yellow BRAKE telltale ON in UI | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
+| `DI_greenABSTelltaleOn` | Drive inverter: green ABS telltale on | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TELLTALE_OFF`<br>1 = `TELLTALE_ON` | plausible |
 
 ## Download the DBC file
 

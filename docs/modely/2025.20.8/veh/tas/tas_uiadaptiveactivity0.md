@@ -29,18 +29,18 @@ Tesla Model Y CAN bus signals in `TAS_uiAdaptiveActivity0`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `TAS_adaptiveActivityFL_C` | Air suspension controller: adaptive activity FL c; raw 31 = signal not available (SNA) | 0\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityFL_R` | Air suspension controller: adaptive activity FL r; raw 31 = signal not available (SNA) | 5\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityFR_C` | Air suspension controller: adaptive activity FR c; raw 31 = signal not available (SNA) | 10\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityFR_R` | Air suspension controller: adaptive activity FR r; raw 31 = signal not available (SNA) | 15\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityRL_C` | Air suspension controller: adaptive activity RL c; raw 31 = signal not available (SNA) | 20\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityRL_R` | Air suspension controller: adaptive activity RL r; raw 31 = signal not available (SNA) | 25\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityRR_C` | Air suspension controller: adaptive activity RR c; raw 31 = signal not available (SNA) | 30\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_adaptiveActivityRR_R` | Air suspension controller: adaptive activity RR r; raw 31 = signal not available (SNA) | 35\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | validated |
-| `TAS_uiHeightFL` | Air suspension controller: ui height FL; raw 63 = signal not available (SNA) | 40\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | validated |
-| `TAS_uiHeightFR` | Air suspension controller: ui height FR; raw 63 = signal not available (SNA) | 46\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | validated |
-| `TAS_uiHeightRL` | Air suspension controller: ui height RL; raw 63 = signal not available (SNA) | 52\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | validated |
-| `TAS_uiHeightRR` | Air suspension controller: ui height RR; raw 63 = signal not available (SNA) | 58\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | validated |
+| `TAS_adaptiveActivityFL_C` | Air suspension controller: adaptive activity FL c; raw 31 = signal not available (SNA) | 0\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityFL_R` | Air suspension controller: adaptive activity FL r; raw 31 = signal not available (SNA) | 5\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityFR_C` | Air suspension controller: adaptive activity FR c; raw 31 = signal not available (SNA) | 10\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityFR_R` | Air suspension controller: adaptive activity FR r; raw 31 = signal not available (SNA) | 15\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityRL_C` | Air suspension controller: adaptive activity RL c; raw 31 = signal not available (SNA) | 20\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityRL_R` | Air suspension controller: adaptive activity RL r; raw 31 = signal not available (SNA) | 25\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityRR_C` | Air suspension controller: adaptive activity RR c; raw 31 = signal not available (SNA) | 30\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_adaptiveActivityRR_R` | Air suspension controller: adaptive activity RR r; raw 31 = signal not available (SNA) | 35\|5 | little-endian | unsigned | 0.04 | 0 | - | 0 to 1 | 31 = `SNA` | plausible |
+| `TAS_uiHeightFL` | Air suspension controller: ui height FL; raw 63 = signal not available (SNA) | 40\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | plausible |
+| `TAS_uiHeightFR` | Air suspension controller: ui height FR; raw 63 = signal not available (SNA) | 46\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | plausible |
+| `TAS_uiHeightRL` | Air suspension controller: ui height RL; raw 63 = signal not available (SNA) | 52\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | plausible |
+| `TAS_uiHeightRR` | Air suspension controller: ui height RR; raw 63 = signal not available (SNA) | 58\|6 | little-endian | unsigned | 4 | -128 | mm | -128 to 120 | 63 = `SNA` | plausible |
 
 ## Download the DBC file
 

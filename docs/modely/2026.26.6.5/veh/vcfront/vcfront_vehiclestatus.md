@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VCFRONT_vehicleStatus`: start bit and length, 
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_vehicleStatusMuxIndex` | selector | Front body controller: vehicle status mux index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MUX0`<br>1 = `MUX1` | plausible |
+| `VCFRONT_vehicleStatusMuxIndex` | selector | Front body controller: vehicle status mux index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MUX0`<br>1 = `MUX1` | validated |
 | `VCFRONT_vehicleStatusCounter` |  | Front body controller: vehicle status counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `VCFRONT_vehicleStatusChecksum` |  | Front body controller: vehicle status checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `VCFRONT_preconditionRequest` | page 0 | Front body controller: precondition request | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

@@ -30,12 +30,12 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVBMS_info`: start bit and l
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VCFRONT_LVBMS_InfoIndex` | selector | Front body controller: LVBMS info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `PCBAID_ASSYID`<br>1 = `APP_USAGEID_CRC`<br>2 = `GITHASH`<br>3 = `BUILDTYPE`<br>4 = `SERIAL_NUMBER`<br>5 = `INVALID` | plausible |
-| `VCFRONT_LVBMS_PcbaId` | page 0 | Front body controller: LVBMS pcba id | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `VCFRONT_LVBMS_AssemblyId` | page 0 | Front body controller: LVBMS assembly id | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `VCFRONT_LVBMS_SubUsageId` | page 0 | LVBMS Sub Usage ID; raw 65535 = signal not available (SNA) | 40\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65534 | 65535 = `SNA` | validated |
-| `VCFRONT_LVBMS_UsageId` | page 1 | Front body controller: LVBMS usage id | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `VCFRONT_LVBMS_AppCRC` | page 1 | LVBMS application cyclic redundancy check | 24\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `VCFRONT_LVBMS_FWBuildType` | page 3 | Front body controller: LVBMS FW build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | validated |
+| `VCFRONT_LVBMS_PcbaId` | page 0 | Front body controller: LVBMS pcba id | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
+| `VCFRONT_LVBMS_AssemblyId` | page 0 | Front body controller: LVBMS assembly id | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
+| `VCFRONT_LVBMS_SubUsageId` | page 0 | LVBMS Sub Usage ID; raw 65535 = signal not available (SNA) | 40\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65534 | 65535 = `SNA` | plausible |
+| `VCFRONT_LVBMS_UsageId` | page 1 | Front body controller: LVBMS usage id | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
+| `VCFRONT_LVBMS_AppCRC` | page 1 | LVBMS application cyclic redundancy check | 24\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
+| `VCFRONT_LVBMS_FWBuildType` | page 3 | Front body controller: LVBMS FW build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | plausible |
 
 ## Multiplexing
 

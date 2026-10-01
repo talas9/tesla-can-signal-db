@@ -29,11 +29,11 @@ Tesla Model 3 / Model Y CAN bus signals in `PCS_chgLineStatus`: start bit and le
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PCS_chgInputVoltage` | RMS value of AC charger's sensed input voltage | 0\|14 | little-endian | unsigned | 0.033 | 0 | V | 0 to 540.639 |  | validated |
-| `PCS_chgLineCurrent` | AC charger's sensed input line current | 14\|9 | little-endian | unsigned | 0.1 | 0 | A | 0 to 50 |  | validated |
-| `PCS_chgAcVoltagePresent` | Indicates whether AC voltage is present on the PCS input | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `PCS_chgInputPower` | Total AC charger input power | 24\|8 | little-endian | unsigned | 0.1 | 0 | kW | 0 to 20 |  | validated |
-| `PCS_chgAcCurrentLimit` | Maximum AC current that can be pulled from a single conductor | 32\|10 | little-endian | unsigned | 0.1 | 0 | A | 0 to 102.3 |  | validated |
+| `PCS_chgInputVoltage` | RMS value of AC charger's sensed input voltage | 0\|14 | little-endian | unsigned | 0.033 | 0 | V | 0 to 540.639 |  | plausible |
+| `PCS_chgLineCurrent` | AC charger's sensed input line current | 14\|9 | little-endian | unsigned | 0.1 | 0 | A | 0 to 50 |  | plausible |
+| `PCS_chgAcVoltagePresent` | Indicates whether AC voltage is present on the PCS input | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `PCS_chgInputPower` | Total AC charger input power | 24\|8 | little-endian | unsigned | 0.1 | 0 | kW | 0 to 20 |  | plausible |
+| `PCS_chgAcCurrentLimit` | Maximum AC current that can be pulled from a single conductor | 32\|10 | little-endian | unsigned | 0.1 | 0 | A | 0 to 102.3 |  | plausible |
 
 ## Download the DBC file
 

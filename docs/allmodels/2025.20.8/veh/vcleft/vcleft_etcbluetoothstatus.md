@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_etcBluetoothStatus`: start bi
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_etcBluetoothStatus` | Left body controller: etc bluetooth status | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `ETC_BLUETOOTH_STATE_INACTIVE`<br>1 = `ETC_BLUETOOTH_STATE_OFF`<br>2 = `ETC_BLUETOOTH_STATE_ON`<br>3 = `ETC_BLUETOOTH_STATE_RESERVED` | validated |
+| `VCLEFT_etcBluetoothStatus` | Left body controller: etc bluetooth status | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `ETC_BLUETOOTH_STATE_INACTIVE`<br>1 = `ETC_BLUETOOTH_STATE_OFF`<br>2 = `ETC_BLUETOOTH_STATE_ON`<br>3 = `ETC_BLUETOOTH_STATE_RESERVED` | plausible |
 
 ## Download the DBC file
 

@@ -29,9 +29,9 @@ Tesla Model 3 CAN bus signals in `UI_tripPlanning2`: start bit and length, byte 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_maxSpeedToReachDestination` | maximum speed to reach destination without significant risk of running out of energy; raw 65535 = signal not available (SNA) | 0\|16 | little-endian | unsigned | 0.01 | 0 | m/s | 0 to 655.34 | 65533 = `MAXVAL`<br>65534 = `UNREACHABLE`<br>65535 = `SNA` | validated |
+| `UI_maxSpeedToReachDestination` | maximum speed to reach destination without significant risk of running out of energy; raw 65535 = signal not available (SNA) | 0\|16 | little-endian | unsigned | 0.01 | 0 | m/s | 0 to 655.34 | 65533 = `MAXVAL`<br>65534 = `UNREACHABLE`<br>65535 = `SNA` | plausible |
 | `UI_remainingWeightedRMSSpeed` | Touchscreen user interface computer: remaining weighted RMS speed; raw 65535 = signal not available (SNA) | 16\|16 | little-endian | unsigned | 0.01 | 0 | m/s | 0 to 655.34 | 65534 = `MAXVAL`<br>65535 = `SNA` | plausible |
-| `UI_timeToDestination` | remaining time to reach destination; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 1 | 0 | s | 0 to 65534 | 65534 = `MAXVAL`<br>65535 = `SNA` | validated |
+| `UI_timeToDestination` | remaining time to reach destination; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 1 | 0 | s | 0 to 65534 | 65534 = `MAXVAL`<br>65535 = `SNA` | plausible |
 
 ## Download the DBC file
 

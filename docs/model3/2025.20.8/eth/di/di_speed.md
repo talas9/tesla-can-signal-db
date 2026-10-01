@@ -29,17 +29,17 @@ Tesla Model 3 CAN bus signals in `DI_speed`: start bit and length, byte order, s
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_speedChecksum` | Drive inverter: speed checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_speedCounter` | Drive inverter: speed counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
+| `DI_speedChecksum` | Drive inverter: speed checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_speedCounter` | Drive inverter: speed counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
 | `DI_opdVehicleModelSpeedRef` | Drive inverter: opd vehicle model speed ref | 12\|12 | little-endian | unsigned | 0.08 | -40 | kph | -40 to 287.6 |  | plausible |
-| `DI_uiSpeed` | Drive inverter: ui speed; raw 511 = signal not available (SNA) | 24\|9 | little-endian | unsigned | 1 | 0 |  | 0 to 510 | 511 = `DI_UI_SPEED_SNA` | validated |
-| `DI_uiSpeedUnits` | Drive inverter: ui speed units | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `DI_SPEED_MPH`<br>1 = `DI_SPEED_KPH` | validated |
-| `DI_accelPedalPressed` | TRUE when the calibrated accel pedal position &gt; 0.0 | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_sideslipEstimate` | Drive inverter: sideslip estimate | 35\|8 | little-endian | signed | 0.0025 | 0 | rad | -0.32 to 0.3175 |  | validated |
-| `DI_vehicleSpeed` | Reports vehicle speed; raw 8191 = signal not available (SNA) | 43\|13 | little-endian | unsigned | 0.08 | -40 | kph | -40 to 480 | 8191 = `SNA` | validated |
-| `DI_velocityEstimatorState` | Drive inverter: velocity estimator state | 56\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `VE_STATE_NOT_INITIALIZED`<br>1 = `VE_STATE_WHEELS_NORMAL`<br>2 = `VE_STATE_WHEELS_REDUCED`<br>3 = `VE_STATE_BACKUP_WHEELS_A`<br>4 = `VE_STATE_BACKUP_WHEELS_B`<br>5 = `VE_STATE_BACKUP_MOTOR` | validated |
-| `DI_autoEnableHazards` | Drive inverter: auto enable hazards | 59\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_longControlCommandActive` | Drive inverter: long control command active | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `DI_uiSpeed` | Drive inverter: ui speed; raw 511 = signal not available (SNA) | 24\|9 | little-endian | unsigned | 1 | 0 |  | 0 to 510 | 511 = `DI_UI_SPEED_SNA` | plausible |
+| `DI_uiSpeedUnits` | Drive inverter: ui speed units | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `DI_SPEED_MPH`<br>1 = `DI_SPEED_KPH` | plausible |
+| `DI_accelPedalPressed` | TRUE when the calibrated accel pedal position &gt; 0.0 | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `DI_sideslipEstimate` | Drive inverter: sideslip estimate | 35\|8 | little-endian | signed | 0.0025 | 0 | rad | -0.32 to 0.3175 |  | plausible |
+| `DI_vehicleSpeed` | Reports vehicle speed; raw 8191 = signal not available (SNA) | 43\|13 | little-endian | unsigned | 0.08 | -40 | kph | -40 to 480 | 8191 = `SNA` | plausible |
+| `DI_velocityEstimatorState` | Drive inverter: velocity estimator state | 56\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `VE_STATE_NOT_INITIALIZED`<br>1 = `VE_STATE_WHEELS_NORMAL`<br>2 = `VE_STATE_WHEELS_REDUCED`<br>3 = `VE_STATE_BACKUP_WHEELS_A`<br>4 = `VE_STATE_BACKUP_WHEELS_B`<br>5 = `VE_STATE_BACKUP_MOTOR` | plausible |
+| `DI_autoEnableHazards` | Drive inverter: auto enable hazards | 59\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_longControlCommandActive` | Drive inverter: long control command active | 60\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 
 ## Download the DBC file
 

@@ -39,7 +39,7 @@ Tesla Model Y CAN bus signals in `SCCM_info`: start bit and length, byte order, 
 | `SCCM_infoUsageId` | page 11 | Steering column control module: info usage id | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
 | `SCCM_infoSubUsageId` | page 11 | Steering column control module: info sub usage id | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
 | `SCCM_infoPlatformType` | page 13 | Steering column control module: info platform type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `SCCM_infoAppCrc` | page 13 | Steering column control module: info app crc | 39\|32 | big-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `SCCM_infoAppCrc` | page 13 | Steering column control module: info app crc | 39\|32 | big-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
 | `SCCM_infoBootSvnRev` | page 14 | Steering column control module: info boot svn rev | 8\|24 | little-endian | unsigned | 1 | 0 |  | 0 to 16777215 |  | validated |
 | `SCCM_infoBootSvnUrlHash` | page 14 | Steering column control module: info boot svn url hash | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
 | `SCCM_infoSubcomponent1Version` | page 16 | Steering column control module: info subcomponent1 version | 16\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |

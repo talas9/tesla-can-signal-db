@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `BMS_packTemperatureMeasurements`: start bit an
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_packTemperatureMultiplexer` | selector | High-voltage battery management system: pack temperature multiplexer | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2`<br>3 = `Mux3`<br>4 = `Mux4`<br>5 = `Mux5` | plausible |
+| `BMS_packTemperatureMultiplexer` | selector | High-voltage battery management system: pack temperature multiplexer | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `Mux0`<br>1 = `Mux1`<br>2 = `Mux2`<br>3 = `Mux3`<br>4 = `Mux4`<br>5 = `Mux5` | validated |
 | `BMS_packTemperatureCounter` |  | High-voltage battery management system: pack temperature counter | 14\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | validated |
 | `BMS_packTemperatureStatus1` | page 0 | High-voltage battery management system: pack temperature status1 | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SENSOR_MISSING`<br>1 = `SENSOR_BAD`<br>2 = `SENSOR_NOMINAL`<br>3 = `SENSOR_BYPASSED` | validated |
 | `BMS_packTemperatureStatus2` | page 0 | High-voltage battery management system: pack temperature status2 | 10\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SENSOR_MISSING`<br>1 = `SENSOR_BAD`<br>2 = `SENSOR_NOMINAL`<br>3 = `SENSOR_BYPASSED` | validated |

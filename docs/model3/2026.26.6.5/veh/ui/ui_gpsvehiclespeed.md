@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `UI_gpsVehicleSpeed`: start bit and length, byt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_gpsHDOP` | Touchscreen user interface computer: gps HDOP | 0\|8 | little-endian | unsigned | 0.1 | 0 | 1 | 0 to 25.5 |  | plausible |
+| `UI_gpsHDOP` | Touchscreen user interface computer: gps HDOP | 0\|8 | little-endian | unsigned | 0.1 | 0 | 1 | 0 to 25.5 |  | validated |
 | `UI_gpsVehicleHeading` | Touchscreen user interface computer: gps vehicle heading | 8\|16 | little-endian | unsigned | 0.0078125 | 0 | deg | 0 to 511.9921875 |  | plausible |
 | `UI_gpsVehicleSpeed` | Touchscreen user interface computer: gps vehicle speed | 24\|16 | little-endian | unsigned | 0.00390625 | 0 | km/hr | 0 to 255.99609375 |  | plausible |
 | `UI_userSpeedOffset` | Touchscreen user interface computer: user speed offset | 40\|6 | little-endian | unsigned | 1 | -30 | kph/mph | -30 to 33 |  | plausible |

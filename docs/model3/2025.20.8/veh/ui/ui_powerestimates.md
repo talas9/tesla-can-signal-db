@@ -29,10 +29,10 @@ Tesla Model 3 CAN bus signals in `UI_powerEstimates`: start bit and length, byte
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_idlePowerConsumption` | Power consumption when idle | 0\|16 | little-endian | unsigned | 0.001 | 0 | kW | 0 to 50 |  | validated |
-| `UI_chargeTimeUntilTerminationPct` | Charge time minutes until reached uSoe target; raw 2047 = signal not available (SNA) | 16\|11 | little-endian | unsigned | 1 | 0 | min | 0 to 2046 | 1440 = `MAXVAL`<br>2047 = `SNA` | validated |
+| `UI_idlePowerConsumption` | Power consumption when idle | 0\|16 | little-endian | unsigned | 0.001 | 0 | kW | 0 to 50 |  | plausible |
+| `UI_chargeTimeUntilTerminationPct` | Charge time minutes until reached uSoe target; raw 2047 = signal not available (SNA) | 16\|11 | little-endian | unsigned | 1 | 0 | min | 0 to 2046 | 1440 = `MAXVAL`<br>2047 = `SNA` | plausible |
 | `UI_isTripChargingActive` | Touchscreen user interface computer: is trip charging active | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `UI_chargeTimeUntilReadyToDepart` | Charge time minutes until enough energy to depart for rest of trip; raw 2047 = signal not available (SNA) | 32\|11 | little-endian | unsigned | 1 | 0 | min | 0 to 2046 | 1440 = `MAXVAL`<br>2047 = `SNA` | validated |
+| `UI_chargeTimeUntilReadyToDepart` | Charge time minutes until enough energy to depart for rest of trip; raw 2047 = signal not available (SNA) | 32\|11 | little-endian | unsigned | 1 | 0 | min | 0 to 2046 | 1440 = `MAXVAL`<br>2047 = `SNA` | plausible |
 
 ## Download the DBC file
 

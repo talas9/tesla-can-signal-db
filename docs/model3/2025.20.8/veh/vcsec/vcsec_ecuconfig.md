@@ -29,9 +29,9 @@ Tesla Model 3 CAN bus signals in `VCSEC_ecuConfig`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCSEC_ECUConfigCRC32` | Vehicle security controller: ECU config CRC32 | 0\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `VCSEC_autoWriteConfig` | Vehicle security controller: auto write config | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCSEC_requestForConfig` | Vehicle security controller: request for config | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCSEC_ECUConfigCRC32` | Vehicle security controller: ECU config CRC32 | 0\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `VCSEC_autoWriteConfig` | Vehicle security controller: auto write config | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `VCSEC_requestForConfig` | Vehicle security controller: request for config | 33\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 
 ## Download the DBC file
 

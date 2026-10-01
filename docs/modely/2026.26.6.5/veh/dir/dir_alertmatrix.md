@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `DIR_alertMatrix`: start bit and length, byte o
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `DIR_matrixIndex` | selector | Rear drive inverter: matrix index | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `AlertMatrix0`<br>1 = `AlertMatrix1`<br>2 = `AlertMatrix2`<br>3 = `AlertMatrix3`<br>4 = `AlertMatrix4` | plausible |
+| `DIR_matrixIndex` | selector | Rear drive inverter: matrix index | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `AlertMatrix0`<br>1 = `AlertMatrix1`<br>2 = `AlertMatrix2`<br>3 = `AlertMatrix3`<br>4 = `AlertMatrix4` | validated |
 | `DIR_a001_hwPhaseAgateDrive` | page 0 | Rear drive inverter: a001 hw phase agate drive | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_a002_hwPhaseBgateDrive` | page 0 | Rear drive inverter: a002 hw phase bgate drive | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_a003_hwPhaseCgateDrive` | page 0 | Rear drive inverter: a003 hw phase cgate drive | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
@@ -171,7 +171,7 @@ Tesla Model Y CAN bus signals in `DIR_alertMatrix`: start bit and length, byte o
 | `DIR_a151_shockTorqueLimiter` | page 2 | Rear drive inverter: a151 shock torque limiter | 34\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_a152_linError` | page 2 | Rear drive inverter: a152 lin error | 35\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_a153_oilPumpDiagnostics` | page 2 | Rear drive inverter: a153 oil pump diagnostics | 36\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `DIR_a154_resolver` | page 2 | Rear drive inverter: a154 resolver | 37\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DIR_a154_resolver` | page 2 | Rear drive inverter: a154 resolver | 37\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `DIR_a155_vcfrontMIA` | page 2 | Rear drive inverter: a155 vcfront MIA | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_a156_currentObserver` | page 2 | Rear drive inverter: a156 current observer | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_a157_rcmMIA` | page 2 | Rear drive inverter: a157 rcm MIA | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

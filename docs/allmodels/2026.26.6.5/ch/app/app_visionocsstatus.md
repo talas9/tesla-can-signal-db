@@ -29,13 +29,13 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_visionOcsStatus`: start bit and 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_visionOcsStatusChecksum` | Driver assistance computer (primary): vision ocs status checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `APP_visionOcsStateRaw` | Reports classification state raw signal for front passenger from interior camera. | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `EMPTY`<br>2 = `CHILD`<br>3 = `ADULT` | validated |
-| `APP_visionOcsEmptyProbRaw` | Driver assistance computer (primary): vision ocs empty prob raw; raw 255 = signal not available (SNA) | 10\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | validated |
-| `APP_visionOcsChildProbRaw` | Driver assistance computer (primary): vision ocs child prob raw; raw 255 = signal not available (SNA) | 18\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | validated |
-| `APP_visionOcsAdultProbRaw` | Driver assistance computer (primary): vision ocs adult prob raw; raw 255 = signal not available (SNA) | 26\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | validated |
-| `APP_visionOcsFrontPasClsVisionStateFlt` | Reports classification state of front passenger seat after Bayesian filter. | 34\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `EMPTY`<br>2 = `CHILD`<br>3 = `ADULT` | validated |
-| `APP_visionOcsStatusCounter` | Driver assistance computer (primary): vision ocs status counter | 36\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
+| `APP_visionOcsStatusChecksum` | Driver assistance computer (primary): vision ocs status checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `APP_visionOcsStateRaw` | Reports classification state raw signal for front passenger from interior camera. | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `EMPTY`<br>2 = `CHILD`<br>3 = `ADULT` | plausible |
+| `APP_visionOcsEmptyProbRaw` | Driver assistance computer (primary): vision ocs empty prob raw; raw 255 = signal not available (SNA) | 10\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | plausible |
+| `APP_visionOcsChildProbRaw` | Driver assistance computer (primary): vision ocs child prob raw; raw 255 = signal not available (SNA) | 18\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | plausible |
+| `APP_visionOcsAdultProbRaw` | Driver assistance computer (primary): vision ocs adult prob raw; raw 255 = signal not available (SNA) | 26\|8 | little-endian | unsigned | 0.004 | 0 | points | 0 to 1.016 | 255 = `SNA` | plausible |
+| `APP_visionOcsFrontPasClsVisionStateFlt` | Reports classification state of front passenger seat after Bayesian filter. | 34\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `EMPTY`<br>2 = `CHILD`<br>3 = `ADULT` | plausible |
+| `APP_visionOcsStatusCounter` | Driver assistance computer (primary): vision ocs status counter | 36\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
 
 ## Download the DBC file
 

@@ -32,7 +32,7 @@ Tesla Model 3 CAN bus signals in `GTW_autopilotOverride`: start bit and length, 
 | `GTW_autopilotOverrideState` | Signals whether an autopilot trial or subscription is active | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `BASE`<br>1 = `SUBSCRIPTION`<br>2 = `TRIAL`<br>3 = `TIMEBOUND_SUBSCRIPTION` | plausible |
 | `GTW_autopilotConfig` | Current level of permanent Autopilot firmware | 2\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `HIGHWAY`<br>2 = `ENHANCED`<br>3 = `SELF_DRIVING`<br>4 = `BASIC` | plausible |
 | `GTW_autopilotOverrideConfig` | Current level of trial or subscription Autopilot firmware | 5\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `HIGHWAY`<br>2 = `ENHANCED`<br>3 = `SELF_DRIVING`<br>4 = `BASIC` | plausible |
-| `GTW_autopilotOverrideExpireTime` | Expiration time for the currently active autopilot trial or subscription | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+| `GTW_autopilotOverrideExpireTime` | Expiration time for the currently active autopilot trial or subscription | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
 
 ## Download the DBC file
 

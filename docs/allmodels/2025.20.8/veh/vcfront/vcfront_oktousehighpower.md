@@ -29,15 +29,15 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_okToUseHighPower`: start bit
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_vcleftOkToUseHighPower` | Front body controller: vcleft ok to use high power | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_vcrightOkToUseHighPower` | Front body controller: vcright ok to use high power | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_das1OkToUseHighPower` | Front body controller: das1 ok to use high power | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_das2OkToUseHighPower` | Front body controller: das2 ok to use high power | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_MCULogicOkToUseHighPower` | Front body controller: MCU logic ok to use high power | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_MCUAudioOkToUseHighPower` | Front body controller: MCU audio ok to use high power | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_cpOkToUseHighPower` | Front body controller: cp ok to use high power | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_premAudioOkToUseHiPower` | Front body controller: prem audio ok to use hi power | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCFRONT_tasOkToUseHighPower` | Front body controller: tas ok to use high power | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCFRONT_vcleftOkToUseHighPower` | Front body controller: vcleft ok to use high power | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_vcrightOkToUseHighPower` | Front body controller: vcright ok to use high power | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_das1OkToUseHighPower` | Front body controller: das1 ok to use high power | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_das2OkToUseHighPower` | Front body controller: das2 ok to use high power | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_MCULogicOkToUseHighPower` | Front body controller: MCU logic ok to use high power | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_MCUAudioOkToUseHighPower` | Front body controller: MCU audio ok to use high power | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_cpOkToUseHighPower` | Front body controller: cp ok to use high power | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_premAudioOkToUseHiPower` | Front body controller: prem audio ok to use hi power | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCFRONT_tasOkToUseHighPower` | Front body controller: tas ok to use high power | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file
 

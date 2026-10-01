@@ -29,9 +29,9 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_recallStatus`: start bit and length, b
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_systemRecallStatus` | Recall state of superset of body controls ECUs; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
-| `VCRIGHT_seatRecallStatus` | Right body controller: seat recall status; raw 0 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
-| `VCRIGHT_mirrorRecallStatus` | Recall status for the right side view mirror; raw 0 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | validated |
+| `VCRIGHT_systemRecallStatus` | Recall state of superset of body controls ECUs; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
+| `VCRIGHT_seatRecallStatus` | Right body controller: seat recall status; raw 0 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
+| `VCRIGHT_mirrorRecallStatus` | Recall status for the right side view mirror; raw 0 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `RECALL_SNA`<br>1 = `RECALL_IN_PROGRESS`<br>2 = `RECALL_COMPLETE`<br>3 = `RECALL_INTERRUPTED` | plausible |
 
 ## Download the DBC file
 

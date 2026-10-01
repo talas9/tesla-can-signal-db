@@ -30,11 +30,11 @@ Tesla Model Y CAN bus signals in `UI_systemMonitor`: start bit and length, byte 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `UI_systemMonitorIndex` | selector | Touchscreen user interface computer: system monitor index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
-| `UI_SystemMemUsage` | page 0 | Monitors system memory usage | 8\|16 | little-endian | unsigned | 1 | 0 | MB | 0 to 65535 |  | validated |
-| `UI_QtCarMemUsage` | page 0 | Monitors memory usage of the primary User Interface application | 24\|16 | little-endian | unsigned | 1 | 0 | MB | 0 to 65535 |  | validated |
-| `UI_QtCarCPUUsage` | page 0 | Monitors CPU usage of the primary User Interface application | 40\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | validated |
+| `UI_SystemMemUsage` | page 0 | Monitors system memory usage | 8\|16 | little-endian | unsigned | 1 | 0 | MB | 0 to 65535 |  | plausible |
+| `UI_QtCarMemUsage` | page 0 | Monitors memory usage of the primary User Interface application | 24\|16 | little-endian | unsigned | 1 | 0 | MB | 0 to 65535 |  | plausible |
+| `UI_QtCarCPUUsage` | page 0 | Monitors CPU usage of the primary User Interface application | 40\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | plausible |
 | `UI_emmcStatus` | page 0 | Touchscreen user interface computer: emmc status | 47\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `UI_SystemCPUUsage` | page 0 | Monitors system CPU usage | 48\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | validated |
+| `UI_SystemCPUUsage` | page 0 | Monitors system CPU usage | 48\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | plausible |
 | `UI_HomeHealth` | page 0 | Touchscreen user interface computer: home health | 55\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_VarHealth` | page 0 | Touchscreen user interface computer: var health | 56\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_LogHealth` | page 0 | Touchscreen user interface computer: log health | 57\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

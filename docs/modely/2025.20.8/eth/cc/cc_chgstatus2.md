@@ -30,7 +30,7 @@ Tesla Model Y CAN bus signals in `CC_chgStatus2`: start bit and length, byte ord
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `CC_chgStatus2Index` | selector | Charge cable controller: chg status2 index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `Mux0` | plausible |
-| `CC_buttonState` | page 0 | Charge cable controller: button state | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `CC_BUTTON_RELEASED`<br>1 = `CC_BUTTON_PRESSED` | validated |
+| `CC_buttonState` | page 0 | Charge cable controller: button state | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `CC_BUTTON_RELEASED`<br>1 = `CC_BUTTON_PRESSED` | plausible |
 
 ## Multiplexing
 

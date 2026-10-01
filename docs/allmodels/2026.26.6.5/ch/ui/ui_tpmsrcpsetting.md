@@ -30,8 +30,8 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_tpmsRCPsetting`: start bit and le
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `UI_sendCalibrateTireRequest` | Reports UI requests for PMDI to start the tire pressure calibration routine. | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_setRCPFront` | Touchscreen user interface computer: set RCP front | 16\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.375 |  | plausible |
-| `UI_setRCPRear` | Touchscreen user interface computer: set RCP rear | 24\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.375 |  | plausible |
+| `UI_setRCPFront` | Touchscreen user interface computer: set RCP front | 16\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.375 |  | validated |
+| `UI_setRCPRear` | Touchscreen user interface computer: set RCP rear | 24\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.375 |  | validated |
 
 ## Download the DBC file
 

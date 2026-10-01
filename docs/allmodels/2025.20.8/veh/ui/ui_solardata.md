@@ -31,11 +31,11 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_solarData`: start bit and length,
 |---|---|---|---|---|---|---|---|---|---|---|
 | `UI_solarAzimuthAngle` | Touchscreen user interface computer: solar azimuth angle; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 1 | 0 | degrees | -32768 to 32767 | -32768 = `SNA` | plausible |
 | `UI_solarAzimuthAngleCarRef` | Touchscreen user interface computer: solar azimuth angle car ref; raw 255 = signal not available (SNA) | 16\|9 | little-endian | signed | 1 | 0 | degrees | -256 to 254 | 255 = `SNA` | plausible |
-| `UI_isSunUp` | is sun up; raw 3 = signal not available (SNA) | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `SUN_DOWN`<br>1 = `SUN_UP`<br>3 = `SUN_SNA` | validated |
-| `UI_solarElevationAngle` | Solar Elevation Angle; raw 127 = signal not available (SNA) | 32\|8 | little-endian | signed | 1 | 0 | degrees | -128 to 126 | 127 = `SNA` | validated |
+| `UI_isSunUp` | is sun up; raw 3 = signal not available (SNA) | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `SUN_DOWN`<br>1 = `SUN_UP`<br>3 = `SUN_SNA` | plausible |
+| `UI_solarElevationAngle` | Solar Elevation Angle; raw 127 = signal not available (SNA) | 32\|8 | little-endian | signed | 1 | 0 | degrees | -128 to 126 | 127 = `SNA` | plausible |
 | `UI_screenPCBTemperature` | Temperature of display PCB | 40\|8 | little-endian | signed | 0.5 | 40 | degC | -20 to 100 |  | validated |
-| `UI_minsToSunset` | time until to sunset | 48\|8 | little-endian | unsigned | 10 | 0 | min | 0 to 2550 |  | validated |
-| `UI_minsToSunrise` | time until to sunrise | 56\|8 | little-endian | unsigned | 10 | 0 | min | 0 to 2550 |  | validated |
+| `UI_minsToSunset` | time until to sunset | 48\|8 | little-endian | unsigned | 10 | 0 | min | 0 to 2550 |  | plausible |
+| `UI_minsToSunrise` | time until to sunrise | 56\|8 | little-endian | unsigned | 10 | 0 | min | 0 to 2550 |  | plausible |
 
 ## Download the DBC file
 

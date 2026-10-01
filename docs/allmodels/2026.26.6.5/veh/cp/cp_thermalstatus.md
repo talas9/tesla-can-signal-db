@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_thermalStatus`: start bit and len
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `CP_thermalStatusSelect` | selector | Charge port controller: thermal status select | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
+| `CP_thermalStatusSelect` | selector | Charge port controller: thermal status select | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | validated |
 | `CP_dcPinTemperature` |  | Sensed temperature of the charge port DC pins. Position from firmware; message assignment inferred. | 1\|8 | little-endian | unsigned | 0.803922 | -55 | C | -55 to 149.99 |  | plausible |
 | `CP_acPinTemperature` |  | Position from firmware; message assignment inferred. | 17\|8 | little-endian | unsigned | 0.803922 | -55 | C | -55 to 149.99 |  | plausible |
 | `CP_pinTemperature4` | page 1 | Sensed temperature of the charge port inlet pins | 32\|8 | little-endian | unsigned | 0.8039216 | -55 | C | -55 to 149.99 |  | validated |

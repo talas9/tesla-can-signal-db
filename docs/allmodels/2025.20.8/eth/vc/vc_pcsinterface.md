@@ -30,17 +30,17 @@ Tesla Model 3 / Model Y CAN bus signals in `VC_pcsInterface`: start bit and leng
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VC_pcsInterfaceMuxIndex` | selector | VC ECU: pcs interface mux index | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
-| `VC_pcsInterfaceCounter` |  | VC ECU: pcs interface counter | 50\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
+| `VC_pcsInterfaceCounter` |  | VC ECU: pcs interface counter | 50\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
 | `VC_pcsInterfaceChecksum` |  | VC ECU: pcs interface checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `VC_pcsLVVoltageTarget` | page 0 | VC ECU: pcs LV voltage target | 0\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | validated |
-| `VC_pcsLVMinVoltageLimit` | page 0 | VC ECU: pcs LV min voltage limit | 13\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | validated |
-| `VC_pcsLVMaxVoltageLimit` | page 0 | VC ECU: pcs LV max voltage limit | 27\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | validated |
-| `VC_goodForPCSPowerCycle` | page 0 | VC ECU: good for PCS power cycle | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VC_LVBatteryCannotSupportVehicle` | page 0 | VC ECU: LV battery cannot support vehicle | 47\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VC_pcsResistanceFiltered` | page 1 | VC ECU: pcs resistance filtered; raw 65535 = signal not available (SNA) | 0\|16 | little-endian | unsigned | 0.01 | 0 | mOhm | 0 to 655.34 | 65535 = `SNA` | validated |
-| `VC_pcsLVMaxDchrgCurrentLimit` | page 1 | VC ECU: pcs LV max dchrg current limit | 16\|12 | little-endian | unsigned | 0.1 | 0 | A | 0 to 400 |  | validated |
+| `VC_pcsLVMinVoltageLimit` | page 0 | VC ECU: pcs LV min voltage limit | 13\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | plausible |
+| `VC_pcsLVMaxVoltageLimit` | page 0 | VC ECU: pcs LV max voltage limit | 27\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | plausible |
+| `VC_goodForPCSPowerCycle` | page 0 | VC ECU: good for PCS power cycle | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VC_LVBatteryCannotSupportVehicle` | page 0 | VC ECU: LV battery cannot support vehicle | 47\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VC_pcsResistanceFiltered` | page 1 | VC ECU: pcs resistance filtered; raw 65535 = signal not available (SNA) | 0\|16 | little-endian | unsigned | 0.01 | 0 | mOhm | 0 to 655.34 | 65535 = `SNA` | plausible |
+| `VC_pcsLVMaxDchrgCurrentLimit` | page 1 | VC ECU: pcs LV max dchrg current limit | 16\|12 | little-endian | unsigned | 0.1 | 0 | A | 0 to 400 |  | plausible |
 | `VC_defaultPcsLVVoltageTarget` | page 1 | VC ECU: default pcs LV voltage target | 28\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 65.535 |  | validated |
-| `VC_lvHwProtSelfTestActive` | page 1 | Reports whether Low Voltage (LV) Hardware (HW) protection self-tests are running or about to run due to a retry. | 41\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VC_lvHwProtSelfTestActive` | page 1 | Reports whether Low Voltage (LV) Hardware (HW) protection self-tests are running or about to run due to a retry. | 41\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Multiplexing
 

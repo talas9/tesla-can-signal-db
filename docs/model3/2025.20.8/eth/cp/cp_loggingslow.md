@@ -30,19 +30,19 @@ Tesla Model 3 CAN bus signals in `CP_loggingSlow`: start bit and length, byte or
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `CP_loggingSlowSelect` | selector | Charge port controller: logging slow select | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `0`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5`<br>6 = `6`<br>7 = `7` | plausible |
-| `CP_UHF_chipState` | page 3 | Charge port controller: UHF chip state | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | validated |
-| `CP_UHF_rssi` | page 3 | Signal strength of received UHF signal | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `CP_UHF_rxOverflow` | page 3 | Charge port controller: UHF rx overflow | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `CP_UHF_rxNumBytes` | page 3 | Charge port controller: UHF rx num bytes | 17\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `CP_UHF_selfTestRssi` | page 3 | Signal strength of received self-test UHF signal | 25\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `CP_latchI` | page 3 | Charge port controller: latch i | 33\|12 | little-endian | unsigned | 0.0025 | 0 | A | 0 to 10.2375 |  | validated |
-| `CP_inlet1HarnessIdState` | page 3 | State of the CP's inlet 1 harness pedigree; raw 0 = signal not available (SNA) | 45\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `HARNESS_PEDIGREE_UNKNOWN_SNA`<br>1 = `HARNESS_PEDIGREE_INVALID`<br>2 = `HARNESS_PEDIGREE_VALID` | validated |
-| `CP_inlet1HarnessIdValue` | page 3 | Pedigree of the CP's inlet 1 harness | 47\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | validated |
-| `CP_inlet2HarnessIdState` | page 3 | State of the CP's inlet 2 harness pedigree; raw 0 = signal not available (SNA) | 50\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `HARNESS_PEDIGREE_UNKNOWN_SNA`<br>1 = `HARNESS_PEDIGREE_INVALID`<br>2 = `HARNESS_PEDIGREE_VALID` | validated |
-| `CP_inlet2HarnessIdValue` | page 3 | Pedigree of the CP's inlet 2 harness | 52\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | validated |
-| `CP_inletHeaterState` | page 3 | Reports the present state of the inlet heater. | 55\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INLET_HEATER_DISABLED`<br>1 = `INLET_HEATER_ENABLED_HIGHTEMP`<br>2 = `INLET_HEATER_ENABLED_LOWTEMP`<br>3 = `INLET_HEATER_FAULTED` | validated |
-| `CP_inletHeaterDuty` | page 3 | Inlet heater PWM duty cycle | 57\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
-| `CP_nvm_dataValid` | page 5 | Charge port controller: nvm data valid | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `CP_UHF_chipState` | page 3 | Charge port controller: UHF chip state | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | layout-only |
+| `CP_UHF_rssi` | page 3 | Signal strength of received UHF signal | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `CP_UHF_rxOverflow` | page 3 | Charge port controller: UHF rx overflow | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `CP_UHF_rxNumBytes` | page 3 | Charge port controller: UHF rx num bytes | 17\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `CP_UHF_selfTestRssi` | page 3 | Signal strength of received self-test UHF signal | 25\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `CP_latchI` | page 3 | Charge port controller: latch i | 33\|12 | little-endian | unsigned | 0.0025 | 0 | A | 0 to 10.2375 |  | plausible |
+| `CP_inlet1HarnessIdState` | page 3 | State of the CP's inlet 1 harness pedigree; raw 0 = signal not available (SNA) | 45\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `HARNESS_PEDIGREE_UNKNOWN_SNA`<br>1 = `HARNESS_PEDIGREE_INVALID`<br>2 = `HARNESS_PEDIGREE_VALID` | plausible |
+| `CP_inlet1HarnessIdValue` | page 3 | Pedigree of the CP's inlet 1 harness | 47\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | plausible |
+| `CP_inlet2HarnessIdState` | page 3 | State of the CP's inlet 2 harness pedigree; raw 0 = signal not available (SNA) | 50\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `HARNESS_PEDIGREE_UNKNOWN_SNA`<br>1 = `HARNESS_PEDIGREE_INVALID`<br>2 = `HARNESS_PEDIGREE_VALID` | plausible |
+| `CP_inlet2HarnessIdValue` | page 3 | Pedigree of the CP's inlet 2 harness | 52\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | plausible |
+| `CP_inletHeaterState` | page 3 | Reports the present state of the inlet heater. | 55\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `INLET_HEATER_DISABLED`<br>1 = `INLET_HEATER_ENABLED_HIGHTEMP`<br>2 = `INLET_HEATER_ENABLED_LOWTEMP`<br>3 = `INLET_HEATER_FAULTED` | plausible |
+| `CP_inletHeaterDuty` | page 3 | Inlet heater PWM duty cycle | 57\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
+| `CP_nvm_dataValid` | page 5 | Charge port controller: nvm data valid | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `CP_nvm_doorOpenCycles` | page 5 | Charge port controller: nvm door open cycles | 8\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
 | `CP_nvm_doorCloseCycles` | page 5 | Charge port controller: nvm door close cycles | 24\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
 | `CP_nvm_doorOpen` | page 5 | Charge port controller: nvm door open | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

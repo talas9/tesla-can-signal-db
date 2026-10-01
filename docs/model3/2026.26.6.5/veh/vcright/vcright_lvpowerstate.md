@@ -44,7 +44,7 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_LVPowerState`: start bit and length, b
 | `VCRIGHT_vehiclePowerStateDBG` | Right body controller: vehicle power state DBG | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VEHICLE_POWER_STATE_OFF`<br>1 = `VEHICLE_POWER_STATE_CONDITIONING`<br>2 = `VEHICLE_POWER_STATE_ACCESSORY`<br>3 = `VEHICLE_POWER_STATE_DRIVE` | validated |
 | `VCRIGHT_parkLVState` | Right body controller: park LV state | 23\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
 | `VCRIGHT_icrLVState` | Right body controller: icr LV state | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
-| `VCRIGHT_interiorCameraLedLVState` | Right body controller: interior camera led LV state | 27\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
+| `VCRIGHT_interiorCameraLedLVState` | Right body controller: interior camera led LV state | 27\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | plausible |
 | `VCRIGHT_diLVState` | Right body controller: di LV state | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LV_OFF`<br>1 = `LV_ON`<br>2 = `LV_GOING_DOWN`<br>3 = `LV_FAULT` | validated |
 | `VCRIGHT_accDevicesDetected` | At least one accessory device detected on accessory ports | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 

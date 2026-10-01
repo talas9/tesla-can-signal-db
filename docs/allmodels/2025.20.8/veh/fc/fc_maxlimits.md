@@ -29,8 +29,8 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_maxLimits`: start bit and length,
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `FC_maxPowerLimit` | Max power charger can deliver; raw 8191 = signal not available (SNA) | 0\|13 | little-endian | unsigned | 0.06225586 | 0 | kW | 0 to 509.8754934 | 8191 = `SNA` | validated |
-| `FC_maxCurrentLimit` | Max current charger can deliver; raw 8191 = signal not available (SNA) | 16\|13 | little-endian | unsigned | 0.07324219 | 0 | A | 0 to 599.8535361 | 8191 = `SNA` | validated |
+| `FC_maxPowerLimit` | Max power charger can deliver; raw 8191 = signal not available (SNA) | 0\|13 | little-endian | unsigned | 0.06225586 | 0 | kW | 0 to 509.8754934 | 8191 = `SNA` | plausible |
+| `FC_maxCurrentLimit` | Max current charger can deliver; raw 8191 = signal not available (SNA) | 16\|13 | little-endian | unsigned | 0.07324219 | 0 | A | 0 to 599.8535361 | 8191 = `SNA` | plausible |
 
 ## Download the DBC file
 

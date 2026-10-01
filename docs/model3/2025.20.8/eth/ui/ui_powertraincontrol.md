@@ -30,14 +30,14 @@ Tesla Model 3 CAN bus signals in `UI_powertrainControl`: start bit and length, b
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `UI_systemPowerLimit` | Touchscreen user interface computer: system power limit; raw 31 = signal not available (SNA) | 0\|5 | little-endian | unsigned | 20 | 20 | kW | 20 to 620 | 31 = `SNA` | plausible |
-| `UI_pedalMap` | Switch between various platform specific pedal maps | 5\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CHILL`<br>1 = `SPORT`<br>2 = `PERFORMANCE` | validated |
-| `UI_enableRegenBackfill` | Indicates if regenerative braking backfill has been enabled by the driver | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_pedalMap` | Switch between various platform specific pedal maps | 5\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CHILL`<br>1 = `SPORT`<br>2 = `PERFORMANCE` | plausible |
+| `UI_enableRegenBackfill` | Indicates if regenerative braking backfill has been enabled by the driver | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_systemTorqueLimit` | Touchscreen user interface computer: system torque limit; raw 63 = signal not available (SNA) | 8\|6 | little-endian | unsigned | 150 | 1000 | Nm | 1000 to 10300 | 63 = `SNA` | plausible |
 | `UI_closureConfirmed` | Touchscreen user interface computer: closure confirmed | 14\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NONE`<br>1 = `FRUNK`<br>2 = `PROX`<br>3 = `TRUNK` | plausible |
-| `UI_regenTorqueMax` | Maximum regen torque from UI - reports different value when in track mode | 16\|5 | little-endian | unsigned | 5 | 0 | % | 0 to 100 |  | validated |
-| `UI_limitMode` | Commands limited drive inverter capabilities based on special vehicle modes | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LIMIT_NORMAL`<br>1 = `LIMIT_VALET`<br>2 = `LIMIT_FACTORY`<br>3 = `LIMIT_SERVICE` | validated |
+| `UI_regenTorqueMax` | Maximum regen torque from UI - reports different value when in track mode | 16\|5 | little-endian | unsigned | 5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_limitMode` | Commands limited drive inverter capabilities based on special vehicle modes | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `LIMIT_NORMAL`<br>1 = `LIMIT_VALET`<br>2 = `LIMIT_FACTORY`<br>3 = `LIMIT_SERVICE` | plausible |
 | `UI_factoryCustomerDrivingModeRequest` | Touchscreen user interface computer: factory customer driving mode request | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_motorOnMode` | Request from the UI to selectively enable or disable a drive unit (dev-only) | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MOTORONMODE_NORMAL`<br>1 = `MOTORONMODE_FRONT_ONLY`<br>2 = `MOTORONMODE_REAR_ONLY` | validated |
+| `UI_motorOnMode` | Request from the UI to selectively enable or disable a drive unit (dev-only) | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MOTORONMODE_NORMAL`<br>1 = `MOTORONMODE_FRONT_ONLY`<br>2 = `MOTORONMODE_REAR_ONLY` | plausible |
 | `UI_wasteMode` | Touchscreen user interface computer: waste mode | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `NONE`<br>1 = `PARTIAL`<br>2 = `FULL`<br>3 = `BURN_IN` | plausible |
 | `UI_wasteModeRegenLimit` | Touchscreen user interface computer: waste mode regen limit | 28\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MAX`<br>1 = `30A`<br>2 = `10A`<br>3 = `0A` | plausible |
 | `UI_stoppingMode` | Low-speed behavior when no pedal is pressed (stopping/rolling/creeping) | 30\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `STANDARD`<br>1 = `CREEP`<br>2 = `HOLD` | plausible |

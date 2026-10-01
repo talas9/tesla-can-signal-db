@@ -29,10 +29,10 @@ Tesla Model 3 / Model Y CAN bus signals in `PMF_mfgData`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PMF_processorDieIdLot` | PMF ECU: processor die id lot | 0\|24 | little-endian | unsigned | 1 | 0 |  | 0 to 16777215 |  | validated |
-| `PMF_processorDieIdWafer` | PMF ECU: processor die id wafer | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `PMF_processorDieIdX` | PMF ECU: processor die id x | 32\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | validated |
-| `PMF_processorDieIdY` | PMF ECU: processor die id y | 44\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | validated |
+| `PMF_processorDieIdLot` | PMF ECU: processor die id lot | 0\|24 | little-endian | unsigned | 1 | 0 |  | 0 to 16777215 |  | layout-only |
+| `PMF_processorDieIdWafer` | PMF ECU: processor die id wafer | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `PMF_processorDieIdX` | PMF ECU: processor die id x | 32\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | layout-only |
+| `PMF_processorDieIdY` | PMF ECU: processor die id y | 44\|12 | little-endian | unsigned | 1 | 0 |  | 0 to 4095 |  | layout-only |
 
 ## Download the DBC file
 

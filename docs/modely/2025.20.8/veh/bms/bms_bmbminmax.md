@@ -29,12 +29,12 @@ Tesla Model Y CAN bus signals in `BMS_bmbMinMax`: start bit and length, byte ord
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_bmbMinMaxMultiplexer` | selector | High-voltage battery management system: bmb min max multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `THERM_MUX0`<br>1 = `VOLT_MUX1`<br>2 = `END` | plausible |
-| `BMS_thermistorNumTMin` | page 0 | BMB module number with minimum temperature. | 2\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `BMS_thermistorNumTMax` | page 0 | BMB module number with maximum temperature. | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `BMS_thermistorTMax` | page 0 | Max temperature of all valid filtered thermistors | 16\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | validated |
-| `BMS_thermistorTMin` | page 0 | Min temperature of all valid filtered thermistors | 24\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | validated |
-| `BMS_thermistorTAvg` | page 0 | Average temperature of all valid filtered thermistors | 32\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | validated |
+| `BMS_bmbMinMaxMultiplexer` | selector | High-voltage battery management system: bmb min max multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `THERM_MUX0`<br>1 = `VOLT_MUX1`<br>2 = `END` | validated |
+| `BMS_thermistorNumTMin` | page 0 | BMB module number with minimum temperature. | 2\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `BMS_thermistorNumTMax` | page 0 | BMB module number with maximum temperature. | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `BMS_thermistorTMax` | page 0 | Max temperature of all valid filtered thermistors | 16\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | plausible |
+| `BMS_thermistorTMin` | page 0 | Min temperature of all valid filtered thermistors | 24\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | plausible |
+| `BMS_thermistorTAvg` | page 0 | Average temperature of all valid filtered thermistors | 32\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | plausible |
 | `BMS_brickVoltageMax` | page 1 | Brick voltage maximum. | 2\|12 | little-endian | unsigned | 0.002 | 0 | V | 0 to 5 |  | validated |
 | `BMS_brickVoltageMin` | page 1 | Brick voltage minimum. | 16\|12 | little-endian | unsigned | 0.002 | 0 | V | 0 to 5 |  | validated |
 | `BMS_brickNumVoltageMax` | page 1 | Brick number with maximum voltage (1 indexed) | 32\|7 | little-endian | unsigned | 1 | 1 |  | 1 to 128 |  | validated |

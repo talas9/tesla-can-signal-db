@@ -29,12 +29,12 @@ Tesla Model 3 CAN bus signals in `DIF_power`: start bit and length, byte order, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DIF_elecPower` | Front drive inverter: elec power; raw 1024 = signal not available (SNA) | 0\|11 | little-endian | signed | 0.5 | 0 | kW | -500 to 500 | -1024 = `SNA` | validated |
-| `DIF_heatPowerOptimal` | Front drive inverter: heat power optimal | 16\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DIF_heatPowerMax` | Drive Inverter maximum heat power capability | 24\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DIF_heatPowerActual` | Drive Inverter heat power | 32\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DIF_excessHeatCommand` | Drive Inverter excess heat command | 40\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DIF_drivePowerMax` | Front drive inverter: drive power max; raw 511 = signal not available (SNA) | 48\|9 | little-endian | unsigned | 1 | 0 | kW | 0 to 400 | 511 = `SNA` | validated |
+| `DIF_elecPower` | Front drive inverter: elec power; raw 1024 = signal not available (SNA) | 0\|11 | little-endian | signed | 0.5 | 0 | kW | -500 to 500 | -1024 = `SNA` | plausible |
+| `DIF_heatPowerOptimal` | Front drive inverter: heat power optimal | 16\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DIF_heatPowerMax` | Drive Inverter maximum heat power capability | 24\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DIF_heatPowerActual` | Drive Inverter heat power | 32\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DIF_excessHeatCommand` | Drive Inverter excess heat command | 40\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DIF_drivePowerMax` | Front drive inverter: drive power max; raw 511 = signal not available (SNA) | 48\|9 | little-endian | unsigned | 1 | 0 | kW | 0 to 400 | 511 = `SNA` | plausible |
 
 ## Download the DBC file
 

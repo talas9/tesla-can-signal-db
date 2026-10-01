@@ -29,19 +29,19 @@ Tesla Model 3 CAN bus signals in `DI_vehicleEstimates`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_mass` | Detects learned mass. | 0\|8 | little-endian | unsigned | 25 | 1500 | kg | 1500 to 7850 |  | validated |
-| `DI_massRLS` | Drive inverter: mass RLS | 8\|7 | little-endian | unsigned | 45 | 1500 | kg | 1500 to 7170 |  | validated |
-| `DI_trailerDetected` | Drive inverter: trailer detected | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TRAILER_NOT_DETECTED`<br>1 = `TRAILER_DETECTED` | validated |
-| `DI_vehicleEstimatesCounter` | Drive inverter: vehicle estimates counter | 16\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | validated |
-| `DI_relativeTireTreadDepth` | Reports estimate of tire wear ratio, represented in estimated tread depth difference between front and rear tires. A positive value indicates the rear tires are more worn than the front tires; raw 32 = signal not available (SNA) | 19\|6 | little-endian | signed | 0.4 | 0 | mm | -12.4 to 12.4 | -32 = `SNA` | validated |
-| `DI_tireFitment` | Drive inverter: tire fitment; raw 3 = signal not available (SNA) | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `FITMENT_SQUARE`<br>1 = `FITMENT_STAGGERED`<br>3 = `FITMENT_SNA` | validated |
-| `DI_rollCoeff` | Drive inverter: roll coeff | 27\|5 | little-endian | unsigned | 0.001 | 0 | g | 0 to 0.03 |  | validated |
-| `DI_massConfidence` | Drive inverter: mass confidence | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MASS_NOT_CONFIDED`<br>1 = `MASS_CONFIDED` | validated |
-| `DI_gradeEst` | Grade estimate reported by the drive inverter. | 33\|7 | little-endian | signed | 1 | 0 | % | -40 to 40 |  | validated |
-| `DI_vehicleEstimatesChecksum` | Drive inverter: vehicle estimates checksum | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_gradeEstInternal` | Drive inverter: grade est internal | 48\|7 | little-endian | signed | 1 | 0 | % | -40 to 40 |  | validated |
-| `DI_massConfidenceRLS` | Drive inverter: mass confidence RLS | 55\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MASS_NOT_CONFIDED`<br>1 = `MASS_CONFIDED` | validated |
-| `DI_steeringAngleOffset` | Steering angle offset learned by vehicle dynamics control (VDC) represented as a hand wheel angle | 56\|8 | little-endian | signed | 0.2 | 0 | Deg | -25.6 to 25.4 |  | validated |
+| `DI_mass` | Detects learned mass. | 0\|8 | little-endian | unsigned | 25 | 1500 | kg | 1500 to 7850 |  | plausible |
+| `DI_massRLS` | Drive inverter: mass RLS | 8\|7 | little-endian | unsigned | 45 | 1500 | kg | 1500 to 7170 |  | plausible |
+| `DI_trailerDetected` | Drive inverter: trailer detected | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `TRAILER_NOT_DETECTED`<br>1 = `TRAILER_DETECTED` | plausible |
+| `DI_vehicleEstimatesCounter` | Drive inverter: vehicle estimates counter | 16\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | layout-only |
+| `DI_relativeTireTreadDepth` | Reports estimate of tire wear ratio, represented in estimated tread depth difference between front and rear tires. A positive value indicates the rear tires are more worn than the front tires; raw 32 = signal not available (SNA) | 19\|6 | little-endian | signed | 0.4 | 0 | mm | -12.4 to 12.4 | -32 = `SNA` | plausible |
+| `DI_tireFitment` | Drive inverter: tire fitment; raw 3 = signal not available (SNA) | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `FITMENT_SQUARE`<br>1 = `FITMENT_STAGGERED`<br>3 = `FITMENT_SNA` | plausible |
+| `DI_rollCoeff` | Drive inverter: roll coeff | 27\|5 | little-endian | unsigned | 0.001 | 0 | g | 0 to 0.03 |  | plausible |
+| `DI_massConfidence` | Drive inverter: mass confidence | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MASS_NOT_CONFIDED`<br>1 = `MASS_CONFIDED` | plausible |
+| `DI_gradeEst` | Grade estimate reported by the drive inverter. | 33\|7 | little-endian | signed | 1 | 0 | % | -40 to 40 |  | plausible |
+| `DI_vehicleEstimatesChecksum` | Drive inverter: vehicle estimates checksum | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_gradeEstInternal` | Drive inverter: grade est internal | 48\|7 | little-endian | signed | 1 | 0 | % | -40 to 40 |  | plausible |
+| `DI_massConfidenceRLS` | Drive inverter: mass confidence RLS | 55\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MASS_NOT_CONFIDED`<br>1 = `MASS_CONFIDED` | plausible |
+| `DI_steeringAngleOffset` | Steering angle offset learned by vehicle dynamics control (VDC) represented as a hand wheel angle | 56\|8 | little-endian | signed | 0.2 | 0 | Deg | -25.6 to 25.4 |  | plausible |
 
 ## Download the DBC file
 

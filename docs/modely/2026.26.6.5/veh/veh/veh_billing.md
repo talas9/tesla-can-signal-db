@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VEH_billing`: start bit and length, byte order
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VEH_pricebookId` | VEH ECU: pricebook id | 0\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
+| `VEH_pricebookId` | VEH ECU: pricebook id | 0\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
 
 ## Download the DBC file
 

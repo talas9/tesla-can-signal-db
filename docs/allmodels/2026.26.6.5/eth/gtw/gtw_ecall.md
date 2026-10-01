@@ -29,8 +29,8 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_ECall`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `GTW_GTW_SOS_ECALL_RQST` | State of the GTW-SOS-ECALL-RQST pin | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `GTW_LTE_ECALL_LOCK` | State of the LTE-ECALL-LOCK pin | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `GTW_GTW_SOS_ECALL_RQST` | State of the GTW-SOS-ECALL-RQST pin | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `GTW_LTE_ECALL_LOCK` | State of the LTE-ECALL-LOCK pin | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file
 

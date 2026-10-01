@@ -29,9 +29,9 @@ Tesla Model 3 / Model Y CAN bus signals in `PCS_dcdcRailStatus`: start bit and l
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PCS_dcdcLvBusVolt` | DCDC's sensed LV bus voltage | 0\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 80 |  | validated |
-| `PCS_dcdcHvBusVolt` | DCDC's sensed HV bus voltage | 16\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 1600 |  | validated |
-| `PCS_dcdcLvOutputCurrent` | DCDC's computed LV output current | 32\|13 | little-endian | signed | 0.1 | 0 | A | -400 to 400 |  | validated |
+| `PCS_dcdcLvBusVolt` | DCDC's sensed LV bus voltage | 0\|13 | little-endian | unsigned | 0.01 | 0 | V | 0 to 80 |  | plausible |
+| `PCS_dcdcHvBusVolt` | DCDC's sensed HV bus voltage | 16\|14 | little-endian | unsigned | 0.1 | 0 | V | 0 to 1600 |  | plausible |
+| `PCS_dcdcLvOutputCurrent` | DCDC's computed LV output current | 32\|13 | little-endian | signed | 0.1 | 0 | A | -400 to 400 |  | plausible |
 
 ## Download the DBC file
 

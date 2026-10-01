@@ -29,9 +29,9 @@ Tesla Model Y CAN bus signals in `CP_dcChargeStatus`: start bit and length, byte
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `CP_evseOutputDcCurrent` | The DC EVSE's measured output current | 0\|15 | little-endian | signed | 0.125 | 0 | A | -2048 to 2047.875 |  | validated |
-| `CP_evseOutputDcVoltage` | The DC EVSE's measured output voltage | 16\|13 | little-endian | unsigned | 0.07324219 | 0 | V | 0 to 599.92675822 |  | validated |
-| `CP_evseOutputDcCurrentStale` | Indicates whether the data in CP_evseOutputDcCurrent has not been updated with new info from the DC EVSE recently | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `CP_evseOutputDcCurrent` | The DC EVSE's measured output current | 0\|15 | little-endian | signed | 0.125 | 0 | A | -2048 to 2047.875 |  | plausible |
+| `CP_evseOutputDcVoltage` | The DC EVSE's measured output voltage | 16\|13 | little-endian | unsigned | 0.07324219 | 0 | V | 0 to 599.92675822 |  | plausible |
+| `CP_evseOutputDcCurrentStale` | Indicates whether the data in CP_evseOutputDcCurrent has not been updated with new info from the DC EVSE recently | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file
 

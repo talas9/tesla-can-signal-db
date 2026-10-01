@@ -29,8 +29,8 @@ Tesla Model 3 CAN bus signals in `APP_environment`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_environmentRainy` | Driver assistance computer (primary): environment rainy | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_environmentSnowy` | Driver assistance computer (primary): environment snowy | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `APP_environmentRainy` | Driver assistance computer (primary): environment rainy | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `APP_environmentSnowy` | Driver assistance computer (primary): environment snowy | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 
 ## Download the DBC file
 

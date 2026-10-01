@@ -29,19 +29,19 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_lightStatus`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_brakeLightStatus` | Status of rear right brake light source; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_tailLightStatus` | Status of right tail (rear position) light source; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_turnSignalStatus` | Status of rear right turn signal light source; raw 3 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_reverseLightStatus` | Status of the reverse light source(s); raw 3 = signal not available (SNA) | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_rearFogLightStatus` | The desired on/off state of the rear fog light source(s); raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_leftInteriorTrunkLightReq` | Right body controller: left interior trunk light req | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_audioCurrentSpikeDetected` | Right body controller: audio current spike detected | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_fasciaReverseLightStatus` | Status of fascia reverse lamp; raw 3 = signal not available (SNA) | 13\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_fasciaRearFogStatus` | Status of fascia rear fog lamp; raw 3 = signal not available (SNA) | 15\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_fasciaTailLightStatus` | Status of fascia tail lamp; raw 3 = signal not available (SNA) | 17\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_fasciaLeftTurnSignalStatus` | Status of fascia left turn signal; raw 3 = signal not available (SNA) | 19\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_fasciaRightTurnSignalStatus` | Status of fascia right turn signal; raw 3 = signal not available (SNA) | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
-| `VCRIGHT_CHMSLLightStatus` | Status of center high mount stop lamp; raw 3 = signal not available (SNA) | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | validated |
+| `VCRIGHT_brakeLightStatus` | Status of rear right brake light source; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_tailLightStatus` | Status of right tail (rear position) light source; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_turnSignalStatus` | Status of rear right turn signal light source; raw 3 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_reverseLightStatus` | Status of the reverse light source(s); raw 3 = signal not available (SNA) | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_rearFogLightStatus` | The desired on/off state of the rear fog light source(s); raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_leftInteriorTrunkLightReq` | Right body controller: left interior trunk light req | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_audioCurrentSpikeDetected` | Right body controller: audio current spike detected | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_fasciaReverseLightStatus` | Status of fascia reverse lamp; raw 3 = signal not available (SNA) | 13\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_fasciaRearFogStatus` | Status of fascia rear fog lamp; raw 3 = signal not available (SNA) | 15\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_fasciaTailLightStatus` | Status of fascia tail lamp; raw 3 = signal not available (SNA) | 17\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_fasciaLeftTurnSignalStatus` | Status of fascia left turn signal; raw 3 = signal not available (SNA) | 19\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_fasciaRightTurnSignalStatus` | Status of fascia right turn signal; raw 3 = signal not available (SNA) | 21\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
+| `VCRIGHT_CHMSLLightStatus` | Status of center high mount stop lamp; raw 3 = signal not available (SNA) | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `LIGHT_OFF`<br>1 = `LIGHT_ON`<br>2 = `LIGHT_FAULT`<br>3 = `LIGHT_SNA` | plausible |
 
 ## Download the DBC file
 

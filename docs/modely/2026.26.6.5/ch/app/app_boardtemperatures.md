@@ -29,13 +29,13 @@ Tesla Model Y CAN bus signals in `APP_boardTemperatures`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_decisionTemperature` | Rolling average of Parker and Pascal temperature. | 0\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | validated |
-| `APP_pascalTemperature` | Temperature of Autopilot GPU | 8\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | validated |
-| `APP_parkerATemperature` | Temperature of Autopilot CPU(1) | 16\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | validated |
-| `APP_parkerBTemperature` | Temperature of Autopilot CPU(1) | 24\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | validated |
-| `APP_pascalExtTemperature` | External temperature of Autopilot GPU | 32\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | validated |
-| `APP_parkerExtTemperature` | External temperature of Parker | 40\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | validated |
-| `APP_pascalHeaterDecision` | Pascal heater descision on/off | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `OFF`<br>1 = `ON` | validated |
+| `APP_decisionTemperature` | Rolling average of Parker and Pascal temperature. | 0\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | plausible |
+| `APP_pascalTemperature` | Temperature of Autopilot GPU | 8\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | plausible |
+| `APP_parkerATemperature` | Temperature of Autopilot CPU(1) | 16\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | plausible |
+| `APP_parkerBTemperature` | Temperature of Autopilot CPU(1) | 24\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | plausible |
+| `APP_pascalExtTemperature` | External temperature of Autopilot GPU | 32\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | plausible |
+| `APP_parkerExtTemperature` | External temperature of Parker | 40\|8 | little-endian | unsigned | 1 | -128 | C | -128 to 127 | 0 = `UNKNOWN` | plausible |
+| `APP_pascalHeaterDecision` | Pascal heater descision on/off | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `OFF`<br>1 = `ON` | plausible |
 
 ## Download the DBC file
 

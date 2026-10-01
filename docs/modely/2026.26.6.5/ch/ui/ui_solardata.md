@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `UI_solarData`: start bit and length, byte orde
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_solarAzimuthAngle` | Touchscreen user interface computer: solar azimuth angle; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 1 | 0 | degrees | -32768 to 32767 | -32768 = `SNA` | plausible |
+| `UI_solarAzimuthAngle` | Touchscreen user interface computer: solar azimuth angle; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 1 | 0 | degrees | -32768 to 32767 | -32768 = `SNA` | validated |
 | `UI_solarAzimuthAngleCarRef` | Touchscreen user interface computer: solar azimuth angle car ref; raw 255 = signal not available (SNA) | 16\|9 | little-endian | signed | 1 | 0 | degrees | -256 to 254 | 255 = `SNA` | plausible |
 | `UI_isSunUp` | is sun up; raw 3 = signal not available (SNA) | 25\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `SUN_DOWN`<br>1 = `SUN_UP`<br>3 = `SUN_SNA` | validated |
 | `UI_solarElevationAngle` | Solar Elevation Angle; raw 127 = signal not available (SNA) | 32\|8 | little-endian | signed | 1 | 0 | degrees | -128 to 126 | 127 = `SNA` | validated |

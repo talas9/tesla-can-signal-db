@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VC_LVBMS_statusHigh`: start bit and length, by
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VC_lvbmsStatusHighIndex` | selector | VC ECU: lvbms status high index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `PACK_VITALS_1`<br>1 = `CELL_VITALS_1`<br>2 = `PCS_INTERFACE`<br>3 = `TARGETS`<br>4 = `CELL_VITALS_2_AND_STATE_AND_COMMANDS`<br>5 = `INVALID` | plausible |
+| `VC_lvbmsStatusHighIndex` | selector | VC ECU: lvbms status high index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `PACK_VITALS_1`<br>1 = `CELL_VITALS_1`<br>2 = `PCS_INTERFACE`<br>3 = `TARGETS`<br>4 = `CELL_VITALS_2_AND_STATE_AND_COMMANDS`<br>5 = `INVALID` | validated |
 | `VC_LVBMS_packCurrent` | page 0 | Electrical current into the low voltage battery; raw 4194303 = signal not available (SNA) | 3\|22 | little-endian | unsigned | 0.001 | -2000 | A | -2000 to 2194.302 | 4194303 = `SNA` | validated |
 | `VC_LVBMS_packVoltage` | page 0 | Voltage of the low voltage battery; raw 65535 = signal not available (SNA) | 25\|16 | little-endian | unsigned | 0.001 | 0 | V | 0 to 65.534 | 65535 = `SNA` | validated |
 | `VC_LVBMS_packTemperature` | page 0 | Temperature of the low voltage battery; raw 511 = signal not available (SNA) | 41\|9 | little-endian | unsigned | 0.5 | -50 | degC | -50 to 205 | 511 = `SNA` | validated |

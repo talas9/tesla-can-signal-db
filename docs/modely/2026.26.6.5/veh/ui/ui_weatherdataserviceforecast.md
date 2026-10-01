@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `UI_weatherDataServiceForecast`: start bit and 
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `UI_weatherSvcForecastMuxIndex` | selector | Touchscreen user interface computer: weather svc forecast mux index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2`<br>3 = `MUX3`<br>4 = `MUX4` | plausible |
+| `UI_weatherSvcForecastMuxIndex` | selector | Touchscreen user interface computer: weather svc forecast mux index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2`<br>3 = `MUX3`<br>4 = `MUX4` | validated |
 | `UI_weatherSvcForecastTempC_hour1` | page 0 | Touchscreen user interface computer: weather svc forecast temp c hour1; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | -40 | C | -40 to 87 | 0 = `MIN`<br>250 = `MAX`<br>255 = `SNA` | plausible |
 | `UI_weatherSvcForecastTempC_hour2` | page 0 | Touchscreen user interface computer: weather svc forecast temp c hour2; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.5 | -40 | C | -40 to 87 | 0 = `MIN`<br>250 = `MAX`<br>255 = `SNA` | plausible |
 | `UI_weatherSvcForecastTempC_hour3` | page 0 | Touchscreen user interface computer: weather svc forecast temp c hour3; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.5 | -40 | C | -40 to 87 | 0 = `MIN`<br>250 = `MAX`<br>255 = `SNA` | plausible |

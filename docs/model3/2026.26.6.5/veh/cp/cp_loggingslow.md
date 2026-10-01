@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `CP_loggingSlow`: start bit and length, byte or
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `CP_loggingSlowSelect` | selector | Charge port controller: logging slow select | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `0`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5`<br>6 = `6`<br>7 = `7`<br>8 = `8` | plausible |
+| `CP_loggingSlowSelect` | selector | Charge port controller: logging slow select | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `0`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5`<br>6 = `6`<br>7 = `7`<br>8 = `8` | validated |
 | `CP_UHF_chipState` | page 3 | Charge port controller: UHF chip state | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | validated |
 | `CP_UHF_rssi` | page 3 | Signal strength of received UHF signal | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `CP_UHF_rxOverflow` | page 3 | Charge port controller: UHF rx overflow | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |

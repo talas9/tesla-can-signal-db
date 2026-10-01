@@ -30,14 +30,14 @@ Tesla Model Y CAN bus signals in `VCLEFT_thermalLogging1Hz`: start bit and lengt
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VCLEFT_thermalLogging1HzIndex` | selector | Left body controller: thermal logging1 hz index | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `ZEROSTOP`<br>1 = `ENDSTOP`<br>2 = `END`<br>15 = `MAX` | plausible |
-| `VCLEFT_hvac2RLeftLateralZeroStopVoltage` | page 0 | Left body controller: hvac2 r left lateral zero stop voltage | 8\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RLeftVerticalZeroStopVoltage` | page 0 | Left body controller: hvac2 r left vertical zero stop voltage | 16\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RRightLateralZeroStopVoltage` | page 0 | Left body controller: hvac2 r right lateral zero stop voltage | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RRightVerticalZeroStopVoltage` | page 0 | Left body controller: hvac2 r right vertical zero stop voltage | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RLeftLateralEndStopVoltage` | page 1 | Left body controller: hvac2 r left lateral end stop voltage | 8\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RLeftVerticalEndStopVoltage` | page 1 | Left body controller: hvac2 r left vertical end stop voltage | 16\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RRightLateralEndStopVoltage` | page 1 | Left body controller: hvac2 r right lateral end stop voltage | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCLEFT_hvac2RRightVerticalEndStopVoltage` | page 1 | Left body controller: hvac2 r right vertical end stop voltage | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
+| `VCLEFT_hvac2RLeftLateralZeroStopVoltage` | page 0 | Left body controller: hvac2 r left lateral zero stop voltage | 8\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RLeftVerticalZeroStopVoltage` | page 0 | Left body controller: hvac2 r left vertical zero stop voltage | 16\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RRightLateralZeroStopVoltage` | page 0 | Left body controller: hvac2 r right lateral zero stop voltage | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RRightVerticalZeroStopVoltage` | page 0 | Left body controller: hvac2 r right vertical zero stop voltage | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RLeftLateralEndStopVoltage` | page 1 | Left body controller: hvac2 r left lateral end stop voltage | 8\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RLeftVerticalEndStopVoltage` | page 1 | Left body controller: hvac2 r left vertical end stop voltage | 16\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RRightLateralEndStopVoltage` | page 1 | Left body controller: hvac2 r right lateral end stop voltage | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCLEFT_hvac2RRightVerticalEndStopVoltage` | page 1 | Left body controller: hvac2 r right vertical end stop voltage | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
 | `VCLEFT_hvacBlowerArbState` | page 1 | Left body controller: hvac blower arb state | 40\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `ARBITRATOR_NOT_READY`<br>1 = `ARBITRATOR_READY`<br>2 = `ARBITRATOR_HIGH_FREQ_VOLT_INJECTION`<br>3 = `ARBITRATOR_WAIT_BEFORE_REQUEST`<br>4 = `ARBITRATOR_REQUEST_CURRENT`<br>5 = `ARBITRATOR_COMPLETED`<br>6 = `ARBITRATOR_FAULTED` | plausible |
 | `VCLEFT_hvacBlowerArbResult` | page 1 | Left body controller: hvac blower arb result | 43\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VC_MOTOR_ID_UNKNOWN`<br>1 = `VC_MOTOR_ID_DELTA`<br>2 = `VC_MOTOR_ID_BOSCH` | plausible |
 | `VCLEFT_hvacBlowerArbCurrent` | page 1 | Left body controller: hvac blower arb current | 48\|8 | little-endian | unsigned | 0.1 | 0 | A | 0 to 25.5 |  | plausible |

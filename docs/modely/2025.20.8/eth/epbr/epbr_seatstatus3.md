@@ -29,12 +29,12 @@ Tesla Model Y CAN bus signals in `EPBR_seatStatus3`: start bit and length, byte 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `EPBR_frontSeatCushionFanCur` | Right electric parking brake: front seat cushion fan cur | 0\|12 | little-endian | unsigned | 0.01 | 0 | A | 0 to 40.95 |  | validated |
-| `EPBR_frontSeatBackrestFanCur` | Right electric parking brake: front seat backrest fan cur | 12\|12 | little-endian | unsigned | 0.01 | 0 | A | 0 to 40.95 |  | validated |
-| `EPBR_frontSeatCushionFanDuty` | Right electric parking brake: front seat cushion fan duty | 24\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
-| `EPBR_frontSeatCushionFanEn` | Right electric parking brake: front seat cushion fan en | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `EPBR_frontSeatBackrestFanEn` | Right electric parking brake: front seat backrest fan en | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `EPBR_frontSeatBackrestFanDuty` | Right electric parking brake: front seat backrest fan duty | 33\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | validated |
+| `EPBR_frontSeatCushionFanCur` | Right electric parking brake: front seat cushion fan cur | 0\|12 | little-endian | unsigned | 0.01 | 0 | A | 0 to 40.95 |  | plausible |
+| `EPBR_frontSeatBackrestFanCur` | Right electric parking brake: front seat backrest fan cur | 12\|12 | little-endian | unsigned | 0.01 | 0 | A | 0 to 40.95 |  | plausible |
+| `EPBR_frontSeatCushionFanDuty` | Right electric parking brake: front seat cushion fan duty | 24\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
+| `EPBR_frontSeatCushionFanEn` | Right electric parking brake: front seat cushion fan en | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `EPBR_frontSeatBackrestFanEn` | Right electric parking brake: front seat backrest fan en | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `EPBR_frontSeatBackrestFanDuty` | Right electric parking brake: front seat backrest fan duty | 33\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 100 |  | plausible |
 
 ## Download the DBC file
 

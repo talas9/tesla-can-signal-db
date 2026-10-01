@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_switchStatus`: start bit and
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_switchStatusIndex` | selector | Right body controller: switch status index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
+| `VCRIGHT_switchStatusIndex` | selector | Right body controller: switch status index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | validated |
 | `VCRIGHT_btnWindowUpRF` |  | Position from firmware; message assignment inferred. | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `VCRIGHT_btnWindowAutoUpRF` |  | Position from firmware; message assignment inferred. | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `VCRIGHT_btnWindowDownRF` |  | Position from firmware; message assignment inferred. | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |

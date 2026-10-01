@@ -30,13 +30,13 @@ Tesla Model 3 CAN bus signals in `DI_debug`: start bit and length, byte order, s
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `DI_debugSelector` | selector | Drive inverter: debug selector | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 2 = `Mux2`<br>32 = `pwrSat`<br>33 = `Mux33`<br>34 = `sysPedal`<br>35 = `onePedalDriving1`<br>36 = `onePedalDriving2`<br>37 = `onePedalDriving3`<br>38 = `pedalTorque1`<br>39 = `regenBackfill`<br>45 = `aeb`<br>50 = `sysHeat`<br>53 = `Mux53`<br>65 = `Mux65`<br>66 = `Mux66`<br>67 = `Mux67`<br>68 = `Mux68`<br>69 = `Mux69`<br>75 = `longControl` | plausible |
-| `DI_regenBackfillCmd` | page 39 | Drive inverter: regen backfill cmd | 8\|13 | little-endian | unsigned | 2 | 0 | Nm | 0 to 16382 |  | validated |
-| `DI_regenBackfillUnavailableReason` | page 39 | Drive inverter: regen backfill unavailable reason | 21\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `NONE`<br>1 = `GTW_DISABLE`<br>2 = `UI_DISABLE`<br>3 = `EBR_UNAVAILABLE`<br>4 = `NON_DRIVE_GEAR`<br>5 = `SYSTEM_STATE`<br>6 = `UI_COASTDOWN_MODE`<br>7 = `ACTIVE_DAMPING_UNAVAILABLE`<br>8 = `TRACTION_CONTROL_UNAVAILABLE`<br>9 = `VELOCITY_ESTIMATOR_UNAVAILABLE`<br>10 = `TRACK_MODE_ACTIVE`<br>11 = `PM_DISABLE_REQUEST`<br>12 = `EBR_FAULT`<br>13 = `BRAKE_TEMP`<br>14 = `CARBON_CERAMIC_BRAKES`<br>15 = `PM_DISABLE_REQUEST_BLEND`<br>16 = `PM_DISABLE_REQUEST_BPED`<br>17 = `EBR_FULL_FAULT`<br>18 = `DI_LATENT_FAULT_TRIP` | validated |
-| `DI_regenBackfillAbsSatState` | page 39 | Drive inverter: regen backfill abs sat state | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IDLE`<br>1 = `RAMP_OUT`<br>2 = `RAMP_IN` | validated |
-| `DI_sysHeatPowerOptimal` | page 50 | Drive inverter: sys heat power optimal | 8\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DI_sysPostPedalMinTorque` | page 53 | Drive inverter: sys post pedal min torque | 8\|15 | little-endian | unsigned | 0.5 | -13000 | Nm | -13000 to 0 |  | validated |
-| `DI_sysPostPedalMaxTorque` | page 53 | Drive inverter: sys post pedal max torque | 24\|15 | little-endian | unsigned | 0.5 | 0 | Nm | 0 to 13000 |  | validated |
-| `DI_systemTorqueCommand` | page 53 | Drive inverter: system torque command | 40\|16 | little-endian | signed | 0.5 | 0 | Nm | -13000 to 13000 |  | validated |
+| `DI_regenBackfillCmd` | page 39 | Drive inverter: regen backfill cmd | 8\|13 | little-endian | unsigned | 2 | 0 | Nm | 0 to 16382 |  | plausible |
+| `DI_regenBackfillUnavailableReason` | page 39 | Drive inverter: regen backfill unavailable reason | 21\|5 | little-endian | unsigned | 1 | 0 |  | 0 to 31 | 0 = `NONE`<br>1 = `GTW_DISABLE`<br>2 = `UI_DISABLE`<br>3 = `EBR_UNAVAILABLE`<br>4 = `NON_DRIVE_GEAR`<br>5 = `SYSTEM_STATE`<br>6 = `UI_COASTDOWN_MODE`<br>7 = `ACTIVE_DAMPING_UNAVAILABLE`<br>8 = `TRACTION_CONTROL_UNAVAILABLE`<br>9 = `VELOCITY_ESTIMATOR_UNAVAILABLE`<br>10 = `TRACK_MODE_ACTIVE`<br>11 = `PM_DISABLE_REQUEST`<br>12 = `EBR_FAULT`<br>13 = `BRAKE_TEMP`<br>14 = `CARBON_CERAMIC_BRAKES`<br>15 = `PM_DISABLE_REQUEST_BLEND`<br>16 = `PM_DISABLE_REQUEST_BPED`<br>17 = `EBR_FULL_FAULT`<br>18 = `DI_LATENT_FAULT_TRIP` | plausible |
+| `DI_regenBackfillAbsSatState` | page 39 | Drive inverter: regen backfill abs sat state | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IDLE`<br>1 = `RAMP_OUT`<br>2 = `RAMP_IN` | plausible |
+| `DI_sysHeatPowerOptimal` | page 50 | Drive inverter: sys heat power optimal | 8\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DI_sysPostPedalMinTorque` | page 53 | Drive inverter: sys post pedal min torque | 8\|15 | little-endian | unsigned | 0.5 | -13000 | Nm | -13000 to 0 |  | plausible |
+| `DI_sysPostPedalMaxTorque` | page 53 | Drive inverter: sys post pedal max torque | 24\|15 | little-endian | unsigned | 0.5 | 0 | Nm | 0 to 13000 |  | plausible |
+| `DI_systemTorqueCommand` | page 53 | Drive inverter: system torque command | 40\|16 | little-endian | signed | 0.5 | 0 | Nm | -13000 to 13000 |  | plausible |
 
 ## Multiplexing
 

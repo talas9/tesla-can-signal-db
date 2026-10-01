@@ -29,12 +29,12 @@ Tesla Model 3 CAN bus signals in `PCS_thermalStatus`: start bit and length, byte
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PCS_chgPhATemp` | Sensed temperature of AC charger phase A; raw 1025 = signal not available (SNA) | 0\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | validated |
-| `PCS_chgPhBTemp` | Sensed temperature of AC charger phase B; raw 1025 = signal not available (SNA) | 11\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | validated |
-| `PCS_chgPhCTemp` | Sensed temperature of AC charger phase C; raw 1025 = signal not available (SNA) | 22\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | validated |
-| `PCS_dcdcTemp` | Sensed temperature of DCDC; raw 1025 = signal not available (SNA) | 33\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | validated |
-| `PCS_ambientTemp` | Ambient temperature sensed by the PCS; raw 1025 = signal not available (SNA) | 44\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | validated |
-| `PCS_dcdcBusbarTemp` | Sensed temperature of DCDC busbar; raw 511 = signal not available (SNA) | 55\|9 | little-endian | unsigned | 0.2935421 | 0 | C | 0 to 149.706471 | 511 = `SNA` | validated |
+| `PCS_chgPhATemp` | Sensed temperature of AC charger phase A; raw 1025 = signal not available (SNA) | 0\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | plausible |
+| `PCS_chgPhBTemp` | Sensed temperature of AC charger phase B; raw 1025 = signal not available (SNA) | 11\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | plausible |
+| `PCS_chgPhCTemp` | Sensed temperature of AC charger phase C; raw 1025 = signal not available (SNA) | 22\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | plausible |
+| `PCS_dcdcTemp` | Sensed temperature of DCDC; raw 1025 = signal not available (SNA) | 33\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | plausible |
+| `PCS_ambientTemp` | Ambient temperature sensed by the PCS; raw 1025 = signal not available (SNA) | 44\|11 | little-endian | signed | 0.1 | 40 | C | -62.4 to 142.3 | -1023 = `SNA` | plausible |
+| `PCS_dcdcBusbarTemp` | Sensed temperature of DCDC busbar; raw 511 = signal not available (SNA) | 55\|9 | little-endian | unsigned | 0.2935421 | 0 | C | 0 to 149.706471 | 511 = `SNA` | plausible |
 
 ## Download the DBC file
 

@@ -31,10 +31,10 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_hrl`: start bit and length, byte
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `GTW_hrlIndex` | selector | Gateway: hrl index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 1 = `Mux1`<br>2 = `Mux2` | plausible |
 | `GTW_hrlPagesCount` | page 1 | Gateway: hrl pages count | 15\|32 | big-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
-| `GTW_hrlSdCardSizeGB` | page 1 | Gateway: hrl sd card size GB; raw 0 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `SNA` | validated |
-| `GTW_hrlState` | page 2 | GTW hrl state | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `DISABLED`<br>1 = `ENABLED` | validated |
+| `GTW_hrlSdCardSizeGB` | page 1 | Gateway: hrl sd card size GB; raw 0 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `SNA` | plausible |
+| `GTW_hrlState` | page 2 | GTW hrl state | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `DISABLED`<br>1 = `ENABLED` | plausible |
 | `GTW_hrlTriggerDuration` | page 2 | HRL duration | 15\|16 | big-endian | unsigned | 1 | 0 | seconds | 0 to 65535 |  | plausible |
-| `GTW_hrlTriggerType` | page 2 | HRL trigger type | 24\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `HRL_TRIGGER_UDPAPI`<br>1 = `HRL_TRIGGER_EVENT`<br>2 = `HRL_TRIGGER_GAME_MODE`<br>3 = `HRL_TRIGGER_CONTINUOUS`<br>4 = `HRL_TRIGGER_PSEUDONYMOUS`<br>5 = `HRL_TRIGGER_EVENT_EXTERNAL`<br>15 = `HRL_TRIGGER_NONE` | validated |
+| `GTW_hrlTriggerType` | page 2 | HRL trigger type | 24\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `HRL_TRIGGER_UDPAPI`<br>1 = `HRL_TRIGGER_EVENT`<br>2 = `HRL_TRIGGER_GAME_MODE`<br>3 = `HRL_TRIGGER_CONTINUOUS`<br>4 = `HRL_TRIGGER_PSEUDONYMOUS`<br>5 = `HRL_TRIGGER_EVENT_EXTERNAL`<br>15 = `HRL_TRIGGER_NONE` | plausible |
 | `GTW_hrlTriggerId` | page 2 | HRL trigger ID. A unique ID representing the signal conditions causing the HRL event to occur. | 39\|16 | big-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |
 | `GTW_hrlTriggerBus` | page 2 | Gateway: hrl trigger bus | 53\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | layout-only |
 

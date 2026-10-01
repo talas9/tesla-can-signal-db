@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `VCFRONT_systemStatus`: start bit and length, b
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_systemStatusMuxIndex` | selector | Front body controller: system status mux index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SYSTEM_DATA`<br>1 = `ACTIVE_LOAD_SHED_REASONS`<br>2 = `LOAD_SHED_STATUSES_AND_COMMANDS` | plausible |
+| `VCFRONT_systemStatusMuxIndex` | selector | Front body controller: system status mux index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SYSTEM_DATA`<br>1 = `ACTIVE_LOAD_SHED_REASONS`<br>2 = `LOAD_SHED_STATUSES_AND_COMMANDS` | validated |
 | `VCFRONT_systemStatusCounter` |  | Front body controller: system status counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `VCFRONT_systemStatusChecksum` |  | Front body controller: system status checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 | `VCFRONT_loadShedReason` | page 1 | Front body controller: load shed reason | 3\|9 | little-endian | unsigned | 1 | 0 |  | 0 to 511 | 0 = `VCFRONT_LOAD_SHED_REASON_NONE`<br>1 = `VCFRONT_LOAD_SHED_REASON_DCDC_SATURATION`<br>2 = `VCFRONT_LOAD_SHED_REASON_VCLEFT_EFUSE_PROTECTION`<br>4 = `VCFRONT_LOAD_SHED_REASON_VCRIGHT_EFUSE_PROTECTION`<br>8 = `VCFRONT_LOAD_SHED_REASON_POST_CRASH`<br>16 = `VCFRONT_LOAD_SHED_REASON_HV_FAULT`<br>32 = `VCFRONT_LOAD_SHED_REASON_FACTORY`<br>64 = `VCFRONT_LOAD_SHED_REASON_CUSTOM`<br>128 = `VCFRONT_LOAD_SHED_REASON_PRECHARGE`<br>256 = `VCFRONT_LOAD_SHED_REASON_LV_HEALTH` | validated |

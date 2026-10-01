@@ -29,12 +29,12 @@ Tesla Model 3 CAN bus signals in `EPAS3S_angleCalibration`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `EPAS3S_appliedAngleOffset` | This represents the angle delta between the absolute steering angle reference and what EPAS estimates to be straight ahead. The steering angle offset can change up to 5deg at the beginning of each drive cycle. | 0\|8 | little-endian | unsigned | 0.1 | -12.8 | deg | -12.8 to 12.7 |  | validated |
-| `EPAS3S_calculatedAngleOffset` | Reports the calculated steering angle offset learned between the Steering Column Control Module (SCCM) and the Electronic Power Assist Steering (EPAS) steering angle. | 8\|8 | little-endian | unsigned | 0.1 | -12.8 | deg | -12.8 to 12.7 |  | validated |
-| `EPAS3S_resyncStatus` | Electric power steering (secondary): resync status | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `RESYNC_PENDING`<br>1 = `RESYNC_COMPLETE` | validated |
-| `EPAS3S_pullDriftLongTermTrq` | The learned, long term pull drift or road crown compensation torque that the rack is applying to the steering wheel. | 17\|12 | little-endian | unsigned | 0.01 | -10 | Nm | -10 to 10 |  | validated |
-| `EPAS3S_pullDriftCompTrq` | The current pull drift or road crown compensation torque that the rack is applying to the steering wheel. | 29\|12 | little-endian | unsigned | 0.01 | -10 | Nm | -10 to 10 |  | validated |
-| `EPAS3S_learnedSCCMOffset` | Electric power steering (secondary): learned SCCM offset | 41\|8 | little-endian | unsigned | 0.1 | -12.8 | deg | -12.8 to 12.7 |  | validated |
+| `EPAS3S_appliedAngleOffset` | This represents the angle delta between the absolute steering angle reference and what EPAS estimates to be straight ahead. The steering angle offset can change up to 5deg at the beginning of each drive cycle. | 0\|8 | little-endian | unsigned | 0.1 | -12.8 | deg | -12.8 to 12.7 |  | plausible |
+| `EPAS3S_calculatedAngleOffset` | Reports the calculated steering angle offset learned between the Steering Column Control Module (SCCM) and the Electronic Power Assist Steering (EPAS) steering angle. | 8\|8 | little-endian | unsigned | 0.1 | -12.8 | deg | -12.8 to 12.7 |  | plausible |
+| `EPAS3S_resyncStatus` | Electric power steering (secondary): resync status | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `RESYNC_PENDING`<br>1 = `RESYNC_COMPLETE` | plausible |
+| `EPAS3S_pullDriftLongTermTrq` | The learned, long term pull drift or road crown compensation torque that the rack is applying to the steering wheel. | 17\|12 | little-endian | unsigned | 0.01 | -10 | Nm | -10 to 10 |  | plausible |
+| `EPAS3S_pullDriftCompTrq` | The current pull drift or road crown compensation torque that the rack is applying to the steering wheel. | 29\|12 | little-endian | unsigned | 0.01 | -10 | Nm | -10 to 10 |  | plausible |
+| `EPAS3S_learnedSCCMOffset` | Electric power steering (secondary): learned SCCM offset | 41\|8 | little-endian | unsigned | 0.1 | -12.8 | deg | -12.8 to 12.7 |  | plausible |
 
 ## Download the DBC file
 

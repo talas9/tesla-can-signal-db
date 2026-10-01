@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_TPMSData`: start bit and lengt
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCSEC_TPMSDataIndex` | selector | Vehicle security controller: TPMS data index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `Sensor0`<br>1 = `Sensor1`<br>2 = `Sensor2`<br>3 = `Sensor3`<br>4 = `RCP`<br>5 = `AutonomyHealth` | plausible |
+| `VCSEC_TPMSDataIndex` | selector | Vehicle security controller: TPMS data index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `Sensor0`<br>1 = `Sensor1`<br>2 = `Sensor2`<br>3 = `Sensor3`<br>4 = `RCP`<br>5 = `AutonomyHealth` | validated |
 | `VCSEC_TPMSCapabilityPressureInAdv0` | page 0 | Vehicle security controller: TPMS capability pressure in adv0 | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCSEC_TPMSCapabilityConfigurablePressure0` | page 0 | Vehicle security controller: TPMS capability configurable pressure0 | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCSEC_TPMSPressureRateOfChange0` | page 0 | Reports the raw pressure value of TPMS sensor 0. | 5\|10 | little-endian | signed | 0.02 | 0 | kPa/S | -10.24 to 10.22 |  | validated |

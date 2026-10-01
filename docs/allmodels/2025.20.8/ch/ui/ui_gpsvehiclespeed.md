@@ -33,13 +33,13 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_gpsVehicleSpeed`: start bit and l
 | `UI_gpsVehicleHeading` | Touchscreen user interface computer: gps vehicle heading | 8\|16 | little-endian | unsigned | 0.0078125 | 0 | deg | 0 to 511.9921875 |  | plausible |
 | `UI_gpsVehicleSpeed` | Touchscreen user interface computer: gps vehicle speed | 24\|16 | little-endian | unsigned | 0.00390625 | 0 | km/hr | 0 to 255.99609375 |  | plausible |
 | `UI_userSpeedOffset` | Touchscreen user interface computer: user speed offset | 40\|6 | little-endian | unsigned | 1 | -30 | kph/mph | -30 to 33 |  | plausible |
-| `UI_mapSpeedLimitUnits` | Autopilot map speed limit units. | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MPH`<br>1 = `KPH` | validated |
+| `UI_mapSpeedLimitUnits` | Autopilot map speed limit units. | 46\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MPH`<br>1 = `KPH` | plausible |
 | `UI_userSpeedOffsetUnits` | Touchscreen user interface computer: user speed offset units | 47\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MPH`<br>1 = `KPH` | plausible |
-| `UI_mppSpeedLimit` | Autopilot map speed limit | 48\|5 | little-endian | unsigned | 5 | 0 | kph/mph | 0 to 155 |  | validated |
-| `UI_gpsNmeaMIA` | GPS NMEA data MIA | 53\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_gpsAntennaDisconnected` | GPS antenna state | 54\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_conditionalLimitActive` | Conditional speed limit condition is currently active | 55\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_conditionalSpeedLimit` | Conditional speed limit value; raw 31 = signal not available (SNA) | 56\|5 | little-endian | unsigned | 5 | 0 | kph/mph | 0 to 150 | 31 = `SNA` | validated |
+| `UI_mppSpeedLimit` | Autopilot map speed limit | 48\|5 | little-endian | unsigned | 5 | 0 | kph/mph | 0 to 155 |  | plausible |
+| `UI_gpsNmeaMIA` | GPS NMEA data MIA | 53\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_gpsAntennaDisconnected` | GPS antenna state | 54\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_conditionalLimitActive` | Conditional speed limit condition is currently active | 55\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_conditionalSpeedLimit` | Conditional speed limit value; raw 31 = signal not available (SNA) | 56\|5 | little-endian | unsigned | 5 | 0 | kph/mph | 0 to 150 | 31 = `SNA` | plausible |
 
 ## Download the DBC file
 

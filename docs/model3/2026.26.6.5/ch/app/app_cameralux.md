@@ -29,14 +29,14 @@ Tesla Model 3 CAN bus signals in `APP_cameraLux`: start bit and length, byte ord
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_mainCameraLUX` | Amount of illuminance seen by the main camera; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_narrowCameraLUX` | Driver assistance computer (primary): narrow camera LUX; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_fisheyeCameraLUX` | Driver assistance computer (primary): fisheye camera LUX; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_lRepeatCameraLUX` | Driver assistance computer (primary): l repeat camera LUX; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_rRepeatCameraLUX` | Driver assistance computer (primary): r repeat camera LUX; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_lPillarCameraLUX` | Driver assistance computer (primary): l pillar camera LUX; raw 255 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_rPillarCameraLUX` | Driver assistance computer (primary): r pillar camera LUX; raw 255 = signal not available (SNA) | 48\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
-| `APP_backupCameraLUX` | Driver assistance computer (primary): backup camera LUX; raw 255 = signal not available (SNA) | 56\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | validated |
+| `APP_mainCameraLUX` | Amount of illuminance seen by the main camera; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_narrowCameraLUX` | Driver assistance computer (primary): narrow camera LUX; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_fisheyeCameraLUX` | Driver assistance computer (primary): fisheye camera LUX; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_lRepeatCameraLUX` | Driver assistance computer (primary): l repeat camera LUX; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_rRepeatCameraLUX` | Driver assistance computer (primary): r repeat camera LUX; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_lPillarCameraLUX` | Driver assistance computer (primary): l pillar camera LUX; raw 255 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_rPillarCameraLUX` | Driver assistance computer (primary): r pillar camera LUX; raw 255 = signal not available (SNA) | 48\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
+| `APP_backupCameraLUX` | Driver assistance computer (primary): backup camera LUX; raw 255 = signal not available (SNA) | 56\|8 | little-endian | unsigned | 0.5 | 0 | lux^0.5 | 0 to 127 | 254 = `SATURATED`<br>255 = `SNA` | plausible |
 
 ## Download the DBC file
 

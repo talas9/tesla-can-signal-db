@@ -29,15 +29,15 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM_inertial2`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `RCM_longitudinalAccel` | Offset compensated longitudinal acceleration measured by the airbag ECU. ISO axis convention (positive during forward acceleration); raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 0.00125 | 0 | m/s^2 | -40.9575 to 40.9575 | -32768 = `SNA` | validated |
-| `RCM_lateralAccel` | Reports offset compensated lateral acceleration measured by the airbag ECU. Follows ISO axis convention that measurements are positive during left turns and negative during right turns; raw 32768 = signal not available (SNA) | 16\|16 | little-endian | signed | 0.00125 | 0 | m/s^2 | -40.9575 to 40.9575 | -32768 = `SNA` | validated |
-| `RCM_verticalAccel` | Offset compensated vertical acceleration measured by the airbag ECU. ISO axis convention (positive up); raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 0.00125 | 0 | m/s^2 | -40.9575 to 39.2 | -32768 = `SNA` | validated |
-| `RCM_longitudinalAccelQF` | Restraint control module: longitudinal accel QF | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | validated |
-| `RCM_lateralAccelQF` | Restraint control module: lateral accel QF | 49\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | validated |
-| `RCM_verticalAccelQF` | Restraint control module: vertical accel QF | 50\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | validated |
-| `RCM_CGTranslationFault` | Restraint control module: CG translation fault | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `RCM_COG_TRANSLATION_NOT_FAULTED`<br>1 = `RCM_COG_TRANSLATION_FAULTED` | validated |
-| `RCM_inertial2Counter` | Restraint control module: inertial2 counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `RCM_inertial2Checksum` | Restraint control module: inertial2 checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `RCM_longitudinalAccel` | Offset compensated longitudinal acceleration measured by the airbag ECU. ISO axis convention (positive during forward acceleration); raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 0.00125 | 0 | m/s^2 | -40.9575 to 40.9575 | -32768 = `SNA` | plausible |
+| `RCM_lateralAccel` | Reports offset compensated lateral acceleration measured by the airbag ECU. Follows ISO axis convention that measurements are positive during left turns and negative during right turns; raw 32768 = signal not available (SNA) | 16\|16 | little-endian | signed | 0.00125 | 0 | m/s^2 | -40.9575 to 40.9575 | -32768 = `SNA` | plausible |
+| `RCM_verticalAccel` | Offset compensated vertical acceleration measured by the airbag ECU. ISO axis convention (positive up); raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 0.00125 | 0 | m/s^2 | -40.9575 to 39.2 | -32768 = `SNA` | plausible |
+| `RCM_longitudinalAccelQF` | Restraint control module: longitudinal accel QF | 48\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | plausible |
+| `RCM_lateralAccelQF` | Restraint control module: lateral accel QF | 49\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | plausible |
+| `RCM_verticalAccelQF` | Restraint control module: vertical accel QF | 50\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAULTED`<br>1 = `NOT_FAULTED` | plausible |
+| `RCM_CGTranslationFault` | Restraint control module: CG translation fault | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `RCM_COG_TRANSLATION_NOT_FAULTED`<br>1 = `RCM_COG_TRANSLATION_FAULTED` | plausible |
+| `RCM_inertial2Counter` | Restraint control module: inertial2 counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `RCM_inertial2Checksum` | Restraint control module: inertial2 checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

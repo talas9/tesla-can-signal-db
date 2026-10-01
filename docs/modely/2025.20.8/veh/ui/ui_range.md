@@ -29,10 +29,10 @@ Tesla Model Y CAN bus signals in `UI_range`: start bit and length, byte order, s
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_ratedRange` | Rated range in miles | 0\|10 | little-endian | unsigned | 1 | 0 | mi | 0 to 1023 |  | validated |
+| `UI_ratedRange` | Rated range in miles | 0\|10 | little-endian | unsigned | 1 | 0 | mi | 0 to 1023 |  | plausible |
 | `UI_whpm` | Touchscreen user interface computer: whpm | 10\|10 | little-endian | unsigned | 1 | 0 |  | 0 to 1023 |  | plausible |
-| `UI_soe` | State of energy | 20\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | validated |
-| `UI_uSoe` | Usable state of energy | 27\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | validated |
+| `UI_soe` | State of energy | 20\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | plausible |
+| `UI_uSoe` | Usable state of energy | 27\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 127 |  | plausible |
 | `UI_softPackLimitPct` | Touchscreen user interface computer: soft pack limit pct | 34\|15 | little-endian | unsigned | 0.003051851 | 0 | % | 0 to 100.000001717 |  | plausible |
 | `UI_targetFullPackEnergy` | Touchscreen user interface computer: target full pack energy | 49\|15 | little-endian | unsigned | 0.006103702 | 0 | kWh | 0 to 200.000003434 |  | plausible |
 

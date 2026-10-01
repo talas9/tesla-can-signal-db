@@ -89,19 +89,19 @@ Tesla Model Y CAN bus signals in `DIF_debug`: start bit and length, byte order, 
 | `DIF_cpu20kHzAvg` | page 67 | Position from firmware; message assignment inferred. | 32\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 102 |  | plausible |
 | `DIF_hwFaultCount` | page 69 | Position from firmware; message assignment inferred. | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
 | `DIF_driveUnitOdometer` | page 69 | Position from firmware; message assignment inferred. | 32\|32 | little-endian | unsigned | 10 | 0 | rev | 0 to 42949672950 |  | plausible |
-| `DIF_phaseOutBusbarTemp` | page 70 | Front drive inverter: phase out busbar temp; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_phaseOutBusbarWeldTemp` | page 70 | Front drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_phaseOutLugTemp` | page 70 | Front drive inverter: phase out lug temp; raw 0 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_dcLinkCapTemp` | page 70 | Front drive inverter: dc link cap temp; raw 0 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_hvDcCableTemp` | page 70 | Front drive inverter: hv dc cable temp; raw 0 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_negDcBusbarTemp` | page 70 | Front drive inverter: neg dc busbar temp; raw 0 = signal not available (SNA) | 48\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_posDcBusbarTemp` | page 70 | Front drive inverter: pos dc busbar temp; raw 0 = signal not available (SNA) | 56\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_statorEndWindingTemp` | page 72 | Front drive inverter: stator end winding temp; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_rotorMaxMagnetTemp` | page 72 | Reports the maximum temperature of the rotor magnet; raw 0 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_lightSenseV` | page 72 | Front drive inverter: light sense v | 24\|6 | little-endian | unsigned | 0.1 | 0 | V | 0 to 3.3 |  | validated |
-| `DIF_pyroSenseV` | page 72 | Front drive inverter: pyro sense v | 30\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 3.3 |  | validated |
-| `DIF_statorSlotWindingTemp` | page 72 | Front drive inverter: stator slot winding temp; raw 0 = signal not available (SNA) | 46\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | validated |
-| `DIF_intervalMaxHvBusV` | page 72 | Front drive inverter: interval max hv bus v | 54\|10 | little-endian | unsigned | 1 | 0 | V | 0 to 1023 |  | validated |
+| `DIF_phaseOutBusbarTemp` | page 70 | Front drive inverter: phase out busbar temp; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_phaseOutBusbarWeldTemp` | page 70 | Front drive inverter: phase out busbar weld temp; raw 0 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_phaseOutLugTemp` | page 70 | Front drive inverter: phase out lug temp; raw 0 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_dcLinkCapTemp` | page 70 | Front drive inverter: dc link cap temp; raw 0 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_hvDcCableTemp` | page 70 | Front drive inverter: hv dc cable temp; raw 0 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_negDcBusbarTemp` | page 70 | Front drive inverter: neg dc busbar temp; raw 0 = signal not available (SNA) | 48\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_posDcBusbarTemp` | page 70 | Front drive inverter: pos dc busbar temp; raw 0 = signal not available (SNA) | 56\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_statorEndWindingTemp` | page 72 | Front drive inverter: stator end winding temp; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_rotorMaxMagnetTemp` | page 72 | Reports the maximum temperature of the rotor magnet; raw 0 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_lightSenseV` | page 72 | Front drive inverter: light sense v | 24\|6 | little-endian | unsigned | 0.1 | 0 | V | 0 to 3.3 |  | plausible |
+| `DIF_pyroSenseV` | page 72 | Front drive inverter: pyro sense v | 30\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 3.3 |  | plausible |
+| `DIF_statorSlotWindingTemp` | page 72 | Front drive inverter: stator slot winding temp; raw 0 = signal not available (SNA) | 46\|8 | little-endian | unsigned | 1 | -40 | DegC | -39 to 215 | 0 = `SNA` | plausible |
+| `DIF_intervalMaxHvBusV` | page 72 | Front drive inverter: interval max hv bus v | 54\|10 | little-endian | unsigned | 1 | 0 | V | 0 to 1023 |  | plausible |
 | `DIF_cpu1HzMin` | page 128 | Position from firmware; message assignment inferred. | 8\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 102 |  | plausible |
 | `DIF_cpu1HzAvg` | page 128 | Position from firmware; message assignment inferred. | 16\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 102 |  | plausible |
 | `DIF_cpuIDWord0` | page 131 | Position from firmware; message assignment inferred. | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | plausible |

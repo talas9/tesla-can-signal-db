@@ -30,19 +30,19 @@ Tesla Model 3 / Model Y CAN bus signals in `HVP_log1hz`: start bit and length, b
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `HVP_log1HzIndex` | selector | High-voltage processor (pack contactor and isolation controller): log1 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `Mux0`<br>1 = `Mux1` | plausible |
-| `HVP_bmbAsicType` | page 0 | The BMB Asic type being used by this battery pack for reading brick data | 3\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `LTC831`<br>2 = `ADBMS6830`<br>3 = `BQ796xx` | validated |
-| `HVP_shuntCurrentAuxLog` | page 0 | High-voltage processor (pack contactor and isolation controller): shunt current aux log | 8\|24 | little-endian | signed | 0.001 | 0 | A | -8388.607 to 8388.607 | 8388000 = `PACK_CURRENT_SNA` | validated |
-| `HVP_pyroSquibResistance` | page 0 | The pyro resistance measured on attempt to close contactor or by the Pyro selftest; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 0.001 | 0 | Ohm | 0 to 65.534 | 65535 = `SNA` | validated |
-| `HVP_shuntAsicChipXCoordinate` | page 0 | High-voltage processor (pack contactor and isolation controller): shunt asic chip x coordinate | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `HVP_shuntAsicChipYCoordinate` | page 0 | High-voltage processor (pack contactor and isolation controller): shunt asic chip y coordinate | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `HVP_hvilCalType` | page 1 | High-voltage processor (pack contactor and isolation controller): hvil cal type | 3\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `LV`<br>2 = `CAN` | validated |
-| `HVP_gpioPcsDcdcPwmEnable` | page 1 | High-voltage processor (pack contactor and isolation controller): gpio pcs dcdc pwm enable | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `HVP_gpioPcsChargePwmEnable` | page 1 | High-voltage processor (pack contactor and isolation controller): gpio pcs charge pwm enable | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `HVP_gpioPcsEnable` | page 1 | HVP GPIO control for PCS logic power enable line | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `HVP_shuntAsicChipWaferNumber` | page 1 | High-voltage processor (pack contactor and isolation controller): shunt asic chip wafer number | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `HVP_energyReserveMin` | page 1 | a lowest energy reserve value measured over sliding window | 16\|16 | little-endian | signed | 0.001 | 0 | V | -32.768 to 32.767 |  | validated |
-| `HVP_energyReserveMax` | page 1 | a highest energy reserve value measured over sliding window | 32\|16 | little-endian | signed | 0.001 | 0 | V | -32.768 to 32.767 |  | validated |
-| `HVP_energyReserveAvg` | page 1 | an average energy reserve value measured over sliding window | 48\|16 | little-endian | signed | 0.001 | 0 | V | -32.768 to 32.767 |  | validated |
+| `HVP_bmbAsicType` | page 0 | The BMB Asic type being used by this battery pack for reading brick data | 3\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `LTC831`<br>2 = `ADBMS6830`<br>3 = `BQ796xx` | plausible |
+| `HVP_shuntCurrentAuxLog` | page 0 | High-voltage processor (pack contactor and isolation controller): shunt current aux log | 8\|24 | little-endian | signed | 0.001 | 0 | A | -8388.607 to 8388.607 | 8388000 = `PACK_CURRENT_SNA` | plausible |
+| `HVP_pyroSquibResistance` | page 0 | The pyro resistance measured on attempt to close contactor or by the Pyro selftest; raw 65535 = signal not available (SNA) | 32\|16 | little-endian | unsigned | 0.001 | 0 | Ohm | 0 to 65.534 | 65535 = `SNA` | plausible |
+| `HVP_shuntAsicChipXCoordinate` | page 0 | High-voltage processor (pack contactor and isolation controller): shunt asic chip x coordinate | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `HVP_shuntAsicChipYCoordinate` | page 0 | High-voltage processor (pack contactor and isolation controller): shunt asic chip y coordinate | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `HVP_hvilCalType` | page 1 | High-voltage processor (pack contactor and isolation controller): hvil cal type | 3\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `LV`<br>2 = `CAN` | plausible |
+| `HVP_gpioPcsDcdcPwmEnable` | page 1 | High-voltage processor (pack contactor and isolation controller): gpio pcs dcdc pwm enable | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `HVP_gpioPcsChargePwmEnable` | page 1 | High-voltage processor (pack contactor and isolation controller): gpio pcs charge pwm enable | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `HVP_gpioPcsEnable` | page 1 | HVP GPIO control for PCS logic power enable line | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `HVP_shuntAsicChipWaferNumber` | page 1 | High-voltage processor (pack contactor and isolation controller): shunt asic chip wafer number | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `HVP_energyReserveMin` | page 1 | a lowest energy reserve value measured over sliding window | 16\|16 | little-endian | signed | 0.001 | 0 | V | -32.768 to 32.767 |  | plausible |
+| `HVP_energyReserveMax` | page 1 | a highest energy reserve value measured over sliding window | 32\|16 | little-endian | signed | 0.001 | 0 | V | -32.768 to 32.767 |  | plausible |
+| `HVP_energyReserveAvg` | page 1 | an average energy reserve value measured over sliding window | 48\|16 | little-endian | signed | 0.001 | 0 | V | -32.768 to 32.767 |  | plausible |
 
 ## Multiplexing
 

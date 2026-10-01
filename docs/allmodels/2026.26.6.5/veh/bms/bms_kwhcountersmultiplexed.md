@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_kwhCountersMultiplexed`: start b
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_kwhCounter_Id` | selector | High-voltage battery management system: kwh counter id | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2`<br>3 = `MUX3`<br>4 = `MUX4`<br>5 = `MUX5`<br>6 = `MUX6`<br>7 = `MUX7`<br>8 = `MUX8`<br>9 = `MUX9`<br>10 = `MUX10`<br>11 = `MUX11`<br>12 = `MUX12`<br>13 = `MUX13`<br>14 = `END` | plausible |
+| `BMS_kwhCounter_Id` | selector | High-voltage battery management system: kwh counter id | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `MUX0`<br>1 = `MUX1`<br>2 = `MUX2`<br>3 = `MUX3`<br>4 = `MUX4`<br>5 = `MUX5`<br>6 = `MUX6`<br>7 = `MUX7`<br>8 = `MUX8`<br>9 = `MUX9`<br>10 = `MUX10`<br>11 = `MUX11`<br>12 = `MUX12`<br>13 = `MUX13`<br>14 = `END` | validated |
 | `BMS_acChargerKwhTotal` | page 0 | Total energy-gained kWh count during AC charge | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
 | `BMS_dcChargerKwhTotal` | page 1 | Total energy-gained kWh count during DC charging | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |
 | `BMS_kwhRegenChargeTotal` | page 2 | Total energy-gained kWh count during charging with regen | 8\|32 | little-endian | unsigned | 0.001 | 0 | KWh | 0 to 268435.456 |  | validated |

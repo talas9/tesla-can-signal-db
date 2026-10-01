@@ -29,14 +29,14 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_status`: start bit and length, b
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DIR_statusChecksum` | Rear drive inverter: status checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DIR_statusCounter` | Rear drive inverter: status counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `DIR_state` | DI unit state machine state. | 12\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `DI_STATE_UNAVAILABLE`<br>1 = `DI_STATE_STANDBY`<br>2 = `DI_STATE_FAULT`<br>3 = `DI_STATE_ABORT`<br>4 = `DI_STATE_ENABLE` | validated |
+| `DIR_statusChecksum` | Rear drive inverter: status checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DIR_statusCounter` | Rear drive inverter: status counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `DIR_state` | DI unit state machine state. | 12\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `DI_STATE_UNAVAILABLE`<br>1 = `DI_STATE_STANDBY`<br>2 = `DI_STATE_FAULT`<br>3 = `DI_STATE_ABORT`<br>4 = `DI_STATE_ENABLE` | plausible |
 | `DIR_soptState` | Detects the state of the the Switch Off Path Test (SOPT); raw 8 = signal not available (SNA) | 16\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `SOPT_INIT`<br>1 = `SOPT_PSTG_BRING_UP`<br>2 = `SOPT_PSTG_BRING_UP_AT_SPEED`<br>3 = `SOPT_ASC_TEST`<br>4 = `SOPT_CURRENT_TEST`<br>5 = `SOPT_TEST_PASSED`<br>6 = `SOPT_TEST_SKIPPED`<br>7 = `SOPT_TEST_FAILED`<br>8 = `SOPT_SNA`<br>9 = `SOPT_DISABLED` | plausible |
 | `DIR_sysLimpRequest` | Rear drive inverter: sys limp request | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_softSysLimpRequest` | Rear drive inverter: soft sys limp request | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `DIR_adState` | Rear drive inverter: ad state | 22\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `AD_STATE_STARTUP`<br>1 = `AD_STATE_NORMAL`<br>2 = `AD_STATE_BACKUP`<br>3 = `AD_STATE_FAULTED` | plausible |
-| `DIR_lvSupplyV` | Rear drive inverter: lv supply v | 24\|8 | little-endian | unsigned | 0.1 | 0 | V | 0 to 25.5 |  | validated |
+| `DIR_lvSupplyV` | Rear drive inverter: lv supply v | 24\|8 | little-endian | unsigned | 0.1 | 0 | V | 0 to 25.5 |  | plausible |
 | `DIR_driveModeState` | Rear drive inverter: drive mode state | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `DM_STATE_NONDRIVE`<br>1 = `DM_STATE_DRIVE` | plausible |
 | `DIR_wasteState` | Reports the Drive Inverter (DI) waste heat state. | 33\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `DI_WASTE_UNAVAILABLE`<br>1 = `DI_WASTE_AVAILABLE`<br>2 = `DI_WASTE_ON`<br>3 = `DI_WASTE_STATIONARY` | plausible |
 | `DIR_haltRequest` | Rear drive inverter: halt request | 35\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `DI_HALT_NONE`<br>1 = `DI_HALT_IMMEDIATE`<br>2 = `DI_HALT_GRACEFUL` | plausible |

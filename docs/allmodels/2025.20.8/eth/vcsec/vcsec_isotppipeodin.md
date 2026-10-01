@@ -29,14 +29,14 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_IsoTpPipeODIN`: start bit and 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCSEC_IsoTpPipeODIN0` | Vehicle security controller: iso tp pipe ODIN0 | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN1` | Vehicle security controller: iso tp pipe ODIN1 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN2` | Vehicle security controller: iso tp pipe ODIN2 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN3` | Vehicle security controller: iso tp pipe ODIN3 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN4` | Vehicle security controller: iso tp pipe ODIN4 | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN5` | Vehicle security controller: iso tp pipe ODIN5 | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN6` | Vehicle security controller: iso tp pipe ODIN6 | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `VCSEC_IsoTpPipeODIN7` | Vehicle security controller: iso tp pipe ODIN7 | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `VCSEC_IsoTpPipeODIN0` | Vehicle security controller: iso tp pipe ODIN0 | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN1` | Vehicle security controller: iso tp pipe ODIN1 | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN2` | Vehicle security controller: iso tp pipe ODIN2 | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN3` | Vehicle security controller: iso tp pipe ODIN3 | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN4` | Vehicle security controller: iso tp pipe ODIN4 | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN5` | Vehicle security controller: iso tp pipe ODIN5 | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN6` | Vehicle security controller: iso tp pipe ODIN6 | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `VCSEC_IsoTpPipeODIN7` | Vehicle security controller: iso tp pipe ODIN7 | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

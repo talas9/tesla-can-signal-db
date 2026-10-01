@@ -43,7 +43,7 @@ Tesla Model 3 CAN bus signals in `UI_powertrainControl`: start bit and length, b
 | `UI_speedLimit` | Maximum allowed speed enforced at vehicle level; raw 511 = signal not available (SNA) | 32\|12 | little-endian | unsigned | 0.1 | 0 | kph | 0 to 335 | 511 = `SNA` | validated |
 | `UI_enableSmartShift` | Stalkless convenience feature that allows unparking with only a firm press of brake pedal | 44\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `OFF`<br>1 = `ENABLED_P`<br>2 = `ENABLED_P_R_D` | validated |
 | `UI_navVehParallelToRdCanContinue` | Whether the vehicle is parallel parked on a public road; raw 0 = signal not available (SNA) | 48\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA`<br>1 = `FALSE`<br>2 = `TRUE` | validated |
-| `UI_powertrainControlCounter` | Touchscreen user interface computer: powertrain control counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `UI_powertrainControlCounter` | Touchscreen user interface computer: powertrain control counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `UI_powertrainControlChecksum` | Touchscreen user interface computer: powertrain control checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 
 ## Download the DBC file

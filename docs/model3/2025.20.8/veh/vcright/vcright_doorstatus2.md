@@ -30,13 +30,13 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_doorStatus2`: start bit and length, by
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VCRIGHT_doorStatus2Index` | selector | Right body controller: door status2 index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MUX0`<br>1 = `MUX1` | plausible |
-| `VCRIGHT_frontLatchRelDuty` | page 1 | Front left door latch motor duty cycle. | 8\|8 | little-endian | unsigned | 1 | 0 | % | 0 to 255 |  | validated |
-| `VCRIGHT_BPillarCameraHeaterState` | page 1 | Indicates the state of the right b-pillar camera heater; raw 0 = signal not available (SNA) | 16\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `HEATER_STATE_SNA`<br>1 = `HEATER_STATE_ON`<br>2 = `HEATER_STATE_OFF`<br>3 = `HEATER_STATE_OFF_UNAVAILABLE`<br>4 = `HEATER_STATE_FAULT` | validated |
-| `VCRIGHT_doorLatchAjarSwitchVoltageF` | page 1 | Door latch switch voltage feeding switch logic | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCRIGHT_doorLatchAjarSwitchVoltageR` | page 1 | Door latch switch voltage feeding switch logic | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | validated |
-| `VCRIGHT_BPillarCameraHeaterCurrent` | page 1 | Current drawn by the right b-pillar camera heater; raw 63 = signal not available (SNA) | 40\|6 | little-endian | unsigned | 0.02 | 0 | A | 0 to 1.24 | 63 = `SNA` | validated |
-| `VCRIGHT_mirrorTiltXOffset` | page 1 | Communicates post calibration position offset of right side view mirror tilt horizontal position | 48\|8 | little-endian | signed | 0.02 | 0 | V | -2.5 to 2.5 |  | validated |
-| `VCRIGHT_mirrorTiltYOffset` | page 1 | Communicates post calibration position offset of right side view mirror tilt vertical position | 56\|8 | little-endian | signed | 0.02 | 0 | V | -2.5 to 2.5 |  | validated |
+| `VCRIGHT_frontLatchRelDuty` | page 1 | Front left door latch motor duty cycle. | 8\|8 | little-endian | unsigned | 1 | 0 | % | 0 to 255 |  | plausible |
+| `VCRIGHT_BPillarCameraHeaterState` | page 1 | Indicates the state of the right b-pillar camera heater; raw 0 = signal not available (SNA) | 16\|3 | little-endian | unsigned | 1 | 0 |  | 1 to 7 | 0 = `HEATER_STATE_SNA`<br>1 = `HEATER_STATE_ON`<br>2 = `HEATER_STATE_OFF`<br>3 = `HEATER_STATE_OFF_UNAVAILABLE`<br>4 = `HEATER_STATE_FAULT` | plausible |
+| `VCRIGHT_doorLatchAjarSwitchVoltageF` | page 1 | Door latch switch voltage feeding switch logic | 24\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCRIGHT_doorLatchAjarSwitchVoltageR` | page 1 | Door latch switch voltage feeding switch logic | 32\|8 | little-endian | unsigned | 0.02 | 0 | V | 0 to 5 |  | plausible |
+| `VCRIGHT_BPillarCameraHeaterCurrent` | page 1 | Current drawn by the right b-pillar camera heater; raw 63 = signal not available (SNA) | 40\|6 | little-endian | unsigned | 0.02 | 0 | A | 0 to 1.24 | 63 = `SNA` | plausible |
+| `VCRIGHT_mirrorTiltXOffset` | page 1 | Communicates post calibration position offset of right side view mirror tilt horizontal position | 48\|8 | little-endian | signed | 0.02 | 0 | V | -2.5 to 2.5 |  | plausible |
+| `VCRIGHT_mirrorTiltYOffset` | page 1 | Communicates post calibration position offset of right side view mirror tilt vertical position | 56\|8 | little-endian | signed | 0.02 | 0 | V | -2.5 to 2.5 |  | plausible |
 
 ## Multiplexing
 

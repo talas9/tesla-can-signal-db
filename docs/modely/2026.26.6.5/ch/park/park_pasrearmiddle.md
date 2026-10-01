@@ -29,11 +29,11 @@ Tesla Model Y CAN bus signals in `PARK_pasRearMiddle`: start bit and length, byt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PARK_rearLeftMiddleRawDistData` | Zone defined as -124 degrees to -166 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_rearMiddleRawDistData` | Zone defined as -166 degrees to +166 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_rearRightMiddleRawDistData` | Zone defined as +166 degrees to +124 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_pasRearMiddleCounter` | Parking assist sensors: pas rear middle counter | 24\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `PARK_pasRearMiddleChecksum` | Parking assist sensors: pas rear middle checksum | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `PARK_rearLeftMiddleRawDistData` | Zone defined as -124 degrees to -166 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_rearMiddleRawDistData` | Zone defined as -166 degrees to +166 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_rearRightMiddleRawDistData` | Zone defined as +166 degrees to +124 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_pasRearMiddleCounter` | Parking assist sensors: pas rear middle counter | 24\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `PARK_pasRearMiddleChecksum` | Parking assist sensors: pas rear middle checksum | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

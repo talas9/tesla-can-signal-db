@@ -29,13 +29,13 @@ Tesla Model 3 / Model Y CAN bus signals in `PTC_sensorStatus`: start bit and len
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PTC_leftTempIGBT` | Heater left bank IGBT temperature | 0\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | validated |
-| `PTC_tempOCP` | Temperature measured near the over current protection circuit | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | validated |
-| `PTC_rightTempIGBT` | Heater right bank IGBT temperature | 16\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | validated |
-| `PTC_tempPCB` | Heater printed circuit board temperature | 24\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | validated |
-| `PTC_voltageHV` | Heater high voltage input voltage | 32\|10 | little-endian | unsigned | 0.5 | 0 | V | 0 to 511.5 |  | validated |
-| `PTC_leftCurrentHV` | Cabin heater: left current HV | 48\|8 | little-endian | unsigned | 0.2 | 0 | A | 0 to 50 |  | validated |
-| `PTC_rightCurrentHV` | Cabin heater: right current HV | 56\|8 | little-endian | unsigned | 0.2 | 0 | A | 0 to 50 |  | validated |
+| `PTC_leftTempIGBT` | Heater left bank IGBT temperature | 0\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | plausible |
+| `PTC_tempOCP` | Temperature measured near the over current protection circuit | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | plausible |
+| `PTC_rightTempIGBT` | Heater right bank IGBT temperature | 16\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | plausible |
+| `PTC_tempPCB` | Heater printed circuit board temperature | 24\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 200 |  | plausible |
+| `PTC_voltageHV` | Heater high voltage input voltage | 32\|10 | little-endian | unsigned | 0.5 | 0 | V | 0 to 511.5 |  | plausible |
+| `PTC_leftCurrentHV` | Cabin heater: left current HV | 48\|8 | little-endian | unsigned | 0.2 | 0 | A | 0 to 50 |  | plausible |
+| `PTC_rightCurrentHV` | Cabin heater: right current HV | 56\|8 | little-endian | unsigned | 0.2 | 0 | A | 0 to 50 |  | plausible |
 
 ## Download the DBC file
 

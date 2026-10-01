@@ -29,12 +29,12 @@ Tesla Model Y CAN bus signals in `SCCM_rightStalk`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `SCCM_rightStalkCrc` | Steering column control module: right stalk crc | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `SCCM_rightStalkCounter` | Steering column control module: right stalk counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `SCCM_rightStalkStatus` | Active state of drive stalk position, does not indicate active drive gear; raw 6 = signal not available (SNA) | 12\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `IDLE`<br>1 = `UP_1`<br>2 = `UP_2`<br>3 = `DOWN_1`<br>4 = `DOWN_2`<br>5 = `INIT`<br>6 = `SNA` | validated |
-| `SCCM_rightStalkReserved1` | Steering column control module: right stalk reserved1 | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `SCCM_parkButtonStatus` | Active state of park button on the drive stalk; raw 3 = signal not available (SNA) | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NOT_PRESSED`<br>1 = `PRESSED`<br>2 = `INIT`<br>3 = `SNA` | validated |
-| `SCCM_rightStalkReserved2` | Steering column control module: right stalk reserved2 | 18\|6 | little-endian | unsigned | 1 | 0 |  | 0 to 63 |  | validated |
+| `SCCM_rightStalkCrc` | Steering column control module: right stalk crc | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `SCCM_rightStalkCounter` | Steering column control module: right stalk counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `SCCM_rightStalkStatus` | Active state of drive stalk position, does not indicate active drive gear; raw 6 = signal not available (SNA) | 12\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `IDLE`<br>1 = `UP_1`<br>2 = `UP_2`<br>3 = `DOWN_1`<br>4 = `DOWN_2`<br>5 = `INIT`<br>6 = `SNA` | plausible |
+| `SCCM_rightStalkReserved1` | Steering column control module: right stalk reserved1 | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `SCCM_parkButtonStatus` | Active state of park button on the drive stalk; raw 3 = signal not available (SNA) | 16\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NOT_PRESSED`<br>1 = `PRESSED`<br>2 = `INIT`<br>3 = `SNA` | plausible |
+| `SCCM_rightStalkReserved2` | Steering column control module: right stalk reserved2 | 18\|6 | little-endian | unsigned | 1 | 0 |  | 0 to 63 |  | layout-only |
 
 ## Download the DBC file
 

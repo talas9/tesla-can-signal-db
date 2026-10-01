@@ -29,10 +29,10 @@ Tesla Model 3 CAN bus signals in `FC_limits`: start bit and length, byte order, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `FC_powerLimit` | Instantaneous power charger can deliver; raw 8191 = signal not available (SNA) | 0\|13 | little-endian | unsigned | 0.06225586 | 0 | kW | 0 to 509.8754934 | 8191 = `SNA` | validated |
-| `FC_currentLimit` | Instantaneous current charger can deliver; raw 8191 = signal not available (SNA) | 16\|13 | little-endian | unsigned | 0.07324219 | 0 | A | 0 to 599.8535361 | 8191 = `SNA` | validated |
-| `FC_maxVoltageLimit` | Max voltage charger can deliver. 600/65536; raw 8191 = signal not available (SNA) | 32\|13 | little-endian | unsigned | 0.07324219 | 0 | V | 0 to 599.8535361 | 8191 = `SNA` | validated |
-| `FC_minVoltageLimit` | Measures Electric Vehicle Supply Equipment (EVSE) minimum current limit; raw 8191 = signal not available (SNA) | 48\|13 | little-endian | unsigned | 0.07324219 | 0 | V | 0 to 599.8535361 | 8191 = `SNA` | validated |
+| `FC_powerLimit` | Instantaneous power charger can deliver; raw 8191 = signal not available (SNA) | 0\|13 | little-endian | unsigned | 0.06225586 | 0 | kW | 0 to 509.8754934 | 8191 = `SNA` | plausible |
+| `FC_currentLimit` | Instantaneous current charger can deliver; raw 8191 = signal not available (SNA) | 16\|13 | little-endian | unsigned | 0.07324219 | 0 | A | 0 to 599.8535361 | 8191 = `SNA` | plausible |
+| `FC_maxVoltageLimit` | Max voltage charger can deliver. 600/65536; raw 8191 = signal not available (SNA) | 32\|13 | little-endian | unsigned | 0.07324219 | 0 | V | 0 to 599.8535361 | 8191 = `SNA` | plausible |
+| `FC_minVoltageLimit` | Measures Electric Vehicle Supply Equipment (EVSE) minimum current limit; raw 8191 = signal not available (SNA) | 48\|13 | little-endian | unsigned | 0.07324219 | 0 | V | 0 to 599.8535361 | 8191 = `SNA` | plausible |
 
 ## Download the DBC file
 

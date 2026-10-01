@@ -29,9 +29,9 @@ Tesla Model Y CAN bus signals in `UI_tripPlanning3`: start bit and length, byte 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_predictedEnergy` | initially predicted energy in kWh for current location along navigation route; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.67 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | validated |
+| `UI_predictedEnergy` | initially predicted energy in kWh for current location along navigation route; raw 32768 = signal not available (SNA) | 0\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.67 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | plausible |
 | `UI_predictedEnergyLearned` | Touchscreen user interface computer: predicted energy learned; raw 32768 = signal not available (SNA) | 16\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.68 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | plausible |
-| `UI_hindsightEnergy` | hindsight energy, the model predicted energy based on measured speed and acceleration for the current location along navigation route; raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.67 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | validated |
+| `UI_hindsightEnergy` | hindsight energy, the model predicted energy based on measured speed and acceleration for the current location along navigation route; raw 32768 = signal not available (SNA) | 32\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.67 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | plausible |
 | `UI_hindsightEnergyLearned` | Touchscreen user interface computer: hindsight energy learned; raw 32768 = signal not available (SNA) | 48\|16 | little-endian | signed | 0.01 | 0 | kWh | -327.68 to 327.67 | -32768 = `SNA`<br>-32767 = `TRIP_TOO_LONG` | plausible |
 
 ## Download the DBC file

@@ -30,19 +30,19 @@ Tesla Model Y CAN bus signals in `UI_ventPanelControlRequest`: start bit and len
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `UI_ventPanelControlRequestIndex` | selector | Touchscreen user interface computer: vent panel control request index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
-| `UI_ventPanelLeftPositionX` | page 0 | Airwave left X position. | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_ventPanelLeftPositionY` | page 0 | Airwave left Y position. | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_ventPanelLeftLateralSplit` | page 0 | Airwave left split amount. | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_ventPanelRightPositionX` | page 0 | Airwave right X position. | 32\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_ventPanelRightPositionY` | page 0 | Airwave right Y position. | 40\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_ventPanelRightLateralSplit` | page 0 | Airwave right split amount. | 48\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_ventPanelLeftLateralMode` | page 0 | Airwave left focus or split. | 56\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SINGLE`<br>1 = `SPLIT`<br>2 = `SWING` | validated |
-| `UI_ventPanelRightLateralMode` | page 0 | Airwave right focus or split. | 58\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SINGLE`<br>1 = `SPLIT`<br>2 = `SWING` | validated |
-| `UI_hvacReqActiveVents` | page 0 | Active airwave sides - left/right/both | 60\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `BOTH`<br>1 = `LEFT`<br>2 = `RIGHT`<br>3 = `OFF` | validated |
-| `UI_vent2RLeftPositionX` | page 1 | Airwave left X position. | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_vent2RLeftPositionY` | page 1 | Airwave left Y position. | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_vent2RRightPositionX` | page 1 | Airwave left X position. | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `UI_vent2RRightPositionY` | page 1 | Airwave left Y position. | 32\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
+| `UI_ventPanelLeftPositionX` | page 0 | Airwave left X position. | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_ventPanelLeftPositionY` | page 0 | Airwave left Y position. | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_ventPanelLeftLateralSplit` | page 0 | Airwave left split amount. | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_ventPanelRightPositionX` | page 0 | Airwave right X position. | 32\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_ventPanelRightPositionY` | page 0 | Airwave right Y position. | 40\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_ventPanelRightLateralSplit` | page 0 | Airwave right split amount. | 48\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_ventPanelLeftLateralMode` | page 0 | Airwave left focus or split. | 56\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SINGLE`<br>1 = `SPLIT`<br>2 = `SWING` | plausible |
+| `UI_ventPanelRightLateralMode` | page 0 | Airwave right focus or split. | 58\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `SINGLE`<br>1 = `SPLIT`<br>2 = `SWING` | plausible |
+| `UI_hvacReqActiveVents` | page 0 | Active airwave sides - left/right/both | 60\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `BOTH`<br>1 = `LEFT`<br>2 = `RIGHT`<br>3 = `OFF` | plausible |
+| `UI_vent2RLeftPositionX` | page 1 | Airwave left X position. | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_vent2RLeftPositionY` | page 1 | Airwave left Y position. | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_vent2RRightPositionX` | page 1 | Airwave left X position. | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `UI_vent2RRightPositionY` | page 1 | Airwave left Y position. | 32\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
 
 ## Multiplexing
 

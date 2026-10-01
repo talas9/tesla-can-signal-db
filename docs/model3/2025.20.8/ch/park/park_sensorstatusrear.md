@@ -29,16 +29,16 @@ Tesla Model 3 CAN bus signals in `PARK_sensorStatusRear`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `PARK_rearRightSensorState` | Reports the state of the rear right ultrasonic sensor; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | validated |
-| `PARK_rearRightMiddleSensorState` | Reports the state of the rear right middle ultrasonic sensor; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | validated |
-| `PARK_rearLeftMiddleSensorState` | Reports the state of the rear left middle ultrasonic sensor; raw 3 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | validated |
-| `PARK_rearLeftSensorState` | Reports the state of the rear left ultrasonic sensor; raw 3 = signal not available (SNA) | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | validated |
-| `PARK_rearLeftRawDistData` | Zone defined as -90 degrees to -125 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_rearRightRawDistData` | Zone defined as +125 degrees to +90 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `PARK_systemStatusRear` | Parking assist sensors: system status rear; raw 3 = signal not available (SNA) | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `DISABLED`<br>1 = `ENABLED`<br>2 = `UNUSED`<br>3 = `SNA` | validated |
-| `PARK_rearDtcPresent` | Parking assist sensors: rear dtc present; raw 3 = signal not available (SNA) | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `FALSE`<br>1 = `TRUE`<br>2 = `UNUSED`<br>3 = `SNA` | validated |
-| `PARK_sensorStatusRearCounter` | Parking assist sensors: sensor status rear counter | 28\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `PARK_sensorStatusRearChecksum` | Parking assist sensors: sensor status rear checksum | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `PARK_rearRightSensorState` | Reports the state of the rear right ultrasonic sensor; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | plausible |
+| `PARK_rearRightMiddleSensorState` | Reports the state of the rear right middle ultrasonic sensor; raw 3 = signal not available (SNA) | 2\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | plausible |
+| `PARK_rearLeftMiddleSensorState` | Reports the state of the rear left middle ultrasonic sensor; raw 3 = signal not available (SNA) | 4\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | plausible |
+| `PARK_rearLeftSensorState` | Reports the state of the rear left ultrasonic sensor; raw 3 = signal not available (SNA) | 6\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `NO_FAILURE`<br>1 = `PERMANENT_FAILURE`<br>2 = `TEMPORARY_FAILURE`<br>3 = `SNA` | plausible |
+| `PARK_rearLeftRawDistData` | Zone defined as -90 degrees to -125 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_rearRightRawDistData` | Zone defined as +125 degrees to +90 degrees, distance to object in units of centimeters; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `PARK_systemStatusRear` | Parking assist sensors: system status rear; raw 3 = signal not available (SNA) | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `DISABLED`<br>1 = `ENABLED`<br>2 = `UNUSED`<br>3 = `SNA` | plausible |
+| `PARK_rearDtcPresent` | Parking assist sensors: rear dtc present; raw 3 = signal not available (SNA) | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `FALSE`<br>1 = `TRUE`<br>2 = `UNUSED`<br>3 = `SNA` | plausible |
+| `PARK_sensorStatusRearCounter` | Parking assist sensors: sensor status rear counter | 28\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `PARK_sensorStatusRearChecksum` | Parking assist sensors: sensor status rear checksum | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

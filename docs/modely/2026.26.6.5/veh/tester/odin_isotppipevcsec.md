@@ -29,14 +29,14 @@ Tesla Model Y CAN bus signals in `ODIN_IsoTpPipeVCSEC`: start bit and length, by
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `ODIN_IsoTpPipeVCSEC0` | External diagnostic tester: iso tp pipe VCSEC0 | 7\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC1` | External diagnostic tester: iso tp pipe VCSEC1 | 15\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC2` | External diagnostic tester: iso tp pipe VCSEC2 | 23\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC3` | External diagnostic tester: iso tp pipe VCSEC3 | 31\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC4` | External diagnostic tester: iso tp pipe VCSEC4 | 39\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC5` | External diagnostic tester: iso tp pipe VCSEC5 | 47\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC6` | External diagnostic tester: iso tp pipe VCSEC6 | 55\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
-| `ODIN_IsoTpPipeVCSEC7` | External diagnostic tester: iso tp pipe VCSEC7 | 63\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `ODIN_IsoTpPipeVCSEC0` | External diagnostic tester: iso tp pipe VCSEC0 | 7\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC1` | External diagnostic tester: iso tp pipe VCSEC1 | 15\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC2` | External diagnostic tester: iso tp pipe VCSEC2 | 23\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC3` | External diagnostic tester: iso tp pipe VCSEC3 | 31\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC4` | External diagnostic tester: iso tp pipe VCSEC4 | 39\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC5` | External diagnostic tester: iso tp pipe VCSEC5 | 47\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC6` | External diagnostic tester: iso tp pipe VCSEC6 | 55\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `ODIN_IsoTpPipeVCSEC7` | External diagnostic tester: iso tp pipe VCSEC7 | 63\|8 | big-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

@@ -31,8 +31,8 @@ Tesla Model Y CAN bus signals in `GTW_updateStatus`: start bit and length, byte 
 |---|---|---|---|---|---|---|---|---|---|---|
 | `GTW_i2cUpdateActive` | Gateway: i2c update active | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `GTW_peripheralConfirmedUpdateNeeded` | Detects if peripheral has confirmed update is needed | 3\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `UNKNOWN`<br>1 = `UPDATE_NEEDED`<br>2 = `UPDATE_NOT_NEEDED`<br>3 = `UPDATE_CONDITIONS_NOT_CORRECT` | plausible |
-| `GTW_ocuFailed` | Reports the offboard charger update was unsuccessful. | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `GTW_ecuUpdateStarted` | Reports whether Electronic Control Unit (ECU) update phase is active. | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `GTW_ocuFailed` | Reports the offboard charger update was unsuccessful. | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `GTW_ecuUpdateStarted` | Reports whether Electronic Control Unit (ECU) update phase is active. | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `GTW_updateStarted` | Main update in progress bit | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file

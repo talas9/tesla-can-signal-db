@@ -30,18 +30,18 @@ Tesla Model Y CAN bus signals in `TAS_axleData`: start bit and length, byte orde
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `TAS_axleIndex` | selector | Air suspension controller: axle index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `axleFront`<br>1 = `axleRear` | plausible |
-| `TAS_rawHeightFL` | page 0 | Current height of the FL air spring; raw 1023 = signal not available (SNA) | 4\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_staticHeightEstimateFL` | page 0 | Current static height estimate of the FL air spring; raw 1023 = signal not available (SNA) | 14\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_componentPressureFL` | page 0 | Current static pressure of the FL air spring; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | validated |
-| `TAS_rawHeightFR` | page 0 | Current height of the FR air spring; raw 1023 = signal not available (SNA) | 32\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_staticHeightEstimateFR` | page 0 | Current static height estimate of the FR air spring; raw 1023 = signal not available (SNA) | 42\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_componentPressureFR` | page 0 | Current static pressure of the FR air spring; raw 255 = signal not available (SNA) | 52\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | validated |
-| `TAS_rawHeightRL` | page 1 | Current height of the RL air spring; raw 1023 = signal not available (SNA) | 4\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_staticHeightEstimateRL` | page 1 | Current static height estimate of the RL air spring; raw 1023 = signal not available (SNA) | 14\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_componentPressureRL` | page 1 | Current static pressure of the RL air spring; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | validated |
-| `TAS_rawHeightRR` | page 1 | Current height of the RR air spring; raw 1023 = signal not available (SNA) | 32\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_staticHeightEstimateRR` | page 1 | Current static height estimate of the RR air spring; raw 1023 = signal not available (SNA) | 42\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | validated |
-| `TAS_componentPressureRR` | page 1 | Current static pressure of the RR air spring; raw 255 = signal not available (SNA) | 52\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | validated |
+| `TAS_rawHeightFL` | page 0 | Current height of the FL air spring; raw 1023 = signal not available (SNA) | 4\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_staticHeightEstimateFL` | page 0 | Current static height estimate of the FL air spring; raw 1023 = signal not available (SNA) | 14\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_componentPressureFL` | page 0 | Current static pressure of the FL air spring; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | plausible |
+| `TAS_rawHeightFR` | page 0 | Current height of the FR air spring; raw 1023 = signal not available (SNA) | 32\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_staticHeightEstimateFR` | page 0 | Current static height estimate of the FR air spring; raw 1023 = signal not available (SNA) | 42\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_componentPressureFR` | page 0 | Current static pressure of the FR air spring; raw 255 = signal not available (SNA) | 52\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | plausible |
+| `TAS_rawHeightRL` | page 1 | Current height of the RL air spring; raw 1023 = signal not available (SNA) | 4\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_staticHeightEstimateRL` | page 1 | Current static height estimate of the RL air spring; raw 1023 = signal not available (SNA) | 14\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_componentPressureRL` | page 1 | Current static pressure of the RL air spring; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | plausible |
+| `TAS_rawHeightRR` | page 1 | Current height of the RR air spring; raw 1023 = signal not available (SNA) | 32\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_staticHeightEstimateRR` | page 1 | Current static height estimate of the RR air spring; raw 1023 = signal not available (SNA) | 42\|10 | little-endian | unsigned | 1 | -512 | mm | -512 to 510 | 1023 = `SNA` | plausible |
+| `TAS_componentPressureRR` | page 1 | Current static pressure of the RR air spring; raw 255 = signal not available (SNA) | 52\|8 | little-endian | unsigned | 0.1 | 0 | bara | 0 to 25.4 | 255 = `SNA` | plausible |
 
 ## Multiplexing
 

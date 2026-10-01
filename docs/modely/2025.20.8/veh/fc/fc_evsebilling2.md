@@ -30,8 +30,8 @@ Tesla Model Y CAN bus signals in `FC_evseBilling2`: start bit and length, byte o
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `FC_evseBilling2DataSelect` | selector | FC ECU: evse billing2 data select | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `FC_EVSEBILLING2_DATASELECT_0` | plausible |
-| `FC_evsePpuEnabled` | page 0 | FC ECU: evse ppu enabled | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `FC_evseBillingEnergyHighRes` | page 0 | FC ECU: evse billing energy high res; raw 16777215 = signal not available (SNA) | 8\|24 | little-endian | unsigned | 0.0001 | 0 | kWh | 0 to 1677.7214 | 16777215 = `SNA` | validated |
+| `FC_evsePpuEnabled` | page 0 | FC ECU: evse ppu enabled | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `FC_evseBillingEnergyHighRes` | page 0 | FC ECU: evse billing energy high res; raw 16777215 = signal not available (SNA) | 8\|24 | little-endian | unsigned | 0.0001 | 0 | kWh | 0 to 1677.7214 | 16777215 = `SNA` | plausible |
 
 ## Multiplexing
 

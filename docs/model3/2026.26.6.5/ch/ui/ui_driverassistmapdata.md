@@ -57,7 +57,7 @@ Tesla Model 3 CAN bus signals in `UI_driverAssistMapData`: start bit and length,
 | `UI_autosteerRestricted` | Autopilot map is autostreer restricted. | 49\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `UI_pmmEnabled` | Touchscreen user interface computer: pmm enabled | 50\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_scaEnabled` | Touchscreen user interface computer: sca enabled | 51\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_mapDataCounter` | Touchscreen user interface computer: map data counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | plausible |
+| `UI_mapDataCounter` | Touchscreen user interface computer: map data counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `UI_mapDataChecksum` | Touchscreen user interface computer: map data checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
 
 ## Download the DBC file

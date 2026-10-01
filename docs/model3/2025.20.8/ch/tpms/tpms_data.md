@@ -29,14 +29,14 @@ Tesla Model 3 CAN bus signals in `TPMS_data`: start bit and length, byte order, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `TPMS_pressureFL` | front left tire pressure; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | validated |
-| `TPMS_temperatureFL` | front left tire temperature; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | validated |
-| `TPMS_pressureFR` | front right tire pressure; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | validated |
-| `TPMS_temperatureFR` | front right tire temperature; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | validated |
-| `TPMS_pressureRL` | rear left tire pressure; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | validated |
-| `TPMS_temperatureRL` | rear left tire temperature; raw 255 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | validated |
-| `TPMS_pressureRR` | rear right tire pressure; raw 255 = signal not available (SNA) | 48\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | validated |
-| `TPMS_temperatureRR` | rear right tire temperature; raw 255 = signal not available (SNA) | 56\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | validated |
+| `TPMS_pressureFL` | front left tire pressure; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | plausible |
+| `TPMS_temperatureFL` | front left tire temperature; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | plausible |
+| `TPMS_pressureFR` | front right tire pressure; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | plausible |
+| `TPMS_temperatureFR` | front right tire temperature; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | plausible |
+| `TPMS_pressureRL` | rear left tire pressure; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | plausible |
+| `TPMS_temperatureRL` | rear left tire temperature; raw 255 = signal not available (SNA) | 40\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | plausible |
+| `TPMS_pressureRR` | rear right tire pressure; raw 255 = signal not available (SNA) | 48\|8 | little-endian | unsigned | 0.025 | 0 | bar | 0 to 6.35 | 254 = `OVER_RANGE`<br>255 = `SNA` | plausible |
+| `TPMS_temperatureRR` | rear right tire temperature; raw 255 = signal not available (SNA) | 56\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `TPMS_TEMPERATURE_SNA` | plausible |
 
 ## Download the DBC file
 

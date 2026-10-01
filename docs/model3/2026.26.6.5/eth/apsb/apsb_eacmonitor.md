@@ -29,9 +29,9 @@ Tesla Model 3 CAN bus signals in `APSB_eacMonitor`: start bit and length, byte o
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APSB_eacAllow` | Indicates whether or not the Aurix external angle control (EAC) monitor logic currently allows angle control for Autopilot functions; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `APS_EAC_INHIBIT`<br>1 = `APS_EAC_ALLOW`<br>2 = `APS_EAC_RESERVED`<br>3 = `APS_EAC_SNA` | validated |
-| `APSB_eacMonitorCounter` | APSB ECU: eac monitor counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `APSB_eacMonitorChecksum` | APSB ECU: eac monitor checksum | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `APSB_eacAllow` | Indicates whether or not the Aurix external angle control (EAC) monitor logic currently allows angle control for Autopilot functions; raw 3 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `APS_EAC_INHIBIT`<br>1 = `APS_EAC_ALLOW`<br>2 = `APS_EAC_RESERVED`<br>3 = `APS_EAC_SNA` | plausible |
+| `APSB_eacMonitorCounter` | APSB ECU: eac monitor counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `APSB_eacMonitorChecksum` | APSB ECU: eac monitor checksum | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

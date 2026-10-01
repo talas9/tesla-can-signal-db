@@ -30,13 +30,13 @@ Tesla Model 3 CAN bus signals in `FC_status3`: start bit and length, byte order,
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `FC_status3DataSelect` | selector | FC ECU: status3 data select | 0\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 | 0 = `Mux0`<br>1 = `Mux1` | plausible |
-| `FC_status3DummySig` |  | FC ECU: status3 dummy sig | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `FC_class` | page 0 | FC ECU: class; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `FC_CLASS_SNA`<br>1 = `FC_CLASS_SUPERCHARGER`<br>2 = `FC_CLASS_URBANCHARGER` | validated |
-| `FC_brand` | page 0 | Fast charger brand; raw 0 = signal not available (SNA) | 16\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `SNA`<br>1 = `TESLA` | validated |
-| `FC_coolingType` | page 0 | Type of cooling used for the supercharger; raw 0 = signal not available (SNA) | 20\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `FC_COOLING_TYPE_SNA`<br>1 = `FC_COOLING_TYPE_LIQUID`<br>2 = `FC_COOLING_TYPE_CONVECTION`<br>3 = `FC_COOLING_TYPE_IMMERSION` | validated |
-| `FC_uiStopType` | page 0 | Type of stop type supported from the UI; raw 0 = signal not available (SNA) | 24\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `FC_UI_STOP_TYPE_SNA`<br>1 = `FC_UI_STOP_TYPE_TOGGLE`<br>2 = `FC_UI_STOP_TYPE_MOMENTARY` | validated |
-| `FC_emergencyShutdownSupported` | page 0 | Indicates if the supercharger supports fast emergency shutdown requests from vehicle | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `FC_generation` | page 0 | Hardware generation of the Tesla EVSE; raw 0 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `GENERATION_SNA` | validated |
+| `FC_status3DummySig` |  | FC ECU: status3 dummy sig | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `FC_class` | page 0 | FC ECU: class; raw 0 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `FC_CLASS_SNA`<br>1 = `FC_CLASS_SUPERCHARGER`<br>2 = `FC_CLASS_URBANCHARGER` | plausible |
+| `FC_brand` | page 0 | Fast charger brand; raw 0 = signal not available (SNA) | 16\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `SNA`<br>1 = `TESLA` | plausible |
+| `FC_coolingType` | page 0 | Type of cooling used for the supercharger; raw 0 = signal not available (SNA) | 20\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `FC_COOLING_TYPE_SNA`<br>1 = `FC_COOLING_TYPE_LIQUID`<br>2 = `FC_COOLING_TYPE_CONVECTION`<br>3 = `FC_COOLING_TYPE_IMMERSION` | plausible |
+| `FC_uiStopType` | page 0 | Type of stop type supported from the UI; raw 0 = signal not available (SNA) | 24\|4 | little-endian | unsigned | 1 | 0 |  | 1 to 15 | 0 = `FC_UI_STOP_TYPE_SNA`<br>1 = `FC_UI_STOP_TYPE_TOGGLE`<br>2 = `FC_UI_STOP_TYPE_MOMENTARY` | plausible |
+| `FC_emergencyShutdownSupported` | page 0 | Indicates if the supercharger supports fast emergency shutdown requests from vehicle | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `FC_generation` | page 0 | Hardware generation of the Tesla EVSE; raw 0 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | 0 |  | 1 to 255 | 0 = `GENERATION_SNA` | plausible |
 
 ## Multiplexing
 

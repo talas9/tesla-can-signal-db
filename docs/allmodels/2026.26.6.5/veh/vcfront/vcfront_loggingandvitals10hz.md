@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_loggingAndVitals10Hz`: start
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCFRONT_loggingAndVitals10HzIndex` | selector | Front body controller: logging and vitals10 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TARGETS_AND_ACTUALS_0`<br>1 = `STATES_AND_SENSORS`<br>2 = `EXV_FLOW`<br>3 = `EXV_FLOW_TARGET`<br>4 = `END` | plausible |
+| `VCFRONT_loggingAndVitals10HzIndex` | selector | Front body controller: logging and vitals10 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `TARGETS_AND_ACTUALS_0`<br>1 = `STATES_AND_SENSORS`<br>2 = `EXV_FLOW`<br>3 = `EXV_FLOW_TARGET`<br>4 = `END` | validated |
 | `VCFRONT_pumpBatteryRPMActual` | page 0 | Front body controller: pump battery RPM actual; raw 255 = signal not available (SNA) | 3\|8 | little-endian | unsigned | 30 | 0 | rpm | 0 to 7500 | 255 = `SNA` | validated |
 | `VCFRONT_pumpPowertrainRPMActual` | page 0 | Front body controller: pump powertrain RPM actual; raw 255 = signal not available (SNA) | 11\|8 | little-endian | unsigned | 30 | 0 | rpm | 0 to 7500 | 255 = `SNA` | validated |
 | `VCFRONT_radiatorFanRPMActual` | page 0 | Front body controller: radiator fan RPM actual; raw 255 = signal not available (SNA) | 19\|8 | little-endian | unsigned | 40 | 0 | rpm | 0 to 10000 | 255 = `SNA` | validated |

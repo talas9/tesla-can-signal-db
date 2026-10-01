@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_bmbMinMax`: start bit and length
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `BMS_bmbMinMaxMultiplexer` | selector | High-voltage battery management system: bmb min max multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `THERM_MUX0`<br>1 = `VOLT_MUX1`<br>2 = `END` | plausible |
+| `BMS_bmbMinMaxMultiplexer` | selector | High-voltage battery management system: bmb min max multiplexer | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `THERM_MUX0`<br>1 = `VOLT_MUX1`<br>2 = `END` | validated |
 | `BMS_thermistorNumTMin` | page 0 | BMB module number with minimum temperature. | 2\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `BMS_thermistorNumTMax` | page 0 | BMB module number with maximum temperature. | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
 | `BMS_thermistorTMax` | page 0 | Max temperature of all valid filtered thermistors | 16\|8 | little-endian | unsigned | 0.5 | -40 | DegC | -40 to 87.5 |  | validated |

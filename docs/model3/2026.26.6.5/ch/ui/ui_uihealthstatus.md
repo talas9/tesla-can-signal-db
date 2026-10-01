@@ -29,9 +29,9 @@ Tesla Model 3 CAN bus signals in `UI_uiHealthStatus`: start bit and length, byte
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_centerDisplayRunning` | is center display running | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_centerDisplayRunning` | is center display running | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_centerDisplaySM` | Touchscreen user interface computer: center display SM | 1\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `START`<br>1 = `UP`<br>2 = `STALLING`<br>3 = `TIMING_OUT`<br>4 = `DOWN` | plausible |
-| `UI_centerDisplayPowerOn` | center display power on | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_centerDisplayPowerOn` | center display power on | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_centerDisplayCrtcOk` | Touchscreen user interface computer: center display crtc ok | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_centerDisplayHardwareOk` | Touchscreen user interface computer: center display hardware ok | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_centerDisplayWindowManagerOk` | Touchscreen user interface computer: center display window manager ok | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
@@ -44,8 +44,8 @@ Tesla Model 3 CAN bus signals in `UI_uiHealthStatus`: start bit and length, byte
 | `UI_autonomyQtCarStatus` | Signal reported by Touchscreen user interface computer; raw 0 = signal not available (SNA) | 17\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA`<br>1 = `AVAILABLE`<br>2 = `UNAVAILABLE` | plausible |
 | `UI_autonomyQtCarRearStatus` | Signal reported by Touchscreen user interface computer; raw 0 = signal not available (SNA) | 19\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA`<br>1 = `AVAILABLE`<br>2 = `UNAVAILABLE` | plausible |
 | `UI_autonomyDASServerStatus` | Touchscreen user interface computer: autonomy DAS server status; raw 0 = signal not available (SNA) | 21\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA`<br>1 = `AVAILABLE`<br>2 = `UNAVAILABLE` | plausible |
-| `UI_rearDisplayRunning` | is rear display running | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `UI_rearDisplayPowerOn` | rear display power on | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_rearDisplayRunning` | is rear display running | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `UI_rearDisplayPowerOn` | rear display power on | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 | `UI_rearDisplaySM` | Touchscreen user interface computer: rear display SM | 25\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `START`<br>1 = `UP`<br>2 = `STALLING`<br>3 = `TIMING_OUT`<br>4 = `DOWN` | plausible |
 | `UI_rearDisplayCrtcOk` | Touchscreen user interface computer: rear display crtc ok | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `UI_rearDisplayHardwareOk` | Touchscreen user interface computer: rear display hardware ok | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

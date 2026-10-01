@@ -29,11 +29,11 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_systemPower`: start bit and lengt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_sysHeatPowerMax` | Drive inverter: sys heat power max | 0\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DI_sysHeatPowerActual` | Drive Inverter system heat power | 8\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | validated |
-| `DI_sysDrivePowerMax` | Maximum drive power output total for all motors; raw 511 = signal not available (SNA) | 16\|10 | little-endian | unsigned | 1 | 0 | kW | 0 to 1023 | 511 = `SNA` | validated |
-| `DI_primaryUnitSiliconType` | Drive inverter: primary unit silicon type | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MOSFET`<br>1 = `IGBT` | validated |
-| `DI_sysRegenPowerMax` | Maximum regen power output total for all motors; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | -100 | kW | -100 to 0 | 255 = `SNA` | validated |
+| `DI_sysHeatPowerMax` | Drive inverter: sys heat power max | 0\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DI_sysHeatPowerActual` | Drive Inverter system heat power | 8\|8 | little-endian | unsigned | 0.08 | 0 | kW | 0 to 20 |  | plausible |
+| `DI_sysDrivePowerMax` | Maximum drive power output total for all motors; raw 511 = signal not available (SNA) | 16\|10 | little-endian | unsigned | 1 | 0 | kW | 0 to 1023 | 511 = `SNA` | plausible |
+| `DI_primaryUnitSiliconType` | Drive inverter: primary unit silicon type | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `MOSFET`<br>1 = `IGBT` | plausible |
+| `DI_sysRegenPowerMax` | Maximum regen power output total for all motors; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | -100 | kW | -100 to 0 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 

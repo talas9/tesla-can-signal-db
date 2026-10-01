@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `UI_autopilotControl`: start bit and length, by
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `UI_autopilotControlIndex` | selector | Touchscreen user interface computer: autopilot control index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `0`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5`<br>6 = `6`<br>7 = `7` | plausible |
+| `UI_autopilotControlIndex` | selector | Touchscreen user interface computer: autopilot control index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `0`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5`<br>6 = `6`<br>7 = `7` | validated |
 | `UI_hovEnabled` | page 0 | UI HOV routes enabled | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `HOV_OFF`<br>1 = `HOV_ON` | validated |
 | `UI_donDisableAutoWiperDuration` | page 0 | Touchscreen user interface computer: don disable auto wiper duration | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `DEFAULT`<br>1 = `5_S`<br>2 = `15_S`<br>3 = `30_S`<br>4 = `60_S`<br>5 = `120_S`<br>6 = `OFF` | plausible |
 | `UI_donDisableOnAutoWiperSpeed` | page 0 | Touchscreen user interface computer: don disable on auto wiper speed | 7\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `OFF`<br>1 = `1`<br>2 = `2`<br>3 = `3`<br>4 = `4`<br>5 = `5`<br>6 = `6`<br>7 = `7`<br>8 = `8`<br>9 = `9`<br>10 = `10`<br>11 = `11`<br>12 = `12`<br>13 = `13`<br>14 = `14`<br>15 = `INVALID` | plausible |

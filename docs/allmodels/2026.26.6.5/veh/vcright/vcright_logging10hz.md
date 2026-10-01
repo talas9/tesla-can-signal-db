@@ -29,7 +29,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_logging10Hz`: start bit and 
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_logging10HzIndex` | selector | Right body controller: logging10 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `HVAC_ACTUATOR_TARGETS`<br>1 = `HVAC_ACTUATOR_POSITIONS`<br>2 = `HVAC_ACTUATOR_STATE`<br>3 = `HVAC_ACTUATOR_BRUSHED`<br>4 = `HVAC_ACTUATOR_BRUSHED_DUTY`<br>5 = `END` | plausible |
+| `VCRIGHT_logging10HzIndex` | selector | Right body controller: logging10 hz index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `HVAC_ACTUATOR_TARGETS`<br>1 = `HVAC_ACTUATOR_POSITIONS`<br>2 = `HVAC_ACTUATOR_STATE`<br>3 = `HVAC_ACTUATOR_BRUSHED`<br>4 = `HVAC_ACTUATOR_BRUSHED_DUTY`<br>5 = `END` | validated |
 | `VCRIGHT_hvacLHBleedTarget` | page 0 | Right body controller: hvac LH bleed target | 3\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |
 | `VCRIGHT_hvacRHBleedTarget` | page 0 | Right body controller: hvac RH bleed target | 11\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |
 | `VCRIGHT_hvacLHVaneTarget` | page 0 | Right body controller: hvac LH vane target | 19\|8 | little-endian | unsigned | 0.4 | 0 | % | 0 to 100 |  | validated |

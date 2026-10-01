@@ -29,10 +29,10 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_motorStatus`: start bit and leng
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DIR_motorCurrent` | Drive Inverer measured motor RMS phase current. | 0\|11 | little-endian | unsigned | 1 | 0 | A | 0 to 2047 |  | validated |
-| `DIR_switchingFrequency` | Rear drive inverter: switching frequency | 11\|11 | little-endian | unsigned | 0.01 | 0 | kHz | 0 to 20 |  | validated |
-| `DIR_targetFluxMode` | Rear drive inverter: target flux mode | 22\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `DI_FLUXMODE_OPTIMUM`<br>1 = `DI_FLUXMODE_FS`<br>2 = `DI_FLUXMODE_FW` | validated |
-| `DIR_switchShortTestRetryCount` | Rear drive inverter: switch short test retry count | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | validated |
+| `DIR_motorCurrent` | Drive Inverer measured motor RMS phase current. | 0\|11 | little-endian | unsigned | 1 | 0 | A | 0 to 2047 |  | plausible |
+| `DIR_switchingFrequency` | Rear drive inverter: switching frequency | 11\|11 | little-endian | unsigned | 0.01 | 0 | kHz | 0 to 20 |  | plausible |
+| `DIR_targetFluxMode` | Rear drive inverter: target flux mode | 22\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `DI_FLUXMODE_OPTIMUM`<br>1 = `DI_FLUXMODE_FS`<br>2 = `DI_FLUXMODE_FW` | plausible |
+| `DIR_switchShortTestRetryCount` | Rear drive inverter: switch short test retry count | 24\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | layout-only |
 
 ## Download the DBC file
 

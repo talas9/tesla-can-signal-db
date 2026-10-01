@@ -29,16 +29,16 @@ Tesla Model 3 CAN bus signals in `CC_chgStatus`: start bit and length, byte orde
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `CC_currentLimit` | Maximum allowable AC current the wall connector is willing to provide; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | validated |
-| `CC_pilotState` | State of pilot signal reported by the wall connector; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `CC_PILOT_STATE_READY`<br>1 = `CC_PILOT_STATE_IDLE`<br>2 = `CC_PILOT_STATE_FAULTED`<br>3 = `CC_PILOT_STATE_SNA` | validated |
-| `CC_numPhases` | Number of AC phases expected by wall connector; raw 0 = signal not available (SNA) | 10\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA` | validated |
-| `CC_line1Voltage` | RMS voltage on L1 terminal of wall connector; raw 511 = signal not available (SNA) | 16\|9 | little-endian | unsigned | 1 | 0 | V | 0 to 510 | 511 = `SNA` | validated |
-| `CC_gridGrounding` | Grouding scheme expected by the wall connector; raw 2 = signal not available (SNA) | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CC_GRID_GROUNDING_TN_TT`<br>1 = `CC_GRID_GROUNDING_IT_SplitPhase`<br>2 = `CC_GRID_GROUNDING_SNA` | validated |
-| `CC_deltaTransformer` | Grid configuration expected by the wall connector | 28\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | validated |
-| `CC_numVehCharging` | Number of vehicles charging in wall connector load sharing group | 30\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | validated |
-| `CC_line2Voltage` | RMS voltage on L2 terminal of wall connector; raw 511 = signal not available (SNA) | 33\|9 | little-endian | unsigned | 1 | 0 | V | 0 to 510 | 511 = `SNA` | validated |
-| `CC_line3Voltage` | RMS voltage on L3 terminal of wall connector; raw 511 = signal not available (SNA) | 42\|9 | little-endian | unsigned | 1 | 0 | V | 0 to 510 | 511 = `SNA` | validated |
-| `CC_groundResistance` | Charge cable controller: ground resistance; raw 4095 = signal not available (SNA) | 51\|12 | little-endian | unsigned | 1 | 0 | kOhm | 0 to 4094 | 4094 = `NO_GROUND`<br>4095 = `SNA` | validated |
+| `CC_currentLimit` | Maximum allowable AC current the wall connector is willing to provide; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 0.5 | 0 | A | 0 to 127 | 255 = `SNA` | plausible |
+| `CC_pilotState` | State of pilot signal reported by the wall connector; raw 3 = signal not available (SNA) | 8\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `CC_PILOT_STATE_READY`<br>1 = `CC_PILOT_STATE_IDLE`<br>2 = `CC_PILOT_STATE_FAULTED`<br>3 = `CC_PILOT_STATE_SNA` | plausible |
+| `CC_numPhases` | Number of AC phases expected by wall connector; raw 0 = signal not available (SNA) | 10\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `SNA` | plausible |
+| `CC_line1Voltage` | RMS voltage on L1 terminal of wall connector; raw 511 = signal not available (SNA) | 16\|9 | little-endian | unsigned | 1 | 0 | V | 0 to 510 | 511 = `SNA` | plausible |
+| `CC_gridGrounding` | Grouding scheme expected by the wall connector; raw 2 = signal not available (SNA) | 26\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `CC_GRID_GROUNDING_TN_TT`<br>1 = `CC_GRID_GROUNDING_IT_SplitPhase`<br>2 = `CC_GRID_GROUNDING_SNA` | plausible |
+| `CC_deltaTransformer` | Grid configuration expected by the wall connector | 28\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 |  | plausible |
+| `CC_numVehCharging` | Number of vehicles charging in wall connector load sharing group | 30\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 |  | plausible |
+| `CC_line2Voltage` | RMS voltage on L2 terminal of wall connector; raw 511 = signal not available (SNA) | 33\|9 | little-endian | unsigned | 1 | 0 | V | 0 to 510 | 511 = `SNA` | plausible |
+| `CC_line3Voltage` | RMS voltage on L3 terminal of wall connector; raw 511 = signal not available (SNA) | 42\|9 | little-endian | unsigned | 1 | 0 | V | 0 to 510 | 511 = `SNA` | plausible |
+| `CC_groundResistance` | Charge cable controller: ground resistance; raw 4095 = signal not available (SNA) | 51\|12 | little-endian | unsigned | 1 | 0 | kOhm | 0 to 4094 | 4094 = `NO_GROUND`<br>4095 = `SNA` | plausible |
 
 ## Download the DBC file
 

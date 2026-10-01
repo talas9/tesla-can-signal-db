@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `UI_ventPanelControlRequest`: start bit and len
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `UI_ventPanelControlRequestIndex` | selector | Touchscreen user interface computer: vent panel control request index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | plausible |
+| `UI_ventPanelControlRequestIndex` | selector | Touchscreen user interface computer: vent panel control request index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `0`<br>1 = `1` | validated |
 | `UI_ventPanelLeftPositionX` | page 0 | Airwave left X position. | 8\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
 | `UI_ventPanelLeftPositionY` | page 0 | Airwave left Y position. | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
 | `UI_ventPanelLeftLateralSplit` | page 0 | Airwave left split amount. | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |

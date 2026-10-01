@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_AP_hvacState10Hz`: start bit and lengt
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_AP_hvacState10HzIndex` | selector | Right body controller: AP hvac state10 hz index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MUX_0`<br>1 = `MUX_1`<br>2 = `END` | plausible |
+| `VCRIGHT_AP_hvacState10HzIndex` | selector | Right body controller: AP hvac state10 hz index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MUX_0`<br>1 = `MUX_1`<br>2 = `END` | validated |
 | `VCRIGHT_AP_autoDefogAvailable` | page 0 | Right body controller: AP auto defog available | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCRIGHT_AP_hvacFlashFoggingDetected` | page 0 | Right body controller: AP hvac flash fogging detected | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCRIGHT_AP_hvacModelInitStatus` | page 0 | Right body controller: AP hvac model init status | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NOT_INIT_WAIT_FOR_SENSORS`<br>1 = `NOT_INIT_WAIT_FOR_GTW`<br>2 = `INIT_FROM_SENSORS`<br>3 = `INIT_FROM_SENSORS_PREDICTION_ERROR`<br>4 = `INIT_FORWARD_CALC`<br>5 = `INIT_WAITING_FOR_SENSORS` | validated |

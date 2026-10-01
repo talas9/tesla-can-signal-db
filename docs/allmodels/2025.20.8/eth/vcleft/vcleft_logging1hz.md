@@ -30,12 +30,12 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_logging1Hz`: start bit and le
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `VCLEFT_logging1HzIndex` | selector | Left body controller: logging1 hz index | 0\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `MISC`<br>1 = `HSD_CURRENTS_1`<br>2 = `HSD_CURRENTS_2`<br>3 = `END` | plausible |
-| `VCLEFT_tohcPCBATemperature` | page 0 | Left body controller: tohc PCBA temperature; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `SNA` | validated |
-| `VCLEFT_phoneChargingFL` | page 0 | Charging status of front left wireless phone charger (if installed) | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCLEFT_phoneChargingFR` | page 0 | Charging status of front right wireless phone charger (if installed) | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCLEFT_swcResistance` | page 0 | Left body controller: swc resistance; raw 127 = signal not available (SNA) | 24\|7 | little-endian | unsigned | 0.025 | 0 | Ohm | 0 to 3.15 | 127 = `SNA` | validated |
-| `VCLEFT_frontSeatHeatCushionPwr` | page 0 | Left body controller: front seat heat cushion pwr | 32\|7 | little-endian | unsigned | 1 | 0 | W | 0 to 127 |  | validated |
-| `VCLEFT_frontSeatHeatBackrestPwr` | page 0 | Left body controller: front seat heat backrest pwr | 40\|7 | little-endian | unsigned | 1 | 0 | W | 0 to 127 |  | validated |
+| `VCLEFT_tohcPCBATemperature` | page 0 | Left body controller: tohc PCBA temperature; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | -40 | degC | -40 to 214 | 255 = `SNA` | plausible |
+| `VCLEFT_phoneChargingFL` | page 0 | Charging status of front left wireless phone charger (if installed) | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCLEFT_phoneChargingFR` | page 0 | Charging status of front right wireless phone charger (if installed) | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCLEFT_swcResistance` | page 0 | Left body controller: swc resistance; raw 127 = signal not available (SNA) | 24\|7 | little-endian | unsigned | 0.025 | 0 | Ohm | 0 to 3.15 | 127 = `SNA` | plausible |
+| `VCLEFT_frontSeatHeatCushionPwr` | page 0 | Left body controller: front seat heat cushion pwr | 32\|7 | little-endian | unsigned | 1 | 0 | W | 0 to 127 |  | plausible |
+| `VCLEFT_frontSeatHeatBackrestPwr` | page 0 | Left body controller: front seat heat backrest pwr | 40\|7 | little-endian | unsigned | 1 | 0 | W | 0 to 127 |  | plausible |
 | `VCLEFT_12vSocketFrontCurrent` | page 0 | Left body controller: 12v socket front current; raw 127 = signal not available (SNA) | 48\|7 | little-endian | unsigned | 0.25 | 0 | A | 0 to 31.5 | 127 = `SNA` | plausible |
 | `VCLEFT_12vSocketRearCurrent` | page 0 | Left body controller: 12v socket rear current; raw 127 = signal not available (SNA) | 56\|7 | little-endian | unsigned | 0.25 | 0 | A | 0 to 31.5 | 127 = `SNA` | plausible |
 

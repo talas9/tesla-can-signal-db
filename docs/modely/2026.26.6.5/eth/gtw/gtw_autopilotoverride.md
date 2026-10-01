@@ -29,11 +29,11 @@ Tesla Model Y CAN bus signals in `GTW_autopilotOverride`: start bit and length, 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `GTW_autopilotOverrideState` | Signals whether an autopilot trial or subscription is active | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `BASE`<br>1 = `SUBSCRIPTION`<br>2 = `TRIAL`<br>3 = `TIMEBOUND_SUBSCRIPTION`<br>4 = `TIMEBOUND_TRIAL`<br>5 = `OPTION_CODE`<br>6 = `OPTION_OVERRIDE`<br>7 = `VEHICLE_MANAGED`<br>8 = `UNKNOWN` | validated |
-| `GTW_autopilotConfig` | Current level of permanent Autopilot firmware | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `HIGHWAY`<br>2 = `ENHANCED`<br>3 = `SELF_DRIVING`<br>4 = `BASIC` | validated |
-| `GTW_autopilotOverrideConfig` | Current level of trial or subscription Autopilot firmware | 8\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `HIGHWAY`<br>2 = `ENHANCED`<br>3 = `SELF_DRIVING`<br>4 = `BASIC` | validated |
-| `GTW_autopilotConfigSource` | Source of Autopilot configuration broadcast by Gateway | 11\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `GATEWAY`<br>1 = `AUTOPILOT`<br>2 = `AUTOPILOT_NOT_UPDATED` | validated |
-| `GTW_autopilotOverrideExpireTime` | Expiration time for the currently active autopilot trial or subscription | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+| `GTW_autopilotOverrideState` | Signals whether an autopilot trial or subscription is active | 0\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `BASE`<br>1 = `SUBSCRIPTION`<br>2 = `TRIAL`<br>3 = `TIMEBOUND_SUBSCRIPTION`<br>4 = `TIMEBOUND_TRIAL`<br>5 = `OPTION_CODE`<br>6 = `OPTION_OVERRIDE`<br>7 = `VEHICLE_MANAGED`<br>8 = `UNKNOWN` | plausible |
+| `GTW_autopilotConfig` | Current level of permanent Autopilot firmware | 4\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `HIGHWAY`<br>2 = `ENHANCED`<br>3 = `SELF_DRIVING`<br>4 = `BASIC` | plausible |
+| `GTW_autopilotOverrideConfig` | Current level of trial or subscription Autopilot firmware | 8\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `NONE`<br>1 = `HIGHWAY`<br>2 = `ENHANCED`<br>3 = `SELF_DRIVING`<br>4 = `BASIC` | plausible |
+| `GTW_autopilotConfigSource` | Source of Autopilot configuration broadcast by Gateway | 11\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `GATEWAY`<br>1 = `AUTOPILOT`<br>2 = `AUTOPILOT_NOT_UPDATED` | plausible |
+| `GTW_autopilotOverrideExpireTime` | Expiration time for the currently active autopilot trial or subscription | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
 
 ## Download the DBC file
 

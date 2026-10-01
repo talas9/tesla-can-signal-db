@@ -30,14 +30,14 @@ Tesla Model 3 CAN bus signals in `UMC_smartAdapterInfo`: start bit and length, b
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `SA_infoIndex` | selector | UMC ECU: info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `Mux0`<br>11 = `Mux11`<br>25 = `Mux25`<br>26 = `Mux26`<br>27 = `Mux27`<br>29 = `Mux29`<br>30 = `Mux30`<br>31 = `Mux31`<br>32 = `Mux32` | plausible |
-| `SA_genealogyVersion` | page 0 | UMC ECU: genealogy version | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `SA_genealogyCrc` | page 0 | UMC ECU: genealogy crc | 16\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `SA_region` | page 0 | Reports the smart adapter region from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 48\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `SA_REGION_NA`<br>1 = `SA_REGION_EU`<br>2 = `SA_REGION_CHINA`<br>3 = `SA_REGION_JAPAN`<br>4 = `SA_REGION_AUSTRALIA`<br>5 = `SA_REGION_SOUTH_KOREA`<br>6 = `SA_REGION_INDIA` | validated |
-| `SA_OverTempThreshold` | page 0 | Reports the smart adapter overtemperature threshold from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `SA_partNumInt` | page 31 | Reports the smart adapter part number integer representation. | 8\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `SA_partNumRev` | page 31 | Reports the smart adapter part number revision. | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `SA_currentLimit` | page 31 | Reports the smart adapter current limit from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `SA_l1Voltage` | page 31 | Reports the smart adapter nominal voltage request from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `SA_genealogyVersion` | page 0 | UMC ECU: genealogy version | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `SA_genealogyCrc` | page 0 | UMC ECU: genealogy crc | 16\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `SA_region` | page 0 | Reports the smart adapter region from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 48\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `SA_REGION_NA`<br>1 = `SA_REGION_EU`<br>2 = `SA_REGION_CHINA`<br>3 = `SA_REGION_JAPAN`<br>4 = `SA_REGION_AUSTRALIA`<br>5 = `SA_REGION_SOUTH_KOREA`<br>6 = `SA_REGION_INDIA` | plausible |
+| `SA_OverTempThreshold` | page 0 | Reports the smart adapter overtemperature threshold from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `SA_partNumInt` | page 31 | Reports the smart adapter part number integer representation. | 8\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
+| `SA_partNumRev` | page 31 | Reports the smart adapter part number revision. | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `SA_currentLimit` | page 31 | Reports the smart adapter current limit from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 48\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
+| `SA_l1Voltage` | page 31 | Reports the smart adapter nominal voltage request from Electrically Erasable Programmable Read-Only Memory (EEPROM). | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | plausible |
 
 ## Multiplexing
 

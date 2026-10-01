@@ -29,8 +29,8 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_identifier`: start bit and length
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `FC_id` | Fast charger identifying number | 0\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `FC_sessionId` | Fast charge session ID | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+| `FC_id` | Fast charger identifying number | 0\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
+| `FC_sessionId` | Fast charge session ID | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | plausible |
 
 ## Download the DBC file
 

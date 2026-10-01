@@ -29,9 +29,9 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_odometerStatus`: start bit and le
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_odometer` | Total traveled distance; raw 4294967295 = signal not available (SNA) | 0\|32 | little-endian | unsigned | 0.001 | 0 | km | 0 to 4294967.294 | 4294967295 = `SNA` | validated |
-| `DI_odometerStatusCounter` | Drive inverter: odometer status counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `DI_odometerStatusChecksum` | Drive inverter: odometer status checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
+| `DI_odometer` | Total traveled distance; raw 4294967295 = signal not available (SNA) | 0\|32 | little-endian | unsigned | 0.001 | 0 | km | 0 to 4294967.294 | 4294967295 = `SNA` | plausible |
+| `DI_odometerStatusCounter` | Drive inverter: odometer status counter | 52\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `DI_odometerStatusChecksum` | Drive inverter: odometer status checksum | 56\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
 
 ## Download the DBC file
 

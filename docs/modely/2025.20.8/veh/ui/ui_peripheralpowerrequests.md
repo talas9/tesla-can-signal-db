@@ -29,7 +29,7 @@ Tesla Model Y CAN bus signals in `UI_peripheralPowerRequests`: start bit and len
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_usbFrontHubPowerStateRequest` | Reports the Universal Serial Bus (USB) Hub power request; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `POWER_REQUEST_SNA`<br>1 = `POWER_NO_PREFERENCE`<br>2 = `POWER_ON` | validated |
+| `UI_usbFrontHubPowerStateRequest` | Reports the Universal Serial Bus (USB) Hub power request; raw 0 = signal not available (SNA) | 0\|2 | little-endian | unsigned | 1 | 0 |  | 1 to 3 | 0 = `POWER_REQUEST_SNA`<br>1 = `POWER_NO_PREFERENCE`<br>2 = `POWER_ON` | plausible |
 
 ## Download the DBC file
 

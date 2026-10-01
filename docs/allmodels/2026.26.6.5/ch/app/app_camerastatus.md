@@ -29,17 +29,17 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_cameraStatus`: start bit and len
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_backupCameraFeedGood` | Indicates if the backup camera stream is healthy. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_backupCameraFrameRate` | The backup camera frame rate. | 1\|6 | little-endian | unsigned | 1 | 0 |  | 0 to 63 |  | validated |
-| `APP_cameraBlockedFrontMain` | Indicates that a blockage was detected by the main forward camera. | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedFrontFisheye` | Indicates that a blockage was detected by the fisheye camera. | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedFrontNarrow` | Indicates that a blockage was detected by the narrow camera. | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedLeftPillar` | Indicates that a blockage was detected by the left pillar camera. | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedLeftRepeater` | Indicates that a blockage was detected by the left repeater camera. | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedRightPillar` | Indicates that a blockage was detected by the right pillar camera. | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedRightRepeater` | Indicates that a blockage was detected by the right repeater camera. | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_cameraBlockedBackup` | Indicates that a blockage was detected by the backup camera. | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_fasciaCameraTemperature` | Die temperature of camera image sensor; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -60 | C | -60 to 194 | 255 = `SNA` | validated |
+| `APP_backupCameraFeedGood` | Indicates if the backup camera stream is healthy. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_backupCameraFrameRate` | The backup camera frame rate. | 1\|6 | little-endian | unsigned | 1 | 0 |  | 0 to 63 |  | plausible |
+| `APP_cameraBlockedFrontMain` | Indicates that a blockage was detected by the main forward camera. | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedFrontFisheye` | Indicates that a blockage was detected by the fisheye camera. | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedFrontNarrow` | Indicates that a blockage was detected by the narrow camera. | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedLeftPillar` | Indicates that a blockage was detected by the left pillar camera. | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedLeftRepeater` | Indicates that a blockage was detected by the left repeater camera. | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedRightPillar` | Indicates that a blockage was detected by the right pillar camera. | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedRightRepeater` | Indicates that a blockage was detected by the right repeater camera. | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_cameraBlockedBackup` | Indicates that a blockage was detected by the backup camera. | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_fasciaCameraTemperature` | Die temperature of camera image sensor; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -60 | C | -60 to 194 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 

@@ -29,24 +29,24 @@ Tesla Model 3 CAN bus signals in `DI_chassisControl`: start bit and length, byte
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_chassisControlChecksum` | Drive inverter: chassis control checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_chassisControlCounter` | Drive inverter: chassis control counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `DI_imuOffsetLearnRequest` | Drive inverter: imu offset learn request | 12\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IMU_OFFSET_LEARNING_OFF`<br>1 = `IMU_SLOW_LEARNING_DISTANCE`<br>2 = `IMU_FAST_LEARNING_TIME` | validated |
-| `DI_brakeCommandType` | Drive inverter: brake command type | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAST`<br>1 = `QUIET` | validated |
-| `DI_brakeTorqueRequestActive` | Drive inverter: brake torque request active | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `INACTIVE`<br>1 = `ACTIVE` | validated |
-| `DI_brakeTorqueCommand` | Brake torque command to ESP | 16\|13 | little-endian | unsigned | 3 | 0 | Nm | 0 to 24573 |  | validated |
-| `DI_ptcStateGlobal` | Indicates state of Tesla traction control system; raw 3 = signal not available (SNA) | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `GLOBAL_PTC_STATE_FAULTED`<br>1 = `GLOBAL_PTC_STATE_BACKUP`<br>2 = `GLOBAL_PTC_STATE_ON`<br>3 = `GLOBAL_PTC_STATE_SNA` | validated |
-| `DI_ptcActive` | TRUE when pedal-positive (drive) traction control is active | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `INACTIVE`<br>1 = `ACTIVE` | validated |
-| `DI_vdcState` | Status of VDC | 32\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VDC_STATE_FAULTED`<br>1 = `VDC_STATE_BACKUP_A`<br>2 = `VDC_STATE_NORMAL`<br>3 = `VDC_STATE_STARTUP` | validated |
-| `DI_isAnyVdcControlActive` | Drive inverter: is any vdc control active | 34\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VDC_NO_CONTROL_ACTIVE`<br>1 = `VDC_CONTROL_ACTIVE`<br>2 = `UNUSED_VALUE` | validated |
-| `DI_vdcMode` | Indicates mode of VDC | 36\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VDC_MODE_OFF`<br>1 = `VDC_MODE_ON`<br>2 = `VDC_MODE_TRACK` | validated |
-| `DI_pedalAssistCurveSelect` | Drive inverter: pedal assist curve select | 38\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `PEDAL_ASSIST_CURVE_0`<br>3 = `PEDAL_ASSIST_CURVE_3`<br>6 = `PEDAL_ASSIST_CURVE_6`<br>8 = `PEDAL_ASSIST_CURVE_8`<br>11 = `PEDAL_ASSIST_CURVE_11`<br>12 = `PEDAL_ASSIST_CURVE_12`<br>15 = `PEDAL_ASSIST_CURVE_15` | validated |
-| `DI_isAnyTcActive` | TRUE when either drive or regen traction control is active | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `INACTIVE`<br>1 = `ACTIVE` | validated |
-| `DI_VehicleMuConfidence` | Confidence in surface mu estimate for development use only | 43\|6 | little-endian | unsigned | 0.02 | 0 | - | 0 to 1.26 |  | validated |
-| `DI_VehicleMu` | Learn-up estimate of surface mu for development use only | 49\|6 | little-endian | unsigned | 0.024 | 0 | - | 0 to 1.512 |  | validated |
-| `DI_trailerSwayIndex` | VDC trailer sway index | 55\|5 | little-endian | unsigned | 0.035 | 0 | - | 0 to 1 |  | validated |
-| `DI_vdcControlActive` | Type of VDC control while VDC is actuating | 60\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `VDC_NOT_ACTIVE`<br>1 = `VDC_OVERSTEER_ACTIVE`<br>2 = `VDC_UNDERSTEER_ACTIVE`<br>3 = `VDC_TRAILER_SWAY_ACTIVE`<br>4 = `VDC_DECEL_ACTIVE` | validated |
-| `DI_treadDepthAlertSet` | Drive inverter: tread depth alert set | 63\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FALSE`<br>1 = `TRUE` | validated |
+| `DI_chassisControlChecksum` | Drive inverter: chassis control checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_chassisControlCounter` | Drive inverter: chassis control counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `DI_imuOffsetLearnRequest` | Drive inverter: imu offset learn request | 12\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `IMU_OFFSET_LEARNING_OFF`<br>1 = `IMU_SLOW_LEARNING_DISTANCE`<br>2 = `IMU_FAST_LEARNING_TIME` | plausible |
+| `DI_brakeCommandType` | Drive inverter: brake command type | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FAST`<br>1 = `QUIET` | plausible |
+| `DI_brakeTorqueRequestActive` | Drive inverter: brake torque request active | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `INACTIVE`<br>1 = `ACTIVE` | plausible |
+| `DI_brakeTorqueCommand` | Brake torque command to ESP | 16\|13 | little-endian | unsigned | 3 | 0 | Nm | 0 to 24573 |  | plausible |
+| `DI_ptcStateGlobal` | Indicates state of Tesla traction control system; raw 3 = signal not available (SNA) | 29\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 2 | 0 = `GLOBAL_PTC_STATE_FAULTED`<br>1 = `GLOBAL_PTC_STATE_BACKUP`<br>2 = `GLOBAL_PTC_STATE_ON`<br>3 = `GLOBAL_PTC_STATE_SNA` | plausible |
+| `DI_ptcActive` | TRUE when pedal-positive (drive) traction control is active | 31\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `INACTIVE`<br>1 = `ACTIVE` | plausible |
+| `DI_vdcState` | Status of VDC | 32\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VDC_STATE_FAULTED`<br>1 = `VDC_STATE_BACKUP_A`<br>2 = `VDC_STATE_NORMAL`<br>3 = `VDC_STATE_STARTUP` | plausible |
+| `DI_isAnyVdcControlActive` | Drive inverter: is any vdc control active | 34\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VDC_NO_CONTROL_ACTIVE`<br>1 = `VDC_CONTROL_ACTIVE`<br>2 = `UNUSED_VALUE` | plausible |
+| `DI_vdcMode` | Indicates mode of VDC | 36\|2 | little-endian | unsigned | 1 | 0 |  | 0 to 3 | 0 = `VDC_MODE_OFF`<br>1 = `VDC_MODE_ON`<br>2 = `VDC_MODE_TRACK` | plausible |
+| `DI_pedalAssistCurveSelect` | Drive inverter: pedal assist curve select | 38\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 | 0 = `PEDAL_ASSIST_CURVE_0`<br>3 = `PEDAL_ASSIST_CURVE_3`<br>6 = `PEDAL_ASSIST_CURVE_6`<br>8 = `PEDAL_ASSIST_CURVE_8`<br>11 = `PEDAL_ASSIST_CURVE_11`<br>12 = `PEDAL_ASSIST_CURVE_12`<br>15 = `PEDAL_ASSIST_CURVE_15` | plausible |
+| `DI_isAnyTcActive` | TRUE when either drive or regen traction control is active | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `INACTIVE`<br>1 = `ACTIVE` | plausible |
+| `DI_VehicleMuConfidence` | Confidence in surface mu estimate for development use only | 43\|6 | little-endian | unsigned | 0.02 | 0 | - | 0 to 1.26 |  | plausible |
+| `DI_VehicleMu` | Learn-up estimate of surface mu for development use only | 49\|6 | little-endian | unsigned | 0.024 | 0 | - | 0 to 1.512 |  | plausible |
+| `DI_trailerSwayIndex` | VDC trailer sway index | 55\|5 | little-endian | unsigned | 0.035 | 0 | - | 0 to 1 |  | plausible |
+| `DI_vdcControlActive` | Type of VDC control while VDC is actuating | 60\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `VDC_NOT_ACTIVE`<br>1 = `VDC_OVERSTEER_ACTIVE`<br>2 = `VDC_UNDERSTEER_ACTIVE`<br>3 = `VDC_TRAILER_SWAY_ACTIVE`<br>4 = `VDC_DECEL_ACTIVE` | plausible |
+| `DI_treadDepthAlertSet` | Drive inverter: tread depth alert set | 63\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `FALSE`<br>1 = `TRUE` | plausible |
 
 ## Download the DBC file
 

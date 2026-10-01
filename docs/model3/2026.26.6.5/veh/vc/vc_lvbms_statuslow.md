@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VC_LVBMS_statusLow`: start bit and length, byt
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VC_lvbmsStatusLowIndex` | selector | VC ECU: lvbms status low index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `STATE_AND_FAULTS`<br>1 = `THROUGHPUT_1`<br>2 = `THROUGHPUT_2`<br>3 = `THROUGHPUT_3`<br>4 = `PACK_VITALS_2`<br>5 = `INVALID` | plausible |
+| `VC_lvbmsStatusLowIndex` | selector | VC ECU: lvbms status low index | 0\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `STATE_AND_FAULTS`<br>1 = `THROUGHPUT_1`<br>2 = `THROUGHPUT_2`<br>3 = `THROUGHPUT_3`<br>4 = `PACK_VITALS_2`<br>5 = `INVALID` | validated |
 | `VC_LVBMS_SOC` | page 0 | State of charge reported by the low voltage battery sensor; raw 1023 = signal not available (SNA) | 3\|10 | little-endian | unsigned | 0.1 | 0 | % | 0 to 102.2 | 1023 = `SNA` | validated |
 | `VC_LVBMS_SOE` | page 0 | State of energy reported by the low voltage battery; raw 127 = signal not available (SNA) | 16\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 126 | 127 = `SNA` | validated |
 | `VC_LVBMS_SOH` | page 0 | State of health reported by the low voltage battery; raw 127 = signal not available (SNA) | 24\|7 | little-endian | unsigned | 1 | 0 | % | 0 to 126 | 127 = `SNA` | validated |

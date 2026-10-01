@@ -29,12 +29,12 @@ Tesla Model 3 CAN bus signals in `APP_dashCamStatus`: start bit and length, byte
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_mainDashCamFeedGood` | Indicates if the main dash cam stream is healthy. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_mainDashCamFrameRate` | The main dash cam frame rate. | 1\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | validated |
-| `APP_lRepeatDashCamFeedGood` | Indicates if the left repeater dash cam stream is healthy. | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_lRepeatDashCamFrameRate` | The left repeater dash cam frame rate. | 9\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | validated |
-| `APP_rRepeatDashCamFeedGood` | Indicates if the right repeater dash cam stream is healthy. | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `APP_rRepeatDashCamFrameRate` | The right repeater dash cam frame rate. | 17\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | validated |
+| `APP_mainDashCamFeedGood` | Indicates if the main dash cam stream is healthy. | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_mainDashCamFrameRate` | The main dash cam frame rate. | 1\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | plausible |
+| `APP_lRepeatDashCamFeedGood` | Indicates if the left repeater dash cam stream is healthy. | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_lRepeatDashCamFrameRate` | The left repeater dash cam frame rate. | 9\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | plausible |
+| `APP_rRepeatDashCamFeedGood` | Indicates if the right repeater dash cam stream is healthy. | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `APP_rRepeatDashCamFrameRate` | The right repeater dash cam frame rate. | 17\|7 | little-endian | unsigned | 1 | 0 |  | 0 to 127 |  | plausible |
 
 ## Download the DBC file
 

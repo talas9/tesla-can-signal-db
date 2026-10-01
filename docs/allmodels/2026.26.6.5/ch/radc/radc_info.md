@@ -30,22 +30,22 @@ Tesla Model 3 / Model Y CAN bus signals in `RADC_info`: start bit and length, by
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `RADC_infoIndex` | selector | Radar: info index | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 10 = `Mux10`<br>11 = `Mux11`<br>13 = `Mux13`<br>19 = `Mux19`<br>20 = `Mux20` | plausible |
-| `RADC_infoBuildType` | page 10 | Radar: info build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | validated |
-| `RADC_infoBuildConfigID` | page 10 | Radar: info build config ID | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `RADC_infoHardwareID` | page 10 | Radar: info hardware ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `RADC_infoComponentID` | page 10 | Radar: info component ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `RADC_infoPcbaID` | page 11 | Radar: info pcba ID | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoAssemblyID` | page 11 | Radar: info assembly ID | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoUsageID` | page 11 | Radar: info usage ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `RADC_infoSubUsageID` | page 11 | Radar: info sub usage ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | validated |
-| `RADC_infoApplicationCRC` | page 13 | Radar: info application CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
-| `RADC_infoPlatformType` | page 19 | Radar: info platform type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoMajorVersion` | page 19 | Radar: info major version | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoBranchOrigin` | page 19 | Radar: info branch origin | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoMaturity` | page 19 | Radar: info maturity | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoHardwareRevision` | page 19 | Radar: info hardware revision | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoBootUdsProtoVersion` | page 20 | Radar: info boot uds proto version | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `RADC_infoBootloaderCRC` | page 20 | Radar: info bootloader CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | validated |
+| `RADC_infoBuildType` | page 10 | Radar: info build type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 | 0 = `INFO_UNKNOWN_BUILD`<br>1 = `INFO_PLATFORM_BUILD`<br>2 = `INFO_LOCAL_BUILD`<br>3 = `INFO_TRACEABLE_CI_BUILD`<br>4 = `INFO_MFG_BUILD` | plausible |
+| `RADC_infoBuildConfigID` | page 10 | Radar: info build config ID | 16\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `RADC_infoHardwareID` | page 10 | Radar: info hardware ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `RADC_infoComponentID` | page 10 | Radar: info component ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `RADC_infoPcbaID` | page 11 | Radar: info pcba ID | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoAssemblyID` | page 11 | Radar: info assembly ID | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoUsageID` | page 11 | Radar: info usage ID | 32\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `RADC_infoSubUsageID` | page 11 | Radar: info sub usage ID | 48\|16 | little-endian | unsigned | 1 | 0 |  | 0 to 65535 |  | layout-only |
+| `RADC_infoApplicationCRC` | page 13 | Radar: info application CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
+| `RADC_infoPlatformType` | page 19 | Radar: info platform type | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoMajorVersion` | page 19 | Radar: info major version | 16\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoBranchOrigin` | page 19 | Radar: info branch origin | 24\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoMaturity` | page 19 | Radar: info maturity | 32\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoHardwareRevision` | page 19 | Radar: info hardware revision | 40\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoBootUdsProtoVersion` | page 20 | Radar: info boot uds proto version | 8\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `RADC_infoBootloaderCRC` | page 20 | Radar: info bootloader CRC | 32\|32 | little-endian | unsigned | 1 | 0 |  | 0 to 4294967295 |  | layout-only |
 
 ## Multiplexing
 

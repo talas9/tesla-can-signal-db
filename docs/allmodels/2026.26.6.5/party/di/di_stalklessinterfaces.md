@@ -29,14 +29,14 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_stalklessInterfaces`: start bit a
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_stalklessInterfacesChecksum` | Drive inverter: stalkless interfaces checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | validated |
-| `DI_stalklessInterfacesCounter` | Drive inverter: stalkless interfaces counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | validated |
-| `DI_smartShiftClosureOpen` | Drive inverter: smart shift closure open | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_smartShiftSeatbeltUnbuckled` | Drive inverter: smart shift seatbelt unbuckled | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_smartShiftAvailable` | Drive inverter: smart shift available | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_smartShiftPrimed` | Drive inverter: smart shift primed | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_smartShiftBrakePressed` | Drive inverter: smart shift brake pressed | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `DI_smartShiftBrakeReapplyRequired` | Drive inverter: smart shift brake reapply required | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `DI_stalklessInterfacesChecksum` | Drive inverter: stalkless interfaces checksum | 0\|8 | little-endian | unsigned | 1 | 0 |  | 0 to 255 |  | layout-only |
+| `DI_stalklessInterfacesCounter` | Drive inverter: stalkless interfaces counter | 8\|4 | little-endian | unsigned | 1 | 0 |  | 0 to 15 |  | layout-only |
+| `DI_smartShiftClosureOpen` | Drive inverter: smart shift closure open | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_smartShiftSeatbeltUnbuckled` | Drive inverter: smart shift seatbelt unbuckled | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_smartShiftAvailable` | Drive inverter: smart shift available | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_smartShiftPrimed` | Drive inverter: smart shift primed | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_smartShiftBrakePressed` | Drive inverter: smart shift brake pressed | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `DI_smartShiftBrakeReapplyRequired` | Drive inverter: smart shift brake reapply required | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 
 ## Download the DBC file
 

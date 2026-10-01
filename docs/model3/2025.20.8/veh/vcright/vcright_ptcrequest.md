@@ -29,20 +29,20 @@ Tesla Model 3 CAN bus signals in `VCRIGHT_PTCRequest`: start bit and length, byt
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `VCRIGHT_PTCLeftTargetPowerHV` | Right body controller: PTC left target power HV | 0\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | validated |
-| `VCRIGHT_PTCRightTargetPowerHV` | Right body controller: PTC right target power HV | 8\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | validated |
-| `VCRIGHT_PTCLeftTargetDuty` | Right body controller: PTC left target duty | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_PTCRightTargetDuty` | Right body controller: PTC right target duty | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | validated |
-| `VCRIGHT_PTCFlagAllowOperation` | Right body controller: PTC flag allow operation | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCRequestMode` | Right body controller: PTC request mode | 33\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `POWER`<br>1 = `DUTY`<br>2 = `DIRECT`<br>3 = `SEQ_ROD_COI`<br>4 = `SEQ_ROD_CIO` | validated |
-| `VCRIGHT_PTCResistanceCheckEnable` | Right body controller: PTC resistance check enable | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCReset` | Right body controller: PTC reset | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCLeftDirectDriveIGBTO` | Right body controller: PTC left direct drive IGBTO | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCLeftDirectDriveIGBTC` | Right body controller: PTC left direct drive IGBTC | 41\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCLeftDirectDriveIGBTI` | Right body controller: PTC left direct drive IGBTI | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCRightDirectDriveIGBTI` | Right body controller: PTC right direct drive IGBTI | 43\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCRightDirectDriveIGBTC` | Right body controller: PTC right direct drive IGBTC | 44\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
-| `VCRIGHT_PTCRightDirectDriveIGBTO` | Right body controller: PTC right direct drive IGBTO | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `VCRIGHT_PTCLeftTargetPowerHV` | Right body controller: PTC left target power HV | 0\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | plausible |
+| `VCRIGHT_PTCRightTargetPowerHV` | Right body controller: PTC right target power HV | 8\|8 | little-endian | unsigned | 30 | 0 | W | 0 to 7650 |  | plausible |
+| `VCRIGHT_PTCLeftTargetDuty` | Right body controller: PTC left target duty | 16\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_PTCRightTargetDuty` | Right body controller: PTC right target duty | 24\|8 | little-endian | unsigned | 0.5 | 0 | % | 0 to 100 |  | plausible |
+| `VCRIGHT_PTCFlagAllowOperation` | Right body controller: PTC flag allow operation | 32\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCRequestMode` | Right body controller: PTC request mode | 33\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `POWER`<br>1 = `DUTY`<br>2 = `DIRECT`<br>3 = `SEQ_ROD_COI`<br>4 = `SEQ_ROD_CIO` | plausible |
+| `VCRIGHT_PTCResistanceCheckEnable` | Right body controller: PTC resistance check enable | 38\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCReset` | Right body controller: PTC reset | 39\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCLeftDirectDriveIGBTO` | Right body controller: PTC left direct drive IGBTO | 40\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCLeftDirectDriveIGBTC` | Right body controller: PTC left direct drive IGBTC | 41\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCLeftDirectDriveIGBTI` | Right body controller: PTC left direct drive IGBTI | 42\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCRightDirectDriveIGBTI` | Right body controller: PTC right direct drive IGBTI | 43\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCRightDirectDriveIGBTC` | Right body controller: PTC right direct drive IGBTC | 44\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
+| `VCRIGHT_PTCRightDirectDriveIGBTO` | Right body controller: PTC right direct drive IGBTO | 45\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
 
 ## Download the DBC file
 

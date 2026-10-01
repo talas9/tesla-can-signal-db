@@ -101,7 +101,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_alertMatrix`: start bit and leng
 | `BMS_a081_SW_Ctr_Close_Blocked` | page 1 | High-voltage battery management system: a081 SW ctr close blocked | 24\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `BMS_a082_SW_Ctr_Force_Open` | page 1 | High-voltage battery management system: a082 SW ctr force open | 25\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `BMS_a083_SW_Ctr_Close_Failure` | page 1 | High-voltage battery management system: a083 SW ctr close failure | 26\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
-| `BMS_a084_SW_Sleep_Wake_Aborted` | page 1 | High-voltage battery management system: a084 SW sleep wake aborted | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
+| `BMS_a084_SW_Sleep_Wake_Aborted` | page 1 | High-voltage battery management system: a084 SW sleep wake aborted | 27\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `BMS_a085_SW_Pack_Contactor_Mismatch` | page 1 | High-voltage battery management system: a085 SW pack contactor mismatch | 28\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `BMS_a086_SW_FC_Contactor_Mismatch` | page 1 | High-voltage battery management system: a086 SW FC contactor mismatch | 29\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |
 | `BMS_a087_SW_Feim_Test_Blocked` | page 1 | High-voltage battery management system: a087 SW feim test blocked | 30\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | layout-only |

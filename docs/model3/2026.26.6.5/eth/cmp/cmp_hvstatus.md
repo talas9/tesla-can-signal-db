@@ -29,10 +29,10 @@ Tesla Model 3 CAN bus signals in `CMP_HVStatus`: start bit and length, byte orde
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `CMP_inputHVVoltage` | Compressor high voltage input voltage | 0\|16 | little-endian | unsigned | 0.1 | 0 | V | 0 to 6553.4 |  | validated |
-| `CMP_inputLVVoltage` | A/C compressor: input LV voltage | 16\|8 | little-endian | unsigned | 0.1 | 0 | V | 0 to 25.5 |  | validated |
-| `CMP_inputHVCurrent` | A/C compressor: input HV current | 24\|16 | little-endian | unsigned | 0.1 | 0 | A | 0 to 6553.4 |  | validated |
-| `CMP_inputHVPower` | Compressor high voltage input power | 40\|16 | little-endian | unsigned | 1 | 0 | W | 0 to 65534 |  | validated |
+| `CMP_inputHVVoltage` | Compressor high voltage input voltage | 0\|16 | little-endian | unsigned | 0.1 | 0 | V | 0 to 6553.4 |  | plausible |
+| `CMP_inputLVVoltage` | A/C compressor: input LV voltage | 16\|8 | little-endian | unsigned | 0.1 | 0 | V | 0 to 25.5 |  | plausible |
+| `CMP_inputHVCurrent` | A/C compressor: input HV current | 24\|16 | little-endian | unsigned | 0.1 | 0 | A | 0 to 6553.4 |  | plausible |
+| `CMP_inputHVPower` | Compressor high voltage input power | 40\|16 | little-endian | unsigned | 1 | 0 | W | 0 to 65534 |  | plausible |
 
 ## Download the DBC file
 

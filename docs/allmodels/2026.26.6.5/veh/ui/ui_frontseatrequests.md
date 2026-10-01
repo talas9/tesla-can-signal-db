@@ -29,31 +29,31 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_frontSeatRequests`: start bit and
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `UI_frontRightSeatTrackForward` | Touchscreen user interface computer: front right seat track forward | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatTrackBack` | Touchscreen user interface computer: front right seat track back | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatTrackForward` | Touchscreen user interface computer: front left seat track forward | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatTrackBack` | Touchscreen user interface computer: front left seat track back | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatBackrestBack` | Touchscreen user interface computer: front right seat backrest back | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatBackrestForward` | Touchscreen user interface computer: front right seat backrest forward | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatBackrestBack` | Touchscreen user interface computer: front left seat backrest back | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatBackrestForward` | Touchscreen user interface computer: front left seat backrest forward | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatTiltUp` | Touchscreen user interface computer: front right seat tilt up | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatTiltDown` | Touchscreen user interface computer: front right seat tilt down | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatTiltUp` | Touchscreen user interface computer: front left seat tilt up | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatTiltDown` | Touchscreen user interface computer: front left seat tilt down | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatLiftUp` | Touchscreen user interface computer: front right seat lift up | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatLiftDown` | Touchscreen user interface computer: front right seat lift down | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatLiftUp` | Touchscreen user interface computer: front left seat lift up | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatLiftDown` | Touchscreen user interface computer: front left seat lift down | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatLumbarUp` | Touchscreen user interface computer: front left seat lumbar up | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatLumbarDown` | Touchscreen user interface computer: front left seat lumbar down | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatLumbarUp` | Touchscreen user interface computer: front right seat lumbar up | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatLumbarDown` | Touchscreen user interface computer: front right seat lumbar down | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatLumbarIn` | Touchscreen user interface computer: front left seat lumbar in | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontLeftSeatLumbarOut` | Touchscreen user interface computer: front left seat lumbar out | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatLumbarIn` | Touchscreen user interface computer: front right seat lumbar in | 22\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_frontRightSeatLumbarOut` | Touchscreen user interface computer: front right seat lumbar out | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | plausible |
-| `UI_seatAdjustmentSource` | Touchscreen user interface computer: seat adjustment source | 24\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `INACTIVE`<br>1 = `BOTTOM_BAR_DRIVER`<br>2 = `BOTTOM_BAR_PASSENGER`<br>3 = `MFC`<br>4 = `QUICK_CONTROLS`<br>5 = `PROFILE_CREATION` | plausible |
+| `UI_frontRightSeatTrackForward` | Touchscreen user interface computer: front right seat track forward | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatTrackBack` | Touchscreen user interface computer: front right seat track back | 1\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatTrackForward` | Touchscreen user interface computer: front left seat track forward | 2\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatTrackBack` | Touchscreen user interface computer: front left seat track back | 3\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatBackrestBack` | Touchscreen user interface computer: front right seat backrest back | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatBackrestForward` | Touchscreen user interface computer: front right seat backrest forward | 5\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatBackrestBack` | Touchscreen user interface computer: front left seat backrest back | 6\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatBackrestForward` | Touchscreen user interface computer: front left seat backrest forward | 7\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatTiltUp` | Touchscreen user interface computer: front right seat tilt up | 8\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatTiltDown` | Touchscreen user interface computer: front right seat tilt down | 9\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatTiltUp` | Touchscreen user interface computer: front left seat tilt up | 10\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatTiltDown` | Touchscreen user interface computer: front left seat tilt down | 11\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatLiftUp` | Touchscreen user interface computer: front right seat lift up | 12\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatLiftDown` | Touchscreen user interface computer: front right seat lift down | 13\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatLiftUp` | Touchscreen user interface computer: front left seat lift up | 14\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatLiftDown` | Touchscreen user interface computer: front left seat lift down | 15\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatLumbarUp` | Touchscreen user interface computer: front left seat lumbar up | 16\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatLumbarDown` | Touchscreen user interface computer: front left seat lumbar down | 17\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatLumbarUp` | Touchscreen user interface computer: front right seat lumbar up | 18\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatLumbarDown` | Touchscreen user interface computer: front right seat lumbar down | 19\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatLumbarIn` | Touchscreen user interface computer: front left seat lumbar in | 20\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontLeftSeatLumbarOut` | Touchscreen user interface computer: front left seat lumbar out | 21\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatLumbarIn` | Touchscreen user interface computer: front right seat lumbar in | 22\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_frontRightSeatLumbarOut` | Touchscreen user interface computer: front right seat lumbar out | 23\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
+| `UI_seatAdjustmentSource` | Touchscreen user interface computer: seat adjustment source | 24\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `INACTIVE`<br>1 = `BOTTOM_BAR_DRIVER`<br>2 = `BOTTOM_BAR_PASSENGER`<br>3 = `MFC`<br>4 = `QUICK_CONTROLS`<br>5 = `PROFILE_CREATION` | validated |
 
 ## Download the DBC file
 

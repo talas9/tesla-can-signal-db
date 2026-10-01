@@ -29,9 +29,9 @@ Tesla Model 3 CAN bus signals in `DI_maxRatedPower`: start bit and length, byte 
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DI_sysDrivePowerRated` | Drive inverter: sys drive power rated; raw 511 = signal not available (SNA) | 0\|10 | little-endian | unsigned | 1 | 0 | kW | 0 to 1023 | 511 = `SNA` | validated |
-| `DI_performancePackage` | Drive inverter: performance package; raw 7 = signal not available (SNA) | 11\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 6 | 0 = `BASE`<br>1 = `PERFORMANCE`<br>2 = `BASE_2024`<br>3 = `BASE_PLUS`<br>4 = `BASE_2022`<br>5 = `BASE_PLUS_2022`<br>6 = `PERFORMANCE_2022`<br>7 = `SNA` | validated |
-| `DI_sysRegenPowerRated` | Drive inverter: sys regen power rated; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -100 | kW | -100 to 0 | 255 = `SNA` | validated |
+| `DI_sysDrivePowerRated` | Drive inverter: sys drive power rated; raw 511 = signal not available (SNA) | 0\|10 | little-endian | unsigned | 1 | 0 | kW | 0 to 1023 | 511 = `SNA` | plausible |
+| `DI_performancePackage` | Drive inverter: performance package; raw 7 = signal not available (SNA) | 11\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 6 | 0 = `BASE`<br>1 = `PERFORMANCE`<br>2 = `BASE_2024`<br>3 = `BASE_PLUS`<br>4 = `BASE_2022`<br>5 = `BASE_PLUS_2022`<br>6 = `PERFORMANCE_2022`<br>7 = `SNA` | plausible |
+| `DI_sysRegenPowerRated` | Drive inverter: sys regen power rated; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | -100 | kW | -100 to 0 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 

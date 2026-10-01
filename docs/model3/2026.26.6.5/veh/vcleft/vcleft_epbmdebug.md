@@ -29,7 +29,7 @@ Tesla Model 3 CAN bus signals in `VCLEFT_epbmDebug`: start bit and length, byte 
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `VCLEFT_epbmDebugIndex` | selector | Left body controller: epbm debug index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `STATES`<br>1 = `TRANSITIONS` | plausible |
+| `VCLEFT_epbmDebugIndex` | selector | Left body controller: epbm debug index | 0\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 | 0 = `STATES`<br>1 = `TRANSITIONS` | validated |
 | `VCLEFT_epbmCaliperState` | page 0 | Left body controller: epbm caliper state | 1\|3 | little-endian | unsigned | 1 | 0 |  | 0 to 7 | 0 = `EPB_SAVED_CALIPERSTATE_UNSAVED`<br>1 = `EPB_SAVED_CALIPERSTATE_UNKNOWN`<br>2 = `EPB_SAVED_CALIPERSTATE_REAPPLY`<br>3 = `EPB_SAVED_CALIPERSTATE_PARK`<br>4 = `EPB_SAVED_CALIPERSTATE_OPEN`<br>5 = `EPB_SAVED_CALIPERSTATE_SERVICE`<br>6 = `EPB_SAVED_CALIPERSTATE_WINCHMODE` | validated |
 | `VCLEFT_epbmMotorEnabled` | page 0 | Left body controller: epbm motor enabled | 4\|1 | little-endian | unsigned | 1 | 0 |  | 0 to 1 |  | validated |
 | `VCLEFT_epbMotorCurrent` | page 0 | Left body controller: epb motor current | 5\|11 | little-endian | unsigned | 0.01 | 0 | A | 0 to 20.47 |  | validated |

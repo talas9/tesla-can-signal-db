@@ -29,11 +29,11 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_rearParkAssistData`: start bit a
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `APP_rearLeftParkAssist` | Driver assistance computer (primary): rear left park assist; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `APP_rearLeftMiddleParkAssist` | Driver assistance computer (primary): rear left middle park assist; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `APP_rearMiddleParkAssist` | Driver assistance computer (primary): rear middle park assist; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `APP_rearRightMiddleParkAssist` | Driver assistance computer (primary): rear right middle park assist; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
-| `APP_rearRightParkAssist` | Driver assistance computer (primary): rear right park assist; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | validated |
+| `APP_rearLeftParkAssist` | Driver assistance computer (primary): rear left park assist; raw 255 = signal not available (SNA) | 0\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `APP_rearLeftMiddleParkAssist` | Driver assistance computer (primary): rear left middle park assist; raw 255 = signal not available (SNA) | 8\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `APP_rearMiddleParkAssist` | Driver assistance computer (primary): rear middle park assist; raw 255 = signal not available (SNA) | 16\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `APP_rearRightMiddleParkAssist` | Driver assistance computer (primary): rear right middle park assist; raw 255 = signal not available (SNA) | 24\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
+| `APP_rearRightParkAssist` | Driver assistance computer (primary): rear right park assist; raw 255 = signal not available (SNA) | 32\|8 | little-endian | unsigned | 1 | 0 | cm | 0 to 254 | 255 = `SNA` | plausible |
 
 ## Download the DBC file
 
