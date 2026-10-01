@@ -1,15 +1,16 @@
 ---
 layout: default
 title: "Driver assistance computer (DAS) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y DAS CAN bus messages and signals of the Driver assistance computer (DAS) for firmware 2026.26.6.5: 23 messages, 537 signals with bit layout, scaling and value tables."
+description: "Tesla Model 3 / Model Y DAS CAN bus messages and signals of the Driver assistance computer (DAS) for firmware 2026.26.6.5: 24 messages, 549 signals with bit layout, scaling and value tables."
 ---
 
 # Driver assistance computer (DAS) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
 
-All 23 messages of the Driver assistance computer (DAS) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 24 messages of the Driver assistance computer (DAS) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
+| [`DAS_autonomyControl`](veh/das/das_autonomycontrol.md) | VEH | 0x20E | 3 | 100 ms | 12 |
 | [`DAS_bodyControls`](veh/das/das_bodycontrols.md) | VEH | 0x3E9 | 8 | 500 ms | 27 |
 | [`DAS_alertLog`](ch/das/das_alertlog.md) | CH | 0x5B9 | 8 |  | 25 |
 | [`DAS_autonomyDebugInfo`](ch/das/das_autonomydebuginfo.md) | CH | 0x191 | 2 | 100 ms | 3 |

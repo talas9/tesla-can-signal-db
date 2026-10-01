@@ -1,12 +1,12 @@
 ---
 layout: default
 title: "Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model Y 2026.26.6.5"
-description: "Tesla Model Y UI CAN bus messages and signals of the Touchscreen user interface computer (UI) for firmware 2026.26.6.5: 90 messages, 1713 signals with bit layout, scaling and value tables."
+description: "Tesla Model Y UI CAN bus messages and signals of the Touchscreen user interface computer (UI) for firmware 2026.26.6.5: 91 messages, 1717 signals with bit layout, scaling and value tables."
 ---
 
 # Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model Y 2026.26.6.5
 
-All 90 messages of the Touchscreen user interface computer (UI) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 91 messages of the Touchscreen user interface computer (UI) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -14,6 +14,7 @@ All 90 messages of the Touchscreen user interface computer (UI) documented for T
 | [`UI_autopilotControl`](veh/ui/ui_autopilotcontrol.md) | VEH | 0x3FD | 8 | 500 ms | 82 |
 | [`UI_chargeRequest`](veh/ui/ui_chargerequest.md) | VEH | 0x333 | 5 | 500 ms | 16 |
 | [`UI_chassisControl`](veh/ui/ui_chassiscontrol.md) | VEH | 0x293 | 8 | 500 ms | 28 |
+| [`UI_cruiseControl`](veh/ui/ui_cruisecontrol.md) | VEH | 0x213 | 2 | 500 ms | 4 |
 | [`UI_debugECU`](veh/ui/ui_debugecu.md) | VEH | 0x500 | 2 | 5000 ms | 15 |
 | [`UI_debugTas`](veh/ui/ui_debugtas.md) | VEH | 0x7FB | 8 | 2000 ms | 8 |
 | [`UI_driverAssistMapData`](veh/ui/ui_driverassistmapdata.md) | VEH | 0x238 | 8 | 500 ms | 30 |

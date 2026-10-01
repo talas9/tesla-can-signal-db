@@ -381,6 +381,8 @@ def describe_message(msg):
         text = '%s message' % node_label(origin)
     if msg.get('routed_from'):
         text += '; forwarded onto this bus by the gateway'
+    if msg.get('layout_note'):
+        text += '; ' + msg['layout_note']
     if msg.get('length_note'):
         text += '; ' + msg['length_note']
     return text
@@ -485,6 +487,7 @@ def build_messages(signals, msg_meta=None):
             'name': mname, 'frame_id': fid, 'extended': extended, 'size': size,
             'fd': size > 8, 'transmitter': tx, 'cycle_ms': int(meta.get('cycle_ms') or 0),
             'routed_from': meta.get('routed_from'), 'length_note': meta.get('length_note'),
+            'layout_note': meta.get('layout_note'),
             'selector': next(iter(sel_names)) if sel_names else None,
             'signals': sorted(kept, key=lambda s: (s['mux_value'] is not None, s['mux_value'] or 0, s['start'], s['name'])),
         })
@@ -705,7 +708,8 @@ def _fit_frame(part, dlc):
 
 
 def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_meta=None, verdicts=None,
-           model_routing=None, frame_lengths=None, flagged=None, can_only_messages=None):
+           model_routing=None, frame_lengths=None, flagged=None, can_only_messages=None,
+           layout_overrides=None):
     """Write the DBC + JSON files of one firmware under out_dir; return a report.
 
     Writes <out_dir>/<firmware>/ETH.{dbc,json}: every message under its
@@ -730,6 +734,12 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
                    routes name, never in ETH files.
     flagged:       {(bus, can_id): reason} - on-bus ids whose frames do not
                    follow the Ethernet-side layout; left out of that bus file.
+    layout_overrides: {(bus, can_id): {'message', 'layout_fw', 'rows',
+                   'signal_meta', 'verdicts', 'length', 'cycle_ms'}} - on-bus ids
+                   whose frames follow the same-named message's layout from
+                   another firmware (layout_fw) instead of this one; that bus
+                   file carries the layout_fw signals under the same name. The
+                   Ethernet-side file keeps this firmware's layout.
     msg_meta:      {message: {'length': int, 'cycle_ms': int}}.
     signal_meta:   {(message, signal): {...}} (see normalise_rows).
     verdicts:      {(message, signal): 'validated'|'plausible'|'contradicted'|...}.
@@ -744,6 +754,16 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
     flagged = flagged or {}
     can_only = set(can_only_messages or ())
     signals, dropped = normalise_rows(signal_rows, signal_meta, verdicts)
+    overrides = {}
+    for key, ov in (layout_overrides or {}).items():
+        ov_sigs, ov_drop = normalise_rows(ov['rows'], ov.get('signal_meta'), ov.get('verdicts'))
+        if ov_drop or not ov_sigs:
+            raise ExportError('layout override %s %d (%s): layout from %s is incomplete'
+                              % (key[0], key[1], ov['message'], ov['layout_fw']))
+        if not any(x['message'] == ov['message'] for x in signals):
+            raise ExportError('layout override %s %d: %s has no layout in %s'
+                              % (key[0], key[1], ov['message'], firmware))
+        overrides[key] = dict(ov, signals=ov_sigs)
     eth_signals = [x for x in signals if x['message'] not in can_only]
     if routing is None:
         return {'files': [_emit(out_dir, '%s/ETH' % firmware, eth_signals, dropped, firmware, 'AllModels', 'ETH',
@@ -775,6 +795,12 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
                 d = dict(msg_meta.get(mname, {}))
                 if can_id is not None:
                     d['id'] = can_id
+                    ov = overrides.get((bus, can_id))
+                    if ov is not None and ov['message'] == mname:
+                        mp = [dict(x, models=[]) for x in ov['signals']]
+                        d['length'], d['cycle_ms'] = ov['length'], ov['cycle_ms']
+                        d['layout_note'] = 'layout from firmware %s, the layout the frames on this bus follow' \
+                            % ov['layout_fw']
                     if (bus, can_id) in flagged:
                         bus_dropped += [{'message': mname, 'signal': x['name'],
                                          'reason': 'on-bus frames do not follow this layout: %s' % flagged[(bus, can_id)]}
@@ -1245,6 +1271,31 @@ def load_inputs(fwdir):
                                    'cycle_ms': parse_int(r['cycle_ms'] or '0', msg + '.cycle_ms'),
                                    'transmitter': 'Vector__XXX'}
             kw['signal_meta'][(msg, r['signal'])] = {'confidence': r.get('confidence', '')}
+    op = fwdir.parent / 'can-layout-overrides.csv'
+    if op.exists():
+        kw['layout_overrides'] = {}
+        for r in _read_csv(op):
+            for c in ('fw', 'bus', 'can_id', 'message', 'layout_fw'):
+                if c not in r:
+                    raise ExportError('%s: missing column %s' % (op, c))
+            if r['fw'] != fwdir.name:
+                continue
+            src = fwdir.parent / r['layout_fw']
+            if not (src / 'signals.csv').exists():
+                raise ExportError('%s: no data for firmware %s' % (op, r['layout_fw']))
+            rows = [x for x in load_signal_rows(src / 'signals.csv') if x['message'].strip() == r['message']]
+            meta = {(x['message'], x['signal']): x for x in _read_csv(src / 'signal-meta.csv')
+                    if x['message'] == r['message']} if (src / 'signal-meta.csv').exists() else {}
+            verdicts = {(x['message'], x['signal']): x['verdict'].strip() for x in _read_csv(src / 'validation.csv')
+                        if x['message'] == r['message'] and x['fw'] == r['layout_fw']} \
+                if (src / 'validation.csv').exists() else {}
+            mm = next((x for x in _read_csv(src / 'messages.csv') if x['message'] == r['message']), None)
+            if not rows or mm is None:
+                raise ExportError('%s: %s has no layout in firmware %s' % (op, r['message'], r['layout_fw']))
+            kw['layout_overrides'][(r['bus'], parse_int(r['can_id'], 'override can_id'))] = {
+                'message': r['message'], 'layout_fw': r['layout_fw'], 'rows': rows, 'signal_meta': meta,
+                'verdicts': verdicts, 'length': parse_int(mm['length'], r['message'] + '.length'),
+                'cycle_ms': parse_int(mm['cycle_ms'] or '0', r['message'] + '.cycle_ms')}
     fp = fwdir.parent / 'can-flagged.csv'
     if fp.exists():
         kw['flagged'] = {}

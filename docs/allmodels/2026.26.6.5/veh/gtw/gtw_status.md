@@ -1,23 +1,23 @@
 ---
 layout: default
-title: "GTW_status (0x348) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Gateway message: status. Ethernet-side message GTW_status of Gateway for Tesla Model 3 / Model Y firmware 2026.26.6.5, 10 signals (GTW_vehicleVersionMatchStatus, GTW_hwtype, GTW_jcanProductName, GTW_uptimeSeconds and 6 more). Bit layout, scaling, units and value tables."
+title: "GTW_status (0x348) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
+description: "Gateway message: status. Tesla Model 3 / Model Y CAN bus message GTW_status (0x348) of Gateway, firmware 2026.26.6.5, 10 signals (GTW_vehicleVersionMatchStatus, GTW_hwtype, GTW_jcanProductName, GTW_uptimeSeconds and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# GTW_status (0x348) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# GTW_status (0x348) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
 
-Gateway message: status. This page documents the 10 signals of GTW_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Gateway message: status; frame length observed on a vehicle bus. This page documents the 10 signals of GTW_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
 | Property | Value |
 |---|---|
 | Message name | `GTW_status` |
-| Ethernet-side id | 0x348 (840) |
+| CAN id | 0x348 (840) |
 | ECU | [Gateway](../../gtw.md) |
 | Vehicle | Tesla Model 3 / Model Y |
 | Firmware | 2026.26.6.5 |
-| Bus | ETH (Ethernet-side ids, not CAN ids) |
+| Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
 | Frame length | 8 bytes |
 | Cycle time | 1000 ms |
@@ -42,10 +42,8 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
-- [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
-
-Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.
+- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also
 

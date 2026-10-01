@@ -64,6 +64,16 @@ BO_ 909 APP_VC_infoMessage: 8 APP
  SG_ APP_narrowOverallVisibility : 55|3@1+ (1,0) [1|7] "" Vector__XXX
  SG_ APP_frontCamOcclusionType : 58|3@1+ (1,0) [0|7] "" Vector__XXX
 
+BO_ 1018 APP_cameraLux: 8 APP
+ SG_ APP_mainCameraLUX : 0|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_narrowCameraLUX : 8|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_fisheyeCameraLUX : 16|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_lRepeatCameraLUX : 24|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_rRepeatCameraLUX : 32|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_lPillarCameraLUX : 40|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_rPillarCameraLUX : 48|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+ SG_ APP_backupCameraLUX : 56|8@1+ (0.5,0) [0|127] "lux^0.5" Vector__XXX
+
 BO_ 1056 APS_state: 8 APS
  SG_ APS_primaryTurbo : 0|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ APS_A_arbState : 2|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -2202,6 +2212,20 @@ BO_ 893 CP_thermalStatus: 8 CP
 
 BO_ 1566 CP_udsResponse: 8 CP
  SG_ CP_udsResponseData : 7|64@0+ (1,0) [0|1.84467440737e+19] "" Vector__XXX
+
+BO_ 526 DAS_autonomyControl: 3 DAS
+ SG_ DAS_autonomyControlChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DAS_autonomyControlCounter : 8|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DAS_manualDrivingProhibited : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_autonomyControlActive : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_autonomyBehavior : 13|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DAS_epbFallbackRequest : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_suppressAPedalOverride : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_useEpbRedundantBraking : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_epbOnlyStoppingTarget : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_requireFirmBPedalCancel : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DAS_authRequestType : 20|2@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ DAS_brakePedalMuted : 22|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1001 DAS_bodyControls: 8 DAS
  SG_ DAS_headlightRequest : 0|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -7001,6 +7025,38 @@ BO_ 1638 GTW_diagSession: 4 GTW
  SG_ GTW_diagOverrideActive : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ GTW_diagPhysicalLinkEstablished : 26|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 840 GTW_status: 8 GTW
+ SG_ GTW_vehicleVersionMatchStatus : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_hwtype : 2|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ GTW_jcanProductName : 4|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ GTW_uptimeSeconds : 15|32@0+ (1,0) [0|4294967295] "s" Vector__XXX
+ SG_ GTW_boardRevision : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ GTW_touchcoreOsType : 48|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_sentryModeState : 49|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ GTW_secureBootEnabled : 52|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_socSleepType : 56|2@1+ (1,0) [1|3] "" Vector__XXX
+ SG_ GTW_resetType : 58|4@1+ (1,0) [1|15] "" Vector__XXX
+
+BO_ 1005 GTW_updateStatus: 1 GTW
+ SG_ GTW_i2cUpdateActive : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_peripheralConfirmedUpdateNee : 3|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ GTW_ocuFailed : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_ecuUpdateStarted : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_updateStarted : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1112 GTW_vehNm: 7 GTW
+ SG_ GTW_nmGoingToSleep : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_nmWakeUpBus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_chBusAsleep : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_ethBusAsleep : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_nmKeepAwakeReason : 4|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ GTW_nmWakeUpReason : 8|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ GTW_ethKeepAwakeReason : 13|4@1+ (1,0) [1|15] "" Vector__XXX
+ SG_ GTW_nmDebugWakeUp : 17|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ GTW_OTAKeepAwake : 49|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_smsPokeReceived : 50|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ GTW_bdyBusAsleep : 51|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 1650 HCML_info: 8 HCML
  SG_ VC_hcmlInfoIndex M : 0|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ VC_infoHCMLBuildConfigId m0 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
@@ -11642,6 +11698,12 @@ BO_ 659 UI_chassisControl: 8 GTW
  SG_ UI_selfParkTune : 48|4@1+ (1,0) [0|14] "" Vector__XXX
  SG_ UI_chassisControlCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ UI_chassisControlChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 531 UI_cruiseControl: 2 GTW
+ SG_ UI_cruiseSpeedCommand : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ UI_smartSummonRequest : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_cruiseControlCounter : 4|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ UI_cruiseControlChecksum : 8|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 1280 UI_debugECU: 2 GTW
  SG_ UI_debugEcuTarget M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
@@ -21017,6 +21079,23 @@ BO_ 1802 VCLEFT_logging0point1Hz: 5 VCLEFT
  SG_ VCLEFT_leftRearTurnLightCurrentS m0 : 24|3@1+ (1,0) [1|7] "" Vector__XXX
  SG_ VCLEFT_phoneTemperatureFL m0 : 32|8@1- (1,-50) [-177|77] "degC" Vector__XXX
 
+BO_ 649 VCLEFT_logging10Hz: 8 VCLEFT
+ SG_ VCLEFT_logging10HzIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_hvacBlowerRs m0 : 1|8@1+ (0.25,0) [0|60] "mOhm" Vector__XXX
+ SG_ VCLEFT_hvacBlowerIPhase0 m0 : 9|7@1+ (0.4,0) [0|50] "A" Vector__XXX
+ SG_ VCLEFT_hvacBlowerIPhase1 m0 : 16|7@1+ (0.4,0) [0|50] "A" Vector__XXX
+ SG_ VCLEFT_hvacBlowerIPhase2 m0 : 23|7@1+ (0.4,0) [0|50] "A" Vector__XXX
+ SG_ VCLEFT_hvacBlower_IO_CBC_HEAD m0 : 30|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCLEFT_hvacBlower_IO_CBC_TAIL m0 : 34|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCLEFT_hvacBlower_IO_CBC_TAIL_va m0 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_hvacBlower_IO_CBC_Status m0 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_hvacBlower_IO_CBC_numUart m0 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ VCLEFT_hvacBlowerCBCEstState m0 : 48|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ VCLEFT_hvacBlowerCBCCtrlState m0 : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ VCLEFT_hvacBlowerITerm m0 : 55|7@1+ (0.05,-1.5) [-1.5|4.5] "Nm" Vector__XXX
+ SG_ VCLEFT_hvacBlowerSpiError m0 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCLEFT_hvacBlowerRsOnlineActive m0 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 936 VCLEFT_logging1Hz: 8 VCLEFT
  SG_ VCLEFT_logging1HzIndex M : 0|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VCLEFT_tohcPCBATemperature m0 : 8|8@1+ (1,-40) [-40|214] "degC" Vector__XXX
@@ -25740,6 +25819,7 @@ BO_ 1029 VINbroadcast: 8 Vector__XXX
 
 BO_TX_BU_ 1951 : GTW;
 BO_TX_BU_ 909 : APP;
+BO_TX_BU_ 1018 : APP;
 BO_TX_BU_ 1056 : APS;
 BO_TX_BU_ 1343 : BMS;
 BO_TX_BU_ 800 : BMS;
@@ -25791,6 +25871,7 @@ BO_TX_BU_ 989 : CP;
 BO_TX_BU_ 605 : CP;
 BO_TX_BU_ 893 : CP;
 BO_TX_BU_ 1566 : CP;
+BO_TX_BU_ 526 : DAS;
 BO_TX_BU_ 1001 : DAS;
 BO_TX_BU_ 1318 : DIF;
 BO_TX_BU_ 854 : DIF;
@@ -25852,6 +25933,9 @@ BO_TX_BU_ 533 : FC;
 BO_TX_BU_ 535 : FC;
 BO_TX_BU_ 2047 : GTW;
 BO_TX_BU_ 1638 : GTW;
+BO_TX_BU_ 840 : GTW;
+BO_TX_BU_ 1005 : GTW;
+BO_TX_BU_ 1112 : GTW;
 BO_TX_BU_ 1650 : HCML;
 BO_TX_BU_ 1980 : HCMR;
 BO_TX_BU_ 1290 : HVP;
@@ -25970,6 +26054,7 @@ BO_TX_BU_ 1657 : GTW;
 BO_TX_BU_ 1021 : GTW;
 BO_TX_BU_ 819 : GTW;
 BO_TX_BU_ 659 : GTW;
+BO_TX_BU_ 531 : GTW;
 BO_TX_BU_ 1280 : GTW;
 BO_TX_BU_ 2043 : GTW;
 BO_TX_BU_ 568 : GTW;
@@ -26070,6 +26155,7 @@ BO_TX_BU_ 292 : VCLEFT;
 BO_TX_BU_ 322 : VCLEFT;
 BO_TX_BU_ 994 : VCLEFT;
 BO_TX_BU_ 1802 : VCLEFT;
+BO_TX_BU_ 649 : VCLEFT;
 BO_TX_BU_ 936 : VCLEFT;
 BO_TX_BU_ 727 : VCLEFT;
 BO_TX_BU_ 1860 : VCLEFT;
@@ -26212,6 +26298,15 @@ CM_ SG_ 909 APP_mainOverallVisibility "Driver assistance computer (primary): mai
 CM_ SG_ 909 APP_narrowInPathVisibility "Driver assistance computer (primary): narrow in path visibility; raw 0 = signal not available (SNA)";
 CM_ SG_ 909 APP_narrowOverallVisibility "Driver assistance computer (primary): narrow overall visibility; raw 0 = signal not available (SNA)";
 CM_ SG_ 909 APP_frontCamOcclusionType "Reports the current type of what is obstructing the front camera vision.";
+CM_ BO_ 1018 "Driver assistance computer (primary) message: camera lux; frame length observed on a vehicle bus";
+CM_ SG_ 1018 APP_mainCameraLUX "Amount of illuminance seen by the main camera; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_narrowCameraLUX "Driver assistance computer (primary): narrow camera LUX; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_fisheyeCameraLUX "Driver assistance computer (primary): fisheye camera LUX; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_lRepeatCameraLUX "Driver assistance computer (primary): l repeat camera LUX; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_rRepeatCameraLUX "Driver assistance computer (primary): r repeat camera LUX; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_lPillarCameraLUX "Driver assistance computer (primary): l pillar camera LUX; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_rPillarCameraLUX "Driver assistance computer (primary): r pillar camera LUX; raw 255 = signal not available (SNA)";
+CM_ SG_ 1018 APP_backupCameraLUX "Driver assistance computer (primary): backup camera LUX; raw 255 = signal not available (SNA)";
 CM_ BO_ 1056 "Driver assistance computer (secondary) message: state; frame length observed on a vehicle bus";
 CM_ SG_ 1056 APS_primaryTurbo "Which of the two Turbos currently holds the primary role.";
 CM_ SG_ 1056 APS_A_arbState "The state of the arbitration state machine of Turbo A.";
@@ -28300,6 +28395,19 @@ CM_ SG_ 893 CP_pinTemperature4 "Sensed temperature of the charge port inlet pins
 CM_ SG_ 893 CP_pinTemp4Velocity "Instantaneous temperature velocity (over 1 minute) of Charge Port's temperature 4; raw 511 = signal not available (SNA)";
 CM_ BO_ 1566 "Charge port controller message: uds response; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1566 CP_udsResponseData "Charge port controller: uds response data";
+CM_ BO_ 526 "Driver assistance computer message: autonomy control; frame length observed on a vehicle bus";
+CM_ SG_ 526 DAS_autonomyControlChecksum "Driver assistance computer: autonomy control checksum";
+CM_ SG_ 526 DAS_autonomyControlCounter "Driver assistance computer: autonomy control counter";
+CM_ SG_ 526 DAS_manualDrivingProhibited "Reports whether the driver is allowed to override autonomy control.";
+CM_ SG_ 526 DAS_autonomyControlActive "Denotes if autonomy is active or inactive.";
+CM_ SG_ 526 DAS_autonomyBehavior "Current autonomy mode and expected vehicle behaviors; raw 3 = signal not available (SNA)";
+CM_ SG_ 526 DAS_epbFallbackRequest "Driver assistance computer: epb fallback request";
+CM_ SG_ 526 DAS_suppressAPedalOverride "DAS requesting for A-pedal suppression";
+CM_ SG_ 526 DAS_useEpbRedundantBraking "Driver assistance computer: use epb redundant braking";
+CM_ SG_ 526 DAS_epbOnlyStoppingTarget "Driver assistance computer: epb only stopping target";
+CM_ SG_ 526 DAS_requireFirmBPedalCancel "Requests firmer brake press requirement to disengage autopilot";
+CM_ SG_ 526 DAS_authRequestType "Driver assistance computer: auth request type; raw 3 = signal not available (SNA)";
+CM_ SG_ 526 DAS_brakePedalMuted "Driver assistance computer: brake pedal muted";
 CM_ BO_ 1001 "Driver assistance computer message: body controls; frame length observed on a vehicle bus";
 CM_ SG_ 1001 DAS_headlightRequest "The DAS request to the body controls ecu to turn on headlights.";
 CM_ SG_ 1001 DAS_hazardLightRequest "The command from DAS to body controls to turn on the hazard lights; raw 3 = signal not available (SNA)";
@@ -33037,6 +33145,35 @@ CM_ SG_ 1638 GTW_diagLevel "Current diagnostics level";
 CM_ SG_ 1638 GTW_diagUnlockProcedureActive "GTW diag unlock procedure active";
 CM_ SG_ 1638 GTW_diagOverrideActive "GTW diag level override active";
 CM_ SG_ 1638 GTW_diagPhysicalLinkEstablished "Physical diag cable connected to the switch and link established";
+CM_ BO_ 840 "Gateway message: status; frame length observed on a vehicle bus";
+CM_ SG_ 840 GTW_vehicleVersionMatchStatus "Signal to indicate if the vehicle ECUs are all on a matched production version";
+CM_ SG_ 840 GTW_hwtype "Describes the chip GTW is running on; raw 0 = signal not available (SNA)";
+CM_ SG_ 840 GTW_jcanProductName "Describes the JCAN reference (product) name; raw 0 = signal not available (SNA)";
+CM_ SG_ 840 GTW_uptimeSeconds "GTW uptime in seconds";
+CM_ SG_ 840 GTW_boardRevision "Board revision ID of the MCU PCBA";
+CM_ SG_ 840 GTW_touchcoreOsType "Gateway: touchcore os type";
+CM_ SG_ 840 GTW_sentryModeState "Sentry Mode state; raw 6 = signal not available (SNA)";
+CM_ SG_ 840 GTW_secureBootEnabled "Gateway: secure boot enabled";
+CM_ SG_ 840 GTW_socSleepType "Describes the sleep type GTW is expecting from the SoC; raw 0 = signal not available (SNA)";
+CM_ SG_ 840 GTW_resetType "Describes the type of reset GTW experienced; raw 0 = signal not available (SNA)";
+CM_ BO_ 1005 "Gateway message: update status; frame length observed on a vehicle bus";
+CM_ SG_ 1005 GTW_i2cUpdateActive "Gateway: i2c update active";
+CM_ SG_ 1005 GTW_peripheralConfirmedUpdateNee "Detects if peripheral has confirmed update is needed";
+CM_ SG_ 1005 GTW_ocuFailed "Reports the offboard charger update was unsuccessful.";
+CM_ SG_ 1005 GTW_ecuUpdateStarted "Reports whether Electronic Control Unit (ECU) update phase is active.";
+CM_ SG_ 1005 GTW_updateStarted "Main update in progress bit";
+CM_ BO_ 1112 "Gateway message: veh nm; frame length observed on a vehicle bus";
+CM_ SG_ 1112 GTW_nmGoingToSleep "Network management - Going to sleep state";
+CM_ SG_ 1112 GTW_nmWakeUpBus "Gateway: nm wake up bus";
+CM_ SG_ 1112 GTW_chBusAsleep "Chassis bus sleep state";
+CM_ SG_ 1112 GTW_ethBusAsleep "ETH bus sleep state";
+CM_ SG_ 1112 GTW_nmKeepAwakeReason "Network management - Keep awake reason; raw 0 = signal not available (SNA)";
+CM_ SG_ 1112 GTW_nmWakeUpReason "Network management - Wakeup reason";
+CM_ SG_ 1112 GTW_ethKeepAwakeReason "Reason GTW is keeping ETH bus awake; raw 0 = signal not available (SNA)";
+CM_ SG_ 1112 GTW_nmDebugWakeUp "Gateway: nm debug wake up";
+CM_ SG_ 1112 GTW_OTAKeepAwake "Signals that the vehicle buses should remain awake for an ongoing OTA update";
+CM_ SG_ 1112 GTW_smsPokeReceived "The modem indicated it received an SMS poke";
+CM_ SG_ 1112 GTW_bdyBusAsleep "BDY bus sleep state";
 CM_ BO_ 1650 "HCML ECU message: info; frame length observed on a vehicle bus";
 CM_ SG_ 1650 VC_hcmlInfoIndex "HCML ECU: hcml info index";
 CM_ SG_ 1650 VC_infoHCMLBuildConfigId "HCM Diagnostic Field.";
@@ -37558,6 +37695,11 @@ CM_ SG_ 659 UI_redLightStopSignEnable "Touchscreen user interface computer: red 
 CM_ SG_ 659 UI_selfParkTune "Touchscreen user interface computer: self park tune; raw 15 = signal not available (SNA)";
 CM_ SG_ 659 UI_chassisControlCounter "Touchscreen user interface computer: chassis control counter";
 CM_ SG_ 659 UI_chassisControlChecksum "Touchscreen user interface computer: chassis control checksum";
+CM_ BO_ 531 "Touchscreen user interface computer message: cruise control; forwarded onto this bus by the gateway; layout from firmware 2025.20.8, the layout the frames on this bus follow; frame length observed on a vehicle bus";
+CM_ SG_ 531 UI_cruiseSpeedCommand "User command to change the cruise set speed.";
+CM_ SG_ 531 UI_smartSummonRequest "Touchscreen user interface computer: smart summon request";
+CM_ SG_ 531 UI_cruiseControlCounter "Touchscreen user interface computer: cruise control counter";
+CM_ SG_ 531 UI_cruiseControlChecksum "Touchscreen user interface computer: cruise control checksum";
 CM_ BO_ 1280 "Touchscreen user interface computer message: debug ECU; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1280 UI_debugEcuTarget "Touchscreen user interface computer: debug ecu target";
 CM_ SG_ 1280 UI_DI_debugEnable "Touchscreen user interface computer: DI debug enable";
@@ -46831,6 +46973,22 @@ CM_ SG_ 1802 VCLEFT_leftBrakeTailLightCu_0001 "State representing validity of th
 CM_ SG_ 1802 VCLEFT_leftRearTurnLightCurrent "Current sensed by the left rear turn signal HSD (high side driver); raw 511 = signal not available (SNA)";
 CM_ SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "State representing validity of the left rear turn signal HSD (high side driver) current sense; raw 0 = signal not available (SNA)";
 CM_ SG_ 1802 VCLEFT_phoneTemperatureFL "Temperature of front left wireless phone charger (if installed); raw 128 = signal not available (SNA)";
+CM_ BO_ 649 "Left body controller message: logging10 hz; frame length observed on a vehicle bus";
+CM_ SG_ 649 VCLEFT_logging10HzIndex "Left body controller: logging10 hz index";
+CM_ SG_ 649 VCLEFT_hvacBlowerRs "Left body controller: hvac blower rs; raw 255 = signal not available (SNA)";
+CM_ SG_ 649 VCLEFT_hvacBlowerIPhase0 "Left body controller: hvac blower i phase0; raw 127 = signal not available (SNA)";
+CM_ SG_ 649 VCLEFT_hvacBlowerIPhase1 "Left body controller: hvac blower i phase1; raw 127 = signal not available (SNA)";
+CM_ SG_ 649 VCLEFT_hvacBlowerIPhase2 "Left body controller: hvac blower i phase2; raw 127 = signal not available (SNA)";
+CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_HEAD "Left body controller: hvac blower IO CBC HEAD";
+CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL "Left body controller: hvac blower IO CBC TAIL";
+CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL_va "Left body controller: hvac blower IO CBC TAIL valid";
+CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_Status "Left body controller: hvac blower IO CBC status";
+CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_numUart "Left body controller: hvac blower IO CBC num uart err";
+CM_ SG_ 649 VCLEFT_hvacBlowerCBCEstState "Left body controller: hvac blower CBC est state";
+CM_ SG_ 649 VCLEFT_hvacBlowerCBCCtrlState "Left body controller: hvac blower CBC ctrl state";
+CM_ SG_ 649 VCLEFT_hvacBlowerITerm "Left body controller: hvac blower i term; raw 127 = signal not available (SNA)";
+CM_ SG_ 649 VCLEFT_hvacBlowerSpiError "Left body controller: hvac blower spi error";
+CM_ SG_ 649 VCLEFT_hvacBlowerRsOnlineActive "Left body controller: hvac blower rs online active";
 CM_ BO_ 936 "Left body controller message: logging1 hz; frame length observed on a vehicle bus";
 CM_ SG_ 936 VCLEFT_logging1HzIndex "Left body controller: logging1 hz index";
 CM_ SG_ 936 VCLEFT_tohcPCBATemperature "Left body controller: tohc PCBA temperature; raw 255 = signal not available (SNA)";
@@ -51574,6 +51732,9 @@ BA_ "VFrameFormat" BO_ 1951 0;
 BA_ "GenMsgCycleTime" BO_ 909 1000;
 BA_ "GenMsgSendType" BO_ 909 0;
 BA_ "VFrameFormat" BO_ 909 0;
+BA_ "GenMsgCycleTime" BO_ 1018 500;
+BA_ "GenMsgSendType" BO_ 1018 0;
+BA_ "VFrameFormat" BO_ 1018 0;
 BA_ "GenMsgCycleTime" BO_ 1056 100;
 BA_ "GenMsgSendType" BO_ 1056 0;
 BA_ "VFrameFormat" BO_ 1056 0;
@@ -51727,6 +51888,9 @@ BA_ "VFrameFormat" BO_ 893 0;
 BA_ "GenMsgCycleTime" BO_ 1566 0;
 BA_ "GenMsgSendType" BO_ 1566 8;
 BA_ "VFrameFormat" BO_ 1566 0;
+BA_ "GenMsgCycleTime" BO_ 526 100;
+BA_ "GenMsgSendType" BO_ 526 0;
+BA_ "VFrameFormat" BO_ 526 0;
 BA_ "GenMsgCycleTime" BO_ 1001 500;
 BA_ "GenMsgSendType" BO_ 1001 0;
 BA_ "VFrameFormat" BO_ 1001 0;
@@ -51910,6 +52074,15 @@ BA_ "VFrameFormat" BO_ 2047 0;
 BA_ "GenMsgCycleTime" BO_ 1638 250;
 BA_ "GenMsgSendType" BO_ 1638 0;
 BA_ "VFrameFormat" BO_ 1638 0;
+BA_ "GenMsgCycleTime" BO_ 840 1000;
+BA_ "GenMsgSendType" BO_ 840 0;
+BA_ "VFrameFormat" BO_ 840 0;
+BA_ "GenMsgCycleTime" BO_ 1005 1000;
+BA_ "GenMsgSendType" BO_ 1005 0;
+BA_ "VFrameFormat" BO_ 1005 0;
+BA_ "GenMsgCycleTime" BO_ 1112 100;
+BA_ "GenMsgSendType" BO_ 1112 0;
+BA_ "VFrameFormat" BO_ 1112 0;
 BA_ "GenMsgCycleTime" BO_ 1650 10000;
 BA_ "GenMsgSendType" BO_ 1650 0;
 BA_ "VFrameFormat" BO_ 1650 0;
@@ -52273,6 +52446,9 @@ BA_ "VFrameFormat" BO_ 819 0;
 BA_ "GenMsgCycleTime" BO_ 659 500;
 BA_ "GenMsgSendType" BO_ 659 0;
 BA_ "VFrameFormat" BO_ 659 0;
+BA_ "GenMsgCycleTime" BO_ 531 500;
+BA_ "GenMsgSendType" BO_ 531 0;
+BA_ "VFrameFormat" BO_ 531 0;
 BA_ "GenMsgCycleTime" BO_ 1280 5000;
 BA_ "GenMsgSendType" BO_ 1280 0;
 BA_ "VFrameFormat" BO_ 1280 0;
@@ -52576,6 +52752,9 @@ BA_ "VFrameFormat" BO_ 994 0;
 BA_ "GenMsgCycleTime" BO_ 1802 10000;
 BA_ "GenMsgSendType" BO_ 1802 0;
 BA_ "VFrameFormat" BO_ 1802 0;
+BA_ "GenMsgCycleTime" BO_ 649 100;
+BA_ "GenMsgSendType" BO_ 649 0;
+BA_ "VFrameFormat" BO_ 649 0;
 BA_ "GenMsgCycleTime" BO_ 936 200;
 BA_ "GenMsgSendType" BO_ 936 0;
 BA_ "VFrameFormat" BO_ 936 0;
@@ -52829,6 +53008,22 @@ BA_ "GenSigSNA" SG_ 909 APP_narrowInPathVisibility "0";
 BA_ "Confidence" SG_ 909 APP_narrowOverallVisibility 0;
 BA_ "GenSigSNA" SG_ 909 APP_narrowOverallVisibility "0";
 BA_ "Confidence" SG_ 909 APP_frontCamOcclusionType 0;
+BA_ "Confidence" SG_ 1018 APP_mainCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_mainCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_narrowCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_narrowCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_fisheyeCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_fisheyeCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_lRepeatCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_lRepeatCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_rRepeatCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_rRepeatCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_lPillarCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_lPillarCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_rPillarCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_rPillarCameraLUX "255";
+BA_ "Confidence" SG_ 1018 APP_backupCameraLUX 1;
+BA_ "GenSigSNA" SG_ 1018 APP_backupCameraLUX "255";
 BA_ "Confidence" SG_ 1056 APS_primaryTurbo 1;
 BA_ "Confidence" SG_ 1056 APS_A_arbState 1;
 BA_ "Confidence" SG_ 1056 APS_A_powerState 1;
@@ -55225,6 +55420,20 @@ BA_ "Confidence" SG_ 893 CP_pinTemperature4 0;
 BA_ "Confidence" SG_ 893 CP_pinTemp4Velocity 0;
 BA_ "GenSigSNA" SG_ 893 CP_pinTemp4Velocity "511";
 BA_ "Confidence" SG_ 1566 CP_udsResponseData 1;
+BA_ "Confidence" SG_ 526 DAS_autonomyControlChecksum 2;
+BA_ "Confidence" SG_ 526 DAS_autonomyControlCounter 2;
+BA_ "Confidence" SG_ 526 DAS_manualDrivingProhibited 1;
+BA_ "Confidence" SG_ 526 DAS_autonomyControlActive 1;
+BA_ "Confidence" SG_ 526 DAS_autonomyBehavior 1;
+BA_ "GenSigSNA" SG_ 526 DAS_autonomyBehavior "3";
+BA_ "Confidence" SG_ 526 DAS_epbFallbackRequest 1;
+BA_ "Confidence" SG_ 526 DAS_suppressAPedalOverride 1;
+BA_ "Confidence" SG_ 526 DAS_useEpbRedundantBraking 2;
+BA_ "Confidence" SG_ 526 DAS_epbOnlyStoppingTarget 1;
+BA_ "Confidence" SG_ 526 DAS_requireFirmBPedalCancel 1;
+BA_ "Confidence" SG_ 526 DAS_authRequestType 1;
+BA_ "GenSigSNA" SG_ 526 DAS_authRequestType "3";
+BA_ "Confidence" SG_ 526 DAS_brakePedalMuted 2;
 BA_ "Confidence" SG_ 1001 DAS_headlightRequest 0;
 BA_ "Confidence" SG_ 1001 DAS_hazardLightRequest 0;
 BA_ "GenSigSNA" SG_ 1001 DAS_hazardLightRequest "3";
@@ -60186,6 +60395,40 @@ BA_ "Confidence" SG_ 1638 GTW_diagLevel 1;
 BA_ "Confidence" SG_ 1638 GTW_diagUnlockProcedureActive 1;
 BA_ "Confidence" SG_ 1638 GTW_diagOverrideActive 1;
 BA_ "Confidence" SG_ 1638 GTW_diagPhysicalLinkEstablished 1;
+BA_ "Confidence" SG_ 840 GTW_vehicleVersionMatchStatus 1;
+BA_ "Confidence" SG_ 840 GTW_hwtype 1;
+BA_ "GenSigSNA" SG_ 840 GTW_hwtype "0";
+BA_ "Confidence" SG_ 840 GTW_jcanProductName 1;
+BA_ "GenSigSNA" SG_ 840 GTW_jcanProductName "0";
+BA_ "Confidence" SG_ 840 GTW_uptimeSeconds 1;
+BA_ "Confidence" SG_ 840 GTW_boardRevision 1;
+BA_ "Confidence" SG_ 840 GTW_touchcoreOsType 1;
+BA_ "Confidence" SG_ 840 GTW_sentryModeState 1;
+BA_ "GenSigSNA" SG_ 840 GTW_sentryModeState "6";
+BA_ "Confidence" SG_ 840 GTW_secureBootEnabled 1;
+BA_ "Confidence" SG_ 840 GTW_socSleepType 1;
+BA_ "GenSigSNA" SG_ 840 GTW_socSleepType "0";
+BA_ "Confidence" SG_ 840 GTW_resetType 1;
+BA_ "GenSigSNA" SG_ 840 GTW_resetType "0";
+BA_ "Confidence" SG_ 1005 GTW_i2cUpdateActive 2;
+BA_ "Confidence" SG_ 1005 GTW_peripheralConfirmedUpdateNee 1;
+BA_ "SystemSignalLongSymbol" SG_ 1005 GTW_peripheralConfirmedUpdateNee "GTW_peripheralConfirmedUpdateNeeded";
+BA_ "Confidence" SG_ 1005 GTW_ocuFailed 1;
+BA_ "Confidence" SG_ 1005 GTW_ecuUpdateStarted 1;
+BA_ "Confidence" SG_ 1005 GTW_updateStarted 1;
+BA_ "Confidence" SG_ 1112 GTW_nmGoingToSleep 1;
+BA_ "Confidence" SG_ 1112 GTW_nmWakeUpBus 2;
+BA_ "Confidence" SG_ 1112 GTW_chBusAsleep 1;
+BA_ "Confidence" SG_ 1112 GTW_ethBusAsleep 1;
+BA_ "Confidence" SG_ 1112 GTW_nmKeepAwakeReason 1;
+BA_ "GenSigSNA" SG_ 1112 GTW_nmKeepAwakeReason "0";
+BA_ "Confidence" SG_ 1112 GTW_nmWakeUpReason 1;
+BA_ "Confidence" SG_ 1112 GTW_ethKeepAwakeReason 1;
+BA_ "GenSigSNA" SG_ 1112 GTW_ethKeepAwakeReason "0";
+BA_ "Confidence" SG_ 1112 GTW_nmDebugWakeUp 1;
+BA_ "Confidence" SG_ 1112 GTW_OTAKeepAwake 1;
+BA_ "Confidence" SG_ 1112 GTW_smsPokeReceived 1;
+BA_ "Confidence" SG_ 1112 GTW_bdyBusAsleep 1;
 BA_ "Confidence" SG_ 1650 VC_hcmlInfoIndex 0;
 BA_ "Confidence" SG_ 1650 VC_infoHCMLBuildConfigId 0;
 BA_ "Confidence" SG_ 1650 VC_leftHeadlampLMMVariant 0;
@@ -65327,6 +65570,10 @@ BA_ "Confidence" SG_ 659 UI_selfParkTune 1;
 BA_ "GenSigSNA" SG_ 659 UI_selfParkTune "15";
 BA_ "Confidence" SG_ 659 UI_chassisControlCounter 0;
 BA_ "Confidence" SG_ 659 UI_chassisControlChecksum 0;
+BA_ "Confidence" SG_ 531 UI_cruiseSpeedCommand 1;
+BA_ "Confidence" SG_ 531 UI_smartSummonRequest 1;
+BA_ "Confidence" SG_ 531 UI_cruiseControlCounter 1;
+BA_ "Confidence" SG_ 531 UI_cruiseControlChecksum 0;
 BA_ "Confidence" SG_ 1280 UI_debugEcuTarget 1;
 BA_ "Confidence" SG_ 1280 UI_DI_debugEnable 2;
 BA_ "Confidence" SG_ 1280 UI_DIS_debugEnable 2;
@@ -77054,6 +77301,28 @@ BA_ "GenSigSNA" SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "0";
 BA_ "SystemSignalLongSymbol" SG_ 1802 VCLEFT_leftRearTurnLightCurrentS "VCLEFT_leftRearTurnLightCurrentSenseState";
 BA_ "Confidence" SG_ 1802 VCLEFT_phoneTemperatureFL 0;
 BA_ "GenSigSNA" SG_ 1802 VCLEFT_phoneTemperatureFL "128";
+BA_ "Confidence" SG_ 649 VCLEFT_logging10HzIndex 1;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerRs 1;
+BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerRs "255";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerIPhase0 1;
+BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerIPhase0 "127";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerIPhase1 1;
+BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerIPhase1 "127";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerIPhase2 1;
+BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerIPhase2 "127";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_HEAD 2;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL 2;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL_va 2;
+BA_ "SystemSignalLongSymbol" SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL_va "VCLEFT_hvacBlower_IO_CBC_TAIL_valid";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_Status 1;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_numUart 2;
+BA_ "SystemSignalLongSymbol" SG_ 649 VCLEFT_hvacBlower_IO_CBC_numUart "VCLEFT_hvacBlower_IO_CBC_numUartErr";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerCBCEstState 1;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerCBCCtrlState 1;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerITerm 1;
+BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerITerm "127";
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerSpiError 2;
+BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerRsOnlineActive 2;
 BA_ "Confidence" SG_ 936 VCLEFT_logging1HzIndex 0;
 BA_ "Confidence" SG_ 936 VCLEFT_tohcPCBATemperature 0;
 BA_ "GenSigSNA" SG_ 936 VCLEFT_tohcPCBATemperature "255";
@@ -82912,6 +83181,14 @@ VAL_ 909 APP_mainOverallVisibility 4 "VISIBILITY_CONDITION_NOMINAL" 3 "VISIBILIT
 VAL_ 909 APP_narrowInPathVisibility 4 "VISIBILITY_CONDITION_NOMINAL" 3 "VISIBILITY_OCCLUDED_LOW_SEVERITY" 2 "VISIBILITY_OCCLUDED_MEDIUM_SEVERITY" 1 "VISIBILITY_OCCLUDED_HIGH_SEVERITY" 0 "VISIBILITY_CONDITION_SNA" ;
 VAL_ 909 APP_narrowOverallVisibility 4 "VISIBILITY_CONDITION_NOMINAL" 3 "VISIBILITY_OCCLUDED_LOW_SEVERITY" 2 "VISIBILITY_OCCLUDED_MEDIUM_SEVERITY" 1 "VISIBILITY_OCCLUDED_HIGH_SEVERITY" 0 "VISIBILITY_CONDITION_SNA" ;
 VAL_ 909 APP_frontCamOcclusionType 6 "UNKNOWN_OCCLUSION" 5 "DEW" 4 "STREAK" 3 "SUN_GLARE" 2 "DIRTY_OR_BLOCKED" 1 "CONDENSATION" 0 "OFFGASSING" ;
+VAL_ 1018 APP_mainCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_narrowCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_fisheyeCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_lRepeatCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_rRepeatCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_lPillarCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_rPillarCameraLUX 255 "SNA" 254 "SATURATED" ;
+VAL_ 1018 APP_backupCameraLUX 255 "SNA" 254 "SATURATED" ;
 VAL_ 1056 APS_primaryTurbo 2 "TURBO_UNKNOWN" 1 "TURBO_B" 0 "TURBO_A" ;
 VAL_ 1056 APS_A_arbState 7 "ARB_STATE_COUNT" 6 "ARB_STATE_UNKNOWN" 5 "ARB_STATE_MIA" 4 "ARB_STATE_FAULT" 3 "ARB_STATE_SECONDARY" 2 "ARB_STATE_PRIMARY" 1 "ARB_STATE_IDLE" 0 "ARB_STATE_INIT" ;
 VAL_ 1056 APS_A_powerState 28 "POWER_STATE_AP_FORCE_POWER_OFF" 27 "POWER_STATE_AP_WAIT_FOR_SHUTDOWN_ABORT" 26 "POWER_STATE_AP_IN_LINUX" 25 "POWER_STATE_AP_IDLE" 24 "POWER_STATE_VEH_BOOTING" 23 "POWER_STATE_UNKNOWN" 22 "POWER_STATE_MIA" 21 "POWER_STATE_FAULT" 20 "POWER_STATE_SOC_OFF_ABORT" 19 "POWER_STATE_SOC_OFF" 18 "POWER_STATE_SOC_OFF_READY" 17 "POWER_STATE_AP_SUSPENDED" 16 "POWER_STATE_AP_OFF_ABORT_WAIT_FOR_ACK" 15 "POWER_STATE_AP_OFF_ABORT" 14 "POWER_STATE_AP_OFF_READY_WAIT_FOR_RESPONSE" 13 "POWER_STATE_AP_OFF_READY_WAIT_FOR_ACK" 12 "POWER_STATE_AP_OFF_READY" 11 "POWER_STATE_AP_OFF_PREPARE" 10 "POWER_STATE_AP_WAIT_FOR_SHUTDOWN" 9 "POWER_STATE_AP_ON" 8 "POWER_STATE_AP_IN_COREBOOT" 7 "POWER_STATE_AP_BOOTING" 6 "POWER_STATE_AP_ON_READY_WAIT_FOR_RESPONSE" 5 "POWER_STATE_AP_ON_READY_WAIT_FOR_ACK" 4 "POWER_STATE_AP_ON_READY" 3 "POWER_STATE_AP_ON_PREPARE_WAIT_FOR_RESPONSE" 2 "POWER_STATE_AP_ON_PREPARE_WAIT_FOR_ACK" 1 "POWER_STATE_AP_ON_PREPARE" 0 "POWER_STATE_IDLE" ;
@@ -83437,6 +83714,10 @@ VAL_ 605 CP_evseGridFormHardwareType 15 "EVSE_GRID_FORM_HARDWARE_SNA" 1 "EVSE_GR
 VAL_ 605 CP_AuthManagerState 8 "CP_AUTH_MANAGER_STATUS_ERROR" 7 "CP_AUTH_MANAGER_STATUS_SUCCESS" 6 "CP_AUTH_MANAGER_STATUS_VERIFYING_SIGNATURE" 5 "CP_AUTH_MANAGER_STATUS_WAITING_FOR_SIGNATURE" 4 "CP_AUTH_MANAGER_STATUS_WAITING_FOR_CHALLENGE" 3 "CP_AUTH_MANAGER_STATUS_VERIFYING_CERTIFICATE" 2 "CP_AUTH_MANAGER_STATUS_WAITING_FOR_CERTIFICATE" 1 "CP_AUTH_MANAGER_STATUS_IDLE" 0 "CP_AUTH_MANAGER_STATUS_INIT" ;
 VAL_ 893 CP_thermalStatusSelect 1 "1" 0 "0" ;
 VAL_ 893 CP_pinTemp4Velocity 511 "SNA" ;
+VAL_ 526 DAS_autonomyBehavior 3 "SNA" 2 "DRIVERLESS_NO_TAKEOVER" 1 "DRIVERLESS_TAKEOVER" 0 "DRIVER" ;
+VAL_ 526 DAS_epbFallbackRequest 1 "DAS_EPBREQUEST_PARK" 0 "DAS_EPBREQUEST_NO_REQUEST" ;
+VAL_ 526 DAS_epbOnlyStoppingTarget 1 "DAS_EPB_TARGET_STATIC" 0 "DAS_EPB_TARGET_DYNAMIC" ;
+VAL_ 526 DAS_authRequestType 3 "SNA" 2 "AUTONOMOUS_DRIVING" 1 "MANUAL_RECOVERY" 0 "NONE" ;
 VAL_ 1001 DAS_headlightRequest 3 "DAS_HEADLIGHT_REQUEST_INVALID" 2 "DAS_HEADLIGHT_REQUEST_TAIL_LIGHTS_ONLY" 1 "DAS_HEADLIGHT_REQUEST_ON" 0 "DAS_HEADLIGHT_REQUEST_OFF" ;
 VAL_ 1001 DAS_hazardLightRequest 3 "DAS_REQUEST_HAZARDS_SNA" 2 "DAS_REQUEST_HAZARDS_ON_FAST" 1 "DAS_REQUEST_HAZARDS_ON" 0 "DAS_REQUEST_HAZARDS_OFF" ;
 VAL_ 1001 DAS_wiperSpeed 15 "DAS_WIPER_SPEED_INVALID" 14 "DAS_WIPER_SPEED_14" 13 "DAS_WIPER_SPEED_13" 12 "DAS_WIPER_SPEED_12" 11 "DAS_WIPER_SPEED_11" 10 "DAS_WIPER_SPEED_10" 9 "DAS_WIPER_SPEED_9" 8 "DAS_WIPER_SPEED_8" 7 "DAS_WIPER_SPEED_7" 6 "DAS_WIPER_SPEED_6" 5 "DAS_WIPER_SPEED_5" 4 "DAS_WIPER_SPEED_4" 3 "DAS_WIPER_SPEED_3" 2 "DAS_WIPER_SPEED_2" 1 "DAS_WIPER_SPEED_1" 0 "DAS_WIPER_SPEED_OFF" ;
@@ -84333,6 +84614,19 @@ VAL_ 2047 GTW_contactorPowerSource 1 "VCFRONT" 0 "VCRIGHT" ;
 VAL_ 2047 GTW_roofGlassType 4 "AG3" 3 "UNCOATED" 2 "NONE" 1 "TSA5_NOPET" 0 "TSA3_PET" ;
 VAL_ 2047 GTW_pedalMapNameOverride 1 "CHILL_STANDARD" 0 "NO_OVERRIDE" ;
 VAL_ 1638 GTW_diagLevel 100 "LEVEL_NORMAL_OPERATION" 80 "LEVEL_PARK" 70 "LEVEL_PARK_ROBOTAXI" 50 "LEVEL_SERVICE_DRIVE" 25 "LEVEL_SERVICE" 10 "LEVEL_DIAG_LINK_ACTIVE" 0 "LEVEL_FACTORY" ;
+VAL_ 840 GTW_vehicleVersionMatchStatus 2 "MATCHED" 1 "MISMATCHED" 0 "NOT_CALCULATED_YET" ;
+VAL_ 840 GTW_hwtype 3 "TRAVEO2" 2 "SPC58" 1 "MPC57" 0 "SNA" ;
+VAL_ 840 GTW_jcanProductName 11 "SEMITRUCKV2" 10 "GOLDENSNITCH" 8 "BAYBERRY" 7 "CYBERTRUCK" 6 "POPPYSEED" 5 "SEMITRUCK" 4 "TAMARIND" 3 "LYCHEE" 2 "MODELY" 1 "MODEL3" 0 "SNA" ;
+VAL_ 840 GTW_touchcoreOsType 1 "GTW_OS_RT" 0 "GTW_OS_FREERTOS" ;
+VAL_ 840 GTW_sentryModeState 6 "SNA" 5 "QUIET" 4 "PANIC" 3 "AWARE" 2 "ARMED" 1 "IDLE" 0 "OFF" ;
+VAL_ 840 GTW_secureBootEnabled 1 "TRUE" 0 "FALSE" ;
+VAL_ 840 GTW_socSleepType 2 "SHALLOW" 1 "S3" 0 "SNA" ;
+VAL_ 840 GTW_resetType 8 "OTHER" 7 "TOUCHCORE_WATCHDOG" 6 "CANCORE_WATCHDOG" 5 "MAINCORE_WATCHDOG" 4 "WAKE" 3 "BUTTON" 2 "SOFTWARE" 1 "POR" 0 "SNA" ;
+VAL_ 1005 GTW_peripheralConfirmedUpdateNee 3 "UPDATE_CONDITIONS_NOT_CORRECT" 2 "UPDATE_NOT_NEEDED" 1 "UPDATE_NEEDED" 0 "UNKNOWN" ;
+VAL_ 1112 GTW_nmKeepAwakeReason 15 "GTW_KEEPAWAKE_REASON_TBD" 7 "GTW_KEEPAWAKE_REASON_TCU_TC10_VERSION_UNSUPPORTED" 6 "GTW_KEEPAWAKE_REASON_TCU_TC10_VERSION_CHECK" 5 "GTW_KEEPAWAKE_REASON_EGGLEFT_LINK_DOWN" 4 "GTW_KEEPAWAKE_REASON_URGENT_TRANSMIT_ALERT" 3 "GTW_KEEPAWAKE_REASON_FCSM_ACTIVE" 2 "GTW_KEEPAWAKE_REASON_GSM_RI" 1 "GTW_KEEPAWAKE_REASON_UI_SCHEDULED" 0 "GTW_KEEPAWAKE_REASON_NONE_SNA" ;
+VAL_ 1112 GTW_nmWakeUpReason 17 "GTW_WAKEUP_REASON_TCU_TC10_VERSION_CHECK" 16 "GTW_WAKEUP_REASON_EGGLEFT_LINK_DOWN" 15 "GTW_WAKEUP_REASON_RCMPRIVATE_CAN" 14 "GTW_WAKEUP_REASON_VCLEFT" 13 "GTW_WAKEUP_REASON_LOOP" 12 "GTW_WAKEUP_REASON_DISPLAY_TAP" 11 "GTW_WAKEUP_REASON_URGENT_TRANSMIT_ALERT" 10 "GTW_WAKEUP_REASON_BDY_CAN" 9 "GTW_WAKEUP_REASON_PT_CAN" 8 "GTW_WAKEUP_REASON_UI_SCHEDULED" 7 "GTW_WAKEUP_REASON_RTC_ALARM" 6 "GTW_WAKEUP_REASON_VCFRONT" 5 "GTW_WAKEUP_REASON_VEH_CAN" 4 "GTW_WAKEUP_REASON_ETH_CAN" 3 "GTW_WAKEUP_REASON_CH_CAN" 2 "GTW_WAKEUP_REASON_GSM_RI" 1 "GTW_WAKEUP_REASON_RESET" 0 "GTW_WAKEUP_REASON_NONE" ;
+VAL_ 1112 GTW_ethKeepAwakeReason 3 "TCU_TC10_VERSION_UNSUPPORTED" 2 "TCU_TC10_VERSION_CHECK" 1 "URGENT_TRANSMIT_ALERT" 0 "NONE_SNA" ;
+VAL_ 1112 GTW_nmDebugWakeUp 2147483648 "WKPU_31" 1073741824 "WKPU_30" 536870912 "WKPU_29" 268435456 "WKPU_28" 134217728 "WKPU_27" 67108864 "WKPU_26" 33554432 "WKPU_25" 16777216 "WKPU_24" 8388608 "WKPU_23" 4194304 "WKPU_22" 2097152 "WKPU_21" 1048576 "WKPU_20" 524288 "WKPU_19" 262144 "WKPU_18" 131072 "WKPU_17" 65536 "WKPU_16" 32768 "WKPU_15" 16384 "WKPU_14" 8192 "WKPU_13" 4096 "WKPU_12" 2048 "WKPU_11" 1024 "WKPU_10" 512 "WKPU_9" 256 "WKPU_8" 128 "WKPU_7" 64 "WKPU_6" 32 "WKPU_5" 16 "WKPU_4" 8 "WKPU_3" 4 "WKPU_2" 2 "WKPU_1" 1 "WKPU_0" 0 "WKPU_NONE" ;
 VAL_ 1650 VC_hcmlInfoIndex 9 "END" 8 "ECULESS_MISC" 7 "ECULESS_BOOST" 6 "ECULESS_LED_VOLTAGES" 5 "ECULESS_IC700_SM" 4 "ECULESS_IC600_DRL_TURN" 3 "ECULESS_IC500_LB" 2 "ECULESS_IC400_HB" 1 "HCML_ASSEMBLY_PCBA_USAGE_ID" 0 "HCML_BUILD_CONFIG_ID_LMM_VARIANT" ;
 VAL_ 1650 VC_leftHeadlampLMMVariant 2 "LMM_VARIANT_LMM4" 1 "LMM_VARIANT_NOT_LMM4_OR_UNKNOWN" 0 "LMM_VARIANT_SNA" ;
 VAL_ 1980 VC_hcmrInfoIndex 9 "END" 8 "ECULESS_MISC" 7 "ECULESS_BOOST" 6 "ECULESS_LED_VOLTAGES" 5 "ECULESS_IC700_SM" 4 "ECULESS_IC600_DRL_TURN" 3 "ECULESS_IC500_LB" 2 "ECULESS_IC400_HB" 1 "HCMR_ASSEMBLY_PCBA_USAGE_ID" 0 "HCMR_BUILD_CONFIG_ID_LMM_VARIANT" ;
@@ -85091,6 +85385,7 @@ VAL_ 659 UI_pedalSafetyEnable 3 "SNA" 1 "PEDAL_SAFETY_ON" 0 "PEDAL_SAFETY_OFF" ;
 VAL_ 659 UI_pedalMap_epas 2 "PERFORMANCE" 1 "SPORT" 0 "CHILL" ;
 VAL_ 659 UI_redLightStopSignEnable 3 "SNA" 1 "RLSSW_ON" 0 "RLSSW_OFF" ;
 VAL_ 659 UI_selfParkTune 15 "SNA" ;
+VAL_ 531 UI_cruiseSpeedCommand 6 "CRUISE_SPEED_SNAP_SPEEDO" 5 "CRUISE_SPEED_SNAP" 4 "CRUISE_SPEED_DEC_LONG" 3 "CRUISE_SPEED_DEC_SHORT" 2 "CRUISE_SPEED_INC_LONG" 1 "CRUISE_SPEED_INC_SHORT" 0 "CRUISE_SPEED_IDLE" ;
 VAL_ 1280 UI_debugEcuTarget 21 "PMRE2" 20 "PMRE2L" 19 "PMRE1L" 18 "DIRE2" 17 "DIRE1R" 16 "DIRE1L" 15 "PMRER" 14 "PMREL" 13 "DIRER" 12 "DIREL" 11 "PMR" 10 "PMF" 9 "DIR" 8 "DIF" 7 "VCFRONT" 6 "VCRIGHT" 5 "BMS" 4 "PMS" 3 "PM" 2 "DIS" 1 "DI" ;
 VAL_ 2043 UI_debugDampingRequestFLC 255 "SNA" ;
 VAL_ 2043 UI_debugDampingRequestFLR 255 "SNA" ;
@@ -86577,6 +86872,15 @@ VAL_ 1802 VCLEFT_leftBrakeTailLightCu_0001 4 "FALLING_EDGE_TRANSIENT" 3 "STEADY_
 VAL_ 1802 VCLEFT_leftRearTurnLightCurrent 511 "SNA" ;
 VAL_ 1802 VCLEFT_leftRearTurnLightCurrentS 4 "FALLING_EDGE_TRANSIENT" 3 "STEADY_STATE_ON" 2 "RISING_EDGE_TRANSIENT" 1 "STEADY_STATE_OFF" 0 "SNA" ;
 VAL_ 1802 VCLEFT_phoneTemperatureFL -128 "SNA" ;
+VAL_ 649 VCLEFT_logging10HzIndex 1 "END" 0 "HVAC_VARS" ;
+VAL_ 649 VCLEFT_hvacBlowerRs 255 "SNA" ;
+VAL_ 649 VCLEFT_hvacBlowerIPhase0 127 "SNA" ;
+VAL_ 649 VCLEFT_hvacBlowerIPhase1 127 "SNA" ;
+VAL_ 649 VCLEFT_hvacBlowerIPhase2 127 "SNA" ;
+VAL_ 649 VCLEFT_hvacBlower_IO_CBC_Status 1 "RX" 0 "IDLE" ;
+VAL_ 649 VCLEFT_hvacBlowerCBCEstState 14 "COUNT" 13 "ONLINE" 12 "MOTOR_IDENTIFIED" 11 "ROTOR_RESISTANCE" 10 "INDUCTANCE_EST" 9 "LOCKROTOR" 8 "RAMPDOWN" 7 "RATEDFLUX" 6 "RATEDFLUX_OL" 5 "IDRATED" 4 "RAMPUP" 3 "RS" 2 "ROVERL" 1 "IDLE" 0 "ERROR" ;
+VAL_ 649 VCLEFT_hvacBlowerCBCCtrlState 4 "COUNT" 3 "ONLINE" 2 "OFFLINE" 1 "IDLE" 0 "ERROR" ;
+VAL_ 649 VCLEFT_hvacBlowerITerm 127 "SNA" ;
 VAL_ 936 VCLEFT_logging1HzIndex 5 "END" 4 "CURRENT_LOGGING" 3 "BODY_CONTROLS_LOGGING" 2 "HSD_CURRENTS_2" 1 "HSD_CURRENTS_1" 0 "MISC" ;
 VAL_ 936 VCLEFT_tohcPCBATemperature 255 "SNA" ;
 VAL_ 936 VCLEFT_swcResistance 127 "SNA" ;

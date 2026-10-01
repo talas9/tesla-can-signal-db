@@ -70584,11 +70584,11 @@ CM_ SG_ 659 UI_selfParkTune "Touchscreen user interface computer: self park tune
 CM_ SG_ 659 UI_chassisControlCounter "Touchscreen user interface computer: chassis control counter";
 CM_ SG_ 659 UI_chassisControlChecksum "Touchscreen user interface computer: chassis control checksum";
 CM_ BO_ 531 "Touchscreen user interface computer message: cruise control";
-CM_ SG_ 531 UI_cruiseSpeedCommand "User command to change the cruise set speed; not carried on CAN";
-CM_ SG_ 531 UI_smartSummonRequest "Touchscreen user interface computer: smart summon request; not carried on CAN";
+CM_ SG_ 531 UI_cruiseSpeedCommand "User command to change the cruise set speed.";
+CM_ SG_ 531 UI_smartSummonRequest "Touchscreen user interface computer: smart summon request";
 CM_ SG_ 531 UI_autonomySummonRequest "Autonomy summon request from mobile app; raw 7 = signal not available (SNA); not carried on CAN";
-CM_ SG_ 531 UI_cruiseControlCounter "Touchscreen user interface computer: cruise control counter; not carried on CAN";
-CM_ SG_ 531 UI_cruiseControlChecksum "Touchscreen user interface computer: cruise control checksum; not carried on CAN";
+CM_ SG_ 531 UI_cruiseControlCounter "Touchscreen user interface computer: cruise control counter";
+CM_ SG_ 531 UI_cruiseControlChecksum "Touchscreen user interface computer: cruise control checksum";
 CM_ BO_ 664 "Touchscreen user interface computer message: csa offramp curvature";
 CM_ SG_ 664 UI_csaOfframpCurvC2 "Touchscreen user interface computer: csa offramp curv C2";
 CM_ SG_ 664 UI_csaOfframpCurvC3 "Touchscreen user interface computer: csa offramp curv C3";

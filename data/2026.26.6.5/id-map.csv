@@ -113,6 +113,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,646,PARTY,646,native,DI_locStatus
 2026.26.6.5,Model3,647,VEH,651,gateway,UI_driverProfileRecall2
 2026.26.6.5,Model3,648,VEH,648,native,EPBL_internalStatus
+2026.26.6.5,Model3,649,VEH,649,native,VCLEFT_logging10Hz
 2026.26.6.5,Model3,656,VEH,656,native,VCLEFT_thermalLogging10Hz
 2026.26.6.5,Model3,657,VEH,657,native,VCLEFT_thermalLogging1Hz
 2026.26.6.5,Model3,658,VEH,658,native,BMS_socStatus
@@ -214,6 +215,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,835,VEH,835,native,VCRIGHT_status
 2026.26.6.5,Model3,836,VEH,836,native,
 2026.26.6.5,Model3,837,VEH,837,native,PTC_info
+2026.26.6.5,Model3,840,VEH,840,native,GTW_status
 2026.26.6.5,Model3,841,CH,841,native,DAS_warningMatrix2
 2026.26.6.5,Model3,843,CH,843,native,APP_frontParkAssistData
 2026.26.6.5,Model3,846,CH,846,native,PARK_pasFrontMiddle
@@ -314,6 +316,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,996,VEH,996,native,PCS2_alertMatrix
 2026.26.6.5,Model3,1000,VEH,1000,native,EPBR_alertMatrix
 2026.26.6.5,Model3,1001,VEH,1001,native,DAS_bodyControls
+2026.26.6.5,Model3,1005,VEH,1005,native,GTW_updateStatus
 2026.26.6.5,Model3,1009,CH,1009,native,RCM2_alertMatrix
 2026.26.6.5,Model3,1010,VEH,1010,native,BMS_kwhCountersMultiplexed
 2026.26.6.5,Model3,1011,CH,1011,gateway,UI_odo
@@ -324,6 +327,7 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,1016,CH,1016,gateway,UI_driverAssistControl
 2026.26.6.5,Model3,1017,VEH,1017,native,VCSEC_alertMatrix
 2026.26.6.5,Model3,1018,CH,1018,native,APP_cameraLux
+2026.26.6.5,Model3,1018,VEH,1018,native,APP_cameraLux
 2026.26.6.5,Model3,1020,CH,1020,native,APP_boardTemperatures
 2026.26.6.5,Model3,1021,CH,1021,gateway,UI_autopilotControl
 2026.26.6.5,Model3,1021,VEH,1021,gateway,UI_autopilotControl
@@ -351,9 +355,11 @@ fw,model,eth_id,bus,can_id,how,message
 2026.26.6.5,Model3,1091,VEH,1091,native,VC_pcsManagement
 2026.26.6.5,Model3,1092,VEH,1092,native,PCS2_alertLog
 2026.26.6.5,Model3,1093,PARTY,526,native,DAS_autonomyControl
+2026.26.6.5,Model3,1093,VEH,526,native,DAS_autonomyControl
 2026.26.6.5,Model3,1096,CH,1096,gateway,UI_driverAssistAnonDebugParams
 2026.26.6.5,Model3,1097,CH,1097,native,APP_warningMatrix4
 2026.26.6.5,Model3,1107,VEH,1107,gateway,VEH_billing
+2026.26.6.5,Model3,1112,VEH,1112,native,GTW_vehNm
 2026.26.6.5,Model3,1113,CH,1113,native,APS_warningMatrix2
 2026.26.6.5,Model3,1114,VEH,1114,native,VCRIGHT_AP_hvacState10Hz
 2026.26.6.5,Model3,1116,VEH,1116,native,CC_alertLog

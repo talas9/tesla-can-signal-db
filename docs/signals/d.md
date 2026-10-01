@@ -8,11 +8,11 @@ description: "Tesla Model 3 and Model Y CAN bus signals beginning with D: pages 
 
 3801 signals, split over 8 pages.
 
-- [DAS_ACC_camStatus to DAS_w143_IDF_event](d-1.md) (488 signals)
-- [DAS_w144_selfieCamInitFault to DI_a173_brakeApply](d-2.md) (476 signals)
-- [DI_a173_pedalPos to DI_vehicleAcceleration](d-3.md) (483 signals)
-- [DI_vehicleEstimatesChecksum to DIF_a097_lineNumber](d-4.md) (466 signals)
-- [DIF_a098_fluxState to DIF_subUsageId](d-5.md) (516 signals)
-- [DIF_switchingFrequency to DIR_a096_memoryError](d-6.md) (471 signals)
-- [DIR_a096_text_fast to DIR_statorIDfdb](d-7.md) (515 signals)
-- [DIR_statorIDref to DPB_matrixIndex](d-8.md) (386 signals)
+- [DAS_ACC_camStatus to DAS_w140_backupCamInitFault](d-1.md) (485 signals)
+- [DAS_w141_ECU_Thermal_Issue to DI_a172_pedalPos](d-2.md) (476 signals)
+- [DI_a172_timeSinceCruiseCancel to DI_vdcState](d-3.md) (482 signals)
+- [DI_vdcTelltaleFlash to DIF_a097_argument](d-4.md) (467 signals)
+- [DIF_a097_eepromError to DIF_statusChecksum](d-5.md) (516 signals)
+- [DIF_statusCounter to DIR_a096_mem_data](d-6.md) (472 signals)
+- [DIR_a096_mem_regs to DIR_statorFluxFdb](d-7.md) (514 signals)
+- [DIR_statorFluxRef to DPB_matrixIndex](d-8.md) (389 signals)

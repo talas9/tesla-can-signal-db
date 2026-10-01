@@ -905,9 +905,6 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/gtw/gtw_hrlexternalevent.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/gtw/gtw_info.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/gtw/gtw_mismatchfault.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/gtw/gtw_status.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/gtw/gtw_updatestatus.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/gtw/gtw_vehnm.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/ocs1p/ocs1p_alertlog.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/ocs1p/ocs1p_alertmatrix.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/ocs1p/ocs1p_info.html</loc></url>
@@ -944,7 +941,6 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/ui/ui_tripplanning4.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/ui/ui_tripplanning5.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/uis/uis_log.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/eth/vcleft/vcleft_logging10hz.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/evse.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/fc.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/gtw.html</loc></url>
@@ -1058,6 +1054,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/vcsec.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/adsp/adsp_audiovisualizer.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/app/app_cameralux.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/app/app_vc_infomessage.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/aps/aps_state.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/bms/bms_alertlog.html</loc></url>
@@ -1110,6 +1107,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/cp/cp_status.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/cp/cp_thermalstatus.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/cp/cp_udsresponse.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/das/das_autonomycontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/das/das_bodycontrols.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/di/di_alertlog.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/di/di_alertmatrix.html</loc></url>
@@ -1171,6 +1169,9 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/fc/fc_status3.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/gtw/gtw_carconfig.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/gtw/gtw_diagsession.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/gtw/gtw_status.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/gtw/gtw_updatestatus.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/gtw/gtw_vehnm.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/hcml/hcml_info.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/hcmr/hcmr_info.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/hvbms/hvbms_0x311.html</loc></url>
@@ -1290,6 +1291,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_autopilotcontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_chargerequest.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_chassiscontrol.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_cruisecontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_debugecu.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_debugtas.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/ui/ui_driverassistmapdata.html</loc></url>
@@ -1398,6 +1400,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_liftgatestatus.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_lightstatus.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_logging0point1hz.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_logging10hz.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_logging1hz.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_pitchestimation.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/allmodels/2026.26.6.5/veh/vcleft/vcleft_recallstatus.html</loc></url>
@@ -2374,9 +2377,6 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/gtw/gtw_hrlexternalevent.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/gtw/gtw_info.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/gtw/gtw_mismatchfault.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/gtw/gtw_status.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/gtw/gtw_updatestatus.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/gtw/gtw_vehnm.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/idb/idb_alertlog.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/idb/idb_alertmatrix.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/idb/idb_info.html</loc></url>
@@ -2420,7 +2420,6 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/ui/ui_tripplanning4.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/ui/ui_tripplanning5.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/uis/uis_log.html</loc></url>
-<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/vcleft/vcleft_logging10hz.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/vcseat2l/vcseat2l_alertlog.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/vcseat2l/vcseat2l_alertmatrix.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/eth/vcseat2l/vcseat2l_seatstatus.html</loc></url>
@@ -2539,6 +2538,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/vcsec.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/adsp/adsp_audiovisualizer.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/app/app_cameralux.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/app/app_vc_infomessage.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/aps/aps_state.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/bms/bms_alertlog.html</loc></url>
@@ -2591,6 +2591,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/cp/cp_status.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/cp/cp_thermalstatus.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/cp/cp_udsresponse.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/das/das_autonomycontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/das/das_bodycontrols.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/di/di_alertlog.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/di/di_alertmatrix.html</loc></url>
@@ -2652,6 +2653,9 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/fc/fc_status3.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/gtw/gtw_carconfig.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/gtw/gtw_diagsession.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/gtw/gtw_status.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/gtw/gtw_updatestatus.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/gtw/gtw_vehnm.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/hcml/hcml_info.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/hcmr/hcmr_info.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/hvbms/hvbms_0x311.html</loc></url>
@@ -2771,6 +2775,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_autopilotcontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_chargerequest.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_chassiscontrol.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_cruisecontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_debugecu.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_debugtas.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/ui/ui_driverassistmapdata.html</loc></url>
@@ -2878,6 +2883,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_liftgatestatus.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_lightstatus.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_logging0point1hz.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_logging10hz.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_logging1hz.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_pitchestimation.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/model3/2026.26.6.5/veh/vcleft/vcleft_recallstatus.html</loc></url>
@@ -4226,6 +4232,7 @@
 <url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_autopilotcontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_chargerequest.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_chassiscontrol.html</loc></url>
+<url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_cruisecontrol.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_debugecu.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_debugtas.html</loc></url>
 <url><loc>{{ site.url }}{{ site.baseurl }}/modely/2026.26.6.5/veh/ui/ui_driverassistmapdata.html</loc></url>

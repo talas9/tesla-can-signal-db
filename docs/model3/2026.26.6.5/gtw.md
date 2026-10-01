@@ -12,6 +12,9 @@ All 19 messages of the Gateway (GTW) documented for Tesla Model 3 firmware 2026.
 |---|---|---|---:|---:|---:|
 | [`GTW_carConfig`](veh/gtw/gtw_carconfig.md) | VEH | 0x7FF | 8 | 100 ms | 200 |
 | [`GTW_diagSession`](veh/gtw/gtw_diagsession.md) | VEH | 0x666 | 4 | 250 ms | 6 |
+| [`GTW_status`](veh/gtw/gtw_status.md) | VEH | 0x348 | 8 | 1000 ms | 10 |
+| [`GTW_updateStatus`](veh/gtw/gtw_updatestatus.md) | VEH | 0x3ED | 1 | 1000 ms | 5 |
+| [`GTW_vehNm`](veh/gtw/gtw_vehnm.md) | VEH | 0x458 | 7 | 100 ms | 11 |
 | [`GTW_adc4`](eth/gtw/gtw_adc4.md) | ETH | 0x11A | 8 | 1000 ms | 5 |
 | [`GTW_alertLog`](eth/gtw/gtw_alertlog.md) | ETH | 0x568 | 8 |  | 139 |
 | [`GTW_alertMatrix`](eth/gtw/gtw_alertmatrix.md) | ETH | 0x3E | 8 | 100 ms | 268 |
@@ -26,9 +29,6 @@ All 19 messages of the Gateway (GTW) documented for Tesla Model 3 firmware 2026.
 | [`GTW_hrlExternalEvent`](eth/gtw/gtw_hrlexternalevent.md) | ETH | 0x7EA | 8 | 1000 ms | 2 |
 | [`GTW_info`](eth/gtw/gtw_info.md) | ETH | 0x3C | 8 | 2000 ms | 7 |
 | [`GTW_mismatchFault`](eth/gtw/gtw_mismatchfault.md) | ETH | 0x55A | 8 | 250 ms | 49 |
-| [`GTW_status`](eth/gtw/gtw_status.md) | ETH | 0x348 | 8 | 1000 ms | 10 |
-| [`GTW_updateStatus`](eth/gtw/gtw_updatestatus.md) | ETH | 0x3ED | 1 | 1000 ms | 5 |
-| [`GTW_vehNm`](eth/gtw/gtw_vehnm.md) | ETH | 0x458 | 7 | 100 ms | 11 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
 

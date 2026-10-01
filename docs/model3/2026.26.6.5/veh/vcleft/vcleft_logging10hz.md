@@ -1,23 +1,23 @@
 ---
 layout: default
-title: "VCLEFT_logging10Hz (0x289) — Left body controller, Tesla Model 3 2026.26.6.5 ETH"
-description: "Left body controller message: logging10 hz. Ethernet-side message VCLEFT_logging10Hz of Left body controller for Tesla Model 3 firmware 2026.26.6.5, 15 signals (VCLEFT_logging10HzIndex, VCLEFT_hvacBlowerRs, VCLEFT_hvacBlowerIPhase0, VCLEFT_hvacBlowerIPhase1 and 11 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_logging10Hz (0x289) — Left body controller, Tesla Model 3 2026.26.6.5 VEH CAN"
+description: "Left body controller message: logging10 hz. Tesla Model 3 CAN bus message VCLEFT_logging10Hz (0x289) of Left body controller, firmware 2026.26.6.5, 15 signals (VCLEFT_logging10HzIndex, VCLEFT_hvacBlowerRs, VCLEFT_hvacBlowerIPhase0, VCLEFT_hvacBlowerIPhase1 and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_logging10Hz (0x289) — Left body controller, Tesla Model 3 2026.26.6.5 ETH
+# VCLEFT_logging10Hz (0x289) — Left body controller, Tesla Model 3 2026.26.6.5 VEH CAN
 
-Left body controller message: logging10 hz. This page documents the 15 signals of VCLEFT_logging10Hz as defined for Tesla Model 3 firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Left body controller message: logging10 hz; frame length observed on a vehicle bus. This page documents the 15 signals of VCLEFT_logging10Hz as defined for Tesla Model 3 firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
 | Property | Value |
 |---|---|
 | Message name | `VCLEFT_logging10Hz` |
-| Ethernet-side id | 0x289 (649) |
+| CAN id | 0x289 (649) |
 | ECU | [Left body controller](../../vcleft.md) |
 | Vehicle | Tesla Model 3 |
 | Firmware | 2026.26.6.5 |
-| Bus | ETH (Ethernet-side ids, not CAN ids) |
+| Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |
 | Frame length | 8 bytes |
 | Cycle time | 100 ms |
@@ -51,10 +51,8 @@ Tesla Model 3 CAN bus signals in `VCLEFT_logging10Hz`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 2026.26.6.5 ETH DBC file](../../../../../dbc/Model3/2026.26.6.5/ETH.dbc) (Vector DBC)
-- [Same data as JSON](../../../../../dbc/Model3/2026.26.6.5/ETH.json)
-
-Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.
+- [Tesla Model 3 2026.26.6.5 VEH DBC file](../../../../../dbc/Model3/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Same data as JSON](../../../../../dbc/Model3/2026.26.6.5/VEH.json)
 
 ## See also
 

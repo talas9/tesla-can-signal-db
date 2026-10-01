@@ -1,15 +1,16 @@
 ---
 layout: default
 title: "Driver assistance computer (primary) (APP) CAN messages and signals — Tesla Model 3 2026.26.6.5"
-description: "Tesla Model 3 APP CAN bus messages and signals of the Driver assistance computer (primary) (APP) for firmware 2026.26.6.5: 27 messages, 2039 signals with bit layout, scaling and value tables."
+description: "Tesla Model 3 APP CAN bus messages and signals of the Driver assistance computer (primary) (APP) for firmware 2026.26.6.5: 28 messages, 2047 signals with bit layout, scaling and value tables."
 ---
 
 # Driver assistance computer (primary) (APP) CAN messages and signals — Tesla Model 3 2026.26.6.5
 
-All 27 messages of the Driver assistance computer (primary) (APP) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
+All 28 messages of the Driver assistance computer (primary) (APP) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
+| [`APP_cameraLux`](veh/app/app_cameralux.md) | VEH | 0x3FA | 8 | 500 ms | 8 |
 | [`APP_VC_infoMessage`](veh/app/app_vc_infomessage.md) | VEH | 0x38D | 8 | 1000 ms | 23 |
 | [`APP_alertLog`](ch/app/app_alertlog.md) | CH | 0x5E9 | 8 |  | 1403 |
 | [`APP_backupDashCamStatus`](ch/app/app_backupdashcamstatus.md) | CH | 0x415 | 1 | 500 ms | 2 |

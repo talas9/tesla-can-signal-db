@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ADSP APSB CMP DAS EPAS3P GTW OCS1P PTC RCM TCU TCU2 UDS UI UIS VCLEFT
+BU_: ADSP APSB CMP DAS EPAS3P GTW OCS1P PTC RCM TCU TCU2 UDS UI UIS
 
 
 BO_ 1360 ADSP_alertLog: 8 ADSP
@@ -1855,38 +1855,6 @@ BO_ 1370 GTW_mismatchFault: 8 GTW
  SG_ GTW_VCRIGHTmismatchFault m1 : 58|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ GTW_VCSECmismatchFault m1 : 59|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ GTW_PMmismatchFault m1 : 60|1@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 840 GTW_status: 8 GTW
- SG_ GTW_vehicleVersionMatchStatus : 0|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ GTW_hwtype : 2|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ GTW_jcanProductName : 4|4@1+ (1,0) [1|15] "" Vector__XXX
- SG_ GTW_uptimeSeconds : 15|32@0+ (1,0) [0|4294967295] "s" Vector__XXX
- SG_ GTW_boardRevision : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ GTW_touchcoreOsType : 48|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_sentryModeState : 49|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ GTW_secureBootEnabled : 52|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_socSleepType : 56|2@1+ (1,0) [1|3] "" Vector__XXX
- SG_ GTW_resetType : 58|4@1+ (1,0) [1|15] "" Vector__XXX
-
-BO_ 1005 GTW_updateStatus: 1 GTW
- SG_ GTW_i2cUpdateActive : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_peripheralConfirmedUpdateNee : 3|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ GTW_ocuFailed : 5|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_ecuUpdateStarted : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_updateStarted : 7|1@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 1112 GTW_vehNm: 7 GTW
- SG_ GTW_nmGoingToSleep : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_nmWakeUpBus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_chBusAsleep : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_ethBusAsleep : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_nmKeepAwakeReason : 4|4@1+ (1,0) [1|15] "" Vector__XXX
- SG_ GTW_nmWakeUpReason : 8|5@1+ (1,0) [0|31] "" Vector__XXX
- SG_ GTW_ethKeepAwakeReason : 13|4@1+ (1,0) [1|15] "" Vector__XXX
- SG_ GTW_nmDebugWakeUp : 17|32@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ GTW_OTAKeepAwake : 49|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_smsPokeReceived : 50|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ GTW_bdyBusAsleep : 51|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1429 OCS1P_alertLog: 8 OCS1P
  SG_ OCS1P_alertID M : 0|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -4833,23 +4801,6 @@ BO_ 1175 UI_tripPlanning5: 4 UI
  SG_ UI_battPreconditionOnNavTime : 0|16@1+ (1,0) [0|65534] "s" Vector__XXX
  SG_ UI_maxBattPreconditionOnNavTime : 16|16@1+ (1,0) [0|65534] "s" Vector__XXX
 
-BO_ 649 VCLEFT_logging10Hz: 8 VCLEFT
- SG_ VCLEFT_logging10HzIndex M : 0|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_hvacBlowerRs m0 : 1|8@1+ (0.25,0) [0|60] "mOhm" Vector__XXX
- SG_ VCLEFT_hvacBlowerIPhase0 m0 : 9|7@1+ (0.4,0) [0|50] "A" Vector__XXX
- SG_ VCLEFT_hvacBlowerIPhase1 m0 : 16|7@1+ (0.4,0) [0|50] "A" Vector__XXX
- SG_ VCLEFT_hvacBlowerIPhase2 m0 : 23|7@1+ (0.4,0) [0|50] "A" Vector__XXX
- SG_ VCLEFT_hvacBlower_IO_CBC_HEAD m0 : 30|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCLEFT_hvacBlower_IO_CBC_TAIL m0 : 34|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCLEFT_hvacBlower_IO_CBC_TAIL_va m0 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_hvacBlower_IO_CBC_Status m0 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_hvacBlower_IO_CBC_numUart m0 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ VCLEFT_hvacBlowerCBCEstState m0 : 48|4@1+ (1,0) [0|15] "" Vector__XXX
- SG_ VCLEFT_hvacBlowerCBCCtrlState m0 : 52|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ VCLEFT_hvacBlowerITerm m0 : 55|7@1+ (0.05,-1.5) [-1.5|4.5] "Nm" Vector__XXX
- SG_ VCLEFT_hvacBlowerSpiError m0 : 62|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ VCLEFT_hvacBlowerRsOnlineActive m0 : 63|1@1+ (1,0) [0|1] "" Vector__XXX
-
 BO_TX_BU_ 1360 : ADSP;
 BO_TX_BU_ 1361 : ADSP;
 BO_TX_BU_ 1362 : ADSP;
@@ -4882,9 +4833,6 @@ BO_TX_BU_ 2033 : GTW;
 BO_TX_BU_ 2026 : GTW;
 BO_TX_BU_ 60 : GTW;
 BO_TX_BU_ 1370 : GTW;
-BO_TX_BU_ 840 : GTW;
-BO_TX_BU_ 1005 : GTW;
-BO_TX_BU_ 1112 : GTW;
 BO_TX_BU_ 1429 : OCS1P;
 BO_TX_BU_ 767 : OCS1P;
 BO_TX_BU_ 766 : OCS1P;
@@ -4921,7 +4869,6 @@ BO_TX_BU_ 139 : UI;
 BO_TX_BU_ 1173 : UI;
 BO_TX_BU_ 1174 : UI;
 BO_TX_BU_ 1175 : UI;
-BO_TX_BU_ 649 : VCLEFT;
 
 
 CM_ "Tesla Model 3 / Model Y CAN bus database; bus ETH (Ethernet-side ids, not CAN ids); firmware 2026.26.6.5. Decoded CAN signal definitions (layout, scaling, units, value tables).";
@@ -4939,7 +4886,6 @@ CM_ BU_ TCU2 "TCU2 ECU";
 CM_ BU_ UDS "UDS ECU";
 CM_ BU_ UI "Touchscreen user interface computer";
 CM_ BU_ UIS "UIS ECU";
-CM_ BU_ VCLEFT "Left body controller";
 CM_ BO_ 1360 "Audio amplifier message: alert log";
 CM_ SG_ 1360 ADSP_alertID "Audio amplifier: alert ID";
 CM_ SG_ 1360 ADSP_alertState "Audio amplifier: alert state";
@@ -6728,35 +6674,6 @@ CM_ SG_ 1370 GTW_VCLEFTmismatchFault "Reports the left vehicle controller (VCLEF
 CM_ SG_ 1370 GTW_VCRIGHTmismatchFault "Reports the right vehicle controller (VCRIGHT) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle";
 CM_ SG_ 1370 GTW_VCSECmismatchFault "Reports the vehicle security controller (VCSEC) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle";
 CM_ SG_ 1370 GTW_PMmismatchFault "Reports the Pedal Monitor (PM) electronic control unit (ECU) running a firmware version that does not match the rest of the vehicle";
-CM_ BO_ 840 "Gateway message: status";
-CM_ SG_ 840 GTW_vehicleVersionMatchStatus "Signal to indicate if the vehicle ECUs are all on a matched production version";
-CM_ SG_ 840 GTW_hwtype "Describes the chip GTW is running on; raw 0 = signal not available (SNA)";
-CM_ SG_ 840 GTW_jcanProductName "Describes the JCAN reference (product) name; raw 0 = signal not available (SNA)";
-CM_ SG_ 840 GTW_uptimeSeconds "GTW uptime in seconds";
-CM_ SG_ 840 GTW_boardRevision "Board revision ID of the MCU PCBA";
-CM_ SG_ 840 GTW_touchcoreOsType "Gateway: touchcore os type";
-CM_ SG_ 840 GTW_sentryModeState "Sentry Mode state; raw 6 = signal not available (SNA)";
-CM_ SG_ 840 GTW_secureBootEnabled "Gateway: secure boot enabled";
-CM_ SG_ 840 GTW_socSleepType "Describes the sleep type GTW is expecting from the SoC; raw 0 = signal not available (SNA)";
-CM_ SG_ 840 GTW_resetType "Describes the type of reset GTW experienced; raw 0 = signal not available (SNA)";
-CM_ BO_ 1005 "Gateway message: update status";
-CM_ SG_ 1005 GTW_i2cUpdateActive "Gateway: i2c update active";
-CM_ SG_ 1005 GTW_peripheralConfirmedUpdateNee "Detects if peripheral has confirmed update is needed";
-CM_ SG_ 1005 GTW_ocuFailed "Reports the offboard charger update was unsuccessful.";
-CM_ SG_ 1005 GTW_ecuUpdateStarted "Reports whether Electronic Control Unit (ECU) update phase is active.";
-CM_ SG_ 1005 GTW_updateStarted "Main update in progress bit";
-CM_ BO_ 1112 "Gateway message: veh nm";
-CM_ SG_ 1112 GTW_nmGoingToSleep "Network management - Going to sleep state";
-CM_ SG_ 1112 GTW_nmWakeUpBus "Gateway: nm wake up bus";
-CM_ SG_ 1112 GTW_chBusAsleep "Chassis bus sleep state";
-CM_ SG_ 1112 GTW_ethBusAsleep "ETH bus sleep state";
-CM_ SG_ 1112 GTW_nmKeepAwakeReason "Network management - Keep awake reason; raw 0 = signal not available (SNA)";
-CM_ SG_ 1112 GTW_nmWakeUpReason "Network management - Wakeup reason";
-CM_ SG_ 1112 GTW_ethKeepAwakeReason "Reason GTW is keeping ETH bus awake; raw 0 = signal not available (SNA)";
-CM_ SG_ 1112 GTW_nmDebugWakeUp "Gateway: nm debug wake up";
-CM_ SG_ 1112 GTW_OTAKeepAwake "Signals that the vehicle buses should remain awake for an ongoing OTA update";
-CM_ SG_ 1112 GTW_smsPokeReceived "The modem indicated it received an SMS poke";
-CM_ SG_ 1112 GTW_bdyBusAsleep "BDY bus sleep state";
 CM_ BO_ 1429 "Occupant classification system message: alert log";
 CM_ SG_ 1429 OCS1P_alertID "Occupant classification system: alert ID";
 CM_ SG_ 1429 OCS1P_alertState "Occupant classification system: alert state";
@@ -9666,22 +9583,6 @@ CM_ SG_ 1174 UI_gradeCorrectedEnergyLearned "Touchscreen user interface computer
 CM_ BO_ 1175 "Touchscreen user interface computer message: trip planning5";
 CM_ SG_ 1175 UI_battPreconditionOnNavTime "Touchscreen user interface computer: batt precondition on nav time; raw 65535 = signal not available (SNA)";
 CM_ SG_ 1175 UI_maxBattPreconditionOnNavTime "Touchscreen user interface computer: max batt precondition on nav time; raw 65535 = signal not available (SNA)";
-CM_ BO_ 649 "Left body controller message: logging10 hz";
-CM_ SG_ 649 VCLEFT_logging10HzIndex "Left body controller: logging10 hz index";
-CM_ SG_ 649 VCLEFT_hvacBlowerRs "Left body controller: hvac blower rs; raw 255 = signal not available (SNA)";
-CM_ SG_ 649 VCLEFT_hvacBlowerIPhase0 "Left body controller: hvac blower i phase0; raw 127 = signal not available (SNA)";
-CM_ SG_ 649 VCLEFT_hvacBlowerIPhase1 "Left body controller: hvac blower i phase1; raw 127 = signal not available (SNA)";
-CM_ SG_ 649 VCLEFT_hvacBlowerIPhase2 "Left body controller: hvac blower i phase2; raw 127 = signal not available (SNA)";
-CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_HEAD "Left body controller: hvac blower IO CBC HEAD";
-CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL "Left body controller: hvac blower IO CBC TAIL";
-CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL_va "Left body controller: hvac blower IO CBC TAIL valid";
-CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_Status "Left body controller: hvac blower IO CBC status";
-CM_ SG_ 649 VCLEFT_hvacBlower_IO_CBC_numUart "Left body controller: hvac blower IO CBC num uart err";
-CM_ SG_ 649 VCLEFT_hvacBlowerCBCEstState "Left body controller: hvac blower CBC est state";
-CM_ SG_ 649 VCLEFT_hvacBlowerCBCCtrlState "Left body controller: hvac blower CBC ctrl state";
-CM_ SG_ 649 VCLEFT_hvacBlowerITerm "Left body controller: hvac blower i term; raw 127 = signal not available (SNA)";
-CM_ SG_ 649 VCLEFT_hvacBlowerSpiError "Left body controller: hvac blower spi error";
-CM_ SG_ 649 VCLEFT_hvacBlowerRsOnlineActive "Left body controller: hvac blower rs online active";
 BA_DEF_ "BusType" STRING;
 BA_DEF_ "DBName" STRING;
 BA_DEF_ "Baudrate" INT 0 1000000;
@@ -9736,7 +9637,6 @@ BA_ "ECU" BU_ TCU2 "TCU2";
 BA_ "ECU" BU_ UDS "UDS";
 BA_ "ECU" BU_ UI "UI";
 BA_ "ECU" BU_ UIS "UIS";
-BA_ "ECU" BU_ VCLEFT "VCLEFT";
 BA_ "GenMsgCycleTime" BO_ 1360 0;
 BA_ "GenMsgSendType" BO_ 1360 8;
 BA_ "VFrameFormat" BO_ 1360 0;
@@ -9833,15 +9733,6 @@ BA_ "VFrameFormat" BO_ 60 0;
 BA_ "GenMsgCycleTime" BO_ 1370 250;
 BA_ "GenMsgSendType" BO_ 1370 0;
 BA_ "VFrameFormat" BO_ 1370 0;
-BA_ "GenMsgCycleTime" BO_ 840 1000;
-BA_ "GenMsgSendType" BO_ 840 0;
-BA_ "VFrameFormat" BO_ 840 0;
-BA_ "GenMsgCycleTime" BO_ 1005 1000;
-BA_ "GenMsgSendType" BO_ 1005 0;
-BA_ "VFrameFormat" BO_ 1005 0;
-BA_ "GenMsgCycleTime" BO_ 1112 100;
-BA_ "GenMsgSendType" BO_ 1112 0;
-BA_ "VFrameFormat" BO_ 1112 0;
 BA_ "GenMsgCycleTime" BO_ 1429 0;
 BA_ "GenMsgSendType" BO_ 1429 8;
 BA_ "VFrameFormat" BO_ 1429 0;
@@ -9950,9 +9841,6 @@ BA_ "VFrameFormat" BO_ 1174 0;
 BA_ "GenMsgCycleTime" BO_ 1175 1000;
 BA_ "GenMsgSendType" BO_ 1175 0;
 BA_ "VFrameFormat" BO_ 1175 0;
-BA_ "GenMsgCycleTime" BO_ 649 100;
-BA_ "GenMsgSendType" BO_ 649 0;
-BA_ "VFrameFormat" BO_ 649 0;
 BA_ "Confidence" SG_ 1360 ADSP_alertID 1;
 BA_ "Confidence" SG_ 1360 ADSP_alertState 1;
 BA_ "Confidence" SG_ 1360 ADSP_a002_core 2;
@@ -11884,40 +11772,6 @@ BA_ "Confidence" SG_ 1370 GTW_VCLEFTmismatchFault 1;
 BA_ "Confidence" SG_ 1370 GTW_VCRIGHTmismatchFault 1;
 BA_ "Confidence" SG_ 1370 GTW_VCSECmismatchFault 1;
 BA_ "Confidence" SG_ 1370 GTW_PMmismatchFault 1;
-BA_ "Confidence" SG_ 840 GTW_vehicleVersionMatchStatus 1;
-BA_ "Confidence" SG_ 840 GTW_hwtype 1;
-BA_ "GenSigSNA" SG_ 840 GTW_hwtype "0";
-BA_ "Confidence" SG_ 840 GTW_jcanProductName 1;
-BA_ "GenSigSNA" SG_ 840 GTW_jcanProductName "0";
-BA_ "Confidence" SG_ 840 GTW_uptimeSeconds 1;
-BA_ "Confidence" SG_ 840 GTW_boardRevision 1;
-BA_ "Confidence" SG_ 840 GTW_touchcoreOsType 1;
-BA_ "Confidence" SG_ 840 GTW_sentryModeState 1;
-BA_ "GenSigSNA" SG_ 840 GTW_sentryModeState "6";
-BA_ "Confidence" SG_ 840 GTW_secureBootEnabled 1;
-BA_ "Confidence" SG_ 840 GTW_socSleepType 1;
-BA_ "GenSigSNA" SG_ 840 GTW_socSleepType "0";
-BA_ "Confidence" SG_ 840 GTW_resetType 1;
-BA_ "GenSigSNA" SG_ 840 GTW_resetType "0";
-BA_ "Confidence" SG_ 1005 GTW_i2cUpdateActive 2;
-BA_ "Confidence" SG_ 1005 GTW_peripheralConfirmedUpdateNee 1;
-BA_ "SystemSignalLongSymbol" SG_ 1005 GTW_peripheralConfirmedUpdateNee "GTW_peripheralConfirmedUpdateNeeded";
-BA_ "Confidence" SG_ 1005 GTW_ocuFailed 1;
-BA_ "Confidence" SG_ 1005 GTW_ecuUpdateStarted 1;
-BA_ "Confidence" SG_ 1005 GTW_updateStarted 1;
-BA_ "Confidence" SG_ 1112 GTW_nmGoingToSleep 1;
-BA_ "Confidence" SG_ 1112 GTW_nmWakeUpBus 2;
-BA_ "Confidence" SG_ 1112 GTW_chBusAsleep 1;
-BA_ "Confidence" SG_ 1112 GTW_ethBusAsleep 1;
-BA_ "Confidence" SG_ 1112 GTW_nmKeepAwakeReason 1;
-BA_ "GenSigSNA" SG_ 1112 GTW_nmKeepAwakeReason "0";
-BA_ "Confidence" SG_ 1112 GTW_nmWakeUpReason 1;
-BA_ "Confidence" SG_ 1112 GTW_ethKeepAwakeReason 1;
-BA_ "GenSigSNA" SG_ 1112 GTW_ethKeepAwakeReason "0";
-BA_ "Confidence" SG_ 1112 GTW_nmDebugWakeUp 1;
-BA_ "Confidence" SG_ 1112 GTW_OTAKeepAwake 1;
-BA_ "Confidence" SG_ 1112 GTW_smsPokeReceived 1;
-BA_ "Confidence" SG_ 1112 GTW_bdyBusAsleep 1;
 BA_ "Confidence" SG_ 1429 OCS1P_alertID 1;
 BA_ "Confidence" SG_ 1429 OCS1P_alertState 1;
 BA_ "Confidence" SG_ 1429 OCS1P_a121_sandwichFreq 2;
@@ -15113,28 +14967,6 @@ BA_ "Confidence" SG_ 1175 UI_battPreconditionOnNavTime 1;
 BA_ "GenSigSNA" SG_ 1175 UI_battPreconditionOnNavTime "65535";
 BA_ "Confidence" SG_ 1175 UI_maxBattPreconditionOnNavTime 1;
 BA_ "GenSigSNA" SG_ 1175 UI_maxBattPreconditionOnNavTime "65535";
-BA_ "Confidence" SG_ 649 VCLEFT_logging10HzIndex 1;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerRs 1;
-BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerRs "255";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerIPhase0 1;
-BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerIPhase0 "127";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerIPhase1 1;
-BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerIPhase1 "127";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerIPhase2 1;
-BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerIPhase2 "127";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_HEAD 2;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL 2;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL_va 2;
-BA_ "SystemSignalLongSymbol" SG_ 649 VCLEFT_hvacBlower_IO_CBC_TAIL_va "VCLEFT_hvacBlower_IO_CBC_TAIL_valid";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_Status 1;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlower_IO_CBC_numUart 2;
-BA_ "SystemSignalLongSymbol" SG_ 649 VCLEFT_hvacBlower_IO_CBC_numUart "VCLEFT_hvacBlower_IO_CBC_numUartErr";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerCBCEstState 1;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerCBCCtrlState 1;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerITerm 1;
-BA_ "GenSigSNA" SG_ 649 VCLEFT_hvacBlowerITerm "127";
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerSpiError 2;
-BA_ "Confidence" SG_ 649 VCLEFT_hvacBlowerRsOnlineActive 2;
 VAL_ 1360 ADSP_alertID 84 "w084_sharc1LowCpuUsage" 83 "w083_sharc0LowCpuUsage" 80 "w080_micInitError" 77 "w077_mediaMathExcept" 76 "w076_activeSafetyChannelUnderrun" 75 "w075_tdspArmError" 74 "w074_tdspArmXrun" 73 "w073_romFLError" 72 "w072_turnSignalChannelUnderrun" 71 "w071_versionMismatch" 70 "w070_baseamp3Fault" 69 "w069_baseamp2Fault" 68 "w068_baseamp1Fault" 67 "w067_baseamp0Fault" 66 "w066_rearPwsFault" 65 "w065_tcuGpioExpanderCriticalError" 61 "w061_tcuGpioServiceError" 60 "w060_baseamp3SmFault" 59 "w059_nvmmError" 58 "w058_hfpMathExcept2INF" 57 "w057_hfpMathExcept2NAN" 56 "w056_hfpMathExcept1INF" 55 "w055_hfpMathExcept1NAN" 54 "w054_canethRxError" 53 "w053_audioSystemUnavailable" 52 "w052_criticalReset" 51 "w051_extspkFailure" 50 "w050_extSpkFault" 49 "w049_sae" 48 "w048_eCallSelfTestFailed" 47 "w047_sharc1AweFrameOverload" 46 "w046_sharc0AweFrameOverload" 45 "w045_ancEnableFail" 44 "w044_canethChecksum" 43 "w043_aweControlError" 42 "w042_twiReadError" 41 "w041_twiWriteError" 40 "w040_socSciHeartbeat" 39 "w039_ancPing" 38 "w038_a2bbIdleFailed" 37 "w037_a2baIdleFailed" 36 "w036_a2bbFault" 35 "w035_a2baFault" 34 "w034_a2bbDiscoveryFailed" 33 "w033_a2baDiscoveryFailed" 32 "w032_baseamp2SmFault" 31 "w031_baseamp1SmFault" 30 "w030_ethSysErr" 29 "w029_baseamp0SmFault" 28 "w028_ethTcpErr" 27 "w027_ethUdpErr" 26 "w026_ethIcmpErr" 25 "w025_ethIpErr" 24 "w024_ethIpfragErr" 23 "w023_ethEtharpErr" 22 "w022_emacErr" 21 "w021_usbTxAborted" 20 "w020_usbTxFailed" 19 "w019_usbTxUnderrun" 18 "w018_usbTxOverrun" 17 "w017_usbRxUnderrun" 16 "w016_usbRxOverrun" 15 "w015_eavbUnderrun" 14 "w014_eavbOverrun" 13 "w013_sharc1HighCpuUsage" 12 "w012_sharc0HighCpuUsage" 11 "w011_armHighCpuUsage" 10 "w010_12vAudioFiltLow" 8 "w008_internalTempHigh" 7 "w007_ethLinkErr" 6 "w006_eavbSeqno" 5 "w005_stackOverflow" 4 "w004_malloc" 3 "w003_assert" 2 "w002_exception" 1 "w001_flashInit" 0 "ALERT_DO_NOT_USE_ZERO" ;
 VAL_ 1360 ADSP_alertState 1 "SET" 0 "CLEARED" ;
 VAL_ 1360 ADSP_a002_cause 9 "WDOG_TASK_EXPIRED" 8 "FREERTOS_HOOK" 7 "ARM_FATAL" 6 "SHARC_ASSERTION" 5 "SHARC_CCES_FATAL" 4 "WDOG1_EXPIRED" 3 "WDOG0_EXPIRED" 2 "PREFETCH_ABORT" 1 "DATA_ABORT" 0 "UNKNOWN" ;
@@ -15312,19 +15144,6 @@ VAL_ 60 GTW_infoIndex 255 "END" 31 "SUBCOMPONENT_GITHASH" 30 "PACKAGE_SN_8_14" 2
 VAL_ 60 GTW_buildType 4 "INFO_MFG_BUILD" 3 "INFO_TRACEABLE_CI_BUILD" 2 "INFO_LOCAL_BUILD" 1 "INFO_PLATFORM_BUILD" 0 "INFO_UNKNOWN_BUILD" ;
 VAL_ 60 GTW_platformType 255 "GTW_PLATFORM_END" 3 "GTW_PLATFORM_MODEL3" 0 "GTW_PLATFORM_UNKNOWN" ;
 VAL_ 1370 GTW_mismatchFaultIndex 5 "Mux5" 4 "Mux4" 3 "Mux3" 2 "Mux2" 1 "Mux1" ;
-VAL_ 840 GTW_vehicleVersionMatchStatus 2 "MATCHED" 1 "MISMATCHED" 0 "NOT_CALCULATED_YET" ;
-VAL_ 840 GTW_hwtype 3 "TRAVEO2" 2 "SPC58" 1 "MPC57" 0 "SNA" ;
-VAL_ 840 GTW_jcanProductName 11 "SEMITRUCKV2" 10 "GOLDENSNITCH" 8 "BAYBERRY" 7 "CYBERTRUCK" 6 "POPPYSEED" 5 "SEMITRUCK" 4 "TAMARIND" 3 "LYCHEE" 2 "MODELY" 1 "MODEL3" 0 "SNA" ;
-VAL_ 840 GTW_touchcoreOsType 1 "GTW_OS_RT" 0 "GTW_OS_FREERTOS" ;
-VAL_ 840 GTW_sentryModeState 6 "SNA" 5 "QUIET" 4 "PANIC" 3 "AWARE" 2 "ARMED" 1 "IDLE" 0 "OFF" ;
-VAL_ 840 GTW_secureBootEnabled 1 "TRUE" 0 "FALSE" ;
-VAL_ 840 GTW_socSleepType 2 "SHALLOW" 1 "S3" 0 "SNA" ;
-VAL_ 840 GTW_resetType 8 "OTHER" 7 "TOUCHCORE_WATCHDOG" 6 "CANCORE_WATCHDOG" 5 "MAINCORE_WATCHDOG" 4 "WAKE" 3 "BUTTON" 2 "SOFTWARE" 1 "POR" 0 "SNA" ;
-VAL_ 1005 GTW_peripheralConfirmedUpdateNee 3 "UPDATE_CONDITIONS_NOT_CORRECT" 2 "UPDATE_NOT_NEEDED" 1 "UPDATE_NEEDED" 0 "UNKNOWN" ;
-VAL_ 1112 GTW_nmKeepAwakeReason 15 "GTW_KEEPAWAKE_REASON_TBD" 7 "GTW_KEEPAWAKE_REASON_TCU_TC10_VERSION_UNSUPPORTED" 6 "GTW_KEEPAWAKE_REASON_TCU_TC10_VERSION_CHECK" 5 "GTW_KEEPAWAKE_REASON_EGGLEFT_LINK_DOWN" 4 "GTW_KEEPAWAKE_REASON_URGENT_TRANSMIT_ALERT" 3 "GTW_KEEPAWAKE_REASON_FCSM_ACTIVE" 2 "GTW_KEEPAWAKE_REASON_GSM_RI" 1 "GTW_KEEPAWAKE_REASON_UI_SCHEDULED" 0 "GTW_KEEPAWAKE_REASON_NONE_SNA" ;
-VAL_ 1112 GTW_nmWakeUpReason 17 "GTW_WAKEUP_REASON_TCU_TC10_VERSION_CHECK" 16 "GTW_WAKEUP_REASON_EGGLEFT_LINK_DOWN" 15 "GTW_WAKEUP_REASON_RCMPRIVATE_CAN" 14 "GTW_WAKEUP_REASON_VCLEFT" 13 "GTW_WAKEUP_REASON_LOOP" 12 "GTW_WAKEUP_REASON_DISPLAY_TAP" 11 "GTW_WAKEUP_REASON_URGENT_TRANSMIT_ALERT" 10 "GTW_WAKEUP_REASON_BDY_CAN" 9 "GTW_WAKEUP_REASON_PT_CAN" 8 "GTW_WAKEUP_REASON_UI_SCHEDULED" 7 "GTW_WAKEUP_REASON_RTC_ALARM" 6 "GTW_WAKEUP_REASON_VCFRONT" 5 "GTW_WAKEUP_REASON_VEH_CAN" 4 "GTW_WAKEUP_REASON_ETH_CAN" 3 "GTW_WAKEUP_REASON_CH_CAN" 2 "GTW_WAKEUP_REASON_GSM_RI" 1 "GTW_WAKEUP_REASON_RESET" 0 "GTW_WAKEUP_REASON_NONE" ;
-VAL_ 1112 GTW_ethKeepAwakeReason 3 "TCU_TC10_VERSION_UNSUPPORTED" 2 "TCU_TC10_VERSION_CHECK" 1 "URGENT_TRANSMIT_ALERT" 0 "NONE_SNA" ;
-VAL_ 1112 GTW_nmDebugWakeUp 2147483648 "WKPU_31" 1073741824 "WKPU_30" 536870912 "WKPU_29" 268435456 "WKPU_28" 134217728 "WKPU_27" 67108864 "WKPU_26" 33554432 "WKPU_25" 16777216 "WKPU_24" 8388608 "WKPU_23" 4194304 "WKPU_22" 2097152 "WKPU_21" 1048576 "WKPU_20" 524288 "WKPU_19" 262144 "WKPU_18" 131072 "WKPU_17" 65536 "WKPU_16" 32768 "WKPU_15" 16384 "WKPU_14" 8192 "WKPU_13" 4096 "WKPU_12" 2048 "WKPU_11" 1024 "WKPU_10" 512 "WKPU_9" 256 "WKPU_8" 128 "WKPU_7" 64 "WKPU_6" 32 "WKPU_5" 16 "WKPU_4" 8 "WKPU_3" 4 "WKPU_2" 2 "WKPU_1" 1 "WKPU_0" 0 "WKPU_NONE" ;
 VAL_ 1429 OCS1P_alertID 156 "a156_seatbeltReminderUnavailable" 155 "a155_rbExit2Exited2" 154 "a154_rbExit2Exited1" 153 "a153_rbExit1Exited" 152 "a152_rbExit1Triggered" 151 "a151_rbEntryExited" 150 "a150_rbEntryTriggered" 148 "a148_classificationMismatch" 145 "a145_rebaselineTriggered" 144 "a144_mismatchCarRegion" 143 "a143_mismatchPassAirbag" 142 "a142_tempHumidityInvalid" 141 "a141_humidityInvalidCalib" 140 "a140_tempInvalidCalib" 139 "a139_seatbackSelfDutyHigh" 138 "a138_seatbackSelfDutyLow" 137 "a137_cushionSelfDutyHigh" 136 "a136_cushionSelfDutyLow" 135 "a135_tempNoCalib" 134 "a134_uninitializedCalib" 133 "a133_sandwichBadCalib" 132 "a132_seatbackSelfNoCalib" 131 "a131_cushionSelfNoCalib" 130 "a130_sandwichNoCalib" 129 "a129_seatbackSelfShort" 128 "a128_seatbackSelfLow" 127 "a127_seatbackSelfOpen" 126 "a126_cushionSelfShort" 125 "a125_cushionSelfLow" 124 "a124_cushionSelfOpen" 123 "a123_sandwichShort" 122 "a122_sandwichLow" 121 "a121_sandwichOpen" 15 "a015_NVMMAlert" 0 "ALERT_DO_NOT_USE_ZERO" ;
 VAL_ 1429 OCS1P_alertState 1 "SET" 0 "CLEARED" ;
 VAL_ 767 OCS1P_matrixIndex 2 "AlertMatrix2" 0 "AlertMatrix0" ;
@@ -16492,12 +16311,3 @@ VAL_ 1174 UI_gradeCorrectedEnergy -32767 "TRIP_TOO_LONG" -32768 "SNA" ;
 VAL_ 1174 UI_gradeCorrectedEnergyLearned -32767 "TRIP_TOO_LONG" -32768 "SNA" ;
 VAL_ 1175 UI_battPreconditionOnNavTime 65535 "SNA" 65534 "MAXVAL" ;
 VAL_ 1175 UI_maxBattPreconditionOnNavTime 65535 "SNA" 65534 "MAXVAL" ;
-VAL_ 649 VCLEFT_logging10HzIndex 1 "END" 0 "HVAC_VARS" ;
-VAL_ 649 VCLEFT_hvacBlowerRs 255 "SNA" ;
-VAL_ 649 VCLEFT_hvacBlowerIPhase0 127 "SNA" ;
-VAL_ 649 VCLEFT_hvacBlowerIPhase1 127 "SNA" ;
-VAL_ 649 VCLEFT_hvacBlowerIPhase2 127 "SNA" ;
-VAL_ 649 VCLEFT_hvacBlower_IO_CBC_Status 1 "RX" 0 "IDLE" ;
-VAL_ 649 VCLEFT_hvacBlowerCBCEstState 14 "COUNT" 13 "ONLINE" 12 "MOTOR_IDENTIFIED" 11 "ROTOR_RESISTANCE" 10 "INDUCTANCE_EST" 9 "LOCKROTOR" 8 "RAMPDOWN" 7 "RATEDFLUX" 6 "RATEDFLUX_OL" 5 "IDRATED" 4 "RAMPUP" 3 "RS" 2 "ROVERL" 1 "IDLE" 0 "ERROR" ;
-VAL_ 649 VCLEFT_hvacBlowerCBCCtrlState 4 "COUNT" 3 "ONLINE" 2 "OFFLINE" 1 "IDLE" 0 "ERROR" ;
-VAL_ 649 VCLEFT_hvacBlowerITerm 127 "SNA" ;

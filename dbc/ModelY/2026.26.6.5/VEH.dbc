@@ -11633,6 +11633,12 @@ BO_ 659 UI_chassisControl: 8 GTW
  SG_ UI_chassisControlCounter : 52|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ UI_chassisControlChecksum : 56|8@1+ (1,0) [0|255] "" Vector__XXX
 
+BO_ 531 UI_cruiseControl: 2 GTW
+ SG_ UI_cruiseSpeedCommand : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ UI_smartSummonRequest : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ UI_cruiseControlCounter : 4|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ UI_cruiseControlChecksum : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+
 BO_ 1280 UI_debugECU: 2 GTW
  SG_ UI_debugEcuTarget M : 0|5@1+ (1,0) [0|31] "" Vector__XXX
  SG_ UI_DI_debugEnable m1 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -27327,6 +27333,7 @@ BO_TX_BU_ 1657 : GTW;
 BO_TX_BU_ 1021 : GTW;
 BO_TX_BU_ 819 : GTW;
 BO_TX_BU_ 659 : GTW;
+BO_TX_BU_ 531 : GTW;
 BO_TX_BU_ 1280 : GTW;
 BO_TX_BU_ 2043 : GTW;
 BO_TX_BU_ 568 : GTW;
@@ -38918,6 +38925,11 @@ CM_ SG_ 659 UI_redLightStopSignEnable "Touchscreen user interface computer: red 
 CM_ SG_ 659 UI_selfParkTune "Touchscreen user interface computer: self park tune; raw 15 = signal not available (SNA)";
 CM_ SG_ 659 UI_chassisControlCounter "Touchscreen user interface computer: chassis control counter";
 CM_ SG_ 659 UI_chassisControlChecksum "Touchscreen user interface computer: chassis control checksum";
+CM_ BO_ 531 "Touchscreen user interface computer message: cruise control; forwarded onto this bus by the gateway; layout from firmware 2025.20.8, the layout the frames on this bus follow; frame length observed on a vehicle bus";
+CM_ SG_ 531 UI_cruiseSpeedCommand "User command to change the cruise set speed.";
+CM_ SG_ 531 UI_smartSummonRequest "Touchscreen user interface computer: smart summon request";
+CM_ SG_ 531 UI_cruiseControlCounter "Touchscreen user interface computer: cruise control counter";
+CM_ SG_ 531 UI_cruiseControlChecksum "Touchscreen user interface computer: cruise control checksum";
 CM_ BO_ 1280 "Touchscreen user interface computer message: debug ECU; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus";
 CM_ SG_ 1280 UI_debugEcuTarget "Touchscreen user interface computer: debug ecu target";
 CM_ SG_ 1280 UI_DI_debugEnable "Touchscreen user interface computer: DI debug enable";
@@ -54987,6 +54999,9 @@ BA_ "VFrameFormat" BO_ 819 0;
 BA_ "GenMsgCycleTime" BO_ 659 500;
 BA_ "GenMsgSendType" BO_ 659 0;
 BA_ "VFrameFormat" BO_ 659 0;
+BA_ "GenMsgCycleTime" BO_ 531 500;
+BA_ "GenMsgSendType" BO_ 531 0;
+BA_ "VFrameFormat" BO_ 531 0;
 BA_ "GenMsgCycleTime" BO_ 1280 5000;
 BA_ "GenMsgSendType" BO_ 1280 0;
 BA_ "VFrameFormat" BO_ 1280 0;
@@ -68062,6 +68077,10 @@ BA_ "Confidence" SG_ 659 UI_selfParkTune 1;
 BA_ "GenSigSNA" SG_ 659 UI_selfParkTune "15";
 BA_ "Confidence" SG_ 659 UI_chassisControlCounter 0;
 BA_ "Confidence" SG_ 659 UI_chassisControlChecksum 0;
+BA_ "Confidence" SG_ 531 UI_cruiseSpeedCommand 1;
+BA_ "Confidence" SG_ 531 UI_smartSummonRequest 1;
+BA_ "Confidence" SG_ 531 UI_cruiseControlCounter 1;
+BA_ "Confidence" SG_ 531 UI_cruiseControlChecksum 0;
 BA_ "Confidence" SG_ 1280 UI_debugEcuTarget 1;
 BA_ "Confidence" SG_ 1280 UI_DI_debugEnable 2;
 BA_ "Confidence" SG_ 1280 UI_DIS_debugEnable 2;
@@ -89501,6 +89520,7 @@ VAL_ 659 UI_pedalSafetyEnable 3 "SNA" 1 "PEDAL_SAFETY_ON" 0 "PEDAL_SAFETY_OFF" ;
 VAL_ 659 UI_pedalMap_epas 2 "PERFORMANCE" 1 "SPORT" 0 "CHILL" ;
 VAL_ 659 UI_redLightStopSignEnable 3 "SNA" 1 "RLSSW_ON" 0 "RLSSW_OFF" ;
 VAL_ 659 UI_selfParkTune 15 "SNA" ;
+VAL_ 531 UI_cruiseSpeedCommand 6 "CRUISE_SPEED_SNAP_SPEEDO" 5 "CRUISE_SPEED_SNAP" 4 "CRUISE_SPEED_DEC_LONG" 3 "CRUISE_SPEED_DEC_SHORT" 2 "CRUISE_SPEED_INC_LONG" 1 "CRUISE_SPEED_INC_SHORT" 0 "CRUISE_SPEED_IDLE" ;
 VAL_ 1280 UI_debugEcuTarget 21 "PMRE2" 20 "PMRE2L" 19 "PMRE1L" 18 "DIRE2" 17 "DIRE1R" 16 "DIRE1L" 15 "PMRER" 14 "PMREL" 13 "DIRER" 12 "DIREL" 11 "PMR" 10 "PMF" 9 "DIR" 8 "DIF" 7 "VCFRONT" 6 "VCRIGHT" 5 "BMS" 4 "PMS" 3 "PM" 2 "DIS" 1 "DI" ;
 VAL_ 2043 UI_debugDampingRequestFLC 255 "SNA" ;
 VAL_ 2043 UI_debugDampingRequestFLR 255 "SNA" ;

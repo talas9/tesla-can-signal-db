@@ -1,0 +1,2 @@
+fw,bus,can_id,message,layout_fw,reason
+2026.26.6.5,VEH,531,UI_cruiseControl,2025.20.8,2-byte on-bus frames follow this layout: the counter steps and the checksum matches on every frame of two Model 3 logs and one Model Y log

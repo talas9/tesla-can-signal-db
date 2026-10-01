@@ -22,6 +22,7 @@ All 30 messages of the Left body controller (VCLEFT) documented for Tesla Model 
 | [`VCLEFT_liftgateStatus`](veh/vcleft/vcleft_liftgatestatus.md) | VEH | 0x142 | 8 | 50 ms | 22 |
 | [`VCLEFT_lightStatus`](veh/vcleft/vcleft_lightstatus.md) | VEH | 0x3E2 | 7 | 200 ms | 27 |
 | [`VCLEFT_logging0point1Hz`](veh/vcleft/vcleft_logging0point1hz.md) | VEH | 0x70A | 5 | 10000 ms | 6 |
+| [`VCLEFT_logging10Hz`](veh/vcleft/vcleft_logging10hz.md) | VEH | 0x289 | 8 | 100 ms | 15 |
 | [`VCLEFT_logging1Hz`](veh/vcleft/vcleft_logging1hz.md) | VEH | 0x3A8 | 8 | 200 ms | 16 |
 | [`VCLEFT_pitchEstimation`](veh/vcleft/vcleft_pitchestimation.md) | VEH | 0x2D7 | 4 | 1000 ms | 6 |
 | [`VCLEFT_recallStatus`](veh/vcleft/vcleft_recallstatus.md) | VEH | 0x744 | 1 | 1000 ms | 4 |
@@ -39,7 +40,6 @@ All 30 messages of the Left body controller (VCLEFT) documented for Tesla Model 
 | [`VCLEFT_doorStatus`](party/vcleft/vcleft_doorstatus.md) | PARTY | 0x102 | 8 | 100 ms | 25 |
 | [`VCLEFT_epbmStatus`](party/vcleft/vcleft_epbmstatus.md) | PARTY | 0x222 | 8 | 100 ms | 7 |
 | [`VCLEFT_restraintStatus`](party/vcleft/vcleft_restraintstatus.md) | PARTY | 0x30A | 8 | 50 ms | 12 |
-| [`VCLEFT_logging10Hz`](eth/vcleft/vcleft_logging10hz.md) | ETH | 0x289 | 8 | 100 ms | 15 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
 
