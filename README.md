@@ -66,7 +66,7 @@ dbc/
   ModelY/<firmware>/{VEH,CH,PARTY}.dbc         Model Y: every message its gateway routes
   AllModels/<firmware>/{VEH,CH,PARTY}.dbc      union of Model 3 and Model Y
   <model>/<firmware>/ETH.dbc                   messages with no known CAN route
-  Bayberry/<firmware>/<BUS>.dbc                product codename, model not confirmed
+  Bayberry/<firmware>/<BUS>.dbc                Model Y (2025+ / Juniper), independent mapping
   GoldenSnitch/<firmware>/<BUS>.dbc            product codename, model not confirmed
   <firmware>/ETH.dbc                           every message, Ethernet-side ids (see below)
 ```
@@ -98,10 +98,44 @@ ids. Two kinds of file use those ids and must not be used on a CAN bus:
 map and hold every message that model's gateway routes, with all its signals.
 Load the file for your car and bus, for example
 `Model3/2026.26.6.5/VEH.dbc`. `AllModels` is the union of both; no CAN id
-maps to a different message between the two models. `Bayberry` and
-`GoldenSnitch` are product codenames whose model is not confirmed. Their
-folders hold only the signals with per-product evidence, keyed with the
-union map.
+maps to a different message between the two models. `Bayberry` is associated
+with Model Y (2025+ / Juniper) by an independent app mapping; `GoldenSnitch`
+remains unidentified. Their folders retain the original product codenames
+and hold only the signals with per-product evidence, keyed with the union map.
+
+### Vehicle names and original codenames
+
+Original names are retained separately from model translations. A name in
+this table does not imply that a DBC folder or CAN routing map exists for it.
+
+| Translated model / meaning | Original codename / product name | Evidence / status |
+|---|---|---|
+| Model 3 | `Model3` | Firmware product name |
+| Model Y | `ModelY` | Firmware product name |
+| Model S | `Lychee` | Model/platform mapping in firmware 2021.12.4.9 |
+| Model X | `Tamarind` | Model/platform mapping in firmware 2021.12.4.9 |
+| Model 3 (2024+ / Highland) | `Poppyseed` | Independent app mapping [1]; firmware enum includes `M3_POPPYSEED_2024` |
+| Model Y (2025+ / Juniper), Premium / Performance | `Bayberry` | Independent app mapping [2]; earlier Model X guess is not supported |
+| Unidentified | `GoldenSnitch` | Model/year unresolved; firmware 2026.26.6.5 groups it with the `3Y` platform |
+| Shared Model S/X refresh platform | `Palladium` / `P2` | Tesla bulletin covers Model S and Model X Palladium and lists a P2 diagnostic kit [3] |
+| Diagnostic network namespace; vehicle model unresolved | `Coriander` | Firmware 2021.12.4.9 references it from both Lychee and Tamarind; not a direct vehicle-model translation |
+
+[1] [Poppyseed app rule](https://github.com/koenhendriks/tesla-model-extractor/blob/main/src/tesla_model_extractor/rules/poppyseed.yaml)
+identifies Model 3 (2024+ Highland).
+
+[2] [Bayberry app rule](https://github.com/koenhendriks/tesla-model-extractor/blob/main/src/tesla_model_extractor/rules/bayberry.yaml)
+identifies Model Y (2025+) Premium / Performance and lists `juniper` as an alias.
+These are independent community mappings, not Tesla-official model declarations.
+
+[3] [Tesla service bulletin SB-22-40-003](https://service.tesla.com/docs/ServiceBulletins/External/SB/SB-22-40-003_Inspect_Plaid_Rear_Drive_Unit_Gearbox_Fluid.pdf),
+page 1, confirms Palladium terminology applies to both Model S and Model X.
+
+`Highland` and `Juniper` are refresh aliases in the independent mappings;
+`Palladium`/`P2` describes a shared platform context, while `Coriander` has a
+diagnostic namespace context. These names are not proven to form a single
+parent/child hierarchy. The literal expansion "Palladium 2" is not established
+by the cited bulletin. A proposed newest-Model-S identity for `GoldenSnitch`
+remains an unconfirmed low-confidence guess; no model translation is assigned.
 
 **Frame lengths.** On a CAN bus a frame can be shorter than the
 Ethernet-side layout. When a frame length has been observed on a recorded
