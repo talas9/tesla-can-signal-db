@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_driverAssistRoadSign (0x218) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Touchscreen user interface computer message: driver assist road sign. Tesla Model 3 / Model Y CAN bus message UI_driverAssistRoadSign (0x218) of Touchscreen user interface computer, firmware 2025.20.8, 20 signals (UI_roadSign, UI_splineLocConfidence, UI_splineID, UI_roadSignCounter and 16 more). Bit layout, scaling, units and value tables."
+title: "UI_driverAssistRoadSign (0x218) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Touchscreen user interface computer message: driver assist road sign. Tesla Model 3 / Model Y (union) CAN bus message UI_driverAssistRoadSign (0x218) of Touchscreen user interface computer, firmware 2025.20.8, 20 signals (UI_roadSign, UI_splineLocConfidence, UI_splineID, UI_roadSignCounter and 16 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_driverAssistRoadSign (0x218) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# UI_driverAssistRoadSign (0x218) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Touchscreen user interface computer message: driver assist road sign; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 20 signals of UI_driverAssistRoadSign as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Touchscreen user interface computer message: driver assist road sign; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 20 signals of UI_driverAssistRoadSign as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: driver assist road sign; forwarded 
 | Message name | `UI_driverAssistRoadSign` |
 | CAN id | 0x218 (536) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: driver assist road sign; forwarded 
 
 ## Signals of UI_driverAssistRoadSign
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_driverAssistRoadSign`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_driverAssistRoadSign`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -56,7 +58,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_driverAssistRoadSign`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

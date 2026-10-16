@@ -16,6 +16,8 @@ HCMR ECU message: info; frame length observed on a vehicle bus. This page docume
 | CAN id | 0x7BC (1980) |
 | ECU | [HCMR ECU](../../hcmr.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | HCMR |

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "UMC ECU (UMC) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y UMC CAN bus messages and signals of the UMC ECU (UMC) for firmware 2026.26.6.5: 3 messages, 93 signals with bit layout, scaling and value tables."
+title: "UMC ECU (UMC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) UMC CAN bus messages and signals of the UMC ECU (UMC) for firmware 2026.26.6.5: 3 messages, 93 signals with bit layout, scaling and value tables."
 ---
 
-# UMC ECU (UMC) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# UMC ECU (UMC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 3 messages of the UMC ECU (UMC) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 3 messages of the UMC ECU (UMC) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -15,4 +17,3 @@ All 3 messages of the UMC ECU (UMC) documented for Tesla Model 3 / Model Y firmw
 | [`UMC_smartAdapterInfo`](veh/umc/umc_smartadapterinfo.md) | VEH | 0x505 | 8 | 100 ms | 9 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

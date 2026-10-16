@@ -8,10 +8,11 @@ description: "Tesla Model 3 TRCM CAN bus messages and signals of the TRCM ECU (T
 
 All 2 messages of the TRCM ECU (TRCM) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`TRCM_alertLog`](eth/trcm/trcm_alertlog.md) | ETH | 0x512 | 8 |  | 334 |
 | [`TRCM_alertMatrix`](eth/trcm/trcm_alertmatrix.md) | ETH | 0x7EE | 8 | 100 ms | 551 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

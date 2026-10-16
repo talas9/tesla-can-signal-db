@@ -16,6 +16,8 @@ Driver assistance computer message: autonomy control; frame length from the layo
 | CAN id | 0x20E (526) |
 | ECU | [Driver assistance computer](../../das.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DAS |

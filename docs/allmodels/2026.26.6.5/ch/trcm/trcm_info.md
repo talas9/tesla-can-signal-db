@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TRCM_info (0x352) — TRCM ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "TRCM ECU message: info. Tesla Model 3 / Model Y CAN bus message TRCM_info (0x352) of TRCM ECU, firmware 2026.26.6.5, 14 signals (TRCM_infoIndex, TRCM_infoBuildType, TRCM_infoBuildConfigId, TRCM_infoHardwareId and 10 more). Bit layout, scaling, units and value tables."
+title: "TRCM_info (0x352) — TRCM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "TRCM ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message TRCM_info (0x352) of TRCM ECU, firmware 2026.26.6.5, 14 signals (TRCM_infoIndex, TRCM_infoBuildType, TRCM_infoBuildConfigId, TRCM_infoHardwareId and 10 more). Bit layout, scaling, units and value tables."
 ---
 
-# TRCM_info (0x352) — TRCM ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# TRCM_info (0x352) — TRCM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-TRCM ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 14 signals of TRCM_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+TRCM ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 14 signals of TRCM_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ TRCM ECU message: info; frame length from the layout, not yet observed on a vehi
 | Message name | `TRCM_info` |
 | CAN id | 0x352 (850) |
 | ECU | [TRCM ECU](../../trcm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | TRCM |
@@ -25,7 +27,7 @@ TRCM ECU message: info; frame length from the layout, not yet observed on a vehi
 
 ## Signals of TRCM_info
 
-Tesla Model 3 / Model Y CAN bus signals in `TRCM_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TRCM_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -50,7 +52,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TRCM_info`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

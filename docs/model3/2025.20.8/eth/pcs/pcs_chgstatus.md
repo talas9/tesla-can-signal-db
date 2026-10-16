@@ -16,6 +16,8 @@ Power conversion system (on-board charger and DC-DC converter) message: chg stat
 | Ethernet-side id | 0x204 (516) |
 | ECU | [Power conversion system (on-board charger and DC-DC converter)](../../pcs.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | PCS |

@@ -16,6 +16,8 @@ USM ECU message: alert matrix; frame length from the layout, not yet observed on
 | CAN id | 0x3BA (954) |
 | ECU | [USM ECU](../../usm.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | USM |

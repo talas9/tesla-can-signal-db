@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCM_info (0x351) — Restraint control module, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Restraint control module message: info. Tesla Model 3 / Model Y CAN bus message RCM_info (0x351) of Restraint control module, firmware 2026.26.6.5, 11 signals (RCM_infoIndex, RCM_infoBuildType, RCM_infoComponentID, RCM_infoPcbaID and 7 more). Bit layout, scaling, units and value tables."
+title: "RCM_info (0x351) — Restraint control module, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Restraint control module message: info. Tesla Model 3 / Model Y (union) CAN bus message RCM_info (0x351) of Restraint control module, firmware 2026.26.6.5, 11 signals (RCM_infoIndex, RCM_infoBuildType, RCM_infoComponentID, RCM_infoPcbaID and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCM_info (0x351) — Restraint control module, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# RCM_info (0x351) — Restraint control module, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Restraint control module message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of RCM_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Restraint control module message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of RCM_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Restraint control module message: info; frame length from the layout, not yet ob
 | Message name | `RCM_info` |
 | CAN id | 0x351 (849) |
 | ECU | [Restraint control module](../../rcm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCM |
@@ -25,7 +27,7 @@ Restraint control module message: info; frame length from the layout, not yet ob
 
 ## Signals of RCM_info
 
-Tesla Model 3 / Model Y CAN bus signals in `RCM_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCM_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM_info`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

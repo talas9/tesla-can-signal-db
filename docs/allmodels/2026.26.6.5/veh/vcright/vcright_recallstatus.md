@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_recallStatus (0x743) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Right body controller message: recall status. Tesla Model 3 / Model Y CAN bus message VCRIGHT_recallStatus (0x743) of Right body controller, firmware 2026.26.6.5, 3 signals (VCRIGHT_systemRecallStatus, VCRIGHT_seatRecallStatus, VCRIGHT_mirrorRecallStatus). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_recallStatus (0x743) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Right body controller message: recall status. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_recallStatus (0x743) of Right body controller, firmware 2026.26.6.5, 3 signals (VCRIGHT_systemRecallStatus, VCRIGHT_seatRecallStatus, VCRIGHT_mirrorRecallStatus). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_recallStatus (0x743) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCRIGHT_recallStatus (0x743) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Right body controller message: recall status; frame length observed on a vehicle bus. This page documents the 3 signals of VCRIGHT_recallStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Right body controller message: recall status; frame length observed on a vehicle bus. This page documents the 3 signals of VCRIGHT_recallStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: recall status; frame length observed on a vehicle
 | Message name | `VCRIGHT_recallStatus` |
 | CAN id | 0x743 (1859) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: recall status; frame length observed on a vehicle
 
 ## Signals of VCRIGHT_recallStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_recallStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_recallStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -35,7 +37,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_recallStatus`: start bit and
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

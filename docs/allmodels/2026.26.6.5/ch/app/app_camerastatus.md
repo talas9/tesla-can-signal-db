@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_cameraStatus (0x410) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (primary) message: camera status. Tesla Model 3 / Model Y CAN bus message APP_cameraStatus (0x410) of Driver assistance computer (primary), firmware 2026.26.6.5, 11 signals (APP_backupCameraFeedGood, APP_backupCameraFrameRate, APP_cameraBlockedFrontMain, APP_cameraBlockedFrontFisheye and 7 more). Bit layout, scaling, units and value tables."
+title: "APP_cameraStatus (0x410) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (primary) message: camera status. Tesla Model 3 / Model Y (union) CAN bus message APP_cameraStatus (0x410) of Driver assistance computer (primary), firmware 2026.26.6.5, 11 signals (APP_backupCameraFeedGood, APP_backupCameraFrameRate, APP_cameraBlockedFrontMain, APP_cameraBlockedFrontFisheye and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_cameraStatus (0x410) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APP_cameraStatus (0x410) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (primary) message: camera status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of APP_cameraStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (primary) message: camera status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of APP_cameraStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: camera status; frame length from t
 | Message name | `APP_cameraStatus` |
 | CAN id | 0x410 (1040) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: camera status; frame length from t
 
 ## Signals of APP_cameraStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_cameraStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_cameraStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_cameraStatus`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

@@ -16,6 +16,8 @@ Vehicle security controller message: device status; frame length from the layout
 | CAN id | 0x359 (857) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |

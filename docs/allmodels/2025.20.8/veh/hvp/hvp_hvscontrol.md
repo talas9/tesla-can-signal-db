@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HVP_hvsControl (0x22A) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "High-voltage processor (pack contactor and isolation controller) message: hvs control. Tesla Model 3 / Model Y CAN bus message HVP_hvsControl (0x22A) of High-voltage processor (pack contactor and isolation controller), firmware 2025.20.8, 5 signals (HVP_dcLinkVoltageRequest, HVP_pcsControlRequest, HVP_pcsChargeHwEnabled, HVP_pcsDcdcHwEnabled and 1 more). Bit layout, scaling, units and value tables."
+title: "HVP_hvsControl (0x22A) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "High-voltage processor (pack contactor and isolation controller) message: hvs control. Tesla Model 3 / Model Y (union) CAN bus message HVP_hvsControl (0x22A) of High-voltage processor (pack contactor and isolation controller), firmware 2025.20.8, 5 signals (HVP_dcLinkVoltageRequest, HVP_pcsControlRequest, HVP_pcsChargeHwEnabled, HVP_pcsDcdcHwEnabled and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# HVP_hvsControl (0x22A) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# HVP_hvsControl (0x22A) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-High-voltage processor (pack contactor and isolation controller) message: hvs control; frame length observed on a vehicle bus. This page documents the 5 signals of HVP_hvsControl as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+High-voltage processor (pack contactor and isolation controller) message: hvs control; frame length observed on a vehicle bus. This page documents the 5 signals of HVP_hvsControl as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ High-voltage processor (pack contactor and isolation controller) message: hvs co
 | Message name | `HVP_hvsControl` |
 | CAN id | 0x22A (554) |
 | ECU | [High-voltage processor (pack contactor and isolation controller)](../../hvp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | HVP |
@@ -25,7 +27,7 @@ High-voltage processor (pack contactor and isolation controller) message: hvs co
 
 ## Signals of HVP_hvsControl
 
-Tesla Model 3 / Model Y CAN bus signals in `HVP_hvsControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `HVP_hvsControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -37,7 +39,7 @@ Tesla Model 3 / Model Y CAN bus signals in `HVP_hvsControl`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

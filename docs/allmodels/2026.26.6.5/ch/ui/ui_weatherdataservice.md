@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_weatherDataService (0x621) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Touchscreen user interface computer message: weather data service. Tesla Model 3 / Model Y CAN bus message UI_weatherDataService (0x621) of Touchscreen user interface computer, firmware 2026.26.6.5, 10 signals (UI_weatherSvcTimeSinceLast, UI_weatherSvcWindDir, UI_weatherSvcTemperature, UI_weatherSvcHumidity and 6 more). Bit layout, scaling, units and value tables."
+title: "UI_weatherDataService (0x621) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Touchscreen user interface computer message: weather data service. Tesla Model 3 / Model Y (union) CAN bus message UI_weatherDataService (0x621) of Touchscreen user interface computer, firmware 2026.26.6.5, 10 signals (UI_weatherSvcTimeSinceLast, UI_weatherSvcWindDir, UI_weatherSvcTemperature, UI_weatherSvcHumidity and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_weatherDataService (0x621) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# UI_weatherDataService (0x621) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Touchscreen user interface computer message: weather data service; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of UI_weatherDataService as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Touchscreen user interface computer message: weather data service; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of UI_weatherDataService as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: weather data service; forwarded ont
 | Message name | `UI_weatherDataService` |
 | CAN id | 0x621 (1569) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: weather data service; forwarded ont
 
 ## Signals of UI_weatherDataService
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_weatherDataService`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_weatherDataService`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -42,7 +44,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_weatherDataService`: start bit an
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

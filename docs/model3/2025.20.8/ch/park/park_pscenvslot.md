@@ -16,6 +16,8 @@ Parking assist sensors message: psc env slot; frame length from the layout, not 
 | CAN id | 0x25E (606) |
 | ECU | [Parking assist sensors](../../park.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |

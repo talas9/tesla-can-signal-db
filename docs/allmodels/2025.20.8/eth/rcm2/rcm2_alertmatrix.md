@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCM2_alertMatrix (0x3F1) — RCM2 ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "RCM2 ECU message: alert matrix. Ethernet-side message RCM2_alertMatrix of RCM2 ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 653 signals (RCM2_matrixIndex, RCM2_a000_crashDetected, RCM2_a001_nearDeploy, RCM2_a002_airbagsUnArmed and 649 more). Bit layout, scaling, units and value tables."
+title: "RCM2_alertMatrix (0x3F1) — RCM2 ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "RCM2 ECU message: alert matrix. Ethernet-side message RCM2_alertMatrix of RCM2 ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 653 signals (RCM2_matrixIndex, RCM2_a000_crashDetected, RCM2_a001_nearDeploy, RCM2_a002_airbagsUnArmed and 649 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCM2_alertMatrix (0x3F1) — RCM2 ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# RCM2_alertMatrix (0x3F1) — RCM2 ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-RCM2 ECU message: alert matrix. This page documents the 653 signals of RCM2_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+RCM2 ECU message: alert matrix. This page documents the 653 signals of RCM2_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ RCM2 ECU message: alert matrix. This page documents the 653 signals of RCM2_aler
 | Message name | `RCM2_alertMatrix` |
 | Ethernet-side id | 0x3F1 (1009) |
 | ECU | [RCM2 ECU](../../rcm2.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | RCM2 |
@@ -25,7 +27,7 @@ RCM2 ECU message: alert matrix. This page documents the 653 signals of RCM2_aler
 
 ## Signals of RCM2_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `RCM2_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCM2_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -689,7 +691,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM2_alertMatrix`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

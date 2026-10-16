@@ -16,6 +16,8 @@ UMC ECU message: alert log. This page documents the 42 signals of UMC_alertLog a
 | Ethernet-side id | 0x5FD (1533) |
 | ECU | [UMC ECU](../../umc.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UMC |

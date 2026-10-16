@@ -16,6 +16,8 @@ Electronic stability control message: uds response; frame length from the layout
 | CAN id | 0x655 (1621) |
 | ECU | [Electronic stability control](../../esp.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | ESP |

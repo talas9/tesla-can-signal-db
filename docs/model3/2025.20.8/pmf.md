@@ -8,6 +8,8 @@ description: "Tesla Model 3 PMF CAN bus messages and signals of the PMF ECU (PMF
 
 All 7 messages of the PMF ECU (PMF) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PMF_info`](veh/pmf/pmf_info.md) | VEH | 0x316 | 8 | 1000 ms | 16 |
@@ -19,4 +21,3 @@ All 7 messages of the PMF ECU (PMF) documented for Tesla Model 3 firmware 2025.2
 | [`PMF_udsResponse`](eth/pmf/pmf_udsresponse.md) | ETH | 0x654 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

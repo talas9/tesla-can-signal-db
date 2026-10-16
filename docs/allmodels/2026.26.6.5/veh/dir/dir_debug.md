@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIR_debug (0x7D5) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Rear drive inverter message: debug. Tesla Model 3 / Model Y CAN bus message DIR_debug (0x7D5) of Rear drive inverter, firmware 2026.26.6.5, 79 signals (DIR_debugSelector, DIR_motorIA, DIR_motorIB, DIR_motorIC and 75 more). Bit layout, scaling, units and value tables."
+title: "DIR_debug (0x7D5) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Rear drive inverter message: debug. Tesla Model 3 / Model Y (union) CAN bus message DIR_debug (0x7D5) of Rear drive inverter, firmware 2026.26.6.5, 79 signals (DIR_debugSelector, DIR_motorIA, DIR_motorIB, DIR_motorIC and 75 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIR_debug (0x7D5) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DIR_debug (0x7D5) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Rear drive inverter message: debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 79 signals of DIR_debug as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Rear drive inverter message: debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 79 signals of DIR_debug as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Rear drive inverter message: debug; frame length from the layout, not yet observ
 | Message name | `DIR_debug` |
 | CAN id | 0x7D5 (2005) |
 | ECU | [Rear drive inverter](../../dir.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DIR |
@@ -25,7 +27,7 @@ Rear drive inverter message: debug; frame length from the layout, not yet observ
 
 ## Signals of DIR_debug
 
-Tesla Model 3 / Model Y CAN bus signals in `DIR_debug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIR_debug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -115,7 +117,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_debug`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

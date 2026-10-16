@@ -16,6 +16,8 @@ Tire pressure monitoring message: info; frame length from the layout, not yet ob
 | CAN id | 0x5EF (1519) |
 | ECU | [Tire pressure monitoring](../../tpms.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | TPMS |

@@ -8,6 +8,8 @@ description: "Tesla Model Y TCU CAN bus messages and signals of the TCU ECU (TCU
 
 All 4 messages of the TCU ECU (TCU) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`TCU_alertLog`](eth/tcu/tcu_alertlog.md) | ETH | 0x582 | 8 |  | 7 |
@@ -16,4 +18,3 @@ All 4 messages of the TCU ECU (TCU) documented for Tesla Model Y firmware 2025.2
 | [`TCU_status`](eth/tcu/tcu_status.md) | ETH | 0x580 | 8 | 1000 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

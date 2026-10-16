@@ -16,6 +16,8 @@ Parking assist sensors message: sensor status rear; frame length from the layout
 | CAN id | 0x33E (830) |
 | ECU | [Parking assist sensors](../../park.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIF_hvStatus (0x27A) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front drive inverter message: hv status. Tesla Model 3 / Model Y CAN bus message DIF_hvStatus (0x27A) of Front drive inverter, firmware 2026.26.6.5, 15 signals (DIF_hvStatusChecksum, DIF_hvStatusCounter, DIF_hvilCurrent, DIF_hvilCmVoltage and 11 more). Bit layout, scaling, units and value tables."
+title: "DIF_hvStatus (0x27A) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front drive inverter message: hv status. Tesla Model 3 / Model Y (union) CAN bus message DIF_hvStatus (0x27A) of Front drive inverter, firmware 2026.26.6.5, 15 signals (DIF_hvStatusChecksum, DIF_hvStatusCounter, DIF_hvilCurrent, DIF_hvilCmVoltage and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIF_hvStatus (0x27A) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DIF_hvStatus (0x27A) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front drive inverter message: hv status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of DIF_hvStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front drive inverter message: hv status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of DIF_hvStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front drive inverter message: hv status; frame length from the layout, not yet o
 | Message name | `DIF_hvStatus` |
 | CAN id | 0x27A (634) |
 | ECU | [Front drive inverter](../../dif.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DIF |
@@ -25,7 +27,7 @@ Front drive inverter message: hv status; frame length from the layout, not yet o
 
 ## Signals of DIF_hvStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DIF_hvStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIF_hvStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIF_hvStatus`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

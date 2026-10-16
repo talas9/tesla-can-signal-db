@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SCCM_rightStalk (0x229) — Steering column control module, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Steering column control module message: right stalk. Tesla Model 3 / Model Y CAN bus message SCCM_rightStalk (0x229) of Steering column control module, firmware 2025.20.8, 6 signals (SCCM_rightStalkCrc, SCCM_rightStalkCounter, SCCM_rightStalkStatus, SCCM_rightStalkReserved1 and 2 more). Bit layout, scaling, units and value tables."
+title: "SCCM_rightStalk (0x229) — Steering column control module, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Steering column control module message: right stalk. Tesla Model 3 / Model Y (union) CAN bus message SCCM_rightStalk (0x229) of Steering column control module, firmware 2025.20.8, 6 signals (SCCM_rightStalkCrc, SCCM_rightStalkCounter, SCCM_rightStalkStatus, SCCM_rightStalkReserved1 and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# SCCM_rightStalk (0x229) — Steering column control module, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# SCCM_rightStalk (0x229) — Steering column control module, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Steering column control module message: right stalk; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of SCCM_rightStalk as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Steering column control module message: right stalk; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of SCCM_rightStalk as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Steering column control module message: right stalk; frame length from the layou
 | Message name | `SCCM_rightStalk` |
 | CAN id | 0x229 (553) |
 | ECU | [Steering column control module](../../sccm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCCM |
@@ -25,7 +27,7 @@ Steering column control module message: right stalk; frame length from the layou
 
 ## Signals of SCCM_rightStalk
 
-Tesla Model 3 / Model Y CAN bus signals in `SCCM_rightStalk`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SCCM_rightStalk`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SCCM_rightStalk`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

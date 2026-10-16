@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Driver assistance computer (primary) message: VC info message. Tesla Model 3 / Model Y CAN bus message APP_VC_infoMessage (0x38D) of Driver assistance computer (primary), firmware 2026.26.6.5, 23 signals (APP_inTunnel, APP_windshieldHeaterOnReason, APP_selfieCameraBlocked, APP_selfieCameraLUX and 19 more). Bit layout, scaling, units and value tables."
+title: "APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Driver assistance computer (primary) message: VC info message. Tesla Model 3 / Model Y (union) CAN bus message APP_VC_infoMessage (0x38D) of Driver assistance computer (primary), firmware 2026.26.6.5, 23 signals (APP_inTunnel, APP_windshieldHeaterOnReason, APP_selfieCameraBlocked, APP_selfieCameraLUX and 19 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Driver assistance computer (primary) message: VC info message; frame length observed on a vehicle bus. This page documents the 23 signals of APP_VC_infoMessage as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Driver assistance computer (primary) message: VC info message; frame length observed on a vehicle bus. This page documents the 23 signals of APP_VC_infoMessage as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: VC info message; frame length obse
 | Message name | `APP_VC_infoMessage` |
 | CAN id | 0x38D (909) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: VC info message; frame length obse
 
 ## Signals of APP_VC_infoMessage
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_VC_infoMessage`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_VC_infoMessage`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -55,7 +57,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_VC_infoMessage`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

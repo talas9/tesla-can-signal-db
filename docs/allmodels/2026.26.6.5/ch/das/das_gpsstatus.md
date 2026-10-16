@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_gpsStatus (0x3CA) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer message: gps status. Tesla Model 3 / Model Y CAN bus message DAS_gpsStatus (0x3CA) of Driver assistance computer, firmware 2026.26.6.5, 48 signals (DAS_gpsStatusMultiplexer, DAS_gpsTransportModeState, DAS_gpsSatsInUseHardware, DAS_gpsRejectingSatData and 44 more). Bit layout, scaling, units and value tables."
+title: "DAS_gpsStatus (0x3CA) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer message: gps status. Tesla Model 3 / Model Y (union) CAN bus message DAS_gpsStatus (0x3CA) of Driver assistance computer, firmware 2026.26.6.5, 48 signals (DAS_gpsStatusMultiplexer, DAS_gpsTransportModeState, DAS_gpsSatsInUseHardware, DAS_gpsRejectingSatData and 44 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_gpsStatus (0x3CA) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# DAS_gpsStatus (0x3CA) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer message: gps status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 48 signals of DAS_gpsStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer message: gps status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 48 signals of DAS_gpsStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: gps status; frame length from the layout, no
 | Message name | `DAS_gpsStatus` |
 | CAN id | 0x3CA (970) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: gps status; frame length from the layout, no
 
 ## Signals of DAS_gpsStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_gpsStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_gpsStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -84,7 +86,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_gpsStatus`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

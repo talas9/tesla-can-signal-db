@@ -8,6 +8,8 @@ description: "Tesla Model Y EPBR CAN bus messages and signals of the Right elect
 
 All 7 messages of the Right electric parking brake (EPBR) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPBR_alertLog`](veh/epbr/epbr_alertlog.md) | VEH | 0x5A8 | 8 |  | 623 |
@@ -19,4 +21,3 @@ All 7 messages of the Right electric parking brake (EPBR) documented for Tesla M
 | [`EPBR_udsResponse`](veh/epbr/epbr_udsresponse.md) | VEH | 0x627 | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

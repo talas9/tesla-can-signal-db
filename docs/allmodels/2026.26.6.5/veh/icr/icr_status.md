@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "ICR_status (0x298) — ICR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "ICR ECU message: status. Tesla Model 3 / Model Y CAN bus message ICR_status (0x298) of ICR ECU, firmware 2026.26.6.5, 8 signals (ICR_sensorMode, ICR_blocked, ICR_booted, ICR_rdMapDumpCompleted and 4 more). Bit layout, scaling, units and value tables."
+title: "ICR_status (0x298) — ICR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "ICR ECU message: status. Tesla Model 3 / Model Y (union) CAN bus message ICR_status (0x298) of ICR ECU, firmware 2026.26.6.5, 8 signals (ICR_sensorMode, ICR_blocked, ICR_booted, ICR_rdMapDumpCompleted and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# ICR_status (0x298) — ICR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# ICR_status (0x298) — ICR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-ICR ECU message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of ICR_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+ICR ECU message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of ICR_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ ICR ECU message: status; frame length from the layout, not yet observed on a veh
 | Message name | `ICR_status` |
 | CAN id | 0x298 (664) |
 | ECU | [ICR ECU](../../icr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | ICR |
@@ -25,7 +27,7 @@ ICR ECU message: status; frame length from the layout, not yet observed on a veh
 
 ## Signals of ICR_status
 
-Tesla Model 3 / Model Y CAN bus signals in `ICR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `ICR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `ICR_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

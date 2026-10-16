@@ -16,6 +16,8 @@ VC ECU message: LVBMS status low; frame length observed on a vehicle bus. This p
 | CAN id | 0x718 (1816) |
 | ECU | [VC ECU](../../vc.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VC |

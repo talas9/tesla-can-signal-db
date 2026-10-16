@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_alertMatrix (0x367) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Drive inverter message: alert matrix. Tesla Model 3 / Model Y CAN bus message DI_alertMatrix (0x367) of Drive inverter, firmware 2026.26.6.5, 220 signals (DI_matrixIndex, DI_a001_frunkSpeedLimitActive, DI_a002_parkButtonDuringStalkReq, DI_a003_suggestedGearOverride and 216 more). Bit layout, scaling, units and value tables."
+title: "DI_alertMatrix (0x367) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Drive inverter message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message DI_alertMatrix (0x367) of Drive inverter, firmware 2026.26.6.5, 220 signals (DI_matrixIndex, DI_a001_frunkSpeedLimitActive, DI_a002_parkButtonDuringStalkReq, DI_a003_suggestedGearOverride and 216 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_alertMatrix (0x367) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DI_alertMatrix (0x367) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Drive inverter message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 220 signals of DI_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Drive inverter message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 220 signals of DI_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: alert matrix; frame length from the layout, not yet obse
 | Message name | `DI_alertMatrix` |
 | CAN id | 0x367 (871) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: alert matrix; frame length from the layout, not yet obse
 
 ## Signals of DI_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -256,7 +258,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_alertMatrix`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

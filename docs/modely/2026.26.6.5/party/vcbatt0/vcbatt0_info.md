@@ -16,6 +16,8 @@ VCBATT0 ECU message: info; frame length from the layout, not yet observed on a v
 | CAN id | 0x652 (1618) |
 | ECU | [VCBATT0 ECU](../../vcbatt0.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCBATT0 |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "UMC ECU message: alert log. Ethernet-side message UMC_alertLog of UMC ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 42 signals (UMC_alertID, UMC_alertType, UMC_a001_groundImpedance, UMC_a002_ccidRmsCurrent and 38 more). Bit layout, scaling, units and value tables."
+title: "UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "UMC ECU message: alert log. Ethernet-side message UMC_alertLog of UMC ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 42 signals (UMC_alertID, UMC_alertType, UMC_a001_groundImpedance, UMC_a002_ccidRmsCurrent and 38 more). Bit layout, scaling, units and value tables."
 ---
 
-# UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-UMC ECU message: alert log. This page documents the 42 signals of UMC_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+UMC ECU message: alert log. This page documents the 42 signals of UMC_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ UMC ECU message: alert log. This page documents the 42 signals of UMC_alertLog a
 | Message name | `UMC_alertLog` |
 | Ethernet-side id | 0x5FD (1533) |
 | ECU | [UMC ECU](../../umc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UMC |
@@ -25,7 +27,7 @@ UMC ECU message: alert log. This page documents the 42 signals of UMC_alertLog a
 
 ## Signals of UMC_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `UMC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UMC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -78,7 +80,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UMC_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

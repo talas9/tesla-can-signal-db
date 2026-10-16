@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SCCM_info (0x330) — Steering column control module, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Steering column control module message: info. Tesla Model 3 / Model Y CAN bus message SCCM_info (0x330) of Steering column control module, firmware 2025.20.8, 18 signals (SCCM_infoIndex, SCCM_infoBuildType, SCCM_infoBuildConfigId, SCCM_infoHardwareId and 14 more). Bit layout, scaling, units and value tables."
+title: "SCCM_info (0x330) — Steering column control module, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Steering column control module message: info. Tesla Model 3 / Model Y (union) CAN bus message SCCM_info (0x330) of Steering column control module, firmware 2025.20.8, 18 signals (SCCM_infoIndex, SCCM_infoBuildType, SCCM_infoBuildConfigId, SCCM_infoHardwareId and 14 more). Bit layout, scaling, units and value tables."
 ---
 
-# SCCM_info (0x330) — Steering column control module, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# SCCM_info (0x330) — Steering column control module, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Steering column control module message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of SCCM_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Steering column control module message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of SCCM_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Steering column control module message: info; frame length from the layout, not 
 | Message name | `SCCM_info` |
 | CAN id | 0x330 (816) |
 | ECU | [Steering column control module](../../sccm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCCM |
@@ -25,7 +27,7 @@ Steering column control module message: info; frame length from the layout, not 
 
 ## Signals of SCCM_info
 
-Tesla Model 3 / Model Y CAN bus signals in `SCCM_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SCCM_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -54,7 +56,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SCCM_info`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

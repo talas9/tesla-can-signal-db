@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "OCS1P_alertLog (0x595) — Occupant classification system, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Occupant classification system message: alert log. Ethernet-side message OCS1P_alertLog of Occupant classification system for Tesla Model 3 / Model Y firmware 2026.26.6.5, 22 signals (OCS1P_alertID, OCS1P_alertState, OCS1P_a121_sandwichFreq, OCS1P_a122_sandwichFreq and 18 more). Bit layout, scaling, units and value tables."
+title: "OCS1P_alertLog (0x595) — Occupant classification system, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Occupant classification system message: alert log. Ethernet-side message OCS1P_alertLog of Occupant classification system for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 22 signals (OCS1P_alertID, OCS1P_alertState, OCS1P_a121_sandwichFreq, OCS1P_a122_sandwichFreq and 18 more). Bit layout, scaling, units and value tables."
 ---
 
-# OCS1P_alertLog (0x595) — Occupant classification system, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# OCS1P_alertLog (0x595) — Occupant classification system, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Occupant classification system message: alert log. This page documents the 22 signals of OCS1P_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Occupant classification system message: alert log. This page documents the 22 signals of OCS1P_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Occupant classification system message: alert log. This page documents the 22 si
 | Message name | `OCS1P_alertLog` |
 | Ethernet-side id | 0x595 (1429) |
 | ECU | [Occupant classification system](../../ocs1p.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | OCS1P |
@@ -25,7 +27,7 @@ Occupant classification system message: alert log. This page documents the 22 si
 
 ## Signals of OCS1P_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `OCS1P_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `OCS1P_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -58,7 +60,7 @@ Tesla Model 3 / Model Y CAN bus signals in `OCS1P_alertLog`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

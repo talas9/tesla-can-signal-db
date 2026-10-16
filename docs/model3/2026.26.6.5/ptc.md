@@ -8,6 +8,8 @@ description: "Tesla Model 3 PTC CAN bus messages and signals of the Cabin heater
 
 All 4 messages of the Cabin heater (PTC) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PTC_info`](veh/ptc/ptc_info.md) | VEH | 0x345 | 8 | 1000 ms | 13 |
@@ -16,4 +18,3 @@ All 4 messages of the Cabin heater (PTC) documented for Tesla Model 3 firmware 2
 | [`PTC_feedbackStatus`](eth/ptc/ptc_feedbackstatus.md) | ETH | 0x207 | 8 | 100 ms | 14 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

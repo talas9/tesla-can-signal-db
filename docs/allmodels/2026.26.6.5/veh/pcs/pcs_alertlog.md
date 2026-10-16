@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PCS_alertLog (0x424) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Power conversion system (on-board charger and DC-DC converter) message: alert log. Tesla Model 3 / Model Y CAN bus message PCS_alertLog (0x424) of Power conversion system (on-board charger and DC-DC converter), firmware 2026.26.6.5, 300 signals (PCS_alertID, PCS_alertSet, PCS_alertSource, PCS_a001_llcFrequency and 296 more). Bit layout, scaling, units and value tables."
+title: "PCS_alertLog (0x424) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Power conversion system (on-board charger and DC-DC converter) message: alert log. Tesla Model 3 / Model Y (union) CAN bus message PCS_alertLog (0x424) of Power conversion system (on-board charger and DC-DC converter), firmware 2026.26.6.5, 300 signals (PCS_alertID, PCS_alertSet, PCS_alertSource, PCS_a001_llcFrequency and 296 more). Bit layout, scaling, units and value tables."
 ---
 
-# PCS_alertLog (0x424) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PCS_alertLog (0x424) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Power conversion system (on-board charger and DC-DC converter) message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 300 signals of PCS_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Power conversion system (on-board charger and DC-DC converter) message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 300 signals of PCS_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Power conversion system (on-board charger and DC-DC converter) message: alert lo
 | Message name | `PCS_alertLog` |
 | CAN id | 0x424 (1060) |
 | ECU | [Power conversion system (on-board charger and DC-DC converter)](../../pcs.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PCS |
@@ -25,7 +27,7 @@ Power conversion system (on-board charger and DC-DC converter) message: alert lo
 
 ## Signals of PCS_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `PCS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PCS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -336,7 +338,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PCS_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

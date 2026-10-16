@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PM_udsResponse (0x640) — PM ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "PM ECU message: uds response. Tesla Model 3 / Model Y CAN bus message PM_udsResponse (0x640) of PM ECU, firmware 2026.26.6.5, 1 signals (PM_udsResponseData). Bit layout, scaling, units and value tables."
+title: "PM_udsResponse (0x640) — PM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "PM ECU message: uds response. Tesla Model 3 / Model Y (union) CAN bus message PM_udsResponse (0x640) of PM ECU, firmware 2026.26.6.5, 1 signals (PM_udsResponseData). Bit layout, scaling, units and value tables."
 ---
 
-# PM_udsResponse (0x640) — PM ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PM_udsResponse (0x640) — PM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-PM ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of PM_udsResponse as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+PM ECU message: uds response; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of PM_udsResponse as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PM ECU message: uds response; frame length from the layout, not yet observed on 
 | Message name | `PM_udsResponse` |
 | CAN id | 0x640 (1600) |
 | ECU | [PM ECU](../../pm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PM |
@@ -25,7 +27,7 @@ PM ECU message: uds response; frame length from the layout, not yet observed on 
 
 ## Signals of PM_udsResponse
 
-Tesla Model 3 / Model Y CAN bus signals in `PM_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PM_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PM_udsResponse`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

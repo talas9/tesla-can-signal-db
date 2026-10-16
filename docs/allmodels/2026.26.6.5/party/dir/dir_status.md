@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Rear drive inverter message: status. Tesla Model 3 / Model Y CAN bus message DIR_status (0x256) of Rear drive inverter, firmware 2026.26.6.5, 15 signals (DIR_statusChecksum, DIR_statusCounter, DIR_state, DIR_soptState and 11 more). Bit layout, scaling, units and value tables."
+title: "DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Rear drive inverter message: status. Tesla Model 3 / Model Y (union) CAN bus message DIR_status (0x256) of Rear drive inverter, firmware 2026.26.6.5, 15 signals (DIR_statusChecksum, DIR_statusCounter, DIR_state, DIR_soptState and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Rear drive inverter message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of DIR_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Rear drive inverter message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of DIR_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Rear drive inverter message: status; frame length from the layout, not yet obser
 | Message name | `DIR_status` |
 | CAN id | 0x256 (598) |
 | ECU | [Rear drive inverter](../../dir.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DIR |
@@ -25,7 +27,7 @@ Rear drive inverter message: status; frame length from the layout, not yet obser
 
 ## Signals of DIR_status
 
-Tesla Model 3 / Model Y CAN bus signals in `DIR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

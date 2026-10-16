@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PARK_alertLog (0x5CE) — Parking assist sensors, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Parking assist sensors message: alert log. Tesla Model 3 / Model Y CAN bus message PARK_alertLog (0x5CE) of Parking assist sensors, firmware 2025.20.8, 268 signals (PARK_alertID, PARK_alertState, PARK_sw001_sensorTemperature, PARK_sw002_membraneDisconct and 264 more). Bit layout, scaling, units and value tables."
+title: "PARK_alertLog (0x5CE) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Parking assist sensors message: alert log. Tesla Model 3 / Model Y (union) CAN bus message PARK_alertLog (0x5CE) of Parking assist sensors, firmware 2025.20.8, 268 signals (PARK_alertID, PARK_alertState, PARK_sw001_sensorTemperature, PARK_sw002_membraneDisconct and 264 more). Bit layout, scaling, units and value tables."
 ---
 
-# PARK_alertLog (0x5CE) — Parking assist sensors, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# PARK_alertLog (0x5CE) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Parking assist sensors message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 268 signals of PARK_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Parking assist sensors message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 268 signals of PARK_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Parking assist sensors message: alert log; frame length from the layout, not yet
 | Message name | `PARK_alertLog` |
 | CAN id | 0x5CE (1486) |
 | ECU | [Parking assist sensors](../../park.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |
@@ -25,7 +27,7 @@ Parking assist sensors message: alert log; frame length from the layout, not yet
 
 ## Signals of PARK_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `PARK_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PARK_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -304,7 +306,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PARK_alertLog`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

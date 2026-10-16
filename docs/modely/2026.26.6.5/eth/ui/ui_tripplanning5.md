@@ -16,6 +16,8 @@ Touchscreen user interface computer message: trip planning5. This page documents
 | Ethernet-side id | 0x497 (1175) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UI |

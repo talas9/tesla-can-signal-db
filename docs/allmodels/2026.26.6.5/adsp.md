@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y ADSP CAN bus messages and signals of the Audio amplifier (ADSP) for firmware 2026.26.6.5: 5 messages, 140 signals with bit layout, scaling and value tables."
+title: "Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) ADSP CAN bus messages and signals of the Audio amplifier (ADSP) for firmware 2026.26.6.5: 5 messages, 140 signals with bit layout, scaling and value tables."
 ---
 
-# Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 5 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 5 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -17,4 +19,3 @@ All 5 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 / Mode
 | [`ADSP_alertMatrix2`](eth/adsp/adsp_alertmatrix2.md) | ETH | 0x552 | 8 | 1000 ms | 16 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

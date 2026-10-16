@@ -16,6 +16,8 @@ Rear drive inverter message: hv status. This page documents the 14 signals of DI
 | Ethernet-side id | 0x279 (633) |
 | ECU | [Rear drive inverter](../../dir.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DIR |

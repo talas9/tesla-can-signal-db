@@ -16,6 +16,8 @@ Gateway message: car config; frame length observed on a vehicle bus. This page d
 | CAN id | 0x7FF (2047) |
 | ECU | [Gateway](../../gtw.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |

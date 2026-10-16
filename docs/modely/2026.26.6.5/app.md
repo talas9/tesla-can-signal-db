@@ -8,6 +8,8 @@ description: "Tesla Model Y APP CAN bus messages and signals of the Driver assis
 
 All 27 messages of the Driver assistance computer (primary) (APP) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`APP_VC_infoMessage`](veh/app/app_vc_infomessage.md) | VEH | 0x38D | 8 | 1000 ms | 23 |
@@ -39,4 +41,3 @@ All 27 messages of the Driver assistance computer (primary) (APP) documented for
 | [`APP_warningMatrix7`](ch/app/app_warningmatrix7.md) | CH | 0x4D1 | 8 | 1000 ms | 23 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

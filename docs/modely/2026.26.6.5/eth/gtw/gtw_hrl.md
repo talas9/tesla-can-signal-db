@@ -16,6 +16,8 @@ Gateway message: hrl. This page documents the 8 signals of GTW_hrl as defined fo
 | Ethernet-side id | 0x7F1 (2033) |
 | ECU | [Gateway](../../gtw.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | GTW |

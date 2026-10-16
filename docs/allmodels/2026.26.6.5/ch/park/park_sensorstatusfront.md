@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PARK_sensorStatusFront (0x32E) — Parking assist sensors, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Parking assist sensors message: sensor status front. Tesla Model 3 / Model Y CAN bus message PARK_sensorStatusFront (0x32E) of Parking assist sensors, firmware 2026.26.6.5, 10 signals (PARK_frontRightSensorState, PARK_frontRightMiddleSensorState, PARK_frontLeftMiddleSensorState, PARK_frontLeftSensorState and 6 more). Bit layout, scaling, units and value tables."
+title: "PARK_sensorStatusFront (0x32E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Parking assist sensors message: sensor status front. Tesla Model 3 / Model Y (union) CAN bus message PARK_sensorStatusFront (0x32E) of Parking assist sensors, firmware 2026.26.6.5, 10 signals (PARK_frontRightSensorState, PARK_frontRightMiddleSensorState, PARK_frontLeftMiddleSensorState, PARK_frontLeftSensorState and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# PARK_sensorStatusFront (0x32E) — Parking assist sensors, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# PARK_sensorStatusFront (0x32E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Parking assist sensors message: sensor status front; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of PARK_sensorStatusFront as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Parking assist sensors message: sensor status front; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of PARK_sensorStatusFront as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Parking assist sensors message: sensor status front; frame length from the layou
 | Message name | `PARK_sensorStatusFront` |
 | CAN id | 0x32E (814) |
 | ECU | [Parking assist sensors](../../park.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |
@@ -25,7 +27,7 @@ Parking assist sensors message: sensor status front; frame length from the layou
 
 ## Signals of PARK_sensorStatusFront
 
-Tesla Model 3 / Model Y CAN bus signals in `PARK_sensorStatusFront`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PARK_sensorStatusFront`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -42,7 +44,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PARK_sensorStatusFront`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

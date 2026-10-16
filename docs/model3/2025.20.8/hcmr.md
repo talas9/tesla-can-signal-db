@@ -8,9 +8,10 @@ description: "Tesla Model 3 HCMR CAN bus messages and signals of the HCMR ECU (H
 
 All 1 messages of the HCMR ECU (HCMR) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`HCMR_info`](veh/hcmr/hcmr_info.md) | VEH | 0x7BC | 8 | 10000 ms | 6 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

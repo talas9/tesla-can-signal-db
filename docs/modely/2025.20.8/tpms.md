@@ -8,6 +8,8 @@ description: "Tesla Model Y TPMS CAN bus messages and signals of the Tire pressu
 
 All 4 messages of the Tire pressure monitoring (TPMS) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`TPMS_data`](ch/tpms/tpms_data.md) | CH | 0x31F | 8 | 1000 ms | 8 |
@@ -16,4 +18,3 @@ All 4 messages of the Tire pressure monitoring (TPMS) documented for Tesla Model
 | [`TPMS_udsResponse`](eth/tpms/tpms_udsresponse.md) | ETH | 0x65F | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

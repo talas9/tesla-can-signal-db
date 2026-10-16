@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TRCM_alertMatrix (0x372) — TRCM ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "TRCM ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message TRCM_alertMatrix (0x372) of TRCM ECU, firmware 2026.26.6.5, 421 signals (TRCM_matrixIndex, TRCM_a001_airbagsDisabled, TRCM_a002_systemDisabled, TRCM_a003_SWAssertion and 417 more). Bit layout, scaling, units and value tables."
+title: "TRCM_alertMatrix (0x372) — TRCM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "TRCM ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message TRCM_alertMatrix (0x372) of TRCM ECU, firmware 2026.26.6.5, 421 signals (TRCM_matrixIndex, TRCM_a001_airbagsDisabled, TRCM_a002_systemDisabled, TRCM_a003_SWAssertion and 417 more). Bit layout, scaling, units and value tables."
 ---
 
-# TRCM_alertMatrix (0x372) — TRCM ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# TRCM_alertMatrix (0x372) — TRCM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-TRCM ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 421 signals of TRCM_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+TRCM ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 421 signals of TRCM_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ TRCM ECU message: alert matrix; frame length from the layout, not yet observed o
 | Message name | `TRCM_alertMatrix` |
 | CAN id | 0x372 (882) |
 | ECU | [TRCM ECU](../../trcm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | TRCM |
@@ -25,7 +27,7 @@ TRCM ECU message: alert matrix; frame length from the layout, not yet observed o
 
 ## Signals of TRCM_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `TRCM_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TRCM_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -457,7 +459,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TRCM_alertMatrix`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

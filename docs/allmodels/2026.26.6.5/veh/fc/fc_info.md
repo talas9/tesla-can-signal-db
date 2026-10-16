@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "FC_info (0x51E) — FC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "FC ECU message: info. Tesla Model 3 / Model Y CAN bus message FC_info (0x51E) of FC ECU, firmware 2026.26.6.5, 41 signals (FC_infoIndex, FC_infoBuildType, FC_infoBuildConfigID, FC_infoHardwareID and 37 more). Bit layout, scaling, units and value tables."
+title: "FC_info (0x51E) — FC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "FC ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message FC_info (0x51E) of FC ECU, firmware 2026.26.6.5, 41 signals (FC_infoIndex, FC_infoBuildType, FC_infoBuildConfigID, FC_infoHardwareID and 37 more). Bit layout, scaling, units and value tables."
 ---
 
-# FC_info (0x51E) — FC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# FC_info (0x51E) — FC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-FC ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 41 signals of FC_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+FC ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 41 signals of FC_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ FC ECU message: info; frame length from the layout, not yet observed on a vehicl
 | Message name | `FC_info` |
 | CAN id | 0x51E (1310) |
 | ECU | [FC ECU](../../fc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | FC |
@@ -25,7 +27,7 @@ FC ECU message: info; frame length from the layout, not yet observed on a vehicl
 
 ## Signals of FC_info
 
-Tesla Model 3 / Model Y CAN bus signals in `FC_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `FC_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -77,7 +79,7 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_info`: start bit and length, byte
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_suspensionControl (0x297) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Touchscreen user interface computer message: suspension control. Tesla Model 3 / Model Y CAN bus message UI_suspensionControl (0x297) of Touchscreen user interface computer, firmware 2025.20.8, 12 signals (UI_adaptiveRideRequest, UI_suspensionLoweringRequest, UI_geofenceLevelingRequest, UI_jackModeToggleRequest and 8 more). Bit layout, scaling, units and value tables."
+title: "UI_suspensionControl (0x297) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Touchscreen user interface computer message: suspension control. Tesla Model 3 / Model Y (union) CAN bus message UI_suspensionControl (0x297) of Touchscreen user interface computer, firmware 2025.20.8, 12 signals (UI_adaptiveRideRequest, UI_suspensionLoweringRequest, UI_geofenceLevelingRequest, UI_jackModeToggleRequest and 8 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_suspensionControl (0x297) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# UI_suspensionControl (0x297) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Touchscreen user interface computer message: suspension control; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of UI_suspensionControl as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Touchscreen user interface computer message: suspension control; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of UI_suspensionControl as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: suspension control; forwarded onto 
 | Message name | `UI_suspensionControl` |
 | CAN id | 0x297 (663) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: suspension control; forwarded onto 
 
 ## Signals of UI_suspensionControl
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_suspensionControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_suspensionControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -44,7 +46,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_suspensionControl`: start bit and
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

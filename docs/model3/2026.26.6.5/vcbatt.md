@@ -8,6 +8,8 @@ description: "Tesla Model 3 VCBATT CAN bus messages and signals of the VCBATT EC
 
 All 3 messages of the VCBATT ECU (VCBATT) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCBATT_LVHealth`](veh/vcbatt/vcbatt_lvhealth.md) | VEH | 0x3B1 | 5 | 100 ms | 8 |
@@ -15,4 +17,3 @@ All 3 messages of the VCBATT ECU (VCBATT) documented for Tesla Model 3 firmware 
 | [`VCBATT_udsResponse`](veh/vcbatt/vcbatt_udsresponse.md) | VEH | 0x621 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

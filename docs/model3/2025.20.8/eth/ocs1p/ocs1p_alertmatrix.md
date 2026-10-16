@@ -16,6 +16,8 @@ Occupant classification system message: alert matrix. This page documents the 34
 | Ethernet-side id | 0x2FF (767) |
 | ECU | [Occupant classification system](../../ocs1p.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | OCS1P |

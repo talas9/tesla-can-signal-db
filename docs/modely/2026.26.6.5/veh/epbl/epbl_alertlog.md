@@ -16,6 +16,8 @@ Left electric parking brake message: alert log; frame length observed on a vehic
 | CAN id | 0x5C8 (1480) |
 | ECU | [Left electric parking brake](../../epbl.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBL |

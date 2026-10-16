@@ -8,6 +8,18 @@ description: "Searchable reference of Tesla Model 3 and Model Y CAN bus messages
 
 Searchable reference of Tesla Model 3 and Model Y CAN bus messages and signals: bit layout, scaling, units and value tables, with DBC files. Pick a vehicle, firmware and bus, then an ECU, or search the [signal index A-Z](signals/index.md) or the [message list](messages.md).
 
+## Vehicle names and coverage scope
+
+| Model | API name / codename | Coverage basis |
+|---|---|---|
+| Model 3 | `Model3` | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
+| Model Y | `ModelY` | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
+| Model 3 / Model Y (union) | `AllModels` | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
+| Model Y (2025+ / Juniper; community mapping) | `Bayberry` | Product-metadata signal subset using the Model 3 / Model Y union routing map; no product-specific CAN routing map or complete vehicle coverage is established. |
+| Unidentified vehicle | `GoldenSnitch` | Product-metadata signal subset using the Model 3 / Model Y union routing map; no product-specific CAN routing map or complete vehicle coverage is established. |
+
+Community naming: [koenhendriks/tesla-model-extractor](https://github.com/koenhendriks/tesla-model-extractor), whose Bayberry rule identifies Model Y (2025+ / Juniper). GoldenSnitch remains unidentified. Names in enum value tables do not by themselves establish vehicle coverage. See the [README naming references](../README.md#vehicle-names-and-original-codenames).
+
 ## Tesla Model 3 CAN signals
 
 ### Tesla Model 3 firmware 2026.26.6.5
@@ -56,9 +68,9 @@ Searchable reference of Tesla Model 3 and Model Y CAN bus messages and signals: 
 - **ETH (Ethernet-side ids, not CAN ids)**: 357 messages, 27970 signals
   - [ADSP](modely/2025.20.8/adsp.md) (4), [APB](modely/2025.20.8/apb.md) (1), [APP](modely/2025.20.8/app.md) (10), [APS](modely/2025.20.8/aps.md) (4), [APSB](modely/2025.20.8/apsb.md) (3), [BB](modely/2025.20.8/bb.md) (1), [BMS](modely/2025.20.8/bms.md) (18), [CC](modely/2025.20.8/cc.md) (1), [CMP](modely/2025.20.8/cmp.md) (2), [CMPD](modely/2025.20.8/cmpd.md) (1), [CP](modely/2025.20.8/cp.md) (10), [DAS](modely/2025.20.8/das.md) (5), [DI](modely/2025.20.8/di.md) (15), [DIF](modely/2025.20.8/dif.md) (12), [DIR](modely/2025.20.8/dir.md) (12), [DPB](modely/2025.20.8/dpb.md) (1), [EPAS3P](modely/2025.20.8/epas3p.md) (4), [EPAS3S](modely/2025.20.8/epas3s.md) (4), [EPASTP](modely/2025.20.8/epastp.md) (1), [EPASTS](modely/2025.20.8/epasts.md) (1), [EPBL](modely/2025.20.8/epbl.md) (4), [EPBR](modely/2025.20.8/epbr.md) (5), [ESP](modely/2025.20.8/esp.md) (3), [GTW](modely/2025.20.8/gtw.md) (18), [HVP](modely/2025.20.8/hvp.md) (6), [IBST](modely/2025.20.8/ibst.md) (2), [ICR](modely/2025.20.8/icr.md) (7), [IDB](modely/2025.20.8/idb.md) (2), [OCS1P](modely/2025.20.8/ocs1p.md) (5), [PARK](modely/2025.20.8/park.md) (1), [PCS](modely/2025.20.8/pcs.md) (6), [PLG](modely/2025.20.8/plg.md) (1), [PM](modely/2025.20.8/pm.md) (5), [PMF](modely/2025.20.8/pmf.md) (5), [PMR](modely/2025.20.8/pmr.md) (5), [PTC](modely/2025.20.8/ptc.md) (2), [RADC](modely/2025.20.8/radc.md) (1), [RCM](modely/2025.20.8/rcm.md) (3), [RCM2](modely/2025.20.8/rcm2.md) (2), [RCU](modely/2025.20.8/rcu.md) (2), [SCCM](modely/2025.20.8/sccm.md) (2), [SDCR](modely/2025.20.8/sdcr.md) (2), [TAS](modely/2025.20.8/tas.md) (3), [TCU](modely/2025.20.8/tcu.md) (4), [TPMS](modely/2025.20.8/tpms.md) (1), [TRCM](modely/2025.20.8/trcm.md) (2), [UDS](modely/2025.20.8/uds.md) (44), [UI](modely/2025.20.8/ui.md) (33), [UIS](modely/2025.20.8/uis.md) (1), [UMC](modely/2025.20.8/umc.md) (2), [USM](modely/2025.20.8/usm.md) (1), [VC](modely/2025.20.8/vc.md) (3), [VCFRONT](modely/2025.20.8/vcfront.md) (15), [VCLEFT](modely/2025.20.8/vcleft.md) (20), [VCRIGHT](modely/2025.20.8/vcright.md) (19), [VCSEC](modely/2025.20.8/vcsec.md) (9), [tester](modely/2025.20.8/tester.md) (1)
 
-## Tesla Model 3 / Model Y CAN signals
+## Tesla Model 3 / Model Y (union) CAN signals
 
-### Tesla Model 3 / Model Y firmware 2026.26.6.5
+### Tesla Model 3 / Model Y (union) firmware 2026.26.6.5
 
 - **VEH (vehicle CAN)**: 421 messages, 26324 signals
   - [ADSP](allmodels/2026.26.6.5/adsp.md) (1), [APP](allmodels/2026.26.6.5/app.md) (2), [APS](allmodels/2026.26.6.5/aps.md) (1), [BMS](allmodels/2026.26.6.5/bms.md) (27), [CC](allmodels/2026.26.6.5/cc.md) (5), [CMP](allmodels/2026.26.6.5/cmp.md) (2), [CMPD](allmodels/2026.26.6.5/cmpd.md) (3), [CP](allmodels/2026.26.6.5/cp.md) (13), [DAS](allmodels/2026.26.6.5/das.md) (2), [DI](allmodels/2026.26.6.5/di.md) (10), [DIF](allmodels/2026.26.6.5/dif.md) (7), [DIR](allmodels/2026.26.6.5/dir.md) (10), [EPBL](allmodels/2026.26.6.5/epbl.md) (7), [EPBR](allmodels/2026.26.6.5/epbr.md) (7), [EVSE](allmodels/2026.26.6.5/evse.md) (1), [FC](allmodels/2026.26.6.5/fc.md) (16), [GTW](allmodels/2026.26.6.5/gtw.md) (5), [HCML](allmodels/2026.26.6.5/hcml.md) (1), [HCMR](allmodels/2026.26.6.5/hcmr.md) (1), [HVBMS](allmodels/2026.26.6.5/hvbms.md) (2), [HVP](allmodels/2026.26.6.5/hvp.md) (9), [ICR](allmodels/2026.26.6.5/icr.md) (8), [LS](allmodels/2026.26.6.5/ls.md) (1), [PCS](allmodels/2026.26.6.5/pcs.md) (10), [PCS2](allmodels/2026.26.6.5/pcs2.md) (4), [PLG](allmodels/2026.26.6.5/plg.md) (1), [PM](allmodels/2026.26.6.5/pm.md) (5), [PMF](allmodels/2026.26.6.5/pmf.md) (4), [PMR](allmodels/2026.26.6.5/pmr.md) (4), [PNCD](allmodels/2026.26.6.5/pncd.md) (1), [PTC](allmodels/2026.26.6.5/ptc.md) (3), [SCCM](allmodels/2026.26.6.5/sccm.md) (7), [SCM](allmodels/2026.26.6.5/scm.md) (3), [SCS](allmodels/2026.26.6.5/scs.md) (3), [SDCR](allmodels/2026.26.6.5/sdcr.md) (4), [SystemTimeUTC](allmodels/2026.26.6.5/systemtimeutc.md) (1), [TAS](allmodels/2026.26.6.5/tas.md) (10), [UDS](allmodels/2026.26.6.5/uds.md) (32), [UI](allmodels/2026.26.6.5/ui.md) (44), [UMC](allmodels/2026.26.6.5/umc.md) (3), [UnixTimeSeconds](allmodels/2026.26.6.5/unixtimeseconds.md) (1), [V2G](allmodels/2026.26.6.5/v2g.md) (1), [VC](allmodels/2026.26.6.5/vc.md) (5), [VCBATT](allmodels/2026.26.6.5/vcbatt.md) (3), [VCBATT0](allmodels/2026.26.6.5/vcbatt0.md) (2), [VCBATT1](allmodels/2026.26.6.5/vcbatt1.md) (6), [VCBATT2](allmodels/2026.26.6.5/vcbatt2.md) (4), [VCFRONT](allmodels/2026.26.6.5/vcfront.md) (25), [VCFRONT1](allmodels/2026.26.6.5/vcfront1.md) (4), [VCFRONT2](allmodels/2026.26.6.5/vcfront2.md) (3), [VCLEFT](allmodels/2026.26.6.5/vcleft.md) (27), [VCRIGHT](allmodels/2026.26.6.5/vcright.md) (27), [VCSEAT2L](allmodels/2026.26.6.5/vcseat2l.md) (4), [VCSEAT2R](allmodels/2026.26.6.5/vcseat2r.md) (4), [VCSEC](allmodels/2026.26.6.5/vcsec.md) (21), [VEH](allmodels/2026.26.6.5/veh.md) (2), [VINbroadcast](allmodels/2026.26.6.5/vinbroadcast.md) (1), [tester](allmodels/2026.26.6.5/tester.md) (1)
@@ -69,7 +81,7 @@ Searchable reference of Tesla Model 3 and Model Y CAN bus messages and signals: 
 - **ETH (Ethernet-side ids, not CAN ids)**: 68 messages, 4629 signals
   - [ADSP](allmodels/2026.26.6.5/adsp.md) (3), [APSB](allmodels/2026.26.6.5/apsb.md) (10), [CMP](allmodels/2026.26.6.5/cmp.md) (1), [DAS](allmodels/2026.26.6.5/das.md) (3), [EPAS3P](allmodels/2026.26.6.5/epas3p.md) (1), [GTW](allmodels/2026.26.6.5/gtw.md) (14), [OCS1P](allmodels/2026.26.6.5/ocs1p.md) (5), [PTC](allmodels/2026.26.6.5/ptc.md) (1), [RCM](allmodels/2026.26.6.5/rcm.md) (2), [TCU](allmodels/2026.26.6.5/tcu.md) (4), [TCU2](allmodels/2026.26.6.5/tcu2.md) (4), [UDS](allmodels/2026.26.6.5/uds.md) (2), [UI](allmodels/2026.26.6.5/ui.md) (17), [UIS](allmodels/2026.26.6.5/uis.md) (1)
 
-### Tesla Model 3 / Model Y firmware 2025.20.8
+### Tesla Model 3 / Model Y (union) firmware 2025.20.8
 
 - **VEH (vehicle CAN)**: 151 messages, 2676 signals
   - [BMS](allmodels/2025.20.8/bms.md) (7), [CC](allmodels/2025.20.8/cc.md) (4), [CMP](allmodels/2025.20.8/cmp.md) (1), [CMPD](allmodels/2025.20.8/cmpd.md) (2), [CP](allmodels/2025.20.8/cp.md) (2), [DAS](allmodels/2025.20.8/das.md) (1), [DI](allmodels/2025.20.8/di.md) (2), [DIF](allmodels/2025.20.8/dif.md) (2), [DIR](allmodels/2025.20.8/dir.md) (4), [EPBL](allmodels/2025.20.8/epbl.md) (3), [EPBR](allmodels/2025.20.8/epbr.md) (2), [EVSE](allmodels/2025.20.8/evse.md) (1), [FC](allmodels/2025.20.8/fc.md) (16), [HCML](allmodels/2025.20.8/hcml.md) (1), [HCMR](allmodels/2025.20.8/hcmr.md) (1), [HVBMS](allmodels/2025.20.8/hvbms.md) (2), [HVP](allmodels/2025.20.8/hvp.md) (3), [ICR](allmodels/2025.20.8/icr.md) (1), [LS](allmodels/2025.20.8/ls.md) (1), [PCS](allmodels/2025.20.8/pcs.md) (4), [PM](allmodels/2025.20.8/pm.md) (1), [PMF](allmodels/2025.20.8/pmf.md) (1), [PMR](allmodels/2025.20.8/pmr.md) (1), [PNCD](allmodels/2025.20.8/pncd.md) (1), [PTC](allmodels/2025.20.8/ptc.md) (2), [SCCM](allmodels/2025.20.8/sccm.md) (5), [SCM](allmodels/2025.20.8/scm.md) (3), [SCS](allmodels/2025.20.8/scs.md) (3), [SDCR](allmodels/2025.20.8/sdcr.md) (2), [SystemTimeUTC](allmodels/2025.20.8/systemtimeutc.md) (1), [TAS](allmodels/2025.20.8/tas.md) (7), [UI](allmodels/2025.20.8/ui.md) (21), [UMC](allmodels/2025.20.8/umc.md) (1), [UnixTimeSeconds](allmodels/2025.20.8/unixtimeseconds.md) (1), [VC](allmodels/2025.20.8/vc.md) (1), [VCFRONT](allmodels/2025.20.8/vcfront.md) (9), [VCLEFT](allmodels/2025.20.8/vcleft.md) (8), [VCRIGHT](allmodels/2025.20.8/vcright.md) (9), [VCSEC](allmodels/2025.20.8/vcsec.md) (11), [VEH](allmodels/2025.20.8/veh.md) (2), [VINbroadcast](allmodels/2025.20.8/vinbroadcast.md) (1)
@@ -79,6 +91,40 @@ Searchable reference of Tesla Model 3 and Model Y CAN bus messages and signals: 
   - [DAS](allmodels/2025.20.8/das.md) (2), [DI](allmodels/2025.20.8/di.md) (7), [DIF](allmodels/2025.20.8/dif.md) (2), [EPAS3P](allmodels/2025.20.8/epas3p.md) (2), [EPASTP](allmodels/2025.20.8/epastp.md) (1), [ESP](allmodels/2025.20.8/esp.md) (2), [IBST](allmodels/2025.20.8/ibst.md) (1), [PM](allmodels/2025.20.8/pm.md) (1), [PMF](allmodels/2025.20.8/pmf.md) (1), [PMR](allmodels/2025.20.8/pmr.md) (1), [RCM](allmodels/2025.20.8/rcm.md) (2), [VCFRONT](allmodels/2025.20.8/vcfront.md) (1)
 - **ETH (Ethernet-side ids, not CAN ids)**: 357 messages, 27970 signals
   - [ADSP](allmodels/2025.20.8/adsp.md) (4), [APB](allmodels/2025.20.8/apb.md) (1), [APP](allmodels/2025.20.8/app.md) (10), [APS](allmodels/2025.20.8/aps.md) (4), [APSB](allmodels/2025.20.8/apsb.md) (3), [BB](allmodels/2025.20.8/bb.md) (1), [BMS](allmodels/2025.20.8/bms.md) (18), [CC](allmodels/2025.20.8/cc.md) (1), [CMP](allmodels/2025.20.8/cmp.md) (2), [CMPD](allmodels/2025.20.8/cmpd.md) (1), [CP](allmodels/2025.20.8/cp.md) (10), [DAS](allmodels/2025.20.8/das.md) (5), [DI](allmodels/2025.20.8/di.md) (15), [DIF](allmodels/2025.20.8/dif.md) (12), [DIR](allmodels/2025.20.8/dir.md) (12), [DPB](allmodels/2025.20.8/dpb.md) (1), [EPAS3P](allmodels/2025.20.8/epas3p.md) (4), [EPAS3S](allmodels/2025.20.8/epas3s.md) (4), [EPASTP](allmodels/2025.20.8/epastp.md) (1), [EPASTS](allmodels/2025.20.8/epasts.md) (1), [EPBL](allmodels/2025.20.8/epbl.md) (4), [EPBR](allmodels/2025.20.8/epbr.md) (5), [ESP](allmodels/2025.20.8/esp.md) (3), [GTW](allmodels/2025.20.8/gtw.md) (18), [HVP](allmodels/2025.20.8/hvp.md) (6), [IBST](allmodels/2025.20.8/ibst.md) (2), [ICR](allmodels/2025.20.8/icr.md) (7), [IDB](allmodels/2025.20.8/idb.md) (2), [OCS1P](allmodels/2025.20.8/ocs1p.md) (5), [PARK](allmodels/2025.20.8/park.md) (1), [PCS](allmodels/2025.20.8/pcs.md) (6), [PLG](allmodels/2025.20.8/plg.md) (1), [PM](allmodels/2025.20.8/pm.md) (5), [PMF](allmodels/2025.20.8/pmf.md) (5), [PMR](allmodels/2025.20.8/pmr.md) (5), [PTC](allmodels/2025.20.8/ptc.md) (2), [RADC](allmodels/2025.20.8/radc.md) (1), [RCM](allmodels/2025.20.8/rcm.md) (3), [RCM2](allmodels/2025.20.8/rcm2.md) (2), [RCU](allmodels/2025.20.8/rcu.md) (2), [SCCM](allmodels/2025.20.8/sccm.md) (2), [SDCR](allmodels/2025.20.8/sdcr.md) (2), [TAS](allmodels/2025.20.8/tas.md) (3), [TCU](allmodels/2025.20.8/tcu.md) (4), [TPMS](allmodels/2025.20.8/tpms.md) (1), [TRCM](allmodels/2025.20.8/trcm.md) (2), [UDS](allmodels/2025.20.8/uds.md) (44), [UI](allmodels/2025.20.8/ui.md) (33), [UIS](allmodels/2025.20.8/uis.md) (1), [UMC](allmodels/2025.20.8/umc.md) (2), [USM](allmodels/2025.20.8/usm.md) (1), [VC](allmodels/2025.20.8/vc.md) (3), [VCFRONT](allmodels/2025.20.8/vcfront.md) (15), [VCLEFT](allmodels/2025.20.8/vcleft.md) (20), [VCRIGHT](allmodels/2025.20.8/vcright.md) (19), [VCSEC](allmodels/2025.20.8/vcsec.md) (9), [tester](allmodels/2025.20.8/tester.md) (1)
+
+## Tesla Model Y (2025+ / Juniper; community mapping) CAN signals
+
+### Tesla Model Y (2025+ / Juniper; community mapping) firmware 2026.26.6.5
+
+- **VEH (vehicle CAN)**: 21 messages, 330 signals
+  - [BMS](bayberry/2026.26.6.5/bms.md) (2), [CC](bayberry/2026.26.6.5/cc.md) (1), [CP](bayberry/2026.26.6.5/cp.md) (4), [EPBR](bayberry/2026.26.6.5/epbr.md) (1), [HVP](bayberry/2026.26.6.5/hvp.md) (1), [ICR](bayberry/2026.26.6.5/icr.md) (1), [PCS](bayberry/2026.26.6.5/pcs.md) (1), [UI](bayberry/2026.26.6.5/ui.md) (2), [VCBATT1](bayberry/2026.26.6.5/vcbatt1.md) (1), [VCFRONT](bayberry/2026.26.6.5/vcfront.md) (3), [VCLEFT](bayberry/2026.26.6.5/vcleft.md) (1), [VCRIGHT](bayberry/2026.26.6.5/vcright.md) (1), [VCSEC](bayberry/2026.26.6.5/vcsec.md) (2)
+- **CH (chassis CAN)**: 4 messages, 27 signals
+  - [APP](bayberry/2026.26.6.5/app.md) (2), [DAS](bayberry/2026.26.6.5/das.md) (1), [PARK](bayberry/2026.26.6.5/park.md) (1)
+- **bus1 (inferred PARTY)**: 3 messages, 61 signals
+  - [DAS](bayberry/2026.26.6.5/das.md) (1), [DIF](bayberry/2026.26.6.5/dif.md) (1), [VCLEFT](bayberry/2026.26.6.5/vcleft.md) (1)
+
+### Tesla Model Y (2025+ / Juniper; community mapping) firmware 2025.20.8
+
+- **VEH (vehicle CAN)**: 9 messages, 128 signals
+  - [CC](bayberry/2025.20.8/cc.md) (1), [EPBR](bayberry/2025.20.8/epbr.md) (1), [HVP](bayberry/2025.20.8/hvp.md) (1), [PCS](bayberry/2025.20.8/pcs.md) (1), [UI](bayberry/2025.20.8/ui.md) (1), [VCFRONT](bayberry/2025.20.8/vcfront.md) (2), [VCRIGHT](bayberry/2025.20.8/vcright.md) (1), [VCSEC](bayberry/2025.20.8/vcsec.md) (1)
+- **CH (chassis CAN)**: 3 messages, 26 signals
+  - [APP](bayberry/2025.20.8/app.md) (2), [PARK](bayberry/2025.20.8/park.md) (1)
+- **ETH (Ethernet-side ids, not CAN ids)**: 12 messages, 180 signals
+  - [BMS](bayberry/2025.20.8/bms.md) (2), [CP](bayberry/2025.20.8/cp.md) (4), [DIF](bayberry/2025.20.8/dif.md) (1), [ICR](bayberry/2025.20.8/icr.md) (1), [UI](bayberry/2025.20.8/ui.md) (1), [VCFRONT](bayberry/2025.20.8/vcfront.md) (1), [VCLEFT](bayberry/2025.20.8/vcleft.md) (1), [VCSEC](bayberry/2025.20.8/vcsec.md) (1)
+
+## Tesla Unidentified vehicle CAN signals
+
+### Tesla Unidentified vehicle firmware 2026.26.6.5
+
+- **VEH (vehicle CAN)**: 1 messages, 1 signals
+  - [UI](goldensnitch/2026.26.6.5/ui.md) (1)
+- **CH (chassis CAN)**: 2 messages, 8 signals
+  - [APP](goldensnitch/2026.26.6.5/app.md) (1), [DAS](goldensnitch/2026.26.6.5/das.md) (1)
+
+### Tesla Unidentified vehicle firmware 2025.20.8
+
+- **ETH (Ethernet-side ids, not CAN ids)**: 1 messages, 1 signals
+  - [UI](goldensnitch/2025.20.8/ui.md) (1)
 
 ## Files
 

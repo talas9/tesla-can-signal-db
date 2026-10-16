@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_frontParkAssistData (0x34B) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Driver assistance computer (primary) message: front park assist data. Tesla Model 3 / Model Y CAN bus message APP_frontParkAssistData (0x34B) of Driver assistance computer (primary), firmware 2025.20.8, 7 signals (APP_frontLeftParkAssist, APP_frontLeftMiddleParkAssist, APP_frontMiddleParkAssist, APP_frontRightMiddleParkAssist and 3 more). Bit layout, scaling, units and value tables."
+title: "APP_frontParkAssistData (0x34B) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Driver assistance computer (primary) message: front park assist data. Tesla Model 3 / Model Y (union) CAN bus message APP_frontParkAssistData (0x34B) of Driver assistance computer (primary), firmware 2025.20.8, 7 signals (APP_frontLeftParkAssist, APP_frontLeftMiddleParkAssist, APP_frontMiddleParkAssist, APP_frontRightMiddleParkAssist and 3 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_frontParkAssistData (0x34B) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# APP_frontParkAssistData (0x34B) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Driver assistance computer (primary) message: front park assist data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 7 signals of APP_frontParkAssistData as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Driver assistance computer (primary) message: front park assist data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 7 signals of APP_frontParkAssistData as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: front park assist data; frame leng
 | Message name | `APP_frontParkAssistData` |
 | CAN id | 0x34B (843) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: front park assist data; frame leng
 
 ## Signals of APP_frontParkAssistData
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_frontParkAssistData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_frontParkAssistData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -39,7 +41,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_frontParkAssistData`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

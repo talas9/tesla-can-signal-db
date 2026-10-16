@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_vehicleEstimates (0x267) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Drive inverter message: vehicle estimates. Tesla Model 3 / Model Y CAN bus message DI_vehicleEstimates (0x267) of Drive inverter, firmware 2026.26.6.5, 13 signals (DI_mass, DI_massRLS, DI_trailerDetected, DI_vehicleEstimatesCounter and 9 more). Bit layout, scaling, units and value tables."
+title: "DI_vehicleEstimates (0x267) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Drive inverter message: vehicle estimates. Tesla Model 3 / Model Y (union) CAN bus message DI_vehicleEstimates (0x267) of Drive inverter, firmware 2026.26.6.5, 13 signals (DI_mass, DI_massRLS, DI_trailerDetected, DI_vehicleEstimatesCounter and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_vehicleEstimates (0x267) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DI_vehicleEstimates (0x267) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Drive inverter message: vehicle estimates; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of DI_vehicleEstimates as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Drive inverter message: vehicle estimates; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of DI_vehicleEstimates as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: vehicle estimates; frame length from the layout, not yet
 | Message name | `DI_vehicleEstimates` |
 | CAN id | 0x267 (615) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: vehicle estimates; frame length from the layout, not yet
 
 ## Signals of DI_vehicleEstimates
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_vehicleEstimates`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_vehicleEstimates`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_vehicleEstimates`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

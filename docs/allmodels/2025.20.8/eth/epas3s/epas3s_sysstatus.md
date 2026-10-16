@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3S_sysStatus (0x372) — Electric power steering (secondary), Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Electric power steering (secondary) message: sys status. Ethernet-side message EPAS3S_sysStatus of Electric power steering (secondary) for Tesla Model 3 / Model Y firmware 2025.20.8, 13 signals (EPAS3S_steeringRackForce, EPAS3S_steeringFault, EPAS3S_steeringReduced, EPAS3S_internalSASQF and 9 more). Bit layout, scaling, units and value tables."
+title: "EPAS3S_sysStatus (0x372) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Electric power steering (secondary) message: sys status. Ethernet-side message EPAS3S_sysStatus of Electric power steering (secondary) for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 13 signals (EPAS3S_steeringRackForce, EPAS3S_steeringFault, EPAS3S_steeringReduced, EPAS3S_internalSASQF and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3S_sysStatus (0x372) — Electric power steering (secondary), Tesla Model 3 / Model Y 2025.20.8 ETH
+# EPAS3S_sysStatus (0x372) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Electric power steering (secondary) message: sys status. This page documents the 13 signals of EPAS3S_sysStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Electric power steering (secondary) message: sys status. This page documents the 13 signals of EPAS3S_sysStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (secondary) message: sys status. This page documents the
 | Message name | `EPAS3S_sysStatus` |
 | Ethernet-side id | 0x372 (882) |
 | ECU | [Electric power steering (secondary)](../../epas3s.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | EPAS3S |
@@ -25,7 +27,7 @@ Electric power steering (secondary) message: sys status. This page documents the
 
 ## Signals of EPAS3S_sysStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_sysStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3S_sysStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_sysStatus`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCU_alertLog (0x5BF) — RCU ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "RCU ECU message: alert log. Tesla Model 3 / Model Y CAN bus message RCU_alertLog (0x5BF) of RCU ECU, firmware 2026.26.6.5, 15 signals (RCU_alertID, RCU_alertState, RCU_a010_sensorPowerSupply, RCU_a010_sensorHardware and 11 more). Bit layout, scaling, units and value tables."
+title: "RCU_alertLog (0x5BF) — RCU ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "RCU ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message RCU_alertLog (0x5BF) of RCU ECU, firmware 2026.26.6.5, 15 signals (RCU_alertID, RCU_alertState, RCU_a010_sensorPowerSupply, RCU_a010_sensorHardware and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCU_alertLog (0x5BF) — RCU ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# RCU_alertLog (0x5BF) — RCU ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-RCU ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of RCU_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+RCU ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of RCU_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ RCU ECU message: alert log; frame length from the layout, not yet observed on a 
 | Message name | `RCU_alertLog` |
 | CAN id | 0x5BF (1471) |
 | ECU | [RCU ECU](../../rcu.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCU |
@@ -25,7 +27,7 @@ RCU ECU message: alert log; frame length from the layout, not yet observed on a 
 
 ## Signals of RCU_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `RCU_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCU_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -51,7 +53,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCU_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

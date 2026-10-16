@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Rear drive inverter (DIR) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y DIR CAN bus messages and signals of the Rear drive inverter (DIR) for firmware 2026.26.6.5: 13 messages, 969 signals with bit layout, scaling and value tables."
+title: "Rear drive inverter (DIR) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) DIR CAN bus messages and signals of the Rear drive inverter (DIR) for firmware 2026.26.6.5: 13 messages, 969 signals with bit layout, scaling and value tables."
 ---
 
-# Rear drive inverter (DIR) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Rear drive inverter (DIR) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 13 messages of the Rear drive inverter (DIR) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 13 messages of the Rear drive inverter (DIR) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -25,4 +27,3 @@ All 13 messages of the Rear drive inverter (DIR) documented for Tesla Model 3 / 
 | [`DIR_torque`](party/dir/dir_torque.md) | PARTY | 0x108 | 8 | 10 ms | 9 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

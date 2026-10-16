@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_alertMatrix4 (0x126) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Touchscreen user interface computer message: alert matrix4. Ethernet-side message UI_alertMatrix4 of Touchscreen user interface computer for Tesla Model 3 / Model Y firmware 2026.26.6.5, 56 signals (UI_a193_TcuRNandFwVersionMismatch, UI_a194_AudioweaverRestarted, UI_a195_gtwMfdUdpApiFired, UI_a196_AMDI2C3BusInoperable and 52 more). Bit layout, scaling, units and value tables."
+title: "UI_alertMatrix4 (0x126) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Touchscreen user interface computer message: alert matrix4. Ethernet-side message UI_alertMatrix4 of Touchscreen user interface computer for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 56 signals (UI_a193_TcuRNandFwVersionMismatch, UI_a194_AudioweaverRestarted, UI_a195_gtwMfdUdpApiFired, UI_a196_AMDI2C3BusInoperable and 52 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_alertMatrix4 (0x126) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# UI_alertMatrix4 (0x126) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Touchscreen user interface computer message: alert matrix4. This page documents the 56 signals of UI_alertMatrix4 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Touchscreen user interface computer message: alert matrix4. This page documents the 56 signals of UI_alertMatrix4 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: alert matrix4. This page documents 
 | Message name | `UI_alertMatrix4` |
 | Ethernet-side id | 0x126 (294) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UI |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: alert matrix4. This page documents 
 
 ## Signals of UI_alertMatrix4
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_alertMatrix4`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_alertMatrix4`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -88,7 +90,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_alertMatrix4`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UMC_smartAdapterInfo (0x505) — UMC ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "UMC ECU message: smart adapter info. Tesla Model 3 / Model Y CAN bus message UMC_smartAdapterInfo (0x505) of UMC ECU, firmware 2025.20.8, 9 signals (SA_infoIndex, SA_genealogyVersion, SA_genealogyCrc, SA_region and 5 more). Bit layout, scaling, units and value tables."
+title: "UMC_smartAdapterInfo (0x505) — UMC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "UMC ECU message: smart adapter info. Tesla Model 3 / Model Y (union) CAN bus message UMC_smartAdapterInfo (0x505) of UMC ECU, firmware 2025.20.8, 9 signals (SA_infoIndex, SA_genealogyVersion, SA_genealogyCrc, SA_region and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# UMC_smartAdapterInfo (0x505) — UMC ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# UMC_smartAdapterInfo (0x505) — UMC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-UMC ECU message: smart adapter info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of UMC_smartAdapterInfo as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+UMC ECU message: smart adapter info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of UMC_smartAdapterInfo as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ UMC ECU message: smart adapter info; frame length from the layout, not yet obser
 | Message name | `UMC_smartAdapterInfo` |
 | CAN id | 0x505 (1285) |
 | ECU | [UMC ECU](../../umc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | UMC |
@@ -25,7 +27,7 @@ UMC ECU message: smart adapter info; frame length from the layout, not yet obser
 
 ## Signals of UMC_smartAdapterInfo
 
-Tesla Model 3 / Model Y CAN bus signals in `UMC_smartAdapterInfo`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UMC_smartAdapterInfo`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UMC_smartAdapterInfo`: start bit and
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

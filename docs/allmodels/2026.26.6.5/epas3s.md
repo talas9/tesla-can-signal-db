@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Electric power steering (secondary) (EPAS3S) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y EPAS3S CAN bus messages and signals of the Electric power steering (secondary) (EPAS3S) for firmware 2026.26.6.5: 6 messages, 228 signals with bit layout, scaling and value tables."
+title: "Electric power steering (secondary) (EPAS3S) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) EPAS3S CAN bus messages and signals of the Electric power steering (secondary) (EPAS3S) for firmware 2026.26.6.5: 6 messages, 228 signals with bit layout, scaling and value tables."
 ---
 
-# Electric power steering (secondary) (EPAS3S) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Electric power steering (secondary) (EPAS3S) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 6 messages of the Electric power steering (secondary) (EPAS3S) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 6 messages of the Electric power steering (secondary) (EPAS3S) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -18,4 +20,3 @@ All 6 messages of the Electric power steering (secondary) (EPAS3S) documented fo
 | [`EPAS3S_udsResponse`](ch/epas3s/epas3s_udsresponse.md) | CH | 0x738 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

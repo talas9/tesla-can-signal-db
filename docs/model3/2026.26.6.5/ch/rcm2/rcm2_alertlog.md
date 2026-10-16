@@ -16,6 +16,8 @@ RCM2 ECU message: alert log; frame length from the layout, not yet observed on a
 | CAN id | 0x4E1 (1249) |
 | ECU | [RCM2 ECU](../../rcm2.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCM2 |

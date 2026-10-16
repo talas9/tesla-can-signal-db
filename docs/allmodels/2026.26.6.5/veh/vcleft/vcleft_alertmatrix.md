@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_alertMatrix (0x360) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Left body controller message: alert matrix. Tesla Model 3 / Model Y CAN bus message VCLEFT_alertMatrix (0x360) of Left body controller, firmware 2026.26.6.5, 470 signals (VCLEFT_matrixIndex, VCLEFT_a001_WatchdogReset, VCLEFT_a002_PowerLossReset, VCLEFT_a003_SWAssertion and 466 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_alertMatrix (0x360) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Left body controller message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_alertMatrix (0x360) of Left body controller, firmware 2026.26.6.5, 470 signals (VCLEFT_matrixIndex, VCLEFT_a001_WatchdogReset, VCLEFT_a002_PowerLossReset, VCLEFT_a003_SWAssertion and 466 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_alertMatrix (0x360) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCLEFT_alertMatrix (0x360) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Left body controller message: alert matrix; frame length observed on a vehicle bus. This page documents the 470 signals of VCLEFT_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Left body controller message: alert matrix; frame length observed on a vehicle bus. This page documents the 470 signals of VCLEFT_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: alert matrix; frame length observed on a vehicle b
 | Message name | `VCLEFT_alertMatrix` |
 | CAN id | 0x360 (864) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: alert matrix; frame length observed on a vehicle b
 
 ## Signals of VCLEFT_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -506,7 +508,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_alertMatrix`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -8,6 +8,8 @@ description: "Tesla Model Y HVP CAN bus messages and signals of the High-voltage
 
 All 9 messages of the High-voltage processor (pack contactor and isolation controller) (HVP) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`HVP_hvsControl`](veh/hvp/hvp_hvscontrol.md) | VEH | 0x22A | 4 | 100 ms | 5 |
@@ -21,4 +23,3 @@ All 9 messages of the High-voltage processor (pack contactor and isolation contr
 | [`HVP_udsResponse`](eth/hvp/hvp_udsresponse.md) | ETH | 0x611 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

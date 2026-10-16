@@ -10,8 +10,8 @@ Inputs: dbc/<model>/<firmware>/<BUS>.json (the machine-readable twins that
 tools/export_dbc.py writes next to every .dbc; they carry the same messages,
 signals, value tables, confidence and comments as the DBC files, so the docs
 cannot disagree with them). Model names, ECU labels and the bus labels come
-from export_dbc. Only Model3, ModelY and AllModels are documented: the
-product-codename folders have no confirmed model.
+from export_dbc. Model3, ModelY, AllModels and product-metadata subsets are
+documented separately; display names do not change their coverage scope.
 
 Output (all paths lowercase, URL-safe, deterministic, no timestamps):
     docs/<model>/<fw>/<bus>/<ecu>/<message>.md   one page per message
@@ -38,9 +38,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build  # noqa: E402
-from export_dbc import BUS_LABELS, fmt_num, model_label, node_label, node_of  # noqa: E402
+from export_dbc import (BUS_LABELS, COMMUNITY_NAMES_URL, documentation_model,
+                        documentation_scope, fmt_num, node_label, node_of)  # noqa: E402
 
-MODELS = ['Model3', 'ModelY', 'AllModels']
+MODELS = ['Model3', 'ModelY', 'AllModels', 'Bayberry', 'GoldenSnitch']
 BUS_ORDER = ['VEH', 'CH', 'PARTY', 'ETH']
 SITE_TITLE = 'Tesla Model 3 and Model Y CAN Signal Database'
 SITE_DESC = ('Searchable reference of Tesla Model 3 and Model Y CAN bus messages and signals: '
@@ -49,7 +50,7 @@ CHUNK_BYTES = 600000
 
 
 def tesla(model):
-    return 'Tesla ' + model_label(model)
+    return 'Tesla ' + documentation_model(model)
 
 
 def ecu_code(node):
@@ -179,6 +180,8 @@ def message_page(p):
     L.append('| %s | %s (%d) |' % ('Ethernet-side id' if bus == 'ETH' else 'CAN id', idtxt, m['frame_id']))
     L.append('| ECU | [%s](%s) |' % (esc(label), ecu_page))
     L.append('| Vehicle | %s |' % tesla(model))
+    L.append('| API name / codename | `%s` |' % model)
+    L.append('| Coverage scope | %s |' % documentation_scope(model))
     L.append('| Firmware | %s |' % fw)
     L.append('| Bus | %s |' % esc(BUS_LABELS[bus]))
     L.append('| Transmitter | %s |' % esc(ecu_code(m['transmitter'])))
@@ -190,7 +193,7 @@ def message_page(p):
     paged = [s for s in sigs if s['mux_value'] is not None]
     L.append('## Signals of %s\n' % m['name'])
     L.append('Tesla %s CAN bus signals in `%s`: start bit and length, byte order, scaling, unit, '
-             'range, value table and confidence.\n' % (model_label(model), m['name']))
+             'range, value table and confidence.\n' % (documentation_model(model), m['name']))
     hdr = '| Signal | Meaning | Start\\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |'
     if sel:
         hdr = hdr.replace('| Meaning', '| Mux | Meaning')
@@ -242,6 +245,7 @@ def ecu_page(model, fw, ecu, plist):
     L = [front(title, desc), '# %s\n' % title]
     L.append('All %d messages of the %s (%s) documented for %s firmware %s, across the buses that carry them.\n' % (
         len(plist), label, ecu, tesla(model), fw))
+    L.append('API name / codename: `%s`. %s\n' % (model, documentation_scope(model)))
     L.append('| Message | Bus | Id | Length | Cycle | Signals |\n|---|---|---|---:|---:|---:|')
     for p in sorted(plist, key=lambda p: (BUS_ORDER.index(p['bus']), p['msg']['name'].lower(), p['msg']['frame_id'])):
         m = p['msg']
@@ -253,7 +257,7 @@ def ecu_page(model, fw, ecu, plist):
 
 
 def link_label(p):
-    return '%s %s %s' % (model_label(p['model']), p['fw'], p['bus'])
+    return '%s %s %s' % (documentation_model(p['model']), p['fw'], p['bus'])
 
 
 def signals_index(pages):
@@ -283,11 +287,19 @@ def build_site(repo):
     for (model, fw, ecu), plist in sorted(by_ecu.items()):
         pth, text = ecu_page(model, fw, ecu, plist)
         assert pth not in site, pth
-        site[pth] = text + '\n'
+        site[pth] = text.rstrip() + '\n'
     # home
     L = [front(SITE_TITLE, SITE_DESC), '# %s\n' % SITE_TITLE]
     L.append('%s Pick a vehicle, firmware and bus, then an ECU, or search the '
              '[signal index A-Z](signals/index.md) or the [message list](messages.md).\n' % SITE_DESC)
+    L.append('## Vehicle names and coverage scope\n')
+    L.append('| Model | API name / codename | Coverage basis |\n|---|---|---|')
+    for model in MODELS:
+        L.append('| %s | `%s` | %s |' % (documentation_model(model), model, documentation_scope(model)))
+    L.append('\nCommunity naming: [koenhendriks/tesla-model-extractor](%s), '
+             'whose Bayberry rule identifies Model Y (2025+ / Juniper). GoldenSnitch remains unidentified. '
+             'Names in enum value tables do not by themselves establish vehicle coverage. '
+             'See the [README naming references](../README.md#vehicle-names-and-original-codenames).\n' % COMMUNITY_NAMES_URL)
     for model in MODELS:
         fws = sorted({f['fw'] for f in files if f['model'] == model}, reverse=True)
         if not fws:

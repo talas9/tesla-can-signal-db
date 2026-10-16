@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_powerEstimates (0x33B) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Touchscreen user interface computer message: power estimates. Tesla Model 3 / Model Y CAN bus message UI_powerEstimates (0x33B) of Touchscreen user interface computer, firmware 2025.20.8, 4 signals (UI_idlePowerConsumption, UI_chargeTimeUntilTerminationPct, UI_isTripChargingActive, UI_chargeTimeUntilReadyToDepart). Bit layout, scaling, units and value tables."
+title: "UI_powerEstimates (0x33B) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Touchscreen user interface computer message: power estimates. Tesla Model 3 / Model Y (union) CAN bus message UI_powerEstimates (0x33B) of Touchscreen user interface computer, firmware 2025.20.8, 4 signals (UI_idlePowerConsumption, UI_chargeTimeUntilTerminationPct, UI_isTripChargingActive, UI_chargeTimeUntilReadyToDepart). Bit layout, scaling, units and value tables."
 ---
 
-# UI_powerEstimates (0x33B) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# UI_powerEstimates (0x33B) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Touchscreen user interface computer message: power estimates; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 4 signals of UI_powerEstimates as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Touchscreen user interface computer message: power estimates; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 4 signals of UI_powerEstimates as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: power estimates; forwarded onto thi
 | Message name | `UI_powerEstimates` |
 | CAN id | 0x33B (827) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: power estimates; forwarded onto thi
 
 ## Signals of UI_powerEstimates
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_powerEstimates`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_powerEstimates`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_powerEstimates`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

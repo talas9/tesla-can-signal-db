@@ -16,6 +16,8 @@ RCM3 ECU message: alert log; frame length from the layout, not yet observed on a
 | CAN id | 0x4E4 (1252) |
 | ECU | [RCM3 ECU](../../rcm3.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCM3 |

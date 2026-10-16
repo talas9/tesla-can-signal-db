@@ -8,6 +8,8 @@ description: "Tesla Model Y DIR CAN bus messages and signals of the Rear drive i
 
 All 13 messages of the Rear drive inverter (DIR) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`DIR_alertLog`](veh/dir/dir_alertlog.md) | VEH | 0x5A5 | 8 |  | 583 |
@@ -25,4 +27,3 @@ All 13 messages of the Rear drive inverter (DIR) documented for Tesla Model Y fi
 | [`DIR_torque`](party/dir/dir_torque.md) | PARTY | 0x108 | 8 | 10 ms | 9 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

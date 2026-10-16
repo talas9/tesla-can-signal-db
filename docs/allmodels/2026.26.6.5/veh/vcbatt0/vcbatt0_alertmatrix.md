@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCBATT0_alertMatrix (0x3CD) — VCBATT0 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCBATT0 ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message VCBATT0_alertMatrix (0x3CD) of VCBATT0 ECU, firmware 2026.26.6.5, 35 signals (VCBATT0_matrixIndex, VCBATT0_a001_WatchdogReset, VCBATT0_a002_PowerLossReset, VCBATT0_a003_SWAssertion and 31 more). Bit layout, scaling, units and value tables."
+title: "VCBATT0_alertMatrix (0x3CD) — VCBATT0 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCBATT0 ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message VCBATT0_alertMatrix (0x3CD) of VCBATT0 ECU, firmware 2026.26.6.5, 35 signals (VCBATT0_matrixIndex, VCBATT0_a001_WatchdogReset, VCBATT0_a002_PowerLossReset, VCBATT0_a003_SWAssertion and 31 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCBATT0_alertMatrix (0x3CD) — VCBATT0 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCBATT0_alertMatrix (0x3CD) — VCBATT0 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCBATT0 ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 35 signals of VCBATT0_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCBATT0 ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 35 signals of VCBATT0_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCBATT0 ECU message: alert matrix; frame length from the layout, not yet observe
 | Message name | `VCBATT0_alertMatrix` |
 | CAN id | 0x3CD (973) |
 | ECU | [VCBATT0 ECU](../../vcbatt0.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCBATT0 |
@@ -25,7 +27,7 @@ VCBATT0 ECU message: alert matrix; frame length from the layout, not yet observe
 
 ## Signals of VCBATT0_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `VCBATT0_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCBATT0_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -71,7 +73,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCBATT0_alertMatrix`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

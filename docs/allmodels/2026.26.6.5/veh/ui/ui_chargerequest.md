@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_chargeRequest (0x333) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: charge request. Tesla Model 3 / Model Y CAN bus message UI_chargeRequest (0x333) of Touchscreen user interface computer, firmware 2026.26.6.5, 16 signals (UI_openChargePortDoorRequest, UI_closeChargePortDoorRequest, UI_chargeEnableRequest, UI_brickVLoggingRequest and 12 more). Bit layout, scaling, units and value tables."
+title: "UI_chargeRequest (0x333) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: charge request. Tesla Model 3 / Model Y (union) CAN bus message UI_chargeRequest (0x333) of Touchscreen user interface computer, firmware 2026.26.6.5, 16 signals (UI_openChargePortDoorRequest, UI_closeChargePortDoorRequest, UI_chargeEnableRequest, UI_brickVLoggingRequest and 12 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_chargeRequest (0x333) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_chargeRequest (0x333) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: charge request; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 16 signals of UI_chargeRequest as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: charge request; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 16 signals of UI_chargeRequest as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: charge request; forwarded onto this
 | Message name | `UI_chargeRequest` |
 | CAN id | 0x333 (819) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: charge request; forwarded onto this
 
 ## Signals of UI_chargeRequest
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_chargeRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_chargeRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_chargeRequest`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

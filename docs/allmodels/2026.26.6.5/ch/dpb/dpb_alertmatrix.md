@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DPB_alertMatrix (0x3E7) — DPB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "DPB ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message DPB_alertMatrix (0x3E7) of DPB ECU, firmware 2026.26.6.5, 338 signals (DPB_matrixIndex, DPB_a001_pPlungerSensorOffsetHigh, DPB_a002_pMC2SensorOffsetHigh, DPB_a003_AswEEPROMReadFailure and 334 more). Bit layout, scaling, units and value tables."
+title: "DPB_alertMatrix (0x3E7) — DPB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "DPB ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message DPB_alertMatrix (0x3E7) of DPB ECU, firmware 2026.26.6.5, 338 signals (DPB_matrixIndex, DPB_a001_pPlungerSensorOffsetHigh, DPB_a002_pMC2SensorOffsetHigh, DPB_a003_AswEEPROMReadFailure and 334 more). Bit layout, scaling, units and value tables."
 ---
 
-# DPB_alertMatrix (0x3E7) — DPB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# DPB_alertMatrix (0x3E7) — DPB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-DPB ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 338 signals of DPB_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+DPB ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 338 signals of DPB_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ DPB ECU message: alert matrix; frame length from the layout, not yet observed on
 | Message name | `DPB_alertMatrix` |
 | CAN id | 0x3E7 (999) |
 | ECU | [DPB ECU](../../dpb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DPB |
@@ -25,7 +27,7 @@ DPB ECU message: alert matrix; frame length from the layout, not yet observed on
 
 ## Signals of DPB_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `DPB_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DPB_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -374,7 +376,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DPB_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

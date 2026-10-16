@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APSB_powerStateInputs (0x3E0) — APSB ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "APSB ECU message: power state inputs. Ethernet-side message APSB_powerStateInputs of APSB ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 6 signals (APSB_A_lowPowerRequest, APSB_A_lowPowerRequestor, APSB_A_forcePowerOffRequest, APSB_B_lowPowerRequest and 2 more). Bit layout, scaling, units and value tables."
+title: "APSB_powerStateInputs (0x3E0) — APSB ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "APSB ECU message: power state inputs. Ethernet-side message APSB_powerStateInputs of APSB ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 6 signals (APSB_A_lowPowerRequest, APSB_A_lowPowerRequestor, APSB_A_forcePowerOffRequest, APSB_B_lowPowerRequest and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# APSB_powerStateInputs (0x3E0) — APSB ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# APSB_powerStateInputs (0x3E0) — APSB ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-APSB ECU message: power state inputs. This page documents the 6 signals of APSB_powerStateInputs as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+APSB ECU message: power state inputs. This page documents the 6 signals of APSB_powerStateInputs as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ APSB ECU message: power state inputs. This page documents the 6 signals of APSB_
 | Message name | `APSB_powerStateInputs` |
 | Ethernet-side id | 0x3E0 (992) |
 | ECU | [APSB ECU](../../apsb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APSB |
@@ -25,7 +27,7 @@ APSB ECU message: power state inputs. This page documents the 6 signals of APSB_
 
 ## Signals of APSB_powerStateInputs
 
-Tesla Model 3 / Model Y CAN bus signals in `APSB_powerStateInputs`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APSB_powerStateInputs`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APSB_powerStateInputs`: start bit an
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

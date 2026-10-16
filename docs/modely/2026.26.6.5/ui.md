@@ -8,6 +8,8 @@ description: "Tesla Model Y UI CAN bus messages and signals of the Touchscreen u
 
 All 91 messages of the Touchscreen user interface computer (UI) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`UI_ambientLightingCtrls`](veh/ui/ui_ambientlightingctrls.md) | VEH | 0x679 | 7 | 500 ms | 14 |
@@ -103,4 +105,3 @@ All 91 messages of the Touchscreen user interface computer (UI) documented for T
 | [`UI_tripPlanning5`](eth/ui/ui_tripplanning5.md) | ETH | 0x497 | 4 | 1000 ms | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

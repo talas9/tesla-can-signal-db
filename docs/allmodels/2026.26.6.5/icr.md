@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "ICR ECU (ICR) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y ICR CAN bus messages and signals of the ICR ECU (ICR) for firmware 2026.26.6.5: 8 messages, 137 signals with bit layout, scaling and value tables."
+title: "ICR ECU (ICR) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) ICR CAN bus messages and signals of the ICR ECU (ICR) for firmware 2026.26.6.5: 8 messages, 137 signals with bit layout, scaling and value tables."
 ---
 
-# ICR ECU (ICR) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# ICR ECU (ICR) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 8 messages of the ICR ECU (ICR) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 8 messages of the ICR ECU (ICR) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -20,4 +22,3 @@ All 8 messages of the ICR ECU (ICR) documented for Tesla Model 3 / Model Y firmw
 | [`ICR_udsResponse`](veh/icr/icr_udsresponse.md) | VEH | 0x658 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

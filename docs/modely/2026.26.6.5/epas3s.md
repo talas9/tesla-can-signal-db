@@ -8,6 +8,8 @@ description: "Tesla Model Y EPAS3S CAN bus messages and signals of the Electric 
 
 All 6 messages of the Electric power steering (secondary) (EPAS3S) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPAS3S_alertLog`](ch/epas3s/epas3s_alertlog.md) | CH | 0x591 | 8 |  | 35 |
@@ -18,4 +20,3 @@ All 6 messages of the Electric power steering (secondary) (EPAS3S) documented fo
 | [`EPAS3S_udsResponse`](ch/epas3s/epas3s_udsresponse.md) | CH | 0x738 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

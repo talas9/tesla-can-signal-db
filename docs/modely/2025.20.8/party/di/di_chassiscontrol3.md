@@ -16,6 +16,8 @@ Drive inverter message: chassis control3; frame length from the layout, not yet 
 | CAN id | 0x74D (1869) |
 | ECU | [Drive inverter](../../di.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |

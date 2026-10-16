@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIF_status (0x2D5) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Front drive inverter message: status. Tesla Model 3 / Model Y CAN bus message DIF_status (0x2D5) of Front drive inverter, firmware 2026.26.6.5, 15 signals (DIF_statusChecksum, DIF_statusCounter, DIF_state, DIF_soptState and 11 more). Bit layout, scaling, units and value tables."
+title: "DIF_status (0x2D5) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Front drive inverter message: status. Tesla Model 3 / Model Y (union) CAN bus message DIF_status (0x2D5) of Front drive inverter, firmware 2026.26.6.5, 15 signals (DIF_statusChecksum, DIF_statusCounter, DIF_state, DIF_soptState and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIF_status (0x2D5) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DIF_status (0x2D5) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Front drive inverter message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of DIF_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Front drive inverter message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of DIF_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front drive inverter message: status; frame length from the layout, not yet obse
 | Message name | `DIF_status` |
 | CAN id | 0x2D5 (725) |
 | ECU | [Front drive inverter](../../dif.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DIF |
@@ -25,7 +27,7 @@ Front drive inverter message: status; frame length from the layout, not yet obse
 
 ## Signals of DIF_status
 
-Tesla Model 3 / Model Y CAN bus signals in `DIF_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIF_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIF_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

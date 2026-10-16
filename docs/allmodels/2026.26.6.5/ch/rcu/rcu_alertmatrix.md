@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCU_alertMatrix (0x3E6) — RCU ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "RCU ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message RCU_alertMatrix (0x3E6) of RCU ECU, firmware 2026.26.6.5, 67 signals (RCU_matrixIndex, RCU_a001_valveDriverFault, RCU_a002_solenoidValveFault, RCU_a003_pumpMotorFault and 63 more). Bit layout, scaling, units and value tables."
+title: "RCU_alertMatrix (0x3E6) — RCU ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "RCU ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message RCU_alertMatrix (0x3E6) of RCU ECU, firmware 2026.26.6.5, 67 signals (RCU_matrixIndex, RCU_a001_valveDriverFault, RCU_a002_solenoidValveFault, RCU_a003_pumpMotorFault and 63 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCU_alertMatrix (0x3E6) — RCU ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# RCU_alertMatrix (0x3E6) — RCU ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-RCU ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 67 signals of RCU_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+RCU ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 67 signals of RCU_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ RCU ECU message: alert matrix; frame length from the layout, not yet observed on
 | Message name | `RCU_alertMatrix` |
 | CAN id | 0x3E6 (998) |
 | ECU | [RCU ECU](../../rcu.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCU |
@@ -25,7 +27,7 @@ RCU ECU message: alert matrix; frame length from the layout, not yet observed on
 
 ## Signals of RCU_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `RCU_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCU_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -103,7 +105,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCU_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

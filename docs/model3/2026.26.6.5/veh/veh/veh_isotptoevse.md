@@ -16,6 +16,8 @@ VEH ECU message: iso tp to evse; forwarded onto this bus by the gateway; frame l
 | CAN id | 0x673 (1651) |
 | ECU | [VEH ECU](../../veh.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |

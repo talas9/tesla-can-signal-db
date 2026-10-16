@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TCU_SleepConfig (0x487) — TCU ECU, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "TCU ECU message: sleep config. Ethernet-side message TCU_SleepConfig of TCU ECU for Tesla Model 3 / Model Y firmware 2026.26.6.5, 1 signals (TCU_tc10Version). Bit layout, scaling, units and value tables."
+title: "TCU_SleepConfig (0x487) — TCU ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "TCU ECU message: sleep config. Ethernet-side message TCU_SleepConfig of TCU ECU for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 1 signals (TCU_tc10Version). Bit layout, scaling, units and value tables."
 ---
 
-# TCU_SleepConfig (0x487) — TCU ECU, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# TCU_SleepConfig (0x487) — TCU ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-TCU ECU message: sleep config. This page documents the 1 signals of TCU_SleepConfig as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+TCU ECU message: sleep config. This page documents the 1 signals of TCU_SleepConfig as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ TCU ECU message: sleep config. This page documents the 1 signals of TCU_SleepCon
 | Message name | `TCU_SleepConfig` |
 | Ethernet-side id | 0x487 (1159) |
 | ECU | [TCU ECU](../../tcu.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | TCU |
@@ -25,7 +27,7 @@ TCU ECU message: sleep config. This page documents the 1 signals of TCU_SleepCon
 
 ## Signals of TCU_SleepConfig
 
-Tesla Model 3 / Model Y CAN bus signals in `TCU_SleepConfig`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TCU_SleepConfig`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TCU_SleepConfig`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

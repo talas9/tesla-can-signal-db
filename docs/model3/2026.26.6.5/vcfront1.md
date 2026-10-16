@@ -8,6 +8,8 @@ description: "Tesla Model 3 VCFRONT1 CAN bus messages and signals of the VCFRONT
 
 All 4 messages of the VCFRONT1 ECU (VCFRONT1) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCFRONT1_alertLog`](veh/vcfront1/vcfront1_alertlog.md) | VEH | 0x537 | 8 |  | 272 |
@@ -16,4 +18,3 @@ All 4 messages of the VCFRONT1 ECU (VCFRONT1) documented for Tesla Model 3 firmw
 | [`VCFRONT1_udsResponse`](veh/vcfront1/vcfront1_udsresponse.md) | VEH | 0x62D | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

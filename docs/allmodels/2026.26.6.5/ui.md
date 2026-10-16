@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y UI CAN bus messages and signals of the Touchscreen user interface computer (UI) for firmware 2026.26.6.5: 91 messages, 1733 signals with bit layout, scaling and value tables."
+title: "Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) UI CAN bus messages and signals of the Touchscreen user interface computer (UI) for firmware 2026.26.6.5: 91 messages, 1733 signals with bit layout, scaling and value tables."
 ---
 
-# Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 91 messages of the Touchscreen user interface computer (UI) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 91 messages of the Touchscreen user interface computer (UI) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -103,4 +105,3 @@ All 91 messages of the Touchscreen user interface computer (UI) documented for T
 | [`UI_tripPlanning5`](eth/ui/ui_tripplanning5.md) | ETH | 0x497 | 4 | 1000 ms | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

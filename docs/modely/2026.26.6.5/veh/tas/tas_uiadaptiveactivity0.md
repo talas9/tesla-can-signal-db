@@ -16,6 +16,8 @@ Air suspension controller message: ui adaptive activity0; frame length from the 
 | CAN id | 0x199 (409) |
 | ECU | [Air suspension controller](../../tas.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | TAS |

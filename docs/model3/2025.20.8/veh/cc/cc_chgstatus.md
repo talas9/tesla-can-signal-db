@@ -16,6 +16,8 @@ Charge cable controller message: chg status; frame length from the layout, not y
 | CAN id | 0x31C (796) |
 | ECU | [Charge cable controller](../../cc.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CC |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HVBMS_0x452 (0x452) — HVBMS ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Vector__XXX ECU message: 0x452. Tesla Model 3 / Model Y CAN bus message HVBMS_0x452 (0x452) of HVBMS ECU, firmware 2025.20.8, 1 signals (HVBMS_0x452_b0_10). Bit layout, scaling, units and value tables."
+title: "HVBMS_0x452 (0x452) — HVBMS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Vector__XXX ECU message: 0x452. Tesla Model 3 / Model Y (union) CAN bus message HVBMS_0x452 (0x452) of HVBMS ECU, firmware 2025.20.8, 1 signals (HVBMS_0x452_b0_10). Bit layout, scaling, units and value tables."
 ---
 
-# HVBMS_0x452 (0x452) — HVBMS ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# HVBMS_0x452 (0x452) — HVBMS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Vector__XXX ECU message: 0x452; frame length observed on a vehicle bus. This page documents the 1 signals of HVBMS_0x452 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Vector__XXX ECU message: 0x452; frame length observed on a vehicle bus. This page documents the 1 signals of HVBMS_0x452 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vector__XXX ECU message: 0x452; frame length observed on a vehicle bus. This pag
 | Message name | `HVBMS_0x452` |
 | CAN id | 0x452 (1106) |
 | ECU | [HVBMS ECU](../../hvbms.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | other |
@@ -25,7 +27,7 @@ Vector__XXX ECU message: 0x452; frame length observed on a vehicle bus. This pag
 
 ## Signals of HVBMS_0x452
 
-Tesla Model 3 / Model Y CAN bus signals in `HVBMS_0x452`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `HVBMS_0x452`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `HVBMS_0x452`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

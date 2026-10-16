@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPBR_internalStatus (0x228) — Right electric parking brake, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Right electric parking brake message: internal status. Tesla Model 3 / Model Y CAN bus message EPBR_internalStatus (0x228) of Right electric parking brake, firmware 2025.20.8, 19 signals (EPBR_unitStatus, EPBR_unitFaultStatus, EPBR_summonState, EPBR_disconnected and 15 more). Bit layout, scaling, units and value tables."
+title: "EPBR_internalStatus (0x228) — Right electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Right electric parking brake message: internal status. Tesla Model 3 / Model Y (union) CAN bus message EPBR_internalStatus (0x228) of Right electric parking brake, firmware 2025.20.8, 19 signals (EPBR_unitStatus, EPBR_unitFaultStatus, EPBR_summonState, EPBR_disconnected and 15 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPBR_internalStatus (0x228) — Right electric parking brake, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# EPBR_internalStatus (0x228) — Right electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Right electric parking brake message: internal status; frame length observed on a vehicle bus. This page documents the 19 signals of EPBR_internalStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Right electric parking brake message: internal status; frame length observed on a vehicle bus. This page documents the 19 signals of EPBR_internalStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right electric parking brake message: internal status; frame length observed on 
 | Message name | `EPBR_internalStatus` |
 | CAN id | 0x228 (552) |
 | ECU | [Right electric parking brake](../../epbr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBR |
@@ -25,7 +27,7 @@ Right electric parking brake message: internal status; frame length observed on 
 
 ## Signals of EPBR_internalStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `EPBR_internalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPBR_internalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -51,7 +53,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPBR_internalStatus`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_ChildSeatStatus (0x25F) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Vehicle security controller message: child seat status. Tesla Model 3 / Model Y CAN bus message VCSEC_ChildSeatStatus (0x25F) of Vehicle security controller, firmware 2025.20.8, 21 signals (VCSEC_childSeat0_connectionState, VCSEC_childSeat0_taskDisconnectionReason, VCSEC_childSeat0_state, VCSEC_childSeat0_taskErrorCode and 17 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_ChildSeatStatus (0x25F) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Vehicle security controller message: child seat status. Tesla Model 3 / Model Y (union) CAN bus message VCSEC_ChildSeatStatus (0x25F) of Vehicle security controller, firmware 2025.20.8, 21 signals (VCSEC_childSeat0_connectionState, VCSEC_childSeat0_taskDisconnectionReason, VCSEC_childSeat0_state, VCSEC_childSeat0_taskErrorCode and 17 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_ChildSeatStatus (0x25F) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCSEC_ChildSeatStatus (0x25F) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Vehicle security controller message: child seat status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 21 signals of VCSEC_ChildSeatStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Vehicle security controller message: child seat status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 21 signals of VCSEC_ChildSeatStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: child seat status; frame length from the la
 | Message name | `VCSEC_ChildSeatStatus` |
 | CAN id | 0x25F (607) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: child seat status; frame length from the la
 
 ## Signals of VCSEC_ChildSeatStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_ChildSeatStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_ChildSeatStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -53,7 +55,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_ChildSeatStatus`: start bit an
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

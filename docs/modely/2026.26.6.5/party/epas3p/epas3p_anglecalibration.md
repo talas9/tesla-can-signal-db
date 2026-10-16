@@ -16,6 +16,8 @@ Electric power steering (primary) message: angle calibration; frame length from 
 | CAN id | 0x3D1 (977) |
 | ECU | [Electric power steering (primary)](../../epas3p.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | EPAS3P |

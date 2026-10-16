@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y UI CAN bus messages and signals of the Touchscreen user interface computer (UI) for firmware 2025.20.8: 76 messages, 1331 signals with bit layout, scaling and value tables."
+title: "Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) UI CAN bus messages and signals of the Touchscreen user interface computer (UI) for firmware 2025.20.8: 76 messages, 1331 signals with bit layout, scaling and value tables."
 ---
 
-# Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Touchscreen user interface computer (UI) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 76 messages of the Touchscreen user interface computer (UI) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 76 messages of the Touchscreen user interface computer (UI) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -88,4 +90,3 @@ All 76 messages of the Touchscreen user interface computer (UI) documented for T
 | [`UI_weatherDataService`](eth/ui/ui_weatherdataservice.md) | ETH | 0x621 | 8 | 500 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

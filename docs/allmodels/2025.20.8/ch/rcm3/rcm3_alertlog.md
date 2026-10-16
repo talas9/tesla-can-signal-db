@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCM3_alertLog (0x4E4) — RCM3 ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "RCM3 ECU message: alert log. Tesla Model 3 / Model Y CAN bus message RCM3_alertLog (0x4E4) of RCM3 ECU, firmware 2025.20.8, 2 signals (RCM3_alertID, RCM3_alertState). Bit layout, scaling, units and value tables."
+title: "RCM3_alertLog (0x4E4) — RCM3 ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "RCM3 ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message RCM3_alertLog (0x4E4) of RCM3 ECU, firmware 2025.20.8, 2 signals (RCM3_alertID, RCM3_alertState). Bit layout, scaling, units and value tables."
 ---
 
-# RCM3_alertLog (0x4E4) — RCM3 ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# RCM3_alertLog (0x4E4) — RCM3 ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-RCM3 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 2 signals of RCM3_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+RCM3 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 2 signals of RCM3_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ RCM3 ECU message: alert log; frame length from the layout, not yet observed on a
 | Message name | `RCM3_alertLog` |
 | CAN id | 0x4E4 (1252) |
 | ECU | [RCM3 ECU](../../rcm3.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCM3 |
@@ -25,7 +27,7 @@ RCM3 ECU message: alert log; frame length from the layout, not yet observed on a
 
 ## Signals of RCM3_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `RCM3_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCM3_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -34,7 +36,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM3_alertLog`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

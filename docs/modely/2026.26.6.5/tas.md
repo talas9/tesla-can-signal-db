@@ -8,6 +8,8 @@ description: "Tesla Model Y TAS CAN bus messages and signals of the Air suspensi
 
 All 10 messages of the Air suspension controller (TAS) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`TAS_alertLog`](veh/tas/tas_alertlog.md) | VEH | 0x50B | 8 |  | 215 |
@@ -22,4 +24,3 @@ All 10 messages of the Air suspension controller (TAS) documented for Tesla Mode
 | [`TAS_uiControl`](veh/tas/tas_uicontrol.md) | VEH | 0x21A | 5 | 100 ms | 23 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

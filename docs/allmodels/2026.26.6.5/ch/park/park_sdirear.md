@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PARK_sdiRear (0x22E) — Parking assist sensors, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Parking assist sensors message: sdi rear. Tesla Model 3 / Model Y CAN bus message PARK_sdiRear (0x22E) of Parking assist sensors, firmware 2026.26.6.5, 8 signals (PARK_sdiSensor7RawDistData, PARK_sdiSensor8RawDistData, PARK_sdiSensor9RawDistData, PARK_sdiSensor10RawDistData and 4 more). Bit layout, scaling, units and value tables."
+title: "PARK_sdiRear (0x22E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Parking assist sensors message: sdi rear. Tesla Model 3 / Model Y (union) CAN bus message PARK_sdiRear (0x22E) of Parking assist sensors, firmware 2026.26.6.5, 8 signals (PARK_sdiSensor7RawDistData, PARK_sdiSensor8RawDistData, PARK_sdiSensor9RawDistData, PARK_sdiSensor10RawDistData and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# PARK_sdiRear (0x22E) — Parking assist sensors, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# PARK_sdiRear (0x22E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Parking assist sensors message: sdi rear; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of PARK_sdiRear as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Parking assist sensors message: sdi rear; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of PARK_sdiRear as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Parking assist sensors message: sdi rear; frame length from the layout, not yet 
 | Message name | `PARK_sdiRear` |
 | CAN id | 0x22E (558) |
 | ECU | [Parking assist sensors](../../park.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |
@@ -25,7 +27,7 @@ Parking assist sensors message: sdi rear; frame length from the layout, not yet 
 
 ## Signals of PARK_sdiRear
 
-Tesla Model 3 / Model Y CAN bus signals in `PARK_sdiRear`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PARK_sdiRear`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PARK_sdiRear`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

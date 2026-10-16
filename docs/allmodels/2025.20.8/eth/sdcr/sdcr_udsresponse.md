@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SDCR_udsResponse (0x6FB) — SDCR ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "SDCR ECU message: uds response. Ethernet-side message SDCR_udsResponse of SDCR ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 1 signals (SDCR_udsResponseData). Bit layout, scaling, units and value tables."
+title: "SDCR_udsResponse (0x6FB) — SDCR ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "SDCR ECU message: uds response. Ethernet-side message SDCR_udsResponse of SDCR ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 1 signals (SDCR_udsResponseData). Bit layout, scaling, units and value tables."
 ---
 
-# SDCR_udsResponse (0x6FB) — SDCR ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# SDCR_udsResponse (0x6FB) — SDCR ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-SDCR ECU message: uds response. This page documents the 1 signals of SDCR_udsResponse as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+SDCR ECU message: uds response. This page documents the 1 signals of SDCR_udsResponse as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ SDCR ECU message: uds response. This page documents the 1 signals of SDCR_udsRes
 | Message name | `SDCR_udsResponse` |
 | Ethernet-side id | 0x6FB (1787) |
 | ECU | [SDCR ECU](../../sdcr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | SDCR |
@@ -25,7 +27,7 @@ SDCR ECU message: uds response. This page documents the 1 signals of SDCR_udsRes
 
 ## Signals of SDCR_udsResponse
 
-Tesla Model 3 / Model Y CAN bus signals in `SDCR_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SDCR_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SDCR_udsResponse`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

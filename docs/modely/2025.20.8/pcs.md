@@ -8,6 +8,8 @@ description: "Tesla Model Y PCS CAN bus messages and signals of the Power conver
 
 All 10 messages of the Power conversion system (on-board charger and DC-DC converter) (PCS) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PCS_chgLineStatus`](veh/pcs/pcs_chglinestatus.md) | VEH | 0x264 | 6 | 100 ms | 5 |
@@ -22,4 +24,3 @@ All 10 messages of the Power conversion system (on-board charger and DC-DC conve
 | [`PCS_udsResponse`](eth/pcs/pcs_udsresponse.md) | ETH | 0x629 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

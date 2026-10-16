@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PM_systemState (0x1CF) — PM ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "PM ECU message: system state. Ethernet-side message PM_systemState of PM ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 11 signals (PM_torqueCheckState, PM_limpRequest, PM_torqueCommand, PM_torqueState and 7 more). Bit layout, scaling, units and value tables."
+title: "PM_systemState (0x1CF) — PM ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "PM ECU message: system state. Ethernet-side message PM_systemState of PM ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 11 signals (PM_torqueCheckState, PM_limpRequest, PM_torqueCommand, PM_torqueState and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# PM_systemState (0x1CF) — PM ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# PM_systemState (0x1CF) — PM ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-PM ECU message: system state. This page documents the 11 signals of PM_systemState as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+PM ECU message: system state. This page documents the 11 signals of PM_systemState as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ PM ECU message: system state. This page documents the 11 signals of PM_systemSta
 | Message name | `PM_systemState` |
 | Ethernet-side id | 0x1CF (463) |
 | ECU | [PM ECU](../../pm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | PM |
@@ -25,7 +27,7 @@ PM ECU message: system state. This page documents the 11 signals of PM_systemSta
 
 ## Signals of PM_systemState
 
-Tesla Model 3 / Model Y CAN bus signals in `PM_systemState`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PM_systemState`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PM_systemState`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

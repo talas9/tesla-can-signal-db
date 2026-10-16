@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Power conversion system (on-board charger and DC-DC converter) (PCS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y PCS CAN bus messages and signals of the Power conversion system (on-board charger and DC-DC converter) (PCS) for firmware 2025.20.8: 10 messages, 593 signals with bit layout, scaling and value tables."
+title: "Power conversion system (on-board charger and DC-DC converter) (PCS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) PCS CAN bus messages and signals of the Power conversion system (on-board charger and DC-DC converter) (PCS) for firmware 2025.20.8: 10 messages, 593 signals with bit layout, scaling and value tables."
 ---
 
-# Power conversion system (on-board charger and DC-DC converter) (PCS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Power conversion system (on-board charger and DC-DC converter) (PCS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 10 messages of the Power conversion system (on-board charger and DC-DC converter) (PCS) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 10 messages of the Power conversion system (on-board charger and DC-DC converter) (PCS) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -22,4 +24,3 @@ All 10 messages of the Power conversion system (on-board charger and DC-DC conve
 | [`PCS_udsResponse`](eth/pcs/pcs_udsresponse.md) | ETH | 0x629 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

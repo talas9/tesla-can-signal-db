@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPBL_udsResponse (0x625) — Left electric parking brake, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Left electric parking brake message: uds response. Ethernet-side message EPBL_udsResponse of Left electric parking brake for Tesla Model 3 / Model Y firmware 2025.20.8, 2 signals (EPBL_udsResponseData_H, EPBL_udsResponseData_L). Bit layout, scaling, units and value tables."
+title: "EPBL_udsResponse (0x625) — Left electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Left electric parking brake message: uds response. Ethernet-side message EPBL_udsResponse of Left electric parking brake for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 2 signals (EPBL_udsResponseData_H, EPBL_udsResponseData_L). Bit layout, scaling, units and value tables."
 ---
 
-# EPBL_udsResponse (0x625) — Left electric parking brake, Tesla Model 3 / Model Y 2025.20.8 ETH
+# EPBL_udsResponse (0x625) — Left electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Left electric parking brake message: uds response. This page documents the 2 signals of EPBL_udsResponse as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Left electric parking brake message: uds response. This page documents the 2 signals of EPBL_udsResponse as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left electric parking brake message: uds response. This page documents the 2 sig
 | Message name | `EPBL_udsResponse` |
 | Ethernet-side id | 0x625 (1573) |
 | ECU | [Left electric parking brake](../../epbl.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | EPBL |
@@ -25,7 +27,7 @@ Left electric parking brake message: uds response. This page documents the 2 sig
 
 ## Signals of EPBL_udsResponse
 
-Tesla Model 3 / Model Y CAN bus signals in `EPBL_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPBL_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -34,7 +36,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPBL_udsResponse`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

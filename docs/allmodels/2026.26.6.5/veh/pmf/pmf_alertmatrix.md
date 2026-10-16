@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PMF_alertMatrix (0x304) — PMF ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "PMF ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message PMF_alertMatrix (0x304) of PMF ECU, firmware 2026.26.6.5, 53 signals (PMF_matrixIndex, PMF_a001_absoluteTorque, PMF_a002_excessiveAccelTorque, PMF_a003_excessiveReversalTorque and 49 more). Bit layout, scaling, units and value tables."
+title: "PMF_alertMatrix (0x304) — PMF ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "PMF ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message PMF_alertMatrix (0x304) of PMF ECU, firmware 2026.26.6.5, 53 signals (PMF_matrixIndex, PMF_a001_absoluteTorque, PMF_a002_excessiveAccelTorque, PMF_a003_excessiveReversalTorque and 49 more). Bit layout, scaling, units and value tables."
 ---
 
-# PMF_alertMatrix (0x304) — PMF ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PMF_alertMatrix (0x304) — PMF ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-PMF ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 53 signals of PMF_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+PMF ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 53 signals of PMF_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PMF ECU message: alert matrix; frame length from the layout, not yet observed on
 | Message name | `PMF_alertMatrix` |
 | CAN id | 0x304 (772) |
 | ECU | [PMF ECU](../../pmf.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PMF |
@@ -25,7 +27,7 @@ PMF ECU message: alert matrix; frame length from the layout, not yet observed on
 
 ## Signals of PMF_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `PMF_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PMF_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -89,7 +91,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PMF_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

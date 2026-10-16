@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPBR_info (0x7E8) — Right electric parking brake, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Right electric parking brake message: info. Tesla Model 3 / Model Y CAN bus message EPBR_info (0x7E8) of Right electric parking brake, firmware 2026.26.6.5, 15 signals (EPBR_infoIndex, EPBR_infoBuildType, EPBR_infoBuildConfigId, EPBR_infoHardwareId and 11 more). Bit layout, scaling, units and value tables."
+title: "EPBR_info (0x7E8) — Right electric parking brake, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Right electric parking brake message: info. Tesla Model 3 / Model Y (union) CAN bus message EPBR_info (0x7E8) of Right electric parking brake, firmware 2026.26.6.5, 15 signals (EPBR_infoIndex, EPBR_infoBuildType, EPBR_infoBuildConfigId, EPBR_infoHardwareId and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPBR_info (0x7E8) — Right electric parking brake, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# EPBR_info (0x7E8) — Right electric parking brake, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Right electric parking brake message: info; frame length observed on a vehicle bus. This page documents the 15 signals of EPBR_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Right electric parking brake message: info; frame length observed on a vehicle bus. This page documents the 15 signals of EPBR_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right electric parking brake message: info; frame length observed on a vehicle b
 | Message name | `EPBR_info` |
 | CAN id | 0x7E8 (2024) |
 | ECU | [Right electric parking brake](../../epbr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBR |
@@ -25,7 +27,7 @@ Right electric parking brake message: info; frame length observed on a vehicle b
 
 ## Signals of EPBR_info
 
-Tesla Model 3 / Model Y CAN bus signals in `EPBR_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPBR_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -51,7 +53,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPBR_info`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

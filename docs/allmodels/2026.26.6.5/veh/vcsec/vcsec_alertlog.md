@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Vehicle security controller message: alert log. Tesla Model 3 / Model Y CAN bus message VCSEC_alertLog (0x530) of Vehicle security controller, firmware 2026.26.6.5, 437 signals (VCSEC_alertID, VCSEC_alertState, VCSEC_a001_InternalWatchdog, VCSEC_a010_UnderVoltageDetected and 433 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Vehicle security controller message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCSEC_alertLog (0x530) of Vehicle security controller, firmware 2026.26.6.5, 437 signals (VCSEC_alertID, VCSEC_alertState, VCSEC_a001_InternalWatchdog, VCSEC_a010_UnderVoltageDetected and 433 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Vehicle security controller message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 437 signals of VCSEC_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Vehicle security controller message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 437 signals of VCSEC_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: alert log; frame length from the layout, no
 | Message name | `VCSEC_alertLog` |
 | CAN id | 0x530 (1328) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: alert log; frame length from the layout, no
 
 ## Signals of VCSEC_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -473,7 +475,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_alertLog`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

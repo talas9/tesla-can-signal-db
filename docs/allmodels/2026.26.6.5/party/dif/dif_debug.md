@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIF_debug (0x757) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Front drive inverter message: debug. Tesla Model 3 / Model Y CAN bus message DIF_debug (0x757) of Front drive inverter, firmware 2026.26.6.5, 79 signals (DIF_debugSelector, DIF_motorIA, DIF_motorIB, DIF_motorIC and 75 more). Bit layout, scaling, units and value tables."
+title: "DIF_debug (0x757) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Front drive inverter message: debug. Tesla Model 3 / Model Y (union) CAN bus message DIF_debug (0x757) of Front drive inverter, firmware 2026.26.6.5, 79 signals (DIF_debugSelector, DIF_motorIA, DIF_motorIB, DIF_motorIC and 75 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIF_debug (0x757) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DIF_debug (0x757) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Front drive inverter message: debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 79 signals of DIF_debug as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Front drive inverter message: debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 79 signals of DIF_debug as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front drive inverter message: debug; frame length from the layout, not yet obser
 | Message name | `DIF_debug` |
 | CAN id | 0x757 (1879) |
 | ECU | [Front drive inverter](../../dif.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DIF |
@@ -25,7 +27,7 @@ Front drive inverter message: debug; frame length from the layout, not yet obser
 
 ## Signals of DIF_debug
 
-Tesla Model 3 / Model Y CAN bus signals in `DIF_debug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIF_debug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -115,7 +117,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIF_debug`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCBATT1_alertLog (0x53B) — VCBATT1 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCBATT1 ECU message: alert log. Tesla Model 3 / Model Y CAN bus message VCBATT1_alertLog (0x53B) of VCBATT1 ECU, firmware 2026.26.6.5, 829 signals (VCBATT1_alertID, VCBATT1_alertState, VCBATT1_a001_InternalWatchdog, VCBATT1_a015_NVMMMemOverflow and 825 more). Bit layout, scaling, units and value tables."
+title: "VCBATT1_alertLog (0x53B) — VCBATT1 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCBATT1 ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCBATT1_alertLog (0x53B) of VCBATT1 ECU, firmware 2026.26.6.5, 829 signals (VCBATT1_alertID, VCBATT1_alertState, VCBATT1_a001_InternalWatchdog, VCBATT1_a015_NVMMMemOverflow and 825 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCBATT1_alertLog (0x53B) — VCBATT1 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCBATT1_alertLog (0x53B) — VCBATT1 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCBATT1 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 829 signals of VCBATT1_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCBATT1 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 829 signals of VCBATT1_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCBATT1 ECU message: alert log; frame length from the layout, not yet observed o
 | Message name | `VCBATT1_alertLog` |
 | CAN id | 0x53B (1339) |
 | ECU | [VCBATT1 ECU](../../vcbatt1.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCBATT1 |
@@ -25,7 +27,7 @@ VCBATT1 ECU message: alert log; frame length from the layout, not yet observed o
 
 ## Signals of VCBATT1_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCBATT1_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCBATT1_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -865,7 +867,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCBATT1_alertLog`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

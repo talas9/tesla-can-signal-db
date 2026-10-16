@@ -8,5 +8,5 @@ description: "Tesla Model 3 and Model Y CAN bus signals beginning with C: pages 
 
 915 signals, split over 2 pages.
 
-- [CC_a001_gndMonIntrptLineSide to CP_a080_taskStackOverflow](c-1.md) (482 signals)
-- [CP_a081_swException to CP_wakeOnPushCounter](c-2.md) (433 signals)
+- [CC_a001_gndMonIntrptLineSide to CP_a079_cableNotSecuredCold](c-1.md) (477 signals)
+- [CP_a079_pinTemperature1 to CP_wakeOnPushCounter](c-2.md) (438 signals)

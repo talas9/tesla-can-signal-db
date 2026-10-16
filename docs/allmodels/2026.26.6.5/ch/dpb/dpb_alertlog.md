@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DPB_alertLog (0x5C0) — DPB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "DPB ECU message: alert log. Tesla Model 3 / Model Y CAN bus message DPB_alertLog (0x5C0) of DPB ECU, firmware 2026.26.6.5, 2 signals (DPB_alertID, DPB_alertState). Bit layout, scaling, units and value tables."
+title: "DPB_alertLog (0x5C0) — DPB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "DPB ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message DPB_alertLog (0x5C0) of DPB ECU, firmware 2026.26.6.5, 2 signals (DPB_alertID, DPB_alertState). Bit layout, scaling, units and value tables."
 ---
 
-# DPB_alertLog (0x5C0) — DPB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# DPB_alertLog (0x5C0) — DPB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-DPB ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 2 signals of DPB_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+DPB ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 2 signals of DPB_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ DPB ECU message: alert log; frame length from the layout, not yet observed on a 
 | Message name | `DPB_alertLog` |
 | CAN id | 0x5C0 (1472) |
 | ECU | [DPB ECU](../../dpb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DPB |
@@ -25,7 +27,7 @@ DPB ECU message: alert log; frame length from the layout, not yet observed on a 
 
 ## Signals of DPB_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `DPB_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DPB_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -34,7 +36,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DPB_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

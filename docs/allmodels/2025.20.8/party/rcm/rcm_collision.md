@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCM_collision (0x11) — Restraint control module, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Restraint control module message: collision. Tesla Model 3 / Model Y CAN bus message RCM_collision (0x11) of Restraint control module, firmware 2025.20.8, 9 signals (RCM_collisionChecksum, RCM_collisionCounter, RCM_collisionRear, RCM_collisionRight and 5 more). Bit layout, scaling, units and value tables."
+title: "RCM_collision (0x11) — Restraint control module, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Restraint control module message: collision. Tesla Model 3 / Model Y (union) CAN bus message RCM_collision (0x11) of Restraint control module, firmware 2025.20.8, 9 signals (RCM_collisionChecksum, RCM_collisionCounter, RCM_collisionRear, RCM_collisionRight and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCM_collision (0x11) — Restraint control module, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# RCM_collision (0x11) — Restraint control module, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Restraint control module message: collision; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of RCM_collision as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Restraint control module message: collision; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of RCM_collision as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Restraint control module message: collision; frame length from the layout, not y
 | Message name | `RCM_collision` |
 | CAN id | 0x11 (17) |
 | ECU | [Restraint control module](../../rcm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | RCM |
@@ -25,7 +27,7 @@ Restraint control module message: collision; frame length from the layout, not y
 
 ## Signals of RCM_collision
 
-Tesla Model 3 / Model Y CAN bus signals in `RCM_collision`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCM_collision`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM_collision`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

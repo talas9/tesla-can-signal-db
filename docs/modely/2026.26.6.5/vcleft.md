@@ -8,6 +8,8 @@ description: "Tesla Model Y VCLEFT CAN bus messages and signals of the Left body
 
 All 30 messages of the Left body controller (VCLEFT) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCLEFT_alertLog`](veh/vcleft/vcleft_alertlog.md) | VEH | 0x55D | 8 |  | 1427 |
@@ -42,4 +44,3 @@ All 30 messages of the Left body controller (VCLEFT) documented for Tesla Model 
 | [`VCLEFT_logging10Hz`](eth/vcleft/vcleft_logging10hz.md) | ETH | 0x289 | 8 | 100 ms | 15 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

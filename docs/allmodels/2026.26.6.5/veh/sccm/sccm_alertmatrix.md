@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SCCM_alertMatrix (0x54F) — Steering column control module, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Steering column control module message: alert matrix. Tesla Model 3 / Model Y CAN bus message SCCM_alertMatrix (0x54F) of Steering column control module, firmware 2026.26.6.5, 58 signals (SCCM_matrixIndex, SCCM_a001_CANBusOff, SCCM_a002_CANTOut, SCCM_a003_highBeamOpen and 54 more). Bit layout, scaling, units and value tables."
+title: "SCCM_alertMatrix (0x54F) — Steering column control module, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Steering column control module message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message SCCM_alertMatrix (0x54F) of Steering column control module, firmware 2026.26.6.5, 58 signals (SCCM_matrixIndex, SCCM_a001_CANBusOff, SCCM_a002_CANTOut, SCCM_a003_highBeamOpen and 54 more). Bit layout, scaling, units and value tables."
 ---
 
-# SCCM_alertMatrix (0x54F) — Steering column control module, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# SCCM_alertMatrix (0x54F) — Steering column control module, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Steering column control module message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 58 signals of SCCM_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Steering column control module message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 58 signals of SCCM_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Steering column control module message: alert matrix; frame length from the layo
 | Message name | `SCCM_alertMatrix` |
 | CAN id | 0x54F (1359) |
 | ECU | [Steering column control module](../../sccm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCCM |
@@ -25,7 +27,7 @@ Steering column control module message: alert matrix; frame length from the layo
 
 ## Signals of SCCM_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `SCCM_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SCCM_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -94,7 +96,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SCCM_alertMatrix`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

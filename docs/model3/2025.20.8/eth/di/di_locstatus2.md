@@ -16,6 +16,8 @@ Drive inverter message: loc status2. This page documents the 14 signals of DI_lo
 | Ethernet-side id | 0x4F6 (1270) |
 | ECU | [Drive inverter](../../di.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DI |

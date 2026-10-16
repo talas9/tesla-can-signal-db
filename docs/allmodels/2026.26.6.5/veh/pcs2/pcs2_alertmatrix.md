@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PCS2_alertMatrix (0x3E4) — PCS2 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "PCS2 ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message PCS2_alertMatrix (0x3E4) of PCS2 ECU, firmware 2026.26.6.5, 193 signals (PCS2_matrixIndex, PCS2_a001_watchdogAlarmed, PCS2_a002_canRationality, PCS2_a003_softwareAssertion and 189 more). Bit layout, scaling, units and value tables."
+title: "PCS2_alertMatrix (0x3E4) — PCS2 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "PCS2 ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message PCS2_alertMatrix (0x3E4) of PCS2 ECU, firmware 2026.26.6.5, 193 signals (PCS2_matrixIndex, PCS2_a001_watchdogAlarmed, PCS2_a002_canRationality, PCS2_a003_softwareAssertion and 189 more). Bit layout, scaling, units and value tables."
 ---
 
-# PCS2_alertMatrix (0x3E4) — PCS2 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PCS2_alertMatrix (0x3E4) — PCS2 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-PCS2 ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 193 signals of PCS2_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+PCS2 ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 193 signals of PCS2_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PCS2 ECU message: alert matrix; frame length from the layout, not yet observed o
 | Message name | `PCS2_alertMatrix` |
 | CAN id | 0x3E4 (996) |
 | ECU | [PCS2 ECU](../../pcs2.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PCS2 |
@@ -25,7 +27,7 @@ PCS2 ECU message: alert matrix; frame length from the layout, not yet observed o
 
 ## Signals of PCS2_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `PCS2_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PCS2_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -229,7 +231,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PCS2_alertMatrix`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

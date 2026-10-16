@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UDS_functionalRequest (0x7DF) — UDS ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "UDS ECU message: functional request. Tesla Model 3 / Model Y CAN bus message UDS_functionalRequest (0x7DF) of UDS ECU, firmware 2026.26.6.5, 8 signals (UDS_functionalRequestData_0, UDS_functionalRequestData_1, UDS_functionalRequestData_2, UDS_functionalRequestData_3 and 4 more). Bit layout, scaling, units and value tables."
+title: "UDS_functionalRequest (0x7DF) — UDS ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "UDS ECU message: functional request. Tesla Model 3 / Model Y (union) CAN bus message UDS_functionalRequest (0x7DF) of UDS ECU, firmware 2026.26.6.5, 8 signals (UDS_functionalRequestData_0, UDS_functionalRequestData_1, UDS_functionalRequestData_2, UDS_functionalRequestData_3 and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# UDS_functionalRequest (0x7DF) — UDS ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UDS_functionalRequest (0x7DF) — UDS ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-UDS ECU message: functional request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of UDS_functionalRequest as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+UDS ECU message: functional request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of UDS_functionalRequest as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ UDS ECU message: functional request; forwarded onto this bus by the gateway; fra
 | Message name | `UDS_functionalRequest` |
 | CAN id | 0x7DF (2015) |
 | ECU | [UDS ECU](../../uds.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ UDS ECU message: functional request; forwarded onto this bus by the gateway; fra
 
 ## Signals of UDS_functionalRequest
 
-Tesla Model 3 / Model Y CAN bus signals in `UDS_functionalRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UDS_functionalRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UDS_functionalRequest`: start bit an
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

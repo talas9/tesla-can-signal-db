@@ -8,6 +8,8 @@ description: "Tesla Model Y VCSEC CAN bus messages and signals of the Vehicle se
 
 All 21 messages of the Vehicle security controller (VCSEC) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCSEC_additionalAuthInfo`](veh/vcsec/vcsec_additionalauthinfo.md) | VEH | 0x2F9 | 8 | 100 ms | 25 |
@@ -33,4 +35,3 @@ All 21 messages of the Vehicle security controller (VCSEC) documented for Tesla 
 | [`VCSEC_UWBData`](veh/vcsec/vcsec_uwbdata.md) | VEH | 0x42B | 8 | 100 ms | 28 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

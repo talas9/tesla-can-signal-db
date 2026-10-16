@@ -8,6 +8,8 @@ description: "Tesla Model 3 VC CAN bus messages and signals of the VC ECU (VC) f
 
 All 5 messages of the VC ECU (VC) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VC_LVBMS_brickMeasurements`](veh/vc/vc_lvbms_brickmeasurements.md) | VEH | 0x73A | 8 | 1000 ms | 13 |
@@ -17,4 +19,3 @@ All 5 messages of the VC ECU (VC) documented for Tesla Model 3 firmware 2026.26.
 | [`VC_pcsManagement`](veh/vc/vc_pcsmanagement.md) | VEH | 0x443 | 6 | 500 ms | 6 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

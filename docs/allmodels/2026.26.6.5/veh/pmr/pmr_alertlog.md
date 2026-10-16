@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PMR_alertLog (0x5A6) — PMR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "PMR ECU message: alert log. Tesla Model 3 / Model Y CAN bus message PMR_alertLog (0x5A6) of PMR ECU, firmware 2026.26.6.5, 230 signals (PMR_alertID, PMR_alertState, PMR_a001_w0, PMR_a001_w1 and 226 more). Bit layout, scaling, units and value tables."
+title: "PMR_alertLog (0x5A6) — PMR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "PMR ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message PMR_alertLog (0x5A6) of PMR ECU, firmware 2026.26.6.5, 230 signals (PMR_alertID, PMR_alertState, PMR_a001_w0, PMR_a001_w1 and 226 more). Bit layout, scaling, units and value tables."
 ---
 
-# PMR_alertLog (0x5A6) — PMR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PMR_alertLog (0x5A6) — PMR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-PMR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 230 signals of PMR_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+PMR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 230 signals of PMR_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PMR ECU message: alert log; frame length from the layout, not yet observed on a 
 | Message name | `PMR_alertLog` |
 | CAN id | 0x5A6 (1446) |
 | ECU | [PMR ECU](../../pmr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PMR |
@@ -25,7 +27,7 @@ PMR ECU message: alert log; frame length from the layout, not yet observed on a 
 
 ## Signals of PMR_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `PMR_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PMR_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -266,7 +268,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PMR_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

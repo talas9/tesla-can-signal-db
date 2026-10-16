@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SCS_alertLog (0x54A) — SCS ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "SCS ECU message: alert log. Tesla Model 3 / Model Y CAN bus message SCS_alertLog (0x54A) of SCS ECU, firmware 2025.20.8, 5 signals (SCS_alertID, SCS_alertType, SCS_a044_proximityV, SCS_a074_voltageWithRo and 1 more). Bit layout, scaling, units and value tables."
+title: "SCS_alertLog (0x54A) — SCS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "SCS ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message SCS_alertLog (0x54A) of SCS ECU, firmware 2025.20.8, 5 signals (SCS_alertID, SCS_alertType, SCS_a044_proximityV, SCS_a074_voltageWithRo and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# SCS_alertLog (0x54A) — SCS ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# SCS_alertLog (0x54A) — SCS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-SCS ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of SCS_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+SCS ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of SCS_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ SCS ECU message: alert log; frame length from the layout, not yet observed on a 
 | Message name | `SCS_alertLog` |
 | CAN id | 0x54A (1354) |
 | ECU | [SCS ECU](../../scs.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCS |
@@ -25,7 +27,7 @@ SCS ECU message: alert log; frame length from the layout, not yet observed on a 
 
 ## Signals of SCS_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `SCS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SCS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SCS_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

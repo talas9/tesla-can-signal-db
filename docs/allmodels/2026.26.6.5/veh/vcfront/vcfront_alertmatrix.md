@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_alertMatrix (0x340) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: alert matrix. Tesla Model 3 / Model Y CAN bus message VCFRONT_alertMatrix (0x340) of Front body controller, firmware 2026.26.6.5, 633 signals (VCFRONT_matrixIndex, VCFRONT_a001_WatchdogReset, VCFRONT_a002_PowerLossReset, VCFRONT_a003_SWAssertion and 629 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_alertMatrix (0x340) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_alertMatrix (0x340) of Front body controller, firmware 2026.26.6.5, 633 signals (VCFRONT_matrixIndex, VCFRONT_a001_WatchdogReset, VCFRONT_a002_PowerLossReset, VCFRONT_a003_SWAssertion and 629 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_alertMatrix (0x340) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_alertMatrix (0x340) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: alert matrix; frame length observed on a vehicle bus. This page documents the 633 signals of VCFRONT_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: alert matrix; frame length observed on a vehicle bus. This page documents the 633 signals of VCFRONT_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: alert matrix; frame length observed on a vehicle 
 | Message name | `VCFRONT_alertMatrix` |
 | CAN id | 0x340 (832) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: alert matrix; frame length observed on a vehicle 
 
 ## Signals of VCFRONT_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -669,7 +671,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_alertMatrix`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

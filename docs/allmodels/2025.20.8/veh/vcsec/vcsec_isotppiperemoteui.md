@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_IsoTpPipeRemoteUI (0x1DA) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Vehicle security controller message: iso tp pipe remote UI. Tesla Model 3 / Model Y CAN bus message VCSEC_IsoTpPipeRemoteUI (0x1DA) of Vehicle security controller, firmware 2025.20.8, 8 signals (VCSEC_IsoTpRemoteUI0, VCSEC_IsoTpRemoteUI1, VCSEC_IsoTpRemoteUI2, VCSEC_IsoTpRemoteUI3 and 4 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_IsoTpPipeRemoteUI (0x1DA) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Vehicle security controller message: iso tp pipe remote UI. Tesla Model 3 / Model Y (union) CAN bus message VCSEC_IsoTpPipeRemoteUI (0x1DA) of Vehicle security controller, firmware 2025.20.8, 8 signals (VCSEC_IsoTpRemoteUI0, VCSEC_IsoTpRemoteUI1, VCSEC_IsoTpRemoteUI2, VCSEC_IsoTpRemoteUI3 and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_IsoTpPipeRemoteUI (0x1DA) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCSEC_IsoTpPipeRemoteUI (0x1DA) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Vehicle security controller message: iso tp pipe remote UI; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of VCSEC_IsoTpPipeRemoteUI as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Vehicle security controller message: iso tp pipe remote UI; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of VCSEC_IsoTpPipeRemoteUI as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: iso tp pipe remote UI; frame length from th
 | Message name | `VCSEC_IsoTpPipeRemoteUI` |
 | CAN id | 0x1DA (474) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: iso tp pipe remote UI; frame length from th
 
 ## Signals of VCSEC_IsoTpPipeRemoteUI
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_IsoTpPipeRemoteUI`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_IsoTpPipeRemoteUI`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_IsoTpPipeRemoteUI`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

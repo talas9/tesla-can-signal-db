@@ -8,6 +8,8 @@ description: "Tesla Model Y UMC CAN bus messages and signals of the UMC ECU (UMC
 
 All 3 messages of the UMC ECU (UMC) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`UMC_alertLog`](veh/umc/umc_alertlog.md) | VEH | 0x5FD | 8 |  | 43 |
@@ -15,4 +17,3 @@ All 3 messages of the UMC ECU (UMC) documented for Tesla Model Y firmware 2026.2
 | [`UMC_smartAdapterInfo`](veh/umc/umc_smartadapterinfo.md) | VEH | 0x505 | 8 | 100 ms | 9 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

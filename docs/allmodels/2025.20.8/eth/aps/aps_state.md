@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APS_state (0x7FC) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Driver assistance computer (secondary) message: state. Ethernet-side message APS_state of Driver assistance computer (secondary) for Tesla Model 3 / Model Y firmware 2025.20.8, 14 signals (APS_primaryTurbo, APS_A_arbState, APS_A_powerState, APS_A_sleepState and 10 more). Bit layout, scaling, units and value tables."
+title: "APS_state (0x7FC) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Driver assistance computer (secondary) message: state. Ethernet-side message APS_state of Driver assistance computer (secondary) for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 14 signals (APS_primaryTurbo, APS_A_arbState, APS_A_powerState, APS_A_sleepState and 10 more). Bit layout, scaling, units and value tables."
 ---
 
-# APS_state (0x7FC) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2025.20.8 ETH
+# APS_state (0x7FC) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Driver assistance computer (secondary) message: state. This page documents the 14 signals of APS_state as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Driver assistance computer (secondary) message: state. This page documents the 14 signals of APS_state as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (secondary) message: state. This page documents the 1
 | Message name | `APS_state` |
 | Ethernet-side id | 0x7FC (2044) |
 | ECU | [Driver assistance computer (secondary)](../../aps.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APS |
@@ -25,7 +27,7 @@ Driver assistance computer (secondary) message: state. This page documents the 1
 
 ## Signals of APS_state
 
-Tesla Model 3 / Model Y CAN bus signals in `APS_state`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APS_state`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -46,7 +48,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APS_state`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

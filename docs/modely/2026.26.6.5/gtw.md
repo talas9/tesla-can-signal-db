@@ -8,6 +8,8 @@ description: "Tesla Model Y GTW CAN bus messages and signals of the Gateway (GTW
 
 All 19 messages of the Gateway (GTW) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`GTW_carConfig`](veh/gtw/gtw_carconfig.md) | VEH | 0x7FF | 8 | 100 ms | 200 |
@@ -31,4 +33,3 @@ All 19 messages of the Gateway (GTW) documented for Tesla Model Y firmware 2026.
 | [`GTW_vehNm`](eth/gtw/gtw_vehnm.md) | ETH | 0x458 | 7 | 100 ms | 11 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

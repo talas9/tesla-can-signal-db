@@ -16,6 +16,8 @@ PMR ECU message: alert matrix1. This page documents the 38 signals of PMR_alertM
 | Ethernet-side id | 0x386 (902) |
 | ECU | [PMR ECU](../../pmr.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | PMR |

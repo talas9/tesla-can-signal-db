@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCBATT1_LVBMS_statusHigh (0x742) — VCBATT1 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCBATT1 ECU message: LVBMS status high. Tesla Model 3 / Model Y CAN bus message VCBATT1_LVBMS_statusHigh (0x742) of VCBATT1 ECU, firmware 2026.26.6.5, 30 signals (VCBATT1_lvbmsStatusHighIndex, VCBATT1_LVBMS_packCurrent, VCBATT1_LVBMS_packVoltage, VCBATT1_LVBMS_packTemperature and 26 more). Bit layout, scaling, units and value tables."
+title: "VCBATT1_LVBMS_statusHigh (0x742) — VCBATT1 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCBATT1 ECU message: LVBMS status high. Tesla Model 3 / Model Y (union) CAN bus message VCBATT1_LVBMS_statusHigh (0x742) of VCBATT1 ECU, firmware 2026.26.6.5, 30 signals (VCBATT1_lvbmsStatusHighIndex, VCBATT1_LVBMS_packCurrent, VCBATT1_LVBMS_packVoltage, VCBATT1_LVBMS_packTemperature and 26 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCBATT1_LVBMS_statusHigh (0x742) — VCBATT1 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCBATT1_LVBMS_statusHigh (0x742) — VCBATT1 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCBATT1 ECU message: LVBMS status high; frame length from the layout, not yet observed on a vehicle bus. This page documents the 30 signals of VCBATT1_LVBMS_statusHigh as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCBATT1 ECU message: LVBMS status high; frame length from the layout, not yet observed on a vehicle bus. This page documents the 30 signals of VCBATT1_LVBMS_statusHigh as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCBATT1 ECU message: LVBMS status high; frame length from the layout, not yet ob
 | Message name | `VCBATT1_LVBMS_statusHigh` |
 | CAN id | 0x742 (1858) |
 | ECU | [VCBATT1 ECU](../../vcbatt1.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCBATT1 |
@@ -25,7 +27,7 @@ VCBATT1 ECU message: LVBMS status high; frame length from the layout, not yet ob
 
 ## Signals of VCBATT1_LVBMS_statusHigh
 
-Tesla Model 3 / Model Y CAN bus signals in `VCBATT1_LVBMS_statusHigh`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCBATT1_LVBMS_statusHigh`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -66,7 +68,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCBATT1_LVBMS_statusHigh`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

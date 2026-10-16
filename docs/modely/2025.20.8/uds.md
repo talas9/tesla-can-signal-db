@@ -8,6 +8,8 @@ description: "Tesla Model Y UDS CAN bus messages and signals of the UDS ECU (UDS
 
 All 44 messages of the UDS ECU (UDS) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`UDS_bmsRequest`](eth/uds/uds_bmsrequest.md) | ETH | 0x602 | 8 |  | 1 |
@@ -56,4 +58,3 @@ All 44 messages of the UDS ECU (UDS) documented for Tesla Model Y firmware 2025.
 | [`UDS_vcsecRequest`](eth/uds/uds_vcsecrequest.md) | ETH | 0x60A | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

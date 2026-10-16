@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIR_torque (0x108) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Rear drive inverter message: torque. Tesla Model 3 / Model Y CAN bus message DIR_torque (0x108) of Rear drive inverter, firmware 2026.26.6.5, 9 signals (DIR_torqueChecksum, DIR_torqueCounter, DIR_torqueCommand, DIR_axleSpeedQF and 5 more). Bit layout, scaling, units and value tables."
+title: "DIR_torque (0x108) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Rear drive inverter message: torque. Tesla Model 3 / Model Y (union) CAN bus message DIR_torque (0x108) of Rear drive inverter, firmware 2026.26.6.5, 9 signals (DIR_torqueChecksum, DIR_torqueCounter, DIR_torqueCommand, DIR_axleSpeedQF and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIR_torque (0x108) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DIR_torque (0x108) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Rear drive inverter message: torque; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of DIR_torque as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Rear drive inverter message: torque; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of DIR_torque as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Rear drive inverter message: torque; frame length from the layout, not yet obser
 | Message name | `DIR_torque` |
 | CAN id | 0x108 (264) |
 | ECU | [Rear drive inverter](../../dir.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DIR |
@@ -25,7 +27,7 @@ Rear drive inverter message: torque; frame length from the layout, not yet obser
 
 ## Signals of DIR_torque
 
-Tesla Model 3 / Model Y CAN bus signals in `DIR_torque`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIR_torque`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_torque`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

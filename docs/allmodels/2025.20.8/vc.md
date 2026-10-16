@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "VC ECU (VC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y VC CAN bus messages and signals of the VC ECU (VC) for firmware 2025.20.8: 4 messages, 93 signals with bit layout, scaling and value tables."
+title: "VC ECU (VC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) VC CAN bus messages and signals of the VC ECU (VC) for firmware 2025.20.8: 4 messages, 93 signals with bit layout, scaling and value tables."
 ---
 
-# VC ECU (VC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# VC ECU (VC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 4 messages of the VC ECU (VC) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 4 messages of the VC ECU (VC) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the VC ECU (VC) documented for Tesla Model 3 / Model Y firmwar
 | [`VC_pcsInterface`](eth/vc/vc_pcsinterface.md) | ETH | 0x441 | 8 | 50 ms | 12 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

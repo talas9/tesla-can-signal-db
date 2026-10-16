@@ -8,6 +8,8 @@ description: "Tesla Model Y PM CAN bus messages and signals of the PM ECU (PM) f
 
 All 7 messages of the PM ECU (PM) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PM_alertLog`](veh/pm/pm_alertlog.md) | VEH | 0x5A4 | 8 |  | 299 |
@@ -19,4 +21,3 @@ All 7 messages of the PM ECU (PM) documented for Tesla Model Y firmware 2026.26.
 | [`PM_vdcDebug`](party/pm/pm_vdcdebug.md) | PARTY | 0x7F6 | 8 | 20 ms | 20 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

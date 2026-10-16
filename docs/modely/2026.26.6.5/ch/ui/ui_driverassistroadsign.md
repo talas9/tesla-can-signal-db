@@ -16,6 +16,8 @@ Touchscreen user interface computer message: driver assist road sign; forwarded 
 | CAN id | 0x218 (536) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |

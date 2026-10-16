@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_LVHealth (0x474) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: LV health. Tesla Model 3 / Model Y CAN bus message VCFRONT_LVHealth (0x474) of Front body controller, firmware 2026.26.6.5, 7 signals (VCFRONT_LVHealthChecksum, VCFRONT_LVHealthCounter, VCFRONT_LVHealthStatus, VCFRONT_LVStatusForDrive and 3 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_LVHealth (0x474) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: LV health. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_LVHealth (0x474) of Front body controller, firmware 2026.26.6.5, 7 signals (VCFRONT_LVHealthChecksum, VCFRONT_LVHealthCounter, VCFRONT_LVHealthStatus, VCFRONT_LVStatusForDrive and 3 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_LVHealth (0x474) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_LVHealth (0x474) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: LV health; frame length from the layout, not yet observed on a vehicle bus. This page documents the 7 signals of VCFRONT_LVHealth as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: LV health; frame length from the layout, not yet observed on a vehicle bus. This page documents the 7 signals of VCFRONT_LVHealth as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: LV health; frame length from the layout, not yet 
 | Message name | `VCFRONT_LVHealth` |
 | CAN id | 0x474 (1140) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: LV health; frame length from the layout, not yet 
 
 ## Signals of VCFRONT_LVHealth
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVHealth`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_LVHealth`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -39,7 +41,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVHealth`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

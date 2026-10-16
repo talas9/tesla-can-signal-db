@@ -16,6 +16,8 @@ Restraint control module message: inertial2; frame length from the layout, not y
 | CAN id | 0x111 (273) |
 | ECU | [Restraint control module](../../rcm.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCM |

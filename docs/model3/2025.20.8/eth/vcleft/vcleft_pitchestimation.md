@@ -16,6 +16,8 @@ Left body controller message: pitch estimation. This page documents the 6 signal
 | Ethernet-side id | 0x2D7 (727) |
 | ECU | [Left body controller](../../vcleft.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCLEFT |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_restraintStatus (0x31A) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Right body controller message: restraint status. Tesla Model 3 / Model Y CAN bus message VCRIGHT_restraintStatus (0x31A) of Right body controller, firmware 2026.26.6.5, 17 signals (VCRIGHT_frontOccupancyStatus, VCRIGHT_frontBuckleStatus, VCRIGHT_rearCenterBuckleStatus, VCRIGHT_rearRightBuckleStatus and 13 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_restraintStatus (0x31A) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Right body controller message: restraint status. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_restraintStatus (0x31A) of Right body controller, firmware 2026.26.6.5, 17 signals (VCRIGHT_frontOccupancyStatus, VCRIGHT_frontBuckleStatus, VCRIGHT_rearCenterBuckleStatus, VCRIGHT_rearRightBuckleStatus and 13 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_restraintStatus (0x31A) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCRIGHT_restraintStatus (0x31A) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Right body controller message: restraint status; frame length observed on a vehicle bus. This page documents the 17 signals of VCRIGHT_restraintStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Right body controller message: restraint status; frame length observed on a vehicle bus. This page documents the 17 signals of VCRIGHT_restraintStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: restraint status; frame length observed on a vehi
 | Message name | `VCRIGHT_restraintStatus` |
 | CAN id | 0x31A (794) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: restraint status; frame length observed on a vehi
 
 ## Signals of VCRIGHT_restraintStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_restraintStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_restraintStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -49,7 +51,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_restraintStatus`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

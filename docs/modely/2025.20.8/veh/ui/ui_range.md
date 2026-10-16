@@ -16,6 +16,8 @@ Touchscreen user interface computer message: range; forwarded onto this bus by t
 | CAN id | 0x33A (826) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |

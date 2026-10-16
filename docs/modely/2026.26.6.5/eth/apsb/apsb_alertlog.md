@@ -16,6 +16,8 @@ APSB ECU message: alert log. This page documents the 668 signals of APSB_alertLo
 | Ethernet-side id | 0x5CA (1482) |
 | ECU | [APSB ECU](../../apsb.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APSB |

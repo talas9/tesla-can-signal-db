@@ -16,6 +16,8 @@ Rear drive inverter message: power; frame length from the layout, not yet observ
 | CAN id | 0x266 (614) |
 | ECU | [Rear drive inverter](../../dir.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DIR |

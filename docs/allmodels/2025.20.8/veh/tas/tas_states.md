@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TAS_states (0x20D) — Air suspension controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Air suspension controller message: states. Tesla Model 3 / Model Y CAN bus message TAS_states (0x20D) of Air suspension controller, firmware 2025.20.8, 16 signals (TAS_levelingState, TAS_levelingItem, TAS_pressureGallery, TAS_pressureReservoir and 12 more). Bit layout, scaling, units and value tables."
+title: "TAS_states (0x20D) — Air suspension controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Air suspension controller message: states. Tesla Model 3 / Model Y (union) CAN bus message TAS_states (0x20D) of Air suspension controller, firmware 2025.20.8, 16 signals (TAS_levelingState, TAS_levelingItem, TAS_pressureGallery, TAS_pressureReservoir and 12 more). Bit layout, scaling, units and value tables."
 ---
 
-# TAS_states (0x20D) — Air suspension controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# TAS_states (0x20D) — Air suspension controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Air suspension controller message: states; frame length from the layout, not yet observed on a vehicle bus. This page documents the 16 signals of TAS_states as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Air suspension controller message: states; frame length from the layout, not yet observed on a vehicle bus. This page documents the 16 signals of TAS_states as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Air suspension controller message: states; frame length from the layout, not yet
 | Message name | `TAS_states` |
 | CAN id | 0x20D (525) |
 | ECU | [Air suspension controller](../../tas.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | TAS |
@@ -25,7 +27,7 @@ Air suspension controller message: states; frame length from the layout, not yet
 
 ## Signals of TAS_states
 
-Tesla Model 3 / Model Y CAN bus signals in `TAS_states`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TAS_states`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TAS_states`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

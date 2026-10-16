@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UMC_alertMatrix1 (0x338) — UMC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "UMC ECU message: alert matrix1. Tesla Model 3 / Model Y CAN bus message UMC_alertMatrix1 (0x338) of UMC ECU, firmware 2026.26.6.5, 41 signals (UMC_a001_gndMonIntrptLineSide, UMC_a002_GFCITripped, UMC_a003_GFCISelfTestFault, UMC_a004_inputOverVoltage and 37 more). Bit layout, scaling, units and value tables."
+title: "UMC_alertMatrix1 (0x338) — UMC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "UMC ECU message: alert matrix1. Tesla Model 3 / Model Y (union) CAN bus message UMC_alertMatrix1 (0x338) of UMC ECU, firmware 2026.26.6.5, 41 signals (UMC_a001_gndMonIntrptLineSide, UMC_a002_GFCITripped, UMC_a003_GFCISelfTestFault, UMC_a004_inputOverVoltage and 37 more). Bit layout, scaling, units and value tables."
 ---
 
-# UMC_alertMatrix1 (0x338) — UMC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UMC_alertMatrix1 (0x338) — UMC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-UMC ECU message: alert matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 41 signals of UMC_alertMatrix1 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+UMC ECU message: alert matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 41 signals of UMC_alertMatrix1 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ UMC ECU message: alert matrix1; frame length from the layout, not yet observed o
 | Message name | `UMC_alertMatrix1` |
 | CAN id | 0x338 (824) |
 | ECU | [UMC ECU](../../umc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | UMC |
@@ -25,7 +27,7 @@ UMC ECU message: alert matrix1; frame length from the layout, not yet observed o
 
 ## Signals of UMC_alertMatrix1
 
-Tesla Model 3 / Model Y CAN bus signals in `UMC_alertMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UMC_alertMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -73,7 +75,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UMC_alertMatrix1`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_TPMSConnectionData (0x42A) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Vehicle security controller message: TPMS connection data. Tesla Model 3 / Model Y CAN bus message VCSEC_TPMSConnectionData (0x42A) of Vehicle security controller, firmware 2025.20.8, 20 signals (VCSEC_TPMSSensorState0, VCSEC_TPMSRSSI0, VCSEC_TPMSConnectionTypeCurrent0, VCSEC_TPMSConnectionTypeDesired0 and 16 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_TPMSConnectionData (0x42A) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Vehicle security controller message: TPMS connection data. Tesla Model 3 / Model Y (union) CAN bus message VCSEC_TPMSConnectionData (0x42A) of Vehicle security controller, firmware 2025.20.8, 20 signals (VCSEC_TPMSSensorState0, VCSEC_TPMSRSSI0, VCSEC_TPMSConnectionTypeCurrent0, VCSEC_TPMSConnectionTypeDesired0 and 16 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_TPMSConnectionData (0x42A) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCSEC_TPMSConnectionData (0x42A) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Vehicle security controller message: TPMS connection data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 20 signals of VCSEC_TPMSConnectionData as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Vehicle security controller message: TPMS connection data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 20 signals of VCSEC_TPMSConnectionData as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: TPMS connection data; frame length from the
 | Message name | `VCSEC_TPMSConnectionData` |
 | CAN id | 0x42A (1066) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: TPMS connection data; frame length from the
 
 ## Signals of VCSEC_TPMSConnectionData
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_TPMSConnectionData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_TPMSConnectionData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -52,7 +54,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_TPMSConnectionData`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

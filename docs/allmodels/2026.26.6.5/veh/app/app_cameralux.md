@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_cameraLux (0x3FA) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Driver assistance computer (primary) message: camera lux. Tesla Model 3 / Model Y CAN bus message APP_cameraLux (0x3FA) of Driver assistance computer (primary), firmware 2026.26.6.5, 8 signals (APP_mainCameraLUX, APP_narrowCameraLUX, APP_fisheyeCameraLUX, APP_lRepeatCameraLUX and 4 more). Bit layout, scaling, units and value tables."
+title: "APP_cameraLux (0x3FA) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Driver assistance computer (primary) message: camera lux. Tesla Model 3 / Model Y (union) CAN bus message APP_cameraLux (0x3FA) of Driver assistance computer (primary), firmware 2026.26.6.5, 8 signals (APP_mainCameraLUX, APP_narrowCameraLUX, APP_fisheyeCameraLUX, APP_lRepeatCameraLUX and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_cameraLux (0x3FA) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# APP_cameraLux (0x3FA) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Driver assistance computer (primary) message: camera lux; frame length observed on a vehicle bus. This page documents the 8 signals of APP_cameraLux as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Driver assistance computer (primary) message: camera lux; frame length observed on a vehicle bus. This page documents the 8 signals of APP_cameraLux as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: camera lux; frame length observed 
 | Message name | `APP_cameraLux` |
 | CAN id | 0x3FA (1018) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: camera lux; frame length observed 
 
 ## Signals of APP_cameraLux
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_cameraLux`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_cameraLux`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_cameraLux`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

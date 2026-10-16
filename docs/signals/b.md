@@ -9,5 +9,5 @@ description: "Tesla Model 3 and Model Y CAN bus signals beginning with B: pages 
 1197 signals, split over 3 pages.
 
 - [BB_boosterStatus to BMS_a178_diSnaCount](b-1.md) (488 signals)
-- [BMS_a178_energyError to BMS_pcsPwmEnabled](b-2.md) (620 signals)
-- [BMS_percentCacUpdatesInTimeWindow to BMS_voltageRegCurrentTarget](b-3.md) (89 signals)
+- [BMS_a178_energyError to BMS_pcsPrechargeRequestActive](b-2.md) (617 signals)
+- [BMS_pcsPrechargeTargetVoltage to BMS_voltageRegCurrentTarget](b-3.md) (92 signals)

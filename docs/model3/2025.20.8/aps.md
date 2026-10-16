@@ -8,6 +8,8 @@ description: "Tesla Model 3 APS CAN bus messages and signals of the Driver assis
 
 All 11 messages of the Driver assistance computer (secondary) (APS) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`APS_eacMonitor`](ch/aps/aps_eacmonitor.md) | CH | 0x27D | 3 | 100 ms | 3 |
@@ -23,4 +25,3 @@ All 11 messages of the Driver assistance computer (secondary) (APS) documented f
 | [`APS_warningMatrix4`](eth/aps/aps_warningmatrix4.md) | ETH | 0x310 | 8 | 1000 ms | 33 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

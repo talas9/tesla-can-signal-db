@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APS_eacMonitor (0x27D) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (secondary) message: eac monitor. Tesla Model 3 / Model Y CAN bus message APS_eacMonitor (0x27D) of Driver assistance computer (secondary), firmware 2026.26.6.5, 3 signals (APS_eacAllow, APS_eacMonitorCounter, APS_eacMonitorChecksum). Bit layout, scaling, units and value tables."
+title: "APS_eacMonitor (0x27D) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (secondary) message: eac monitor. Tesla Model 3 / Model Y (union) CAN bus message APS_eacMonitor (0x27D) of Driver assistance computer (secondary), firmware 2026.26.6.5, 3 signals (APS_eacAllow, APS_eacMonitorCounter, APS_eacMonitorChecksum). Bit layout, scaling, units and value tables."
 ---
 
-# APS_eacMonitor (0x27D) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APS_eacMonitor (0x27D) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (secondary) message: eac monitor; frame length from the layout, not yet observed on a vehicle bus. This page documents the 3 signals of APS_eacMonitor as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (secondary) message: eac monitor; frame length from the layout, not yet observed on a vehicle bus. This page documents the 3 signals of APS_eacMonitor as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (secondary) message: eac monitor; frame length from t
 | Message name | `APS_eacMonitor` |
 | CAN id | 0x27D (637) |
 | ECU | [Driver assistance computer (secondary)](../../aps.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APS |
@@ -25,7 +27,7 @@ Driver assistance computer (secondary) message: eac monitor; frame length from t
 
 ## Signals of APS_eacMonitor
 
-Tesla Model 3 / Model Y CAN bus signals in `APS_eacMonitor`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APS_eacMonitor`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -35,7 +37,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APS_eacMonitor`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

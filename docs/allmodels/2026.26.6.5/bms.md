@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "High-voltage battery management system (BMS) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y BMS CAN bus messages and signals of the High-voltage battery management system (BMS) for firmware 2026.26.6.5: 27 messages, 1143 signals with bit layout, scaling and value tables."
+title: "High-voltage battery management system (BMS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) BMS CAN bus messages and signals of the High-voltage battery management system (BMS) for firmware 2026.26.6.5: 27 messages, 1143 signals with bit layout, scaling and value tables."
 ---
 
-# High-voltage battery management system (BMS) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# High-voltage battery management system (BMS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 27 messages of the High-voltage battery management system (BMS) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 27 messages of the High-voltage battery management system (BMS) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -39,4 +41,3 @@ All 27 messages of the High-voltage battery management system (BMS) documented f
 | [`BMS_vehNm`](veh/bms/bms_vehnm.md) | VEH | 0x2F2 | 2 | 100 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

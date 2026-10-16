@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "FC_alertLog (0x52A) — FC ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "FC ECU message: alert log. Tesla Model 3 / Model Y CAN bus message FC_alertLog (0x52A) of FC ECU, firmware 2025.20.8, 8 signals (FC_alertID, FC_alertType, FC_a130_CA_flybackSwOvType, FC_a146_CA_flybackOnTime and 4 more). Bit layout, scaling, units and value tables."
+title: "FC_alertLog (0x52A) — FC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "FC ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message FC_alertLog (0x52A) of FC ECU, firmware 2025.20.8, 8 signals (FC_alertID, FC_alertType, FC_a130_CA_flybackSwOvType, FC_a146_CA_flybackOnTime and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# FC_alertLog (0x52A) — FC ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# FC_alertLog (0x52A) — FC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-FC ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of FC_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+FC ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of FC_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ FC ECU message: alert log; frame length from the layout, not yet observed on a v
 | Message name | `FC_alertLog` |
 | CAN id | 0x52A (1322) |
 | ECU | [FC ECU](../../fc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | FC |
@@ -25,7 +27,7 @@ FC ECU message: alert log; frame length from the layout, not yet observed on a v
 
 ## Signals of FC_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `FC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `FC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -44,7 +46,7 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_alertLog`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

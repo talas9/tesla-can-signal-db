@@ -16,6 +16,8 @@ Charge port controller message: charge status log. This page documents the 9 sig
 | Ethernet-side id | 0x43D (1085) |
 | ECU | [Charge port controller](../../cp.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | CP |

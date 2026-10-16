@@ -16,6 +16,8 @@ VCFRONT1 ECU message: e fuse debug status; frame length from the layout, not yet
 | CAN id | 0x403 (1027) |
 | ECU | [VCFRONT1 ECU](../../vcfront1.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT1 |

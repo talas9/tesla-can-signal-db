@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_lightStatus (0x3F6) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Front body controller message: light status. Tesla Model 3 / Model Y CAN bus message VCFRONT_lightStatus (0x3F6) of Front body controller, firmware 2025.20.8, 27 signals (VCFRONT_lowBeamLeftStatus, VCFRONT_lowBeamRightStatus, VCFRONT_highBeamLeftStatus, VCFRONT_highBeamRightStatus and 23 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_lightStatus (0x3F6) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Front body controller message: light status. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_lightStatus (0x3F6) of Front body controller, firmware 2025.20.8, 27 signals (VCFRONT_lowBeamLeftStatus, VCFRONT_lowBeamRightStatus, VCFRONT_highBeamLeftStatus, VCFRONT_highBeamRightStatus and 23 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_lightStatus (0x3F6) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCFRONT_lightStatus (0x3F6) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Front body controller message: light status; frame length observed on a vehicle bus. This page documents the 27 signals of VCFRONT_lightStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Front body controller message: light status; frame length observed on a vehicle bus. This page documents the 27 signals of VCFRONT_lightStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: light status; frame length observed on a vehicle 
 | Message name | `VCFRONT_lightStatus` |
 | CAN id | 0x3F6 (1014) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: light status; frame length observed on a vehicle 
 
 ## Signals of VCFRONT_lightStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_lightStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_lightStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -63,7 +65,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_lightStatus`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

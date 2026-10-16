@@ -16,6 +16,8 @@ UDS ECU message: epbl request; forwarded onto this bus by the gateway; frame len
 | CAN id | 0x624 (1572) |
 | ECU | [UDS ECU](../../uds.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |

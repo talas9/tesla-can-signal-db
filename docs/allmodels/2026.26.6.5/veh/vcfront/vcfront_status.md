@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_status (0x2E1) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: status. Tesla Model 3 / Model Y CAN bus message VCFRONT_status (0x2E1) of Front body controller, firmware 2026.26.6.5, 86 signals (VCFRONT_statusIndex, VCFRONT_frunkLatchStatus, VCFRONT_wiperSpeed, VCFRONT_wiperPosition and 82 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_status (0x2E1) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: status. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_status (0x2E1) of Front body controller, firmware 2026.26.6.5, 86 signals (VCFRONT_statusIndex, VCFRONT_frunkLatchStatus, VCFRONT_wiperSpeed, VCFRONT_wiperPosition and 82 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_status (0x2E1) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_status (0x2E1) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: status; frame length observed on a vehicle bus. This page documents the 86 signals of VCFRONT_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: status; frame length observed on a vehicle bus. This page documents the 86 signals of VCFRONT_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: status; frame length observed on a vehicle bus. T
 | Message name | `VCFRONT_status` |
 | CAN id | 0x2E1 (737) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: status; frame length observed on a vehicle bus. T
 
 ## Signals of VCFRONT_status
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -122,7 +124,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_status`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

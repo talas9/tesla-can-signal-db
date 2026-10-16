@@ -16,6 +16,8 @@ Driver assistance computer (primary) message: info; frame length from the layout
 | CAN id | 0x549 (1353) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |

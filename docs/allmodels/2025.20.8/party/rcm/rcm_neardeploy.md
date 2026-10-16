@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCM_nearDeploy (0x121) — Restraint control module, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Restraint control module message: near deploy. Tesla Model 3 / Model Y CAN bus message RCM_nearDeploy (0x121) of Restraint control module, firmware 2025.20.8, 8 signals (RCM_nearDeployChecksum, RCM_nearDeployCounter, RCM_nearDeployRear, RCM_nearDeployRight and 4 more). Bit layout, scaling, units and value tables."
+title: "RCM_nearDeploy (0x121) — Restraint control module, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Restraint control module message: near deploy. Tesla Model 3 / Model Y (union) CAN bus message RCM_nearDeploy (0x121) of Restraint control module, firmware 2025.20.8, 8 signals (RCM_nearDeployChecksum, RCM_nearDeployCounter, RCM_nearDeployRear, RCM_nearDeployRight and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCM_nearDeploy (0x121) — Restraint control module, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# RCM_nearDeploy (0x121) — Restraint control module, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Restraint control module message: near deploy; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of RCM_nearDeploy as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Restraint control module message: near deploy; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of RCM_nearDeploy as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Restraint control module message: near deploy; frame length from the layout, not
 | Message name | `RCM_nearDeploy` |
 | CAN id | 0x121 (289) |
 | ECU | [Restraint control module](../../rcm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | RCM |
@@ -25,7 +27,7 @@ Restraint control module message: near deploy; frame length from the layout, not
 
 ## Signals of RCM_nearDeploy
 
-Tesla Model 3 / Model Y CAN bus signals in `RCM_nearDeploy`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCM_nearDeploy`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM_nearDeploy`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

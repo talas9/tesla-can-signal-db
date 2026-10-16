@@ -8,6 +8,8 @@ description: "Tesla Model 3 SCCM CAN bus messages and signals of the Steering co
 
 All 7 messages of the Steering column control module (SCCM) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`SCCM_alertLog`](veh/sccm/sccm_alertlog.md) | VEH | 0x540 | 8 |  | 178 |
@@ -19,4 +21,3 @@ All 7 messages of the Steering column control module (SCCM) documented for Tesla
 | [`SCCM_udsResponse`](veh/sccm/sccm_udsresponse.md) | VEH | 0x690 | 8 |  | 8 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

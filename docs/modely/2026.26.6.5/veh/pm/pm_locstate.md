@@ -16,6 +16,8 @@ PM ECU message: loc state; frame length from the layout, not yet observed on a v
 | CAN id | 0x1E5 (485) |
 | ECU | [PM ECU](../../pm.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PM |

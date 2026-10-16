@@ -8,9 +8,10 @@ description: "Tesla Model Y LS CAN bus messages and signals of the LS ECU (LS) f
 
 All 1 messages of the LS ECU (LS) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`LS_lightShow`](veh/ls/ls_lightshow.md) | VEH | 0x3F4 | 8 |  | 219 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

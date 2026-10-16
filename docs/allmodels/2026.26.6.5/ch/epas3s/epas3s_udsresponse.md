@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3S_udsResponse (0x738) — Electric power steering (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Electric power steering (secondary) message: uds response. Tesla Model 3 / Model Y CAN bus message EPAS3S_udsResponse (0x738) of Electric power steering (secondary), firmware 2026.26.6.5, 1 signals (EPAS3S_udsResponseData). Bit layout, scaling, units and value tables."
+title: "EPAS3S_udsResponse (0x738) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Electric power steering (secondary) message: uds response. Tesla Model 3 / Model Y (union) CAN bus message EPAS3S_udsResponse (0x738) of Electric power steering (secondary), firmware 2026.26.6.5, 1 signals (EPAS3S_udsResponseData). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3S_udsResponse (0x738) — Electric power steering (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# EPAS3S_udsResponse (0x738) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Electric power steering (secondary) message: uds response; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of EPAS3S_udsResponse as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Electric power steering (secondary) message: uds response; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of EPAS3S_udsResponse as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (secondary) message: uds response; frame length from the
 | Message name | `EPAS3S_udsResponse` |
 | CAN id | 0x738 (1848) |
 | ECU | [Electric power steering (secondary)](../../epas3s.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | EPAS3S |
@@ -25,7 +27,7 @@ Electric power steering (secondary) message: uds response; frame length from the
 
 ## Signals of EPAS3S_udsResponse
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3S_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_udsResponse`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

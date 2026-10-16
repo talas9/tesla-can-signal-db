@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PARK_pasSides (0x39E) — Parking assist sensors, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Parking assist sensors message: pas sides. Tesla Model 3 / Model Y CAN bus message PARK_pasSides (0x39E) of Parking assist sensors, firmware 2026.26.6.5, 6 signals (PARK_rightSideFrontRawDistData, PARK_rightSideRearRawDistData, PARK_leftSideFrontRawDistData, PARK_leftSideRearRawDistData and 2 more). Bit layout, scaling, units and value tables."
+title: "PARK_pasSides (0x39E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Parking assist sensors message: pas sides. Tesla Model 3 / Model Y (union) CAN bus message PARK_pasSides (0x39E) of Parking assist sensors, firmware 2026.26.6.5, 6 signals (PARK_rightSideFrontRawDistData, PARK_rightSideRearRawDistData, PARK_leftSideFrontRawDistData, PARK_leftSideRearRawDistData and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# PARK_pasSides (0x39E) — Parking assist sensors, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# PARK_pasSides (0x39E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Parking assist sensors message: pas sides; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of PARK_pasSides as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Parking assist sensors message: pas sides; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of PARK_pasSides as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Parking assist sensors message: pas sides; frame length from the layout, not yet
 | Message name | `PARK_pasSides` |
 | CAN id | 0x39E (926) |
 | ECU | [Parking assist sensors](../../park.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |
@@ -25,7 +27,7 @@ Parking assist sensors message: pas sides; frame length from the layout, not yet
 
 ## Signals of PARK_pasSides
 
-Tesla Model 3 / Model Y CAN bus signals in `PARK_pasSides`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PARK_pasSides`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PARK_pasSides`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

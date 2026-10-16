@@ -16,6 +16,8 @@ High-voltage battery management system message: info; frame length observed on a
 | CAN id | 0x300 (768) |
 | ECU | [High-voltage battery management system](../../bms.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | BMS |

@@ -16,6 +16,8 @@ Right body controller message: alert log; frame length observed on a vehicle bus
 | CAN id | 0x550 (1360) |
 | ECU | [Right body controller](../../vcright.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |

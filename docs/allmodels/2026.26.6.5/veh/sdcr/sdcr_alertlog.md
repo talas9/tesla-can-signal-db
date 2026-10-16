@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SDCR_alertLog (0x5FB) — SDCR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "SDCR ECU message: alert log. Tesla Model 3 / Model Y CAN bus message SDCR_alertLog (0x5FB) of SDCR ECU, firmware 2026.26.6.5, 130 signals (SDCR_alertID, SDCR_alertState, SDCR_a001_pyroSenseV, SDCR_a001_HVBackupSupplyV and 126 more). Bit layout, scaling, units and value tables."
+title: "SDCR_alertLog (0x5FB) — SDCR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "SDCR ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message SDCR_alertLog (0x5FB) of SDCR ECU, firmware 2026.26.6.5, 130 signals (SDCR_alertID, SDCR_alertState, SDCR_a001_pyroSenseV, SDCR_a001_HVBackupSupplyV and 126 more). Bit layout, scaling, units and value tables."
 ---
 
-# SDCR_alertLog (0x5FB) — SDCR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# SDCR_alertLog (0x5FB) — SDCR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-SDCR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 130 signals of SDCR_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+SDCR ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 130 signals of SDCR_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ SDCR ECU message: alert log; frame length from the layout, not yet observed on a
 | Message name | `SDCR_alertLog` |
 | CAN id | 0x5FB (1531) |
 | ECU | [SDCR ECU](../../sdcr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SDCR |
@@ -25,7 +27,7 @@ SDCR ECU message: alert log; frame length from the layout, not yet observed on a
 
 ## Signals of SDCR_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `SDCR_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SDCR_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -166,7 +168,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SDCR_alertLog`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

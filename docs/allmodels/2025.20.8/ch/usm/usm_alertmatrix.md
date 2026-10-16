@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "USM_alertMatrix (0x3BA) — USM ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "USM ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message USM_alertMatrix (0x3BA) of USM ECU, firmware 2025.20.8, 182 signals (USM_matrixIndex, USM_a001_WatchdogReset, USM_a002_PowerLossReset, USM_a003_SWAssertion and 178 more). Bit layout, scaling, units and value tables."
+title: "USM_alertMatrix (0x3BA) — USM ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "USM ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message USM_alertMatrix (0x3BA) of USM ECU, firmware 2025.20.8, 182 signals (USM_matrixIndex, USM_a001_WatchdogReset, USM_a002_PowerLossReset, USM_a003_SWAssertion and 178 more). Bit layout, scaling, units and value tables."
 ---
 
-# USM_alertMatrix (0x3BA) — USM ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# USM_alertMatrix (0x3BA) — USM ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-USM ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 182 signals of USM_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+USM ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 182 signals of USM_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ USM ECU message: alert matrix; frame length from the layout, not yet observed on
 | Message name | `USM_alertMatrix` |
 | CAN id | 0x3BA (954) |
 | ECU | [USM ECU](../../usm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | USM |
@@ -25,7 +27,7 @@ USM ECU message: alert matrix; frame length from the layout, not yet observed on
 
 ## Signals of USM_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `USM_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `USM_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -218,7 +220,7 @@ Tesla Model 3 / Model Y CAN bus signals in `USM_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

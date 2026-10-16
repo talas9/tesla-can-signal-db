@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "GTW_mismatchFault (0x55A) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Gateway message: mismatch fault. Ethernet-side message GTW_mismatchFault of Gateway for Tesla Model 3 / Model Y firmware 2026.26.6.5, 49 signals (GTW_mismatchFaultIndex, GTW_mismatchFaultChecksum, GTW_mismatchFaultCounter, GTW_GTWmismatchFault and 45 more). Bit layout, scaling, units and value tables."
+title: "GTW_mismatchFault (0x55A) — Gateway, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Gateway message: mismatch fault. Ethernet-side message GTW_mismatchFault of Gateway for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 49 signals (GTW_mismatchFaultIndex, GTW_mismatchFaultChecksum, GTW_mismatchFaultCounter, GTW_GTWmismatchFault and 45 more). Bit layout, scaling, units and value tables."
 ---
 
-# GTW_mismatchFault (0x55A) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# GTW_mismatchFault (0x55A) — Gateway, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Gateway message: mismatch fault. This page documents the 49 signals of GTW_mismatchFault as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Gateway message: mismatch fault. This page documents the 49 signals of GTW_mismatchFault as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Gateway message: mismatch fault. This page documents the 49 signals of GTW_misma
 | Message name | `GTW_mismatchFault` |
 | Ethernet-side id | 0x55A (1370) |
 | ECU | [Gateway](../../gtw.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Gateway message: mismatch fault. This page documents the 49 signals of GTW_misma
 
 ## Signals of GTW_mismatchFault
 
-Tesla Model 3 / Model Y CAN bus signals in `GTW_mismatchFault`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `GTW_mismatchFault`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -85,7 +87,7 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_mismatchFault`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

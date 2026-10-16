@@ -8,6 +8,8 @@ description: "Tesla Model 3 VCSEC CAN bus messages and signals of the Vehicle se
 
 All 20 messages of the Vehicle security controller (VCSEC) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCSEC_authentication`](veh/vcsec/vcsec_authentication.md) | VEH | 0x339 | 8 | 100 ms | 30 |
@@ -32,4 +34,3 @@ All 20 messages of the Vehicle security controller (VCSEC) documented for Tesla 
 | [`VCSEC_UWBData`](eth/vcsec/vcsec_uwbdata.md) | ETH | 0x42B | 8 | 100 ms | 19 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

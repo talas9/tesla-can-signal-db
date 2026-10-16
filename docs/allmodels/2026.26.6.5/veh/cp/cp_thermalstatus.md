@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CP_thermalStatus (0x37D) — Charge port controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Charge port controller message: thermal status. Tesla Model 3 / Model Y CAN bus message CP_thermalStatus (0x37D) of Charge port controller, firmware 2026.26.6.5, 5 signals (CP_thermalStatusSelect, CP_dcPinTemperature, CP_acPinTemperature, CP_pinTemperature4 and 1 more). Bit layout, scaling, units and value tables."
+title: "CP_thermalStatus (0x37D) — Charge port controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Charge port controller message: thermal status. Tesla Model 3 / Model Y (union) CAN bus message CP_thermalStatus (0x37D) of Charge port controller, firmware 2026.26.6.5, 5 signals (CP_thermalStatusSelect, CP_dcPinTemperature, CP_acPinTemperature, CP_pinTemperature4 and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# CP_thermalStatus (0x37D) — Charge port controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# CP_thermalStatus (0x37D) — Charge port controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Charge port controller message: thermal status; frame length observed on a vehicle bus. This page documents the 5 signals of CP_thermalStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Charge port controller message: thermal status; frame length observed on a vehicle bus. This page documents the 5 signals of CP_thermalStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge port controller message: thermal status; frame length observed on a vehic
 | Message name | `CP_thermalStatus` |
 | CAN id | 0x37D (893) |
 | ECU | [Charge port controller](../../cp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CP |
@@ -25,7 +27,7 @@ Charge port controller message: thermal status; frame length observed on a vehic
 
 ## Signals of CP_thermalStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `CP_thermalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CP_thermalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_thermalStatus`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -8,6 +8,8 @@ description: "Tesla Model Y PARK CAN bus messages and signals of the Parking ass
 
 All 16 messages of the Parking assist sensors (PARK) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PARK_alertLog`](ch/park/park_alertlog.md) | CH | 0x5CE | 8 |  | 268 |
@@ -28,4 +30,3 @@ All 16 messages of the Parking assist sensors (PARK) documented for Tesla Model 
 | [`PARK_warningMatrix`](ch/park/park_warningmatrix.md) | CH | 0x37E | 8 | 1000 ms | 88 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

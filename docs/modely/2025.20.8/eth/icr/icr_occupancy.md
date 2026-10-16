@@ -16,6 +16,8 @@ ICR ECU message: occupancy. This page documents the 18 signals of ICR_occupancy 
 | Ethernet-side id | 0x7E9 (2025) |
 | ECU | [ICR ECU](../../icr.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | ICR |

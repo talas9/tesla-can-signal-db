@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Cabin heater (PTC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y PTC CAN bus messages and signals of the Cabin heater (PTC) for firmware 2025.20.8: 4 messages, 35 signals with bit layout, scaling and value tables."
+title: "Cabin heater (PTC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) PTC CAN bus messages and signals of the Cabin heater (PTC) for firmware 2025.20.8: 4 messages, 35 signals with bit layout, scaling and value tables."
 ---
 
-# Cabin heater (PTC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Cabin heater (PTC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 4 messages of the Cabin heater (PTC) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 4 messages of the Cabin heater (PTC) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the Cabin heater (PTC) documented for Tesla Model 3 / Model Y 
 | [`PTC_udsResponse`](eth/ptc/ptc_udsresponse.md) | ETH | 0x6D6 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

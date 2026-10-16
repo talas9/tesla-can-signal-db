@@ -16,6 +16,8 @@ TCU2 ECU message: alert matrix1. This page documents the 16 signals of TCU2_aler
 | Ethernet-side id | 0x586 (1414) |
 | ECU | [TCU2 ECU](../../tcu2.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | TCU2 |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "BMS_serialNumber (0x72A) — High-voltage battery management system, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "High-voltage battery management system message: serial number. Tesla Model 3 / Model Y CAN bus message BMS_serialNumber (0x72A) of High-voltage battery management system, firmware 2026.26.6.5, 16 signals (BMS_serialNumberMultiplexer, BMS_packSerialNumberByte01, BMS_packSerialNumberByte02, BMS_packSerialNumberByte03 and 12 more). Bit layout, scaling, units and value tables."
+title: "BMS_serialNumber (0x72A) — High-voltage battery management system, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "High-voltage battery management system message: serial number. Tesla Model 3 / Model Y (union) CAN bus message BMS_serialNumber (0x72A) of High-voltage battery management system, firmware 2026.26.6.5, 16 signals (BMS_serialNumberMultiplexer, BMS_packSerialNumberByte01, BMS_packSerialNumberByte02, BMS_packSerialNumberByte03 and 12 more). Bit layout, scaling, units and value tables."
 ---
 
-# BMS_serialNumber (0x72A) — High-voltage battery management system, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# BMS_serialNumber (0x72A) — High-voltage battery management system, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-High-voltage battery management system message: serial number; frame length observed on a vehicle bus. This page documents the 16 signals of BMS_serialNumber as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+High-voltage battery management system message: serial number; frame length observed on a vehicle bus. This page documents the 16 signals of BMS_serialNumber as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ High-voltage battery management system message: serial number; frame length obse
 | Message name | `BMS_serialNumber` |
 | CAN id | 0x72A (1834) |
 | ECU | [High-voltage battery management system](../../bms.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | BMS |
@@ -25,7 +27,7 @@ High-voltage battery management system message: serial number; frame length obse
 
 ## Signals of BMS_serialNumber
 
-Tesla Model 3 / Model Y CAN bus signals in `BMS_serialNumber`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `BMS_serialNumber`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -52,7 +54,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_serialNumber`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

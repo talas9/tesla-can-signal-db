@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SCCM_alertLog (0x540) — Steering column control module, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Steering column control module message: alert log. Ethernet-side message SCCM_alertLog of Steering column control module for Tesla Model 3 / Model Y firmware 2025.20.8, 205 signals (SCCM_alertID, SCCM_alertState, SCCM_a003_debouncePosition, SCCM_a003_rawPosition and 201 more). Bit layout, scaling, units and value tables."
+title: "SCCM_alertLog (0x540) — Steering column control module, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Steering column control module message: alert log. Ethernet-side message SCCM_alertLog of Steering column control module for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 205 signals (SCCM_alertID, SCCM_alertState, SCCM_a003_debouncePosition, SCCM_a003_rawPosition and 201 more). Bit layout, scaling, units and value tables."
 ---
 
-# SCCM_alertLog (0x540) — Steering column control module, Tesla Model 3 / Model Y 2025.20.8 ETH
+# SCCM_alertLog (0x540) — Steering column control module, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Steering column control module message: alert log. This page documents the 205 signals of SCCM_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Steering column control module message: alert log. This page documents the 205 signals of SCCM_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Steering column control module message: alert log. This page documents the 205 s
 | Message name | `SCCM_alertLog` |
 | Ethernet-side id | 0x540 (1344) |
 | ECU | [Steering column control module](../../sccm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | SCCM |
@@ -25,7 +27,7 @@ Steering column control module message: alert log. This page documents the 205 s
 
 ## Signals of SCCM_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `SCCM_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SCCM_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -241,7 +243,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SCCM_alertLog`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

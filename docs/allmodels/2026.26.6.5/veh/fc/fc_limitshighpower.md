@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "FC_limitsHighPower (0x2BE) — FC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "FC ECU message: limits high power. Tesla Model 3 / Model Y CAN bus message FC_limitsHighPower (0x2BE) of FC ECU, firmware 2026.26.6.5, 6 signals (FC_powerLimit_value, FC_currentLimit_value, FC_minVoltageLimit_value, FC_powerLimit_exp and 2 more). Bit layout, scaling, units and value tables."
+title: "FC_limitsHighPower (0x2BE) — FC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "FC ECU message: limits high power. Tesla Model 3 / Model Y (union) CAN bus message FC_limitsHighPower (0x2BE) of FC ECU, firmware 2026.26.6.5, 6 signals (FC_powerLimit_value, FC_currentLimit_value, FC_minVoltageLimit_value, FC_powerLimit_exp and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# FC_limitsHighPower (0x2BE) — FC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# FC_limitsHighPower (0x2BE) — FC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-FC ECU message: limits high power; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of FC_limitsHighPower as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+FC ECU message: limits high power; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of FC_limitsHighPower as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ FC ECU message: limits high power; frame length from the layout, not yet observe
 | Message name | `FC_limitsHighPower` |
 | CAN id | 0x2BE (702) |
 | ECU | [FC ECU](../../fc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | FC |
@@ -25,7 +27,7 @@ FC ECU message: limits high power; frame length from the layout, not yet observe
 
 ## Signals of FC_limitsHighPower
 
-Tesla Model 3 / Model Y CAN bus signals in `FC_limitsHighPower`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `FC_limitsHighPower`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_limitsHighPower`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

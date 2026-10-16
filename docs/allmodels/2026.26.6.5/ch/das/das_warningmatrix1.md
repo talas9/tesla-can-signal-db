@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_warningMatrix1 (0x36A) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer message: warning matrix1. Tesla Model 3 / Model Y CAN bus message DAS_warningMatrix1 (0x36A) of Driver assistance computer, firmware 2026.26.6.5, 42 signals (DAS_w065_deserializerOvercurrent, DAS_w066_deserializerLockLost, DAS_w067_steeringAlignment, DAS_w068_vlInconsistency and 38 more). Bit layout, scaling, units and value tables."
+title: "DAS_warningMatrix1 (0x36A) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer message: warning matrix1. Tesla Model 3 / Model Y (union) CAN bus message DAS_warningMatrix1 (0x36A) of Driver assistance computer, firmware 2026.26.6.5, 42 signals (DAS_w065_deserializerOvercurrent, DAS_w066_deserializerLockLost, DAS_w067_steeringAlignment, DAS_w068_vlInconsistency and 38 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_warningMatrix1 (0x36A) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# DAS_warningMatrix1 (0x36A) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer message: warning matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 42 signals of DAS_warningMatrix1 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer message: warning matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 42 signals of DAS_warningMatrix1 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: warning matrix1; frame length from the layou
 | Message name | `DAS_warningMatrix1` |
 | CAN id | 0x36A (874) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: warning matrix1; frame length from the layou
 
 ## Signals of DAS_warningMatrix1
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_warningMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_warningMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -74,7 +76,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_warningMatrix1`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

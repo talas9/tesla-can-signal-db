@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CP_IsoTpPipeToPncd (0x6E7) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Charge port controller message: iso tp pipe to pncd. Tesla Model 3 / Model Y CAN bus message CP_IsoTpPipeToPncd (0x6E7) of Charge port controller, firmware 2025.20.8, 1 signals (CP_isoTpToPncdData). Bit layout, scaling, units and value tables."
+title: "CP_IsoTpPipeToPncd (0x6E7) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Charge port controller message: iso tp pipe to pncd. Tesla Model 3 / Model Y (union) CAN bus message CP_IsoTpPipeToPncd (0x6E7) of Charge port controller, firmware 2025.20.8, 1 signals (CP_isoTpToPncdData). Bit layout, scaling, units and value tables."
 ---
 
-# CP_IsoTpPipeToPncd (0x6E7) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# CP_IsoTpPipeToPncd (0x6E7) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Charge port controller message: iso tp pipe to pncd; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of CP_IsoTpPipeToPncd as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Charge port controller message: iso tp pipe to pncd; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of CP_IsoTpPipeToPncd as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge port controller message: iso tp pipe to pncd; frame length from the layou
 | Message name | `CP_IsoTpPipeToPncd` |
 | CAN id | 0x6E7 (1767) |
 | ECU | [Charge port controller](../../cp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CP |
@@ -25,7 +27,7 @@ Charge port controller message: iso tp pipe to pncd; frame length from the layou
 
 ## Signals of CP_IsoTpPipeToPncd
 
-Tesla Model 3 / Model Y CAN bus signals in `CP_IsoTpPipeToPncd`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CP_IsoTpPipeToPncd`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_IsoTpPipeToPncd`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

@@ -8,6 +8,8 @@ description: "Tesla Model 3 IBST CAN bus messages and signals of the Electric br
 
 All 4 messages of the Electric brake booster (IBST) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`IBST_alertMatrix`](ch/ibst/ibst_alertmatrix.md) | CH | 0x35D | 8 | 1000 ms | 257 |
@@ -16,4 +18,3 @@ All 4 messages of the Electric brake booster (IBST) documented for Tesla Model 3
 | [`IBST_status`](party/ibst/ibst_status.md) | PARTY | 0x39D | 5 | 40 ms | 7 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

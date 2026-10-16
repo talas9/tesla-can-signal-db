@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Driver assistance computer (secondary) (APS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y APS CAN bus messages and signals of the Driver assistance computer (secondary) (APS) for firmware 2025.20.8: 11 messages, 892 signals with bit layout, scaling and value tables."
+title: "Driver assistance computer (secondary) (APS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) APS CAN bus messages and signals of the Driver assistance computer (secondary) (APS) for firmware 2025.20.8: 11 messages, 892 signals with bit layout, scaling and value tables."
 ---
 
-# Driver assistance computer (secondary) (APS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Driver assistance computer (secondary) (APS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 11 messages of the Driver assistance computer (secondary) (APS) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 11 messages of the Driver assistance computer (secondary) (APS) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -23,4 +25,3 @@ All 11 messages of the Driver assistance computer (secondary) (APS) documented f
 | [`APS_warningMatrix4`](eth/aps/aps_warningmatrix4.md) | ETH | 0x310 | 8 | 1000 ms | 33 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -16,6 +16,8 @@ Driver assistance computer (primary) message: dash cam status; frame length from
 | CAN id | 0x413 (1043) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |

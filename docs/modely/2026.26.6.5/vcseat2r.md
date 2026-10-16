@@ -8,6 +8,8 @@ description: "Tesla Model Y VCSEAT2R CAN bus messages and signals of the VCSEAT2
 
 All 4 messages of the VCSEAT2R ECU (VCSEAT2R) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCSEAT2R_alertLog`](veh/vcseat2r/vcseat2r_alertlog.md) | VEH | 0x55E | 8 |  | 520 |
@@ -16,4 +18,3 @@ All 4 messages of the VCSEAT2R ECU (VCSEAT2R) documented for Tesla Model Y firmw
 | [`VCSEAT2R_seatStatus2`](veh/vcseat2r/vcseat2r_seatstatus2.md) | VEH | 0x2EA | 8 | 200 ms | 13 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

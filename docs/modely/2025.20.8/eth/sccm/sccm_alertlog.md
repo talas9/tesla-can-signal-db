@@ -16,6 +16,8 @@ Steering column control module message: alert log. This page documents the 205 s
 | Ethernet-side id | 0x540 (1344) |
 | ECU | [Steering column control module](../../sccm.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | SCCM |

@@ -16,6 +16,8 @@ Steering column control module message: right stalk; frame length from the layou
 | CAN id | 0x229 (553) |
 | ECU | [Steering column control module](../../sccm.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCCM |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_LVThermalMotors10Hz (0x2BC) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: LV thermal motors10 hz. Tesla Model 3 / Model Y CAN bus message VCFRONT_LVThermalMotors10Hz (0x2BC) of Front body controller, firmware 2026.26.6.5, 11 signals (VCFRONT_LVThermalMotorsIndex, VCFRONT_radiatorFanState, VCFRONT_radiatorFanTorque, VCFRONT_radiatorFanIDc and 7 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_LVThermalMotors10Hz (0x2BC) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: LV thermal motors10 hz. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_LVThermalMotors10Hz (0x2BC) of Front body controller, firmware 2026.26.6.5, 11 signals (VCFRONT_LVThermalMotorsIndex, VCFRONT_radiatorFanState, VCFRONT_radiatorFanTorque, VCFRONT_radiatorFanIDc and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_LVThermalMotors10Hz (0x2BC) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_LVThermalMotors10Hz (0x2BC) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: LV thermal motors10 hz; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of VCFRONT_LVThermalMotors10Hz as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: LV thermal motors10 hz; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of VCFRONT_LVThermalMotors10Hz as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: LV thermal motors10 hz; frame length from the lay
 | Message name | `VCFRONT_LVThermalMotors10Hz` |
 | CAN id | 0x2BC (700) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: LV thermal motors10 hz; frame length from the lay
 
 ## Signals of VCFRONT_LVThermalMotors10Hz
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVThermalMotors10Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_LVThermalMotors10Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVThermalMotors10Hz`: start 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

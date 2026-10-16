@@ -16,6 +16,8 @@ EVSE ECU message: iso tp to veh; frame length from the layout, not yet observed 
 | CAN id | 0x67E (1662) |
 | ECU | [EVSE ECU](../../evse.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EVSE |

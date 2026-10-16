@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIF_temperature (0x376) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front drive inverter message: temperature. Tesla Model 3 / Model Y CAN bus message DIF_temperature (0x376) of Front drive inverter, firmware 2026.26.6.5, 21 signals (DIF_tempIndex, DIF_inverterTQF, DIF_pcbT, DIF_inverterT and 17 more). Bit layout, scaling, units and value tables."
+title: "DIF_temperature (0x376) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front drive inverter message: temperature. Tesla Model 3 / Model Y (union) CAN bus message DIF_temperature (0x376) of Front drive inverter, firmware 2026.26.6.5, 21 signals (DIF_tempIndex, DIF_inverterTQF, DIF_pcbT, DIF_inverterT and 17 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIF_temperature (0x376) — Front drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DIF_temperature (0x376) — Front drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front drive inverter message: temperature; frame length from the layout, not yet observed on a vehicle bus. This page documents the 21 signals of DIF_temperature as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front drive inverter message: temperature; frame length from the layout, not yet observed on a vehicle bus. This page documents the 21 signals of DIF_temperature as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front drive inverter message: temperature; frame length from the layout, not yet
 | Message name | `DIF_temperature` |
 | CAN id | 0x376 (886) |
 | ECU | [Front drive inverter](../../dif.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DIF |
@@ -25,7 +27,7 @@ Front drive inverter message: temperature; frame length from the layout, not yet
 
 ## Signals of DIF_temperature
 
-Tesla Model 3 / Model Y CAN bus signals in `DIF_temperature`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIF_temperature`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -57,7 +59,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIF_temperature`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

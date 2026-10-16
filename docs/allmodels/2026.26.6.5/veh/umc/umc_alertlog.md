@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "UMC ECU message: alert log. Tesla Model 3 / Model Y CAN bus message UMC_alertLog (0x5FD) of UMC ECU, firmware 2026.26.6.5, 43 signals (UMC_alertID, UMC_alertType, UMC_a001_groundImpedance, UMC_a002_ccidRmsCurrent and 39 more). Bit layout, scaling, units and value tables."
+title: "UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "UMC ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message UMC_alertLog (0x5FD) of UMC ECU, firmware 2026.26.6.5, 43 signals (UMC_alertID, UMC_alertType, UMC_a001_groundImpedance, UMC_a002_ccidRmsCurrent and 39 more). Bit layout, scaling, units and value tables."
 ---
 
-# UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UMC_alertLog (0x5FD) — UMC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-UMC ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 43 signals of UMC_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+UMC ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 43 signals of UMC_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ UMC ECU message: alert log; frame length from the layout, not yet observed on a 
 | Message name | `UMC_alertLog` |
 | CAN id | 0x5FD (1533) |
 | ECU | [UMC ECU](../../umc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | UMC |
@@ -25,7 +27,7 @@ UMC ECU message: alert log; frame length from the layout, not yet observed on a 
 
 ## Signals of UMC_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `UMC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UMC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -79,7 +81,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UMC_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

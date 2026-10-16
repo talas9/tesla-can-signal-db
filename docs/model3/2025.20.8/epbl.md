@@ -8,6 +8,8 @@ description: "Tesla Model 3 EPBL CAN bus messages and signals of the Left electr
 
 All 7 messages of the Left electric parking brake (EPBL) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPBL_info`](veh/epbl/epbl_info.md) | VEH | 0x7C8 | 8 | 1000 ms | 15 |
@@ -19,4 +21,3 @@ All 7 messages of the Left electric parking brake (EPBL) documented for Tesla Mo
 | [`EPBL_udsResponse`](eth/epbl/epbl_udsresponse.md) | ETH | 0x625 | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -16,6 +16,8 @@ TRCM ECU message: alert log. This page documents the 657 signals of TRCM_alertLo
 | Ethernet-side id | 0x512 (1298) |
 | ECU | [TRCM ECU](../../trcm.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | TRCM |

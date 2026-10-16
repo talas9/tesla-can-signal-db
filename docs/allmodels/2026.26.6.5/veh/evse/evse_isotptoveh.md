@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EVSE_isoTpToVeh (0x67E) — EVSE ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "EVSE ECU message: iso tp to veh. Tesla Model 3 / Model Y CAN bus message EVSE_isoTpToVeh (0x67E) of EVSE ECU, firmware 2026.26.6.5, 1 signals (EVSE_isoTpToVehData). Bit layout, scaling, units and value tables."
+title: "EVSE_isoTpToVeh (0x67E) — EVSE ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "EVSE ECU message: iso tp to veh. Tesla Model 3 / Model Y (union) CAN bus message EVSE_isoTpToVeh (0x67E) of EVSE ECU, firmware 2026.26.6.5, 1 signals (EVSE_isoTpToVehData). Bit layout, scaling, units and value tables."
 ---
 
-# EVSE_isoTpToVeh (0x67E) — EVSE ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# EVSE_isoTpToVeh (0x67E) — EVSE ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-EVSE ECU message: iso tp to veh; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of EVSE_isoTpToVeh as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+EVSE ECU message: iso tp to veh; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of EVSE_isoTpToVeh as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ EVSE ECU message: iso tp to veh; frame length from the layout, not yet observed 
 | Message name | `EVSE_isoTpToVeh` |
 | CAN id | 0x67E (1662) |
 | ECU | [EVSE ECU](../../evse.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EVSE |
@@ -25,7 +27,7 @@ EVSE ECU message: iso tp to veh; frame length from the layout, not yet observed 
 
 ## Signals of EVSE_isoTpToVeh
 
-Tesla Model 3 / Model Y CAN bus signals in `EVSE_isoTpToVeh`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EVSE_isoTpToVeh`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EVSE_isoTpToVeh`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

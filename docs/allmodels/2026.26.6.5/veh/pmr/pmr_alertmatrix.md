@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PMR_alertMatrix (0x386) — PMR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "PMR ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message PMR_alertMatrix (0x386) of PMR ECU, firmware 2026.26.6.5, 55 signals (PMR_matrixIndex, PMR_a001_absoluteTorque, PMR_a002_excessiveAccelTorque, PMR_a003_excessiveReversalTorque and 51 more). Bit layout, scaling, units and value tables."
+title: "PMR_alertMatrix (0x386) — PMR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "PMR ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message PMR_alertMatrix (0x386) of PMR ECU, firmware 2026.26.6.5, 55 signals (PMR_matrixIndex, PMR_a001_absoluteTorque, PMR_a002_excessiveAccelTorque, PMR_a003_excessiveReversalTorque and 51 more). Bit layout, scaling, units and value tables."
 ---
 
-# PMR_alertMatrix (0x386) — PMR ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PMR_alertMatrix (0x386) — PMR ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-PMR ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 55 signals of PMR_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+PMR ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 55 signals of PMR_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PMR ECU message: alert matrix; frame length from the layout, not yet observed on
 | Message name | `PMR_alertMatrix` |
 | CAN id | 0x386 (902) |
 | ECU | [PMR ECU](../../pmr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PMR |
@@ -25,7 +27,7 @@ PMR ECU message: alert matrix; frame length from the layout, not yet observed on
 
 ## Signals of PMR_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `PMR_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PMR_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -91,7 +93,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PMR_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

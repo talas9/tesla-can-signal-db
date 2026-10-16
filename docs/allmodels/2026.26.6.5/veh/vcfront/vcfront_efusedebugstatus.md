@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_eFuseDebugStatus (0x2F1) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: e fuse debug status. Tesla Model 3 / Model Y CAN bus message VCFRONT_eFuseDebugStatus (0x2F1) of Front body controller, firmware 2026.26.6.5, 121 signals (VCFRONT_eFuseDebugStatusIndex, VCFRONT_rightControllerState, VCFRONT_rightControllerFault, VCFRONT_vcrightSelfTestResult and 117 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_eFuseDebugStatus (0x2F1) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: e fuse debug status. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_eFuseDebugStatus (0x2F1) of Front body controller, firmware 2026.26.6.5, 121 signals (VCFRONT_eFuseDebugStatusIndex, VCFRONT_rightControllerState, VCFRONT_rightControllerFault, VCFRONT_vcrightSelfTestResult and 117 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_eFuseDebugStatus (0x2F1) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_eFuseDebugStatus (0x2F1) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: e fuse debug status; frame length observed on a vehicle bus. This page documents the 121 signals of VCFRONT_eFuseDebugStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: e fuse debug status; frame length observed on a vehicle bus. This page documents the 121 signals of VCFRONT_eFuseDebugStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: e fuse debug status; frame length observed on a v
 | Message name | `VCFRONT_eFuseDebugStatus` |
 | CAN id | 0x2F1 (753) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: e fuse debug status; frame length observed on a v
 
 ## Signals of VCFRONT_eFuseDebugStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_eFuseDebugStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_eFuseDebugStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -157,7 +159,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_eFuseDebugStatus`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

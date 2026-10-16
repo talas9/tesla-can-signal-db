@@ -8,10 +8,11 @@ description: "Tesla Model 3 RCM2 CAN bus messages and signals of the RCM2 ECU (R
 
 All 2 messages of the RCM2 ECU (RCM2) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`RCM2_alertLog`](eth/rcm2/rcm2_alertlog.md) | ETH | 0x4E1 | 8 |  | 591 |
 | [`RCM2_alertMatrix`](eth/rcm2/rcm2_alertmatrix.md) | ETH | 0x3F1 | 8 | 1000 ms | 653 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

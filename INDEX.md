@@ -1,5 +1,9 @@
 # Signal Database Index
 
+Signal inventory by firmware; counts and names inside enum tables do not
+establish vehicle coverage. See the [README coverage table](README.md#coverage)
+for model names, original API names/codenames, and routing versus product-subset scope.
+
 ## Firmware Versions
 
 ### 2026.26.6.5

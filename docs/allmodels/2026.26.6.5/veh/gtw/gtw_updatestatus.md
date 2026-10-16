@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Gateway message: update status. Tesla Model 3 / Model Y CAN bus message GTW_updateStatus (0x3ED) of Gateway, firmware 2026.26.6.5, 5 signals (GTW_i2cUpdateActive, GTW_peripheralConfirmedUpdateNeeded, GTW_ocuFailed, GTW_ecuUpdateStarted and 1 more). Bit layout, scaling, units and value tables."
+title: "GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Gateway message: update status. Tesla Model 3 / Model Y (union) CAN bus message GTW_updateStatus (0x3ED) of Gateway, firmware 2026.26.6.5, 5 signals (GTW_i2cUpdateActive, GTW_peripheralConfirmedUpdateNeeded, GTW_ocuFailed, GTW_ecuUpdateStarted and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Gateway message: update status; frame length observed on a vehicle bus. This page documents the 5 signals of GTW_updateStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Gateway message: update status; frame length observed on a vehicle bus. This page documents the 5 signals of GTW_updateStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Gateway message: update status; frame length observed on a vehicle bus. This pag
 | Message name | `GTW_updateStatus` |
 | CAN id | 0x3ED (1005) |
 | ECU | [Gateway](../../gtw.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Gateway message: update status; frame length observed on a vehicle bus. This pag
 
 ## Signals of GTW_updateStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `GTW_updateStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `GTW_updateStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -37,7 +39,7 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_updateStatus`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

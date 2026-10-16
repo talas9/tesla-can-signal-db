@@ -16,6 +16,8 @@ Driver assistance computer message: info; frame length from the layout, not yet 
 | CAN id | 0x539 (1337) |
 | ECU | [Driver assistance computer](../../das.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DAS |

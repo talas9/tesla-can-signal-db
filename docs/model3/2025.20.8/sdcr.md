@@ -8,6 +8,8 @@ description: "Tesla Model 3 SDCR CAN bus messages and signals of the SDCR ECU (S
 
 All 4 messages of the SDCR ECU (SDCR) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`SDCR_alertMatrix`](veh/sdcr/sdcr_alertmatrix.md) | VEH | 0x5BB | 8 | 1000 ms | 35 |
@@ -16,4 +18,3 @@ All 4 messages of the SDCR ECU (SDCR) documented for Tesla Model 3 firmware 2025
 | [`SDCR_udsResponse`](eth/sdcr/sdcr_udsresponse.md) | ETH | 0x6FB | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

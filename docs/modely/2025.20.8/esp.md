@@ -8,6 +8,8 @@ description: "Tesla Model Y ESP CAN bus messages and signals of the Electronic s
 
 All 6 messages of the Electronic stability control (ESP) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`ESP_info`](ch/esp/esp_info.md) | CH | 0x325 | 8 | 10000 ms | 14 |
@@ -18,4 +20,3 @@ All 6 messages of the Electronic stability control (ESP) documented for Tesla Mo
 | [`ESP_wheelSpeeds`](eth/esp/esp_wheelspeeds.md) | ETH | 0x175 | 8 | 20 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

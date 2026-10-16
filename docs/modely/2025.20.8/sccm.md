@@ -8,6 +8,8 @@ description: "Tesla Model Y SCCM CAN bus messages and signals of the Steering co
 
 All 7 messages of the Steering column control module (SCCM) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`SCCM_alertMatrix`](veh/sccm/sccm_alertmatrix.md) | VEH | 0x54F | 8 | 100 ms | 58 |
@@ -19,4 +21,3 @@ All 7 messages of the Steering column control module (SCCM) documented for Tesla
 | [`SCCM_udsResponse`](eth/sccm/sccm_udsresponse.md) | ETH | 0x690 | 8 |  | 8 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

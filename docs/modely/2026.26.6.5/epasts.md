@@ -8,10 +8,11 @@ description: "Tesla Model Y EPASTS CAN bus messages and signals of the EPASTS EC
 
 All 2 messages of the EPASTS ECU (EPASTS) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPASTS_alertLog`](ch/epasts/epasts_alertlog.md) | CH | 0x594 | 8 |  | 276 |
 | [`EPASTS_alertMatrix`](ch/epasts/epasts_alertmatrix.md) | CH | 0x398 | 8 | 1000 ms | 271 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

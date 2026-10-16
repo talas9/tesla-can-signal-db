@@ -16,6 +16,8 @@ UDS ECU message: epas3p request. This page documents the 1 signals of UDS_epas3p
 | Ethernet-side id | 0x630 (1584) |
 | ECU | [UDS ECU](../../uds.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UDS |

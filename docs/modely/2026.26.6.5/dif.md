@@ -8,6 +8,8 @@ description: "Tesla Model Y DIF CAN bus messages and signals of the Front drive 
 
 All 13 messages of the Front drive inverter (DIF) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`DIF_alertLog`](veh/dif/dif_alertlog.md) | VEH | 0x526 | 8 |  | 580 |
@@ -25,4 +27,3 @@ All 13 messages of the Front drive inverter (DIF) documented for Tesla Model Y f
 | [`DIF_torque`](party/dif/dif_torque.md) | PARTY | 0x186 | 8 | 10 ms | 9 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

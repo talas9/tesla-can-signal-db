@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_vdcRight (0x11A) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Drive inverter message: vdc right. Tesla Model 3 / Model Y CAN bus message DI_vdcRight (0x11A) of Drive inverter, firmware 2025.20.8, 11 signals (DI_vdcRightChecksum, DI_vdcRightCounter, DI_vdcCommandTypeFrR, DI_vdcCommandTypeReR and 7 more). Bit layout, scaling, units and value tables."
+title: "DI_vdcRight (0x11A) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Drive inverter message: vdc right. Tesla Model 3 / Model Y (union) CAN bus message DI_vdcRight (0x11A) of Drive inverter, firmware 2025.20.8, 11 signals (DI_vdcRightChecksum, DI_vdcRightCounter, DI_vdcCommandTypeFrR, DI_vdcCommandTypeReR and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_vdcRight (0x11A) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# DI_vdcRight (0x11A) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Drive inverter message: vdc right; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of DI_vdcRight as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Drive inverter message: vdc right; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of DI_vdcRight as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: vdc right; frame length from the layout, not yet observe
 | Message name | `DI_vdcRight` |
 | CAN id | 0x11A (282) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: vdc right; frame length from the layout, not yet observe
 
 ## Signals of DI_vdcRight
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_vdcRight`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_vdcRight`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_vdcRight`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

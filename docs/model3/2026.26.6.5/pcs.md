@@ -8,6 +8,8 @@ description: "Tesla Model 3 PCS CAN bus messages and signals of the Power conver
 
 All 10 messages of the Power conversion system (on-board charger and DC-DC converter) (PCS) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PCS_alertLog`](veh/pcs/pcs_alertlog.md) | VEH | 0x424 | 8 |  | 300 |
@@ -22,4 +24,3 @@ All 10 messages of the Power conversion system (on-board charger and DC-DC conve
 | [`PCS_udsResponse`](veh/pcs/pcs_udsresponse.md) | VEH | 0x629 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

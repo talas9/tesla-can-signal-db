@@ -8,6 +8,8 @@ description: "Tesla Model Y ICR CAN bus messages and signals of the ICR ECU (ICR
 
 All 8 messages of the ICR ECU (ICR) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`ICR_alertLog`](veh/icr/icr_alertlog.md) | VEH | 0x4B8 | 8 |  | 40 |
@@ -20,4 +22,3 @@ All 8 messages of the ICR ECU (ICR) documented for Tesla Model Y firmware 2026.2
 | [`ICR_udsResponse`](veh/icr/icr_udsresponse.md) | VEH | 0x658 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

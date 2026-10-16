@@ -8,6 +8,8 @@ description: "Tesla Model 3 HVP CAN bus messages and signals of the High-voltage
 
 All 9 messages of the High-voltage processor (pack contactor and isolation controller) (HVP) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`HVP_alertLog`](veh/hvp/hvp_alertlog.md) | VEH | 0x50A | 8 |  | 200 |
@@ -21,4 +23,3 @@ All 9 messages of the High-voltage processor (pack contactor and isolation contr
 | [`HVP_udsResponse`](veh/hvp/hvp_udsresponse.md) | VEH | 0x611 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

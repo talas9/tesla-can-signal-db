@@ -16,6 +16,8 @@ Charge port controller message: evse status. This page documents the 18 signals 
 | Ethernet-side id | 0x21D (541) |
 | ECU | [Charge port controller](../../cp.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | CP |

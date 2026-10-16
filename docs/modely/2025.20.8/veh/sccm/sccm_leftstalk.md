@@ -16,6 +16,8 @@ Steering column control module message: left stalk; frame length from the layout
 | CAN id | 0x249 (585) |
 | ECU | [Steering column control module](../../sccm.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCCM |

@@ -8,6 +8,8 @@ description: "Tesla Model Y CMP CAN bus messages and signals of the A/C compress
 
 All 3 messages of the A/C compressor (CMP) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`CMP_info`](veh/cmp/cmp_info.md) | VEH | 0x363 | 8 | 1000 ms | 13 |
@@ -15,4 +17,3 @@ All 3 messages of the A/C compressor (CMP) documented for Tesla Model Y firmware
 | [`CMP_HVStatus`](eth/cmp/cmp_hvstatus.md) | ETH | 0x227 | 8 | 100 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

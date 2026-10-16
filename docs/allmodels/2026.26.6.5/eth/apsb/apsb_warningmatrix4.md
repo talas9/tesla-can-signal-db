@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APSB_warningMatrix4 (0x3EB) — APSB ECU, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "APSB ECU message: warning matrix4. Ethernet-side message APSB_warningMatrix4 of APSB ECU for Tesla Model 3 / Model Y firmware 2026.26.6.5, 63 signals (APSB_w257_assertFailure, APSB_w258_qspiFlashSectorChecksumMismatch, APSB_w259_qspiFailure, APSB_w260_pgoodFailure and 59 more). Bit layout, scaling, units and value tables."
+title: "APSB_warningMatrix4 (0x3EB) — APSB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "APSB ECU message: warning matrix4. Ethernet-side message APSB_warningMatrix4 of APSB ECU for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 63 signals (APSB_w257_assertFailure, APSB_w258_qspiFlashSectorChecksumMismatch, APSB_w259_qspiFailure, APSB_w260_pgoodFailure and 59 more). Bit layout, scaling, units and value tables."
 ---
 
-# APSB_warningMatrix4 (0x3EB) — APSB ECU, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# APSB_warningMatrix4 (0x3EB) — APSB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-APSB ECU message: warning matrix4. This page documents the 63 signals of APSB_warningMatrix4 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+APSB ECU message: warning matrix4. This page documents the 63 signals of APSB_warningMatrix4 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ APSB ECU message: warning matrix4. This page documents the 63 signals of APSB_wa
 | Message name | `APSB_warningMatrix4` |
 | Ethernet-side id | 0x3EB (1003) |
 | ECU | [APSB ECU](../../apsb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APSB |
@@ -25,7 +27,7 @@ APSB ECU message: warning matrix4. This page documents the 63 signals of APSB_wa
 
 ## Signals of APSB_warningMatrix4
 
-Tesla Model 3 / Model Y CAN bus signals in `APSB_warningMatrix4`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APSB_warningMatrix4`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -95,7 +97,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APSB_warningMatrix4`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

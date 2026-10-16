@@ -16,6 +16,8 @@ RCU ECU message: alert matrix; frame length from the layout, not yet observed on
 | CAN id | 0x3E6 (998) |
 | ECU | [RCU ECU](../../rcu.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCU |

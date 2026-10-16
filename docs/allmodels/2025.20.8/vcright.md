@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Right body controller (VCRIGHT) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y VCRIGHT CAN bus messages and signals of the Right body controller (VCRIGHT) for firmware 2025.20.8: 28 messages, 2295 signals with bit layout, scaling and value tables."
+title: "Right body controller (VCRIGHT) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) VCRIGHT CAN bus messages and signals of the Right body controller (VCRIGHT) for firmware 2025.20.8: 28 messages, 2295 signals with bit layout, scaling and value tables."
 ---
 
-# Right body controller (VCRIGHT) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Right body controller (VCRIGHT) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 28 messages of the Right body controller (VCRIGHT) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 28 messages of the Right body controller (VCRIGHT) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -40,4 +42,3 @@ All 28 messages of the Right body controller (VCRIGHT) documented for Tesla Mode
 | [`VCRIGHT_udsResponse`](eth/vcright/vcright_udsresponse.md) | ETH | 0x609 | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

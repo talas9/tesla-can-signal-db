@@ -8,6 +8,8 @@ description: "Tesla Model 3 DIF CAN bus messages and signals of the Front drive 
 
 All 16 messages of the Front drive inverter (DIF) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`DIF_power`](veh/dif/dif_power.md) | VEH | 0x2E5 | 8 | 1000 ms | 6 |
@@ -28,4 +30,3 @@ All 16 messages of the Front drive inverter (DIF) documented for Tesla Model 3 f
 | [`DIF_udsResponse`](eth/dif/dif_udsresponse.md) | ETH | 0x615 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

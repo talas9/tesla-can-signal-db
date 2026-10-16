@@ -8,6 +8,8 @@ description: "Tesla Model 3 APP CAN bus messages and signals of the Driver assis
 
 All 28 messages of the Driver assistance computer (primary) (APP) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`APP_cameraLux`](veh/app/app_cameralux.md) | VEH | 0x3FA | 8 | 500 ms | 8 |
@@ -40,4 +42,3 @@ All 28 messages of the Driver assistance computer (primary) (APP) documented for
 | [`APP_warningMatrix7`](ch/app/app_warningmatrix7.md) | CH | 0x4D1 | 8 | 1000 ms | 23 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

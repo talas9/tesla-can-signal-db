@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "CMPD ECU (CMPD) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y CMPD CAN bus messages and signals of the CMPD ECU (CMPD) for firmware 2025.20.8: 3 messages, 21 signals with bit layout, scaling and value tables."
+title: "CMPD ECU (CMPD) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) CMPD CAN bus messages and signals of the CMPD ECU (CMPD) for firmware 2025.20.8: 3 messages, 21 signals with bit layout, scaling and value tables."
 ---
 
-# CMPD ECU (CMPD) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# CMPD ECU (CMPD) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 3 messages of the CMPD ECU (CMPD) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 3 messages of the CMPD ECU (CMPD) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -15,4 +17,3 @@ All 3 messages of the CMPD ECU (CMPD) documented for Tesla Model 3 / Model Y fir
 | [`CMPD_udsResponse`](eth/cmpd/cmpd_udsresponse.md) | ETH | 0x617 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

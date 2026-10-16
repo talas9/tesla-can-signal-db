@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "FC_serial (0x514) — FC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "FC ECU message: serial. Tesla Model 3 / Model Y CAN bus message FC_serial (0x514) of FC ECU, firmware 2026.26.6.5, 18 signals (FC_serialDataSelect, FC_serialChar01, FC_serialChar02, FC_serialChar03 and 14 more). Bit layout, scaling, units and value tables."
+title: "FC_serial (0x514) — FC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "FC ECU message: serial. Tesla Model 3 / Model Y (union) CAN bus message FC_serial (0x514) of FC ECU, firmware 2026.26.6.5, 18 signals (FC_serialDataSelect, FC_serialChar01, FC_serialChar02, FC_serialChar03 and 14 more). Bit layout, scaling, units and value tables."
 ---
 
-# FC_serial (0x514) — FC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# FC_serial (0x514) — FC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-FC ECU message: serial; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of FC_serial as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+FC ECU message: serial; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of FC_serial as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ FC ECU message: serial; frame length from the layout, not yet observed on a vehi
 | Message name | `FC_serial` |
 | CAN id | 0x514 (1300) |
 | ECU | [FC ECU](../../fc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | FC |
@@ -25,7 +27,7 @@ FC ECU message: serial; frame length from the layout, not yet observed on a vehi
 
 ## Signals of FC_serial
 
-Tesla Model 3 / Model Y CAN bus signals in `FC_serial`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `FC_serial`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -54,7 +56,7 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_serial`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

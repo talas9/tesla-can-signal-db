@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_powerRationalityConfig (0x295) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: power rationality config. Tesla Model 3 / Model Y CAN bus message UI_powerRationalityConfig (0x295) of Touchscreen user interface computer, firmware 2026.26.6.5, 41 signals (UI_powerRationalityConfigIndex, UI_vcleftCfgRationalityThreshold0, UI_vcleftCfgRationalityTime0, UI_vcleftCfgRationalityThreshold1 and 37 more). Bit layout, scaling, units and value tables."
+title: "UI_powerRationalityConfig (0x295) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: power rationality config. Tesla Model 3 / Model Y (union) CAN bus message UI_powerRationalityConfig (0x295) of Touchscreen user interface computer, firmware 2026.26.6.5, 41 signals (UI_powerRationalityConfigIndex, UI_vcleftCfgRationalityThreshold0, UI_vcleftCfgRationalityTime0, UI_vcleftCfgRationalityThreshold1 and 37 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_powerRationalityConfig (0x295) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_powerRationalityConfig (0x295) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: power rationality config; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 41 signals of UI_powerRationalityConfig as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: power rationality config; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 41 signals of UI_powerRationalityConfig as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: power rationality config; forwarded
 | Message name | `UI_powerRationalityConfig` |
 | CAN id | 0x295 (661) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: power rationality config; forwarded
 
 ## Signals of UI_powerRationalityConfig
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_powerRationalityConfig`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_powerRationalityConfig`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -77,7 +79,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_powerRationalityConfig`: start bi
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

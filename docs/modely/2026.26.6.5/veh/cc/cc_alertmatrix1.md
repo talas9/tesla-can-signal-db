@@ -16,6 +16,8 @@ Charge cable controller message: alert matrix1; frame length from the layout, no
 | CAN id | 0x46C (1132) |
 | ECU | [Charge cable controller](../../cc.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CC |

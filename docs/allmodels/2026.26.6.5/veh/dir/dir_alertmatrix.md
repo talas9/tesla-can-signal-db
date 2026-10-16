@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIR_alertMatrix (0x3A7) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Rear drive inverter message: alert matrix. Tesla Model 3 / Model Y CAN bus message DIR_alertMatrix (0x3A7) of Rear drive inverter, firmware 2026.26.6.5, 188 signals (DIR_matrixIndex, DIR_a001_hwPhaseAgateDrive, DIR_a002_hwPhaseBgateDrive, DIR_a003_hwPhaseCgateDrive and 184 more). Bit layout, scaling, units and value tables."
+title: "DIR_alertMatrix (0x3A7) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Rear drive inverter message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message DIR_alertMatrix (0x3A7) of Rear drive inverter, firmware 2026.26.6.5, 188 signals (DIR_matrixIndex, DIR_a001_hwPhaseAgateDrive, DIR_a002_hwPhaseBgateDrive, DIR_a003_hwPhaseCgateDrive and 184 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIR_alertMatrix (0x3A7) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DIR_alertMatrix (0x3A7) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Rear drive inverter message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 188 signals of DIR_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Rear drive inverter message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 188 signals of DIR_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Rear drive inverter message: alert matrix; frame length from the layout, not yet
 | Message name | `DIR_alertMatrix` |
 | CAN id | 0x3A7 (935) |
 | ECU | [Rear drive inverter](../../dir.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DIR |
@@ -25,7 +27,7 @@ Rear drive inverter message: alert matrix; frame length from the layout, not yet
 
 ## Signals of DIR_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `DIR_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIR_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -224,7 +226,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

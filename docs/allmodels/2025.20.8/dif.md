@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Front drive inverter (DIF) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y DIF CAN bus messages and signals of the Front drive inverter (DIF) for firmware 2025.20.8: 16 messages, 853 signals with bit layout, scaling and value tables."
+title: "Front drive inverter (DIF) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) DIF CAN bus messages and signals of the Front drive inverter (DIF) for firmware 2025.20.8: 16 messages, 853 signals with bit layout, scaling and value tables."
 ---
 
-# Front drive inverter (DIF) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Front drive inverter (DIF) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 16 messages of the Front drive inverter (DIF) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 16 messages of the Front drive inverter (DIF) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -28,4 +30,3 @@ All 16 messages of the Front drive inverter (DIF) documented for Tesla Model 3 /
 | [`DIF_udsResponse`](eth/dif/dif_udsresponse.md) | ETH | 0x615 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

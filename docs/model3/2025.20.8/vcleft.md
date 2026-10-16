@@ -8,6 +8,8 @@ description: "Tesla Model 3 VCLEFT CAN bus messages and signals of the Left body
 
 All 28 messages of the Left body controller (VCLEFT) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCLEFT_doorStatus2`](veh/vcleft/vcleft_doorstatus2.md) | VEH | 0x122 | 8 | 100 ms | 8 |
@@ -40,4 +42,3 @@ All 28 messages of the Left body controller (VCLEFT) documented for Tesla Model 
 | [`VCLEFT_udsResponse`](eth/vcleft/vcleft_udsresponse.md) | ETH | 0x623 | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

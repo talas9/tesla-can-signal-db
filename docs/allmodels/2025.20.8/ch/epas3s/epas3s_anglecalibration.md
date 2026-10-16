@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3S_angleCalibration (0x3D1) — Electric power steering (secondary), Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Electric power steering (secondary) message: angle calibration. Tesla Model 3 / Model Y CAN bus message EPAS3S_angleCalibration (0x3D1) of Electric power steering (secondary), firmware 2025.20.8, 6 signals (EPAS3S_appliedAngleOffset, EPAS3S_calculatedAngleOffset, EPAS3S_resyncStatus, EPAS3S_pullDriftLongTermTrq and 2 more). Bit layout, scaling, units and value tables."
+title: "EPAS3S_angleCalibration (0x3D1) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Electric power steering (secondary) message: angle calibration. Tesla Model 3 / Model Y (union) CAN bus message EPAS3S_angleCalibration (0x3D1) of Electric power steering (secondary), firmware 2025.20.8, 6 signals (EPAS3S_appliedAngleOffset, EPAS3S_calculatedAngleOffset, EPAS3S_resyncStatus, EPAS3S_pullDriftLongTermTrq and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3S_angleCalibration (0x3D1) — Electric power steering (secondary), Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# EPAS3S_angleCalibration (0x3D1) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Electric power steering (secondary) message: angle calibration; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of EPAS3S_angleCalibration as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Electric power steering (secondary) message: angle calibration; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of EPAS3S_angleCalibration as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (secondary) message: angle calibration; frame length fro
 | Message name | `EPAS3S_angleCalibration` |
 | CAN id | 0x3D1 (977) |
 | ECU | [Electric power steering (secondary)](../../epas3s.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | EPAS3S |
@@ -25,7 +27,7 @@ Electric power steering (secondary) message: angle calibration; frame length fro
 
 ## Signals of EPAS3S_angleCalibration
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_angleCalibration`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3S_angleCalibration`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_angleCalibration`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

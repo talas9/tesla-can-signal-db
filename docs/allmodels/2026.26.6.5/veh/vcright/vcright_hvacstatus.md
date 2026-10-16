@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_hvacStatus (0x243) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Right body controller message: hvac status. Tesla Model 3 / Model Y CAN bus message VCRIGHT_hvacStatus (0x243) of Right body controller, firmware 2026.26.6.5, 68 signals (VCRIGHT_hvacStatusIndex, VCRIGHT_warmingUpStatus, VCRIGHT_coolingDownStatus, VCRIGHT_childModeHVACState and 64 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_hvacStatus (0x243) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Right body controller message: hvac status. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_hvacStatus (0x243) of Right body controller, firmware 2026.26.6.5, 68 signals (VCRIGHT_hvacStatusIndex, VCRIGHT_warmingUpStatus, VCRIGHT_coolingDownStatus, VCRIGHT_childModeHVACState and 64 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_hvacStatus (0x243) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCRIGHT_hvacStatus (0x243) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Right body controller message: hvac status; frame length observed on a vehicle bus. This page documents the 68 signals of VCRIGHT_hvacStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Right body controller message: hvac status; frame length observed on a vehicle bus. This page documents the 68 signals of VCRIGHT_hvacStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: hvac status; frame length observed on a vehicle b
 | Message name | `VCRIGHT_hvacStatus` |
 | CAN id | 0x243 (579) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: hvac status; frame length observed on a vehicle b
 
 ## Signals of VCRIGHT_hvacStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_hvacStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_hvacStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -104,7 +106,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_hvacStatus`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

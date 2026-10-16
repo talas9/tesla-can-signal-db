@@ -16,6 +16,8 @@ Driver assistance computer (secondary) message: status2; frame length from the l
 | CAN id | 0x41C (1052) |
 | ECU | [Driver assistance computer (secondary)](../../aps.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APS |

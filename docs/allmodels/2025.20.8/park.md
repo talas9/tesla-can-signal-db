@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Parking assist sensors (PARK) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y PARK CAN bus messages and signals of the Parking assist sensors (PARK) for firmware 2025.20.8: 16 messages, 502 signals with bit layout, scaling and value tables."
+title: "Parking assist sensors (PARK) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) PARK CAN bus messages and signals of the Parking assist sensors (PARK) for firmware 2025.20.8: 16 messages, 502 signals with bit layout, scaling and value tables."
 ---
 
-# Parking assist sensors (PARK) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Parking assist sensors (PARK) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 16 messages of the Parking assist sensors (PARK) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 16 messages of the Parking assist sensors (PARK) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -28,4 +30,3 @@ All 16 messages of the Parking assist sensors (PARK) documented for Tesla Model 
 | [`PARK_udsResponse`](eth/park/park_udsresponse.md) | ETH | 0x65E | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_camCalibrationStatus (0x3F4) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (primary) message: cam calibration status. Tesla Model 3 / Model Y CAN bus message APP_camCalibrationStatus (0x3F4) of Driver assistance computer (primary), firmware 2026.26.6.5, 46 signals (APP_cameraPosition, APP_mainCamExtPitchCal, APP_mainCamExtYawCal, APP_mainCalibTime and 42 more). Bit layout, scaling, units and value tables."
+title: "APP_camCalibrationStatus (0x3F4) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (primary) message: cam calibration status. Tesla Model 3 / Model Y (union) CAN bus message APP_camCalibrationStatus (0x3F4) of Driver assistance computer (primary), firmware 2026.26.6.5, 46 signals (APP_cameraPosition, APP_mainCamExtPitchCal, APP_mainCamExtYawCal, APP_mainCalibTime and 42 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_camCalibrationStatus (0x3F4) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APP_camCalibrationStatus (0x3F4) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (primary) message: cam calibration status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 46 signals of APP_camCalibrationStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (primary) message: cam calibration status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 46 signals of APP_camCalibrationStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: cam calibration status; frame leng
 | Message name | `APP_camCalibrationStatus` |
 | CAN id | 0x3F4 (1012) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: cam calibration status; frame leng
 
 ## Signals of APP_camCalibrationStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_camCalibrationStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_camCalibrationStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -82,7 +84,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_camCalibrationStatus`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

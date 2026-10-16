@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Air suspension controller (TAS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y TAS CAN bus messages and signals of the Air suspension controller (TAS) for firmware 2025.20.8: 10 messages, 477 signals with bit layout, scaling and value tables."
+title: "Air suspension controller (TAS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) TAS CAN bus messages and signals of the Air suspension controller (TAS) for firmware 2025.20.8: 10 messages, 477 signals with bit layout, scaling and value tables."
 ---
 
-# Air suspension controller (TAS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Air suspension controller (TAS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 10 messages of the Air suspension controller (TAS) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 10 messages of the Air suspension controller (TAS) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -22,4 +24,3 @@ All 10 messages of the Air suspension controller (TAS) documented for Tesla Mode
 | [`TAS_udsResponse`](eth/tas/tas_udsresponse.md) | ETH | 0x65B | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

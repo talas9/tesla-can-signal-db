@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Charge cable controller message: chg status2. Ethernet-side message CC_chgStatus2 of Charge cable controller for Tesla Model 3 / Model Y firmware 2025.20.8, 2 signals (CC_chgStatus2Index, CC_buttonState). Bit layout, scaling, units and value tables."
+title: "CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Charge cable controller message: chg status2. Ethernet-side message CC_chgStatus2 of Charge cable controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 2 signals (CC_chgStatus2Index, CC_buttonState). Bit layout, scaling, units and value tables."
 ---
 
-# CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Charge cable controller message: chg status2. This page documents the 2 signals of CC_chgStatus2 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Charge cable controller message: chg status2. This page documents the 2 signals of CC_chgStatus2 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge cable controller message: chg status2. This page documents the 2 signals 
 | Message name | `CC_chgStatus2` |
 | Ethernet-side id | 0x31D (797) |
 | ECU | [Charge cable controller](../../cc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | CC |
@@ -25,7 +27,7 @@ Charge cable controller message: chg status2. This page documents the 2 signals 
 
 ## Signals of CC_chgStatus2
 
-Tesla Model 3 / Model Y CAN bus signals in `CC_chgStatus2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CC_chgStatus2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CC_chgStatus2`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

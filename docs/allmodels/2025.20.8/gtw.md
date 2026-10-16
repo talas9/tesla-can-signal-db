@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Gateway (GTW) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y GTW CAN bus messages and signals of the Gateway (GTW) for firmware 2025.20.8: 18 messages, 693 signals with bit layout, scaling and value tables."
+title: "Gateway (GTW) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) GTW CAN bus messages and signals of the Gateway (GTW) for firmware 2025.20.8: 18 messages, 693 signals with bit layout, scaling and value tables."
 ---
 
-# Gateway (GTW) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Gateway (GTW) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 18 messages of the Gateway (GTW) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 18 messages of the Gateway (GTW) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -30,4 +32,3 @@ All 18 messages of the Gateway (GTW) documented for Tesla Model 3 / Model Y firm
 | [`GTW_vehNm`](eth/gtw/gtw_vehnm.md) | ETH | 0x458 | 7 | 100 ms | 11 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

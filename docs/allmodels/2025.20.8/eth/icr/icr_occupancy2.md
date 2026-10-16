@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "ICR_occupancy2 (0x29E) — ICR ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "ICR ECU message: occupancy2. Ethernet-side message ICR_occupancy2 of ICR ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 9 signals (ICR_userPresenceMLOutput, ICR_childPresenceMLOutput, ICR_classification1RFilt, ICR_classification1LRaw and 5 more). Bit layout, scaling, units and value tables."
+title: "ICR_occupancy2 (0x29E) — ICR ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "ICR ECU message: occupancy2. Ethernet-side message ICR_occupancy2 of ICR ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 9 signals (ICR_userPresenceMLOutput, ICR_childPresenceMLOutput, ICR_classification1RFilt, ICR_classification1LRaw and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# ICR_occupancy2 (0x29E) — ICR ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# ICR_occupancy2 (0x29E) — ICR ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-ICR ECU message: occupancy2. This page documents the 9 signals of ICR_occupancy2 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+ICR ECU message: occupancy2. This page documents the 9 signals of ICR_occupancy2 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ ICR ECU message: occupancy2. This page documents the 9 signals of ICR_occupancy2
 | Message name | `ICR_occupancy2` |
 | Ethernet-side id | 0x29E (670) |
 | ECU | [ICR ECU](../../icr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | ICR |
@@ -25,7 +27,7 @@ ICR ECU message: occupancy2. This page documents the 9 signals of ICR_occupancy2
 
 ## Signals of ICR_occupancy2
 
-Tesla Model 3 / Model Y CAN bus signals in `ICR_occupancy2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `ICR_occupancy2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `ICR_occupancy2`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

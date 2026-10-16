@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_locStatus (0x286) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Drive inverter message: loc status. Tesla Model 3 / Model Y CAN bus message DI_locStatus (0x286) of Drive inverter, firmware 2026.26.6.5, 17 signals (DI_locStatusChecksum, DI_locStatusCounter, DI_cruiseState, DI_cruiseSetSpeed and 13 more). Bit layout, scaling, units and value tables."
+title: "DI_locStatus (0x286) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Drive inverter message: loc status. Tesla Model 3 / Model Y (union) CAN bus message DI_locStatus (0x286) of Drive inverter, firmware 2026.26.6.5, 17 signals (DI_locStatusChecksum, DI_locStatusCounter, DI_cruiseState, DI_cruiseSetSpeed and 13 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_locStatus (0x286) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DI_locStatus (0x286) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Drive inverter message: loc status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 17 signals of DI_locStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Drive inverter message: loc status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 17 signals of DI_locStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: loc status; frame length from the layout, not yet observ
 | Message name | `DI_locStatus` |
 | CAN id | 0x286 (646) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: loc status; frame length from the layout, not yet observ
 
 ## Signals of DI_locStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_locStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_locStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -49,7 +51,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_locStatus`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

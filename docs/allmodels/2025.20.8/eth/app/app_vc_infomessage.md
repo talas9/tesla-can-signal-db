@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Driver assistance computer (primary) message: VC info message. Ethernet-side message APP_VC_infoMessage of Driver assistance computer (primary) for Tesla Model 3 / Model Y firmware 2025.20.8, 23 signals (APP_inTunnel, APP_windshieldHeaterOnReason, APP_selfieCameraBlocked, APP_selfieCameraLUX and 19 more). Bit layout, scaling, units and value tables."
+title: "APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Driver assistance computer (primary) message: VC info message. Ethernet-side message APP_VC_infoMessage of Driver assistance computer (primary) for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 23 signals (APP_inTunnel, APP_windshieldHeaterOnReason, APP_selfieCameraBlocked, APP_selfieCameraLUX and 19 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 ETH
+# APP_VC_infoMessage (0x38D) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Driver assistance computer (primary) message: VC info message. This page documents the 23 signals of APP_VC_infoMessage as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Driver assistance computer (primary) message: VC info message. This page documents the 23 signals of APP_VC_infoMessage as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: VC info message. This page documen
 | Message name | `APP_VC_infoMessage` |
 | Ethernet-side id | 0x38D (909) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: VC info message. This page documen
 
 ## Signals of APP_VC_infoMessage
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_VC_infoMessage`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_VC_infoMessage`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -55,7 +57,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_VC_infoMessage`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

@@ -16,6 +16,8 @@ Left electric parking brake message: info; frame length observed on a vehicle bu
 | CAN id | 0x7C8 (1992) |
 | ECU | [Left electric parking brake](../../epbl.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBL |

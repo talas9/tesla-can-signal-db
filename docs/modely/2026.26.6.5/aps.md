@@ -8,6 +8,8 @@ description: "Tesla Model Y APS CAN bus messages and signals of the Driver assis
 
 All 13 messages of the Driver assistance computer (secondary) (APS) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`APS_state`](veh/aps/aps_state.md) | VEH | 0x420 | 8 | 100 ms | 18 |
@@ -25,4 +27,3 @@ All 13 messages of the Driver assistance computer (secondary) (APS) documented f
 | [`APS_warningMatrix4`](ch/aps/aps_warningmatrix4.md) | CH | 0x310 | 8 | 1000 ms | 63 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

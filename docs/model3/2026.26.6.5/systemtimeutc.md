@@ -8,9 +8,10 @@ description: "Tesla Model 3 SystemTimeUTC CAN bus messages and signals of the Sy
 
 All 1 messages of the SystemTimeUTC ECU (SystemTimeUTC) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`SystemTimeUTC`](veh/systemtimeutc/systemtimeutc.md) | VEH | 0x318 | 8 | 100 ms | 6 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

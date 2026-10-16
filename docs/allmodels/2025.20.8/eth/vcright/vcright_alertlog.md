@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_alertLog (0x7DB) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Right body controller message: alert log. Ethernet-side message VCRIGHT_alertLog of Right body controller for Tesla Model 3 / Model Y firmware 2025.20.8, 1238 signals (VCRIGHT_alertID, VCRIGHT_alertState, VCRIGHT_a001_InternalWatchdog, VCRIGHT_a002_CPUUndervoltage and 1234 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_alertLog (0x7DB) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Right body controller message: alert log. Ethernet-side message VCRIGHT_alertLog of Right body controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 1238 signals (VCRIGHT_alertID, VCRIGHT_alertState, VCRIGHT_a001_InternalWatchdog, VCRIGHT_a002_CPUUndervoltage and 1234 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_alertLog (0x7DB) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCRIGHT_alertLog (0x7DB) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Right body controller message: alert log. This page documents the 1238 signals of VCRIGHT_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Right body controller message: alert log. This page documents the 1238 signals of VCRIGHT_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: alert log. This page documents the 1238 signals o
 | Message name | `VCRIGHT_alertLog` |
 | Ethernet-side id | 0x7DB (2011) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: alert log. This page documents the 1238 signals o
 
 ## Signals of VCRIGHT_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -1274,7 +1276,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_alertLog`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

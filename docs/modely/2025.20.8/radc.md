@@ -8,6 +8,8 @@ description: "Tesla Model Y RADC CAN bus messages and signals of the Radar (RADC
 
 All 4 messages of the Radar (RADC) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`RADC_alertLog`](ch/radc/radc_alertlog.md) | CH | 0x555 | 8 |  | 86 |
@@ -16,4 +18,3 @@ All 4 messages of the Radar (RADC) documented for Tesla Model Y firmware 2025.20
 | [`RADC_udsResponse`](eth/radc/radc_udsresponse.md) | ETH | 0x681 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

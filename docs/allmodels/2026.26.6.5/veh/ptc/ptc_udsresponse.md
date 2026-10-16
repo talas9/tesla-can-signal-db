@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PTC_udsResponse (0x6D6) — Cabin heater, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Cabin heater message: uds response. Tesla Model 3 / Model Y CAN bus message PTC_udsResponse (0x6D6) of Cabin heater, firmware 2026.26.6.5, 1 signals (PTC_udsResponseData). Bit layout, scaling, units and value tables."
+title: "PTC_udsResponse (0x6D6) — Cabin heater, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Cabin heater message: uds response. Tesla Model 3 / Model Y (union) CAN bus message PTC_udsResponse (0x6D6) of Cabin heater, firmware 2026.26.6.5, 1 signals (PTC_udsResponseData). Bit layout, scaling, units and value tables."
 ---
 
-# PTC_udsResponse (0x6D6) — Cabin heater, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PTC_udsResponse (0x6D6) — Cabin heater, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Cabin heater message: uds response; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of PTC_udsResponse as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Cabin heater message: uds response; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of PTC_udsResponse as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Cabin heater message: uds response; frame length from the layout, not yet observ
 | Message name | `PTC_udsResponse` |
 | CAN id | 0x6D6 (1750) |
 | ECU | [Cabin heater](../../ptc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PTC |
@@ -25,7 +27,7 @@ Cabin heater message: uds response; frame length from the layout, not yet observ
 
 ## Signals of PTC_udsResponse
 
-Tesla Model 3 / Model Y CAN bus signals in `PTC_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PTC_udsResponse`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PTC_udsResponse`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

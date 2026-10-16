@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "OCS1P_info (0x2FE) — Occupant classification system, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Occupant classification system message: info. Ethernet-side message OCS1P_info of Occupant classification system for Tesla Model 3 / Model Y firmware 2025.20.8, 16 signals (OCS1P_infoIndex, OCS1P_infoBuildType, OCS1P_infoBuildConfigID, OCS1P_infoHardwareID and 12 more). Bit layout, scaling, units and value tables."
+title: "OCS1P_info (0x2FE) — Occupant classification system, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Occupant classification system message: info. Ethernet-side message OCS1P_info of Occupant classification system for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 16 signals (OCS1P_infoIndex, OCS1P_infoBuildType, OCS1P_infoBuildConfigID, OCS1P_infoHardwareID and 12 more). Bit layout, scaling, units and value tables."
 ---
 
-# OCS1P_info (0x2FE) — Occupant classification system, Tesla Model 3 / Model Y 2025.20.8 ETH
+# OCS1P_info (0x2FE) — Occupant classification system, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Occupant classification system message: info. This page documents the 16 signals of OCS1P_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Occupant classification system message: info. This page documents the 16 signals of OCS1P_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Occupant classification system message: info. This page documents the 16 signals
 | Message name | `OCS1P_info` |
 | Ethernet-side id | 0x2FE (766) |
 | ECU | [Occupant classification system](../../ocs1p.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | OCS1P |
@@ -25,7 +27,7 @@ Occupant classification system message: info. This page documents the 16 signals
 
 ## Signals of OCS1P_info
 
-Tesla Model 3 / Model Y CAN bus signals in `OCS1P_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `OCS1P_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -52,7 +54,7 @@ Tesla Model 3 / Model Y CAN bus signals in `OCS1P_info`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "PMF ECU (PMF) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y PMF CAN bus messages and signals of the PMF ECU (PMF) for firmware 2026.26.6.5: 5 messages, 285 signals with bit layout, scaling and value tables."
+title: "PMF ECU (PMF) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) PMF CAN bus messages and signals of the PMF ECU (PMF) for firmware 2026.26.6.5: 5 messages, 285 signals with bit layout, scaling and value tables."
 ---
 
-# PMF ECU (PMF) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# PMF ECU (PMF) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 5 messages of the PMF ECU (PMF) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 5 messages of the PMF ECU (PMF) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -17,4 +19,3 @@ All 5 messages of the PMF ECU (PMF) documented for Tesla Model 3 / Model Y firmw
 | [`PMF_mfgData`](party/pmf/pmf_mfgdata.md) | PARTY | 0x524 | 7 | 1000 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

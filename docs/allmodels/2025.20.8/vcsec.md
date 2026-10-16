@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Vehicle security controller (VCSEC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y VCSEC CAN bus messages and signals of the Vehicle security controller (VCSEC) for firmware 2025.20.8: 20 messages, 1503 signals with bit layout, scaling and value tables."
+title: "Vehicle security controller (VCSEC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) VCSEC CAN bus messages and signals of the Vehicle security controller (VCSEC) for firmware 2025.20.8: 20 messages, 1503 signals with bit layout, scaling and value tables."
 ---
 
-# Vehicle security controller (VCSEC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Vehicle security controller (VCSEC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 20 messages of the Vehicle security controller (VCSEC) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 20 messages of the Vehicle security controller (VCSEC) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -32,4 +34,3 @@ All 20 messages of the Vehicle security controller (VCSEC) documented for Tesla 
 | [`VCSEC_UWBData`](eth/vcsec/vcsec_uwbdata.md) | ETH | 0x42B | 8 | 100 ms | 19 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

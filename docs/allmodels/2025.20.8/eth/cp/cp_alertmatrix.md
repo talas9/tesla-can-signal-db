@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Charge port controller message: alert matrix. Ethernet-side message CP_alertMatrix of Charge port controller for Tesla Model 3 / Model Y firmware 2025.20.8, 180 signals (CP_matrixIndex, CP_a001_canRx, CP_a002_canTx, CP_a003_canError and 176 more). Bit layout, scaling, units and value tables."
+title: "CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Charge port controller message: alert matrix. Ethernet-side message CP_alertMatrix of Charge port controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 180 signals (CP_matrixIndex, CP_a001_canRx, CP_a002_canTx, CP_a003_canError and 176 more). Bit layout, scaling, units and value tables."
 ---
 
-# CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Charge port controller message: alert matrix. This page documents the 180 signals of CP_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Charge port controller message: alert matrix. This page documents the 180 signals of CP_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge port controller message: alert matrix. This page documents the 180 signal
 | Message name | `CP_alertMatrix` |
 | Ethernet-side id | 0x31E (798) |
 | ECU | [Charge port controller](../../cp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | CP |
@@ -25,7 +27,7 @@ Charge port controller message: alert matrix. This page documents the 180 signal
 
 ## Signals of CP_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `CP_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CP_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -216,7 +218,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_alertMatrix`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

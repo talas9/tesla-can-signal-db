@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "IDB_info (0x33C) — IDB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "IDB ECU message: info. Tesla Model 3 / Model Y CAN bus message IDB_info (0x33C) of IDB ECU, firmware 2026.26.6.5, 5 signals (IDB_infoIndex, IDB_infoPcbaID, IDB_infoAssemblyID, IDB_infoUsageID and 1 more). Bit layout, scaling, units and value tables."
+title: "IDB_info (0x33C) — IDB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "IDB ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message IDB_info (0x33C) of IDB ECU, firmware 2026.26.6.5, 5 signals (IDB_infoIndex, IDB_infoPcbaID, IDB_infoAssemblyID, IDB_infoUsageID and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# IDB_info (0x33C) — IDB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# IDB_info (0x33C) — IDB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-IDB ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of IDB_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+IDB ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of IDB_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ IDB ECU message: info; frame length from the layout, not yet observed on a vehic
 | Message name | `IDB_info` |
 | CAN id | 0x33C (828) |
 | ECU | [IDB ECU](../../idb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | IDB |
@@ -25,7 +27,7 @@ IDB ECU message: info; frame length from the layout, not yet observed on a vehic
 
 ## Signals of IDB_info
 
-Tesla Model 3 / Model Y CAN bus signals in `IDB_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `IDB_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `IDB_info`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

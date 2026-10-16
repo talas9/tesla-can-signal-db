@@ -8,6 +8,8 @@ description: "Tesla Model 3 ADSP CAN bus messages and signals of the Audio ampli
 
 All 4 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`ADSP_alertLog`](eth/adsp/adsp_alertlog.md) | ETH | 0x550 | 8 |  | 28 |
@@ -16,4 +18,3 @@ All 4 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 firmwa
 | [`ADSP_state`](eth/adsp/adsp_state.md) | ETH | 0x567 | 7 | 200 ms | 24 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

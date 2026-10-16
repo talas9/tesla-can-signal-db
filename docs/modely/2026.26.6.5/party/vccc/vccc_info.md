@@ -16,6 +16,8 @@ VCCC ECU message: info; frame length from the layout, not yet observed on a vehi
 | CAN id | 0x7CA (1994) |
 | ECU | [VCCC ECU](../../vccc.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCCC |

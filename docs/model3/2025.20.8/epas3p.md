@@ -8,6 +8,8 @@ description: "Tesla Model 3 EPAS3P CAN bus messages and signals of the Electric 
 
 All 6 messages of the Electric power steering (primary) (EPAS3P) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPAS3P_angleCalibration`](party/epas3p/epas3p_anglecalibration.md) | PARTY | 0x3D1 | 8 | 1000 ms | 6 |
@@ -18,4 +20,3 @@ All 6 messages of the Electric power steering (primary) (EPAS3P) documented for 
 | [`EPAS3P_udsResponseCH`](eth/epas3p/epas3p_udsresponsech.md) | ETH | 0x638 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

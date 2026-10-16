@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_doorStatus (0x102) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Left body controller message: door status. Tesla Model 3 / Model Y CAN bus message VCLEFT_doorStatus (0x102) of Left body controller, firmware 2026.26.6.5, 25 signals (VCLEFT_doorClosureStatusFront, VCLEFT_doorClosureStatusRear, VCLEFT_frontLatchSwitch, VCLEFT_rearLatchSwitch and 21 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_doorStatus (0x102) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Left body controller message: door status. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_doorStatus (0x102) of Left body controller, firmware 2026.26.6.5, 25 signals (VCLEFT_doorClosureStatusFront, VCLEFT_doorClosureStatusRear, VCLEFT_frontLatchSwitch, VCLEFT_rearLatchSwitch and 21 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_doorStatus (0x102) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# VCLEFT_doorStatus (0x102) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Left body controller message: door status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 25 signals of VCLEFT_doorStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Left body controller message: door status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 25 signals of VCLEFT_doorStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: door status; frame length from the layout, not yet
 | Message name | `VCLEFT_doorStatus` |
 | CAN id | 0x102 (258) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: door status; frame length from the layout, not yet
 
 ## Signals of VCLEFT_doorStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_doorStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_doorStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -57,7 +59,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_doorStatus`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

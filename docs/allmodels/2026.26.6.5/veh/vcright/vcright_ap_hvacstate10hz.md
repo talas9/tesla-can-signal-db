@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_AP_hvacState10Hz (0x45A) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Right body controller message: AP hvac state10 hz. Tesla Model 3 / Model Y CAN bus message VCRIGHT_AP_hvacState10Hz (0x45A) of Right body controller, firmware 2026.26.6.5, 23 signals (VCRIGHT_AP_hvacState10HzIndex, VCRIGHT_AP_autoDefogAvailable, VCRIGHT_AP_hvacFlashFoggingDetected, VCRIGHT_AP_hvacModelInitStatus and 19 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_AP_hvacState10Hz (0x45A) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Right body controller message: AP hvac state10 hz. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_AP_hvacState10Hz (0x45A) of Right body controller, firmware 2026.26.6.5, 23 signals (VCRIGHT_AP_hvacState10HzIndex, VCRIGHT_AP_autoDefogAvailable, VCRIGHT_AP_hvacFlashFoggingDetected, VCRIGHT_AP_hvacModelInitStatus and 19 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_AP_hvacState10Hz (0x45A) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCRIGHT_AP_hvacState10Hz (0x45A) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Right body controller message: AP hvac state10 hz; frame length observed on a vehicle bus. This page documents the 23 signals of VCRIGHT_AP_hvacState10Hz as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Right body controller message: AP hvac state10 hz; frame length observed on a vehicle bus. This page documents the 23 signals of VCRIGHT_AP_hvacState10Hz as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: AP hvac state10 hz; frame length observed on a ve
 | Message name | `VCRIGHT_AP_hvacState10Hz` |
 | CAN id | 0x45A (1114) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: AP hvac state10 hz; frame length observed on a ve
 
 ## Signals of VCRIGHT_AP_hvacState10Hz
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_AP_hvacState10Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_AP_hvacState10Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -59,7 +61,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_AP_hvacState10Hz`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

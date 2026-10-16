@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_chassisControl (0x148) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Drive inverter message: chassis control. Tesla Model 3 / Model Y CAN bus message DI_chassisControl (0x148) of Drive inverter, firmware 2026.26.6.5, 18 signals (DI_chassisControlChecksum, DI_chassisControlCounter, DI_imuOffsetLearnRequest, DI_brakeCommandType and 14 more). Bit layout, scaling, units and value tables."
+title: "DI_chassisControl (0x148) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Drive inverter message: chassis control. Tesla Model 3 / Model Y (union) CAN bus message DI_chassisControl (0x148) of Drive inverter, firmware 2026.26.6.5, 18 signals (DI_chassisControlChecksum, DI_chassisControlCounter, DI_imuOffsetLearnRequest, DI_brakeCommandType and 14 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_chassisControl (0x148) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DI_chassisControl (0x148) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Drive inverter message: chassis control; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of DI_chassisControl as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Drive inverter message: chassis control; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of DI_chassisControl as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: chassis control; frame length from the layout, not yet o
 | Message name | `DI_chassisControl` |
 | CAN id | 0x148 (328) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: chassis control; frame length from the layout, not yet o
 
 ## Signals of DI_chassisControl
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_chassisControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_chassisControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -50,7 +52,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_chassisControl`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

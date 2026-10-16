@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Charge cable controller (CC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y CC CAN bus messages and signals of the Charge cable controller (CC) for firmware 2025.20.8: 5 messages, 147 signals with bit layout, scaling and value tables."
+title: "Charge cable controller (CC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) CC CAN bus messages and signals of the Charge cable controller (CC) for firmware 2025.20.8: 5 messages, 147 signals with bit layout, scaling and value tables."
 ---
 
-# Charge cable controller (CC) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Charge cable controller (CC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 5 messages of the Charge cable controller (CC) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 5 messages of the Charge cable controller (CC) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -17,4 +19,3 @@ All 5 messages of the Charge cable controller (CC) documented for Tesla Model 3 
 | [`CC_chgStatus2`](eth/cc/cc_chgstatus2.md) | ETH | 0x31D | 8 | 100 ms | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

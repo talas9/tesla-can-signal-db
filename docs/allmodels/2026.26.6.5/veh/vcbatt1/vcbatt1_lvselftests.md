@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCBATT1_LVSelfTests (0x45F) — VCBATT1 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCBATT1 ECU message: LV self tests. Tesla Model 3 / Model Y CAN bus message VCBATT1_LVSelfTests (0x45F) of VCBATT1 ECU, firmware 2026.26.6.5, 27 signals (VCBATT1_LVSelfTestsChecksum, VCBATT1_LVSelfTestsCounter, VCBATT1_LVSelfTestsIndex, VCBATT1_lvProtectionSelfTestsEnabled and 23 more). Bit layout, scaling, units and value tables."
+title: "VCBATT1_LVSelfTests (0x45F) — VCBATT1 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCBATT1 ECU message: LV self tests. Tesla Model 3 / Model Y (union) CAN bus message VCBATT1_LVSelfTests (0x45F) of VCBATT1 ECU, firmware 2026.26.6.5, 27 signals (VCBATT1_LVSelfTestsChecksum, VCBATT1_LVSelfTestsCounter, VCBATT1_LVSelfTestsIndex, VCBATT1_lvProtectionSelfTestsEnabled and 23 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCBATT1_LVSelfTests (0x45F) — VCBATT1 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCBATT1_LVSelfTests (0x45F) — VCBATT1 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCBATT1 ECU message: LV self tests; frame length from the layout, not yet observed on a vehicle bus. This page documents the 27 signals of VCBATT1_LVSelfTests as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCBATT1 ECU message: LV self tests; frame length from the layout, not yet observed on a vehicle bus. This page documents the 27 signals of VCBATT1_LVSelfTests as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCBATT1 ECU message: LV self tests; frame length from the layout, not yet observ
 | Message name | `VCBATT1_LVSelfTests` |
 | CAN id | 0x45F (1119) |
 | ECU | [VCBATT1 ECU](../../vcbatt1.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCBATT1 |
@@ -25,7 +27,7 @@ VCBATT1 ECU message: LV self tests; frame length from the layout, not yet observ
 
 ## Signals of VCBATT1_LVSelfTests
 
-Tesla Model 3 / Model Y CAN bus signals in `VCBATT1_LVSelfTests`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCBATT1_LVSelfTests`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -63,7 +65,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCBATT1_LVSelfTests`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

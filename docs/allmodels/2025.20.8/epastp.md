@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "EPASTP ECU (EPASTP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y EPASTP CAN bus messages and signals of the EPASTP ECU (EPASTP) for firmware 2025.20.8: 2 messages, 546 signals with bit layout, scaling and value tables."
+title: "EPASTP ECU (EPASTP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) EPASTP CAN bus messages and signals of the EPASTP ECU (EPASTP) for firmware 2025.20.8: 2 messages, 546 signals with bit layout, scaling and value tables."
 ---
 
-# EPASTP ECU (EPASTP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# EPASTP ECU (EPASTP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 2 messages of the EPASTP ECU (EPASTP) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 2 messages of the EPASTP ECU (EPASTP) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -14,4 +16,3 @@ All 2 messages of the EPASTP ECU (EPASTP) documented for Tesla Model 3 / Model Y
 | [`EPASTP_alertLog`](eth/epastp/epastp_alertlog.md) | ETH | 0x593 | 8 |  | 276 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

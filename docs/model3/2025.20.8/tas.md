@@ -8,6 +8,8 @@ description: "Tesla Model 3 TAS CAN bus messages and signals of the Air suspensi
 
 All 10 messages of the Air suspension controller (TAS) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`TAS_axleData`](veh/tas/tas_axledata.md) | VEH | 0x20B | 8 | 20 ms | 13 |
@@ -22,4 +24,3 @@ All 10 messages of the Air suspension controller (TAS) documented for Tesla Mode
 | [`TAS_udsResponse`](eth/tas/tas_udsresponse.md) | ETH | 0x65B | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

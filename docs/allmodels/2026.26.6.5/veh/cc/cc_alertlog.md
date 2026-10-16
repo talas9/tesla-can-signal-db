@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CC_alertLog (0x45C) — Charge cable controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Charge cable controller message: alert log. Tesla Model 3 / Model Y CAN bus message CC_alertLog (0x45C) of Charge cable controller, firmware 2026.26.6.5, 62 signals (CC_alertID, CC_alertType, CC_a001_groundResistance, CC_a003_gfciRmsCurrent and 58 more). Bit layout, scaling, units and value tables."
+title: "CC_alertLog (0x45C) — Charge cable controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Charge cable controller message: alert log. Tesla Model 3 / Model Y (union) CAN bus message CC_alertLog (0x45C) of Charge cable controller, firmware 2026.26.6.5, 62 signals (CC_alertID, CC_alertType, CC_a001_groundResistance, CC_a003_gfciRmsCurrent and 58 more). Bit layout, scaling, units and value tables."
 ---
 
-# CC_alertLog (0x45C) — Charge cable controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# CC_alertLog (0x45C) — Charge cable controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Charge cable controller message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 62 signals of CC_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Charge cable controller message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 62 signals of CC_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge cable controller message: alert log; frame length from the layout, not ye
 | Message name | `CC_alertLog` |
 | CAN id | 0x45C (1116) |
 | ECU | [Charge cable controller](../../cc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CC |
@@ -25,7 +27,7 @@ Charge cable controller message: alert log; frame length from the layout, not ye
 
 ## Signals of CC_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `CC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -98,7 +100,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CC_alertLog`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

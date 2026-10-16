@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPBR_status (0x2E8) — Right electric parking brake, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Right electric parking brake message: status. Ethernet-side message EPBR_status of Right electric parking brake for Tesla Model 3 / Model Y firmware 2025.20.8, 34 signals (EPBR_systemStatus, EPBR_freeRollModeStatus, EPBR_driverIsLeaving, EPBR_driverIsLeavingAnySpeed and 30 more). Bit layout, scaling, units and value tables."
+title: "EPBR_status (0x2E8) — Right electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Right electric parking brake message: status. Ethernet-side message EPBR_status of Right electric parking brake for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 34 signals (EPBR_systemStatus, EPBR_freeRollModeStatus, EPBR_driverIsLeaving, EPBR_driverIsLeavingAnySpeed and 30 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPBR_status (0x2E8) — Right electric parking brake, Tesla Model 3 / Model Y 2025.20.8 ETH
+# EPBR_status (0x2E8) — Right electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Right electric parking brake message: status. This page documents the 34 signals of EPBR_status as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Right electric parking brake message: status. This page documents the 34 signals of EPBR_status as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right electric parking brake message: status. This page documents the 34 signals
 | Message name | `EPBR_status` |
 | Ethernet-side id | 0x2E8 (744) |
 | ECU | [Right electric parking brake](../../epbr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | EPBR |
@@ -25,7 +27,7 @@ Right electric parking brake message: status. This page documents the 34 signals
 
 ## Signals of EPBR_status
 
-Tesla Model 3 / Model Y CAN bus signals in `EPBR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPBR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -66,7 +68,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPBR_status`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

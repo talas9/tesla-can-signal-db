@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_vehicleControlThermal (0x355) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: vehicle control thermal. Tesla Model 3 / Model Y CAN bus message UI_vehicleControlThermal (0x355) of Touchscreen user interface computer, firmware 2026.26.6.5, 27 signals (UI_coolantFlowRequest, UI_inletActiveCoolTarget, UI_disableHVPTThermalLoads, UI_enableCompLiquidPumpOut and 23 more). Bit layout, scaling, units and value tables."
+title: "UI_vehicleControlThermal (0x355) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: vehicle control thermal. Tesla Model 3 / Model Y (union) CAN bus message UI_vehicleControlThermal (0x355) of Touchscreen user interface computer, firmware 2026.26.6.5, 27 signals (UI_coolantFlowRequest, UI_inletActiveCoolTarget, UI_disableHVPTThermalLoads, UI_enableCompLiquidPumpOut and 23 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_vehicleControlThermal (0x355) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_vehicleControlThermal (0x355) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: vehicle control thermal; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 27 signals of UI_vehicleControlThermal as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: vehicle control thermal; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 27 signals of UI_vehicleControlThermal as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: vehicle control thermal; forwarded 
 | Message name | `UI_vehicleControlThermal` |
 | CAN id | 0x355 (853) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: vehicle control thermal; forwarded 
 
 ## Signals of UI_vehicleControlThermal
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_vehicleControlThermal`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_vehicleControlThermal`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -59,7 +61,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_vehicleControlThermal`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

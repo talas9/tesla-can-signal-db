@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UIS_log (0x420) — UIS ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "UIS ECU message: log. Ethernet-side message UIS_log of UIS ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 356 signals (UIS_logMux, UIS_zramWriteTicks, UIS_zramWriteIO, UIS_zramReadTicks and 352 more). Bit layout, scaling, units and value tables."
+title: "UIS_log (0x420) — UIS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "UIS ECU message: log. Ethernet-side message UIS_log of UIS ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 356 signals (UIS_logMux, UIS_zramWriteTicks, UIS_zramWriteIO, UIS_zramReadTicks and 352 more). Bit layout, scaling, units and value tables."
 ---
 
-# UIS_log (0x420) — UIS ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# UIS_log (0x420) — UIS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-UIS ECU message: log. This page documents the 356 signals of UIS_log as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+UIS ECU message: log. This page documents the 356 signals of UIS_log as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ UIS ECU message: log. This page documents the 356 signals of UIS_log as defined 
 | Message name | `UIS_log` |
 | Ethernet-side id | 0x420 (1056) |
 | ECU | [UIS ECU](../../uis.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UIS |
@@ -25,7 +27,7 @@ UIS ECU message: log. This page documents the 356 signals of UIS_log as defined 
 
 ## Signals of UIS_log
 
-Tesla Model 3 / Model Y CAN bus signals in `UIS_log`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UIS_log`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -392,7 +394,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UIS_log`: start bit and length, byte
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

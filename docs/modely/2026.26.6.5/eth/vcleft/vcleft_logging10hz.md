@@ -16,6 +16,8 @@ Left body controller message: logging10 hz. This page documents the 15 signals o
 | Ethernet-side id | 0x289 (649) |
 | ECU | [Left body controller](../../vcleft.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCLEFT |

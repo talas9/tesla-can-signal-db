@@ -8,6 +8,8 @@ description: "Tesla Model Y SCS CAN bus messages and signals of the SCS ECU (SCS
 
 All 3 messages of the SCS ECU (SCS) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`SCS_alertLog`](veh/scs/scs_alertlog.md) | VEH | 0x54A | 8 |  | 5 |
@@ -15,4 +17,3 @@ All 3 messages of the SCS ECU (SCS) documented for Tesla Model Y firmware 2026.2
 | [`SCS_alertMatrix2`](veh/scs/scs_alertmatrix2.md) | VEH | 0x370 | 8 | 1000 ms | 64 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

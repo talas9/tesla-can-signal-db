@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "TCU ECU (TCU) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y TCU CAN bus messages and signals of the TCU ECU (TCU) for firmware 2025.20.8: 4 messages, 34 signals with bit layout, scaling and value tables."
+title: "TCU ECU (TCU) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) TCU CAN bus messages and signals of the TCU ECU (TCU) for firmware 2025.20.8: 4 messages, 34 signals with bit layout, scaling and value tables."
 ---
 
-# TCU ECU (TCU) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# TCU ECU (TCU) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 4 messages of the TCU ECU (TCU) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 4 messages of the TCU ECU (TCU) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the TCU ECU (TCU) documented for Tesla Model 3 / Model Y firmw
 | [`TCU_status`](eth/tcu/tcu_status.md) | ETH | 0x580 | 8 | 1000 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

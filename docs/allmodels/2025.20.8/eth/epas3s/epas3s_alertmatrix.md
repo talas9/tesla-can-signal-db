@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3S_alertMatrix (0x391) — Electric power steering (secondary), Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Electric power steering (secondary) message: alert matrix. Ethernet-side message EPAS3S_alertMatrix of Electric power steering (secondary) for Tesla Model 3 / Model Y firmware 2025.20.8, 151 signals (EPAS3S_matrixIndex, EPAS3S_a001_sent1Mia, EPAS3S_a002_sent1Error, EPAS3S_a003_trqSens1Supply and 147 more). Bit layout, scaling, units and value tables."
+title: "EPAS3S_alertMatrix (0x391) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Electric power steering (secondary) message: alert matrix. Ethernet-side message EPAS3S_alertMatrix of Electric power steering (secondary) for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 151 signals (EPAS3S_matrixIndex, EPAS3S_a001_sent1Mia, EPAS3S_a002_sent1Error, EPAS3S_a003_trqSens1Supply and 147 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3S_alertMatrix (0x391) — Electric power steering (secondary), Tesla Model 3 / Model Y 2025.20.8 ETH
+# EPAS3S_alertMatrix (0x391) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Electric power steering (secondary) message: alert matrix. This page documents the 151 signals of EPAS3S_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Electric power steering (secondary) message: alert matrix. This page documents the 151 signals of EPAS3S_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (secondary) message: alert matrix. This page documents t
 | Message name | `EPAS3S_alertMatrix` |
 | Ethernet-side id | 0x391 (913) |
 | ECU | [Electric power steering (secondary)](../../epas3s.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | EPAS3S |
@@ -25,7 +27,7 @@ Electric power steering (secondary) message: alert matrix. This page documents t
 
 ## Signals of EPAS3S_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3S_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -187,7 +189,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_alertMatrix`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

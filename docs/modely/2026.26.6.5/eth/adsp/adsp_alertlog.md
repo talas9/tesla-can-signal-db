@@ -16,6 +16,8 @@ Audio amplifier message: alert log. This page documents the 37 signals of ADSP_a
 | Ethernet-side id | 0x550 (1360) |
 | ECU | [Audio amplifier](../../adsp.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | ADSP |

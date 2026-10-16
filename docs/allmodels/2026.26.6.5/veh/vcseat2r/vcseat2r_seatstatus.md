@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEAT2R_seatStatus (0x2FD) — VCSEAT2R ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCSEAT2R ECU message: seat status. Tesla Model 3 / Model Y CAN bus message VCSEAT2R_seatStatus (0x2FD) of VCSEAT2R ECU, firmware 2026.26.6.5, 15 signals (VCSEAT2R_row2SeatStatusIndex, VCSEAT2R_seatTrackPosReal, VCSEAT2R_seatTrackPosOffset, VCSEAT2R_seatReclineState and 11 more). Bit layout, scaling, units and value tables."
+title: "VCSEAT2R_seatStatus (0x2FD) — VCSEAT2R ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCSEAT2R ECU message: seat status. Tesla Model 3 / Model Y (union) CAN bus message VCSEAT2R_seatStatus (0x2FD) of VCSEAT2R ECU, firmware 2026.26.6.5, 15 signals (VCSEAT2R_row2SeatStatusIndex, VCSEAT2R_seatTrackPosReal, VCSEAT2R_seatTrackPosOffset, VCSEAT2R_seatReclineState and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEAT2R_seatStatus (0x2FD) — VCSEAT2R ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCSEAT2R_seatStatus (0x2FD) — VCSEAT2R ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCSEAT2R ECU message: seat status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of VCSEAT2R_seatStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCSEAT2R ECU message: seat status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of VCSEAT2R_seatStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCSEAT2R ECU message: seat status; frame length from the layout, not yet observe
 | Message name | `VCSEAT2R_seatStatus` |
 | CAN id | 0x2FD (765) |
 | ECU | [VCSEAT2R ECU](../../vcseat2r.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEAT2R |
@@ -25,7 +27,7 @@ VCSEAT2R ECU message: seat status; frame length from the layout, not yet observe
 
 ## Signals of VCSEAT2R_seatStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEAT2R_seatStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEAT2R_seatStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -51,7 +53,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEAT2R_seatStatus`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

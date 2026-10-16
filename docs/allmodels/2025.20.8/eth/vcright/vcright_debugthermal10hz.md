@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_debugThermal10Hz (0x703) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Right body controller message: debug thermal10 hz. Ethernet-side message VCRIGHT_debugThermal10Hz of Right body controller for Tesla Model 3 / Model Y firmware 2025.20.8, 36 signals (VCRIGHT_debugThermal10HzIndex, VCRIGHT_hvacPanelFloorSplitRow1, VCRIGHT_hvacDefrostPercent, VCRIGHT_hvacRow2Percent and 32 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_debugThermal10Hz (0x703) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Right body controller message: debug thermal10 hz. Ethernet-side message VCRIGHT_debugThermal10Hz of Right body controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 36 signals (VCRIGHT_debugThermal10HzIndex, VCRIGHT_hvacPanelFloorSplitRow1, VCRIGHT_hvacDefrostPercent, VCRIGHT_hvacRow2Percent and 32 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_debugThermal10Hz (0x703) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCRIGHT_debugThermal10Hz (0x703) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Right body controller message: debug thermal10 hz. This page documents the 36 signals of VCRIGHT_debugThermal10Hz as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Right body controller message: debug thermal10 hz. This page documents the 36 signals of VCRIGHT_debugThermal10Hz as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: debug thermal10 hz. This page documents the 36 si
 | Message name | `VCRIGHT_debugThermal10Hz` |
 | Ethernet-side id | 0x703 (1795) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: debug thermal10 hz. This page documents the 36 si
 
 ## Signals of VCRIGHT_debugThermal10Hz
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_debugThermal10Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_debugThermal10Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -72,7 +74,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_debugThermal10Hz`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

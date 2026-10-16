@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_TLCStatus (0x1FB) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Left body controller message: TLC status. Tesla Model 3 / Model Y CAN bus message VCLEFT_TLCStatus (0x1FB) of Left body controller, firmware 2026.26.6.5, 10 signals (VCLEFT_TLCStatusIndex, VCLEFT_TLCTemperature, VCLEFT_TLCLeftTurnVoltage, VCLEFT_TLCRightTurnVoltage and 6 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_TLCStatus (0x1FB) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Left body controller message: TLC status. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_TLCStatus (0x1FB) of Left body controller, firmware 2026.26.6.5, 10 signals (VCLEFT_TLCStatusIndex, VCLEFT_TLCTemperature, VCLEFT_TLCLeftTurnVoltage, VCLEFT_TLCRightTurnVoltage and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_TLCStatus (0x1FB) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCLEFT_TLCStatus (0x1FB) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Left body controller message: TLC status; frame length observed on a vehicle bus. This page documents the 10 signals of VCLEFT_TLCStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Left body controller message: TLC status; frame length observed on a vehicle bus. This page documents the 10 signals of VCLEFT_TLCStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: TLC status; frame length observed on a vehicle bus
 | Message name | `VCLEFT_TLCStatus` |
 | CAN id | 0x1FB (507) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: TLC status; frame length observed on a vehicle bus
 
 ## Signals of VCLEFT_TLCStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_TLCStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_TLCStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -46,7 +48,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_TLCStatus`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

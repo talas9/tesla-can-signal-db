@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_gpsStatus (0x7F9) — Driver assistance computer, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Driver assistance computer message: gps status. Ethernet-side message DAS_gpsStatus of Driver assistance computer for Tesla Model 3 / Model Y firmware 2025.20.8, 52 signals (DAS_gpsStatusMultiplexer, DAS_gpsTransportModeState, DAS_gpsSatsInUseHardware, DAS_gpsWheeltickCounter and 48 more). Bit layout, scaling, units and value tables."
+title: "DAS_gpsStatus (0x7F9) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Driver assistance computer message: gps status. Ethernet-side message DAS_gpsStatus of Driver assistance computer for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 52 signals (DAS_gpsStatusMultiplexer, DAS_gpsTransportModeState, DAS_gpsSatsInUseHardware, DAS_gpsWheeltickCounter and 48 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_gpsStatus (0x7F9) — Driver assistance computer, Tesla Model 3 / Model Y 2025.20.8 ETH
+# DAS_gpsStatus (0x7F9) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Driver assistance computer message: gps status. This page documents the 52 signals of DAS_gpsStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Driver assistance computer message: gps status. This page documents the 52 signals of DAS_gpsStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: gps status. This page documents the 52 signa
 | Message name | `DAS_gpsStatus` |
 | Ethernet-side id | 0x7F9 (2041) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: gps status. This page documents the 52 signa
 
 ## Signals of DAS_gpsStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_gpsStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_gpsStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -88,7 +90,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_gpsStatus`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

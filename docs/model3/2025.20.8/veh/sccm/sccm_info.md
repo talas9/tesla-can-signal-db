@@ -16,6 +16,8 @@ Steering column control module message: info; frame length from the layout, not 
 | CAN id | 0x330 (816) |
 | ECU | [Steering column control module](../../sccm.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCCM |

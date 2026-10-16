@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "BMS_thermalStatus (0x312) — High-voltage battery management system, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "High-voltage battery management system message: thermal status. Tesla Model 3 / Model Y CAN bus message BMS_thermalStatus (0x312) of High-voltage battery management system, firmware 2026.26.6.5, 18 signals (BMS_thermalStatusMultiplexer, BMS_inletActiveCoolTargetT, BMS_inletPassiveTargetT, BMS_inletActiveHeatTargetT and 14 more). Bit layout, scaling, units and value tables."
+title: "BMS_thermalStatus (0x312) — High-voltage battery management system, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "High-voltage battery management system message: thermal status. Tesla Model 3 / Model Y (union) CAN bus message BMS_thermalStatus (0x312) of High-voltage battery management system, firmware 2026.26.6.5, 18 signals (BMS_thermalStatusMultiplexer, BMS_inletActiveCoolTargetT, BMS_inletPassiveTargetT, BMS_inletActiveHeatTargetT and 14 more). Bit layout, scaling, units and value tables."
 ---
 
-# BMS_thermalStatus (0x312) — High-voltage battery management system, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# BMS_thermalStatus (0x312) — High-voltage battery management system, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-High-voltage battery management system message: thermal status; frame length observed on a vehicle bus. This page documents the 18 signals of BMS_thermalStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+High-voltage battery management system message: thermal status; frame length observed on a vehicle bus. This page documents the 18 signals of BMS_thermalStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ High-voltage battery management system message: thermal status; frame length obs
 | Message name | `BMS_thermalStatus` |
 | CAN id | 0x312 (786) |
 | ECU | [High-voltage battery management system](../../bms.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | BMS |
@@ -25,7 +27,7 @@ High-voltage battery management system message: thermal status; frame length obs
 
 ## Signals of BMS_thermalStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `BMS_thermalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `BMS_thermalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -54,7 +56,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_thermalStatus`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

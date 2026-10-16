@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_carLog (0x5D9) — Driver assistance computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Driver assistance computer message: car log. Tesla Model 3 / Model Y CAN bus message DAS_carLog (0x5D9) of Driver assistance computer, firmware 2025.20.8, 29 signals (DAS_carLogMultiplexer, DAS_radarTarget5_dx, DAS_radarTarget1_dx, DAS_radarTarget1_VxRel and 25 more). Bit layout, scaling, units and value tables."
+title: "DAS_carLog (0x5D9) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Driver assistance computer message: car log. Tesla Model 3 / Model Y (union) CAN bus message DAS_carLog (0x5D9) of Driver assistance computer, firmware 2025.20.8, 29 signals (DAS_carLogMultiplexer, DAS_radarTarget5_dx, DAS_radarTarget1_dx, DAS_radarTarget1_VxRel and 25 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_carLog (0x5D9) — Driver assistance computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# DAS_carLog (0x5D9) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Driver assistance computer message: car log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 29 signals of DAS_carLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Driver assistance computer message: car log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 29 signals of DAS_carLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: car log; frame length from the layout, not y
 | Message name | `DAS_carLog` |
 | CAN id | 0x5D9 (1497) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: car log; frame length from the layout, not y
 
 ## Signals of DAS_carLog
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_carLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_carLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -65,7 +67,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_carLog`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

@@ -16,6 +16,8 @@ VCSEAT2L ECU message: seat status; frame length from the layout, not yet observe
 | CAN id | 0x2FC (764) |
 | ECU | [VCSEAT2L ECU](../../vcseat2l.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEAT2L |

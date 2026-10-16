@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_chassisControlStatus (0x2B6) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Drive inverter message: chassis control status. Ethernet-side message DI_chassisControlStatus of Drive inverter for Tesla Model 3 / Model Y firmware 2025.20.8, 13 signals (DI_vdcTelltaleFlash, DI_vdcTelltaleOn, DI_tcTelltaleFlash, DI_tcTelltaleOn and 9 more). Bit layout, scaling, units and value tables."
+title: "DI_chassisControlStatus (0x2B6) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Drive inverter message: chassis control status. Ethernet-side message DI_chassisControlStatus of Drive inverter for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 13 signals (DI_vdcTelltaleFlash, DI_vdcTelltaleOn, DI_tcTelltaleFlash, DI_tcTelltaleOn and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_chassisControlStatus (0x2B6) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 ETH
+# DI_chassisControlStatus (0x2B6) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Drive inverter message: chassis control status. This page documents the 13 signals of DI_chassisControlStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Drive inverter message: chassis control status. This page documents the 13 signals of DI_chassisControlStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: chassis control status. This page documents the 13 signa
 | Message name | `DI_chassisControlStatus` |
 | Ethernet-side id | 0x2B6 (694) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: chassis control status. This page documents the 13 signa
 
 ## Signals of DI_chassisControlStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_chassisControlStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_chassisControlStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_chassisControlStatus`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

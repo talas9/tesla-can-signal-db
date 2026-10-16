@@ -16,6 +16,8 @@ SDCR ECU message: uds response; frame length from the layout, not yet observed o
 | CAN id | 0x6FB (1787) |
 | ECU | [SDCR ECU](../../sdcr.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SDCR |

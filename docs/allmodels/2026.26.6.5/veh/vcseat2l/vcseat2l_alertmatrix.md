@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEAT2L_alertMatrix (0x37C) — VCSEAT2L ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCSEAT2L ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message VCSEAT2L_alertMatrix (0x37C) of VCSEAT2L ECU, firmware 2026.26.6.5, 129 signals (VCSEAT2L_matrixIndex, VCSEAT2L_a001_WatchdogReset, VCSEAT2L_a002_PowerLossReset, VCSEAT2L_a003_SWAssertion and 125 more). Bit layout, scaling, units and value tables."
+title: "VCSEAT2L_alertMatrix (0x37C) — VCSEAT2L ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCSEAT2L ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message VCSEAT2L_alertMatrix (0x37C) of VCSEAT2L ECU, firmware 2026.26.6.5, 129 signals (VCSEAT2L_matrixIndex, VCSEAT2L_a001_WatchdogReset, VCSEAT2L_a002_PowerLossReset, VCSEAT2L_a003_SWAssertion and 125 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEAT2L_alertMatrix (0x37C) — VCSEAT2L ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCSEAT2L_alertMatrix (0x37C) — VCSEAT2L ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCSEAT2L ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 129 signals of VCSEAT2L_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCSEAT2L ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 129 signals of VCSEAT2L_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCSEAT2L ECU message: alert matrix; frame length from the layout, not yet observ
 | Message name | `VCSEAT2L_alertMatrix` |
 | CAN id | 0x37C (892) |
 | ECU | [VCSEAT2L ECU](../../vcseat2l.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEAT2L |
@@ -25,7 +27,7 @@ VCSEAT2L ECU message: alert matrix; frame length from the layout, not yet observ
 
 ## Signals of VCSEAT2L_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEAT2L_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEAT2L_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -165,7 +167,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEAT2L_alertMatrix`: start bit and
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

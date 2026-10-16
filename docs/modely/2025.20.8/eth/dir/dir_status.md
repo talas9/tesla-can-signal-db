@@ -16,6 +16,8 @@ Rear drive inverter message: status. This page documents the 16 signals of DIR_s
 | Ethernet-side id | 0x256 (598) |
 | ECU | [Rear drive inverter](../../dir.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DIR |

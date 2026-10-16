@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_tripPlannerInfo (0x4EF) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Touchscreen user interface computer message: trip planner info. Ethernet-side message UI_tripPlannerInfo of Touchscreen user interface computer for Tesla Model 3 / Model Y firmware 2026.26.6.5, 3 signals (UI_fwHeatOnNavArrivalSOE, UI_voyagerHeatOnNavArrivalSOE, UI_usingVoyagerPreconditioning). Bit layout, scaling, units and value tables."
+title: "UI_tripPlannerInfo (0x4EF) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Touchscreen user interface computer message: trip planner info. Ethernet-side message UI_tripPlannerInfo of Touchscreen user interface computer for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 3 signals (UI_fwHeatOnNavArrivalSOE, UI_voyagerHeatOnNavArrivalSOE, UI_usingVoyagerPreconditioning). Bit layout, scaling, units and value tables."
 ---
 
-# UI_tripPlannerInfo (0x4EF) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# UI_tripPlannerInfo (0x4EF) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Touchscreen user interface computer message: trip planner info. This page documents the 3 signals of UI_tripPlannerInfo as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Touchscreen user interface computer message: trip planner info. This page documents the 3 signals of UI_tripPlannerInfo as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: trip planner info. This page docume
 | Message name | `UI_tripPlannerInfo` |
 | Ethernet-side id | 0x4EF (1263) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UI |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: trip planner info. This page docume
 
 ## Signals of UI_tripPlannerInfo
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_tripPlannerInfo`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_tripPlannerInfo`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -35,7 +37,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_tripPlannerInfo`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

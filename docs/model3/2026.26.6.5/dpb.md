@@ -8,10 +8,11 @@ description: "Tesla Model 3 DPB CAN bus messages and signals of the DPB ECU (DPB
 
 All 2 messages of the DPB ECU (DPB) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`DPB_alertLog`](eth/dpb/dpb_alertlog.md) | ETH | 0x4D5 | 8 |  | 2 |
 | [`DPB_alertMatrix`](eth/dpb/dpb_alertmatrix.md) | ETH | 0x3E7 | 8 | 1000 ms | 338 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

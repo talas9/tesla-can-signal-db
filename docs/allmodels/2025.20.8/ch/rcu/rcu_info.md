@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCU_info (0x33F) — RCU ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "RCU ECU message: info. Tesla Model 3 / Model Y CAN bus message RCU_info (0x33F) of RCU ECU, firmware 2025.20.8, 5 signals (RCU_infoIndex, RCU_infoPcbaID, RCU_infoAssemblyID, RCU_infoUsageID and 1 more). Bit layout, scaling, units and value tables."
+title: "RCU_info (0x33F) — RCU ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "RCU ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message RCU_info (0x33F) of RCU ECU, firmware 2025.20.8, 5 signals (RCU_infoIndex, RCU_infoPcbaID, RCU_infoAssemblyID, RCU_infoUsageID and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCU_info (0x33F) — RCU ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# RCU_info (0x33F) — RCU ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-RCU ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of RCU_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+RCU ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of RCU_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ RCU ECU message: info; frame length from the layout, not yet observed on a vehic
 | Message name | `RCU_info` |
 | CAN id | 0x33F (831) |
 | ECU | [RCU ECU](../../rcu.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCU |
@@ -25,7 +27,7 @@ RCU ECU message: info; frame length from the layout, not yet observed on a vehic
 
 ## Signals of RCU_info
 
-Tesla Model 3 / Model Y CAN bus signals in `RCU_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCU_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCU_info`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

@@ -16,6 +16,8 @@ Driver assistance computer message: gps status; frame length from the layout, no
 | CAN id | 0x3CA (970) |
 | ECU | [Driver assistance computer](../../das.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DAS |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_tpmsMode (0x358) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Touchscreen user interface computer message: tpms mode. Tesla Model 3 / Model Y CAN bus message UI_tpmsMode (0x358) of Touchscreen user interface computer, firmware 2025.20.8, 4 signals (UI_TPMSMode, UI_TPMSLearnIDMode, UI_sizeOfWheelSelect, UI_sizeOfReqCANAutoLearn). Bit layout, scaling, units and value tables."
+title: "UI_tpmsMode (0x358) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Touchscreen user interface computer message: tpms mode. Tesla Model 3 / Model Y (union) CAN bus message UI_tpmsMode (0x358) of Touchscreen user interface computer, firmware 2025.20.8, 4 signals (UI_TPMSMode, UI_TPMSLearnIDMode, UI_sizeOfWheelSelect, UI_sizeOfReqCANAutoLearn). Bit layout, scaling, units and value tables."
 ---
 
-# UI_tpmsMode (0x358) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# UI_tpmsMode (0x358) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Touchscreen user interface computer message: tpms mode; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of UI_tpmsMode as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Touchscreen user interface computer message: tpms mode; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of UI_tpmsMode as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: tpms mode; forwarded onto this bus 
 | Message name | `UI_tpmsMode` |
 | CAN id | 0x358 (856) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: tpms mode; forwarded onto this bus 
 
 ## Signals of UI_tpmsMode
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_tpmsMode`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_tpmsMode`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_tpmsMode`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

@@ -8,5 +8,5 @@ description: "Tesla Model 3 and Model Y CAN bus signals beginning with I: pages 
 
 688 signals, split over 2 pages.
 
-- [IBST_a001_microSupplyError to IDB_a017_wheelSpeedSensorShortToBat](i-1.md) (488 signals)
-- [IDB_a017_wheelSpeedSensorShortToGnd to IDB_matrixIndex](i-2.md) (200 signals)
+- [IBST_a001_microSupplyError to IDB_a017_wheelSpeedSensorOverTemp](i-1.md) (486 signals)
+- [IDB_a017_wheelSpeedSensorPhase to IDB_matrixIndex](i-2.md) (202 signals)

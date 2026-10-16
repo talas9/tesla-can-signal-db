@@ -16,6 +16,8 @@ Front body controller message: info. This page documents the 17 signals of VCFRO
 | Ethernet-side id | 0x301 (769) |
 | ECU | [Front body controller](../../vcfront.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCFRONT |

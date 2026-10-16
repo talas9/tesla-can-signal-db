@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_weatherDataServiceForecast (0x7B1) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: weather data service forecast. Tesla Model 3 / Model Y CAN bus message UI_weatherDataServiceForecast (0x7B1) of Touchscreen user interface computer, firmware 2026.26.6.5, 34 signals (UI_weatherSvcForecastMuxIndex, UI_weatherSvcForecastTempC_hour1, UI_weatherSvcForecastTempC_hour2, UI_weatherSvcForecastTempC_hour3 and 30 more). Bit layout, scaling, units and value tables."
+title: "UI_weatherDataServiceForecast (0x7B1) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: weather data service forecast. Tesla Model 3 / Model Y (union) CAN bus message UI_weatherDataServiceForecast (0x7B1) of Touchscreen user interface computer, firmware 2026.26.6.5, 34 signals (UI_weatherSvcForecastMuxIndex, UI_weatherSvcForecastTempC_hour1, UI_weatherSvcForecastTempC_hour2, UI_weatherSvcForecastTempC_hour3 and 30 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_weatherDataServiceForecast (0x7B1) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_weatherDataServiceForecast (0x7B1) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: weather data service forecast; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 34 signals of UI_weatherDataServiceForecast as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: weather data service forecast; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 34 signals of UI_weatherDataServiceForecast as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: weather data service forecast; forw
 | Message name | `UI_weatherDataServiceForecast` |
 | CAN id | 0x7B1 (1969) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: weather data service forecast; forw
 
 ## Signals of UI_weatherDataServiceForecast
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_weatherDataServiceForecast`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_weatherDataServiceForecast`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -70,7 +72,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_weatherDataServiceForecast`: star
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

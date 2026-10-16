@@ -16,6 +16,8 @@ Parking assist sensors message: info; frame length from the layout, not yet obse
 | CAN id | 0x326 (806) |
 | ECU | [Parking assist sensors](../../park.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |

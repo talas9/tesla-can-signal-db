@@ -8,9 +8,10 @@ description: "Tesla Model Y BB CAN bus messages and signals of the BB ECU (BB) f
 
 All 1 messages of the BB ECU (BB) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`BB_status`](eth/bb/bb_status.md) | ETH | 0x3AF | 7 | 10 ms | 12 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

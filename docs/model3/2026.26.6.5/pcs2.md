@@ -8,6 +8,8 @@ description: "Tesla Model 3 PCS2 CAN bus messages and signals of the PCS2 ECU (P
 
 All 4 messages of the PCS2 ECU (PCS2) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PCS2_alertLog`](veh/pcs2/pcs2_alertlog.md) | VEH | 0x444 | 8 |  | 510 |
@@ -16,4 +18,3 @@ All 4 messages of the PCS2 ECU (PCS2) documented for Tesla Model 3 firmware 2026
 | [`PCS2_v2xInfo2`](veh/pcs2/pcs2_v2xinfo2.md) | VEH | 0x40F | 4 | 100 ms | 3 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

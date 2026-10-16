@@ -8,6 +8,8 @@ description: "Tesla Model 3 ICR CAN bus messages and signals of the ICR ECU (ICR
 
 All 8 messages of the ICR ECU (ICR) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`ICR_info`](veh/icr/icr_info.md) | VEH | 0x3AD | 8 | 10000 ms | 9 |
@@ -20,4 +22,3 @@ All 8 messages of the ICR ECU (ICR) documented for Tesla Model 3 firmware 2025.2
 | [`ICR_udsResponse`](eth/icr/icr_udsresponse.md) | ETH | 0x658 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

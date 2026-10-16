@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_partyDebug (0x104) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Front body controller message: party debug. Tesla Model 3 / Model Y CAN bus message VCFRONT_partyDebug (0x104) of Front body controller, firmware 2025.20.8, 18 signals (VCFRONT_vcleftHighPower, VCFRONT_vcrightHighPower, VCFRONT_uiHighPower, VCFRONT_5VAStable and 14 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_partyDebug (0x104) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Front body controller message: party debug. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_partyDebug (0x104) of Front body controller, firmware 2025.20.8, 18 signals (VCFRONT_vcleftHighPower, VCFRONT_vcrightHighPower, VCFRONT_uiHighPower, VCFRONT_5VAStable and 14 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_partyDebug (0x104) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# VCFRONT_partyDebug (0x104) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Front body controller message: party debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of VCFRONT_partyDebug as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Front body controller message: party debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 18 signals of VCFRONT_partyDebug as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: party debug; frame length from the layout, not ye
 | Message name | `VCFRONT_partyDebug` |
 | CAN id | 0x104 (260) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: party debug; frame length from the layout, not ye
 
 ## Signals of VCFRONT_partyDebug
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_partyDebug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_partyDebug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -50,7 +52,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_partyDebug`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

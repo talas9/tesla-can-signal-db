@@ -8,6 +8,8 @@ description: "Tesla Model Y IDB CAN bus messages and signals of the IDB ECU (IDB
 
 All 3 messages of the IDB ECU (IDB) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`IDB_alertLog`](ch/idb/idb_alertlog.md) | CH | 0x5BE | 8 |  | 99 |
@@ -15,4 +17,3 @@ All 3 messages of the IDB ECU (IDB) documented for Tesla Model Y firmware 2026.2
 | [`IDB_info`](ch/idb/idb_info.md) | CH | 0x33C | 8 | 10000 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

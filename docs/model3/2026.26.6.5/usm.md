@@ -8,6 +8,8 @@ description: "Tesla Model 3 USM CAN bus messages and signals of the USM ECU (USM
 
 All 3 messages of the USM ECU (USM) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`USM_alertLog`](ch/usm/usm_alertlog.md) | CH | 0x5F0 | 8 |  | 941 |
@@ -15,4 +17,3 @@ All 3 messages of the USM ECU (USM) documented for Tesla Model 3 firmware 2026.2
 | [`USM_info`](ch/usm/usm_info.md) | CH | 0x327 | 8 | 1000 ms | 10 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

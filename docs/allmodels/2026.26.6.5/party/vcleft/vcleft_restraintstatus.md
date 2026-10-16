@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_restraintStatus (0x30A) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Left body controller message: restraint status. Tesla Model 3 / Model Y CAN bus message VCLEFT_restraintStatus (0x30A) of Left body controller, firmware 2026.26.6.5, 12 signals (VCLEFT_frontOccupancyStatus, VCLEFT_frontBuckleStatus, VCLEFT_rearLeftOccupancyStatus, VCLEFT_rearCenterOccupancyStatus and 8 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_restraintStatus (0x30A) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Left body controller message: restraint status. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_restraintStatus (0x30A) of Left body controller, firmware 2026.26.6.5, 12 signals (VCLEFT_frontOccupancyStatus, VCLEFT_frontBuckleStatus, VCLEFT_rearLeftOccupancyStatus, VCLEFT_rearCenterOccupancyStatus and 8 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_restraintStatus (0x30A) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# VCLEFT_restraintStatus (0x30A) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Left body controller message: restraint status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of VCLEFT_restraintStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Left body controller message: restraint status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of VCLEFT_restraintStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: restraint status; frame length from the layout, no
 | Message name | `VCLEFT_restraintStatus` |
 | CAN id | 0x30A (778) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: restraint status; frame length from the layout, no
 
 ## Signals of VCLEFT_restraintStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_restraintStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_restraintStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -44,7 +46,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_restraintStatus`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

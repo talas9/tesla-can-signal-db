@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_defogInfoMessage (0x4FF) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (primary) message: defog info message. Tesla Model 3 / Model Y CAN bus message APP_defogInfoMessage (0x4FF) of Driver assistance computer (primary), firmware 2026.26.6.5, 6 signals (APP_cameraDefogMode, APP_selfieCamFanRpm, APP_forceDefroster, APP_checkThermalSysHealth and 2 more). Bit layout, scaling, units and value tables."
+title: "APP_defogInfoMessage (0x4FF) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (primary) message: defog info message. Tesla Model 3 / Model Y (union) CAN bus message APP_defogInfoMessage (0x4FF) of Driver assistance computer (primary), firmware 2026.26.6.5, 6 signals (APP_cameraDefogMode, APP_selfieCamFanRpm, APP_forceDefroster, APP_checkThermalSysHealth and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_defogInfoMessage (0x4FF) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APP_defogInfoMessage (0x4FF) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (primary) message: defog info message; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of APP_defogInfoMessage as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (primary) message: defog info message; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of APP_defogInfoMessage as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: defog info message; frame length f
 | Message name | `APP_defogInfoMessage` |
 | CAN id | 0x4FF (1279) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: defog info message; frame length f
 
 ## Signals of APP_defogInfoMessage
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_defogInfoMessage`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_defogInfoMessage`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_defogInfoMessage`: start bit and
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

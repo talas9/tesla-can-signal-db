@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_requests2 (0x119) — Vehicle security controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Vehicle security controller message: requests2. Tesla Model 3 / Model Y CAN bus message VCSEC_requests2 (0x119) of Vehicle security controller, firmware 2026.26.6.5, 9 signals (VCSEC_activeImmobilizerAuthLevel, VCSEC_smartTrunkLightRequest, VCSEC_smartTrunkSoundRequest, VCSEC_hvacRunScreenProtectOnly and 5 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_requests2 (0x119) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Vehicle security controller message: requests2. Tesla Model 3 / Model Y (union) CAN bus message VCSEC_requests2 (0x119) of Vehicle security controller, firmware 2026.26.6.5, 9 signals (VCSEC_activeImmobilizerAuthLevel, VCSEC_smartTrunkLightRequest, VCSEC_smartTrunkSoundRequest, VCSEC_hvacRunScreenProtectOnly and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_requests2 (0x119) — Vehicle security controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCSEC_requests2 (0x119) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Vehicle security controller message: requests2; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of VCSEC_requests2 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Vehicle security controller message: requests2; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of VCSEC_requests2 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: requests2; frame length from the layout, no
 | Message name | `VCSEC_requests2` |
 | CAN id | 0x119 (281) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: requests2; frame length from the layout, no
 
 ## Signals of VCSEC_requests2
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_requests2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_requests2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_requests2`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -16,6 +16,8 @@ Vehicle security controller message: child seat status; frame length from the la
 | CAN id | 0x25F (607) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |

@@ -16,6 +16,8 @@ Left body controller message: etc bluetooth status; frame length from the layout
 | CAN id | 0x4A2 (1186) |
 | ECU | [Left body controller](../../vcleft.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |

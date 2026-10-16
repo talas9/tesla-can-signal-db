@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CMP_info (0x363) — A/C compressor, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "A/C compressor message: info. Tesla Model 3 / Model Y CAN bus message CMP_info (0x363) of A/C compressor, firmware 2025.20.8, 13 signals (CMP_infoIndex, CMP_infoBuildType, CMP_infoBuildConfigId, CMP_infoHardwareId and 9 more). Bit layout, scaling, units and value tables."
+title: "CMP_info (0x363) — A/C compressor, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "A/C compressor message: info. Tesla Model 3 / Model Y (union) CAN bus message CMP_info (0x363) of A/C compressor, firmware 2025.20.8, 13 signals (CMP_infoIndex, CMP_infoBuildType, CMP_infoBuildConfigId, CMP_infoHardwareId and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# CMP_info (0x363) — A/C compressor, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# CMP_info (0x363) — A/C compressor, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-A/C compressor message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of CMP_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+A/C compressor message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of CMP_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ A/C compressor message: info; frame length from the layout, not yet observed on 
 | Message name | `CMP_info` |
 | CAN id | 0x363 (867) |
 | ECU | [A/C compressor](../../cmp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CMP |
@@ -25,7 +27,7 @@ A/C compressor message: info; frame length from the layout, not yet observed on 
 
 ## Signals of CMP_info
 
-Tesla Model 3 / Model Y CAN bus signals in `CMP_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CMP_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -49,7 +51,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CMP_info`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

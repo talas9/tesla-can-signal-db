@@ -16,6 +16,8 @@ High-voltage battery management system message: debug info 10 hz. This page docu
 | Ethernet-side id | 0x7ED (2029) |
 | ECU | [High-voltage battery management system](../../bms.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | BMS |

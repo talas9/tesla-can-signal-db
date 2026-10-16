@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Charge port controller message: alert matrix. Tesla Model 3 / Model Y CAN bus message CP_alertMatrix (0x31E) of Charge port controller, firmware 2026.26.6.5, 218 signals (CP_matrixIndex, CP_a001_canRx, CP_a002_canTx, CP_a003_canError and 214 more). Bit layout, scaling, units and value tables."
+title: "CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Charge port controller message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message CP_alertMatrix (0x31E) of Charge port controller, firmware 2026.26.6.5, 218 signals (CP_matrixIndex, CP_a001_canRx, CP_a002_canTx, CP_a003_canError and 214 more). Bit layout, scaling, units and value tables."
 ---
 
-# CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# CP_alertMatrix (0x31E) — Charge port controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Charge port controller message: alert matrix; frame length observed on a vehicle bus. This page documents the 218 signals of CP_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Charge port controller message: alert matrix; frame length observed on a vehicle bus. This page documents the 218 signals of CP_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge port controller message: alert matrix; frame length observed on a vehicle
 | Message name | `CP_alertMatrix` |
 | CAN id | 0x31E (798) |
 | ECU | [Charge port controller](../../cp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CP |
@@ -25,7 +27,7 @@ Charge port controller message: alert matrix; frame length observed on a vehicle
 
 ## Signals of CP_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `CP_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CP_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -254,7 +256,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_alertMatrix`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APS_alertLog (0x5C9) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (secondary) message: alert log. Tesla Model 3 / Model Y CAN bus message APS_alertLog (0x5C9) of Driver assistance computer (secondary), firmware 2026.26.6.5, 668 signals (APS_alertID, APS_alertSource, APS_alertState, APS_sw010_a04calibNotDone and 664 more). Bit layout, scaling, units and value tables."
+title: "APS_alertLog (0x5C9) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (secondary) message: alert log. Tesla Model 3 / Model Y (union) CAN bus message APS_alertLog (0x5C9) of Driver assistance computer (secondary), firmware 2026.26.6.5, 668 signals (APS_alertID, APS_alertSource, APS_alertState, APS_sw010_a04calibNotDone and 664 more). Bit layout, scaling, units and value tables."
 ---
 
-# APS_alertLog (0x5C9) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APS_alertLog (0x5C9) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (secondary) message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 668 signals of APS_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (secondary) message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 668 signals of APS_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (secondary) message: alert log; frame length from the
 | Message name | `APS_alertLog` |
 | CAN id | 0x5C9 (1481) |
 | ECU | [Driver assistance computer (secondary)](../../aps.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APS |
@@ -25,7 +27,7 @@ Driver assistance computer (secondary) message: alert log; frame length from the
 
 ## Signals of APS_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `APS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -704,7 +706,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APS_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

@@ -8,6 +8,8 @@ description: "Tesla Model 3 RCU CAN bus messages and signals of the RCU ECU (RCU
 
 All 3 messages of the RCU ECU (RCU) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`RCU_alertLog`](eth/rcu/rcu_alertlog.md) | ETH | 0x5BF | 8 |  | 15 |
@@ -15,4 +17,3 @@ All 3 messages of the RCU ECU (RCU) documented for Tesla Model 3 firmware 2025.2
 | [`RCU_info`](eth/rcu/rcu_info.md) | ETH | 0x33F | 8 | 10000 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

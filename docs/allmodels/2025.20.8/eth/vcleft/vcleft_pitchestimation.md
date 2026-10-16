@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Left body controller message: pitch estimation. Ethernet-side message VCLEFT_pitchEstimation of Left body controller for Tesla Model 3 / Model Y firmware 2025.20.8, 6 signals (VCLEFT_pitchEstimateOKForAiming, VCLEFT_pitchEstimateArbitratedState, VCLEFT_pitchEstimateFusionState, VCLEFT_pitchEstimateStateTransitionID and 2 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Left body controller message: pitch estimation. Ethernet-side message VCLEFT_pitchEstimation of Left body controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 6 signals (VCLEFT_pitchEstimateOKForAiming, VCLEFT_pitchEstimateArbitratedState, VCLEFT_pitchEstimateFusionState, VCLEFT_pitchEstimateStateTransitionID and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Left body controller message: pitch estimation. This page documents the 6 signals of VCLEFT_pitchEstimation as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Left body controller message: pitch estimation. This page documents the 6 signals of VCLEFT_pitchEstimation as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: pitch estimation. This page documents the 6 signal
 | Message name | `VCLEFT_pitchEstimation` |
 | Ethernet-side id | 0x2D7 (727) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: pitch estimation. This page documents the 6 signal
 
 ## Signals of VCLEFT_pitchEstimation
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_pitchEstimation`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_pitchEstimation`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_pitchEstimation`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

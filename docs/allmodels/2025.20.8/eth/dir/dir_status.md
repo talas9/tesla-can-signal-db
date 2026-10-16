@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Rear drive inverter message: status. Ethernet-side message DIR_status of Rear drive inverter for Tesla Model 3 / Model Y firmware 2025.20.8, 16 signals (DIR_statusChecksum, DIR_statusCounter, DIR_state, DIR_keepAliveRequest and 12 more). Bit layout, scaling, units and value tables."
+title: "DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Rear drive inverter message: status. Ethernet-side message DIR_status of Rear drive inverter for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 16 signals (DIR_statusChecksum, DIR_statusCounter, DIR_state, DIR_keepAliveRequest and 12 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y 2025.20.8 ETH
+# DIR_status (0x256) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Rear drive inverter message: status. This page documents the 16 signals of DIR_status as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Rear drive inverter message: status. This page documents the 16 signals of DIR_status as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Rear drive inverter message: status. This page documents the 16 signals of DIR_s
 | Message name | `DIR_status` |
 | Ethernet-side id | 0x256 (598) |
 | ECU | [Rear drive inverter](../../dir.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DIR |
@@ -25,7 +27,7 @@ Rear drive inverter message: status. This page documents the 16 signals of DIR_s
 
 ## Signals of DIR_status
 
-Tesla Model 3 / Model Y CAN bus signals in `DIR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIR_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

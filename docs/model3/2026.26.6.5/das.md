@@ -8,6 +8,8 @@ description: "Tesla Model 3 DAS CAN bus messages and signals of the Driver assis
 
 All 24 messages of the Driver assistance computer (DAS) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`DAS_autonomyControl`](veh/das/das_autonomycontrol.md) | VEH | 0x20E | 3 | 100 ms | 12 |
@@ -36,4 +38,3 @@ All 24 messages of the Driver assistance computer (DAS) documented for Tesla Mod
 | [`DAS_telemetryRadar`](eth/das/das_telemetryradar.md) | ETH | 0x60C | 8 | 5 ms | 11 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

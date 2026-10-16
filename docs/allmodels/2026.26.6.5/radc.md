@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Radar (RADC) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y RADC CAN bus messages and signals of the Radar (RADC) for firmware 2026.26.6.5: 4 messages, 159 signals with bit layout, scaling and value tables."
+title: "Radar (RADC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) RADC CAN bus messages and signals of the Radar (RADC) for firmware 2026.26.6.5: 4 messages, 159 signals with bit layout, scaling and value tables."
 ---
 
-# Radar (RADC) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Radar (RADC) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 4 messages of the Radar (RADC) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 4 messages of the Radar (RADC) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the Radar (RADC) documented for Tesla Model 3 / Model Y firmwa
 | [`RADC_udsResponse`](ch/radc/radc_udsresponse.md) | CH | 0x681 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

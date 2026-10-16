@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "ESP_status (0x145) — Electronic stability control, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Electronic stability control message: status. Tesla Model 3 / Model Y CAN bus message ESP_status (0x145) of Electronic stability control, firmware 2026.26.6.5, 26 signals (ESP_statusChecksum, ESP_statusCounter, ESP_espModeActive, ESP_stabilityControlSts2 and 22 more). Bit layout, scaling, units and value tables."
+title: "ESP_status (0x145) — Electronic stability control, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Electronic stability control message: status. Tesla Model 3 / Model Y (union) CAN bus message ESP_status (0x145) of Electronic stability control, firmware 2026.26.6.5, 26 signals (ESP_statusChecksum, ESP_statusCounter, ESP_espModeActive, ESP_stabilityControlSts2 and 22 more). Bit layout, scaling, units and value tables."
 ---
 
-# ESP_status (0x145) — Electronic stability control, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# ESP_status (0x145) — Electronic stability control, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Electronic stability control message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 26 signals of ESP_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Electronic stability control message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 26 signals of ESP_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electronic stability control message: status; frame length from the layout, not 
 | Message name | `ESP_status` |
 | CAN id | 0x145 (325) |
 | ECU | [Electronic stability control](../../esp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | ESP |
@@ -25,7 +27,7 @@ Electronic stability control message: status; frame length from the layout, not 
 
 ## Signals of ESP_status
 
-Tesla Model 3 / Model Y CAN bus signals in `ESP_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `ESP_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -58,7 +60,7 @@ Tesla Model 3 / Model Y CAN bus signals in `ESP_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

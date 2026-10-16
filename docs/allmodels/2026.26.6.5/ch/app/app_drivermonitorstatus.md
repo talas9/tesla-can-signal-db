@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_driverMonitorStatus (0x3AB) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (primary) message: driver monitor status. Tesla Model 3 / Model Y CAN bus message APP_driverMonitorStatus (0x3AB) of Driver assistance computer (primary), firmware 2026.26.6.5, 25 signals (APP_cabinCamTelemetryOn, APP_attnMonitorVersion, APP_attnBasedDriverMonitorOn, APP_handsOnDetected and 21 more). Bit layout, scaling, units and value tables."
+title: "APP_driverMonitorStatus (0x3AB) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (primary) message: driver monitor status. Tesla Model 3 / Model Y (union) CAN bus message APP_driverMonitorStatus (0x3AB) of Driver assistance computer (primary), firmware 2026.26.6.5, 25 signals (APP_cabinCamTelemetryOn, APP_attnMonitorVersion, APP_attnBasedDriverMonitorOn, APP_handsOnDetected and 21 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_driverMonitorStatus (0x3AB) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APP_driverMonitorStatus (0x3AB) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (primary) message: driver monitor status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 25 signals of APP_driverMonitorStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (primary) message: driver monitor status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 25 signals of APP_driverMonitorStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: driver monitor status; frame lengt
 | Message name | `APP_driverMonitorStatus` |
 | CAN id | 0x3AB (939) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: driver monitor status; frame lengt
 
 ## Signals of APP_driverMonitorStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_driverMonitorStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_driverMonitorStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -57,7 +59,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_driverMonitorStatus`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

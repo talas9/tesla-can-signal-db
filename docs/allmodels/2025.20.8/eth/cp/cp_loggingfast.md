@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CP_loggingFast (0x75D) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Charge port controller message: logging fast. Ethernet-side message CP_loggingFast of Charge port controller for Tesla Model 3 / Model Y firmware 2025.20.8, 24 signals (CP_loggingFastSelect, CP_inductiveSensor_raw, CP_doorOpenActuationTime, CP_doorCloseActuationTime and 20 more). Bit layout, scaling, units and value tables."
+title: "CP_loggingFast (0x75D) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Charge port controller message: logging fast. Ethernet-side message CP_loggingFast of Charge port controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 24 signals (CP_loggingFastSelect, CP_inductiveSensor_raw, CP_doorOpenActuationTime, CP_doorCloseActuationTime and 20 more). Bit layout, scaling, units and value tables."
 ---
 
-# CP_loggingFast (0x75D) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# CP_loggingFast (0x75D) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Charge port controller message: logging fast. This page documents the 24 signals of CP_loggingFast as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Charge port controller message: logging fast. This page documents the 24 signals of CP_loggingFast as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge port controller message: logging fast. This page documents the 24 signals
 | Message name | `CP_loggingFast` |
 | Ethernet-side id | 0x75D (1885) |
 | ECU | [Charge port controller](../../cp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | CP |
@@ -25,7 +27,7 @@ Charge port controller message: logging fast. This page documents the 24 signals
 
 ## Signals of CP_loggingFast
 
-Tesla Model 3 / Model Y CAN bus signals in `CP_loggingFast`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CP_loggingFast`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -60,7 +62,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_loggingFast`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

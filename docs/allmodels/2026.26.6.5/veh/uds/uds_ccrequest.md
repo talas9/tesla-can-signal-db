@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UDS_ccRequest (0x62B) — UDS ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "UDS ECU message: cc request. Tesla Model 3 / Model Y CAN bus message UDS_ccRequest (0x62B) of UDS ECU, firmware 2026.26.6.5, 1 signals (UDS_ccRequestData). Bit layout, scaling, units and value tables."
+title: "UDS_ccRequest (0x62B) — UDS ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "UDS ECU message: cc request. Tesla Model 3 / Model Y (union) CAN bus message UDS_ccRequest (0x62B) of UDS ECU, firmware 2026.26.6.5, 1 signals (UDS_ccRequestData). Bit layout, scaling, units and value tables."
 ---
 
-# UDS_ccRequest (0x62B) — UDS ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UDS_ccRequest (0x62B) — UDS ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-UDS ECU message: cc request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of UDS_ccRequest as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+UDS ECU message: cc request; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of UDS_ccRequest as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ UDS ECU message: cc request; forwarded onto this bus by the gateway; frame lengt
 | Message name | `UDS_ccRequest` |
 | CAN id | 0x62B (1579) |
 | ECU | [UDS ECU](../../uds.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ UDS ECU message: cc request; forwarded onto this bus by the gateway; frame lengt
 
 ## Signals of UDS_ccRequest
 
-Tesla Model 3 / Model Y CAN bus signals in `UDS_ccRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UDS_ccRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UDS_ccRequest`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

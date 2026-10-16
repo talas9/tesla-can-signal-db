@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "APSB ECU (APSB) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y APSB CAN bus messages and signals of the APSB ECU (APSB) for firmware 2026.26.6.5: 10 messages, 1001 signals with bit layout, scaling and value tables."
+title: "APSB ECU (APSB) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) APSB CAN bus messages and signals of the APSB ECU (APSB) for firmware 2026.26.6.5: 10 messages, 1001 signals with bit layout, scaling and value tables."
 ---
 
-# APSB ECU (APSB) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# APSB ECU (APSB) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 10 messages of the APSB ECU (APSB) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 10 messages of the APSB ECU (APSB) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -22,4 +24,3 @@ All 10 messages of the APSB ECU (APSB) documented for Tesla Model 3 / Model Y fi
 | [`APSB_warningMatrix4`](eth/apsb/apsb_warningmatrix4.md) | ETH | 0x3EB | 8 | 1000 ms | 63 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

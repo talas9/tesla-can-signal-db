@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Front body controller (VCFRONT) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y VCFRONT CAN bus messages and signals of the Front body controller (VCFRONT) for firmware 2025.20.8: 25 messages, 3491 signals with bit layout, scaling and value tables."
+title: "Front body controller (VCFRONT) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) VCFRONT CAN bus messages and signals of the Front body controller (VCFRONT) for firmware 2025.20.8: 25 messages, 3491 signals with bit layout, scaling and value tables."
 ---
 
-# Front body controller (VCFRONT) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Front body controller (VCFRONT) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 25 messages of the Front body controller (VCFRONT) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 25 messages of the Front body controller (VCFRONT) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -37,4 +39,3 @@ All 25 messages of the Front body controller (VCFRONT) documented for Tesla Mode
 | [`VCFRONT_vehicleStatus`](eth/vcfront/vcfront_vehiclestatus.md) | ETH | 0x3A1 | 8 | 50 ms | 34 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

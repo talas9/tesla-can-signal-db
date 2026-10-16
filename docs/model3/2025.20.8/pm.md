@@ -8,6 +8,8 @@ description: "Tesla Model 3 PM CAN bus messages and signals of the PM ECU (PM) f
 
 All 7 messages of the PM ECU (PM) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PM_info`](veh/pm/pm_info.md) | VEH | 0x60F | 8 | 1000 ms | 12 |
@@ -19,4 +21,3 @@ All 7 messages of the PM ECU (PM) documented for Tesla Model 3 firmware 2025.20.
 | [`PM_udsResponse`](eth/pm/pm_udsresponse.md) | ETH | 0x640 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

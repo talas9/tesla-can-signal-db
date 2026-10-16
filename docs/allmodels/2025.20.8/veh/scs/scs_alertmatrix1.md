@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SCS_alertMatrix1 (0x365) — SCS ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "SCS ECU message: alert matrix1. Tesla Model 3 / Model Y CAN bus message SCS_alertMatrix1 (0x365) of SCS ECU, firmware 2025.20.8, 62 signals (SCS_a001_hwDSPfault, SCS_a002_hwIbatOC, SCS_a003_hwCordOT, SCS_a004_hwVbusOV and 58 more). Bit layout, scaling, units and value tables."
+title: "SCS_alertMatrix1 (0x365) — SCS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "SCS ECU message: alert matrix1. Tesla Model 3 / Model Y (union) CAN bus message SCS_alertMatrix1 (0x365) of SCS ECU, firmware 2025.20.8, 62 signals (SCS_a001_hwDSPfault, SCS_a002_hwIbatOC, SCS_a003_hwCordOT, SCS_a004_hwVbusOV and 58 more). Bit layout, scaling, units and value tables."
 ---
 
-# SCS_alertMatrix1 (0x365) — SCS ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# SCS_alertMatrix1 (0x365) — SCS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-SCS ECU message: alert matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 62 signals of SCS_alertMatrix1 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+SCS ECU message: alert matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 62 signals of SCS_alertMatrix1 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ SCS ECU message: alert matrix1; frame length from the layout, not yet observed o
 | Message name | `SCS_alertMatrix1` |
 | CAN id | 0x365 (869) |
 | ECU | [SCS ECU](../../scs.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCS |
@@ -25,7 +27,7 @@ SCS ECU message: alert matrix1; frame length from the layout, not yet observed o
 
 ## Signals of SCS_alertMatrix1
 
-Tesla Model 3 / Model Y CAN bus signals in `SCS_alertMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SCS_alertMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -94,7 +96,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SCS_alertMatrix1`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

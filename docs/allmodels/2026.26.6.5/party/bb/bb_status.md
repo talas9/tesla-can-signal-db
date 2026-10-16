@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "BB_status (0x3AF) — BB ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "BB ECU message: status. Tesla Model 3 / Model Y CAN bus message BB_status (0x3AF) of BB ECU, firmware 2026.26.6.5, 13 signals (BB_statusChecksum, BB_statusCounter, BB_sOutputRod, BB_sOutputRodQF and 9 more). Bit layout, scaling, units and value tables."
+title: "BB_status (0x3AF) — BB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "BB ECU message: status. Tesla Model 3 / Model Y (union) CAN bus message BB_status (0x3AF) of BB ECU, firmware 2026.26.6.5, 13 signals (BB_statusChecksum, BB_statusCounter, BB_sOutputRod, BB_sOutputRodQF and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# BB_status (0x3AF) — BB ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# BB_status (0x3AF) — BB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-BB ECU message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of BB_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+BB ECU message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of BB_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ BB ECU message: status; frame length from the layout, not yet observed on a vehi
 | Message name | `BB_status` |
 | CAN id | 0x3AF (943) |
 | ECU | [BB ECU](../../bb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | BB |
@@ -25,7 +27,7 @@ BB ECU message: status; frame length from the layout, not yet observed on a vehi
 
 ## Signals of BB_status
 
-Tesla Model 3 / Model Y CAN bus signals in `BB_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `BB_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BB_status`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

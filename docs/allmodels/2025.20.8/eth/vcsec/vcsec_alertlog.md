@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Vehicle security controller message: alert log. Ethernet-side message VCSEC_alertLog of Vehicle security controller for Tesla Model 3 / Model Y firmware 2025.20.8, 453 signals (VCSEC_alertID, VCSEC_alertState, VCSEC_a001_InternalWatchdog, VCSEC_a002_CPUUndervoltage and 449 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Vehicle security controller message: alert log. Ethernet-side message VCSEC_alertLog of Vehicle security controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 453 signals (VCSEC_alertID, VCSEC_alertState, VCSEC_a001_InternalWatchdog, VCSEC_a002_CPUUndervoltage and 449 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCSEC_alertLog (0x530) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Vehicle security controller message: alert log. This page documents the 453 signals of VCSEC_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Vehicle security controller message: alert log. This page documents the 453 signals of VCSEC_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: alert log. This page documents the 453 sign
 | Message name | `VCSEC_alertLog` |
 | Ethernet-side id | 0x530 (1328) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: alert log. This page documents the 453 sign
 
 ## Signals of VCSEC_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -489,7 +491,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_alertLog`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

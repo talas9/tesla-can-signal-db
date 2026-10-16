@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Charge cable controller message: chg status2. Tesla Model 3 / Model Y CAN bus message CC_chgStatus2 (0x31D) of Charge cable controller, firmware 2026.26.6.5, 5 signals (CC_chgStatus2Index, CC_buttonState, EVSE_v2xSupport, EVSE_v2xHandshakeStart and 1 more). Bit layout, scaling, units and value tables."
+title: "CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Charge cable controller message: chg status2. Tesla Model 3 / Model Y (union) CAN bus message CC_chgStatus2 (0x31D) of Charge cable controller, firmware 2026.26.6.5, 5 signals (CC_chgStatus2Index, CC_buttonState, EVSE_v2xSupport, EVSE_v2xHandshakeStart and 1 more). Bit layout, scaling, units and value tables."
 ---
 
-# CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# CC_chgStatus2 (0x31D) — Charge cable controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Charge cable controller message: chg status2; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of CC_chgStatus2 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Charge cable controller message: chg status2; frame length from the layout, not yet observed on a vehicle bus. This page documents the 5 signals of CC_chgStatus2 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge cable controller message: chg status2; frame length from the layout, not 
 | Message name | `CC_chgStatus2` |
 | CAN id | 0x31D (797) |
 | ECU | [Charge cable controller](../../cc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CC |
@@ -25,7 +27,7 @@ Charge cable controller message: chg status2; frame length from the layout, not 
 
 ## Signals of CC_chgStatus2
 
-Tesla Model 3 / Model Y CAN bus signals in `CC_chgStatus2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CC_chgStatus2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CC_chgStatus2`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

@@ -16,6 +16,8 @@ Front body controller message: party debug; frame length from the layout, not ye
 | CAN id | 0x104 (260) |
 | ECU | [Front body controller](../../vcfront.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCFRONT |

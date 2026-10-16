@@ -8,6 +8,8 @@ description: "Tesla Model 3 FC CAN bus messages and signals of the FC ECU (FC) f
 
 All 16 messages of the FC ECU (FC) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`FC_alertLog`](veh/fc/fc_alertlog.md) | VEH | 0x52A | 8 |  | 8 |
@@ -28,4 +30,3 @@ All 16 messages of the FC ECU (FC) documented for Tesla Model 3 firmware 2026.26
 | [`FC_status3`](veh/fc/fc_status3.md) | VEH | 0x217 | 8 | 1000 ms | 9 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "High-voltage processor (pack contactor and isolation controller) (HVP) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y HVP CAN bus messages and signals of the High-voltage processor (pack contactor and isolation controller) (HVP) for firmware 2026.26.6.5: 9 messages, 356 signals with bit layout, scaling and value tables."
+title: "High-voltage processor (pack contactor and isolation controller) (HVP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) HVP CAN bus messages and signals of the High-voltage processor (pack contactor and isolation controller) (HVP) for firmware 2026.26.6.5: 9 messages, 356 signals with bit layout, scaling and value tables."
 ---
 
-# High-voltage processor (pack contactor and isolation controller) (HVP) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# High-voltage processor (pack contactor and isolation controller) (HVP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 9 messages of the High-voltage processor (pack contactor and isolation controller) (HVP) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 9 messages of the High-voltage processor (pack contactor and isolation controller) (HVP) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -21,4 +23,3 @@ All 9 messages of the High-voltage processor (pack contactor and isolation contr
 | [`HVP_udsResponse`](veh/hvp/hvp_udsresponse.md) | VEH | 0x611 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

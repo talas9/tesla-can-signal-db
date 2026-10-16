@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RCM_inertial2 (0x111) — Restraint control module, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Restraint control module message: inertial2. Tesla Model 3 / Model Y CAN bus message RCM_inertial2 (0x111) of Restraint control module, firmware 2026.26.6.5, 9 signals (RCM_longitudinalAccel, RCM_lateralAccel, RCM_verticalAccel, RCM_longitudinalAccelQF and 5 more). Bit layout, scaling, units and value tables."
+title: "RCM_inertial2 (0x111) — Restraint control module, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Restraint control module message: inertial2. Tesla Model 3 / Model Y (union) CAN bus message RCM_inertial2 (0x111) of Restraint control module, firmware 2026.26.6.5, 9 signals (RCM_longitudinalAccel, RCM_lateralAccel, RCM_verticalAccel, RCM_longitudinalAccelQF and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# RCM_inertial2 (0x111) — Restraint control module, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# RCM_inertial2 (0x111) — Restraint control module, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Restraint control module message: inertial2; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of RCM_inertial2 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Restraint control module message: inertial2; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of RCM_inertial2 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Restraint control module message: inertial2; frame length from the layout, not y
 | Message name | `RCM_inertial2` |
 | CAN id | 0x111 (273) |
 | ECU | [Restraint control module](../../rcm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RCM |
@@ -25,7 +27,7 @@ Restraint control module message: inertial2; frame length from the layout, not y
 
 ## Signals of RCM_inertial2
 
-Tesla Model 3 / Model Y CAN bus signals in `RCM_inertial2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RCM_inertial2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RCM_inertial2`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCCC_info (0x7CA) — VCCC ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "VCCC ECU message: info. Tesla Model 3 / Model Y CAN bus message VCCC_info (0x7CA) of VCCC ECU, firmware 2026.26.6.5, 14 signals (VCCC_infoIndex, VCCC_infoBuildType, VCCC_infoBuildConfigId, VCCC_infoHardwareId and 10 more). Bit layout, scaling, units and value tables."
+title: "VCCC_info (0x7CA) — VCCC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "VCCC ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message VCCC_info (0x7CA) of VCCC ECU, firmware 2026.26.6.5, 14 signals (VCCC_infoIndex, VCCC_infoBuildType, VCCC_infoBuildConfigId, VCCC_infoHardwareId and 10 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCCC_info (0x7CA) — VCCC ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# VCCC_info (0x7CA) — VCCC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-VCCC ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 14 signals of VCCC_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+VCCC ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 14 signals of VCCC_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCCC ECU message: info; frame length from the layout, not yet observed on a vehi
 | Message name | `VCCC_info` |
 | CAN id | 0x7CA (1994) |
 | ECU | [VCCC ECU](../../vccc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCCC |
@@ -25,7 +27,7 @@ VCCC ECU message: info; frame length from the layout, not yet observed on a vehi
 
 ## Signals of VCCC_info
 
-Tesla Model 3 / Model Y CAN bus signals in `VCCC_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCCC_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -50,7 +52,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCCC_info`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

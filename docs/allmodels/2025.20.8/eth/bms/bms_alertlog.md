@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "BMS_alertLog (0x53F) — High-voltage battery management system, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "High-voltage battery management system message: alert log. Ethernet-side message BMS_alertLog of High-voltage battery management system for Tesla Model 3 / Model Y firmware 2025.20.8, 311 signals (BMS_alertID, BMS_alertSet, BMS_a001_gatewayPackEnergy, BMS_a001_expectedPackEnergy and 307 more). Bit layout, scaling, units and value tables."
+title: "BMS_alertLog (0x53F) — High-voltage battery management system, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "High-voltage battery management system message: alert log. Ethernet-side message BMS_alertLog of High-voltage battery management system for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 311 signals (BMS_alertID, BMS_alertSet, BMS_a001_gatewayPackEnergy, BMS_a001_expectedPackEnergy and 307 more). Bit layout, scaling, units and value tables."
 ---
 
-# BMS_alertLog (0x53F) — High-voltage battery management system, Tesla Model 3 / Model Y 2025.20.8 ETH
+# BMS_alertLog (0x53F) — High-voltage battery management system, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-High-voltage battery management system message: alert log. This page documents the 311 signals of BMS_alertLog as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+High-voltage battery management system message: alert log. This page documents the 311 signals of BMS_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ High-voltage battery management system message: alert log. This page documents t
 | Message name | `BMS_alertLog` |
 | Ethernet-side id | 0x53F (1343) |
 | ECU | [High-voltage battery management system](../../bms.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | BMS |
@@ -25,7 +27,7 @@ High-voltage battery management system message: alert log. This page documents t
 
 ## Signals of BMS_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `BMS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `BMS_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -347,7 +349,7 @@ Tesla Model 3 / Model Y CAN bus signals in `BMS_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

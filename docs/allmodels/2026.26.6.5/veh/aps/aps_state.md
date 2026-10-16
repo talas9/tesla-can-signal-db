@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APS_state (0x420) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Driver assistance computer (secondary) message: state. Tesla Model 3 / Model Y CAN bus message APS_state (0x420) of Driver assistance computer (secondary), firmware 2026.26.6.5, 18 signals (APS_primaryTurbo, APS_A_arbState, APS_A_powerState, APS_A_sleepState and 14 more). Bit layout, scaling, units and value tables."
+title: "APS_state (0x420) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Driver assistance computer (secondary) message: state. Tesla Model 3 / Model Y (union) CAN bus message APS_state (0x420) of Driver assistance computer (secondary), firmware 2026.26.6.5, 18 signals (APS_primaryTurbo, APS_A_arbState, APS_A_powerState, APS_A_sleepState and 14 more). Bit layout, scaling, units and value tables."
 ---
 
-# APS_state (0x420) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# APS_state (0x420) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Driver assistance computer (secondary) message: state; frame length observed on a vehicle bus. This page documents the 18 signals of APS_state as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Driver assistance computer (secondary) message: state; frame length observed on a vehicle bus. This page documents the 18 signals of APS_state as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (secondary) message: state; frame length observed on 
 | Message name | `APS_state` |
 | CAN id | 0x420 (1056) |
 | ECU | [Driver assistance computer (secondary)](../../aps.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | APS |
@@ -25,7 +27,7 @@ Driver assistance computer (secondary) message: state; frame length observed on 
 
 ## Signals of APS_state
 
-Tesla Model 3 / Model Y CAN bus signals in `APS_state`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APS_state`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -50,7 +52,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APS_state`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

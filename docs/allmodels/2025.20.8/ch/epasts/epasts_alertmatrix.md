@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPASTS_alertMatrix (0x398) — EPASTS ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "EPASTS ECU message: alert matrix. Tesla Model 3 / Model Y CAN bus message EPASTS_alertMatrix (0x398) of EPASTS ECU, firmware 2025.20.8, 271 signals (EPASTS_matrixIndex, EPASTS_a001_adcCalibrationOrInitFail, EPASTS_a002_adcMuxErr, EPASTS_a003_pspInvalidParamset and 267 more). Bit layout, scaling, units and value tables."
+title: "EPASTS_alertMatrix (0x398) — EPASTS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "EPASTS ECU message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message EPASTS_alertMatrix (0x398) of EPASTS ECU, firmware 2025.20.8, 271 signals (EPASTS_matrixIndex, EPASTS_a001_adcCalibrationOrInitFail, EPASTS_a002_adcMuxErr, EPASTS_a003_pspInvalidParamset and 267 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPASTS_alertMatrix (0x398) — EPASTS ECU, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# EPASTS_alertMatrix (0x398) — EPASTS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-EPASTS ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 271 signals of EPASTS_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+EPASTS ECU message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 271 signals of EPASTS_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ EPASTS ECU message: alert matrix; frame length from the layout, not yet observed
 | Message name | `EPASTS_alertMatrix` |
 | CAN id | 0x398 (920) |
 | ECU | [EPASTS ECU](../../epasts.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | EPASTS |
@@ -25,7 +27,7 @@ EPASTS ECU message: alert matrix; frame length from the layout, not yet observed
 
 ## Signals of EPASTS_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `EPASTS_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPASTS_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -307,7 +309,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPASTS_alertMatrix`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

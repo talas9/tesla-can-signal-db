@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_range (0x33A) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Touchscreen user interface computer message: range. Tesla Model 3 / Model Y CAN bus message UI_range (0x33A) of Touchscreen user interface computer, firmware 2025.20.8, 6 signals (UI_ratedRange, UI_whpm, UI_soe, UI_uSoe and 2 more). Bit layout, scaling, units and value tables."
+title: "UI_range (0x33A) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Touchscreen user interface computer message: range. Tesla Model 3 / Model Y (union) CAN bus message UI_range (0x33A) of Touchscreen user interface computer, firmware 2025.20.8, 6 signals (UI_ratedRange, UI_whpm, UI_soe, UI_uSoe and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_range (0x33A) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# UI_range (0x33A) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Touchscreen user interface computer message: range; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 6 signals of UI_range as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Touchscreen user interface computer message: range; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 6 signals of UI_range as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: range; forwarded onto this bus by t
 | Message name | `UI_range` |
 | CAN id | 0x33A (826) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: range; forwarded onto this bus by t
 
 ## Signals of UI_range
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_range`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_range`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_range`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

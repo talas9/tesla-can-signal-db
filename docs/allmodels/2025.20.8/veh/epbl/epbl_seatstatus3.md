@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPBL_seatStatus3 (0x2E7) — Left electric parking brake, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Left electric parking brake message: seat status3. Tesla Model 3 / Model Y CAN bus message EPBL_seatStatus3 (0x2E7) of Left electric parking brake, firmware 2025.20.8, 6 signals (EPBL_frontSeatCushionFanCur, EPBL_frontSeatBackrestFanCur, EPBL_frontSeatCushionFanDuty, EPBL_frontSeatCushionFanEn and 2 more). Bit layout, scaling, units and value tables."
+title: "EPBL_seatStatus3 (0x2E7) — Left electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Left electric parking brake message: seat status3. Tesla Model 3 / Model Y (union) CAN bus message EPBL_seatStatus3 (0x2E7) of Left electric parking brake, firmware 2025.20.8, 6 signals (EPBL_frontSeatCushionFanCur, EPBL_frontSeatBackrestFanCur, EPBL_frontSeatCushionFanDuty, EPBL_frontSeatCushionFanEn and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPBL_seatStatus3 (0x2E7) — Left electric parking brake, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# EPBL_seatStatus3 (0x2E7) — Left electric parking brake, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Left electric parking brake message: seat status3; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of EPBL_seatStatus3 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Left electric parking brake message: seat status3; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of EPBL_seatStatus3 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left electric parking brake message: seat status3; frame length from the layout,
 | Message name | `EPBL_seatStatus3` |
 | CAN id | 0x2E7 (743) |
 | ECU | [Left electric parking brake](../../epbl.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBL |
@@ -25,7 +27,7 @@ Left electric parking brake message: seat status3; frame length from the layout,
 
 ## Signals of EPBL_seatStatus3
 
-Tesla Model 3 / Model Y CAN bus signals in `EPBL_seatStatus3`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPBL_seatStatus3`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPBL_seatStatus3`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

@@ -16,6 +16,8 @@ Vehicle security controller message: uds response. This page documents the 1 sig
 | Ethernet-side id | 0x7D8 (2008) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCSEC |

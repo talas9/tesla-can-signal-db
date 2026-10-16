@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_info (0x657) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Drive inverter message: info. Tesla Model 3 / Model Y CAN bus message DI_info (0x657) of Drive inverter, firmware 2026.26.6.5, 12 signals (DI_infoIndex, DI_buildType, DI_buildConfigurationId, DI_hardwareId and 8 more). Bit layout, scaling, units and value tables."
+title: "DI_info (0x657) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Drive inverter message: info. Tesla Model 3 / Model Y (union) CAN bus message DI_info (0x657) of Drive inverter, firmware 2026.26.6.5, 12 signals (DI_infoIndex, DI_buildType, DI_buildConfigurationId, DI_hardwareId and 8 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_info (0x657) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DI_info (0x657) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Drive inverter message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of DI_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Drive inverter message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of DI_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: info; frame length from the layout, not yet observed on 
 | Message name | `DI_info` |
 | CAN id | 0x657 (1623) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: info; frame length from the layout, not yet observed on 
 
 ## Signals of DI_info
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_info`: start bit and length, byte
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

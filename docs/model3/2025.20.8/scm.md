@@ -8,6 +8,8 @@ description: "Tesla Model 3 SCM CAN bus messages and signals of the SCM ECU (SCM
 
 All 3 messages of the SCM ECU (SCM) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`SCM_alertLog`](veh/scm/scm_alertlog.md) | VEH | 0x54C | 8 |  | 4 |
@@ -15,4 +17,3 @@ All 3 messages of the SCM ECU (SCM) documented for Tesla Model 3 firmware 2025.2
 | [`SCM_alertMatrix2`](veh/scm/scm_alertmatrix2.md) | VEH | 0x54B | 8 | 1000 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

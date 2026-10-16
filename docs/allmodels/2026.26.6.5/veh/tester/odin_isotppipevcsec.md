@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "ODIN_IsoTpPipeVCSEC (0x480) — External diagnostic tester, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "External diagnostic tester message: iso tp pipe VCSEC. Tesla Model 3 / Model Y CAN bus message ODIN_IsoTpPipeVCSEC (0x480) of External diagnostic tester, firmware 2026.26.6.5, 8 signals (ODIN_IsoTpPipeVCSEC0, ODIN_IsoTpPipeVCSEC1, ODIN_IsoTpPipeVCSEC2, ODIN_IsoTpPipeVCSEC3 and 4 more). Bit layout, scaling, units and value tables."
+title: "ODIN_IsoTpPipeVCSEC (0x480) — External diagnostic tester, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "External diagnostic tester message: iso tp pipe VCSEC. Tesla Model 3 / Model Y (union) CAN bus message ODIN_IsoTpPipeVCSEC (0x480) of External diagnostic tester, firmware 2026.26.6.5, 8 signals (ODIN_IsoTpPipeVCSEC0, ODIN_IsoTpPipeVCSEC1, ODIN_IsoTpPipeVCSEC2, ODIN_IsoTpPipeVCSEC3 and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# ODIN_IsoTpPipeVCSEC (0x480) — External diagnostic tester, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# ODIN_IsoTpPipeVCSEC (0x480) — External diagnostic tester, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-External diagnostic tester message: iso tp pipe VCSEC; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of ODIN_IsoTpPipeVCSEC as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+External diagnostic tester message: iso tp pipe VCSEC; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of ODIN_IsoTpPipeVCSEC as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ External diagnostic tester message: iso tp pipe VCSEC; forwarded onto this bus b
 | Message name | `ODIN_IsoTpPipeVCSEC` |
 | CAN id | 0x480 (1152) |
 | ECU | [External diagnostic tester](../../tester.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ External diagnostic tester message: iso tp pipe VCSEC; forwarded onto this bus b
 
 ## Signals of ODIN_IsoTpPipeVCSEC
 
-Tesla Model 3 / Model Y CAN bus signals in `ODIN_IsoTpPipeVCSEC`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `ODIN_IsoTpPipeVCSEC`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `ODIN_IsoTpPipeVCSEC`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

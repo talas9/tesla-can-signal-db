@@ -8,10 +8,11 @@ description: "Tesla Model Y EPASTP CAN bus messages and signals of the EPASTP EC
 
 All 2 messages of the EPASTP ECU (EPASTP) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPASTP_alertMatrix`](party/epastp/epastp_alertmatrix.md) | PARTY | 0x397 | 8 | 1000 ms | 270 |
 | [`EPASTP_alertLog`](eth/epastp/epastp_alertlog.md) | ETH | 0x593 | 8 |  | 276 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

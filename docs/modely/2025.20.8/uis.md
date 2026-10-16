@@ -8,9 +8,10 @@ description: "Tesla Model Y UIS CAN bus messages and signals of the UIS ECU (UIS
 
 All 1 messages of the UIS ECU (UIS) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`UIS_log`](eth/uis/uis_log.md) | ETH | 0x420 | 8 |  | 356 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

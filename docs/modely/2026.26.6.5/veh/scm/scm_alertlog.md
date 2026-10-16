@@ -16,6 +16,8 @@ SCM ECU message: alert log; frame length from the layout, not yet observed on a 
 | CAN id | 0x54C (1356) |
 | ECU | [SCM ECU](../../scm.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SCM |

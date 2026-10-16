@@ -16,6 +16,8 @@ Drive inverter message: alert log. This page documents the 409 signals of DI_ale
 | Ethernet-side id | 0x527 (1319) |
 | ECU | [Drive inverter](../../di.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DI |

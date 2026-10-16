@@ -8,6 +8,8 @@ description: "Tesla Model Y BMS CAN bus messages and signals of the High-voltage
 
 All 27 messages of the High-voltage battery management system (BMS) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`BMS_alertLog`](veh/bms/bms_alertlog.md) | VEH | 0x53F | 8 |  | 315 |
@@ -39,4 +41,3 @@ All 27 messages of the High-voltage battery management system (BMS) documented f
 | [`BMS_vehNm`](veh/bms/bms_vehnm.md) | VEH | 0x2F2 | 2 | 100 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

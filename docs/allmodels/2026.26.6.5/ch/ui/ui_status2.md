@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_status2 (0x3DF) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Touchscreen user interface computer message: status2. Tesla Model 3 / Model Y CAN bus message UI_status2 (0x3DF) of Touchscreen user interface computer, firmware 2026.26.6.5, 26 signals (UI_mobileAppStepCount, UI_userRequestSnapshot, UI_touchDetected, UI_validDeviceForEUSummon and 22 more). Bit layout, scaling, units and value tables."
+title: "UI_status2 (0x3DF) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Touchscreen user interface computer message: status2. Tesla Model 3 / Model Y (union) CAN bus message UI_status2 (0x3DF) of Touchscreen user interface computer, firmware 2026.26.6.5, 26 signals (UI_mobileAppStepCount, UI_userRequestSnapshot, UI_touchDetected, UI_validDeviceForEUSummon and 22 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_status2 (0x3DF) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# UI_status2 (0x3DF) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Touchscreen user interface computer message: status2; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 26 signals of UI_status2 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Touchscreen user interface computer message: status2; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 26 signals of UI_status2 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: status2; forwarded onto this bus by
 | Message name | `UI_status2` |
 | CAN id | 0x3DF (991) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: status2; forwarded onto this bus by
 
 ## Signals of UI_status2
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_status2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_status2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -58,7 +60,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_status2`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

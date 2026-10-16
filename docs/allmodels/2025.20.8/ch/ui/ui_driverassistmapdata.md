@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_driverAssistMapData (0x238) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Touchscreen user interface computer message: driver assist map data. Tesla Model 3 / Model Y CAN bus message UI_driverAssistMapData (0x238) of Touchscreen user interface computer, firmware 2025.20.8, 30 signals (UI_mapSpeedLimitDependency, UI_roadClass, UI_inSuperchargerGeofence, UI_mapSpeedUnits and 26 more). Bit layout, scaling, units and value tables."
+title: "UI_driverAssistMapData (0x238) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Touchscreen user interface computer message: driver assist map data. Tesla Model 3 / Model Y (union) CAN bus message UI_driverAssistMapData (0x238) of Touchscreen user interface computer, firmware 2025.20.8, 30 signals (UI_mapSpeedLimitDependency, UI_roadClass, UI_inSuperchargerGeofence, UI_mapSpeedUnits and 26 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_driverAssistMapData (0x238) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# UI_driverAssistMapData (0x238) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Touchscreen user interface computer message: driver assist map data; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 30 signals of UI_driverAssistMapData as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Touchscreen user interface computer message: driver assist map data; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 30 signals of UI_driverAssistMapData as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: driver assist map data; forwarded o
 | Message name | `UI_driverAssistMapData` |
 | CAN id | 0x238 (568) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: driver assist map data; forwarded o
 
 ## Signals of UI_driverAssistMapData
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_driverAssistMapData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_driverAssistMapData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -62,7 +64,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_driverAssistMapData`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

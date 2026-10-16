@@ -8,6 +8,8 @@ description: "Tesla Model 3 BMS CAN bus messages and signals of the High-voltage
 
 All 25 messages of the High-voltage battery management system (BMS) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`BMS_bmbMinMax`](veh/bms/bms_bmbminmax.md) | VEH | 0x332 | 6 | 1000 ms | 10 |
@@ -37,4 +39,3 @@ All 25 messages of the High-voltage battery management system (BMS) documented f
 | [`BMS_vehNm`](eth/bms/bms_vehnm.md) | ETH | 0x2F2 | 2 | 100 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

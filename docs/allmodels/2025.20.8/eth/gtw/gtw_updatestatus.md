@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Gateway message: update status. Ethernet-side message GTW_updateStatus of Gateway for Tesla Model 3 / Model Y firmware 2025.20.8, 3 signals (GTW_i2cUpdateActive, GTW_ecuUpdateStarted, GTW_updateStarted). Bit layout, scaling, units and value tables."
+title: "GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Gateway message: update status. Ethernet-side message GTW_updateStatus of Gateway for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 3 signals (GTW_i2cUpdateActive, GTW_ecuUpdateStarted, GTW_updateStarted). Bit layout, scaling, units and value tables."
 ---
 
-# GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y 2025.20.8 ETH
+# GTW_updateStatus (0x3ED) — Gateway, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Gateway message: update status. This page documents the 3 signals of GTW_updateStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Gateway message: update status. This page documents the 3 signals of GTW_updateStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Gateway message: update status. This page documents the 3 signals of GTW_updateS
 | Message name | `GTW_updateStatus` |
 | Ethernet-side id | 0x3ED (1005) |
 | ECU | [Gateway](../../gtw.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Gateway message: update status. This page documents the 3 signals of GTW_updateS
 
 ## Signals of GTW_updateStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `GTW_updateStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `GTW_updateStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -35,7 +37,7 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_updateStatus`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

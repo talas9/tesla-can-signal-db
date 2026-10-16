@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "PCS2 ECU (PCS2) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y PCS2 CAN bus messages and signals of the PCS2 ECU (PCS2) for firmware 2026.26.6.5: 4 messages, 737 signals with bit layout, scaling and value tables."
+title: "PCS2 ECU (PCS2) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) PCS2 CAN bus messages and signals of the PCS2 ECU (PCS2) for firmware 2026.26.6.5: 4 messages, 737 signals with bit layout, scaling and value tables."
 ---
 
-# PCS2 ECU (PCS2) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# PCS2 ECU (PCS2) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 4 messages of the PCS2 ECU (PCS2) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 4 messages of the PCS2 ECU (PCS2) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the PCS2 ECU (PCS2) documented for Tesla Model 3 / Model Y fir
 | [`PCS2_v2xInfo2`](veh/pcs2/pcs2_v2xinfo2.md) | VEH | 0x40F | 4 | 100 ms | 3 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

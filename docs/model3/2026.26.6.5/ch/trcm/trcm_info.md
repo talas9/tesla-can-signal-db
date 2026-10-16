@@ -16,6 +16,8 @@ TRCM ECU message: info; frame length from the layout, not yet observed on a vehi
 | CAN id | 0x352 (850) |
 | ECU | [TRCM ECU](../../trcm.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | TRCM |

@@ -8,6 +8,8 @@ description: "Tesla Model 3 DI CAN bus messages and signals of the Drive inverte
 
 All 22 messages of the Drive inverter (DI) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`DI_alertLog`](veh/di/di_alertlog.md) | VEH | 0x527 | 8 |  | 409 |
@@ -34,4 +36,3 @@ All 22 messages of the Drive inverter (DI) documented for Tesla Model 3 firmware
 | [`DI_vehicleEstimates`](party/di/di_vehicleestimates.md) | PARTY | 0x267 | 8 | 1000 ms | 13 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

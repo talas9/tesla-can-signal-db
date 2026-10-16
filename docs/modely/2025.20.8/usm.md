@@ -8,6 +8,8 @@ description: "Tesla Model Y USM CAN bus messages and signals of the USM ECU (USM
 
 All 3 messages of the USM ECU (USM) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`USM_alertMatrix`](ch/usm/usm_alertmatrix.md) | CH | 0x3BA | 8 | 100 ms | 182 |
@@ -15,4 +17,3 @@ All 3 messages of the USM ECU (USM) documented for Tesla Model Y firmware 2025.2
 | [`USM_alertLog`](eth/usm/usm_alertlog.md) | ETH | 0x5F0 | 8 |  | 941 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -16,6 +16,8 @@ Driver assistance computer (primary) message: camera lux; frame length observed 
 | CAN id | 0x3FA (1018) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | APP |

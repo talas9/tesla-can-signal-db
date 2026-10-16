@@ -16,6 +16,8 @@ Touchscreen user interface computer message: cruise control; forwarded onto this
 | CAN id | 0x213 (531) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |

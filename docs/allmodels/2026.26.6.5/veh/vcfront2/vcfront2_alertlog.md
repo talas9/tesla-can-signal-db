@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT2_alertLog (0x547) — VCFRONT2 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCFRONT2 ECU message: alert log. Tesla Model 3 / Model Y CAN bus message VCFRONT2_alertLog (0x547) of VCFRONT2 ECU, firmware 2026.26.6.5, 454 signals (VCFRONT2_alertID, VCFRONT2_alertState, VCFRONT2_a001_InternalWatchdog, VCFRONT2_a015_NVMMMemOverflow and 450 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT2_alertLog (0x547) — VCFRONT2 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCFRONT2 ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT2_alertLog (0x547) of VCFRONT2 ECU, firmware 2026.26.6.5, 454 signals (VCFRONT2_alertID, VCFRONT2_alertState, VCFRONT2_a001_InternalWatchdog, VCFRONT2_a015_NVMMMemOverflow and 450 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT2_alertLog (0x547) — VCFRONT2 ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT2_alertLog (0x547) — VCFRONT2 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCFRONT2 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 454 signals of VCFRONT2_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCFRONT2 ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 454 signals of VCFRONT2_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCFRONT2 ECU message: alert log; frame length from the layout, not yet observed 
 | Message name | `VCFRONT2_alertLog` |
 | CAN id | 0x547 (1351) |
 | ECU | [VCFRONT2 ECU](../../vcfront2.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT2 |
@@ -25,7 +27,7 @@ VCFRONT2 ECU message: alert log; frame length from the layout, not yet observed 
 
 ## Signals of VCFRONT2_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT2_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT2_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -490,7 +492,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT2_alertLog`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

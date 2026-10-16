@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "PMR ECU (PMR) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y PMR CAN bus messages and signals of the PMR ECU (PMR) for firmware 2025.20.8: 7 messages, 282 signals with bit layout, scaling and value tables."
+title: "PMR ECU (PMR) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) PMR CAN bus messages and signals of the PMR ECU (PMR) for firmware 2025.20.8: 7 messages, 282 signals with bit layout, scaling and value tables."
 ---
 
-# PMR ECU (PMR) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# PMR ECU (PMR) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 7 messages of the PMR ECU (PMR) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 7 messages of the PMR ECU (PMR) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -19,4 +21,3 @@ All 7 messages of the PMR ECU (PMR) documented for Tesla Model 3 / Model Y firmw
 | [`PMR_udsResponse`](eth/pmr/pmr_udsresponse.md) | ETH | 0x614 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

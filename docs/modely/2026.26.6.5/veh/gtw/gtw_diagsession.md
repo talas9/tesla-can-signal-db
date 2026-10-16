@@ -16,6 +16,8 @@ Gateway message: diag session; frame length observed on a vehicle bus. This page
 | CAN id | 0x666 (1638) |
 | ECU | [Gateway](../../gtw.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |

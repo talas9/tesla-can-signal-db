@@ -16,6 +16,8 @@ Driver assistance computer (primary) message: factory summon goal; frame length 
 | CAN id | 0x425 (1061) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |

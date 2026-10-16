@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_stalklessInterfaces (0x258) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Drive inverter message: stalkless interfaces. Tesla Model 3 / Model Y CAN bus message DI_stalklessInterfaces (0x258) of Drive inverter, firmware 2025.20.8, 8 signals (DI_stalklessInterfacesChecksum, DI_stalklessInterfacesCounter, DI_smartShiftClosureOpen, DI_smartShiftSeatbeltUnbuckled and 4 more). Bit layout, scaling, units and value tables."
+title: "DI_stalklessInterfaces (0x258) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Drive inverter message: stalkless interfaces. Tesla Model 3 / Model Y (union) CAN bus message DI_stalklessInterfaces (0x258) of Drive inverter, firmware 2025.20.8, 8 signals (DI_stalklessInterfacesChecksum, DI_stalklessInterfacesCounter, DI_smartShiftClosureOpen, DI_smartShiftSeatbeltUnbuckled and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_stalklessInterfaces (0x258) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# DI_stalklessInterfaces (0x258) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Drive inverter message: stalkless interfaces; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of DI_stalklessInterfaces as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Drive inverter message: stalkless interfaces; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of DI_stalklessInterfaces as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: stalkless interfaces; frame length from the layout, not 
 | Message name | `DI_stalklessInterfaces` |
 | CAN id | 0x258 (600) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: stalkless interfaces; frame length from the layout, not 
 
 ## Signals of DI_stalklessInterfaces
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_stalklessInterfaces`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_stalklessInterfaces`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_stalklessInterfaces`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

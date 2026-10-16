@@ -16,6 +16,8 @@ IDB ECU message: info. This page documents the 5 signals of IDB_info as defined 
 | Ethernet-side id | 0x33C (828) |
 | ECU | [IDB ECU](../../idb.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | IDB |

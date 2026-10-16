@@ -16,6 +16,8 @@ Front drive inverter message: info; frame length from the layout, not yet observ
 | CAN id | 0x656 (1622) |
 | ECU | [Front drive inverter](../../dif.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DIF |

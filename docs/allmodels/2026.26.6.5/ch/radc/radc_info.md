@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RADC_info (0x531) — Radar, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Radar message: info. Tesla Model 3 / Model Y CAN bus message RADC_info (0x531) of Radar, firmware 2026.26.6.5, 17 signals (RADC_infoIndex, RADC_infoBuildType, RADC_infoBuildConfigID, RADC_infoHardwareID and 13 more). Bit layout, scaling, units and value tables."
+title: "RADC_info (0x531) — Radar, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Radar message: info. Tesla Model 3 / Model Y (union) CAN bus message RADC_info (0x531) of Radar, firmware 2026.26.6.5, 17 signals (RADC_infoIndex, RADC_infoBuildType, RADC_infoBuildConfigID, RADC_infoHardwareID and 13 more). Bit layout, scaling, units and value tables."
 ---
 
-# RADC_info (0x531) — Radar, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# RADC_info (0x531) — Radar, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Radar message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 17 signals of RADC_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Radar message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 17 signals of RADC_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Radar message: info; frame length from the layout, not yet observed on a vehicle
 | Message name | `RADC_info` |
 | CAN id | 0x531 (1329) |
 | ECU | [Radar](../../radc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RADC |
@@ -25,7 +27,7 @@ Radar message: info; frame length from the layout, not yet observed on a vehicle
 
 ## Signals of RADC_info
 
-Tesla Model 3 / Model Y CAN bus signals in `RADC_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RADC_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -53,7 +55,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RADC_info`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

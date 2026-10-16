@@ -9,9 +9,9 @@ description: "Tesla Model 3 and Model Y CAN bus signals beginning with U: pages 
 3170 signals, split over 7 pages.
 
 - [UDS_bmsRequestData to UI_applyDCASBehaviorLegacy](u-1.md) (490 signals)
-- [UI_applyEceR79 to UI_idlePowerConsumption](u-2.md) (427 signals)
-- [UI_inletActiveCoolTarget to UI_ussThresholdX7](u-3.md) (410 signals)
-- [UI_ussThresholdX8 to UIS_robotaxiModeActive](u-4.md) (500 signals)
-- [UIS_scheduleChargeEndTime to USM_a115_VEH_vehNm](u-5.md) (487 signals)
-- [USM_a116_BDY_epbmStatus to USM_a229_atgNoiseMeasOutOfRange](u-6.md) (472 signals)
-- [USM_a229_capLossVddaOutOfRange to UTC_year](u-7.md) (384 signals)
+- [UI_applyEceR79 to UI_hvacUseModeledDuctTemp](u-2.md) (426 signals)
+- [UI_idlePowerConsumption to UI_ussThresholdX5](u-3.md) (409 signals)
+- [UI_ussThresholdX6 to UIS_releasenotesMemUsage](u-4.md) (500 signals)
+- [UIS_remoteRequestType to USM_a115_VEH_requests2](u-5.md) (488 signals)
+- [USM_a115_VEH_vehNm to USM_a228_wdgClockFreqOutOfRange](u-6.md) (472 signals)
+- [USM_a229_atgNoiseMeasOutOfRange to UTC_year](u-7.md) (385 signals)

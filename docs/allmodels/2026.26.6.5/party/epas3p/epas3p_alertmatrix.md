@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3P_alertMatrix (0x392) — Electric power steering (primary), Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Electric power steering (primary) message: alert matrix. Tesla Model 3 / Model Y CAN bus message EPAS3P_alertMatrix (0x392) of Electric power steering (primary), firmware 2026.26.6.5, 166 signals (EPAS3P_matrixIndex, EPAS3P_a001_sent1Mia, EPAS3P_a002_sent1Error, EPAS3P_a003_trqSens1Supply and 162 more). Bit layout, scaling, units and value tables."
+title: "EPAS3P_alertMatrix (0x392) — Electric power steering (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Electric power steering (primary) message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message EPAS3P_alertMatrix (0x392) of Electric power steering (primary), firmware 2026.26.6.5, 166 signals (EPAS3P_matrixIndex, EPAS3P_a001_sent1Mia, EPAS3P_a002_sent1Error, EPAS3P_a003_trqSens1Supply and 162 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3P_alertMatrix (0x392) — Electric power steering (primary), Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# EPAS3P_alertMatrix (0x392) — Electric power steering (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Electric power steering (primary) message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 166 signals of EPAS3P_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Electric power steering (primary) message: alert matrix; frame length from the layout, not yet observed on a vehicle bus. This page documents the 166 signals of EPAS3P_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (primary) message: alert matrix; frame length from the l
 | Message name | `EPAS3P_alertMatrix` |
 | CAN id | 0x392 (914) |
 | ECU | [Electric power steering (primary)](../../epas3p.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | EPAS3P |
@@ -25,7 +27,7 @@ Electric power steering (primary) message: alert matrix; frame length from the l
 
 ## Signals of EPAS3P_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3P_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3P_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -202,7 +204,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3P_alertMatrix`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

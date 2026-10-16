@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_debugTas (0x7FB) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Touchscreen user interface computer message: debug tas. Tesla Model 3 / Model Y CAN bus message UI_debugTas (0x7FB) of Touchscreen user interface computer, firmware 2025.20.8, 8 signals (UI_debugDampingRequestFLC, UI_debugDampingRequestFLR, UI_debugDampingRequestFRC, UI_debugDampingRequestFRR and 4 more). Bit layout, scaling, units and value tables."
+title: "UI_debugTas (0x7FB) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Touchscreen user interface computer message: debug tas. Tesla Model 3 / Model Y (union) CAN bus message UI_debugTas (0x7FB) of Touchscreen user interface computer, firmware 2025.20.8, 8 signals (UI_debugDampingRequestFLC, UI_debugDampingRequestFLR, UI_debugDampingRequestFRC, UI_debugDampingRequestFRR and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_debugTas (0x7FB) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# UI_debugTas (0x7FB) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Touchscreen user interface computer message: debug tas; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of UI_debugTas as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Touchscreen user interface computer message: debug tas; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of UI_debugTas as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: debug tas; forwarded onto this bus 
 | Message name | `UI_debugTas` |
 | CAN id | 0x7FB (2043) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: debug tas; forwarded onto this bus 
 
 ## Signals of UI_debugTas
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_debugTas`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_debugTas`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_debugTas`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

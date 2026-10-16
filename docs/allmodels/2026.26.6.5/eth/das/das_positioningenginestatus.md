@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_positioningEngineStatus (0x30D) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Driver assistance computer message: positioning engine status. Ethernet-side message DAS_positioningEngineStatus of Driver assistance computer for Tesla Model 3 / Model Y firmware 2026.26.6.5, 25 signals (DAS_positioningEngineStatusMultiplexer, DAS_meoSolverNumRuns, DAS_meoSolverReportTerminationType, DAS_meoSolverReportTotalTimeS and 21 more). Bit layout, scaling, units and value tables."
+title: "DAS_positioningEngineStatus (0x30D) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Driver assistance computer message: positioning engine status. Ethernet-side message DAS_positioningEngineStatus of Driver assistance computer for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 25 signals (DAS_positioningEngineStatusMultiplexer, DAS_meoSolverNumRuns, DAS_meoSolverReportTerminationType, DAS_meoSolverReportTotalTimeS and 21 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_positioningEngineStatus (0x30D) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# DAS_positioningEngineStatus (0x30D) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Driver assistance computer message: positioning engine status. This page documents the 25 signals of DAS_positioningEngineStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Driver assistance computer message: positioning engine status. This page documents the 25 signals of DAS_positioningEngineStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: positioning engine status. This page documen
 | Message name | `DAS_positioningEngineStatus` |
 | Ethernet-side id | 0x30D (781) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: positioning engine status. This page documen
 
 ## Signals of DAS_positioningEngineStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_positioningEngineStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_positioningEngineStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -61,7 +63,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_positioningEngineStatus`: start 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

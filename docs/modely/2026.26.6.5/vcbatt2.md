@@ -8,6 +8,8 @@ description: "Tesla Model Y VCBATT2 CAN bus messages and signals of the VCBATT2 
 
 All 4 messages of the VCBATT2 ECU (VCBATT2) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCBATT2_alertLog`](veh/vcbatt2/vcbatt2_alertlog.md) | VEH | 0x54E | 8 |  | 217 |
@@ -16,4 +18,3 @@ All 4 messages of the VCBATT2 ECU (VCBATT2) documented for Tesla Model Y firmwar
 | [`VCBATT2_udsResponse`](veh/vcbatt2/vcbatt2_udsresponse.md) | VEH | 0x61B | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

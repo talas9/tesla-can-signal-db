@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "UDS ECU (UDS) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y UDS CAN bus messages and signals of the UDS ECU (UDS) for firmware 2026.26.6.5: 44 messages, 56 signals with bit layout, scaling and value tables."
+title: "UDS ECU (UDS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) UDS CAN bus messages and signals of the UDS ECU (UDS) for firmware 2026.26.6.5: 44 messages, 56 signals with bit layout, scaling and value tables."
 ---
 
-# UDS ECU (UDS) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# UDS ECU (UDS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 44 messages of the UDS ECU (UDS) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 44 messages of the UDS ECU (UDS) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -56,4 +58,3 @@ All 44 messages of the UDS ECU (UDS) documented for Tesla Model 3 / Model Y firm
 | [`UDS_thcRequest`](eth/uds/uds_thcrequest.md) | ETH | 0x60F | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

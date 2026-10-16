@@ -16,6 +16,8 @@ Audio amplifier message: alert matrix1. This page documents the 60 signals of AD
 | Ethernet-side id | 0x551 (1361) |
 | ECU | [Audio amplifier](../../adsp.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | ADSP |

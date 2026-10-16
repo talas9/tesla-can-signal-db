@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_lightStatus (0x3E3) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Right body controller message: light status. Tesla Model 3 / Model Y CAN bus message VCRIGHT_lightStatus (0x3E3) of Right body controller, firmware 2025.20.8, 13 signals (VCRIGHT_brakeLightStatus, VCRIGHT_tailLightStatus, VCRIGHT_turnSignalStatus, VCRIGHT_reverseLightStatus and 9 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_lightStatus (0x3E3) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Right body controller message: light status. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_lightStatus (0x3E3) of Right body controller, firmware 2025.20.8, 13 signals (VCRIGHT_brakeLightStatus, VCRIGHT_tailLightStatus, VCRIGHT_turnSignalStatus, VCRIGHT_reverseLightStatus and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_lightStatus (0x3E3) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCRIGHT_lightStatus (0x3E3) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Right body controller message: light status; frame length observed on a vehicle bus. This page documents the 13 signals of VCRIGHT_lightStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Right body controller message: light status; frame length observed on a vehicle bus. This page documents the 13 signals of VCRIGHT_lightStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: light status; frame length observed on a vehicle 
 | Message name | `VCRIGHT_lightStatus` |
 | CAN id | 0x3E3 (995) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: light status; frame length observed on a vehicle 
 
 ## Signals of VCRIGHT_lightStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_lightStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_lightStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_lightStatus`: start bit and 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

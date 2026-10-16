@@ -16,6 +16,8 @@ Air suspension controller message: uds response. This page documents the 1 signa
 | Ethernet-side id | 0x65B (1627) |
 | ECU | [Air suspension controller](../../tas.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | TAS |

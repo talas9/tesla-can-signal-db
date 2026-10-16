@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VEH_billing (0x453) — VEH ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "VEH ECU message: billing. Tesla Model 3 / Model Y CAN bus message VEH_billing (0x453) of VEH ECU, firmware 2025.20.8, 1 signals (VEH_pricebookId). Bit layout, scaling, units and value tables."
+title: "VEH_billing (0x453) — VEH ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "VEH ECU message: billing. Tesla Model 3 / Model Y (union) CAN bus message VEH_billing (0x453) of VEH ECU, firmware 2025.20.8, 1 signals (VEH_pricebookId). Bit layout, scaling, units and value tables."
 ---
 
-# VEH_billing (0x453) — VEH ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VEH_billing (0x453) — VEH ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-VEH ECU message: billing; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 1 signals of VEH_billing as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+VEH ECU message: billing; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 1 signals of VEH_billing as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VEH ECU message: billing; forwarded onto this bus by the gateway; frame length o
 | Message name | `VEH_billing` |
 | CAN id | 0x453 (1107) |
 | ECU | [VEH ECU](../../veh.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ VEH ECU message: billing; forwarded onto this bus by the gateway; frame length o
 
 ## Signals of VEH_billing
 
-Tesla Model 3 / Model Y CAN bus signals in `VEH_billing`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VEH_billing`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VEH_billing`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_LVBMS_info (0x737) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Front body controller message: LVBMS info. Tesla Model 3 / Model Y CAN bus message VCFRONT_LVBMS_info (0x737) of Front body controller, firmware 2025.20.8, 7 signals (VCFRONT_LVBMS_InfoIndex, VCFRONT_LVBMS_PcbaId, VCFRONT_LVBMS_AssemblyId, VCFRONT_LVBMS_SubUsageId and 3 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_LVBMS_info (0x737) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Front body controller message: LVBMS info. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_LVBMS_info (0x737) of Front body controller, firmware 2025.20.8, 7 signals (VCFRONT_LVBMS_InfoIndex, VCFRONT_LVBMS_PcbaId, VCFRONT_LVBMS_AssemblyId, VCFRONT_LVBMS_SubUsageId and 3 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_LVBMS_info (0x737) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCFRONT_LVBMS_info (0x737) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Front body controller message: LVBMS info; frame length observed on a vehicle bus. This page documents the 7 signals of VCFRONT_LVBMS_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Front body controller message: LVBMS info; frame length observed on a vehicle bus. This page documents the 7 signals of VCFRONT_LVBMS_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: LVBMS info; frame length observed on a vehicle bu
 | Message name | `VCFRONT_LVBMS_info` |
 | CAN id | 0x737 (1847) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: LVBMS info; frame length observed on a vehicle bu
 
 ## Signals of VCFRONT_LVBMS_info
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVBMS_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_LVBMS_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_LVBMS_info`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

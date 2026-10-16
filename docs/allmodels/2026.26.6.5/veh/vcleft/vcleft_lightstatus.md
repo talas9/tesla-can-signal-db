@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_lightStatus (0x3E2) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Left body controller message: light status. Tesla Model 3 / Model Y CAN bus message VCLEFT_lightStatus (0x3E2) of Left body controller, firmware 2026.26.6.5, 27 signals (VCLEFT_brakeLightStatus, VCLEFT_tailLightStatus, VCLEFT_turnSignalStatus, VCLEFT_FLMapLightStatus and 23 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_lightStatus (0x3E2) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Left body controller message: light status. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_lightStatus (0x3E2) of Left body controller, firmware 2026.26.6.5, 27 signals (VCLEFT_brakeLightStatus, VCLEFT_tailLightStatus, VCLEFT_turnSignalStatus, VCLEFT_FLMapLightStatus and 23 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_lightStatus (0x3E2) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCLEFT_lightStatus (0x3E2) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Left body controller message: light status; frame length observed on a vehicle bus. This page documents the 27 signals of VCLEFT_lightStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Left body controller message: light status; frame length observed on a vehicle bus. This page documents the 27 signals of VCLEFT_lightStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: light status; frame length observed on a vehicle b
 | Message name | `VCLEFT_lightStatus` |
 | CAN id | 0x3E2 (994) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: light status; frame length observed on a vehicle b
 
 ## Signals of VCLEFT_lightStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_lightStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_lightStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -59,7 +61,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_lightStatus`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

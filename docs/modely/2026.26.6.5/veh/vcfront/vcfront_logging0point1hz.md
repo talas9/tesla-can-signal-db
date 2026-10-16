@@ -16,6 +16,8 @@ Front body controller message: logging0point1 hz; frame length observed on a veh
 | CAN id | 0x709 (1801) |
 | ECU | [Front body controller](../../vcfront.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |

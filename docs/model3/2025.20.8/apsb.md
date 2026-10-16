@@ -8,6 +8,8 @@ description: "Tesla Model 3 APSB CAN bus messages and signals of the APSB ECU (A
 
 All 3 messages of the APSB ECU (APSB) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`APSB_powerStateInputs`](eth/apsb/apsb_powerstateinputs.md) | ETH | 0x3E0 | 3 | 100 ms | 6 |
@@ -15,4 +17,3 @@ All 3 messages of the APSB ECU (APSB) documented for Tesla Model 3 firmware 2025
 | [`APSB_status`](eth/apsb/apsb_status.md) | ETH | 0x3CB | 8 | 500 ms | 20 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

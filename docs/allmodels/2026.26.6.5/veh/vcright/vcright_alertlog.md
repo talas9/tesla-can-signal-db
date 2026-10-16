@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_alertLog (0x550) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Right body controller message: alert log. Tesla Model 3 / Model Y CAN bus message VCRIGHT_alertLog (0x550) of Right body controller, firmware 2026.26.6.5, 1366 signals (VCRIGHT_alertID, VCRIGHT_alertState, VCRIGHT_a001_InternalWatchdog, VCRIGHT_a010_UnderVoltageDetected and 1362 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_alertLog (0x550) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Right body controller message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_alertLog (0x550) of Right body controller, firmware 2026.26.6.5, 1366 signals (VCRIGHT_alertID, VCRIGHT_alertState, VCRIGHT_a001_InternalWatchdog, VCRIGHT_a010_UnderVoltageDetected and 1362 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_alertLog (0x550) — Right body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCRIGHT_alertLog (0x550) — Right body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Right body controller message: alert log; frame length observed on a vehicle bus. This page documents the 1366 signals of VCRIGHT_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Right body controller message: alert log; frame length observed on a vehicle bus. This page documents the 1366 signals of VCRIGHT_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: alert log; frame length observed on a vehicle bus
 | Message name | `VCRIGHT_alertLog` |
 | CAN id | 0x550 (1360) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: alert log; frame length observed on a vehicle bus
 
 ## Signals of VCRIGHT_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -1402,7 +1404,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_alertLog`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

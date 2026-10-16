@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "RADC_alertMatrix0 (0x502) — Radar, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Radar message: alert matrix0. Tesla Model 3 / Model Y CAN bus message RADC_alertMatrix0 (0x502) of Radar, firmware 2026.26.6.5, 55 signals (RADC_a001_can1BusOff, RADC_a002_ecuAdcError, RADC_a003_ecuBistDisabled, RADC_a004_ecuCrcHwError and 51 more). Bit layout, scaling, units and value tables."
+title: "RADC_alertMatrix0 (0x502) — Radar, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Radar message: alert matrix0. Tesla Model 3 / Model Y (union) CAN bus message RADC_alertMatrix0 (0x502) of Radar, firmware 2026.26.6.5, 55 signals (RADC_a001_can1BusOff, RADC_a002_ecuAdcError, RADC_a003_ecuBistDisabled, RADC_a004_ecuCrcHwError and 51 more). Bit layout, scaling, units and value tables."
 ---
 
-# RADC_alertMatrix0 (0x502) — Radar, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# RADC_alertMatrix0 (0x502) — Radar, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Radar message: alert matrix0; frame length from the layout, not yet observed on a vehicle bus. This page documents the 55 signals of RADC_alertMatrix0 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Radar message: alert matrix0; frame length from the layout, not yet observed on a vehicle bus. This page documents the 55 signals of RADC_alertMatrix0 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Radar message: alert matrix0; frame length from the layout, not yet observed on 
 | Message name | `RADC_alertMatrix0` |
 | CAN id | 0x502 (1282) |
 | ECU | [Radar](../../radc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | RADC |
@@ -25,7 +27,7 @@ Radar message: alert matrix0; frame length from the layout, not yet observed on 
 
 ## Signals of RADC_alertMatrix0
 
-Tesla Model 3 / Model Y CAN bus signals in `RADC_alertMatrix0`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `RADC_alertMatrix0`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -87,7 +89,7 @@ Tesla Model 3 / Model Y CAN bus signals in `RADC_alertMatrix0`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

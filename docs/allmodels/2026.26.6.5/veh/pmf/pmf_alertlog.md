@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PMF_alertLog (0x525) — PMF ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "PMF ECU message: alert log. Tesla Model 3 / Model Y CAN bus message PMF_alertLog (0x525) of PMF ECU, firmware 2026.26.6.5, 211 signals (PMF_alertID, PMF_alertState, PMF_a001_w0, PMF_a001_w1 and 207 more). Bit layout, scaling, units and value tables."
+title: "PMF_alertLog (0x525) — PMF ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "PMF ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message PMF_alertLog (0x525) of PMF ECU, firmware 2026.26.6.5, 211 signals (PMF_alertID, PMF_alertState, PMF_a001_w0, PMF_a001_w1 and 207 more). Bit layout, scaling, units and value tables."
 ---
 
-# PMF_alertLog (0x525) — PMF ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PMF_alertLog (0x525) — PMF ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-PMF ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 211 signals of PMF_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+PMF ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 211 signals of PMF_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PMF ECU message: alert log; frame length from the layout, not yet observed on a 
 | Message name | `PMF_alertLog` |
 | CAN id | 0x525 (1317) |
 | ECU | [PMF ECU](../../pmf.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PMF |
@@ -25,7 +27,7 @@ PMF ECU message: alert log; frame length from the layout, not yet observed on a 
 
 ## Signals of PMF_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `PMF_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PMF_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -247,7 +249,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PMF_alertLog`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

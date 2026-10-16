@@ -8,6 +8,8 @@ description: "Tesla Model 3 UDS CAN bus messages and signals of the UDS ECU (UDS
 
 All 44 messages of the UDS ECU (UDS) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`UDS_bmsRequest`](veh/uds/uds_bmsrequest.md) | VEH | 0x602 | 8 |  | 1 |
@@ -56,4 +58,3 @@ All 44 messages of the UDS ECU (UDS) documented for Tesla Model 3 firmware 2026.
 | [`UDS_thcRequest`](eth/uds/uds_thcrequest.md) | ETH | 0x60F | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

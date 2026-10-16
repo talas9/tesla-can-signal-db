@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIF_thermalControl (0x557) — Front drive inverter, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Front drive inverter message: thermal control. Tesla Model 3 / Model Y CAN bus message DIF_thermalControl (0x557) of Front drive inverter, firmware 2025.20.8, 6 signals (DIF_passiveInletTempReq, DIF_activeInletTempReq, DIF_coolantFlowReq, DIF_oilFlowReq and 2 more). Bit layout, scaling, units and value tables."
+title: "DIF_thermalControl (0x557) — Front drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Front drive inverter message: thermal control. Tesla Model 3 / Model Y (union) CAN bus message DIF_thermalControl (0x557) of Front drive inverter, firmware 2025.20.8, 6 signals (DIF_passiveInletTempReq, DIF_activeInletTempReq, DIF_coolantFlowReq, DIF_oilFlowReq and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIF_thermalControl (0x557) — Front drive inverter, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# DIF_thermalControl (0x557) — Front drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Front drive inverter message: thermal control; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of DIF_thermalControl as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Front drive inverter message: thermal control; frame length from the layout, not yet observed on a vehicle bus. This page documents the 6 signals of DIF_thermalControl as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front drive inverter message: thermal control; frame length from the layout, not
 | Message name | `DIF_thermalControl` |
 | CAN id | 0x557 (1367) |
 | ECU | [Front drive inverter](../../dif.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DIF |
@@ -25,7 +27,7 @@ Front drive inverter message: thermal control; frame length from the layout, not
 
 ## Signals of DIF_thermalControl
 
-Tesla Model 3 / Model Y CAN bus signals in `DIF_thermalControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIF_thermalControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIF_thermalControl`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

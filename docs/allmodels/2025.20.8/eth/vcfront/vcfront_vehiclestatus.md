@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_vehicleStatus (0x3A1) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Front body controller message: vehicle status. Ethernet-side message VCFRONT_vehicleStatus of Front body controller for Tesla Model 3 / Model Y firmware 2025.20.8, 34 signals (VCFRONT_vehicleStatusMuxIndex, VCFRONT_vehicleStatusCounter, VCFRONT_vehicleStatusChecksum, VCFRONT_preconditionRequest and 30 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_vehicleStatus (0x3A1) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Front body controller message: vehicle status. Ethernet-side message VCFRONT_vehicleStatus of Front body controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 34 signals (VCFRONT_vehicleStatusMuxIndex, VCFRONT_vehicleStatusCounter, VCFRONT_vehicleStatusChecksum, VCFRONT_preconditionRequest and 30 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_vehicleStatus (0x3A1) — Front body controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCFRONT_vehicleStatus (0x3A1) — Front body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Front body controller message: vehicle status. This page documents the 34 signals of VCFRONT_vehicleStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Front body controller message: vehicle status. This page documents the 34 signals of VCFRONT_vehicleStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: vehicle status. This page documents the 34 signal
 | Message name | `VCFRONT_vehicleStatus` |
 | Ethernet-side id | 0x3A1 (929) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: vehicle status. This page documents the 34 signal
 
 ## Signals of VCFRONT_vehicleStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_vehicleStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_vehicleStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -70,7 +72,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_vehicleStatus`: start bit an
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

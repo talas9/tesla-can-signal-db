@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_alertLog (0x534) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: alert log. Tesla Model 3 / Model Y CAN bus message VCFRONT_alertLog (0x534) of Front body controller, firmware 2026.26.6.5, 2198 signals (VCFRONT_alertID, VCFRONT_alertState, VCFRONT_a001_InternalWatchdog, VCFRONT_a004_APPWatchdogFaultOrMIA and 2194 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_alertLog (0x534) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_alertLog (0x534) of Front body controller, firmware 2026.26.6.5, 2198 signals (VCFRONT_alertID, VCFRONT_alertState, VCFRONT_a001_InternalWatchdog, VCFRONT_a004_APPWatchdogFaultOrMIA and 2194 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_alertLog (0x534) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_alertLog (0x534) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: alert log; frame length observed on a vehicle bus. This page documents the 2198 signals of VCFRONT_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: alert log; frame length observed on a vehicle bus. This page documents the 2198 signals of VCFRONT_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: alert log; frame length observed on a vehicle bus
 | Message name | `VCFRONT_alertLog` |
 | CAN id | 0x534 (1332) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: alert log; frame length observed on a vehicle bus
 
 ## Signals of VCFRONT_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -2234,7 +2236,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_alertLog`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

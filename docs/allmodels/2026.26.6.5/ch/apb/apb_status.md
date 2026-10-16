@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APB_status (0x258) — APB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "APB ECU message: status. Tesla Model 3 / Model Y CAN bus message APB_status (0x258) of APB ECU, firmware 2026.26.6.5, 23 signals (APB_watchdogState, APB_fusedState, APB_cameraHeaterRequest, APB_factorySummonStatus and 19 more). Bit layout, scaling, units and value tables."
+title: "APB_status (0x258) — APB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "APB ECU message: status. Tesla Model 3 / Model Y (union) CAN bus message APB_status (0x258) of APB ECU, firmware 2026.26.6.5, 23 signals (APB_watchdogState, APB_fusedState, APB_cameraHeaterRequest, APB_factorySummonStatus and 19 more). Bit layout, scaling, units and value tables."
 ---
 
-# APB_status (0x258) — APB ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APB_status (0x258) — APB ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-APB ECU message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 23 signals of APB_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+APB ECU message: status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 23 signals of APB_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ APB ECU message: status; frame length from the layout, not yet observed on a veh
 | Message name | `APB_status` |
 | CAN id | 0x258 (600) |
 | ECU | [APB ECU](../../apb.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APB |
@@ -25,7 +27,7 @@ APB ECU message: status; frame length from the layout, not yet observed on a veh
 
 ## Signals of APB_status
 
-Tesla Model 3 / Model Y CAN bus signals in `APB_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APB_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -55,7 +57,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APB_status`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

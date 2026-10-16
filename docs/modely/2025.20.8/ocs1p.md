@@ -8,6 +8,8 @@ description: "Tesla Model Y OCS1P CAN bus messages and signals of the Occupant c
 
 All 5 messages of the Occupant classification system (OCS1P) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`OCS1P_alertLog`](eth/ocs1p/ocs1p_alertlog.md) | ETH | 0x595 | 8 |  | 22 |
@@ -17,4 +19,3 @@ All 5 messages of the Occupant classification system (OCS1P) documented for Tesl
 | [`OCS1P_udsResponse`](eth/ocs1p/ocs1p_udsresponse.md) | ETH | 0x653 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

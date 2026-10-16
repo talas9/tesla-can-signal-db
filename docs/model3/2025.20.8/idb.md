@@ -8,6 +8,8 @@ description: "Tesla Model 3 IDB CAN bus messages and signals of the IDB ECU (IDB
 
 All 3 messages of the IDB ECU (IDB) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`IDB_alertLog`](eth/idb/idb_alertlog.md) | ETH | 0x5BE | 8 |  | 101 |
@@ -15,4 +17,3 @@ All 3 messages of the IDB ECU (IDB) documented for Tesla Model 3 firmware 2025.2
 | [`IDB_info`](eth/idb/idb_info.md) | ETH | 0x33C | 8 | 10000 ms | 5 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

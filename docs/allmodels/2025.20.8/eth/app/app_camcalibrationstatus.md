@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_camCalibrationStatus (0x7FE) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Driver assistance computer (primary) message: cam calibration status. Ethernet-side message APP_camCalibrationStatus of Driver assistance computer (primary) for Tesla Model 3 / Model Y firmware 2025.20.8, 41 signals (APP_cameraPosition, APP_mainCamExtPitchCal, APP_mainCamExtYawCal, APP_mainCalibTime and 37 more). Bit layout, scaling, units and value tables."
+title: "APP_camCalibrationStatus (0x7FE) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Driver assistance computer (primary) message: cam calibration status. Ethernet-side message APP_camCalibrationStatus of Driver assistance computer (primary) for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 41 signals (APP_cameraPosition, APP_mainCamExtPitchCal, APP_mainCamExtYawCal, APP_mainCalibTime and 37 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_camCalibrationStatus (0x7FE) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 ETH
+# APP_camCalibrationStatus (0x7FE) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Driver assistance computer (primary) message: cam calibration status. This page documents the 41 signals of APP_camCalibrationStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Driver assistance computer (primary) message: cam calibration status. This page documents the 41 signals of APP_camCalibrationStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: cam calibration status. This page 
 | Message name | `APP_camCalibrationStatus` |
 | Ethernet-side id | 0x7FE (2046) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: cam calibration status. This page 
 
 ## Signals of APP_camCalibrationStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_camCalibrationStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_camCalibrationStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -77,7 +79,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_camCalibrationStatus`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

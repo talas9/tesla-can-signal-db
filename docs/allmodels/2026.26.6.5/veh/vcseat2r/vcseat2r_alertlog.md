@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEAT2R_alertLog (0x55E) — VCSEAT2R ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VCSEAT2R ECU message: alert log. Tesla Model 3 / Model Y CAN bus message VCSEAT2R_alertLog (0x55E) of VCSEAT2R ECU, firmware 2026.26.6.5, 520 signals (VCSEAT2R_alertID, VCSEAT2R_alertState, VCSEAT2R_a001_InternalWatchdog, VCSEAT2R_a010_UnderVoltDetected and 516 more). Bit layout, scaling, units and value tables."
+title: "VCSEAT2R_alertLog (0x55E) — VCSEAT2R ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VCSEAT2R ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCSEAT2R_alertLog (0x55E) of VCSEAT2R ECU, firmware 2026.26.6.5, 520 signals (VCSEAT2R_alertID, VCSEAT2R_alertState, VCSEAT2R_a001_InternalWatchdog, VCSEAT2R_a010_UnderVoltDetected and 516 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEAT2R_alertLog (0x55E) — VCSEAT2R ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCSEAT2R_alertLog (0x55E) — VCSEAT2R ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VCSEAT2R ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 520 signals of VCSEAT2R_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VCSEAT2R ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 520 signals of VCSEAT2R_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCSEAT2R ECU message: alert log; frame length from the layout, not yet observed 
 | Message name | `VCSEAT2R_alertLog` |
 | CAN id | 0x55E (1374) |
 | ECU | [VCSEAT2R ECU](../../vcseat2r.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEAT2R |
@@ -25,7 +27,7 @@ VCSEAT2R ECU message: alert log; frame length from the layout, not yet observed 
 
 ## Signals of VCSEAT2R_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEAT2R_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEAT2R_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -556,7 +558,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEAT2R_alertLog`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

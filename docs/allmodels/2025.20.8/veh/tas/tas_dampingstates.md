@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TAS_dampingStates (0x576) — Air suspension controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Air suspension controller message: damping states. Tesla Model 3 / Model Y CAN bus message TAS_dampingStates (0x576) of Air suspension controller, firmware 2025.20.8, 23 signals (TAS_endstopState, TAS_continuousControlState, TAS_activeTireTune, TAS_roughnessRaiseReason and 19 more). Bit layout, scaling, units and value tables."
+title: "TAS_dampingStates (0x576) — Air suspension controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Air suspension controller message: damping states. Tesla Model 3 / Model Y (union) CAN bus message TAS_dampingStates (0x576) of Air suspension controller, firmware 2025.20.8, 23 signals (TAS_endstopState, TAS_continuousControlState, TAS_activeTireTune, TAS_roughnessRaiseReason and 19 more). Bit layout, scaling, units and value tables."
 ---
 
-# TAS_dampingStates (0x576) — Air suspension controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# TAS_dampingStates (0x576) — Air suspension controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Air suspension controller message: damping states; frame length from the layout, not yet observed on a vehicle bus. This page documents the 23 signals of TAS_dampingStates as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Air suspension controller message: damping states; frame length from the layout, not yet observed on a vehicle bus. This page documents the 23 signals of TAS_dampingStates as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Air suspension controller message: damping states; frame length from the layout,
 | Message name | `TAS_dampingStates` |
 | CAN id | 0x576 (1398) |
 | ECU | [Air suspension controller](../../tas.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | TAS |
@@ -25,7 +27,7 @@ Air suspension controller message: damping states; frame length from the layout,
 
 ## Signals of TAS_dampingStates
 
-Tesla Model 3 / Model Y CAN bus signals in `TAS_dampingStates`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TAS_dampingStates`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -55,7 +57,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TAS_dampingStates`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

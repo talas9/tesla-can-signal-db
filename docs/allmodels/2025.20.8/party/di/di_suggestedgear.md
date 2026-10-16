@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_suggestedGear (0x255) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Drive inverter message: suggested gear. Tesla Model 3 / Model Y CAN bus message DI_suggestedGear (0x255) of Drive inverter, firmware 2025.20.8, 10 signals (DI_lastQualifiedGear, DI_lastDrivingGear, DI_distDrivenInGear, DI_frontBlocked and 6 more). Bit layout, scaling, units and value tables."
+title: "DI_suggestedGear (0x255) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Drive inverter message: suggested gear. Tesla Model 3 / Model Y (union) CAN bus message DI_suggestedGear (0x255) of Drive inverter, firmware 2025.20.8, 10 signals (DI_lastQualifiedGear, DI_lastDrivingGear, DI_distDrivenInGear, DI_frontBlocked and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_suggestedGear (0x255) — Drive inverter, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# DI_suggestedGear (0x255) — Drive inverter, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Drive inverter message: suggested gear; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of DI_suggestedGear as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Drive inverter message: suggested gear; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of DI_suggestedGear as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: suggested gear; frame length from the layout, not yet ob
 | Message name | `DI_suggestedGear` |
 | CAN id | 0x255 (597) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: suggested gear; frame length from the layout, not yet ob
 
 ## Signals of DI_suggestedGear
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_suggestedGear`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_suggestedGear`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -42,7 +44,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_suggestedGear`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Restraint control module (RCM) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y RCM CAN bus messages and signals of the Restraint control module (RCM) for firmware 2025.20.8: 9 messages, 1766 signals with bit layout, scaling and value tables."
+title: "Restraint control module (RCM) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) RCM CAN bus messages and signals of the Restraint control module (RCM) for firmware 2025.20.8: 9 messages, 1766 signals with bit layout, scaling and value tables."
 ---
 
-# Restraint control module (RCM) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Restraint control module (RCM) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 9 messages of the Restraint control module (RCM) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 9 messages of the Restraint control module (RCM) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -21,4 +23,3 @@ All 9 messages of the Restraint control module (RCM) documented for Tesla Model 
 | [`RCM_udsResponse`](eth/rcm/rcm_udsresponse.md) | ETH | 0x651 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

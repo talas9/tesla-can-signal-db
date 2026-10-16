@@ -16,6 +16,8 @@ Driver assistance computer message: body controls; frame length observed on a ve
 | CAN id | 0x3E9 (1001) |
 | ECU | [Driver assistance computer](../../das.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DAS |

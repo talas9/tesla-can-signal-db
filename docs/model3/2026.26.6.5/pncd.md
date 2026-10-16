@@ -8,9 +8,10 @@ description: "Tesla Model 3 PNCD CAN bus messages and signals of the PNCD ECU (P
 
 All 1 messages of the PNCD ECU (PNCD) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PNCD_IsoTpPipeToCp`](veh/pncd/pncd_isotppipetocp.md) | VEH | 0x6E6 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

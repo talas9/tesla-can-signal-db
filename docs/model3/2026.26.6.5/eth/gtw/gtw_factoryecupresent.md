@@ -16,6 +16,8 @@ Gateway message: factory ecu present. This page documents the 28 signals of GTW_
 | Ethernet-side id | 0x560 (1376) |
 | ECU | [Gateway](../../gtw.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | GTW |

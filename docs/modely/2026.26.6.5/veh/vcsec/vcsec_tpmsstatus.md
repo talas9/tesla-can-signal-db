@@ -16,6 +16,8 @@ Vehicle security controller message: TPMS status; frame length from the layout, 
 | CAN id | 0x23A (570) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |

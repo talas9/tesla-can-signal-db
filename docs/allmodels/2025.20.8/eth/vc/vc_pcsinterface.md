@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VC_pcsInterface (0x441) — VC ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "VC ECU message: pcs interface. Ethernet-side message VC_pcsInterface of VC ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 12 signals (VC_pcsInterfaceMuxIndex, VC_pcsInterfaceCounter, VC_pcsInterfaceChecksum, VC_pcsLVVoltageTarget and 8 more). Bit layout, scaling, units and value tables."
+title: "VC_pcsInterface (0x441) — VC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "VC ECU message: pcs interface. Ethernet-side message VC_pcsInterface of VC ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 12 signals (VC_pcsInterfaceMuxIndex, VC_pcsInterfaceCounter, VC_pcsInterfaceChecksum, VC_pcsLVVoltageTarget and 8 more). Bit layout, scaling, units and value tables."
 ---
 
-# VC_pcsInterface (0x441) — VC ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VC_pcsInterface (0x441) — VC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-VC ECU message: pcs interface. This page documents the 12 signals of VC_pcsInterface as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+VC ECU message: pcs interface. This page documents the 12 signals of VC_pcsInterface as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ VC ECU message: pcs interface. This page documents the 12 signals of VC_pcsInter
 | Message name | `VC_pcsInterface` |
 | Ethernet-side id | 0x441 (1089) |
 | ECU | [VC ECU](../../vc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VC |
@@ -25,7 +27,7 @@ VC ECU message: pcs interface. This page documents the 12 signals of VC_pcsInter
 
 ## Signals of VC_pcsInterface
 
-Tesla Model 3 / Model Y CAN bus signals in `VC_pcsInterface`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VC_pcsInterface`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VC_pcsInterface`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

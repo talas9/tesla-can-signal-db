@@ -16,6 +16,8 @@ Drive inverter message: alert matrix1. This page documents the 48 signals of DI_
 | Ethernet-side id | 0x367 (871) |
 | ECU | [Drive inverter](../../di.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DI |

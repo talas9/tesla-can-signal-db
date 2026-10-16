@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TCU2_log (0x584) — TCU2 ECU, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "TCU2 ECU message: log. Ethernet-side message TCU2_log of TCU2 ECU for Tesla Model 3 / Model Y firmware 2026.26.6.5, 32 signals (TCU2_logMux, TCU2_cpuTemp, TCU2_cpuUsage, TCU2_mdmCoreTemperature and 28 more). Bit layout, scaling, units and value tables."
+title: "TCU2_log (0x584) — TCU2 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "TCU2 ECU message: log. Ethernet-side message TCU2_log of TCU2 ECU for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 32 signals (TCU2_logMux, TCU2_cpuTemp, TCU2_cpuUsage, TCU2_mdmCoreTemperature and 28 more). Bit layout, scaling, units and value tables."
 ---
 
-# TCU2_log (0x584) — TCU2 ECU, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# TCU2_log (0x584) — TCU2 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-TCU2 ECU message: log. This page documents the 32 signals of TCU2_log as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+TCU2 ECU message: log. This page documents the 32 signals of TCU2_log as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ TCU2 ECU message: log. This page documents the 32 signals of TCU2_log as defined
 | Message name | `TCU2_log` |
 | Ethernet-side id | 0x584 (1412) |
 | ECU | [TCU2 ECU](../../tcu2.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | TCU2 |
@@ -25,7 +27,7 @@ TCU2 ECU message: log. This page documents the 32 signals of TCU2_log as defined
 
 ## Signals of TCU2_log
 
-Tesla Model 3 / Model Y CAN bus signals in `TCU2_log`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TCU2_log`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -68,7 +70,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TCU2_log`: start bit and length, byt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

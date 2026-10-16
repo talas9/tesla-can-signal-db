@@ -16,6 +16,8 @@ Left body controller message: restraint status; frame length from the layout, no
 | CAN id | 0x30A (778) |
 | ECU | [Left body controller](../../vcleft.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCLEFT |

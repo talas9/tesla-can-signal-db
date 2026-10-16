@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Driver assistance computer (primary) (APP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y APP CAN bus messages and signals of the Driver assistance computer (primary) (APP) for firmware 2025.20.8: 24 messages, 1643 signals with bit layout, scaling and value tables."
+title: "Driver assistance computer (primary) (APP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) APP CAN bus messages and signals of the Driver assistance computer (primary) (APP) for firmware 2025.20.8: 24 messages, 1643 signals with bit layout, scaling and value tables."
 ---
 
-# Driver assistance computer (primary) (APP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Driver assistance computer (primary) (APP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 24 messages of the Driver assistance computer (primary) (APP) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 24 messages of the Driver assistance computer (primary) (APP) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -36,4 +38,3 @@ All 24 messages of the Driver assistance computer (primary) (APP) documented for
 | [`APP_warningMatrix6`](eth/app/app_warningmatrix6.md) | ETH | 0x47D | 8 | 1000 ms | 18 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

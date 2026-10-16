@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PARK_pscStatus (0x21E) — Parking assist sensors, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Parking assist sensors message: psc status. Tesla Model 3 / Model Y CAN bus message PARK_pscStatus (0x21E) of Parking assist sensors, firmware 2025.20.8, 15 signals (PARK_pscParkStatus, PARK_pscParkAbortReason, PARK_pscParallelSpace, PARK_pscCrossSpace and 11 more). Bit layout, scaling, units and value tables."
+title: "PARK_pscStatus (0x21E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Parking assist sensors message: psc status. Tesla Model 3 / Model Y (union) CAN bus message PARK_pscStatus (0x21E) of Parking assist sensors, firmware 2025.20.8, 15 signals (PARK_pscParkStatus, PARK_pscParkAbortReason, PARK_pscParallelSpace, PARK_pscCrossSpace and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# PARK_pscStatus (0x21E) — Parking assist sensors, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# PARK_pscStatus (0x21E) — Parking assist sensors, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Parking assist sensors message: psc status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of PARK_pscStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Parking assist sensors message: psc status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 15 signals of PARK_pscStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Parking assist sensors message: psc status; frame length from the layout, not ye
 | Message name | `PARK_pscStatus` |
 | CAN id | 0x21E (542) |
 | ECU | [Parking assist sensors](../../park.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |
@@ -25,7 +27,7 @@ Parking assist sensors message: psc status; frame length from the layout, not ye
 
 ## Signals of PARK_pscStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `PARK_pscStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PARK_pscStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PARK_pscStatus`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

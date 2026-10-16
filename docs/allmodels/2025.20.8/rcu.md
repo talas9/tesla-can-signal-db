@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "RCU ECU (RCU) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y RCU CAN bus messages and signals of the RCU ECU (RCU) for firmware 2025.20.8: 3 messages, 79 signals with bit layout, scaling and value tables."
+title: "RCU ECU (RCU) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) RCU CAN bus messages and signals of the RCU ECU (RCU) for firmware 2025.20.8: 3 messages, 79 signals with bit layout, scaling and value tables."
 ---
 
-# RCU ECU (RCU) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# RCU ECU (RCU) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 3 messages of the RCU ECU (RCU) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 3 messages of the RCU ECU (RCU) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -15,4 +17,3 @@ All 3 messages of the RCU ECU (RCU) documented for Tesla Model 3 / Model Y firmw
 | [`RCU_alertMatrix`](eth/rcu/rcu_alertmatrix.md) | ETH | 0x3E6 | 8 | 1000 ms | 59 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

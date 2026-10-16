@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3S_alertLog (0x591) — Electric power steering (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Electric power steering (secondary) message: alert log. Tesla Model 3 / Model Y CAN bus message EPAS3S_alertLog (0x591) of Electric power steering (secondary), firmware 2026.26.6.5, 35 signals (EPAS3S_alertID, EPAS3S_alertState, EPAS3S_a147_transitionReason, EPAS3S_a149_pcbTemp and 31 more). Bit layout, scaling, units and value tables."
+title: "EPAS3S_alertLog (0x591) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Electric power steering (secondary) message: alert log. Tesla Model 3 / Model Y (union) CAN bus message EPAS3S_alertLog (0x591) of Electric power steering (secondary), firmware 2026.26.6.5, 35 signals (EPAS3S_alertID, EPAS3S_alertState, EPAS3S_a147_transitionReason, EPAS3S_a149_pcbTemp and 31 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3S_alertLog (0x591) — Electric power steering (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# EPAS3S_alertLog (0x591) — Electric power steering (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Electric power steering (secondary) message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 35 signals of EPAS3S_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Electric power steering (secondary) message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 35 signals of EPAS3S_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (secondary) message: alert log; frame length from the la
 | Message name | `EPAS3S_alertLog` |
 | CAN id | 0x591 (1425) |
 | ECU | [Electric power steering (secondary)](../../epas3s.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | EPAS3S |
@@ -25,7 +27,7 @@ Electric power steering (secondary) message: alert log; frame length from the la
 
 ## Signals of EPAS3S_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3S_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -71,7 +73,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3S_alertLog`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

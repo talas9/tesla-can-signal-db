@@ -8,10 +8,11 @@ description: "Tesla Model 3 EPASTS CAN bus messages and signals of the EPASTS EC
 
 All 2 messages of the EPASTS ECU (EPASTS) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`EPASTS_alertLog`](eth/epasts/epasts_alertlog.md) | ETH | 0x594 | 8 |  | 277 |
 | [`EPASTS_alertMatrix`](eth/epasts/epasts_alertmatrix.md) | ETH | 0x398 | 8 | 1000 ms | 271 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

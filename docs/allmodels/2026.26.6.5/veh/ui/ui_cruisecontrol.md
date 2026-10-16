@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_cruiseControl (0x213) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: cruise control. Tesla Model 3 / Model Y CAN bus message UI_cruiseControl (0x213) of Touchscreen user interface computer, firmware 2026.26.6.5, 4 signals (UI_cruiseSpeedCommand, UI_smartSummonRequest, UI_cruiseControlCounter, UI_cruiseControlChecksum). Bit layout, scaling, units and value tables."
+title: "UI_cruiseControl (0x213) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: cruise control. Tesla Model 3 / Model Y (union) CAN bus message UI_cruiseControl (0x213) of Touchscreen user interface computer, firmware 2026.26.6.5, 4 signals (UI_cruiseSpeedCommand, UI_smartSummonRequest, UI_cruiseControlCounter, UI_cruiseControlChecksum). Bit layout, scaling, units and value tables."
 ---
 
-# UI_cruiseControl (0x213) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_cruiseControl (0x213) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: cruise control; forwarded onto this bus by the gateway; layout from firmware 2025.20.8, the layout the frames on this bus follow; frame length observed on a vehicle bus. This page documents the 4 signals of UI_cruiseControl as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: cruise control; forwarded onto this bus by the gateway; layout from firmware 2025.20.8, the layout the frames on this bus follow; frame length observed on a vehicle bus. This page documents the 4 signals of UI_cruiseControl as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: cruise control; forwarded onto this
 | Message name | `UI_cruiseControl` |
 | CAN id | 0x213 (531) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: cruise control; forwarded onto this
 
 ## Signals of UI_cruiseControl
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_cruiseControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_cruiseControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_cruiseControl`: start bit and len
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

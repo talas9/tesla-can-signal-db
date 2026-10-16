@@ -8,6 +8,8 @@ description: "Tesla Model 3 PMR CAN bus messages and signals of the PMR ECU (PMR
 
 All 5 messages of the PMR ECU (PMR) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PMR_alertLog`](veh/pmr/pmr_alertlog.md) | VEH | 0x5A6 | 8 |  | 230 |
@@ -17,4 +19,3 @@ All 5 messages of the PMR ECU (PMR) documented for Tesla Model 3 firmware 2026.2
 | [`PMR_mfgData`](party/pmr/pmr_mfgdata.md) | PARTY | 0x554 | 7 | 1000 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

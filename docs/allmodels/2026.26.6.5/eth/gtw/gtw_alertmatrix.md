@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "GTW_alertMatrix (0x3E) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Gateway message: alert matrix. Ethernet-side message GTW_alertMatrix of Gateway for Tesla Model 3 / Model Y firmware 2026.26.6.5, 268 signals (GTW_matrixIndex, GTW_w001_canEthTxQueue, GTW_w002_taskError, GTW_w003_logWriteRecord and 264 more). Bit layout, scaling, units and value tables."
+title: "GTW_alertMatrix (0x3E) — Gateway, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Gateway message: alert matrix. Ethernet-side message GTW_alertMatrix of Gateway for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 268 signals (GTW_matrixIndex, GTW_w001_canEthTxQueue, GTW_w002_taskError, GTW_w003_logWriteRecord and 264 more). Bit layout, scaling, units and value tables."
 ---
 
-# GTW_alertMatrix (0x3E) — Gateway, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# GTW_alertMatrix (0x3E) — Gateway, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Gateway message: alert matrix. This page documents the 268 signals of GTW_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Gateway message: alert matrix. This page documents the 268 signals of GTW_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Gateway message: alert matrix. This page documents the 268 signals of GTW_alertM
 | Message name | `GTW_alertMatrix` |
 | Ethernet-side id | 0x3E (62) |
 | ECU | [Gateway](../../gtw.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Gateway message: alert matrix. This page documents the 268 signals of GTW_alertM
 
 ## Signals of GTW_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `GTW_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `GTW_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -304,7 +306,7 @@ Tesla Model 3 / Model Y CAN bus signals in `GTW_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

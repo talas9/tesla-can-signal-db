@@ -8,6 +8,8 @@ description: "Tesla Model 3 RCM CAN bus messages and signals of the Restraint co
 
 All 9 messages of the Restraint control module (RCM) documented for Tesla Model 3 firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`RCM_inertial1`](ch/rcm/rcm_inertial1.md) | CH | 0x101 | 8 | 20 ms | 8 |
@@ -21,4 +23,3 @@ All 9 messages of the Restraint control module (RCM) documented for Tesla Model 
 | [`RCM_udsResponse`](eth/rcm/rcm_udsresponse.md) | ETH | 0x651 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

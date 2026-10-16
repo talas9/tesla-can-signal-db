@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_warningMatrix5 (0x479) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Driver assistance computer (primary) message: warning matrix5. Ethernet-side message APP_warningMatrix5 of Driver assistance computer (primary) for Tesla Model 3 / Model Y firmware 2025.20.8, 64 signals (APP_w321_bmsMia, APP_w322_autoWiperWash, APP_w323_drivableSpaceFCW, APP_w324_adspMia and 60 more). Bit layout, scaling, units and value tables."
+title: "APP_warningMatrix5 (0x479) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Driver assistance computer (primary) message: warning matrix5. Ethernet-side message APP_warningMatrix5 of Driver assistance computer (primary) for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 64 signals (APP_w321_bmsMia, APP_w322_autoWiperWash, APP_w323_drivableSpaceFCW, APP_w324_adspMia and 60 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_warningMatrix5 (0x479) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2025.20.8 ETH
+# APP_warningMatrix5 (0x479) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Driver assistance computer (primary) message: warning matrix5. This page documents the 64 signals of APP_warningMatrix5 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Driver assistance computer (primary) message: warning matrix5. This page documents the 64 signals of APP_warningMatrix5 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: warning matrix5. This page documen
 | Message name | `APP_warningMatrix5` |
 | Ethernet-side id | 0x479 (1145) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: warning matrix5. This page documen
 
 ## Signals of APP_warningMatrix5
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_warningMatrix5`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_warningMatrix5`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -96,7 +98,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_warningMatrix5`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

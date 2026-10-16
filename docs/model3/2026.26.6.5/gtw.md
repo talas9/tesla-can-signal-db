@@ -8,6 +8,8 @@ description: "Tesla Model 3 GTW CAN bus messages and signals of the Gateway (GTW
 
 All 19 messages of the Gateway (GTW) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`GTW_carConfig`](veh/gtw/gtw_carconfig.md) | VEH | 0x7FF | 8 | 100 ms | 200 |
@@ -31,4 +33,3 @@ All 19 messages of the Gateway (GTW) documented for Tesla Model 3 firmware 2026.
 | [`GTW_mismatchFault`](eth/gtw/gtw_mismatchfault.md) | ETH | 0x55A | 8 | 250 ms | 49 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

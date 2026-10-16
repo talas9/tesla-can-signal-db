@@ -16,6 +16,8 @@ Parking assist sensors message: pas rear middle; frame length from the layout, n
 | CAN id | 0x35E (862) |
 | ECU | [Parking assist sensors](../../park.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | PARK |

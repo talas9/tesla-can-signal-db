@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "A/C compressor (CMP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y CMP CAN bus messages and signals of the A/C compressor (CMP) for firmware 2025.20.8: 3 messages, 18 signals with bit layout, scaling and value tables."
+title: "A/C compressor (CMP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) CMP CAN bus messages and signals of the A/C compressor (CMP) for firmware 2025.20.8: 3 messages, 18 signals with bit layout, scaling and value tables."
 ---
 
-# A/C compressor (CMP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# A/C compressor (CMP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 3 messages of the A/C compressor (CMP) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 3 messages of the A/C compressor (CMP) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -15,4 +17,3 @@ All 3 messages of the A/C compressor (CMP) documented for Tesla Model 3 / Model 
 | [`CMP_udsResponse`](eth/cmp/cmp_udsresponse.md) | ETH | 0x613 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

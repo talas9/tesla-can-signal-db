@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "V2G_evseLogData (0x79D) — V2G ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "V2G ECU message: evse log data. Tesla Model 3 / Model Y CAN bus message V2G_evseLogData (0x79D) of V2G ECU, firmware 2026.26.6.5, 12 signals (V2G_evseLogDataSelect, V2G_chgParamRes_respCode, V2G_chgParamRes_finished, V2G_chgParamRes_evseStatus and 8 more). Bit layout, scaling, units and value tables."
+title: "V2G_evseLogData (0x79D) — V2G ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "V2G ECU message: evse log data. Tesla Model 3 / Model Y (union) CAN bus message V2G_evseLogData (0x79D) of V2G ECU, firmware 2026.26.6.5, 12 signals (V2G_evseLogDataSelect, V2G_chgParamRes_respCode, V2G_chgParamRes_finished, V2G_chgParamRes_evseStatus and 8 more). Bit layout, scaling, units and value tables."
 ---
 
-# V2G_evseLogData (0x79D) — V2G ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# V2G_evseLogData (0x79D) — V2G ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-V2G ECU message: evse log data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of V2G_evseLogData as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+V2G ECU message: evse log data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 12 signals of V2G_evseLogData as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ V2G ECU message: evse log data; frame length from the layout, not yet observed o
 | Message name | `V2G_evseLogData` |
 | CAN id | 0x79D (1949) |
 | ECU | [V2G ECU](../../v2g.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | V2G |
@@ -25,7 +27,7 @@ V2G ECU message: evse log data; frame length from the layout, not yet observed o
 
 ## Signals of V2G_evseLogData
 
-Tesla Model 3 / Model Y CAN bus signals in `V2G_evseLogData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `V2G_evseLogData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ Tesla Model 3 / Model Y CAN bus signals in `V2G_evseLogData`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

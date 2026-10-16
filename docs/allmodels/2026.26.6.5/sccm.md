@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Steering column control module (SCCM) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y SCCM CAN bus messages and signals of the Steering column control module (SCCM) for firmware 2026.26.6.5: 7 messages, 284 signals with bit layout, scaling and value tables."
+title: "Steering column control module (SCCM) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) SCCM CAN bus messages and signals of the Steering column control module (SCCM) for firmware 2026.26.6.5: 7 messages, 284 signals with bit layout, scaling and value tables."
 ---
 
-# Steering column control module (SCCM) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Steering column control module (SCCM) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 7 messages of the Steering column control module (SCCM) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 7 messages of the Steering column control module (SCCM) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -19,4 +21,3 @@ All 7 messages of the Steering column control module (SCCM) documented for Tesla
 | [`SCCM_udsResponse`](veh/sccm/sccm_udsresponse.md) | VEH | 0x690 | 8 |  | 8 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y ADSP CAN bus messages and signals of the Audio amplifier (ADSP) for firmware 2025.20.8: 4 messages, 124 signals with bit layout, scaling and value tables."
+title: "Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) ADSP CAN bus messages and signals of the Audio amplifier (ADSP) for firmware 2025.20.8: 4 messages, 124 signals with bit layout, scaling and value tables."
 ---
 
-# Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Audio amplifier (ADSP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 4 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 4 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the Audio amplifier (ADSP) documented for Tesla Model 3 / Mode
 | [`ADSP_state`](eth/adsp/adsp_state.md) | ETH | 0x567 | 7 | 200 ms | 24 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

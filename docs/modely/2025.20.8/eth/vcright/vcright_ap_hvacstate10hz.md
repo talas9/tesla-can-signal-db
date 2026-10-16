@@ -16,6 +16,8 @@ Right body controller message: AP hvac state10 hz. This page documents the 17 si
 | Ethernet-side id | 0x45A (1114) |
 | ECU | [Right body controller](../../vcright.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCRIGHT |

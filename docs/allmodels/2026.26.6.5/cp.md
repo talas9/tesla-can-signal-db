@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Charge port controller (CP) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y CP CAN bus messages and signals of the Charge port controller (CP) for firmware 2026.26.6.5: 13 messages, 691 signals with bit layout, scaling and value tables."
+title: "Charge port controller (CP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) CP CAN bus messages and signals of the Charge port controller (CP) for firmware 2026.26.6.5: 13 messages, 691 signals with bit layout, scaling and value tables."
 ---
 
-# Charge port controller (CP) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# Charge port controller (CP) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 13 messages of the Charge port controller (CP) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 13 messages of the Charge port controller (CP) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -25,4 +27,3 @@ All 13 messages of the Charge port controller (CP) documented for Tesla Model 3 
 | [`CP_udsResponse`](veh/cp/cp_udsresponse.md) | VEH | 0x61E | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

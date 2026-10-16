@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_alertLog (0x55D) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Left body controller message: alert log. Tesla Model 3 / Model Y CAN bus message VCLEFT_alertLog (0x55D) of Left body controller, firmware 2026.26.6.5, 1427 signals (VCLEFT_alertID, VCLEFT_alertState, VCLEFT_a001_InternalWatchdog, VCLEFT_a010_UnderVoltageDetected and 1423 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_alertLog (0x55D) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Left body controller message: alert log. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_alertLog (0x55D) of Left body controller, firmware 2026.26.6.5, 1427 signals (VCLEFT_alertID, VCLEFT_alertState, VCLEFT_a001_InternalWatchdog, VCLEFT_a010_UnderVoltageDetected and 1423 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_alertLog (0x55D) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCLEFT_alertLog (0x55D) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Left body controller message: alert log; frame length observed on a vehicle bus. This page documents the 1427 signals of VCLEFT_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Left body controller message: alert log; frame length observed on a vehicle bus. This page documents the 1427 signals of VCLEFT_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: alert log; frame length observed on a vehicle bus.
 | Message name | `VCLEFT_alertLog` |
 | CAN id | 0x55D (1373) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: alert log; frame length observed on a vehicle bus.
 
 ## Signals of VCLEFT_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -1463,7 +1465,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_alertLog`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

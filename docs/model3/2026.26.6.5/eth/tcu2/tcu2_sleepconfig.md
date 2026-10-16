@@ -16,6 +16,8 @@ TCU2 ECU message: sleep config. This page documents the 1 signals of TCU2_SleepC
 | Ethernet-side id | 0x587 (1415) |
 | ECU | [TCU2 ECU](../../tcu2.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | TCU2 |

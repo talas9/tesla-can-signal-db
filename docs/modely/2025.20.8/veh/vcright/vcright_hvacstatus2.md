@@ -16,6 +16,8 @@ Right body controller message: hvac status2; frame length from the layout, not y
 | CAN id | 0x68B (1675) |
 | ECU | [Right body controller](../../vcright.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PCS_thermalStatus (0x2A4) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Power conversion system (on-board charger and DC-DC converter) message: thermal status. Tesla Model 3 / Model Y CAN bus message PCS_thermalStatus (0x2A4) of Power conversion system (on-board charger and DC-DC converter), firmware 2026.26.6.5, 6 signals (PCS_chgPhATemp, PCS_chgPhBTemp, PCS_chgPhCTemp, PCS_dcdcTemp and 2 more). Bit layout, scaling, units and value tables."
+title: "PCS_thermalStatus (0x2A4) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Power conversion system (on-board charger and DC-DC converter) message: thermal status. Tesla Model 3 / Model Y (union) CAN bus message PCS_thermalStatus (0x2A4) of Power conversion system (on-board charger and DC-DC converter), firmware 2026.26.6.5, 6 signals (PCS_chgPhATemp, PCS_chgPhBTemp, PCS_chgPhCTemp, PCS_dcdcTemp and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# PCS_thermalStatus (0x2A4) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# PCS_thermalStatus (0x2A4) — Power conversion system (on-board charger and DC-DC converter), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Power conversion system (on-board charger and DC-DC converter) message: thermal status; frame length observed on a vehicle bus. This page documents the 6 signals of PCS_thermalStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Power conversion system (on-board charger and DC-DC converter) message: thermal status; frame length observed on a vehicle bus. This page documents the 6 signals of PCS_thermalStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Power conversion system (on-board charger and DC-DC converter) message: thermal 
 | Message name | `PCS_thermalStatus` |
 | CAN id | 0x2A4 (676) |
 | ECU | [Power conversion system (on-board charger and DC-DC converter)](../../pcs.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | PCS |
@@ -25,7 +27,7 @@ Power conversion system (on-board charger and DC-DC converter) message: thermal 
 
 ## Signals of PCS_thermalStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `PCS_thermalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PCS_thermalStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PCS_thermalStatus`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

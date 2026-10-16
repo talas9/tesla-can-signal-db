@@ -16,6 +16,8 @@ VCBATT1 ECU message: LV self tests; frame length from the layout, not yet observ
 | CAN id | 0x45F (1119) |
 | ECU | [VCBATT1 ECU](../../vcbatt1.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCBATT1 |

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_thsStatus (0x383) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Right body controller message: ths status. Tesla Model 3 / Model Y CAN bus message VCRIGHT_thsStatus (0x383) of Right body controller, firmware 2025.20.8, 11 signals (VCRIGHT_thsActive, VCRIGHT_thsTemperature, VCRIGHT_thsState, VCRIGHT_thsLINCurrentSchedule and 7 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_thsStatus (0x383) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Right body controller message: ths status. Tesla Model 3 / Model Y (union) CAN bus message VCRIGHT_thsStatus (0x383) of Right body controller, firmware 2025.20.8, 11 signals (VCRIGHT_thsActive, VCRIGHT_thsTemperature, VCRIGHT_thsState, VCRIGHT_thsLINCurrentSchedule and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_thsStatus (0x383) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# VCRIGHT_thsStatus (0x383) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Right body controller message: ths status; frame length observed on a vehicle bus. This page documents the 11 signals of VCRIGHT_thsStatus as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Right body controller message: ths status; frame length observed on a vehicle bus. This page documents the 11 signals of VCRIGHT_thsStatus as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: ths status; frame length observed on a vehicle bu
 | Message name | `VCRIGHT_thsStatus` |
 | CAN id | 0x383 (899) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: ths status; frame length observed on a vehicle bu
 
 ## Signals of VCRIGHT_thsStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_thsStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_thsStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_thsStatus`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

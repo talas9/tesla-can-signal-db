@@ -8,6 +8,8 @@ description: "Tesla Model Y VC CAN bus messages and signals of the VC ECU (VC) f
 
 All 4 messages of the VC ECU (VC) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VC_LVBMS_brickMeasurements`](veh/vc/vc_lvbms_brickmeasurements.md) | VEH | 0x73A | 8 | 1000 ms | 13 |
@@ -16,4 +18,3 @@ All 4 messages of the VC ECU (VC) documented for Tesla Model Y firmware 2025.20.
 | [`VC_pcsInterface`](eth/vc/vc_pcsinterface.md) | ETH | 0x441 | 8 | 50 ms | 12 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

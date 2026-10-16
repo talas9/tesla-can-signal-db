@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UDS_sccmRequest (0x680) — UDS ECU, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "UDS ECU message: sccm request. Ethernet-side message UDS_sccmRequest of UDS ECU for Tesla Model 3 / Model Y firmware 2025.20.8, 1 signals (UDS_sccmRequestData). Bit layout, scaling, units and value tables."
+title: "UDS_sccmRequest (0x680) — UDS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "UDS ECU message: sccm request. Ethernet-side message UDS_sccmRequest of UDS ECU for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 1 signals (UDS_sccmRequestData). Bit layout, scaling, units and value tables."
 ---
 
-# UDS_sccmRequest (0x680) — UDS ECU, Tesla Model 3 / Model Y 2025.20.8 ETH
+# UDS_sccmRequest (0x680) — UDS ECU, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-UDS ECU message: sccm request. This page documents the 1 signals of UDS_sccmRequest as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+UDS ECU message: sccm request. This page documents the 1 signals of UDS_sccmRequest as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ UDS ECU message: sccm request. This page documents the 1 signals of UDS_sccmRequ
 | Message name | `UDS_sccmRequest` |
 | Ethernet-side id | 0x680 (1664) |
 | ECU | [UDS ECU](../../uds.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UDS |
@@ -25,7 +27,7 @@ UDS ECU message: sccm request. This page documents the 1 signals of UDS_sccmRequ
 
 ## Signals of UDS_sccmRequest
 
-Tesla Model 3 / Model Y CAN bus signals in `UDS_sccmRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UDS_sccmRequest`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UDS_sccmRequest`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

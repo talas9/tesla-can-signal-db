@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Left body controller message: pitch estimation. Tesla Model 3 / Model Y CAN bus message VCLEFT_pitchEstimation (0x2D7) of Left body controller, firmware 2026.26.6.5, 6 signals (VCLEFT_pitchEstimateFusionState, VCLEFT_pitchEstimateStateTransitionID, VCLEFT_pitchEstimateArbitratedState, VCLEFT_pitchEstimateOKForAiming and 2 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Left body controller message: pitch estimation. Tesla Model 3 / Model Y (union) CAN bus message VCLEFT_pitchEstimation (0x2D7) of Left body controller, firmware 2026.26.6.5, 6 signals (VCLEFT_pitchEstimateFusionState, VCLEFT_pitchEstimateStateTransitionID, VCLEFT_pitchEstimateArbitratedState, VCLEFT_pitchEstimateOKForAiming and 2 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCLEFT_pitchEstimation (0x2D7) — Left body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Left body controller message: pitch estimation; frame length observed on a vehicle bus. This page documents the 6 signals of VCLEFT_pitchEstimation as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Left body controller message: pitch estimation; frame length observed on a vehicle bus. This page documents the 6 signals of VCLEFT_pitchEstimation as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: pitch estimation; frame length observed on a vehic
 | Message name | `VCLEFT_pitchEstimation` |
 | CAN id | 0x2D7 (727) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: pitch estimation; frame length observed on a vehic
 
 ## Signals of VCLEFT_pitchEstimation
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_pitchEstimation`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_pitchEstimation`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -38,7 +40,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_pitchEstimation`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

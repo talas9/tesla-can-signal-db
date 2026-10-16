@@ -8,6 +8,8 @@ description: "Tesla Model Y PMF CAN bus messages and signals of the PMF ECU (PMF
 
 All 5 messages of the PMF ECU (PMF) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`PMF_alertLog`](veh/pmf/pmf_alertlog.md) | VEH | 0x525 | 8 |  | 211 |
@@ -17,4 +19,3 @@ All 5 messages of the PMF ECU (PMF) documented for Tesla Model Y firmware 2026.2
 | [`PMF_mfgData`](party/pmf/pmf_mfgdata.md) | PARTY | 0x524 | 7 | 1000 ms | 4 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

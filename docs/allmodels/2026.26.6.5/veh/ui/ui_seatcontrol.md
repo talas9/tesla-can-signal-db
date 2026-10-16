@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_seatControl (0x29A) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: seat control. Tesla Model 3 / Model Y CAN bus message UI_seatControl (0x29A) of Touchscreen user interface computer, firmware 2026.26.6.5, 13 signals (UI_seatControlIndex, UI_3RSeatChildLock, UI_2RowLeftSeatTrackBack, UI_2RowLeftSeatTrackForward and 9 more). Bit layout, scaling, units and value tables."
+title: "UI_seatControl (0x29A) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: seat control. Tesla Model 3 / Model Y (union) CAN bus message UI_seatControl (0x29A) of Touchscreen user interface computer, firmware 2026.26.6.5, 13 signals (UI_seatControlIndex, UI_3RSeatChildLock, UI_2RowLeftSeatTrackBack, UI_2RowLeftSeatTrackForward and 9 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_seatControl (0x29A) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_seatControl (0x29A) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: seat control; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of UI_seatControl as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: seat control; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 13 signals of UI_seatControl as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: seat control; forwarded onto this b
 | Message name | `UI_seatControl` |
 | CAN id | 0x29A (666) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: seat control; forwarded onto this b
 
 ## Signals of UI_seatControl
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_seatControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_seatControl`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -49,7 +51,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_seatControl`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

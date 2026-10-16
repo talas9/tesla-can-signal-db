@@ -16,6 +16,8 @@ Right body controller message: recall status; frame length observed on a vehicle
 | CAN id | 0x743 (1859) |
 | ECU | [Right body controller](../../vcright.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCRIGHT |

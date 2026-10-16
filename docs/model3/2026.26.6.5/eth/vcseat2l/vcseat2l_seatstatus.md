@@ -16,6 +16,8 @@ VCSEAT2L ECU message: seat status. This page documents the 15 signals of VCSEAT2
 | Ethernet-side id | 0x2FC (764) |
 | ECU | [VCSEAT2L ECU](../../vcseat2l.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCSEAT2L |

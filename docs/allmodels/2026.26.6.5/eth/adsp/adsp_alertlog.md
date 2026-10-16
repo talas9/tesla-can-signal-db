@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "ADSP_alertLog (0x550) — Audio amplifier, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Audio amplifier message: alert log. Ethernet-side message ADSP_alertLog of Audio amplifier for Tesla Model 3 / Model Y firmware 2026.26.6.5, 37 signals (ADSP_alertID, ADSP_alertState, ADSP_a002_core, ADSP_a002_cause and 33 more). Bit layout, scaling, units and value tables."
+title: "ADSP_alertLog (0x550) — Audio amplifier, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Audio amplifier message: alert log. Ethernet-side message ADSP_alertLog of Audio amplifier for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 37 signals (ADSP_alertID, ADSP_alertState, ADSP_a002_core, ADSP_a002_cause and 33 more). Bit layout, scaling, units and value tables."
 ---
 
-# ADSP_alertLog (0x550) — Audio amplifier, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# ADSP_alertLog (0x550) — Audio amplifier, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Audio amplifier message: alert log. This page documents the 37 signals of ADSP_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Audio amplifier message: alert log. This page documents the 37 signals of ADSP_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Audio amplifier message: alert log. This page documents the 37 signals of ADSP_a
 | Message name | `ADSP_alertLog` |
 | Ethernet-side id | 0x550 (1360) |
 | ECU | [Audio amplifier](../../adsp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | ADSP |
@@ -25,7 +27,7 @@ Audio amplifier message: alert log. This page documents the 37 signals of ADSP_a
 
 ## Signals of ADSP_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `ADSP_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `ADSP_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -73,7 +75,7 @@ Tesla Model 3 / Model Y CAN bus signals in `ADSP_alertLog`: start bit and length
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

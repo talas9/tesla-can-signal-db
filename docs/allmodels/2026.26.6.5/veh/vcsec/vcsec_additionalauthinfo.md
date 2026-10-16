@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCSEC_additionalAuthInfo (0x2F9) — Vehicle security controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Vehicle security controller message: additional auth info. Tesla Model 3 / Model Y CAN bus message VCSEC_additionalAuthInfo (0x2F9) of Vehicle security controller, firmware 2026.26.6.5, 25 signals (VCSEC_activeKeyDebug, VCSEC_bleChannelDisconnected, VCSEC_bleDisconnectionReason, VCSEC_bleConnetionAttemptWLEntry and 21 more). Bit layout, scaling, units and value tables."
+title: "VCSEC_additionalAuthInfo (0x2F9) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Vehicle security controller message: additional auth info. Tesla Model 3 / Model Y (union) CAN bus message VCSEC_additionalAuthInfo (0x2F9) of Vehicle security controller, firmware 2026.26.6.5, 25 signals (VCSEC_activeKeyDebug, VCSEC_bleChannelDisconnected, VCSEC_bleDisconnectionReason, VCSEC_bleConnetionAttemptWLEntry and 21 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCSEC_additionalAuthInfo (0x2F9) — Vehicle security controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCSEC_additionalAuthInfo (0x2F9) — Vehicle security controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Vehicle security controller message: additional auth info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 25 signals of VCSEC_additionalAuthInfo as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Vehicle security controller message: additional auth info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 25 signals of VCSEC_additionalAuthInfo as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Vehicle security controller message: additional auth info; frame length from the
 | Message name | `VCSEC_additionalAuthInfo` |
 | CAN id | 0x2F9 (761) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |
@@ -25,7 +27,7 @@ Vehicle security controller message: additional auth info; frame length from the
 
 ## Signals of VCSEC_additionalAuthInfo
 
-Tesla Model 3 / Model Y CAN bus signals in `VCSEC_additionalAuthInfo`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCSEC_additionalAuthInfo`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -61,7 +63,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCSEC_additionalAuthInfo`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

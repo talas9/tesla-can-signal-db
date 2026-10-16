@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TAS_uiAdaptiveActivity1 (0x19A) — Air suspension controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Air suspension controller message: ui adaptive activity1. Tesla Model 3 / Model Y CAN bus message TAS_uiAdaptiveActivity1 (0x19A) of Air suspension controller, firmware 2025.20.8, 4 signals (TAS_bodyAccelFL, TAS_bodyAccelFR, TAS_bodyAccelRL, TAS_bodyAccelRR). Bit layout, scaling, units and value tables."
+title: "TAS_uiAdaptiveActivity1 (0x19A) — Air suspension controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Air suspension controller message: ui adaptive activity1. Tesla Model 3 / Model Y (union) CAN bus message TAS_uiAdaptiveActivity1 (0x19A) of Air suspension controller, firmware 2025.20.8, 4 signals (TAS_bodyAccelFL, TAS_bodyAccelFR, TAS_bodyAccelRL, TAS_bodyAccelRR). Bit layout, scaling, units and value tables."
 ---
 
-# TAS_uiAdaptiveActivity1 (0x19A) — Air suspension controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# TAS_uiAdaptiveActivity1 (0x19A) — Air suspension controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Air suspension controller message: ui adaptive activity1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of TAS_uiAdaptiveActivity1 as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Air suspension controller message: ui adaptive activity1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of TAS_uiAdaptiveActivity1 as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Air suspension controller message: ui adaptive activity1; frame length from the 
 | Message name | `TAS_uiAdaptiveActivity1` |
 | CAN id | 0x19A (410) |
 | ECU | [Air suspension controller](../../tas.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | TAS |
@@ -25,7 +27,7 @@ Air suspension controller message: ui adaptive activity1; frame length from the 
 
 ## Signals of TAS_uiAdaptiveActivity1
 
-Tesla Model 3 / Model Y CAN bus signals in `TAS_uiAdaptiveActivity1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TAS_uiAdaptiveActivity1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TAS_uiAdaptiveActivity1`: start bit 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPAS3P_info (0x331) — Electric power steering (primary), Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Electric power steering (primary) message: info. Tesla Model 3 / Model Y CAN bus message EPAS3P_info (0x331) of Electric power steering (primary), firmware 2025.20.8, 10 signals (EPAS3P_infoIndex, EPAS3P_infoBuildType, EPAS3P_infoComponentID, EPAS3P_infoPcbaID and 6 more). Bit layout, scaling, units and value tables."
+title: "EPAS3P_info (0x331) — Electric power steering (primary), Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Electric power steering (primary) message: info. Tesla Model 3 / Model Y (union) CAN bus message EPAS3P_info (0x331) of Electric power steering (primary), firmware 2025.20.8, 10 signals (EPAS3P_infoIndex, EPAS3P_infoBuildType, EPAS3P_infoComponentID, EPAS3P_infoPcbaID and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPAS3P_info (0x331) — Electric power steering (primary), Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# EPAS3P_info (0x331) — Electric power steering (primary), Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Electric power steering (primary) message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of EPAS3P_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Electric power steering (primary) message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 10 signals of EPAS3P_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Electric power steering (primary) message: info; frame length from the layout, n
 | Message name | `EPAS3P_info` |
 | CAN id | 0x331 (817) |
 | ECU | [Electric power steering (primary)](../../epas3p.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | EPAS3P |
@@ -25,7 +27,7 @@ Electric power steering (primary) message: info; frame length from the layout, n
 
 ## Signals of EPAS3P_info
 
-Tesla Model 3 / Model Y CAN bus signals in `EPAS3P_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPAS3P_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -46,7 +48,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPAS3P_info`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

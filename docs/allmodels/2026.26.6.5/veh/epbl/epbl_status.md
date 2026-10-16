@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPBL_status (0x2A8) — Left electric parking brake, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Left electric parking brake message: status. Tesla Model 3 / Model Y CAN bus message EPBL_status (0x2A8) of Left electric parking brake, firmware 2026.26.6.5, 34 signals (EPBL_systemStatus, EPBL_freeRollModeStatus, EPBL_driverIsLeaving, EPBL_driverIsLeavingAnySpeed and 30 more). Bit layout, scaling, units and value tables."
+title: "EPBL_status (0x2A8) — Left electric parking brake, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Left electric parking brake message: status. Tesla Model 3 / Model Y (union) CAN bus message EPBL_status (0x2A8) of Left electric parking brake, firmware 2026.26.6.5, 34 signals (EPBL_systemStatus, EPBL_freeRollModeStatus, EPBL_driverIsLeaving, EPBL_driverIsLeavingAnySpeed and 30 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPBL_status (0x2A8) — Left electric parking brake, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# EPBL_status (0x2A8) — Left electric parking brake, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Left electric parking brake message: status; frame length observed on a vehicle bus. This page documents the 34 signals of EPBL_status as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Left electric parking brake message: status; frame length observed on a vehicle bus. This page documents the 34 signals of EPBL_status as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left electric parking brake message: status; frame length observed on a vehicle 
 | Message name | `EPBL_status` |
 | CAN id | 0x2A8 (680) |
 | ECU | [Left electric parking brake](../../epbl.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBL |
@@ -25,7 +27,7 @@ Left electric parking brake message: status; frame length observed on a vehicle 
 
 ## Signals of EPBL_status
 
-Tesla Model 3 / Model Y CAN bus signals in `EPBL_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPBL_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -66,7 +68,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPBL_status`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

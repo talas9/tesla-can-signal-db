@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCRIGHT_status (0x343) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Right body controller message: status. Ethernet-side message VCRIGHT_status of Right body controller for Tesla Model 3 / Model Y firmware 2025.20.8, 10 signals (VCRIGHT_LVBatteryTypeDBG, VCRIGHT_rearDefrostState, VCRIGHT_mirrorHeatState, VCRIGHT_OTAState and 6 more). Bit layout, scaling, units and value tables."
+title: "VCRIGHT_status (0x343) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Right body controller message: status. Ethernet-side message VCRIGHT_status of Right body controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 10 signals (VCRIGHT_LVBatteryTypeDBG, VCRIGHT_rearDefrostState, VCRIGHT_mirrorHeatState, VCRIGHT_OTAState and 6 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCRIGHT_status (0x343) — Right body controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCRIGHT_status (0x343) — Right body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Right body controller message: status. This page documents the 10 signals of VCRIGHT_status as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Right body controller message: status. This page documents the 10 signals of VCRIGHT_status as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Right body controller message: status. This page documents the 10 signals of VCR
 | Message name | `VCRIGHT_status` |
 | Ethernet-side id | 0x343 (835) |
 | ECU | [Right body controller](../../vcright.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCRIGHT |
@@ -25,7 +27,7 @@ Right body controller message: status. This page documents the 10 signals of VCR
 
 ## Signals of VCRIGHT_status
 
-Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCRIGHT_status`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -42,7 +44,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCRIGHT_status`: start bit and lengt
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

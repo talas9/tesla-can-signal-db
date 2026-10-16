@@ -16,6 +16,8 @@ FC ECU message: alert matrix5; frame length from the layout, not yet observed on
 | CAN id | 0x3BE (958) |
 | ECU | [FC ECU](../../fc.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | FC |

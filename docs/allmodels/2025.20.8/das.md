@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "Driver assistance computer (DAS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8"
-description: "Tesla Model 3 / Model Y DAS CAN bus messages and signals of the Driver assistance computer (DAS) for firmware 2025.20.8: 19 messages, 493 signals with bit layout, scaling and value tables."
+title: "Driver assistance computer (DAS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8"
+description: "Tesla Model 3 / Model Y (union) DAS CAN bus messages and signals of the Driver assistance computer (DAS) for firmware 2025.20.8: 19 messages, 493 signals with bit layout, scaling and value tables."
 ---
 
-# Driver assistance computer (DAS) CAN messages and signals — Tesla Model 3 / Model Y 2025.20.8
+# Driver assistance computer (DAS) CAN messages and signals — Tesla Model 3 / Model Y (union) 2025.20.8
 
-All 19 messages of the Driver assistance computer (DAS) documented for Tesla Model 3 / Model Y firmware 2025.20.8, across the buses that carry them.
+All 19 messages of the Driver assistance computer (DAS) documented for Tesla Model 3 / Model Y (union) firmware 2025.20.8, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -31,4 +33,3 @@ All 19 messages of the Driver assistance computer (DAS) documented for Tesla Mod
 | [`DAS_udsResponse`](eth/das/das_udsresponse.md) | ETH | 0x659 | 8 |  | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

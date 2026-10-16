@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VC_LVBMS_statusLow (0x718) — VC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "VC ECU message: LVBMS status low. Tesla Model 3 / Model Y CAN bus message VC_LVBMS_statusLow (0x718) of VC ECU, firmware 2026.26.6.5, 39 signals (VC_lvbmsStatusLowIndex, VC_LVBMS_SOC, VC_LVBMS_SOE, VC_LVBMS_SOH and 35 more). Bit layout, scaling, units and value tables."
+title: "VC_LVBMS_statusLow (0x718) — VC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "VC ECU message: LVBMS status low. Tesla Model 3 / Model Y (union) CAN bus message VC_LVBMS_statusLow (0x718) of VC ECU, firmware 2026.26.6.5, 39 signals (VC_lvbmsStatusLowIndex, VC_LVBMS_SOC, VC_LVBMS_SOE, VC_LVBMS_SOH and 35 more). Bit layout, scaling, units and value tables."
 ---
 
-# VC_LVBMS_statusLow (0x718) — VC ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VC_LVBMS_statusLow (0x718) — VC ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-VC ECU message: LVBMS status low; frame length observed on a vehicle bus. This page documents the 39 signals of VC_LVBMS_statusLow as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+VC ECU message: LVBMS status low; frame length observed on a vehicle bus. This page documents the 39 signals of VC_LVBMS_statusLow as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VC ECU message: LVBMS status low; frame length observed on a vehicle bus. This p
 | Message name | `VC_LVBMS_statusLow` |
 | CAN id | 0x718 (1816) |
 | ECU | [VC ECU](../../vc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VC |
@@ -25,7 +27,7 @@ VC ECU message: LVBMS status low; frame length observed on a vehicle bus. This p
 
 ## Signals of VC_LVBMS_statusLow
 
-Tesla Model 3 / Model Y CAN bus signals in `VC_LVBMS_statusLow`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VC_LVBMS_statusLow`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -75,7 +77,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VC_LVBMS_statusLow`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

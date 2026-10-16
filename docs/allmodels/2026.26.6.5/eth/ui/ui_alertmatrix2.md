@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_alertMatrix2 (0x124) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "Touchscreen user interface computer message: alert matrix2. Ethernet-side message UI_alertMatrix2 of Touchscreen user interface computer for Tesla Model 3 / Model Y firmware 2026.26.6.5, 63 signals (UI_a065_WiFiRecoveryReset, UI_a066_GpuHangDetected, UI_a067_WarnOnI915, UI_a068_VideoUnexpectedExit and 59 more). Bit layout, scaling, units and value tables."
+title: "UI_alertMatrix2 (0x124) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "Touchscreen user interface computer message: alert matrix2. Ethernet-side message UI_alertMatrix2 of Touchscreen user interface computer for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 63 signals (UI_a065_WiFiRecoveryReset, UI_a066_GpuHangDetected, UI_a067_WarnOnI915, UI_a068_VideoUnexpectedExit and 59 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_alertMatrix2 (0x124) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# UI_alertMatrix2 (0x124) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-Touchscreen user interface computer message: alert matrix2. This page documents the 63 signals of UI_alertMatrix2 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+Touchscreen user interface computer message: alert matrix2. This page documents the 63 signals of UI_alertMatrix2 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: alert matrix2. This page documents 
 | Message name | `UI_alertMatrix2` |
 | Ethernet-side id | 0x124 (292) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UI |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: alert matrix2. This page documents 
 
 ## Signals of UI_alertMatrix2
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_alertMatrix2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_alertMatrix2`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -95,7 +97,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_alertMatrix2`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

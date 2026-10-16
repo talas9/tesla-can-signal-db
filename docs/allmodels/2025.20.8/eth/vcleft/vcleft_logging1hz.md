@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCLEFT_logging1Hz (0x3A8) — Left body controller, Tesla Model 3 / Model Y 2025.20.8 ETH"
-description: "Left body controller message: logging1 hz. Ethernet-side message VCLEFT_logging1Hz of Left body controller for Tesla Model 3 / Model Y firmware 2025.20.8, 9 signals (VCLEFT_logging1HzIndex, VCLEFT_tohcPCBATemperature, VCLEFT_phoneChargingFL, VCLEFT_phoneChargingFR and 5 more). Bit layout, scaling, units and value tables."
+title: "VCLEFT_logging1Hz (0x3A8) — Left body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH"
+description: "Left body controller message: logging1 hz. Ethernet-side message VCLEFT_logging1Hz of Left body controller for Tesla Model 3 / Model Y (union) firmware 2025.20.8, 9 signals (VCLEFT_logging1HzIndex, VCLEFT_tohcPCBATemperature, VCLEFT_phoneChargingFL, VCLEFT_phoneChargingFR and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCLEFT_logging1Hz (0x3A8) — Left body controller, Tesla Model 3 / Model Y 2025.20.8 ETH
+# VCLEFT_logging1Hz (0x3A8) — Left body controller, Tesla Model 3 / Model Y (union) 2025.20.8 ETH
 
-Left body controller message: logging1 hz. This page documents the 9 signals of VCLEFT_logging1Hz as defined for Tesla Model 3 / Model Y firmware 2025.20.8 (Ethernet-side id, not a CAN id).
+Left body controller message: logging1 hz. This page documents the 9 signals of VCLEFT_logging1Hz as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ Left body controller message: logging1 hz. This page documents the 9 signals of 
 | Message name | `VCLEFT_logging1Hz` |
 | Ethernet-side id | 0x3A8 (936) |
 | ECU | [Left body controller](../../vcleft.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VCLEFT |
@@ -25,7 +27,7 @@ Left body controller message: logging1 hz. This page documents the 9 signals of 
 
 ## Signals of VCLEFT_logging1Hz
 
-Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_logging1Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCLEFT_logging1Hz`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +47,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCLEFT_logging1Hz`: start bit and le
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 ETH DBC file](../../../../../dbc/AllModels/2025.20.8/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

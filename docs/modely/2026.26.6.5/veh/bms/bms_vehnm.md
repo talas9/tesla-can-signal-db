@@ -16,6 +16,8 @@ High-voltage battery management system message: veh nm; frame length from the la
 | CAN id | 0x2F2 (754) |
 | ECU | [High-voltage battery management system](../../bms.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | BMS |

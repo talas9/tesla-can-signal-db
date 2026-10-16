@@ -8,6 +8,8 @@ description: "Tesla Model Y CC CAN bus messages and signals of the Charge cable 
 
 All 5 messages of the Charge cable controller (CC) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`CC_alertLog`](veh/cc/cc_alertlog.md) | VEH | 0x45C | 8 |  | 62 |
@@ -17,4 +19,3 @@ All 5 messages of the Charge cable controller (CC) documented for Tesla Model Y 
 | [`CC_logData`](veh/cc/cc_logdata.md) | VEH | 0x32C | 8 | 1000 ms | 18 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

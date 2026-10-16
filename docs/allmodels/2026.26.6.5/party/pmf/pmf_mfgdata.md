@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PMF_mfgData (0x524) — PMF ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "PMF ECU message: mfg data. Tesla Model 3 / Model Y CAN bus message PMF_mfgData (0x524) of PMF ECU, firmware 2026.26.6.5, 4 signals (PMF_processorDieIdLot, PMF_processorDieIdWafer, PMF_processorDieIdX, PMF_processorDieIdY). Bit layout, scaling, units and value tables."
+title: "PMF_mfgData (0x524) — PMF ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "PMF ECU message: mfg data. Tesla Model 3 / Model Y (union) CAN bus message PMF_mfgData (0x524) of PMF ECU, firmware 2026.26.6.5, 4 signals (PMF_processorDieIdLot, PMF_processorDieIdWafer, PMF_processorDieIdX, PMF_processorDieIdY). Bit layout, scaling, units and value tables."
 ---
 
-# PMF_mfgData (0x524) — PMF ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# PMF_mfgData (0x524) — PMF ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-PMF ECU message: mfg data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of PMF_mfgData as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+PMF ECU message: mfg data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of PMF_mfgData as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PMF ECU message: mfg data; frame length from the layout, not yet observed on a v
 | Message name | `PMF_mfgData` |
 | CAN id | 0x524 (1316) |
 | ECU | [PMF ECU](../../pmf.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | PMF |
@@ -25,7 +27,7 @@ PMF ECU message: mfg data; frame length from the layout, not yet observed on a v
 
 ## Signals of PMF_mfgData
 
-Tesla Model 3 / Model Y CAN bus signals in `PMF_mfgData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PMF_mfgData`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PMF_mfgData`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

@@ -8,6 +8,8 @@ description: "Tesla Model Y VCFRONT CAN bus messages and signals of the Front bo
 
 All 25 messages of the Front body controller (VCFRONT) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCFRONT_coolant`](veh/vcfront/vcfront_coolant.md) | VEH | 0x241 | 7 | 100 ms | 12 |
@@ -37,4 +39,3 @@ All 25 messages of the Front body controller (VCFRONT) documented for Tesla Mode
 | [`VCFRONT_vehicleStatus`](eth/vcfront/vcfront_vehiclestatus.md) | ETH | 0x3A1 | 8 | 50 ms | 34 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

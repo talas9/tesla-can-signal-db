@@ -8,6 +8,8 @@ description: "Tesla Model Y RCM CAN bus messages and signals of the Restraint co
 
 All 9 messages of the Restraint control module (RCM) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`RCM_inertial1`](ch/rcm/rcm_inertial1.md) | CH | 0x101 | 8 | 20 ms | 8 |
@@ -21,4 +23,3 @@ All 9 messages of the Restraint control module (RCM) documented for Tesla Model 
 | [`RCM_alertMatrix`](eth/rcm/rcm_alertmatrix.md) | ETH | 0x371 | 8 | 1000 ms | 120 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DIR_motorStatus (0x126) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "Rear drive inverter message: motor status. Tesla Model 3 / Model Y CAN bus message DIR_motorStatus (0x126) of Rear drive inverter, firmware 2026.26.6.5, 7 signals (DIR_motorCurrent, DIR_switchingFrequency, DIR_targetFluxMode, DIR_switchShortTestRetryCount and 3 more). Bit layout, scaling, units and value tables."
+title: "DIR_motorStatus (0x126) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "Rear drive inverter message: motor status. Tesla Model 3 / Model Y (union) CAN bus message DIR_motorStatus (0x126) of Rear drive inverter, firmware 2026.26.6.5, 7 signals (DIR_motorCurrent, DIR_switchingFrequency, DIR_targetFluxMode, DIR_switchShortTestRetryCount and 3 more). Bit layout, scaling, units and value tables."
 ---
 
-# DIR_motorStatus (0x126) — Rear drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# DIR_motorStatus (0x126) — Rear drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-Rear drive inverter message: motor status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 7 signals of DIR_motorStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+Rear drive inverter message: motor status; frame length from the layout, not yet observed on a vehicle bus. This page documents the 7 signals of DIR_motorStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Rear drive inverter message: motor status; frame length from the layout, not yet
 | Message name | `DIR_motorStatus` |
 | CAN id | 0x126 (294) |
 | ECU | [Rear drive inverter](../../dir.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DIR |
@@ -25,7 +27,7 @@ Rear drive inverter message: motor status; frame length from the layout, not yet
 
 ## Signals of DIR_motorStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `DIR_motorStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DIR_motorStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -39,7 +41,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DIR_motorStatus`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

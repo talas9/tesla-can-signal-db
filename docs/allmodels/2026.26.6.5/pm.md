@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "PM ECU (PM) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y PM CAN bus messages and signals of the PM ECU (PM) for firmware 2026.26.6.5: 7 messages, 468 signals with bit layout, scaling and value tables."
+title: "PM ECU (PM) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) PM CAN bus messages and signals of the PM ECU (PM) for firmware 2026.26.6.5: 7 messages, 468 signals with bit layout, scaling and value tables."
 ---
 
-# PM ECU (PM) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# PM ECU (PM) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 7 messages of the PM ECU (PM) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 7 messages of the PM ECU (PM) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -19,4 +21,3 @@ All 7 messages of the PM ECU (PM) documented for Tesla Model 3 / Model Y firmwar
 | [`PM_vdcDebug`](party/pm/pm_vdcdebug.md) | PARTY | 0x7F6 | 8 | 20 ms | 20 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

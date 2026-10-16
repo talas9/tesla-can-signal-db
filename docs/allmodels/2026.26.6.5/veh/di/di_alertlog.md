@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DI_alertLog (0x527) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Drive inverter message: alert log. Tesla Model 3 / Model Y CAN bus message DI_alertLog (0x527) of Drive inverter, firmware 2026.26.6.5, 409 signals (DI_alertID, DI_alertState, DI_a004_unavailableReason, DI_a007_button and 405 more). Bit layout, scaling, units and value tables."
+title: "DI_alertLog (0x527) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Drive inverter message: alert log. Tesla Model 3 / Model Y (union) CAN bus message DI_alertLog (0x527) of Drive inverter, firmware 2026.26.6.5, 409 signals (DI_alertID, DI_alertState, DI_a004_unavailableReason, DI_a007_button and 405 more). Bit layout, scaling, units and value tables."
 ---
 
-# DI_alertLog (0x527) — Drive inverter, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# DI_alertLog (0x527) — Drive inverter, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Drive inverter message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 409 signals of DI_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Drive inverter message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 409 signals of DI_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Drive inverter message: alert log; frame length from the layout, not yet observe
 | Message name | `DI_alertLog` |
 | CAN id | 0x527 (1319) |
 | ECU | [Drive inverter](../../di.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | DI |
@@ -25,7 +27,7 @@ Drive inverter message: alert log; frame length from the layout, not yet observe
 
 ## Signals of DI_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `DI_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DI_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -445,7 +447,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DI_alertLog`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

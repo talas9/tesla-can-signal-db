@@ -8,6 +8,8 @@ description: "Tesla Model Y VCRIGHT CAN bus messages and signals of the Right bo
 
 All 28 messages of the Right body controller (VCRIGHT) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCRIGHT_doorStatus2`](veh/vcright/vcright_doorstatus2.md) | VEH | 0x123 | 8 | 100 ms | 8 |
@@ -40,4 +42,3 @@ All 28 messages of the Right body controller (VCRIGHT) documented for Tesla Mode
 | [`VCRIGHT_udsResponse`](eth/vcright/vcright_udsresponse.md) | ETH | 0x609 | 8 |  | 2 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

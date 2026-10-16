@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CP_info (0x53E) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "Charge port controller message: info. Tesla Model 3 / Model Y CAN bus message CP_info (0x53E) of Charge port controller, firmware 2025.20.8, 15 signals (CP_infoIndex, CP_buildType, CP_buildConfigId, CP_hardwareId and 11 more). Bit layout, scaling, units and value tables."
+title: "CP_info (0x53E) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "Charge port controller message: info. Tesla Model 3 / Model Y (union) CAN bus message CP_info (0x53E) of Charge port controller, firmware 2025.20.8, 15 signals (CP_infoIndex, CP_buildType, CP_buildConfigId, CP_hardwareId and 11 more). Bit layout, scaling, units and value tables."
 ---
 
-# CP_info (0x53E) — Charge port controller, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# CP_info (0x53E) — Charge port controller, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-Charge port controller message: info; frame length observed on a vehicle bus. This page documents the 15 signals of CP_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+Charge port controller message: info; frame length observed on a vehicle bus. This page documents the 15 signals of CP_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Charge port controller message: info; frame length observed on a vehicle bus. Th
 | Message name | `CP_info` |
 | CAN id | 0x53E (1342) |
 | ECU | [Charge port controller](../../cp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CP |
@@ -25,7 +27,7 @@ Charge port controller message: info; frame length observed on a vehicle bus. Th
 
 ## Signals of CP_info
 
-Tesla Model 3 / Model Y CAN bus signals in `CP_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CP_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -51,7 +53,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CP_info`: start bit and length, byte
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

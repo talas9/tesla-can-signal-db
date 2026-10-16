@@ -1,12 +1,14 @@
 ---
 layout: default
-title: "TCU2 ECU (TCU2) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5"
-description: "Tesla Model 3 / Model Y TCU2 CAN bus messages and signals of the TCU2 ECU (TCU2) for firmware 2026.26.6.5: 4 messages, 71 signals with bit layout, scaling and value tables."
+title: "TCU2 ECU (TCU2) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5"
+description: "Tesla Model 3 / Model Y (union) TCU2 CAN bus messages and signals of the TCU2 ECU (TCU2) for firmware 2026.26.6.5: 4 messages, 71 signals with bit layout, scaling and value tables."
 ---
 
-# TCU2 ECU (TCU2) CAN messages and signals — Tesla Model 3 / Model Y 2026.26.6.5
+# TCU2 ECU (TCU2) CAN messages and signals — Tesla Model 3 / Model Y (union) 2026.26.6.5
 
-All 4 messages of the TCU2 ECU (TCU2) documented for Tesla Model 3 / Model Y firmware 2026.26.6.5, across the buses that carry them.
+All 4 messages of the TCU2 ECU (TCU2) documented for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, across the buses that carry them.
+
+API name / codename: `AllModels`. Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant.
 
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
@@ -16,4 +18,3 @@ All 4 messages of the TCU2 ECU (TCU2) documented for Tesla Model 3 / Model Y fir
 | [`TCU2_SleepConfig`](eth/tcu2/tcu2_sleepconfig.md) | ETH | 0x587 | 1 | 1000 ms | 1 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

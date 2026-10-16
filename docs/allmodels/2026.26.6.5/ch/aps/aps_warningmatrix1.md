@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APS_warningMatrix1 (0x36C) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (secondary) message: warning matrix1. Tesla Model 3 / Model Y CAN bus message APS_warningMatrix1 (0x36C) of Driver assistance computer (secondary), firmware 2026.26.6.5, 42 signals (APS_w065_deserializerOvercurrent, APS_w066_deserializerLockLost, APS_w067_steeringAlignment, APS_w068_vlInconsistency and 38 more). Bit layout, scaling, units and value tables."
+title: "APS_warningMatrix1 (0x36C) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (secondary) message: warning matrix1. Tesla Model 3 / Model Y (union) CAN bus message APS_warningMatrix1 (0x36C) of Driver assistance computer (secondary), firmware 2026.26.6.5, 42 signals (APS_w065_deserializerOvercurrent, APS_w066_deserializerLockLost, APS_w067_steeringAlignment, APS_w068_vlInconsistency and 38 more). Bit layout, scaling, units and value tables."
 ---
 
-# APS_warningMatrix1 (0x36C) — Driver assistance computer (secondary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APS_warningMatrix1 (0x36C) — Driver assistance computer (secondary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (secondary) message: warning matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 42 signals of APS_warningMatrix1 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (secondary) message: warning matrix1; frame length from the layout, not yet observed on a vehicle bus. This page documents the 42 signals of APS_warningMatrix1 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (secondary) message: warning matrix1; frame length fr
 | Message name | `APS_warningMatrix1` |
 | CAN id | 0x36C (876) |
 | ECU | [Driver assistance computer (secondary)](../../aps.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APS |
@@ -25,7 +27,7 @@ Driver assistance computer (secondary) message: warning matrix1; frame length fr
 
 ## Signals of APS_warningMatrix1
 
-Tesla Model 3 / Model Y CAN bus signals in `APS_warningMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APS_warningMatrix1`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -74,7 +76,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APS_warningMatrix1`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

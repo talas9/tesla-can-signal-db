@@ -16,6 +16,8 @@ Gateway message: can status. This page documents the 16 signals of GTW_canStatus
 | Ethernet-side id | 0x388 (904) |
 | ECU | [Gateway](../../gtw.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | GTW |

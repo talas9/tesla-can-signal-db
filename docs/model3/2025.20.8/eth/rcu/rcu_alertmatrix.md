@@ -16,6 +16,8 @@ RCU ECU message: alert matrix. This page documents the 59 signals of RCU_alertMa
 | Ethernet-side id | 0x3E6 (998) |
 | ECU | [RCU ECU](../../rcu.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | RCU |

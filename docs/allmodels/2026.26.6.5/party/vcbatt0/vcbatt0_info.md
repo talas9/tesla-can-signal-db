@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCBATT0_info (0x652) — VCBATT0 ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "VCBATT0 ECU message: info. Tesla Model 3 / Model Y CAN bus message VCBATT0_info (0x652) of VCBATT0 ECU, firmware 2026.26.6.5, 14 signals (VCBATT0_infoIndex, VCBATT0_infoBuildType, VCBATT0_infoBuildConfigId, VCBATT0_infoHardwareId and 10 more). Bit layout, scaling, units and value tables."
+title: "VCBATT0_info (0x652) — VCBATT0 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "VCBATT0 ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message VCBATT0_info (0x652) of VCBATT0 ECU, firmware 2026.26.6.5, 14 signals (VCBATT0_infoIndex, VCBATT0_infoBuildType, VCBATT0_infoBuildConfigId, VCBATT0_infoHardwareId and 10 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCBATT0_info (0x652) — VCBATT0 ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# VCBATT0_info (0x652) — VCBATT0 ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-VCBATT0 ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 14 signals of VCBATT0_info as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+VCBATT0 ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 14 signals of VCBATT0_info as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ VCBATT0 ECU message: info; frame length from the layout, not yet observed on a v
 | Message name | `VCBATT0_info` |
 | CAN id | 0x652 (1618) |
 | ECU | [VCBATT0 ECU](../../vcbatt0.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | VCBATT0 |
@@ -25,7 +27,7 @@ VCBATT0 ECU message: info; frame length from the layout, not yet observed on a v
 
 ## Signals of VCBATT0_info
 
-Tesla Model 3 / Model Y CAN bus signals in `VCBATT0_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCBATT0_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -50,7 +52,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCBATT0_info`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

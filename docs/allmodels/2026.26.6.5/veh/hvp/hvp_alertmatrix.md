@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "HVP_alertMatrix (0x3AA) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "High-voltage processor (pack contactor and isolation controller) message: alert matrix. Tesla Model 3 / Model Y CAN bus message HVP_alertMatrix (0x3AA) of High-voltage processor (pack contactor and isolation controller), firmware 2026.26.6.5, 71 signals (HVP_matrixIndex, HVP_w001_WatchdogReset, HVP_w002_UnusedAlert2, HVP_w003_SwAssertion and 67 more). Bit layout, scaling, units and value tables."
+title: "HVP_alertMatrix (0x3AA) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "High-voltage processor (pack contactor and isolation controller) message: alert matrix. Tesla Model 3 / Model Y (union) CAN bus message HVP_alertMatrix (0x3AA) of High-voltage processor (pack contactor and isolation controller), firmware 2026.26.6.5, 71 signals (HVP_matrixIndex, HVP_w001_WatchdogReset, HVP_w002_UnusedAlert2, HVP_w003_SwAssertion and 67 more). Bit layout, scaling, units and value tables."
 ---
 
-# HVP_alertMatrix (0x3AA) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# HVP_alertMatrix (0x3AA) — High-voltage processor (pack contactor and isolation controller), Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-High-voltage processor (pack contactor and isolation controller) message: alert matrix; frame length observed on a vehicle bus. This page documents the 71 signals of HVP_alertMatrix as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+High-voltage processor (pack contactor and isolation controller) message: alert matrix; frame length observed on a vehicle bus. This page documents the 71 signals of HVP_alertMatrix as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ High-voltage processor (pack contactor and isolation controller) message: alert 
 | Message name | `HVP_alertMatrix` |
 | CAN id | 0x3AA (938) |
 | ECU | [High-voltage processor (pack contactor and isolation controller)](../../hvp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | HVP |
@@ -25,7 +27,7 @@ High-voltage processor (pack contactor and isolation controller) message: alert 
 
 ## Signals of HVP_alertMatrix
 
-Tesla Model 3 / Model Y CAN bus signals in `HVP_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `HVP_alertMatrix`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -107,7 +109,7 @@ Tesla Model 3 / Model Y CAN bus signals in `HVP_alertMatrix`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

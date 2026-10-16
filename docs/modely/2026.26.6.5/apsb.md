@@ -8,6 +8,8 @@ description: "Tesla Model Y APSB CAN bus messages and signals of the APSB ECU (A
 
 All 10 messages of the APSB ECU (APSB) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`APSB_alertLog`](eth/apsb/apsb_alertlog.md) | ETH | 0x5CA | 8 |  | 668 |
@@ -22,4 +24,3 @@ All 10 messages of the APSB ECU (APSB) documented for Tesla Model Y firmware 202
 | [`APSB_warningMatrix4`](eth/apsb/apsb_warningmatrix4.md) | ETH | 0x3EB | 8 | 1000 ms | 63 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_visualDebug (0x24A) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer message: visual debug. Tesla Model 3 / Model Y CAN bus message DAS_visualDebug (0x24A) of Driver assistance computer, firmware 2026.26.6.5, 26 signals (DAS_autosteerVehiclesUsage, DAS_autosteerHPPUsage, DAS_autosteerNavigationUsage, DAS_autosteerModelUsage and 22 more). Bit layout, scaling, units and value tables."
+title: "DAS_visualDebug (0x24A) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer message: visual debug. Tesla Model 3 / Model Y (union) CAN bus message DAS_visualDebug (0x24A) of Driver assistance computer, firmware 2026.26.6.5, 26 signals (DAS_autosteerVehiclesUsage, DAS_autosteerHPPUsage, DAS_autosteerNavigationUsage, DAS_autosteerModelUsage and 22 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_visualDebug (0x24A) — Driver assistance computer, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# DAS_visualDebug (0x24A) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer message: visual debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 26 signals of DAS_visualDebug as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer message: visual debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 26 signals of DAS_visualDebug as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: visual debug; frame length from the layout, 
 | Message name | `DAS_visualDebug` |
 | CAN id | 0x24A (586) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: visual debug; frame length from the layout, 
 
 ## Signals of DAS_visualDebug
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_visualDebug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_visualDebug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -58,7 +60,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_visualDebug`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

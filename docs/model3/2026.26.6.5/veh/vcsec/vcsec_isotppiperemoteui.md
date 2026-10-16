@@ -16,6 +16,8 @@ Vehicle security controller message: iso tp pipe remote UI; frame length from th
 | CAN id | 0x1DA (474) |
 | ECU | [Vehicle security controller](../../vcsec.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCSEC |

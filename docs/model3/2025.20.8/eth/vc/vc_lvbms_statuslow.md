@@ -16,6 +16,8 @@ VC ECU message: LVBMS status low. This page documents the 38 signals of VC_LVBMS
 | Ethernet-side id | 0x718 (1816) |
 | ECU | [VC ECU](../../vc.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | VC |

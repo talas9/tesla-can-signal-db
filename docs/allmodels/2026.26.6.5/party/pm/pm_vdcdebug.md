@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PM_vdcDebug (0x7F6) — PM ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "PM ECU message: vdc debug. Tesla Model 3 / Model Y CAN bus message PM_vdcDebug (0x7F6) of PM ECU, firmware 2026.26.6.5, 20 signals (PM_vdcDebugSelector, PM_VDCA_TCSlipTargetMod_RA_Fwd, PM_VDCA_TCSlipTargetMod_RA_Rwd, PM_VSE_forceY_RA and 16 more). Bit layout, scaling, units and value tables."
+title: "PM_vdcDebug (0x7F6) — PM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "PM ECU message: vdc debug. Tesla Model 3 / Model Y (union) CAN bus message PM_vdcDebug (0x7F6) of PM ECU, firmware 2026.26.6.5, 20 signals (PM_vdcDebugSelector, PM_VDCA_TCSlipTargetMod_RA_Fwd, PM_VDCA_TCSlipTargetMod_RA_Rwd, PM_VSE_forceY_RA and 16 more). Bit layout, scaling, units and value tables."
 ---
 
-# PM_vdcDebug (0x7F6) — PM ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# PM_vdcDebug (0x7F6) — PM ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-PM ECU message: vdc debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 20 signals of PM_vdcDebug as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+PM ECU message: vdc debug; frame length from the layout, not yet observed on a vehicle bus. This page documents the 20 signals of PM_vdcDebug as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PM ECU message: vdc debug; frame length from the layout, not yet observed on a v
 | Message name | `PM_vdcDebug` |
 | CAN id | 0x7F6 (2038) |
 | ECU | [PM ECU](../../pm.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | PM |
@@ -25,7 +27,7 @@ PM ECU message: vdc debug; frame length from the layout, not yet observed on a v
 
 ## Signals of PM_vdcDebug
 
-Tesla Model 3 / Model Y CAN bus signals in `PM_vdcDebug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PM_vdcDebug`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -56,7 +58,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PM_vdcDebug`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

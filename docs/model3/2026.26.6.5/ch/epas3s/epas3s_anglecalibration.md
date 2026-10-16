@@ -16,6 +16,8 @@ Electric power steering (secondary) message: angle calibration; frame length fro
 | CAN id | 0x3D1 (977) |
 | ECU | [Electric power steering (secondary)](../../epas3s.md) |
 | Vehicle | Tesla Model 3 |
+| API name / codename | `Model3` |
+| Coverage scope | Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | EPAS3S |

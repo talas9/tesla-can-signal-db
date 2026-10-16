@@ -16,6 +16,8 @@ Left electric parking brake message: seat status3; frame length from the layout,
 | CAN id | 0x2E7 (743) |
 | ECU | [Left electric parking brake](../../epbl.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBL |

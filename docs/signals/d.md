@@ -8,11 +8,11 @@ description: "Tesla Model 3 and Model Y CAN bus signals beginning with D: pages 
 
 3801 signals, split over 8 pages.
 
-- [DAS_ACC_camStatus to DAS_w140_backupCamInitFault](d-1.md) (485 signals)
-- [DAS_w141_ECU_Thermal_Issue to DI_a172_pedalPos](d-2.md) (476 signals)
-- [DI_a172_timeSinceCruiseCancel to DI_vdcState](d-3.md) (482 signals)
-- [DI_vdcTelltaleFlash to DIF_a097_argument](d-4.md) (467 signals)
-- [DIF_a097_eepromError to DIF_statusChecksum](d-5.md) (516 signals)
-- [DIF_statusCounter to DIR_a096_mem_data](d-6.md) (472 signals)
-- [DIR_a096_mem_regs to DIR_statorFluxFdb](d-7.md) (514 signals)
-- [DIR_statorFluxRef to DPB_matrixIndex](d-8.md) (389 signals)
+- [DAS_ACC_camStatus to DAS_w138_lRepeatCamInitFault](d-1.md) (483 signals)
+- [DAS_w139_rRepeatCamInitFault to DI_a172_currentGear](d-2.md) (476 signals)
+- [DI_a172_motorSpeed to DI_vdcRightChecksum](d-3.md) (482 signals)
+- [DI_vdcRightCounter to DIF_a096_word1](d-4.md) (467 signals)
+- [DIF_a096_word2 to DIF_statorIQfdb](d-5.md) (507 signals)
+- [DIF_statorIQref to DIR_a092_bmsThermalStatus](d-6.md) (472 signals)
+- [DIR_a092_bmsVoltageRegGain to DIR_rotorFlux](d-7.md) (513 signals)
+- [DIR_rotorMaxMagnetTemp to DPB_matrixIndex](d-8.md) (401 signals)

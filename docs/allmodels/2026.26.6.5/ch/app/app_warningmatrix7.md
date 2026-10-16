@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "APP_warningMatrix7 (0x4D1) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "Driver assistance computer (primary) message: warning matrix7. Tesla Model 3 / Model Y CAN bus message APP_warningMatrix7 (0x4D1) of Driver assistance computer (primary), firmware 2026.26.6.5, 23 signals (APP_w449_rightRepeaterImagerConfigMismatch, APP_w450_backupImagerConfigMismatch, APP_w451_fasciaImagerConfigMismatch, APP_w452_selfieImagerConfigMismatch and 19 more). Bit layout, scaling, units and value tables."
+title: "APP_warningMatrix7 (0x4D1) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "Driver assistance computer (primary) message: warning matrix7. Tesla Model 3 / Model Y (union) CAN bus message APP_warningMatrix7 (0x4D1) of Driver assistance computer (primary), firmware 2026.26.6.5, 23 signals (APP_w449_rightRepeaterImagerConfigMismatch, APP_w450_backupImagerConfigMismatch, APP_w451_fasciaImagerConfigMismatch, APP_w452_selfieImagerConfigMismatch and 19 more). Bit layout, scaling, units and value tables."
 ---
 
-# APP_warningMatrix7 (0x4D1) — Driver assistance computer (primary), Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# APP_warningMatrix7 (0x4D1) — Driver assistance computer (primary), Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-Driver assistance computer (primary) message: warning matrix7; frame length from the layout, not yet observed on a vehicle bus. This page documents the 23 signals of APP_warningMatrix7 as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+Driver assistance computer (primary) message: warning matrix7; frame length from the layout, not yet observed on a vehicle bus. This page documents the 23 signals of APP_warningMatrix7 as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer (primary) message: warning matrix7; frame length from
 | Message name | `APP_warningMatrix7` |
 | CAN id | 0x4D1 (1233) |
 | ECU | [Driver assistance computer (primary)](../../app.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | APP |
@@ -25,7 +27,7 @@ Driver assistance computer (primary) message: warning matrix7; frame length from
 
 ## Signals of APP_warningMatrix7
 
-Tesla Model 3 / Model Y CAN bus signals in `APP_warningMatrix7`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `APP_warningMatrix7`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -55,7 +57,7 @@ Tesla Model 3 / Model Y CAN bus signals in `APP_warningMatrix7`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

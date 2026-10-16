@@ -631,6 +631,30 @@ def model_label(model):
     return {'Model3': 'Model 3', 'ModelY': 'Model Y', 'AllModels': 'Model 3 / Model Y'}.get(model, model)
 
 
+# Documentation labels only: raw DBC VehicleModel attributes and paths keep
+# the original identifiers. Community aliases do not change routing evidence.
+COMMUNITY_NAMES_URL = 'https://github.com/koenhendriks/tesla-model-extractor'
+
+
+def documentation_model(model):
+    return {
+        'Bayberry': 'Model Y (2025+ / Juniper; community mapping)',
+        'GoldenSnitch': 'Unidentified vehicle',
+        'AllModels': 'Model 3 / Model Y (union)',
+    }.get(model, model_label(model))
+
+
+def documentation_scope(model):
+    if model in ('Bayberry', 'GoldenSnitch'):
+        return ('Product-metadata signal subset using the Model 3 / Model Y union routing map; '
+                'no product-specific CAN routing map or complete vehicle coverage is established.')
+    if model == 'AllModels':
+        return ('Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, '
+                'not every Tesla model or variant.')
+    return ('%s gateway-map export; ETH includes messages without known CAN routes; '
+            'enum names do not establish coverage of every vehicle generation or hardware variant.' % model)
+
+
 # ----------------------------------------------------------------- export
 
 def _write(path, text):
@@ -865,15 +889,15 @@ def export(signal_rows, firmware, out_dir, routing=None, msg_meta=None, signal_m
 
 def coverage_markdown(reports):
     """Coverage table (Markdown) for README, generated from export reports."""
-    rows = ['| Model | Firmware | Bus | Messages | Signals | Enums | Validated | Plausible | '
-            'Layout-only | Contradicted |', '|---|---|---|---:|---:|---:|---:|---:|---:|---:|']
+    rows = ['| Model | API name / codename | Firmware | Bus | Messages | Signals | Enums | Validated | Plausible | '
+            'Layout-only | Contradicted |', '|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|']
     order = lambda r: (r['model'] != 'AllModels', r['model'], [-int(p) for p in r['firmware'].split('.')],
                        r['bus'] == 'ETH', '/' not in r['file'].split('/', 1)[1], r['bus'])
     for r in sorted(reports, key=order):
         where = r['file'].rsplit('.', 1)[0]
         label = r['bus'] if '/' in where.split('/', 1)[1] else 'ETH-side ids, all messages'
-        rows.append('| %s | %s | [%s](dbc/%s.dbc) | %d | %d | %d | %d | %d | %d | %d |' % (
-            model_label(r['model']), r['firmware'], label, where, r['messages'], r['signals'],
+        rows.append('| %s | `%s` | %s | [%s](dbc/%s.dbc) | %d | %d | %d | %d | %d | %d | %d |' % (
+            documentation_model(r['model']), r['model'], r['firmware'], label, where, r['messages'], r['signals'],
             r['enums'], r['validated'], r['plausible'], r['layout_only'], r['contradicted']))
     return '\n'.join(rows) + '\n'
 

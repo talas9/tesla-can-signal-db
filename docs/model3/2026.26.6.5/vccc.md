@@ -8,9 +8,10 @@ description: "Tesla Model 3 VCCC CAN bus messages and signals of the VCCC ECU (V
 
 All 1 messages of the VCCC ECU (VCCC) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCCC_info`](party/vccc/vccc_info.md) | PARTY | 0x7CA | 8 | 1000 ms | 14 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

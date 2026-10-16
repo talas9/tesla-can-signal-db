@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UDS_functionalRequest_CH (0x7DF) — UDS ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN"
-description: "UDS ECU message: functional request CH. Tesla Model 3 / Model Y CAN bus message UDS_functionalRequest_CH (0x7DF) of UDS ECU, firmware 2026.26.6.5, 1 signals (UDS_functionalRequestDataCH). Bit layout, scaling, units and value tables."
+title: "UDS_functionalRequest_CH (0x7DF) — UDS ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN"
+description: "UDS ECU message: functional request CH. Tesla Model 3 / Model Y (union) CAN bus message UDS_functionalRequest_CH (0x7DF) of UDS ECU, firmware 2026.26.6.5, 1 signals (UDS_functionalRequestDataCH). Bit layout, scaling, units and value tables."
 ---
 
-# UDS_functionalRequest_CH (0x7DF) — UDS ECU, Tesla Model 3 / Model Y 2026.26.6.5 CH CAN
+# UDS_functionalRequest_CH (0x7DF) — UDS ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 CH CAN
 
-UDS ECU message: functional request CH; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of UDS_functionalRequest_CH as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the CH bus.
+UDS ECU message: functional request CH; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of UDS_functionalRequest_CH as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ UDS ECU message: functional request CH; forwarded onto this bus by the gateway; 
 | Message name | `UDS_functionalRequest_CH` |
 | CAN id | 0x7DF (2015) |
 | ECU | [UDS ECU](../../uds.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | CH (chassis CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ UDS ECU message: functional request CH; forwarded onto this bus by the gateway; 
 
 ## Signals of UDS_functionalRequest_CH
 
-Tesla Model 3 / Model Y CAN bus signals in `UDS_functionalRequest_CH`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UDS_functionalRequest_CH`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UDS_functionalRequest_CH`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 CH DBC file](../../../../../dbc/AllModels/2026.26.6.5/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/CH.json)
 
 ## See also

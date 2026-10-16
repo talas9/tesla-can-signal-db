@@ -16,6 +16,8 @@ Left electric parking brake message: internal status; frame length observed on a
 | CAN id | 0x288 (648) |
 | ECU | [Left electric parking brake](../../epbl.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | EPBL |

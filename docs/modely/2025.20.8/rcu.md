@@ -8,6 +8,8 @@ description: "Tesla Model Y RCU CAN bus messages and signals of the RCU ECU (RCU
 
 All 3 messages of the RCU ECU (RCU) documented for Tesla Model Y firmware 2025.20.8, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`RCU_info`](ch/rcu/rcu_info.md) | CH | 0x33F | 8 | 10000 ms | 5 |
@@ -15,4 +17,3 @@ All 3 messages of the RCU ECU (RCU) documented for Tesla Model Y firmware 2025.2
 | [`RCU_alertMatrix`](eth/rcu/rcu_alertmatrix.md) | ETH | 0x3E6 | 8 | 1000 ms | 59 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

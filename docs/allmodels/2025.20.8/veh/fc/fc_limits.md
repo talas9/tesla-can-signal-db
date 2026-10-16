@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "FC_limits (0x244) — FC ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "FC ECU message: limits. Tesla Model 3 / Model Y CAN bus message FC_limits (0x244) of FC ECU, firmware 2025.20.8, 4 signals (FC_powerLimit, FC_currentLimit, FC_maxVoltageLimit, FC_minVoltageLimit). Bit layout, scaling, units and value tables."
+title: "FC_limits (0x244) — FC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "FC ECU message: limits. Tesla Model 3 / Model Y (union) CAN bus message FC_limits (0x244) of FC ECU, firmware 2025.20.8, 4 signals (FC_powerLimit, FC_currentLimit, FC_maxVoltageLimit, FC_minVoltageLimit). Bit layout, scaling, units and value tables."
 ---
 
-# FC_limits (0x244) — FC ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# FC_limits (0x244) — FC ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-FC ECU message: limits; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of FC_limits as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+FC ECU message: limits; frame length from the layout, not yet observed on a vehicle bus. This page documents the 4 signals of FC_limits as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ FC ECU message: limits; frame length from the layout, not yet observed on a vehi
 | Message name | `FC_limits` |
 | CAN id | 0x244 (580) |
 | ECU | [FC ECU](../../fc.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | FC |
@@ -25,7 +27,7 @@ FC ECU message: limits; frame length from the layout, not yet observed on a vehi
 
 ## Signals of FC_limits
 
-Tesla Model 3 / Model Y CAN bus signals in `FC_limits`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `FC_limits`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `FC_limits`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

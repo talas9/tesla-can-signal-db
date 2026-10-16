@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "SDCR_info (0x63D) — SDCR ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "SDCR ECU message: info. Tesla Model 3 / Model Y CAN bus message SDCR_info (0x63D) of SDCR ECU, firmware 2025.20.8, 11 signals (SDCR_infoIndex, SDCR_infoBuildType, SDCR_infoBuildConfigId, SDCR_infoHardwareId and 7 more). Bit layout, scaling, units and value tables."
+title: "SDCR_info (0x63D) — SDCR ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "SDCR ECU message: info. Tesla Model 3 / Model Y (union) CAN bus message SDCR_info (0x63D) of SDCR ECU, firmware 2025.20.8, 11 signals (SDCR_infoIndex, SDCR_infoBuildType, SDCR_infoBuildConfigId, SDCR_infoHardwareId and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# SDCR_info (0x63D) — SDCR ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# SDCR_info (0x63D) — SDCR ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-SDCR ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of SDCR_info as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+SDCR ECU message: info; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of SDCR_info as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ SDCR ECU message: info; frame length from the layout, not yet observed on a vehi
 | Message name | `SDCR_info` |
 | CAN id | 0x63D (1597) |
 | ECU | [SDCR ECU](../../sdcr.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | SDCR |
@@ -25,7 +27,7 @@ SDCR ECU message: info; frame length from the layout, not yet observed on a vehi
 
 ## Signals of SDCR_info
 
-Tesla Model 3 / Model Y CAN bus signals in `SDCR_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `SDCR_info`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -47,7 +49,7 @@ Tesla Model 3 / Model Y CAN bus signals in `SDCR_info`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

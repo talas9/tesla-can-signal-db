@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "DAS_control (0x2B9) — Driver assistance computer, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN"
-description: "Driver assistance computer message: control. Tesla Model 3 / Model Y CAN bus message DAS_control (0x2B9) of Driver assistance computer, firmware 2025.20.8, 9 signals (DAS_setSpeed, DAS_accState, DAS_aebEvent, DAS_jerkMin and 5 more). Bit layout, scaling, units and value tables."
+title: "DAS_control (0x2B9) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN"
+description: "Driver assistance computer message: control. Tesla Model 3 / Model Y (union) CAN bus message DAS_control (0x2B9) of Driver assistance computer, firmware 2025.20.8, 9 signals (DAS_setSpeed, DAS_accState, DAS_aebEvent, DAS_jerkMin and 5 more). Bit layout, scaling, units and value tables."
 ---
 
-# DAS_control (0x2B9) — Driver assistance computer, Tesla Model 3 / Model Y 2025.20.8 PARTY CAN
+# DAS_control (0x2B9) — Driver assistance computer, Tesla Model 3 / Model Y (union) 2025.20.8 PARTY CAN
 
-Driver assistance computer message: control; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of DAS_control as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the bus1 bus.
+Driver assistance computer message: control; frame length from the layout, not yet observed on a vehicle bus. This page documents the 9 signals of DAS_control as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Driver assistance computer message: control; frame length from the layout, not y
 | Message name | `DAS_control` |
 | CAN id | 0x2B9 (697) |
 | ECU | [Driver assistance computer](../../das.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | DAS |
@@ -25,7 +27,7 @@ Driver assistance computer message: control; frame length from the layout, not y
 
 ## Signals of DAS_control
 
-Tesla Model 3 / Model Y CAN bus signals in `DAS_control`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `DAS_control`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -41,7 +43,7 @@ Tesla Model 3 / Model Y CAN bus signals in `DAS_control`: start bit and length, 
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 PARTY DBC file](../../../../../dbc/AllModels/2025.20.8/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/PARTY.json)
 
 ## See also

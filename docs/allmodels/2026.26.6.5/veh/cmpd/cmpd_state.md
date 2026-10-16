@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CMPD_state (0x2A7) — CMPD ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "CMPD ECU message: state. Tesla Model 3 / Model Y CAN bus message CMPD_state (0x2A7) of CMPD ECU, firmware 2026.26.6.5, 11 signals (CMPD_speedRPM, CMPD_speedDuty, CMPD_inputHVPower, CMPD_inputHVCurrent and 7 more). Bit layout, scaling, units and value tables."
+title: "CMPD_state (0x2A7) — CMPD ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "CMPD ECU message: state. Tesla Model 3 / Model Y (union) CAN bus message CMPD_state (0x2A7) of CMPD ECU, firmware 2026.26.6.5, 11 signals (CMPD_speedRPM, CMPD_speedDuty, CMPD_inputHVPower, CMPD_inputHVCurrent and 7 more). Bit layout, scaling, units and value tables."
 ---
 
-# CMPD_state (0x2A7) — CMPD ECU, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# CMPD_state (0x2A7) — CMPD ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-CMPD ECU message: state; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of CMPD_state as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+CMPD ECU message: state; frame length from the layout, not yet observed on a vehicle bus. This page documents the 11 signals of CMPD_state as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ CMPD ECU message: state; frame length from the layout, not yet observed on a veh
 | Message name | `CMPD_state` |
 | CAN id | 0x2A7 (679) |
 | ECU | [CMPD ECU](../../cmpd.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | CMPD |
@@ -25,7 +27,7 @@ CMPD ECU message: state; frame length from the layout, not yet observed on a veh
 
 ## Signals of CMPD_state
 
-Tesla Model 3 / Model Y CAN bus signals in `CMPD_state`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CMPD_state`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -43,7 +45,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CMPD_state`: start bit and length, b
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

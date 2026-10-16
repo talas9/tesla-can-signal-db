@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "UI_driverProfileRecall (0x285) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Touchscreen user interface computer message: driver profile recall. Tesla Model 3 / Model Y CAN bus message UI_driverProfileRecall (0x285) of Touchscreen user interface computer, firmware 2026.26.6.5, 24 signals (UI_driverProfileRecallIndex, UI_driverProfileRecallStop, UI_frontSeatRecallActive, UI_frontSeatTrackPos and 20 more). Bit layout, scaling, units and value tables."
+title: "UI_driverProfileRecall (0x285) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Touchscreen user interface computer message: driver profile recall. Tesla Model 3 / Model Y (union) CAN bus message UI_driverProfileRecall (0x285) of Touchscreen user interface computer, firmware 2026.26.6.5, 24 signals (UI_driverProfileRecallIndex, UI_driverProfileRecallStop, UI_frontSeatRecallActive, UI_frontSeatTrackPos and 20 more). Bit layout, scaling, units and value tables."
 ---
 
-# UI_driverProfileRecall (0x285) — Touchscreen user interface computer, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# UI_driverProfileRecall (0x285) — Touchscreen user interface computer, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Touchscreen user interface computer message: driver profile recall; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 24 signals of UI_driverProfileRecall as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Touchscreen user interface computer message: driver profile recall; forwarded onto this bus by the gateway; frame length observed on a vehicle bus. This page documents the 24 signals of UI_driverProfileRecall as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Touchscreen user interface computer message: driver profile recall; forwarded on
 | Message name | `UI_driverProfileRecall` |
 | CAN id | 0x285 (645) |
 | ECU | [Touchscreen user interface computer](../../ui.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ Touchscreen user interface computer message: driver profile recall; forwarded on
 
 ## Signals of UI_driverProfileRecall
 
-Tesla Model 3 / Model Y CAN bus signals in `UI_driverProfileRecall`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `UI_driverProfileRecall`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -60,7 +62,7 @@ Tesla Model 3 / Model Y CAN bus signals in `UI_driverProfileRecall`: start bit a
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also

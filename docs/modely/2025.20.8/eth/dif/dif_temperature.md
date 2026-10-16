@@ -16,6 +16,8 @@ Front drive inverter message: temperature. This page documents the 20 signals of
 | Ethernet-side id | 0x376 (886) |
 | ECU | [Front drive inverter](../../dif.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | DIF |

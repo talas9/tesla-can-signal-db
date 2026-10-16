@@ -16,6 +16,8 @@ UDS ECU message: ocs1p request. This page documents the 1 signals of UDS_ocs1pRe
 | Ethernet-side id | 0x643 (1603) |
 | ECU | [UDS ECU](../../uds.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | UDS |

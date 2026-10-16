@@ -8,6 +8,8 @@ description: "Tesla Model Y TRCM CAN bus messages and signals of the TRCM ECU (T
 
 All 3 messages of the TRCM ECU (TRCM) documented for Tesla Model Y firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `ModelY`. ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`TRCM_alertLog`](eth/trcm/trcm_alertlog.md) | ETH | 0x512 | 8 |  | 657 |
@@ -15,4 +17,3 @@ All 3 messages of the TRCM ECU (TRCM) documented for Tesla Model Y firmware 2026
 | [`TRCM_info`](eth/trcm/trcm_info.md) | ETH | 0x7E3 | 8 | 1000 ms | 14 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

@@ -8,6 +8,8 @@ description: "Tesla Model 3 VCRIGHT CAN bus messages and signals of the Right bo
 
 All 31 messages of the Right body controller (VCRIGHT) documented for Tesla Model 3 firmware 2026.26.6.5, across the buses that carry them.
 
+API name / codename: `Model3`. Model3 gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant.
+
 | Message | Bus | Id | Length | Cycle | Signals |
 |---|---|---|---:|---:|---:|
 | [`VCRIGHT_alertLog`](veh/vcright/vcright_alertlog.md) | VEH | 0x550 | 8 |  | 1366 |
@@ -43,4 +45,3 @@ All 31 messages of the Right body controller (VCRIGHT) documented for Tesla Mode
 | [`VCRIGHT_restraintStatus`](party/vcright/vcright_restraintstatus.md) | PARTY | 0x31A | 8 | 50 ms | 17 |
 
 [Documentation home](../../index.md) | [Signal index A-Z](../../signals/index.md)
-

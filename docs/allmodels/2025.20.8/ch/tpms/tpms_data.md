@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "TPMS_data (0x31F) — Tire pressure monitoring, Tesla Model 3 / Model Y 2025.20.8 CH CAN"
-description: "Tire pressure monitoring message: data. Tesla Model 3 / Model Y CAN bus message TPMS_data (0x31F) of Tire pressure monitoring, firmware 2025.20.8, 8 signals (TPMS_pressureFL, TPMS_temperatureFL, TPMS_pressureFR, TPMS_temperatureFR and 4 more). Bit layout, scaling, units and value tables."
+title: "TPMS_data (0x31F) — Tire pressure monitoring, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN"
+description: "Tire pressure monitoring message: data. Tesla Model 3 / Model Y (union) CAN bus message TPMS_data (0x31F) of Tire pressure monitoring, firmware 2025.20.8, 8 signals (TPMS_pressureFL, TPMS_temperatureFL, TPMS_pressureFR, TPMS_temperatureFR and 4 more). Bit layout, scaling, units and value tables."
 ---
 
-# TPMS_data (0x31F) — Tire pressure monitoring, Tesla Model 3 / Model Y 2025.20.8 CH CAN
+# TPMS_data (0x31F) — Tire pressure monitoring, Tesla Model 3 / Model Y (union) 2025.20.8 CH CAN
 
-Tire pressure monitoring message: data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of TPMS_data as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the CH bus.
+Tire pressure monitoring message: data; frame length from the layout, not yet observed on a vehicle bus. This page documents the 8 signals of TPMS_data as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the CH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Tire pressure monitoring message: data; frame length from the layout, not yet ob
 | Message name | `TPMS_data` |
 | CAN id | 0x31F (799) |
 | ECU | [Tire pressure monitoring](../../tpms.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | CH (chassis CAN) |
 | Transmitter | TPMS |
@@ -25,7 +27,7 @@ Tire pressure monitoring message: data; frame length from the layout, not yet ob
 
 ## Signals of TPMS_data
 
-Tesla Model 3 / Model Y CAN bus signals in `TPMS_data`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `TPMS_data`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -40,7 +42,7 @@ Tesla Model 3 / Model Y CAN bus signals in `TPMS_data`: start bit and length, by
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 CH DBC file](../../../../../dbc/AllModels/2025.20.8/CH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/CH.json)
 
 ## See also

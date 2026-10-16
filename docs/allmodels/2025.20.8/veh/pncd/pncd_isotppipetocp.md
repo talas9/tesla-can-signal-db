@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "PNCD_IsoTpPipeToCp (0x6E6) — PNCD ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN"
-description: "PNCD ECU message: iso tp pipe to cp. Tesla Model 3 / Model Y CAN bus message PNCD_IsoTpPipeToCp (0x6E6) of PNCD ECU, firmware 2025.20.8, 1 signals (PNCD_isoTpToCpData). Bit layout, scaling, units and value tables."
+title: "PNCD_IsoTpPipeToCp (0x6E6) — PNCD ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN"
+description: "PNCD ECU message: iso tp pipe to cp. Tesla Model 3 / Model Y (union) CAN bus message PNCD_IsoTpPipeToCp (0x6E6) of PNCD ECU, firmware 2025.20.8, 1 signals (PNCD_isoTpToCpData). Bit layout, scaling, units and value tables."
 ---
 
-# PNCD_IsoTpPipeToCp (0x6E6) — PNCD ECU, Tesla Model 3 / Model Y 2025.20.8 VEH CAN
+# PNCD_IsoTpPipeToCp (0x6E6) — PNCD ECU, Tesla Model 3 / Model Y (union) 2025.20.8 VEH CAN
 
-PNCD ECU message: iso tp pipe to cp; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of PNCD_IsoTpPipeToCp as defined for Tesla Model 3 / Model Y firmware 2025.20.8 on the VEH bus.
+PNCD ECU message: iso tp pipe to cp; forwarded onto this bus by the gateway; frame length from the layout, not yet observed on a vehicle bus. This page documents the 1 signals of PNCD_IsoTpPipeToCp as defined for Tesla Model 3 / Model Y (union) firmware 2025.20.8 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ PNCD ECU message: iso tp pipe to cp; forwarded onto this bus by the gateway; fra
 | Message name | `PNCD_IsoTpPipeToCp` |
 | CAN id | 0x6E6 (1766) |
 | ECU | [PNCD ECU](../../pncd.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | GTW |
@@ -25,7 +27,7 @@ PNCD ECU message: iso tp pipe to cp; forwarded onto this bus by the gateway; fra
 
 ## Signals of PNCD_IsoTpPipeToCp
 
-Tesla Model 3 / Model Y CAN bus signals in `PNCD_IsoTpPipeToCp`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `PNCD_IsoTpPipeToCp`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -33,7 +35,7 @@ Tesla Model 3 / Model Y CAN bus signals in `PNCD_IsoTpPipeToCp`: start bit and l
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2025.20.8 VEH DBC file](../../../../../dbc/AllModels/2025.20.8/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2025.20.8/VEH.json)
 
 ## See also

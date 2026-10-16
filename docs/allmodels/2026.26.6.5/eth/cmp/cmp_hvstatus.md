@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "CMP_HVStatus (0x227) — A/C compressor, Tesla Model 3 / Model Y 2026.26.6.5 ETH"
-description: "A/C compressor message: HV status. Ethernet-side message CMP_HVStatus of A/C compressor for Tesla Model 3 / Model Y firmware 2026.26.6.5, 4 signals (CMP_inputHVVoltage, CMP_inputLVVoltage, CMP_inputHVCurrent, CMP_inputHVPower). Bit layout, scaling, units and value tables."
+title: "CMP_HVStatus (0x227) — A/C compressor, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH"
+description: "A/C compressor message: HV status. Ethernet-side message CMP_HVStatus of A/C compressor for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5, 4 signals (CMP_inputHVVoltage, CMP_inputLVVoltage, CMP_inputHVCurrent, CMP_inputHVPower). Bit layout, scaling, units and value tables."
 ---
 
-# CMP_HVStatus (0x227) — A/C compressor, Tesla Model 3 / Model Y 2026.26.6.5 ETH
+# CMP_HVStatus (0x227) — A/C compressor, Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH
 
-A/C compressor message: HV status. This page documents the 4 signals of CMP_HVStatus as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
+A/C compressor message: HV status. This page documents the 4 signals of CMP_HVStatus as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 (Ethernet-side id, not a CAN id).
 
 ## Message details
 
@@ -15,7 +15,9 @@ A/C compressor message: HV status. This page documents the 4 signals of CMP_HVSt
 | Message name | `CMP_HVStatus` |
 | Ethernet-side id | 0x227 (551) |
 | ECU | [A/C compressor](../../cmp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | ETH (Ethernet-side ids, not CAN ids) |
 | Transmitter | CMP |
@@ -25,7 +27,7 @@ A/C compressor message: HV status. This page documents the 4 signals of CMP_HVSt
 
 ## Signals of CMP_HVStatus
 
-Tesla Model 3 / Model Y CAN bus signals in `CMP_HVStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `CMP_HVStatus`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +38,7 @@ Tesla Model 3 / Model Y CAN bus signals in `CMP_HVStatus`: start bit and length,
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 ETH DBC file](../../../../../dbc/AllModels/2026.26.6.5/ETH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/ETH.json)
 
 Ethernet-side ids differ from CAN ids; do not load this file on a CAN bus.

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "EPASTP_alertLog (0x593) — EPASTP ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN"
-description: "EPASTP ECU message: alert log. Tesla Model 3 / Model Y CAN bus message EPASTP_alertLog (0x593) of EPASTP ECU, firmware 2026.26.6.5, 275 signals (EPASTP_alertID, EPASTP_alertState, EPASTP_a001_debugInfo, EPASTP_a002_debugInfo and 271 more). Bit layout, scaling, units and value tables."
+title: "EPASTP_alertLog (0x593) — EPASTP ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN"
+description: "EPASTP ECU message: alert log. Tesla Model 3 / Model Y (union) CAN bus message EPASTP_alertLog (0x593) of EPASTP ECU, firmware 2026.26.6.5, 275 signals (EPASTP_alertID, EPASTP_alertState, EPASTP_a001_debugInfo, EPASTP_a002_debugInfo and 271 more). Bit layout, scaling, units and value tables."
 ---
 
-# EPASTP_alertLog (0x593) — EPASTP ECU, Tesla Model 3 / Model Y 2026.26.6.5 PARTY CAN
+# EPASTP_alertLog (0x593) — EPASTP ECU, Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY CAN
 
-EPASTP ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 275 signals of EPASTP_alertLog as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the bus1 bus.
+EPASTP ECU message: alert log; frame length from the layout, not yet observed on a vehicle bus. This page documents the 275 signals of EPASTP_alertLog as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the bus1 bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ EPASTP ECU message: alert log; frame length from the layout, not yet observed on
 | Message name | `EPASTP_alertLog` |
 | CAN id | 0x593 (1427) |
 | ECU | [EPASTP ECU](../../epastp.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | bus1 (inferred PARTY) |
 | Transmitter | EPASTP |
@@ -25,7 +27,7 @@ EPASTP ECU message: alert log; frame length from the layout, not yet observed on
 
 ## Signals of EPASTP_alertLog
 
-Tesla Model 3 / Model Y CAN bus signals in `EPASTP_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `EPASTP_alertLog`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -311,7 +313,7 @@ Tesla Model 3 / Model Y CAN bus signals in `EPASTP_alertLog`: start bit and leng
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 PARTY DBC file](../../../../../dbc/AllModels/2026.26.6.5/PARTY.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/PARTY.json)
 
 ## See also

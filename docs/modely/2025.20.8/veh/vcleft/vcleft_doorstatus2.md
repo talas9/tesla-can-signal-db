@@ -16,6 +16,8 @@ Left body controller message: door status2; frame length observed on a vehicle b
 | CAN id | 0x122 (290) |
 | ECU | [Left body controller](../../vcleft.md) |
 | Vehicle | Tesla Model Y |
+| API name / codename | `ModelY` |
+| Coverage scope | ModelY gateway-map export; ETH includes messages without known CAN routes; enum names do not establish coverage of every vehicle generation or hardware variant. |
 | Firmware | 2025.20.8 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCLEFT |

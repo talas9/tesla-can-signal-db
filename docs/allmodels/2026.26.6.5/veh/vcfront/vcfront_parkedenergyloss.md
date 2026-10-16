@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "VCFRONT_parkedEnergyLoss (0x3BD) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN"
-description: "Front body controller message: parked energy loss. Tesla Model 3 / Model Y CAN bus message VCFRONT_parkedEnergyLoss (0x3BD) of Front body controller, firmware 2026.26.6.5, 17 signals (VCFRONT_energyLossIndex, VCFRONT_userEnergyLossSinceDrive, VCFRONT_preconditioningEnergyLossSinceDrive, VCFRONT_cabinOverheatEnergyLossSinceDrive and 13 more). Bit layout, scaling, units and value tables."
+title: "VCFRONT_parkedEnergyLoss (0x3BD) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN"
+description: "Front body controller message: parked energy loss. Tesla Model 3 / Model Y (union) CAN bus message VCFRONT_parkedEnergyLoss (0x3BD) of Front body controller, firmware 2026.26.6.5, 17 signals (VCFRONT_energyLossIndex, VCFRONT_userEnergyLossSinceDrive, VCFRONT_preconditioningEnergyLossSinceDrive, VCFRONT_cabinOverheatEnergyLossSinceDrive and 13 more). Bit layout, scaling, units and value tables."
 ---
 
-# VCFRONT_parkedEnergyLoss (0x3BD) — Front body controller, Tesla Model 3 / Model Y 2026.26.6.5 VEH CAN
+# VCFRONT_parkedEnergyLoss (0x3BD) — Front body controller, Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH CAN
 
-Front body controller message: parked energy loss; frame length observed on a vehicle bus. This page documents the 17 signals of VCFRONT_parkedEnergyLoss as defined for Tesla Model 3 / Model Y firmware 2026.26.6.5 on the VEH bus.
+Front body controller message: parked energy loss; frame length observed on a vehicle bus. This page documents the 17 signals of VCFRONT_parkedEnergyLoss as defined for Tesla Model 3 / Model Y (union) firmware 2026.26.6.5 on the VEH bus.
 
 ## Message details
 
@@ -15,7 +15,9 @@ Front body controller message: parked energy loss; frame length observed on a ve
 | Message name | `VCFRONT_parkedEnergyLoss` |
 | CAN id | 0x3BD (957) |
 | ECU | [Front body controller](../../vcfront.md) |
-| Vehicle | Tesla Model 3 / Model Y |
+| Vehicle | Tesla Model 3 / Model Y (union) |
+| API name / codename | `AllModels` |
+| Coverage scope | Combined Model3/ModelY dataset; ETH includes messages without known CAN routes, not every Tesla model or variant. |
 | Firmware | 2026.26.6.5 |
 | Bus | VEH (vehicle CAN) |
 | Transmitter | VCFRONT |
@@ -25,7 +27,7 @@ Front body controller message: parked energy loss; frame length observed on a ve
 
 ## Signals of VCFRONT_parkedEnergyLoss
 
-Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_parkedEnergyLoss`: start bit and length, byte order, scaling, unit, range, value table and confidence.
+Tesla Model 3 / Model Y (union) CAN bus signals in `VCFRONT_parkedEnergyLoss`: start bit and length, byte order, scaling, unit, range, value table and confidence.
 
 | Signal | Mux | Meaning | Start\|length | Byte order | Signed | Scale | Offset | Unit | Min to max | Values | Confidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -53,7 +55,7 @@ Tesla Model 3 / Model Y CAN bus signals in `VCFRONT_parkedEnergyLoss`: start bit
 
 ## Download the DBC file
 
-- [Tesla Model 3 / Model Y 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
+- [Tesla Model 3 / Model Y (union) 2026.26.6.5 VEH DBC file](../../../../../dbc/AllModels/2026.26.6.5/VEH.dbc) (Vector DBC)
 - [Same data as JSON](../../../../../dbc/AllModels/2026.26.6.5/VEH.json)
 
 ## See also
