@@ -2,11 +2,9 @@
 
 ## Rights and Use
 
-This repository contains research derived from Tesla vehicle firmware and diagnostic tools. All rights are reserved.
+This repository contains research derived from Tesla vehicle firmware and diagnostic tools.
 
-**Publication status**: Unreleased. The owner will decide whether this work becomes public, and if so, when and under what terms.
-
-**Current use**: Private research repository.
+This repository is released under the MIT License (see LICENSE). Anyone may use, copy, modify and redistribute it.
 
 ## Attribution
 
@@ -18,8 +16,8 @@ The signal definitions, scaling information, descriptions, and other data are pr
 
 ## Contact
 
-Questions about this work, including requests for access, publication, or collaboration, should be directed to the project owner.
+Questions or collaboration: open an issue or contact the project owner.
 
 ---
 
-**Effective Date**: 2026-09-30
+**Effective Date**: 2026-11-23

@@ -51,7 +51,8 @@ kept only in the Ethernet-side files and are listed below as not yet mapped.
 - `tools/export_dbc.py` - DBC exporter and validator (Python API + CLI)
 - `tools/gen_docs.py` - generates the searchable `docs/` site (per-message pages, ECU and A-Z signal indexes, sitemap)
 - `docs/` - generated documentation: `index.md`, `messages.md`, `signals/`, `<model>/<firmware>/<bus>/<ecu>/<message>.md`
-- `INDEX.md` - device and signal summary by firmware
+- `INDEX.md` - source/export counts and metadata inventory by firmware
+- `research/` - separately qualified findings excluded from canonical exports and coverage counts
 - `NOTICE.md` - rights and publication notice
 
 ## DBC files
@@ -234,17 +235,27 @@ beyond the DBC coverage listed here.
 | Model Y | `ModelY` | 2025.20.8 | [ETH](dbc/ModelY/2025.20.8/ETH.dbc) | 357 | 27970 | 4874 | 53 | 11287 | 16630 | 0 |
 <!-- coverage:end -->
 
-Effect of the recorded-vehicle-log verdicts (`data/<fw>/validation.csv`) on
-the ETH-side table (all messages). A `plausible` verdict never demotes a
-signal that two independent definitions already validated; `contradicted`
-always wins.
+The generated table above is the current confidence inventory, including
+recorded-vehicle-log verdicts from `data/<fw>/validation.csv`. A `plausible`
+verdict never demotes a signal that two independent definitions already
+validated; `contradicted` always wins. Source-row totals and export exclusions
+are counted separately in [INDEX.md](INDEX.md).
 
-| Firmware | Stage | Validated | Plausible | Layout-only | Contradicted |
-|---|---|---:|---:|---:|---:|
-| 2026.26.6.5 | before | 7566 | 8603 | 26147 | 0 |
-| 2026.26.6.5 | after | 7535 | 11293 | 23450 | 38 |
-| 2025.20.8 | before | 5934 | 6971 | 20536 | 0 |
-| 2025.20.8 | after | 5940 | 8935 | 18566 | 0 |
+The former manually maintained before/after confidence table did not match
+the current export and has been removed. It should not be used as a baseline
+for this revision; a historical comparison needs pinned input revisions.
+
+### Research outside the canonical tables
+
+The [older HW3 car-log unavailability supplement](research/hw3-carlog-unavailability.md)
+records the `0x5D9` mux-0 reason field and distinguishes the old binary's
+internal reason 90 from wire value 91. Neither firmware source table here
+currently defines that payload field. This separate evidence does not extend
+the Model 3 / Model Y coverage claim or establish current HW4 parity.
+
+Related work: [APE research](https://github.com/talas9/tesla-ape-research)
+tracks the refusal investigation; the [archived signal collection](https://github.com/talas9/tesla_can_signals)
+contains older sources and a separately scoped HW2.5 supplement.
 
 ### Check against recorded vehicle logs
 
